@@ -1,0 +1,46 @@
+include: all_lint_rules.yaml
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.gr.dart"
+    - "test/.test_coverage.dart"
+    - "bin/cache/**"
+    - "lib/generated_plugin_registrant.dart"
+
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+
+  errors:
+    included_file_warning: ignore
+    invalid_annotation_target: ignore
+    missing_required_param: error
+    missing_return: error
+    parameter_assignments: warning
+    todo: ignore
+
+
+linter:
+  rules:
+    avoid_classes_with_only_static_members: false
+    prefer_final_parameters: false
+    diagnostic_describe_all_properties: false
+    always_put_control_body_on_new_line: false
+    prefer_double_quotes: false
+    always_specify_types: false
+    unnecessary_final: false
+    prefer_expression_function_bodies: false
+    always_put_required_named_parameters_first: false
+    avoid_as: false
+    flutter_style_todos: false
+    avoid_catches_without_on_clauses: false
+    lines_longer_than_80_chars: false
+    avoid_annotating_with_dynamic: false
+    always_use_package_imports: false
+    no_default_cases: false
+    prefer_asserts_with_message: false
+    prefer_relative_imports: false
+    public_member_api_docs: false
+    cascade_invocations: false
+
