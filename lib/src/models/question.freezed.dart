@@ -199,17 +199,20 @@ class _$_Question extends _Question {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Question &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.question, question) ||
-                other.question == question) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.question, question) &&
             const DeepCollectionEquality().equals(other.answers, answers) &&
-            (identical(other.requirement, requirement) ||
-                other.requirement == requirement));
+            const DeepCollectionEquality()
+                .equals(other.requirement, requirement));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, question,
-      const DeepCollectionEquality().hash(answers), requirement);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(question),
+      const DeepCollectionEquality().hash(answers),
+      const DeepCollectionEquality().hash(requirement));
 
   @JsonKey(ignore: true)
   @override

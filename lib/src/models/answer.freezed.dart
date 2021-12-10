@@ -364,27 +364,40 @@ class _$_Answer extends _Answer {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Answer &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.answer, answer) || other.answer == answer) &&
-            (identical(other.vidro, vidro) || other.vidro == vidro) &&
-            (identical(other.aco, aco) || other.aco == aco) &&
-            (identical(other.aluminio, aluminio) ||
-                other.aluminio == aluminio) &&
-            (identical(other.pet, pet) || other.pet == pet) &&
-            (identical(other.pead, pead) || other.pead == pead) &&
-            (identical(other.pebd, pebd) || other.pebd == pebd) &&
-            (identical(other.eps, eps) || other.eps == eps) &&
-            (identical(other.pp, pp) || other.pp == pp) &&
-            (identical(other.outrosPlasticos, outrosPlasticos) ||
-                other.outrosPlasticos == outrosPlasticos) &&
-            (identical(other.ecal, ecal) || other.ecal == ecal) &&
-            (identical(other.papel, papel) || other.papel == papel) &&
-            (identical(other.cartao, cartao) || other.cartao == cartao));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.answer, answer) &&
+            const DeepCollectionEquality().equals(other.vidro, vidro) &&
+            const DeepCollectionEquality().equals(other.aco, aco) &&
+            const DeepCollectionEquality().equals(other.aluminio, aluminio) &&
+            const DeepCollectionEquality().equals(other.pet, pet) &&
+            const DeepCollectionEquality().equals(other.pead, pead) &&
+            const DeepCollectionEquality().equals(other.pebd, pebd) &&
+            const DeepCollectionEquality().equals(other.eps, eps) &&
+            const DeepCollectionEquality().equals(other.pp, pp) &&
+            const DeepCollectionEquality()
+                .equals(other.outrosPlasticos, outrosPlasticos) &&
+            const DeepCollectionEquality().equals(other.ecal, ecal) &&
+            const DeepCollectionEquality().equals(other.papel, papel) &&
+            const DeepCollectionEquality().equals(other.cartao, cartao));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, answer, vidro, aco, aluminio,
-      pet, pead, pebd, eps, pp, outrosPlasticos, ecal, papel, cartao);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(answer),
+      const DeepCollectionEquality().hash(vidro),
+      const DeepCollectionEquality().hash(aco),
+      const DeepCollectionEquality().hash(aluminio),
+      const DeepCollectionEquality().hash(pet),
+      const DeepCollectionEquality().hash(pead),
+      const DeepCollectionEquality().hash(pebd),
+      const DeepCollectionEquality().hash(eps),
+      const DeepCollectionEquality().hash(pp),
+      const DeepCollectionEquality().hash(outrosPlasticos),
+      const DeepCollectionEquality().hash(ecal),
+      const DeepCollectionEquality().hash(papel),
+      const DeepCollectionEquality().hash(cartao));
 
   @JsonKey(ignore: true)
   @override

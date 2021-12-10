@@ -157,14 +157,16 @@ class _$_Category extends _Category {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Category &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.icon, icon) || other.icon == icon) &&
+            const DeepCollectionEquality().equals(other.category, category) &&
+            const DeepCollectionEquality().equals(other.icon, icon) &&
             const DeepCollectionEquality().equals(other.packages, packages));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, category, icon,
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(category),
+      const DeepCollectionEquality().hash(icon),
       const DeepCollectionEquality().hash(packages));
 
   @JsonKey(ignore: true)

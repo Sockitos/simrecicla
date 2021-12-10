@@ -184,16 +184,20 @@ class _$_Machine extends _Machine {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Machine &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.inputCount, inputCount) ||
-                other.inputCount == inputCount) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality()
+                .equals(other.inputCount, inputCount) &&
             const DeepCollectionEquality().equals(other.outputs, outputs));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, description, inputCount,
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(inputCount),
       const DeepCollectionEquality().hash(outputs));
 
   @JsonKey(ignore: true)

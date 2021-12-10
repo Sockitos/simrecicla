@@ -450,53 +450,52 @@ class _$_Component extends _Component {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Component &&
-            (identical(other.component, component) ||
-                other.component == component) &&
-            (identical(other.svgPath, svgPath) || other.svgPath == svgPath) &&
-            (identical(other.papel, papel) || other.papel == papel) &&
-            (identical(other.cartao, cartao) || other.cartao == cartao) &&
-            (identical(other.ecal, ecal) || other.ecal == ecal) &&
-            (identical(other.pebd, pebd) || other.pebd == pebd) &&
-            (identical(other.pet, pet) || other.pet == pet) &&
-            (identical(other.pead, pead) || other.pead == pead) &&
-            (identical(other.plasticosMistos, plasticosMistos) ||
-                other.plasticosMistos == plasticosMistos) &&
-            (identical(other.metaisFerrosos, metaisFerrosos) ||
-                other.metaisFerrosos == metaisFerrosos) &&
-            (identical(other.metaisNaoFerrosos, metaisNaoFerrosos) ||
-                other.metaisNaoFerrosos == metaisNaoFerrosos) &&
-            (identical(other.vidro, vidro) || other.vidro == vidro) &&
-            (identical(other.eps, eps) || other.eps == eps) &&
-            (identical(other.fracaoResto, fracaoResto) ||
-                other.fracaoResto == fracaoResto) &&
-            (identical(other.where, where) || other.where == where) &&
-            (identical(other.ifTrue, ifTrue) || other.ifTrue == ifTrue) &&
-            (identical(other.ifFalse, ifFalse) || other.ifFalse == ifFalse) &&
-            (identical(other.recomendacoes, recomendacoes) ||
-                other.recomendacoes == recomendacoes));
+            const DeepCollectionEquality().equals(other.component, component) &&
+            const DeepCollectionEquality().equals(other.svgPath, svgPath) &&
+            const DeepCollectionEquality().equals(other.papel, papel) &&
+            const DeepCollectionEquality().equals(other.cartao, cartao) &&
+            const DeepCollectionEquality().equals(other.ecal, ecal) &&
+            const DeepCollectionEquality().equals(other.pebd, pebd) &&
+            const DeepCollectionEquality().equals(other.pet, pet) &&
+            const DeepCollectionEquality().equals(other.pead, pead) &&
+            const DeepCollectionEquality()
+                .equals(other.plasticosMistos, plasticosMistos) &&
+            const DeepCollectionEquality()
+                .equals(other.metaisFerrosos, metaisFerrosos) &&
+            const DeepCollectionEquality()
+                .equals(other.metaisNaoFerrosos, metaisNaoFerrosos) &&
+            const DeepCollectionEquality().equals(other.vidro, vidro) &&
+            const DeepCollectionEquality().equals(other.eps, eps) &&
+            const DeepCollectionEquality()
+                .equals(other.fracaoResto, fracaoResto) &&
+            const DeepCollectionEquality().equals(other.where, where) &&
+            const DeepCollectionEquality().equals(other.ifTrue, ifTrue) &&
+            const DeepCollectionEquality().equals(other.ifFalse, ifFalse) &&
+            const DeepCollectionEquality()
+                .equals(other.recomendacoes, recomendacoes));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      component,
-      svgPath,
-      papel,
-      cartao,
-      ecal,
-      pebd,
-      pet,
-      pead,
-      plasticosMistos,
-      metaisFerrosos,
-      metaisNaoFerrosos,
-      vidro,
-      eps,
-      fracaoResto,
-      where,
-      ifTrue,
-      ifFalse,
-      recomendacoes);
+      const DeepCollectionEquality().hash(component),
+      const DeepCollectionEquality().hash(svgPath),
+      const DeepCollectionEquality().hash(papel),
+      const DeepCollectionEquality().hash(cartao),
+      const DeepCollectionEquality().hash(ecal),
+      const DeepCollectionEquality().hash(pebd),
+      const DeepCollectionEquality().hash(pet),
+      const DeepCollectionEquality().hash(pead),
+      const DeepCollectionEquality().hash(plasticosMistos),
+      const DeepCollectionEquality().hash(metaisFerrosos),
+      const DeepCollectionEquality().hash(metaisNaoFerrosos),
+      const DeepCollectionEquality().hash(vidro),
+      const DeepCollectionEquality().hash(eps),
+      const DeepCollectionEquality().hash(fracaoResto),
+      const DeepCollectionEquality().hash(where),
+      const DeepCollectionEquality().hash(ifTrue),
+      const DeepCollectionEquality().hash(ifFalse),
+      const DeepCollectionEquality().hash(recomendacoes));
 
   @JsonKey(ignore: true)
   @override

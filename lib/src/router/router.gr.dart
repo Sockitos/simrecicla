@@ -1,3 +1,7 @@
+// **************************************************************************
+// AutoRouteGenerator
+// **************************************************************************
+
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -107,8 +111,7 @@ class BinSelectionScreenRoute
   BinSelectionScreenRoute({_i10.Key? key, required _i11.Package package})
       : super(name,
             path: '/consumer/bin_selection?package=:package',
-            args: BinSelectionScreenRouteArgs(key: key, package: package),
-            rawPathParams: {});
+            args: BinSelectionScreenRouteArgs(key: key, package: package));
 
   static const String name = 'BinSelectionScreenRoute';
 }
@@ -119,6 +122,11 @@ class BinSelectionScreenRouteArgs {
   final _i10.Key? key;
 
   final _i11.Package package;
+
+  @override
+  String toString() {
+    return 'BinSelectionScreenRouteArgs{key: $key, package: $package}';
+  }
 }
 
 /// generated route for [_i5.PackagerScreen]
@@ -140,8 +148,7 @@ class ResultsScreenRoute extends _i9.PageRouteInfo<ResultsScreenRouteArgs> {
   ResultsScreenRoute({_i10.Key? key, required _i12.Rating rating})
       : super(name,
             path: '/packager/results?rating=:rating',
-            args: ResultsScreenRouteArgs(key: key, rating: rating),
-            rawPathParams: {});
+            args: ResultsScreenRouteArgs(key: key, rating: rating));
 
   static const String name = 'ResultsScreenRoute';
 }
@@ -152,6 +159,11 @@ class ResultsScreenRouteArgs {
   final _i10.Key? key;
 
   final _i12.Rating rating;
+
+  @override
+  String toString() {
+    return 'ResultsScreenRouteArgs{key: $key, rating: $rating}';
+  }
 }
 
 /// generated route for [_i8.RecyclerScreen]

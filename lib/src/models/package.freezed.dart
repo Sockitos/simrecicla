@@ -166,14 +166,17 @@ class _$_Package extends _Package {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Package &&
-            (identical(other.package, package) || other.package == package) &&
-            (identical(other.svgPath, svgPath) || other.svgPath == svgPath) &&
+            const DeepCollectionEquality().equals(other.package, package) &&
+            const DeepCollectionEquality().equals(other.svgPath, svgPath) &&
             const DeepCollectionEquality()
                 .equals(other.components, components));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, package, svgPath,
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(package),
+      const DeepCollectionEquality().hash(svgPath),
       const DeepCollectionEquality().hash(components));
 
   @JsonKey(ignore: true)

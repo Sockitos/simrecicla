@@ -130,11 +130,12 @@ class _$_MachineOutput extends _MachineOutput {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _MachineOutput &&
-            (identical(other.id, id) || other.id == id));
+            const DeepCollectionEquality().equals(other.id, id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
