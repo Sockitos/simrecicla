@@ -46,6 +46,7 @@ class BinSelectionScreen extends HookWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (isSelecting.value) ...[
+                  const SizedBox(width: 60),
                   SizedBox(
                     width: 410,
                     child: Row(
@@ -126,162 +127,164 @@ class BinSelectionScreen extends HookWidget {
                   ),
                 ] else
                   Stack(
-                    clipBehavior: Clip.none,
                     children: [
-                      Ink(
-                        width: 800,
-                        height: 580,
-                        padding: const EdgeInsets.fromLTRB(100, 50, 200, 50),
-                        decoration: BoxDecoration(
-                          color: AppColors.white,
-                          borderRadius: BorderRadius.circular(34),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Colors.black12,
-                              offset: Offset(0, 3),
-                              blurRadius: 20,
-                            )
-                          ],
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: mode.value.when(
-                            packageResults: () => [
-                              Text(
-                                'Embalagem completa',
-                                style: AppTextStyles.h2,
-                              ),
-                              const SizedBox(height: 30),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    height: 54,
-                                    width: 54,
-                                    child: DecoratedBox(
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
-                                          width: 4,
-                                          color: AppColors.lightGreen,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 15),
-                                  Text(
-                                    'Impactos Ambientais',
-                                    style: AppTextStyles.h4.copyWith(
-                                      color: AppColors.lightGreen,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 15),
-                              Text(
-                                'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                                style: AppTextStyles.paragraph,
-                              ),
-                              const SizedBox(height: 30),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    height: 54,
-                                    width: 54,
-                                    child: DecoratedBox(
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
-                                          width: 4,
-                                          color: AppColors.lightGreen,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 15),
-                                  Text(
-                                    'Impactos Económicos',
-                                    style: AppTextStyles.h4.copyWith(
-                                      color: AppColors.lightGreen,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 15),
-                              Text(
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                                style: AppTextStyles.paragraph,
-                              ),
-                              const SizedBox(height: 30),
-                              Text(
-                                'Clique em cada componente para saber mais.',
-                                style: AppTextStyles.paragraph,
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 55),
+                        child: Ink(
+                          width: 805,
+                          height: 580,
+                          padding: const EdgeInsets.fromLTRB(100, 50, 200, 50),
+                          decoration: BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(34),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.black12,
+                                offset: Offset(0, 3),
+                                blurRadius: 20,
+                              )
                             ],
-                            componentResults: (componentId) => [
-                              Text(
-                                componentId,
-                                style: AppTextStyles.h2,
-                              ),
-                              const SizedBox(height: 30),
-                              Text(
-                                'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                                style: AppTextStyles.paragraph,
-                              ),
-                              const SizedBox(height: 30),
-                              Text(
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                                style: AppTextStyles.paragraph,
-                              ),
-                              const SizedBox(height: 45),
-                              Text(
-                                'Recomendações',
-                                style: AppTextStyles.h3.copyWith(
-                                  color: AppColors.lightGreen,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: mode.value.when(
+                              packageResults: () => [
+                                Text(
+                                  'Embalagem completa',
+                                  style: AppTextStyles.h2,
                                 ),
-                              ),
-                              const SizedBox(height: 30),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    height: 64,
-                                    width: 64,
-                                    child: DecoratedBox(
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
-                                          width: 4,
-                                          color: AppColors.lightGreen,
+                                const SizedBox(height: 30),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      height: 54,
+                                      width: 54,
+                                      child: DecoratedBox(
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                            width: 4,
+                                            color: AppColors.lightGreen,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  const SizedBox(width: 20),
-                                  Text(
-                                    'Lavar a embalagem',
-                                    style: AppTextStyles.paragraph,
-                                  ),
-                                  const SizedBox(width: 60),
-                                  SizedBox(
-                                    height: 64,
-                                    width: 64,
-                                    child: DecoratedBox(
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
-                                          width: 4,
-                                          color: AppColors.lightGreen,
+                                    const SizedBox(width: 15),
+                                    Text(
+                                      'Impactos Ambientais',
+                                      style: AppTextStyles.h4.copyWith(
+                                        color: AppColors.lightGreen,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 15),
+                                Text(
+                                  'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                                  style: AppTextStyles.paragraph,
+                                ),
+                                const SizedBox(height: 30),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      height: 54,
+                                      width: 54,
+                                      child: DecoratedBox(
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                            width: 4,
+                                            color: AppColors.lightGreen,
+                                          ),
                                         ),
                                       ),
                                     ),
+                                    const SizedBox(width: 15),
+                                    Text(
+                                      'Impactos Económicos',
+                                      style: AppTextStyles.h4.copyWith(
+                                        color: AppColors.lightGreen,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 15),
+                                Text(
+                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                  style: AppTextStyles.paragraph,
+                                ),
+                                const SizedBox(height: 30),
+                                Text(
+                                  'Clique em cada componente para saber mais.',
+                                  style: AppTextStyles.paragraph,
+                                ),
+                              ],
+                              componentResults: (componentId) => [
+                                Text(
+                                  componentId,
+                                  style: AppTextStyles.h2,
+                                ),
+                                const SizedBox(height: 30),
+                                Text(
+                                  'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                                  style: AppTextStyles.paragraph,
+                                ),
+                                const SizedBox(height: 30),
+                                Text(
+                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                  style: AppTextStyles.paragraph,
+                                ),
+                                const SizedBox(height: 45),
+                                Text(
+                                  'Recomendações',
+                                  style: AppTextStyles.h3.copyWith(
+                                    color: AppColors.lightGreen,
                                   ),
-                                  const SizedBox(width: 20),
-                                  Text(
-                                    'Espalmar',
-                                    style: AppTextStyles.paragraph,
-                                  ),
-                                ],
-                              ),
-                            ],
+                                ),
+                                const SizedBox(height: 30),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      height: 64,
+                                      width: 64,
+                                      child: DecoratedBox(
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                            width: 4,
+                                            color: AppColors.lightGreen,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 20),
+                                    Text(
+                                      'Lavar a embalagem',
+                                      style: AppTextStyles.paragraph,
+                                    ),
+                                    const SizedBox(width: 60),
+                                    SizedBox(
+                                      height: 64,
+                                      width: 64,
+                                      child: DecoratedBox(
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                            width: 4,
+                                            color: AppColors.lightGreen,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 20),
+                                    Text(
+                                      'Espalmar',
+                                      style: AppTextStyles.paragraph,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -295,35 +298,32 @@ class BinSelectionScreen extends HookWidget {
                           icon: const Icon(Icons.close_outlined),
                         ),
                       ),
-                      Positioned(
-                        left: -55,
-                        child: Column(
-                          children: [
+                      Column(
+                        children: [
+                          const SizedBox(height: 30),
+                          BirdIconButton(
+                            radius: 40,
+                            svgPath: package.svgPath,
+                            isSelected: mode.value is PackageResults,
+                            onPressed: () => mode.value =
+                                const BinSelectionState.packageResults(),
+                          ),
+                          for (final c in package.components) ...[
                             const SizedBox(height: 30),
                             BirdIconButton(
                               radius: 40,
-                              svgPath: package.svgPath,
-                              isSelected: mode.value is PackageResults,
+                              svgPath: c.svgPath,
+                              isSelected: mode.value is ComponentResults &&
+                                  (mode.value as ComponentResults)
+                                          .componentId ==
+                                      c.component,
                               onPressed: () => mode.value =
-                                  const BinSelectionState.packageResults(),
-                            ),
-                            for (final c in package.components) ...[
-                              const SizedBox(height: 30),
-                              BirdIconButton(
-                                radius: 40,
-                                svgPath: c.svgPath,
-                                isSelected: mode.value is ComponentResults &&
-                                    (mode.value as ComponentResults)
-                                            .componentId ==
-                                        c.component,
-                                onPressed: () => mode.value =
-                                    BinSelectionState.componentResults(
-                                  componentId: c.component,
-                                ),
+                                  BinSelectionState.componentResults(
+                                componentId: c.component,
                               ),
-                            ]
-                          ],
-                        ),
+                            ),
+                          ]
+                        ],
                       ),
                     ],
                   ),
@@ -419,7 +419,7 @@ class BinSelectionScreen extends HookWidget {
                     ],
                   ),
                 ),
-                const SizedBox(width: 100),
+                const SizedBox(width: 120),
               ],
             ),
             const SizedBox(height: 40),
@@ -427,6 +427,7 @@ class BinSelectionScreen extends HookWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
+                const SizedBox(width: 60),
                 const SizedBox(width: 410),
                 const SizedBox(width: 180),
                 SizedBox(
@@ -480,7 +481,7 @@ class BinSelectionScreen extends HookWidget {
                         )
                       : null,
                 ),
-                const SizedBox(width: 100),
+                const SizedBox(width: 120),
               ],
             )
           ],
