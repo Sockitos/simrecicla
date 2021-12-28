@@ -15,12 +15,12 @@ class CategoriesScreen extends StatelessWidget {
     return ScreenWrapper(
       body: Column(
         children: [
-          const SizedBox(height: 100),
+          const SizedBox(height: 80),
           Text(
             'Escolhe o tipo de embalagem que queres reciclar',
             style: AppTextStyles.h2.copyWith(color: AppColors.lightGreen),
           ),
-          const SizedBox(height: 100),
+          const SizedBox(height: 80),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 120),
             child: Wrap(

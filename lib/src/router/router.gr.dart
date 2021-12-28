@@ -13,7 +13,7 @@ import 'package:flutter/material.dart' as _i10;
 
 import '../models/package.dart' as _i11;
 import '../services/packager_service.dart' as _i12;
-import '../ui/screens/consumer/bin_selection_screen.dart' as _i4;
+import '../ui/screens/consumer/bin_selection/bin_selection_screen.dart' as _i4;
 import '../ui/screens/consumer/categories_screen.dart' as _i3;
 import '../ui/screens/consumer/consumer_screen.dart' as _i2;
 import '../ui/screens/landing/landing_screen.dart' as _i1;

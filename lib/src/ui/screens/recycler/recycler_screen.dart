@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
 
 class RecyclerScreen extends HookWidget {
@@ -7,7 +8,7 @@ class RecyclerScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final grid = useState<Grid>(Grid(10, 10));
+    final grid = useState<Grid>(Grid(18, 12));
     return ScreenWrapper(
       body: Center(
         child: Column(
@@ -26,9 +27,8 @@ class RecyclerScreen extends HookWidget {
                     ),
                     itemBuilder: (context, _) => DecoratedBox(
                       decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.grey,
-                        ),
+                        color: AppColors.grey3.withOpacity(0.6),
+                        border: Border.all(color: AppColors.grey1),
                       ),
                     ),
                     itemCount: grid.value.xSize * grid.value.ySize,
@@ -39,12 +39,16 @@ class RecyclerScreen extends HookWidget {
                     ),
                     itemBuilder: (context, index) => DragTarget<GridCell>(
                       onWillAccept: (newCell) {
-                        final cell =
-                            grid.value.getCell(index % 10, index ~/ 10);
+                        final cell = grid.value.getCell(
+                          index % grid.value.ySize,
+                          index ~/ grid.value.xSize,
+                        );
                         if (cell != null) return false;
                         if (newCell == null) return false;
-                        final neighborUp =
-                            grid.value.getCell(index % 10, index ~/ 10 - 1);
+                        final neighborUp = grid.value.getCell(
+                          index % grid.value.ySize,
+                          index ~/ grid.value.xSize - 1,
+                        );
                         if (neighborUp != null &&
                             !neighborUp.willAccept(
                               Direction.down,
@@ -52,8 +56,10 @@ class RecyclerScreen extends HookWidget {
                             )) {
                           return false;
                         }
-                        final neighborDown =
-                            grid.value.getCell(index % 10, index ~/ 10 + 1);
+                        final neighborDown = grid.value.getCell(
+                          index % grid.value.ySize,
+                          index ~/ grid.value.xSize + 1,
+                        );
                         if (neighborDown != null &&
                             !neighborDown.willAccept(
                               Direction.up,
@@ -61,8 +67,10 @@ class RecyclerScreen extends HookWidget {
                             )) {
                           return false;
                         }
-                        final neighborLeft =
-                            grid.value.getCell(index % 10 - 1, index ~/ 10);
+                        final neighborLeft = grid.value.getCell(
+                          index % grid.value.ySize - 1,
+                          index ~/ grid.value.xSize,
+                        );
                         if (neighborLeft != null &&
                             !neighborLeft.willAccept(
                               Direction.right,
@@ -70,8 +78,10 @@ class RecyclerScreen extends HookWidget {
                             )) {
                           return false;
                         }
-                        final neighborRight =
-                            grid.value.getCell(index % 10 + 1, index ~/ 10);
+                        final neighborRight = grid.value.getCell(
+                          index % grid.value.ySize + 1,
+                          index ~/ grid.value.xSize,
+                        );
                         if (neighborRight != null &&
                             !neighborRight.willAccept(
                               Direction.left,
@@ -84,12 +94,18 @@ class RecyclerScreen extends HookWidget {
                       },
                       onAccept: (data) {
                         final _grid = grid.value;
-                        _grid.setCell(index % 10, index ~/ 10, cell: data);
+                        _grid.setCell(
+                          index % grid.value.ySize,
+                          index ~/ grid.value.xSize,
+                          cell: data,
+                        );
                         grid.value = _grid;
                       },
                       builder: (context, machines, _) {
-                        final cell =
-                            grid.value.getCell(index % 10, index ~/ 10);
+                        final cell = grid.value.getCell(
+                          index % grid.value.ySize,
+                          index ~/ grid.value.xSize,
+                        );
                         if (cell == null) {
                           return const SizedBox();
                         } else {
@@ -97,7 +113,7 @@ class RecyclerScreen extends HookWidget {
                         }
                       },
                     ),
-                    itemCount: grid.value.xSize * grid.value.ySize,
+                    itemCount: grid.value.ySize * grid.value.xSize,
                   ),
                 ],
               ),
@@ -109,48 +125,56 @@ class RecyclerScreen extends HookWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Draggable<GridCell>(
-                      data: red,
-                      feedback: red.buildWidget(),
-                      childWhenDragging: Container(
-                        height: 50,
-                        width: 50,
-                        color: Colors.grey.withOpacity(0.5),
-                      ),
-                      child: red.buildWidget(),
+                    Column(
+                      children: [
+                        Draggable<GridCell>(
+                          data: red,
+                          feedback: red.buildWidget(),
+                          childWhenDragging: red.buildWidget(
+                            color: AppColors.grey3.withOpacity(0.6),
+                          ),
+                          child: red.buildWidget(),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 20),
-                    Draggable<GridCell>(
-                      data: blue,
-                      feedback: blue.buildWidget(),
-                      childWhenDragging: Container(
-                        height: 50,
-                        width: 50,
-                        color: Colors.grey.withOpacity(0.5),
-                      ),
-                      child: blue.buildWidget(),
+                    const SizedBox(width: 30),
+                    Column(
+                      children: [
+                        Draggable<GridCell>(
+                          data: blue,
+                          feedback: blue.buildWidget(),
+                          childWhenDragging: blue.buildWidget(
+                            color: AppColors.grey3.withOpacity(0.6),
+                          ),
+                          child: blue.buildWidget(),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 20),
-                    Draggable<GridCell>(
-                      data: green,
-                      feedback: green.buildWidget(),
-                      childWhenDragging: Container(
-                        height: 50,
-                        width: 50,
-                        color: Colors.grey.withOpacity(0.5),
-                      ),
-                      child: green.buildWidget(),
+                    const SizedBox(width: 30),
+                    Column(
+                      children: [
+                        Draggable<GridCell>(
+                          data: green,
+                          feedback: green.buildWidget(),
+                          childWhenDragging: green.buildWidget(
+                            color: AppColors.grey3.withOpacity(0.6),
+                          ),
+                          child: green.buildWidget(),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 20),
-                    Draggable<GridCell>(
-                      data: yellow,
-                      feedback: yellow.buildWidget(),
-                      childWhenDragging: Container(
-                        height: 50,
-                        width: 50,
-                        color: Colors.grey.withOpacity(0.5),
-                      ),
-                      child: yellow.buildWidget(),
+                    const SizedBox(width: 30),
+                    Column(
+                      children: [
+                        Draggable<GridCell>(
+                          data: yellow,
+                          feedback: yellow.buildWidget(),
+                          childWhenDragging: yellow.buildWidget(
+                            color: AppColors.grey3.withOpacity(0.6),
+                          ),
+                          child: yellow.buildWidget(),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -344,7 +368,7 @@ class GridCell {
     }
   }
 
-  Widget buildOutput(Direction direction) {
+  Widget buildOutput(Direction direction, {Color? color}) {
     return Positioned(
       top: (direction == Direction.left || direction == Direction.right)
           ? 0
@@ -370,14 +394,14 @@ class GridCell {
         width: 12,
         height: 12,
         decoration: BoxDecoration(
-          color: color,
+          color: color ?? this.color,
           shape: BoxShape.circle,
         ),
       ),
     );
   }
 
-  Widget buildWidget() {
+  Widget buildWidget({Color? color}) {
     return ClipPath(
       clipper: PuzzleClipper(
         up: portUp?.type == PortType.input,
@@ -388,15 +412,30 @@ class GridCell {
       child: Container(
         height: 50,
         width: 50,
-        color: color,
+        color: color ?? this.color,
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            if (portUp?.type == PortType.output) buildOutput(Direction.up),
-            if (portDown?.type == PortType.output) buildOutput(Direction.down),
-            if (portLeft?.type == PortType.output) buildOutput(Direction.left),
+            if (portUp?.type == PortType.output)
+              buildOutput(
+                Direction.up,
+                color: color,
+              ),
+            if (portDown?.type == PortType.output)
+              buildOutput(
+                Direction.down,
+                color: color,
+              ),
+            if (portLeft?.type == PortType.output)
+              buildOutput(
+                Direction.left,
+                color: color,
+              ),
             if (portRight?.type == PortType.output)
-              buildOutput(Direction.right),
+              buildOutput(
+                Direction.right,
+                color: color,
+              ),
           ],
         ),
       ),
@@ -416,9 +455,10 @@ class PuzzleClipper extends CustomClipper<Path> {
   final bool down;
   final bool left;
   final bool right;
+
   @override
   Path getClip(Size size) {
-    final inputsPath = Path();
+    final inputsPath = Path()..fillType = PathFillType.evenOdd;
     if (up) {
       inputsPath.addOval(
         Rect.fromCircle(
@@ -455,12 +495,8 @@ class PuzzleClipper extends CustomClipper<Path> {
       );
     }
 
-    return Path.combine(
-      PathOperation.difference,
-      Path()
-        ..addRect(Rect.fromLTWH(-11, -11, size.width + 22, size.height + 22)),
-      inputsPath..close(),
-    );
+    return inputsPath
+      ..addRect(Rect.fromLTWH(-11, -11, size.width + 22, size.height + 22));
   }
 
   @override

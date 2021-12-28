@@ -81,7 +81,7 @@ class ResultsScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 60,
-                        vertical: 40,
+                        vertical: 30,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +99,7 @@ class ResultsScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 60,
-                      vertical: 40,
+                      vertical: 30,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,7 +109,7 @@ class ResultsScreen extends StatelessWidget {
                           style: AppTextStyles.h2
                               .copyWith(color: AppColors.lightGreen),
                         ),
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 30),
                         const Recommendation(),
                         const SizedBox(height: 40),
                         const Recommendation(),

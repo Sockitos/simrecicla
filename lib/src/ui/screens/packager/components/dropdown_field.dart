@@ -46,6 +46,7 @@ class DropdownField<T> extends StatelessWidget {
                     : const Icon(Icons.chevron_right_rounded),
                 iconSize: 48,
                 iconEnabledColor: AppColors.lightGreen,
+                iconDisabledColor: AppColors.grey5,
                 borderRadius: BorderRadius.circular(34),
                 isExpanded: true,
                 elevation: 0,

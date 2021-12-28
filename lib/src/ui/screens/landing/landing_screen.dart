@@ -21,8 +21,8 @@ class LandingScreen extends StatelessWidget {
             right: 0,
             top: -200,
             child: Container(
-              height: 1110,
-              width: 1110,
+              height: 1100,
+              width: 1100,
               decoration: BoxDecoration(
                 color: AppColors.grey3.withOpacity(0.4),
                 shape: BoxShape.circle,
@@ -62,7 +62,7 @@ class LandingScreen extends StatelessWidget {
                       style: AppTextStyles.paragraph,
                     ),
                   ),
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 60),
                   AdaptiveBuilder(
                     xs: (context) => Center(
                       child: Column(

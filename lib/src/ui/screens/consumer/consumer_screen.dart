@@ -23,7 +23,7 @@ class ConsumerScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 60),
                 child: Column(
                   children: [
-                    const SizedBox(height: 80),
+                    const SizedBox(height: 60),
                     Text(
                       'Quero saber como reciclar uma embalagem',
                       style: AppTextStyles.h1,

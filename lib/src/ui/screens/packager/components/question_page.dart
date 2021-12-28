@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simtech/src/models/answer.dart';
 import 'package:simtech/src/models/enums.dart';
 import 'package:simtech/src/models/question.dart';
+import 'package:simtech/src/services/packager_service.dart';
 import 'package:simtech/src/ui/screens/packager/components/dropdown_field.dart';
 
 typedef QuestionAnswered = void Function(Question question, Answer anser);
@@ -20,18 +21,12 @@ class QuestionPage extends StatelessWidget {
   final Map<int, Answer> answers;
   final QuestionAnswered onQuestionAnswered;
 
-  bool _validate(Question question) {
-    final requirement = question.requirement;
-    if (requirement == null) return true;
-
-    final answer = answers[requirement.question];
-    if (answer == null) return false;
-
-    return requirement.answers.contains(answer.id);
-  }
-
   ValueChanged<Answer?>? _setAnswer(Question question) {
-    return material != null && _validate(question)
+    return material != null &&
+            PackagerService.validateQuestion(
+              answers: answers,
+              question: question,
+            )
         ? (answer) => onQuestionAnswered(question, answer!)
         : null;
   }

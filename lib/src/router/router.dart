@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:simtech/src/ui/screens/consumer/bin_selection_screen.dart';
+import 'package:simtech/src/ui/screens/consumer/bin_selection/bin_selection_screen.dart';
 import 'package:simtech/src/ui/screens/consumer/categories_screen.dart';
 import 'package:simtech/src/ui/screens/consumer/consumer_screen.dart';
 import 'package:simtech/src/ui/screens/landing/landing_screen.dart';

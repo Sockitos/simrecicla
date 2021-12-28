@@ -8,7 +8,7 @@ part of 'package.dart';
 
 _$_Package _$$_PackageFromJson(Map<String, dynamic> json) => _$_Package(
       package: json['package'] as String,
-      svgPath: json['svgPath'] as String? ?? 'assets/svgs/milk.svg',
+      svgPath: json['svgPath'] as String? ?? 'assets/svgs/test_package.svg',
       components: (json['components'] as List<dynamic>)
           .map((e) => Component.fromJson(e as Map<String, dynamic>))
           .toList(),

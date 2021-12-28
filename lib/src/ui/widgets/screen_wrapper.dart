@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/router/router.gr.dart';
 import 'package:simtech/src/ui/widgets/footer/footer.dart';
@@ -21,6 +20,7 @@ class ScreenWrapper extends StatelessWidget {
       body: ListView(
         children: [
           AppBar(
+            toolbarHeight: 60,
             leading: const BackButton(),
             title: Text(
               'SimTech',
@@ -81,7 +81,7 @@ class ScreenWrapper extends StatelessWidget {
               minHeight: MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
                   MediaQuery.of(context).padding.bottom -
-                  70,
+                  60,
             ),
             child: Padding(
               padding: padding,

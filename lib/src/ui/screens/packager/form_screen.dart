@@ -69,7 +69,7 @@ class FormScreen extends HookWidget {
     useEffect(
       () {
         void listener() {
-          if ((controller.page ?? 0.0) >= 1.5) {
+          if ((controller.page ?? 0.0) >= 2.5) {
             if (!isLastPage.value) {
               isLastPage.value = true;
             }
@@ -88,6 +88,11 @@ class FormScreen extends HookWidget {
       [controller],
     );
 
+    final isSubmittable = PackagerService.validateAnswers(
+      answers: answers.value,
+      material: material.value,
+    );
+
     return ScreenWrapper(
       padding: EdgeInsets.zero,
       body: IntrinsicHeight(
@@ -99,7 +104,7 @@ class FormScreen extends HookWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 100),
+                  const SizedBox(height: 60),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 60),
                     child: Text(
@@ -109,7 +114,7 @@ class FormScreen extends HookWidget {
                           .copyWith(color: AppColors.lightGreen),
                     ),
                   ),
-                  const SizedBox(height: 70),
+                  const SizedBox(height: 50),
                   SizedBox(
                     height: 502,
                     child: PageView(
@@ -215,7 +220,7 @@ class FormScreen extends HookWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 70),
+                  const SizedBox(height: 50),
                   Center(
                     child: ElevatedButtonTheme(
                       data: ElevatedButtonThemeData(
@@ -230,6 +235,7 @@ class FormScreen extends HookWidget {
                           primary: isLastPage.value
                               ? AppColors.blue
                               : AppColors.lightGreen,
+                          onSurface: AppColors.grey5,
                           elevation: 0,
                           shape: const StadiumBorder(),
                           minimumSize: const Size(0, 62),
@@ -240,12 +246,23 @@ class FormScreen extends HookWidget {
                           textStyle: AppTextStyles.button,
                         ),
                         onPressed: isLastPage.value
-                            ? () => AutoRouter.of(context).push(
-                                  ResultsScreenRoute(rating: rating),
-                                )
+                            ? isSubmittable
+                                ? () => AutoRouter.of(context).push(
+                                      ResultsScreenRoute(rating: rating),
+                                    )
+                                : null
                             : () => controller.nextPage(
                                   duration: const Duration(milliseconds: 300),
                                   curve: Curves.linear,
+                                ),
+                        onLongPress: isLastPage.value
+                            ? isSubmittable
+                                ? () => AutoRouter.of(context).push(
+                                      ResultsScreenRoute(rating: rating),
+                                    )
+                                : null
+                            : () => AutoRouter.of(context).push(
+                                  ResultsScreenRoute(rating: rating),
                                 ),
                         child: Text(
                           isLastPage.value

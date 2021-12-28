@@ -29,33 +29,44 @@ class BinTarget extends StatelessWidget {
         children: [
           Stack(
             children: [
-              SvgPicture.asset(svgPath),
+              SvgPicture.asset(
+                svgPath,
+                height: 150,
+              ),
               if (numComponents >= 1)
                 Positioned(
-                  top: 100,
-                  left: 30,
+                  bottom: label != 'Contentor Indiferenciado' ? 15 : 30,
+                  right: 50,
+                  left: 0,
                   child: SvgPicture.asset(
                     components![0].svgPath,
-                    height: 40,
+                    height: components![0].svgPath == 'assets/svgs/lid.svg'
+                        ? 15
+                        : 40,
                   ),
                 ),
               if (numComponents >= 2)
                 Positioned(
-                  top: 100,
-                  right: 30,
+                  bottom: label != 'Contentor Indiferenciado' ? 15 : 30,
+                  right: 0,
+                  left: 50,
                   child: SvgPicture.asset(
                     components![1].svgPath,
-                    height: 40,
+                    height: components![1].svgPath == 'assets/svgs/lid.svg'
+                        ? 15
+                        : 40,
                   ),
                 ),
               if (numComponents >= 3)
                 Positioned(
-                  top: 60,
+                  bottom: label != 'Contentor Indiferenciado' ? 55 : 70,
                   right: 0,
                   left: 0,
                   child: SvgPicture.asset(
                     components![2].svgPath,
-                    height: 40,
+                    height: components![2].svgPath == 'assets/svgs/lid.svg'
+                        ? 15
+                        : 40,
                   ),
                 ),
             ],

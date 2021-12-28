@@ -3,13 +3,51 @@
 import 'dart:developer';
 
 import 'package:simtech/src/models/category.dart';
+import 'package:simtech/src/models/component.dart';
 import 'package:simtech/src/models/enums.dart';
 import 'package:simtech/src/models/line.dart';
 import 'package:simtech/src/models/matrix.dart';
+import 'package:simtech/src/models/package.dart';
 
 class ConsumerService {
   static List<Category> getCategories() {
     return categories.map((d) => Category.fromJson(d)).toList();
+  }
+
+  static Package getTestPackage() {
+    return const Package(
+      package: "Garrafa de iogurte líquido",
+      svgPath: "assets/svgs/test_package.svg",
+      components: [
+        Component(
+          component: "Corpo da garrafa",
+          svgPath: "assets/svgs/body.svg",
+          pead: 0.027,
+          where: Where.recolhaPlasticoMetal,
+          ifTrue: '',
+          ifFalse: '',
+          recomendacoes: '',
+        ),
+        Component(
+          component: "Tampa",
+          svgPath: "assets/svgs/lid.svg",
+          pead: 0.003,
+          where: Where.recolhaPlasticoMetal,
+          ifTrue: '',
+          ifFalse: '',
+          recomendacoes: '',
+        ),
+        Component(
+          component: "Manga de plástico",
+          svgPath: "assets/svgs/label.svg",
+          plasticosMistos: 0.001,
+          where: Where.recolhaPlasticoMetal,
+          ifTrue: '',
+          ifFalse: '',
+          recomendacoes: '',
+        ),
+      ],
+    );
   }
 
   static final coeficientesTriagemPC = MatrixCoeficiente(

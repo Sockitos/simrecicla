@@ -63,6 +63,37 @@ class PackagerService {
         return answer.cartao ?? 0;
     }
   }
+
+  static bool validateQuestion({
+    required Map<int, Answer> answers,
+    required Question question,
+  }) {
+    final requirement = question.requirement;
+    if (requirement == null) return true;
+
+    final answer = answers[requirement.question];
+    if (answer == null) return false;
+
+    return requirement.answers.contains(answer.id);
+  }
+
+  static bool validateAnswers({
+    required Map<int, Answer> answers,
+    required PMaterial? material,
+  }) {
+    if (material == null) return false;
+    final questions = getQuestions();
+
+    final requiredQuestions = questions
+        .where((q) => validateQuestion(answers: answers, question: q))
+        .toList();
+
+    for (final q in requiredQuestions) {
+      if (!answers.containsKey(q.id)) return false;
+    }
+
+    return true;
+  }
 }
 
 const questions = [
@@ -2918,7 +2949,7 @@ const questions = [
   {
     'id': 16,
     'question':
-        'O produto acondicionado é perigoso ou passível de contaminar a embalagem? (ex. vernizes, tintas, silicones, fitossanitários, gorduras, outros)?',
+        'O produto acondicionado é perigoso ou passível de contaminar a embalagem?',
     'requirement': null,
     'answers': [
       {

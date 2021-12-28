@@ -23,7 +23,8 @@ class _$PackageTearOff {
 
   _Package call(
       {required String package,
-      @JsonKey(defaultValue: 'assets/svgs/milk.svg') required String svgPath,
+      @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
+          required String svgPath,
       required List<Component> components}) {
     return _Package(
       package: package,
@@ -43,7 +44,7 @@ const $Package = _$PackageTearOff();
 /// @nodoc
 mixin _$Package {
   String get package => throw _privateConstructorUsedError;
-  @JsonKey(defaultValue: 'assets/svgs/milk.svg')
+  @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
   String get svgPath => throw _privateConstructorUsedError;
   List<Component> get components => throw _privateConstructorUsedError;
 
@@ -58,7 +59,7 @@ abstract class $PackageCopyWith<$Res> {
       _$PackageCopyWithImpl<$Res>;
   $Res call(
       {String package,
-      @JsonKey(defaultValue: 'assets/svgs/milk.svg') String svgPath,
+      @JsonKey(defaultValue: 'assets/svgs/test_package.svg') String svgPath,
       List<Component> components});
 }
 
@@ -100,7 +101,7 @@ abstract class _$PackageCopyWith<$Res> implements $PackageCopyWith<$Res> {
   @override
   $Res call(
       {String package,
-      @JsonKey(defaultValue: 'assets/svgs/milk.svg') String svgPath,
+      @JsonKey(defaultValue: 'assets/svgs/test_package.svg') String svgPath,
       List<Component> components});
 }
 
@@ -141,7 +142,8 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
 class _$_Package extends _Package {
   const _$_Package(
       {required this.package,
-      @JsonKey(defaultValue: 'assets/svgs/milk.svg') required this.svgPath,
+      @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
+          required this.svgPath,
       required this.components})
       : super._();
 
@@ -151,7 +153,7 @@ class _$_Package extends _Package {
   @override
   final String package;
   @override
-  @JsonKey(defaultValue: 'assets/svgs/milk.svg')
+  @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
   final String svgPath;
   @override
   final List<Component> components;
@@ -193,7 +195,8 @@ class _$_Package extends _Package {
 abstract class _Package extends Package {
   const factory _Package(
       {required String package,
-      @JsonKey(defaultValue: 'assets/svgs/milk.svg') required String svgPath,
+      @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
+          required String svgPath,
       required List<Component> components}) = _$_Package;
   const _Package._() : super._();
 
@@ -202,7 +205,7 @@ abstract class _Package extends Package {
   @override
   String get package;
   @override
-  @JsonKey(defaultValue: 'assets/svgs/milk.svg')
+  @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
   String get svgPath;
   @override
   List<Component> get components;
