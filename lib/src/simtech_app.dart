@@ -3,11 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/router/router.gr.dart';
 import 'package:simtech/src/theme/theme.dart';
+import 'package:universal_html/html.dart';
 
-class SimtechApp extends StatelessWidget {
-  SimtechApp({Key? key}) : super(key: key);
+class SimtechApp extends StatefulWidget {
+  const SimtechApp({Key? key}) : super(key: key);
 
+  @override
+  State<SimtechApp> createState() => _SimtechAppState();
+}
+
+class _SimtechAppState extends State<SimtechApp> {
   final _appRouter = AppRouter();
+
+  @override
+  void initState() {
+    final loader = document.getElementById('loading');
+    loader?.remove();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
