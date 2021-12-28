@@ -33,7 +33,7 @@
 </head>
 
 <body>
-  <div class="center">
+  <div id="loading" class="center">
     <div class="loader">Loading...</div>
   </div>
   <!-- This script installs service_worker.js to provide PWA functionality to
@@ -56,6 +56,9 @@
     if ('serviceWorker' in navigator) {
       // Service workers are supported. Use them.
       window.addEventListener('load', function () {
+        var element = document.getElementById("loading");
+        element.parentNode.removeChild(element);
+
         // Wait for registration to finish before dropping the <script> tag.
         // Otherwise, the browser will load the script multiple times,
         // potentially different versions.
