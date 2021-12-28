@@ -17,8 +17,10 @@ class _SimtechAppState extends State<SimtechApp> {
 
   @override
   void initState() {
-    final loader = document.getElementById('loading');
-    loader?.remove();
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      final loader = document.getElementById('loading');
+      loader?.remove();
+    });
     super.initState();
   }
 
