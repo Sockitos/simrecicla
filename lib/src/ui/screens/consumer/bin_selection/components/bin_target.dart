@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/component.dart';
+import 'package:simtech/src/ui/screens/consumer/bin_selection/components/draggable_components.dart';
 
 class BinTarget extends StatelessWidget {
   const BinTarget({
@@ -38,11 +39,9 @@ class BinTarget extends StatelessWidget {
                   bottom: label != 'Contentor Indiferenciado' ? 15 : 30,
                   right: 50,
                   left: 0,
-                  child: SvgPicture.asset(
-                    components![0].svgPath,
-                    height: components![0].svgPath == 'assets/svgs/lid.svg'
-                        ? 15
-                        : 40,
+                  child: DraggableComponent(
+                    component: components![0],
+                    isInBin: true,
                   ),
                 ),
               if (numComponents >= 2)
@@ -50,11 +49,9 @@ class BinTarget extends StatelessWidget {
                   bottom: label != 'Contentor Indiferenciado' ? 15 : 30,
                   right: 0,
                   left: 50,
-                  child: SvgPicture.asset(
-                    components![1].svgPath,
-                    height: components![1].svgPath == 'assets/svgs/lid.svg'
-                        ? 15
-                        : 40,
+                  child: DraggableComponent(
+                    component: components![1],
+                    isInBin: true,
                   ),
                 ),
               if (numComponents >= 3)
@@ -62,11 +59,9 @@ class BinTarget extends StatelessWidget {
                   bottom: label != 'Contentor Indiferenciado' ? 55 : 70,
                   right: 0,
                   left: 0,
-                  child: SvgPicture.asset(
-                    components![2].svgPath,
-                    height: components![2].svgPath == 'assets/svgs/lid.svg'
-                        ? 15
-                        : 40,
+                  child: DraggableComponent(
+                    component: components![2],
+                    isInBin: true,
                   ),
                 ),
             ],

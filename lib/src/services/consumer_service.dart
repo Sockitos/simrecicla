@@ -3,51 +3,13 @@
 import 'dart:developer';
 
 import 'package:simtech/src/models/category.dart';
-import 'package:simtech/src/models/component.dart';
 import 'package:simtech/src/models/enums.dart';
 import 'package:simtech/src/models/line.dart';
 import 'package:simtech/src/models/matrix.dart';
-import 'package:simtech/src/models/package.dart';
 
 class ConsumerService {
   static List<Category> getCategories() {
     return categories.map((d) => Category.fromJson(d)).toList();
-  }
-
-  static Package getTestPackage() {
-    return const Package(
-      package: "Garrafa de iogurte líquido",
-      svgPath: "assets/svgs/test_package.svg",
-      components: [
-        Component(
-          component: "Corpo da garrafa",
-          svgPath: "assets/svgs/body.svg",
-          pead: 0.027,
-          where: Where.recolhaPlasticoMetal,
-          ifTrue: '',
-          ifFalse: '',
-          recomendacoes: '',
-        ),
-        Component(
-          component: "Tampa",
-          svgPath: "assets/svgs/lid.svg",
-          pead: 0.003,
-          where: Where.recolhaPlasticoMetal,
-          ifTrue: '',
-          ifFalse: '',
-          recomendacoes: '',
-        ),
-        Component(
-          component: "Manga de plástico",
-          svgPath: "assets/svgs/label.svg",
-          plasticosMistos: 0.001,
-          where: Where.recolhaPlasticoMetal,
-          ifTrue: '',
-          ifFalse: '',
-          recomendacoes: '',
-        ),
-      ],
-    );
   }
 
   static final coeficientesTriagemPC = MatrixCoeficiente(
@@ -177,6 +139,7 @@ const categories = [
     "packages": [
       {
         "package": "Garrafa de iogurte líquido (grande)",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Corpo da garrafa",
@@ -251,9 +214,11 @@ const categories = [
       },
       {
         "package": "Garrafão de água",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Corpo do garrafão",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -276,6 +241,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -298,6 +264,7 @@ const categories = [
           },
           {
             "component": "Rótulo",
+            "svgPath": "assets/svgs/label.svg",
             "papel": 0.001,
             "cartao": null,
             "ecal": null,
@@ -322,9 +289,11 @@ const categories = [
       },
       {
         "package": "Garrafa de água (1,5L)",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Corpo da garrafa",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -347,6 +316,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -369,6 +339,7 @@ const categories = [
           },
           {
             "component": "Rótulo",
+            "svgPath": "assets/svgs/label.svg",
             "papel": 0.001,
             "cartao": null,
             "ecal": null,
@@ -393,9 +364,11 @@ const categories = [
       },
       {
         "package": "Garrafa de óleo",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Corpo da garrafa",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -418,6 +391,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -440,6 +414,7 @@ const categories = [
           },
           {
             "component": "Rótulo",
+            "svgPath": "assets/svgs/label.svg",
             "papel": 0.001,
             "cartao": null,
             "ecal": null,
@@ -464,9 +439,11 @@ const categories = [
       },
       {
         "package": "Garrafa de azeite",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Corpo da garrafa",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -489,6 +466,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -519,9 +497,11 @@ const categories = [
     "packages": [
       {
         "package": "Boião de doce ou de conservas (vidro)",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Boião",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -544,6 +524,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -568,9 +549,11 @@ const categories = [
       },
       {
         "package": "Boião de doce ou de conservas (plástico)",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Boião",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -593,6 +576,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -615,6 +599,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -639,9 +624,11 @@ const categories = [
       },
       {
         "package": "Boião de creme hidratante",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Boião",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -664,6 +651,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -694,9 +682,11 @@ const categories = [
     "packages": [
       {
         "package": "Copos de iogurte sólido",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Copo",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -719,6 +709,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -743,9 +734,11 @@ const categories = [
       },
       {
         "package": "Balde de iogurte sólido",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Balde",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -768,6 +761,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -792,9 +786,11 @@ const categories = [
       },
       {
         "package": "Copo de gelado",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Copo",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": 0.007,
             "ecal": null,
@@ -817,6 +813,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": 0.004,
             "ecal": null,
@@ -839,6 +836,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -869,9 +867,11 @@ const categories = [
     "packages": [
       {
         "package": "Pacote de leite sem tampa",
+        "svgPath": "assets/svgs/milk.svg",
         "components": [
           {
             "component": "Pacote para bebidas",
+            "svgPath": "assets/svgs/milk.svg",
             "papel": null,
             "cartao": null,
             "ecal": 0.027,
@@ -896,9 +896,11 @@ const categories = [
       },
       {
         "package": "Pacote de leite com tampa",
+        "svgPath": "assets/svgs/milk.svg",
         "components": [
           {
             "component": "Pacote para bebidas",
+            "svgPath": "assets/svgs/milk.svg",
             "papel": null,
             "cartao": null,
             "ecal": 0.035,
@@ -921,6 +923,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -945,9 +948,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível para sumo",
+        "svgPath": "assets/svgs/milk.svg",
         "components": [
           {
             "component": "Pacote para bebidas",
+            "svgPath": "assets/svgs/milk.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -970,6 +975,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1000,9 +1006,11 @@ const categories = [
     "packages": [
       {
         "package": "Caixa de sobremesa refrigerada",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1025,6 +1033,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1049,9 +1058,11 @@ const categories = [
       },
       {
         "package": "Caixa de ovos (cartão)",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": 0.03,
             "ecal": null,
@@ -1076,9 +1087,11 @@ const categories = [
       },
       {
         "package": "Caixa de ovos (plástico)",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1103,9 +1116,11 @@ const categories = [
       },
       {
         "package": "Caixa de manteiga e semelhantes",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1128,6 +1143,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1150,6 +1166,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1174,9 +1191,11 @@ const categories = [
       },
       {
         "package": "Caixa de bolo fresco",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": 0.133,
             "ecal": null,
@@ -1200,9 +1219,11 @@ const categories = [
       },
       {
         "package": "Caixa de detergente em pó",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": 0.231,
             "ecal": null,
@@ -1227,9 +1248,11 @@ const categories = [
       },
       {
         "package": "Caixa de sapatos",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": 0.225,
             "ecal": null,
@@ -1254,9 +1277,11 @@ const categories = [
       },
       {
         "package": "Caixa de folha de alumínio ou de película",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": 0.028,
             "ecal": null,
@@ -1279,6 +1304,7 @@ const categories = [
           },
           {
             "component": "Rolo",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": 0.032,
             "ecal": null,
@@ -1309,9 +1335,11 @@ const categories = [
     "packages": [
       {
         "package": "Cuvete de legumes frescos",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Cuvete",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1334,6 +1362,7 @@ const categories = [
           },
           {
             "component": "Filme de selagem",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1358,9 +1387,11 @@ const categories = [
       },
       {
         "package": "Cuvete de carne ou peixe frescos",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Cuvete",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1383,6 +1414,7 @@ const categories = [
           },
           {
             "component": "Filme de selagem",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1407,9 +1439,11 @@ const categories = [
       },
       {
         "package": "Tabuleiro metálico de pronto-a-comer",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Tabuleiro",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1432,6 +1466,7 @@ const categories = [
           },
           {
             "component": "Filme de selagem",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1456,9 +1491,11 @@ const categories = [
       },
       {
         "package": "Tubo de creme hidratante",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Tubo",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1481,6 +1518,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1511,9 +1549,11 @@ const categories = [
     "packages": [
       {
         "package": "Frasco de molho de tempero",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Frasco",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1536,6 +1576,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1560,9 +1601,11 @@ const categories = [
       },
       {
         "package": "Frasco de desodorizante roll-on",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Frasco",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1585,6 +1628,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1609,9 +1653,11 @@ const categories = [
       },
       {
         "package": "Frasco de café ou outras misturas solúveis",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Frasco",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1634,6 +1680,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1656,6 +1703,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1680,9 +1728,11 @@ const categories = [
       },
       {
         "package": "Frasco de champô ou amaciador",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Frasco",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1705,6 +1755,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1729,9 +1780,11 @@ const categories = [
       },
       {
         "package": "Frasco de produto de limpeza com dispensador",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Frasco",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1754,6 +1807,7 @@ const categories = [
           },
           {
             "component": "Tampa com dispensador",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1778,9 +1832,11 @@ const categories = [
       },
       {
         "package": "Frasco de sal",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Frasco",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1803,6 +1859,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1827,9 +1884,11 @@ const categories = [
       },
       {
         "package": "Frasco de perfume",
+        "svgPath": "assets/svgs/test_package.svg",
         "components": [
           {
             "component": "Frasco",
+            "svgPath": "assets/svgs/body.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1852,6 +1911,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1882,9 +1942,11 @@ const categories = [
     "packages": [
       {
         "package": "Lata de peixe em conserva",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Lata",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1907,6 +1969,7 @@ const categories = [
           },
           {
             "component": "Tampa metálica removível (com anilha)",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1931,9 +1994,11 @@ const categories = [
       },
       {
         "package": "Lata de refrigerante",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Lata",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1956,6 +2021,7 @@ const categories = [
           },
           {
             "component": "Anilha",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1980,9 +2046,11 @@ const categories = [
       },
       {
         "package": "Lata de espuma de barbear",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Lata",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2005,6 +2073,7 @@ const categories = [
           },
           {
             "component": "Tampa",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2029,9 +2098,11 @@ const categories = [
       },
       {
         "package": "Lata de ração para animal",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Lata",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2054,6 +2125,7 @@ const categories = [
           },
           {
             "component": "Tampa metálica removível (com anilha)",
+            "svgPath": "assets/svgs/lid.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2084,9 +2156,11 @@ const categories = [
     "packages": [
       {
         "package": "Pacote flexível de açúcar e semelhantes (papel)",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Pacote flexível",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": 0.008,
             "cartao": null,
             "ecal": null,
@@ -2111,9 +2185,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de açúcar e semelhantes (plástico)",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Pacote flexível",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2138,9 +2214,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de manteiga e semelhantes",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Pacote flexível",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2165,9 +2243,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de pão",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Pacote flexível",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2192,9 +2272,11 @@ const categories = [
       },
       {
         "package": "Saco para padaria e pastelaria (com janela de plástico)",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Saco para padaria e pastelaria",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": 0.007,
             "cartao": null,
             "ecal": null,
@@ -2217,6 +2299,7 @@ const categories = [
           },
           {
             "component": "Janela de plástico",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2241,9 +2324,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de esparguete e massas secas",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Pacote flexível",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2268,9 +2353,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de papel higiénico (plástico)",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Pacote flexível",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2295,9 +2382,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de papel higiénico (papel)",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Pacote flexível",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": 0.01,
             "cartao": null,
             "ecal": null,
@@ -2322,9 +2411,11 @@ const categories = [
       },
       {
         "package": "Saco de asas para as compras (plástico)",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Saco de asas para as compras",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2349,9 +2440,11 @@ const categories = [
       },
       {
         "package": "Saco de asas para as compras (papel)",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Saco de asas para as compras",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": 0.059,
             "cartao": null,
             "ecal": null,
@@ -2382,9 +2475,11 @@ const categories = [
     "packages": [
       {
         "package": "Caixa de pasta de dentes",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": 0.01,
             "ecal": null,
@@ -2407,6 +2502,7 @@ const categories = [
           },
           {
             "component": "Tubo da pasta de dentes",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2431,9 +2527,11 @@ const categories = [
       },
       {
         "package": "Caixa de peixe congelado",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": 0.041,
             "ecal": null,
@@ -2456,6 +2554,7 @@ const categories = [
           },
           {
             "component": "Invólucros de plástico",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2480,9 +2579,11 @@ const categories = [
       },
       {
         "package": "Caixa de cereais",
+        "svgPath": "assets/svgs/box.svg",
         "components": [
           {
             "component": "Caixa",
+            "svgPath": "assets/svgs/box.svg",
             "papel": null,
             "cartao": 0.065,
             "ecal": null,
@@ -2505,6 +2606,7 @@ const categories = [
           },
           {
             "component": "Bolsa de plástico",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2529,9 +2631,11 @@ const categories = [
       },
       {
         "package": "Cuvete de pronto-a-comer",
+        "svgPath": "assets/svgs/circle.svg",
         "components": [
           {
             "component": "Cuvete",
+            "svgPath": "assets/svgs/circle.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2554,6 +2658,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2576,6 +2681,7 @@ const categories = [
           },
           {
             "component": "Rótulo",
+            "svgPath": "assets/svgs/label.svg",
             "papel": null,
             "cartao": 0.007,
             "ecal": null,

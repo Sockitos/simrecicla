@@ -6,10 +6,9 @@ import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/component.dart';
 import 'package:simtech/src/models/enums.dart';
 import 'package:simtech/src/models/package.dart';
-import 'package:simtech/src/services/consumer_service.dart';
 import 'package:simtech/src/ui/screens/consumer/bin_selection/components/bin_target.dart';
 import 'package:simtech/src/ui/screens/consumer/bin_selection/components/bird_icon_button.dart';
-import 'package:simtech/src/ui/screens/consumer/bin_selection/components/draggable_component.dart';
+import 'package:simtech/src/ui/screens/consumer/bin_selection/components/draggable_components.dart';
 import 'package:simtech/src/ui/screens/consumer/bin_selection/state/bin_selection_state.dart';
 import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
 
@@ -23,8 +22,7 @@ class BinSelectionScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final package = ConsumerService.getTestPackage();
-    final wherePackages = useState<Map<Where, List<Component>>>({});
+    final whereComponents = useState<Map<Component, Where>>({});
     final isSelecting = useState<bool>(true);
     final mode =
         useState<BinSelectionState>(const BinSelectionState.packageResults());
@@ -49,48 +47,11 @@ class BinSelectionScreen extends HookWidget {
                   const SizedBox(width: 60),
                   SizedBox(
                     width: 410,
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            DraggableComponent(
-                              component: package.components[0],
-                              hideComponent: wherePackages.value.values
-                                  .fold<List<Component>>(
-                                [],
-                                (previousValue, element) =>
-                                    [...previousValue, ...element],
-                              ).contains(
-                                package.components[0],
-                              ),
-                            ),
-                            const SizedBox(height: 80),
-                            DraggableComponent(
-                              component: package.components[1],
-                              hideComponent: wherePackages.value.values
-                                  .fold<List<Component>>(
-                                [],
-                                (previousValue, element) =>
-                                    [...previousValue, ...element],
-                              ).contains(
-                                package.components[1],
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(width: 10),
-                        DraggableComponent(
-                          component: package.components[2],
-                          hideComponent:
-                              wherePackages.value.values.fold<List<Component>>(
-                            [],
-                            (previousValue, element) =>
-                                [...previousValue, ...element],
-                          ).contains(
-                            package.components[2],
-                          ),
-                        ),
-                      ],
+                    child: DraggableComponents(
+                      package: package,
+                      hiddenComponents: whereComponents.value.keys
+                          .where((k) => whereComponents.value[k] != null)
+                          .toList(),
                     ),
                   ),
                   const SizedBox(width: 180),
@@ -309,10 +270,11 @@ class BinSelectionScreen extends HookWidget {
                                 const BinSelectionState.packageResults(),
                           ),
                           for (final c in package.components) ...[
-                            const SizedBox(height: 30),
+                            const SizedBox(height: 20),
                             BirdIconButton(
                               radius: 40,
                               svgPath: c.svgPath,
+                              isCorrect: whereComponents.value[c] == c.where,
                               isSelected: mode.value is ComponentResults &&
                                   (mode.value as ComponentResults)
                                           .componentId ==
@@ -351,14 +313,19 @@ class BinSelectionScreen extends HookWidget {
                         child: BinTarget(
                           label: 'Ecoponto Amarelo',
                           svgPath: 'assets/svgs/eco_yellow.svg',
-                          components:
-                              wherePackages.value[Where.recolhaPlasticoMetal],
+                          components: whereComponents.value.keys
+                              .where(
+                                (k) =>
+                                    whereComponents.value[k] ==
+                                    Where.recolhaPlasticoMetal,
+                              )
+                              .toList(),
                           onAccept: (data) {
-                            wherePackages.value = {...wherePackages.value}
+                            whereComponents.value = {...whereComponents.value}
                               ..update(
-                                Where.recolhaPlasticoMetal,
-                                (value) => [...value, data],
-                                ifAbsent: () => [data],
+                                data,
+                                (value) => Where.recolhaPlasticoMetal,
+                                ifAbsent: () => Where.recolhaPlasticoMetal,
                               );
                           },
                         ),
@@ -368,14 +335,19 @@ class BinSelectionScreen extends HookWidget {
                         child: BinTarget(
                           label: 'Ecoponto Azul',
                           svgPath: 'assets/svgs/eco_blue.svg',
-                          components:
-                              wherePackages.value[Where.recolhaPapelCartao],
+                          components: whereComponents.value.keys
+                              .where(
+                                (k) =>
+                                    whereComponents.value[k] ==
+                                    Where.recolhaPapelCartao,
+                              )
+                              .toList(),
                           onAccept: (data) {
-                            wherePackages.value = {...wherePackages.value}
+                            whereComponents.value = {...whereComponents.value}
                               ..update(
-                                Where.recolhaPapelCartao,
-                                (value) => [...value, data],
-                                ifAbsent: () => [data],
+                                data,
+                                (value) => Where.recolhaPapelCartao,
+                                ifAbsent: () => Where.recolhaPapelCartao,
                               );
                           },
                         ),
@@ -385,13 +357,19 @@ class BinSelectionScreen extends HookWidget {
                         child: BinTarget(
                           label: 'Ecoponto Verde',
                           svgPath: 'assets/svgs/eco_green.svg',
-                          components: wherePackages.value[Where.recolhaVidro],
+                          components: whereComponents.value.keys
+                              .where(
+                                (k) =>
+                                    whereComponents.value[k] ==
+                                    Where.recolhaVidro,
+                              )
+                              .toList(),
                           onAccept: (data) {
-                            wherePackages.value = {...wherePackages.value}
+                            whereComponents.value = {...whereComponents.value}
                               ..update(
-                                Where.recolhaVidro,
-                                (value) => [...value, data],
-                                ifAbsent: () => [data],
+                                data,
+                                (value) => Where.recolhaVidro,
+                                ifAbsent: () => Where.recolhaVidro,
                               );
                           },
                         ),
@@ -403,14 +381,19 @@ class BinSelectionScreen extends HookWidget {
                           child: BinTarget(
                             label: 'Contentor Indiferenciado',
                             svgPath: 'assets/svgs/trash.svg',
-                            components: wherePackages
-                                .value[Where.recolhaIndiferenciada],
+                            components: whereComponents.value.keys
+                                .where(
+                                  (k) =>
+                                      whereComponents.value[k] ==
+                                      Where.recolhaIndiferenciada,
+                                )
+                                .toList(),
                             onAccept: (data) {
-                              wherePackages.value = {...wherePackages.value}
+                              whereComponents.value = {...whereComponents.value}
                                 ..update(
-                                  Where.recolhaIndiferenciada,
-                                  (value) => [...value, data],
-                                  ifAbsent: () => [data],
+                                  data,
+                                  (value) => Where.recolhaIndiferenciada,
+                                  ifAbsent: () => Where.recolhaIndiferenciada,
                                 );
                             },
                           ),
