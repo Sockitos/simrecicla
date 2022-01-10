@@ -312,7 +312,7 @@ class BinSelectionScreen extends HookWidget {
                         alignment: Alignment.centerLeft,
                         child: BinTarget(
                           label: 'Ecoponto Amarelo',
-                          svgPath: 'assets/svgs/eco_yellow.svg',
+                          svgPath: 'assets/svgs/yellow_bin.svg',
                           components: whereComponents.value.keys
                               .where(
                                 (k) =>
@@ -334,7 +334,7 @@ class BinSelectionScreen extends HookWidget {
                         alignment: Alignment.topCenter,
                         child: BinTarget(
                           label: 'Ecoponto Azul',
-                          svgPath: 'assets/svgs/eco_blue.svg',
+                          svgPath: 'assets/svgs/blue_bin.svg',
                           components: whereComponents.value.keys
                               .where(
                                 (k) =>
@@ -356,7 +356,7 @@ class BinSelectionScreen extends HookWidget {
                         alignment: Alignment.centerRight,
                         child: BinTarget(
                           label: 'Ecoponto Verde',
-                          svgPath: 'assets/svgs/eco_green.svg',
+                          svgPath: 'assets/svgs/green_bin.svg',
                           components: whereComponents.value.keys
                               .where(
                                 (k) =>
@@ -380,7 +380,7 @@ class BinSelectionScreen extends HookWidget {
                           alignment: Alignment.bottomCenter,
                           child: BinTarget(
                             label: 'Contentor Indiferenciado',
-                            svgPath: 'assets/svgs/trash.svg',
+                            svgPath: 'assets/svgs/grey_bin.svg',
                             components: whereComponents.value.keys
                                 .where(
                                   (k) =>

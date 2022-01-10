@@ -95,13 +95,20 @@ class PackagerScreen extends StatelessWidget {
               ),
             ),
             const Spacer(flex: 2),
-            Expanded(
-              flex: 5,
-              child: Material(
-                color: AppColors.yellow,
-                child: FractionallySizedBox(
-                  widthFactor: 0.6,
-                  child: SvgPicture.asset('assets/svgs/packager_2.svg'),
+            SizedBox(
+              width: 800,
+              child: Ink(
+                color: AppColors.grey4,
+                child: OverflowBox(
+                  maxWidth: 980,
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 80),
+                    child: SvgPicture.asset(
+                      'assets/svgs/packager_intro.svg',
+                      width: 900,
+                    ),
+                  ),
                 ),
               ),
             ),

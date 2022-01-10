@@ -32,13 +32,12 @@ class BinTarget extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 svgPath,
-                height: 150,
+                height: 170,
               ),
               if (numComponents >= 1)
                 Positioned(
-                  bottom: label != 'Contentor Indiferenciado' ? 15 : 30,
-                  right: 50,
-                  left: 0,
+                  top: 30,
+                  left: 75,
                   child: DraggableComponent(
                     component: components![0],
                     isInBin: true,
@@ -46,9 +45,8 @@ class BinTarget extends StatelessWidget {
                 ),
               if (numComponents >= 2)
                 Positioned(
-                  bottom: label != 'Contentor Indiferenciado' ? 15 : 30,
-                  right: 0,
-                  left: 50,
+                  top: 40,
+                  left: 100,
                   child: DraggableComponent(
                     component: components![1],
                     isInBin: true,
@@ -56,9 +54,8 @@ class BinTarget extends StatelessWidget {
                 ),
               if (numComponents >= 3)
                 Positioned(
-                  bottom: label != 'Contentor Indiferenciado' ? 55 : 70,
-                  right: 0,
-                  left: 0,
+                  top: 25,
+                  left: 50,
                   child: DraggableComponent(
                     component: components![2],
                     isInBin: true,

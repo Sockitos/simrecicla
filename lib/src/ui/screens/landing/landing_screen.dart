@@ -68,7 +68,7 @@ class LandingScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           LandingOption(
-                            svg: 'assets/svgs/consumer.svg',
+                            svg: 'assets/svgs/consumer_option.svg',
                             description: 'Quero reciclar uma embalagem',
                             onPressed: () => AutoRouter.of(context).push(
                               const ConsumerScreenRoute(),
@@ -76,7 +76,7 @@ class LandingScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 80),
                           LandingOption(
-                            svg: 'assets/svgs/packager.svg',
+                            svg: 'assets/svgs/packager_option.svg',
                             description:
                                 'Quero melhorar a reciclabilidade de uma embalagem',
                             onPressed: () => AutoRouter.of(context).push(
@@ -85,7 +85,7 @@ class LandingScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 80),
                           LandingOption(
-                            svg: 'assets/svgs/recycler.svg',
+                            svg: 'assets/svgs/recycler_option.svg',
                             description: 'Quero optimizar uma linha de triagem',
                             onPressed: () => AutoRouter.of(context).push(
                               const RecyclerScreenRoute(),
@@ -105,7 +105,7 @@ class LandingScreen extends StatelessWidget {
                         ),
                         Flexible(
                           child: LandingOption(
-                            svg: 'assets/svgs/consumer.svg',
+                            svg: 'assets/svgs/consumer_option.svg',
                             description: 'Quero reciclar uma embalagem',
                             onPressed: () => AutoRouter.of(context).push(
                               const ConsumerScreenRoute(),
@@ -120,7 +120,7 @@ class LandingScreen extends StatelessWidget {
                         ),
                         Flexible(
                           child: LandingOption(
-                            svg: 'assets/svgs/packager.svg',
+                            svg: 'assets/svgs/packager_option.svg',
                             description:
                                 'Quero melhorar a reciclabilidade de uma embalagem',
                             onPressed: () => AutoRouter.of(context).push(
@@ -136,7 +136,7 @@ class LandingScreen extends StatelessWidget {
                         ),
                         Flexible(
                           child: LandingOption(
-                            svg: 'assets/svgs/recycler.svg',
+                            svg: 'assets/svgs/recycler_option.svg',
                             description: 'Quero optimizar uma linha de triagem',
                             onPressed: () => AutoRouter.of(context).push(
                               const RecyclerScreenRoute(),

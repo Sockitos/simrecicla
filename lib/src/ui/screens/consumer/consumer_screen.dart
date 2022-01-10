@@ -98,13 +98,16 @@ class ConsumerScreen extends StatelessWidget {
               ),
             ),
             const Spacer(flex: 2),
-            Expanded(
-              flex: 5,
-              child: Material(
-                color: AppColors.blue,
-                child: FractionallySizedBox(
-                  widthFactor: 0.6,
-                  child: SvgPicture.asset('assets/svgs/consumer_2.svg'),
+            SizedBox(
+              width: 800,
+              child: Ink(
+                color: AppColors.grey4,
+                child: OverflowBox(
+                  maxWidth: 1080,
+                  child: SvgPicture.asset(
+                    'assets/svgs/consumer_intro.svg',
+                    width: 1080,
+                  ),
                 ),
               ),
             ),

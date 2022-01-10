@@ -27,7 +27,7 @@ class LandingOption extends StatelessWidget {
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.only(top: 20),
             child: DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
@@ -55,7 +55,13 @@ class LandingOption extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  SvgPicture.asset(svg),
+                  SizedBox(
+                    height: 180,
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: SvgPicture.asset(svg),
+                    ),
+                  ),
                   Flexible(
                     child: Center(
                       child: Text(
@@ -65,11 +71,12 @@ class LandingOption extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 10),
                   SvgPicture.asset(
                     'assets/svgs/arrow_right.svg',
                     color: AppColors.lightGreen,
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 25),
                 ],
               ),
             ),
