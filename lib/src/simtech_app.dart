@@ -17,6 +17,14 @@ class _SimtechAppState extends State<SimtechApp> {
 
   @override
   void initState() {
+    precacheImage(
+      const AssetImage('assets/images/consumer_intro.png'),
+      context,
+    );
+    precacheImage(
+      const AssetImage('assets/images/packager_intro.png'),
+      context,
+    );
     WidgetsBinding.instance?.addPostFrameCallback((_) {
       final loader = document.getElementById('loading');
       loader?.remove();

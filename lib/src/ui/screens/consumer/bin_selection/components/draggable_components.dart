@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simtech/src/constants/colors.dart';
+import 'package:simtech/src/constants/custom_icons.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/component.dart';
 import 'package:simtech/src/models/package.dart';
+import 'package:simtech/src/ui/widgets/my_drag_target.dart';
 
 class DraggableComponents extends StatelessWidget {
   const DraggableComponents({
@@ -54,7 +55,7 @@ class DraggableComponents extends StatelessWidget {
                   hideComponent:
                       hiddenComponents.contains(package.components[0]),
                 ),
-                const SizedBox(height: 80),
+                const SizedBox(height: 40),
                 _DraggableComponent(
                   component: package.components[1],
                   hideComponent:
@@ -62,7 +63,6 @@ class DraggableComponents extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(width: 10),
             _DraggableComponent(
               component: package.components[2],
               hideComponent: hiddenComponents.contains(package.components[2]),
@@ -88,42 +88,42 @@ class _DraggableComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final iconData = CustomIcons.getIcon(component.iconId);
     return SizedBox(
-      height: 250,
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          SizedBox(
-            height: 120,
-            width: 200,
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: AppColors.grey3,
-                borderRadius: BorderRadius.circular(34),
+      height: 260,
+      width: 260,
+      child: DecoratedBox(
+        decoration: const BoxDecoration(
+          color: AppColors.grey3,
+          shape: BoxShape.circle,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 30,
+            vertical: 25,
+          ),
+          child: Column(
+            children: [
+              if (hideComponent)
+                Icon(
+                  iconData,
+                  color: AppColors.black.withOpacity(0.1),
+                  size: 145,
+                )
+              else
+                DraggableComponent(component: component),
+              const SizedBox(height: 5),
+              Expanded(
+                child: Text(
+                  component.component,
+                  style: AppTextStyles.paragraph,
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
+              const SizedBox(height: 5),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 60),
-            child: hideComponent
-                ? SvgPicture.asset(
-                    component.svgPath,
-                    color: AppColors.black.withOpacity(0.1),
-                  )
-                : DraggableComponent(component: component),
-          ),
-          SizedBox(
-            width: 200,
-            height: 70,
-            child: Center(
-              child: Text(
-                component.component,
-                style: AppTextStyles.paragraph,
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -141,25 +141,39 @@ class DraggableComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Draggable(
-      data: component,
-      childWhenDragging: SvgPicture.asset(
-        component.svgPath,
-        height: isInBin
-            ? component.svgPath == 'assets/svgs/lid.svg'
-                ? 16
-                : 40
-            : null,
-        color: AppColors.black.withOpacity(0.1),
-      ),
-      feedback: SvgPicture.asset(component.svgPath),
-      child: SvgPicture.asset(
-        component.svgPath,
-        height: isInBin
-            ? component.svgPath == 'assets/svgs/lid.svg'
-                ? 16
-                : 40
-            : null,
+    final iconData = CustomIcons.getIcon(component.iconId);
+    return SizedBox(
+      height: isInBin ? 45 : 145,
+      width: isInBin ? 45 : 145,
+      child: OverflowBox(
+        maxHeight: 145,
+        minHeight: 145,
+        maxWidth: 145,
+        minWidth: 145,
+        child: MyDraggable(
+          data: component,
+          childWhenDragging: SizedBox(
+            height: isInBin ? 45 : 145,
+            width: isInBin ? 45 : 145,
+            child: Icon(
+              iconData,
+              color: AppColors.black.withOpacity(0.1),
+              size: isInBin ? 45 : 145,
+            ),
+          ),
+          feedback: SizedBox(
+            height: 145,
+            width: 145,
+            child: Icon(
+              iconData,
+              size: 90,
+            ),
+          ),
+          child: Icon(
+            iconData,
+            size: isInBin ? 45 : 145,
+          ),
+        ),
       ),
     );
   }

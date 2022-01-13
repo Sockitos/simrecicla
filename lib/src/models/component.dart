@@ -8,7 +8,7 @@ part 'component.g.dart';
 class Component with _$Component {
   const factory Component({
     required String component,
-    @JsonKey(defaultValue: 'assets/svgs/lid.svg') required String svgPath,
+    required String iconId,
     double? papel,
     double? cartao,
     double? ecal,

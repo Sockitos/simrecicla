@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simtech/src/constants/colors.dart';
+import 'package:simtech/src/constants/custom_icons.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/component.dart';
 import 'package:simtech/src/models/enums.dart';
@@ -10,6 +11,7 @@ import 'package:simtech/src/ui/screens/consumer/bin_selection/components/bin_tar
 import 'package:simtech/src/ui/screens/consumer/bin_selection/components/bird_icon_button.dart';
 import 'package:simtech/src/ui/screens/consumer/bin_selection/components/draggable_components.dart';
 import 'package:simtech/src/ui/screens/consumer/bin_selection/state/bin_selection_state.dart';
+import 'package:simtech/src/ui/widgets/my_mouse_region.dart' as my;
 import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
 
 class BinSelectionScreen extends HookWidget {
@@ -24,6 +26,7 @@ class BinSelectionScreen extends HookWidget {
   Widget build(BuildContext context) {
     final whereComponents = useState<Map<Component, Where>>({});
     final isSelecting = useState<bool>(true);
+    final isBinning = useState<bool>(false);
     final mode =
         useState<BinSelectionState>(const BinSelectionState.packageResults());
     return ScreenWrapper(
@@ -39,14 +42,14 @@ class BinSelectionScreen extends HookWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 20),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (isSelecting.value) ...[
                   const SizedBox(width: 60),
                   SizedBox(
-                    width: 410,
+                    width: 520,
                     child: DraggableComponents(
                       package: package,
                       hiddenComponents: whereComponents.value.keys
@@ -54,7 +57,7 @@ class BinSelectionScreen extends HookWidget {
                           .toList(),
                     ),
                   ),
-                  const SizedBox(width: 180),
+                  const SizedBox(width: 120),
                   SizedBox(
                     width: 210,
                     child: Column(
@@ -92,8 +95,8 @@ class BinSelectionScreen extends HookWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 55),
                         child: Ink(
-                          width: 805,
-                          height: 580,
+                          width: 855,
+                          height: 600,
                           padding: const EdgeInsets.fromLTRB(100, 50, 200, 50),
                           decoration: BoxDecoration(
                             color: AppColors.white,
@@ -132,7 +135,7 @@ class BinSelectionScreen extends HookWidget {
                                     ),
                                     const SizedBox(width: 15),
                                     Text(
-                                      'Impactos Ambientais',
+                                      'Impactes Ambientais',
                                       style: AppTextStyles.h4.copyWith(
                                         color: AppColors.lightGreen,
                                       ),
@@ -162,7 +165,7 @@ class BinSelectionScreen extends HookWidget {
                                     ),
                                     const SizedBox(width: 15),
                                     Text(
-                                      'Impactos Económicos',
+                                      'Impactes Económicos',
                                       style: AppTextStyles.h4.copyWith(
                                         color: AppColors.lightGreen,
                                       ),
@@ -264,7 +267,7 @@ class BinSelectionScreen extends HookWidget {
                           const SizedBox(height: 30),
                           BirdIconButton(
                             radius: 40,
-                            svgPath: package.svgPath,
+                            icon: CustomIcons.getIcon(package.iconId),
                             isSelected: mode.value is PackageResults,
                             onPressed: () => mode.value =
                                 const BinSelectionState.packageResults(),
@@ -273,7 +276,7 @@ class BinSelectionScreen extends HookWidget {
                             const SizedBox(height: 20),
                             BirdIconButton(
                               radius: 40,
-                              svgPath: c.svgPath,
+                              icon: CustomIcons.getIcon(c.iconId),
                               isCorrect: whereComponents.value[c] == c.where,
                               isSelected: mode.value is ComponentResults &&
                                   (mode.value as ComponentResults)
@@ -290,129 +293,144 @@ class BinSelectionScreen extends HookWidget {
                     ],
                   ),
                 const SizedBox(width: 180),
-                SizedBox(
-                  height: 550,
-                  width: 550,
-                  child: Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      const Center(
-                        child: SizedBox(
-                          height: 400,
-                          width: 400,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: AppColors.grey3,
-                              shape: BoxShape.circle,
+                my.MouseRegion(
+                  onEnter: (_) => isBinning.value = true,
+                  onExit: (_) => isBinning.value = false,
+                  child: SizedBox(
+                    height: 640,
+                    width: 550,
+                    child: DecoratedBox(
+                      decoration: const BoxDecoration(shape: BoxShape.circle),
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          const Center(
+                            child: SizedBox(
+                              height: 400,
+                              width: 400,
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                  color: AppColors.grey3,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: BinTarget(
-                          label: 'Ecoponto Amarelo',
-                          svgPath: 'assets/svgs/yellow_bin.svg',
-                          components: whereComponents.value.keys
-                              .where(
-                                (k) =>
-                                    whereComponents.value[k] ==
-                                    Where.recolhaPlasticoMetal,
-                              )
-                              .toList(),
-                          onAccept: (data) {
-                            whereComponents.value = {...whereComponents.value}
-                              ..update(
-                                data,
-                                (value) => Where.recolhaPlasticoMetal,
-                                ifAbsent: () => Where.recolhaPlasticoMetal,
-                              );
-                          },
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: BinTarget(
-                          label: 'Ecoponto Azul',
-                          svgPath: 'assets/svgs/blue_bin.svg',
-                          components: whereComponents.value.keys
-                              .where(
-                                (k) =>
-                                    whereComponents.value[k] ==
-                                    Where.recolhaPapelCartao,
-                              )
-                              .toList(),
-                          onAccept: (data) {
-                            whereComponents.value = {...whereComponents.value}
-                              ..update(
-                                data,
-                                (value) => Where.recolhaPapelCartao,
-                                ifAbsent: () => Where.recolhaPapelCartao,
-                              );
-                          },
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: BinTarget(
-                          label: 'Ecoponto Verde',
-                          svgPath: 'assets/svgs/green_bin.svg',
-                          components: whereComponents.value.keys
-                              .where(
-                                (k) =>
-                                    whereComponents.value[k] ==
-                                    Where.recolhaVidro,
-                              )
-                              .toList(),
-                          onAccept: (data) {
-                            whereComponents.value = {...whereComponents.value}
-                              ..update(
-                                data,
-                                (value) => Where.recolhaVidro,
-                                ifAbsent: () => Where.recolhaVidro,
-                              );
-                          },
-                        ),
-                      ),
-                      Positioned.fill(
-                        bottom: -40,
-                        child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: BinTarget(
-                            label: 'Contentor Indiferenciado',
-                            svgPath: 'assets/svgs/grey_bin.svg',
-                            components: whereComponents.value.keys
-                                .where(
-                                  (k) =>
-                                      whereComponents.value[k] ==
-                                      Where.recolhaIndiferenciada,
-                                )
-                                .toList(),
-                            onAccept: (data) {
-                              whereComponents.value = {...whereComponents.value}
-                                ..update(
-                                  data,
-                                  (value) => Where.recolhaIndiferenciada,
-                                  ifAbsent: () => Where.recolhaIndiferenciada,
-                                );
-                            },
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: BinTarget(
+                              label: 'Ecoponto Amarelo',
+                              svgPath: 'assets/svgs/yellow_bin.svg',
+                              components: whereComponents.value.keys
+                                  .where(
+                                    (k) =>
+                                        whereComponents.value[k] ==
+                                        Where.recolhaPlasticoMetal,
+                                  )
+                                  .toList(),
+                              onAccept: (data) {
+                                whereComponents.value = {
+                                  ...whereComponents.value
+                                }..update(
+                                    data,
+                                    (value) => Where.recolhaPlasticoMetal,
+                                    ifAbsent: () => Where.recolhaPlasticoMetal,
+                                  );
+                              },
+                              forceHighlighted: !isBinning.value,
+                            ),
                           ),
-                        ),
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: BinTarget(
+                              label: 'Ecoponto Azul',
+                              svgPath: 'assets/svgs/blue_bin.svg',
+                              components: whereComponents.value.keys
+                                  .where(
+                                    (k) =>
+                                        whereComponents.value[k] ==
+                                        Where.recolhaPapelCartao,
+                                  )
+                                  .toList(),
+                              onAccept: (data) {
+                                whereComponents.value = {
+                                  ...whereComponents.value
+                                }..update(
+                                    data,
+                                    (value) => Where.recolhaPapelCartao,
+                                    ifAbsent: () => Where.recolhaPapelCartao,
+                                  );
+                              },
+                              forceHighlighted: !isBinning.value,
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: BinTarget(
+                              label: 'Ecoponto Verde',
+                              svgPath: 'assets/svgs/green_bin.svg',
+                              components: whereComponents.value.keys
+                                  .where(
+                                    (k) =>
+                                        whereComponents.value[k] ==
+                                        Where.recolhaVidro,
+                                  )
+                                  .toList(),
+                              onAccept: (data) {
+                                whereComponents.value = {
+                                  ...whereComponents.value
+                                }..update(
+                                    data,
+                                    (value) => Where.recolhaVidro,
+                                    ifAbsent: () => Where.recolhaVidro,
+                                  );
+                              },
+                              forceHighlighted: !isBinning.value,
+                            ),
+                          ),
+                          Positioned.fill(
+                            bottom: 10,
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: BinTarget(
+                                label: 'Contentor Indiferenciado',
+                                svgPath: 'assets/svgs/grey_bin.svg',
+                                components: whereComponents.value.keys
+                                    .where(
+                                      (k) =>
+                                          whereComponents.value[k] ==
+                                          Where.recolhaIndiferenciada,
+                                    )
+                                    .toList(),
+                                onAccept: (data) {
+                                  whereComponents.value = {
+                                    ...whereComponents.value
+                                  }..update(
+                                      data,
+                                      (value) => Where.recolhaIndiferenciada,
+                                      ifAbsent: () =>
+                                          Where.recolhaIndiferenciada,
+                                    );
+                                },
+                                forceHighlighted: !isBinning.value,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
                 const SizedBox(width: 120),
               ],
             ),
-            const SizedBox(height: 40),
             Row(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 const SizedBox(width: 60),
-                const SizedBox(width: 410),
-                const SizedBox(width: 180),
+                const SizedBox(width: 520),
+                const SizedBox(width: 120),
                 SizedBox(
                   width: 210,
                   child: DecoratedBox(
@@ -459,7 +477,7 @@ class BinSelectionScreen extends HookWidget {
                       ? Center(
                           child: ElevatedButton(
                             onPressed: () => isSelecting.value = false,
-                            child: const Text('AVANÇAR'),
+                            child: const Text('VERIFICAR'),
                           ),
                         )
                       : null,

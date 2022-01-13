@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simtech/src/constants/colors.dart';
+import 'package:simtech/src/constants/custom_icons.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/category.dart';
 import 'package:simtech/src/router/router.gr.dart';
@@ -77,24 +77,26 @@ class PackagesDialog extends HookWidget {
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 15,
-                                  vertical: 20,
+                                  vertical: 15,
                                 ),
                                 child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Hero(
-                                      tag: package.package,
-                                      child: SvgPicture.asset(
-                                        package.svgPath,
-                                        height: 80,
-                                      ),
+                                    const SizedBox(height: 5),
+                                    Icon(
+                                      CustomIcons.getIcon(package.iconId),
+                                      size: 90,
                                     ),
-                                    const SizedBox(height: 10),
-                                    Text(
-                                      package.package,
-                                      textAlign: TextAlign.center,
-                                      style: AppTextStyles.paragraph.copyWith(
-                                        fontWeight: FontWeight.bold,
+                                    Expanded(
+                                      child: Center(
+                                        child: Text(
+                                          package.package,
+                                          textAlign: TextAlign.center,
+                                          style:
+                                              AppTextStyles.paragraph.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
                                       ),
                                     )
                                   ],

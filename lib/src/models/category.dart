@@ -8,7 +8,7 @@ part 'category.g.dart';
 class Category with _$Category {
   const factory Category({
     required String category,
-    required String icon,
+    required String iconId,
     required List<Package> packages,
   }) = _Category;
   const Category._();

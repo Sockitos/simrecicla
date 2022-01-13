@@ -104,8 +104,8 @@ class PackagerScreen extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: Padding(
                     padding: const EdgeInsets.only(right: 80),
-                    child: SvgPicture.asset(
-                      'assets/svgs/packager_intro.svg',
+                    child: Image.asset(
+                      'assets/images/packager_intro.png',
                       width: 900,
                     ),
                   ),

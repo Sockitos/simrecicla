@@ -3,24 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simtech/src/simtech_app.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-void main() async {
+Future<void> main() async {
   setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
   await Future.wait<void>([
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/consumer_intro.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/packager_intro.svg',
-      ),
-      null,
-    ),
     precachePicture(
       ExactAssetPicture(
         SvgPicture.svgStringDecoderBuilder,
@@ -39,6 +25,20 @@ void main() async {
       ExactAssetPicture(
         SvgPicture.svgStringDecoderBuilder,
         'assets/svgs/arrow_right.svg',
+      ),
+      null,
+    ),
+    precachePicture(
+      ExactAssetPicture(
+        SvgPicture.svgStringDecoderBuilder,
+        'assets/svgs/arrow_down.svg',
+      ),
+      null,
+    ),
+    precachePicture(
+      ExactAssetPicture(
+        SvgPicture.svgStringDecoderBuilder,
+        'assets/svgs/big_arrow.svg',
       ),
       null,
     ),
@@ -88,6 +88,20 @@ void main() async {
       ExactAssetPicture(
         SvgPicture.svgStringDecoderBuilder,
         'assets/svgs/grey_bin.svg',
+      ),
+      null,
+    ),
+    precachePicture(
+      ExactAssetPicture(
+        SvgPicture.svgStringDecoderBuilder,
+        'assets/svgs/right.svg',
+      ),
+      null,
+    ),
+    precachePicture(
+      ExactAssetPicture(
+        SvgPicture.svgStringDecoderBuilder,
+        'assets/svgs/wrong.svg',
       ),
       null,
     ),

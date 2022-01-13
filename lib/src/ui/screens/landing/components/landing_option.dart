@@ -8,11 +8,13 @@ class LandingOption extends StatelessWidget {
     Key? key,
     required this.svg,
     required this.description,
+    required this.tooltip,
     required this.onPressed,
   }) : super(key: key);
 
   final String svg;
   final String description;
+  final String tooltip;
   final VoidCallback onPressed;
 
   @override
@@ -42,9 +44,14 @@ class LandingOption extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40),
                 ),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(40),
-                  onTap: onPressed,
+                child: Tooltip(
+                  message: tooltip,
+                  verticalOffset: 220,
+                  waitDuration: const Duration(milliseconds: 500),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(40),
+                    onTap: onPressed,
+                  ),
                 ),
               ),
             ),

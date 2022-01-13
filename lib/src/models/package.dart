@@ -8,8 +8,7 @@ part 'package.g.dart';
 class Package with _$Package {
   const factory Package({
     required String package,
-    @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
-        required String svgPath,
+    required String iconId,
     required List<Component> components,
   }) = _Package;
   const Package._();

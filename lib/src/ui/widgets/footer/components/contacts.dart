@@ -27,10 +27,10 @@ class Contacts extends StatelessWidget {
           ),
           Spacer(),
           Text(
-            'geral@pontoverdelab.pt',
+            'residuos@tratolixo.pt',
             style: TextStyle(decoration: TextDecoration.underline),
           ),
-          Text('210 102 400'),
+          Text('21 445 95 00'),
         ],
       ),
     );

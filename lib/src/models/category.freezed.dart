@@ -23,11 +23,11 @@ class _$CategoryTearOff {
 
   _Category call(
       {required String category,
-      required String icon,
+      required String iconId,
       required List<Package> packages}) {
     return _Category(
       category: category,
-      icon: icon,
+      iconId: iconId,
       packages: packages,
     );
   }
@@ -43,7 +43,7 @@ const $Category = _$CategoryTearOff();
 /// @nodoc
 mixin _$Category {
   String get category => throw _privateConstructorUsedError;
-  String get icon => throw _privateConstructorUsedError;
+  String get iconId => throw _privateConstructorUsedError;
   List<Package> get packages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,7 +56,7 @@ mixin _$Category {
 abstract class $CategoryCopyWith<$Res> {
   factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
       _$CategoryCopyWithImpl<$Res>;
-  $Res call({String category, String icon, List<Package> packages});
+  $Res call({String category, String iconId, List<Package> packages});
 }
 
 /// @nodoc
@@ -70,7 +70,7 @@ class _$CategoryCopyWithImpl<$Res> implements $CategoryCopyWith<$Res> {
   @override
   $Res call({
     Object? category = freezed,
-    Object? icon = freezed,
+    Object? iconId = freezed,
     Object? packages = freezed,
   }) {
     return _then(_value.copyWith(
@@ -78,9 +78,9 @@ class _$CategoryCopyWithImpl<$Res> implements $CategoryCopyWith<$Res> {
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
+      iconId: iconId == freezed
+          ? _value.iconId
+          : iconId // ignore: cast_nullable_to_non_nullable
               as String,
       packages: packages == freezed
           ? _value.packages
@@ -95,7 +95,7 @@ abstract class _$CategoryCopyWith<$Res> implements $CategoryCopyWith<$Res> {
   factory _$CategoryCopyWith(_Category value, $Res Function(_Category) then) =
       __$CategoryCopyWithImpl<$Res>;
   @override
-  $Res call({String category, String icon, List<Package> packages});
+  $Res call({String category, String iconId, List<Package> packages});
 }
 
 /// @nodoc
@@ -110,7 +110,7 @@ class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
   @override
   $Res call({
     Object? category = freezed,
-    Object? icon = freezed,
+    Object? iconId = freezed,
     Object? packages = freezed,
   }) {
     return _then(_Category(
@@ -118,9 +118,9 @@ class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
+      iconId: iconId == freezed
+          ? _value.iconId
+          : iconId // ignore: cast_nullable_to_non_nullable
               as String,
       packages: packages == freezed
           ? _value.packages
@@ -134,7 +134,7 @@ class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Category extends _Category {
   const _$_Category(
-      {required this.category, required this.icon, required this.packages})
+      {required this.category, required this.iconId, required this.packages})
       : super._();
 
   factory _$_Category.fromJson(Map<String, dynamic> json) =>
@@ -143,13 +143,13 @@ class _$_Category extends _Category {
   @override
   final String category;
   @override
-  final String icon;
+  final String iconId;
   @override
   final List<Package> packages;
 
   @override
   String toString() {
-    return 'Category(category: $category, icon: $icon, packages: $packages)';
+    return 'Category(category: $category, iconId: $iconId, packages: $packages)';
   }
 
   @override
@@ -158,7 +158,7 @@ class _$_Category extends _Category {
         (other.runtimeType == runtimeType &&
             other is _Category &&
             const DeepCollectionEquality().equals(other.category, category) &&
-            const DeepCollectionEquality().equals(other.icon, icon) &&
+            const DeepCollectionEquality().equals(other.iconId, iconId) &&
             const DeepCollectionEquality().equals(other.packages, packages));
   }
 
@@ -166,7 +166,7 @@ class _$_Category extends _Category {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(category),
-      const DeepCollectionEquality().hash(icon),
+      const DeepCollectionEquality().hash(iconId),
       const DeepCollectionEquality().hash(packages));
 
   @JsonKey(ignore: true)
@@ -183,7 +183,7 @@ class _$_Category extends _Category {
 abstract class _Category extends Category {
   const factory _Category(
       {required String category,
-      required String icon,
+      required String iconId,
       required List<Package> packages}) = _$_Category;
   const _Category._() : super._();
 
@@ -192,7 +192,7 @@ abstract class _Category extends Category {
   @override
   String get category;
   @override
-  String get icon;
+  String get iconId;
   @override
   List<Package> get packages;
   @override

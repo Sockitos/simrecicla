@@ -135,15 +135,15 @@ class ConsumerService {
 const categories = [
   {
     "category": "Garrafas",
-    "icon": 'assets/svgs/cat_bottles.svg',
+    "iconId": "garrafas",
     "packages": [
       {
         "package": "Garrafa de iogurte líquido (grande)",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "garrafa_de_iogurte_l_quido___completa",
         "components": [
           {
             "component": "Corpo da garrafa",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "garrafa_de_iogurte_l_quido__grande_",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -166,7 +166,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_garrafa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -189,7 +189,7 @@ const categories = [
           },
           {
             "component": "Manga de plástico",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "manga",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -214,11 +214,11 @@ const categories = [
       },
       {
         "package": "Garrafão de água",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "garrafao_de_agua___completa",
         "components": [
           {
             "component": "Corpo do garrafão",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "garrafao_de_agua",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -241,7 +241,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_garrafa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -264,7 +264,7 @@ const categories = [
           },
           {
             "component": "Rótulo",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "manga",
             "papel": 0.001,
             "cartao": null,
             "ecal": null,
@@ -289,11 +289,11 @@ const categories = [
       },
       {
         "package": "Garrafa de água (1,5L)",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "garrafa_de_agua___completa",
         "components": [
           {
             "component": "Corpo da garrafa",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "garrafa_de_agua",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -316,7 +316,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_garrafa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -339,7 +339,7 @@ const categories = [
           },
           {
             "component": "Rótulo",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "manga",
             "papel": 0.001,
             "cartao": null,
             "ecal": null,
@@ -364,11 +364,11 @@ const categories = [
       },
       {
         "package": "Garrafa de óleo",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "garrafa_de_oleo___completa",
         "components": [
           {
             "component": "Corpo da garrafa",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "garrafa_de_oleo",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -391,7 +391,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_garrafa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -414,7 +414,7 @@ const categories = [
           },
           {
             "component": "Rótulo",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "manga",
             "papel": 0.001,
             "cartao": null,
             "ecal": null,
@@ -439,11 +439,11 @@ const categories = [
       },
       {
         "package": "Garrafa de azeite",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "garrafa_de_azeite___completa",
         "components": [
           {
             "component": "Corpo da garrafa",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "garrafa_de_azeite",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -466,7 +466,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_garrafa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -493,15 +493,15 @@ const categories = [
   },
   {
     "category": "Boiões",
-    "icon": 'assets/svgs/cat_boios.svg',
+    "iconId": "boioes",
     "packages": [
       {
         "package": "Boião de doce ou de conservas (vidro)",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "boiao_de_doce_vidro___completa",
         "components": [
           {
             "component": "Boião",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "boiao_de_doce_vidro",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -524,7 +524,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_boiao___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -549,11 +549,11 @@ const categories = [
       },
       {
         "package": "Boião de doce ou de conservas (plástico)",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "boiao_de_doce_plastico___completa",
         "components": [
           {
             "component": "Boião",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "boiao_de_doce_plastico",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -576,7 +576,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_boiao___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -599,7 +599,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "pelicula_de_selagem",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -624,11 +624,11 @@ const categories = [
       },
       {
         "package": "Boião de creme hidratante",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "boiao_de_creme_hidratante___completa",
         "components": [
           {
             "component": "Boião",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "boiao_de_creme_hidratante",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -651,7 +651,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_boiao___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -678,15 +678,15 @@ const categories = [
   },
   {
     "category": "Copos/Baldes",
-    "icon": 'assets/svgs/cat_cups.svg',
+    "iconId": "copos_baldes",
     "packages": [
       {
         "package": "Copos de iogurte sólido",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "copo_iogurte_solido",
         "components": [
           {
             "component": "Copo",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "copo_iogurte_solido",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -709,7 +709,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "pelicula_de_selagem",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -734,11 +734,11 @@ const categories = [
       },
       {
         "package": "Balde de iogurte sólido",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "balde_iogurte_solido",
         "components": [
           {
             "component": "Balde",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "balde_iogurte_solido",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -761,7 +761,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_boiao___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -786,11 +786,11 @@ const categories = [
       },
       {
         "package": "Copo de gelado",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "copo_de_gelado",
         "components": [
           {
             "component": "Copo",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "copo_de_gelado",
             "papel": null,
             "cartao": 0.007,
             "ecal": null,
@@ -813,7 +813,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_boiao___frasco",
             "papel": null,
             "cartao": 0.004,
             "ecal": null,
@@ -836,7 +836,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "pelicula_de_selagem",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -863,15 +863,15 @@ const categories = [
   },
   {
     "category": "Pacotes para bebidas",
-    "icon": 'assets/svgs/cat_packets.svg',
+    "iconId": "pacotes_bebidas",
     "packages": [
       {
         "package": "Pacote de leite sem tampa",
-        "svgPath": "assets/svgs/milk.svg",
+        "iconId": "pacote_de_leite_sem_tampa",
         "components": [
           {
             "component": "Pacote para bebidas",
-            "svgPath": "assets/svgs/milk.svg",
+            "iconId": "pacote_de_leite_sem_tampa",
             "papel": null,
             "cartao": null,
             "ecal": 0.027,
@@ -896,11 +896,11 @@ const categories = [
       },
       {
         "package": "Pacote de leite com tampa",
-        "svgPath": "assets/svgs/milk.svg",
+        "iconId": "pacote_de_leite_com_tampa",
         "components": [
           {
             "component": "Pacote para bebidas",
-            "svgPath": "assets/svgs/milk.svg",
+            "iconId": "pacote_de_leite_com_tampa",
             "papel": null,
             "cartao": null,
             "ecal": 0.035,
@@ -923,7 +923,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_garrafa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -948,11 +948,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível para sumo",
-        "svgPath": "assets/svgs/milk.svg",
+        "iconId": "pacote_flexivel_para_sumo___completa",
         "components": [
           {
             "component": "Pacote para bebidas",
-            "svgPath": "assets/svgs/milk.svg",
+            "iconId": "pacote_flexivel_para_sumo",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -975,7 +975,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_garrafa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1002,15 +1002,15 @@ const categories = [
   },
   {
     "category": "Caixas",
-    "icon": 'assets/svgs/cat_boxes.svg',
+    "iconId": "caixas",
     "packages": [
       {
         "package": "Caixa de sobremesa refrigerada",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_sobremesa_refrigerada___completa",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_sobremesa_refrigerada___caixa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1033,7 +1033,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "caixa_de_sobremesa_refrigerada___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1058,11 +1058,11 @@ const categories = [
       },
       {
         "package": "Caixa de ovos (cartão)",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_ovos__cartao_",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_ovos__cartao_",
             "papel": null,
             "cartao": 0.03,
             "ecal": null,
@@ -1087,11 +1087,11 @@ const categories = [
       },
       {
         "package": "Caixa de ovos (plástico)",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_ovos__plastico_",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_ovos__plastico_",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1116,11 +1116,11 @@ const categories = [
       },
       {
         "package": "Caixa de manteiga e semelhantes",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_manteiga___completa",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_manteiga___caixa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1143,7 +1143,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "caixa_de_manteiga___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1166,7 +1166,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "caixa_de_manteiga___pelicula",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1191,11 +1191,11 @@ const categories = [
       },
       {
         "package": "Caixa de bolo fresco",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_bolo_fresco",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_bolo_fresco",
             "papel": null,
             "cartao": 0.133,
             "ecal": null,
@@ -1219,11 +1219,11 @@ const categories = [
       },
       {
         "package": "Caixa de detergente em pó",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_detergente_em_po",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_detergente_em_po",
             "papel": null,
             "cartao": 0.231,
             "ecal": null,
@@ -1248,11 +1248,11 @@ const categories = [
       },
       {
         "package": "Caixa de sapatos",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_sapatos",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_sapatos",
             "papel": null,
             "cartao": 0.225,
             "ecal": null,
@@ -1277,11 +1277,11 @@ const categories = [
       },
       {
         "package": "Caixa de folha de alumínio ou de película",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_folha_de_aluminio_ou_de_pelicula___caixa",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_folha_de_aluminio_ou_de_pelicula___caixa",
             "papel": null,
             "cartao": 0.028,
             "ecal": null,
@@ -1304,7 +1304,7 @@ const categories = [
           },
           {
             "component": "Rolo",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "caixa_de_folha_de_aluminio_ou_de_pelicula___rolo",
             "papel": null,
             "cartao": 0.032,
             "ecal": null,
@@ -1331,15 +1331,15 @@ const categories = [
   },
   {
     "category": "Cuvetes e Tubos",
-    "icon": 'assets/svgs/cat_circle.svg',
+    "iconId": "cuvetes_e_tubos",
     "packages": [
       {
         "package": "Cuvete de legumes frescos",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "cuvete_de_legumes___completo",
         "components": [
           {
             "component": "Cuvete",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "cuvete_de_legumes___cuvete",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1362,7 +1362,7 @@ const categories = [
           },
           {
             "component": "Filme de selagem",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "filme_de_selagem",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1387,11 +1387,11 @@ const categories = [
       },
       {
         "package": "Cuvete de carne ou peixe frescos",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "cuvete_de_carne_ou_peixe_frescos___completo",
         "components": [
           {
             "component": "Cuvete",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "cuvete_de_legumes___cuvete",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1414,7 +1414,7 @@ const categories = [
           },
           {
             "component": "Filme de selagem",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "filme_de_selagem",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1439,11 +1439,11 @@ const categories = [
       },
       {
         "package": "Tabuleiro metálico de pronto-a-comer",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "tabuleiro_met_lico_de_pronto_a_comer",
         "components": [
           {
             "component": "Tabuleiro",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "tabuleiro_met_lico_de_pronto_a_comer",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1466,7 +1466,7 @@ const categories = [
           },
           {
             "component": "Filme de selagem",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "filme_de_selagem",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1491,11 +1491,11 @@ const categories = [
       },
       {
         "package": "Tubo de creme hidratante",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "tubo_de_creme_hidratante___completo",
         "components": [
           {
             "component": "Tubo",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "tubo_de_creme_hidratante___tubo",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1518,7 +1518,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_garrafa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1545,15 +1545,15 @@ const categories = [
   },
   {
     "category": "Frascos",
-    "icon": 'assets/svgs/cat_cups.svg',
+    "iconId": "frascos",
     "packages": [
       {
         "package": "Frasco de molho de tempero",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "frasco_de_molho_de_tempero___completo",
         "components": [
           {
             "component": "Frasco",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "frasco_de_molho_de_tempero___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1576,7 +1576,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_boiao___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1601,11 +1601,11 @@ const categories = [
       },
       {
         "package": "Frasco de desodorizante roll-on",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "frasco_de_desodorizante_roll_on___completo",
         "components": [
           {
             "component": "Frasco",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "frasco_de_desodorizante_roll_on___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1628,7 +1628,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "frasco_de_desodorizante_roll_on___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1653,11 +1653,11 @@ const categories = [
       },
       {
         "package": "Frasco de café ou outras misturas solúveis",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "frasco_de_cafe___completo",
         "components": [
           {
             "component": "Frasco",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "frasco_de_cafe___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1680,7 +1680,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "frasco_de_cafe___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1703,7 +1703,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "pelicula_de_selagem",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1728,11 +1728,11 @@ const categories = [
       },
       {
         "package": "Frasco de champô ou amaciador",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "frasco_de_champo_ou_amaciador___completo",
         "components": [
           {
             "component": "Frasco",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "frasco_de_champo_ou_amaciador___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1755,7 +1755,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "frasco_de_champo_ou_amaciador___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1780,11 +1780,11 @@ const categories = [
       },
       {
         "package": "Frasco de produto de limpeza com dispensador",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "frasco_de_produto_de_limpeza_com_dispensador___completo",
         "components": [
           {
             "component": "Frasco",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "frasco_de_produto_de_limpeza_com_dispensador___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1807,7 +1807,7 @@ const categories = [
           },
           {
             "component": "Tampa com dispensador",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "frasco_de_produto_de_limpeza_com_dispensador___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1832,11 +1832,11 @@ const categories = [
       },
       {
         "package": "Frasco de sal",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "frasco_sal___completo",
         "components": [
           {
             "component": "Frasco",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "frasco_sal___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1859,7 +1859,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "frasco_sal___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1884,11 +1884,11 @@ const categories = [
       },
       {
         "package": "Frasco de perfume",
-        "svgPath": "assets/svgs/test_package.svg",
+        "iconId": "frasco_de_perfume___completo",
         "components": [
           {
             "component": "Frasco",
-            "svgPath": "assets/svgs/body.svg",
+            "iconId": "frasco_de_perfume___frasco",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1911,7 +1911,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "tampa_garrafa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1938,15 +1938,15 @@ const categories = [
   },
   {
     "category": "Latas",
-    "icon": 'assets/svgs/cat_packets.svg',
+    "iconId": "latas",
     "packages": [
       {
         "package": "Lata de peixe em conserva",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "lata_conserva___completo",
         "components": [
           {
             "component": "Lata",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "lata_conserva___lata",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1968,8 +1968,8 @@ const categories = [
                 "Antes de colocar no ecoponto, esvaziar a embalagem."
           },
           {
-            "component": "Tampa metálica removível (com anilha)",
-            "svgPath": "assets/svgs/lid.svg",
+            "component": "Tampa metálica\n(com anilha)",
+            "iconId": "lata_conserva___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1994,11 +1994,11 @@ const categories = [
       },
       {
         "package": "Lata de refrigerante",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "lata_de_refrigerante___completo",
         "components": [
           {
             "component": "Lata",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "lata_de_refrigerante___lata",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2021,7 +2021,7 @@ const categories = [
           },
           {
             "component": "Anilha",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "lata_de_refrigerante___anilha",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2046,11 +2046,11 @@ const categories = [
       },
       {
         "package": "Lata de espuma de barbear",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "lata_de_espuma_barbear___completo",
         "components": [
           {
             "component": "Lata",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "lata_de_espuma_barbear___lata",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2073,7 +2073,7 @@ const categories = [
           },
           {
             "component": "Tampa",
-            "svgPath": "assets/svgs/lid.svg",
+            "iconId": "lata_de_espuma_barbear___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2098,11 +2098,11 @@ const categories = [
       },
       {
         "package": "Lata de ração para animal",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "lata_de_ra_ao_para_animal___completo",
         "components": [
           {
             "component": "Lata",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "lata_de_ra_ao_para_animal___lata",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2124,8 +2124,8 @@ const categories = [
                 "Antes de colocar no ecoponto, esvaziar a embalagem."
           },
           {
-            "component": "Tampa metálica removível (com anilha)",
-            "svgPath": "assets/svgs/lid.svg",
+            "component": "Tampa metálica\n(com anilha)",
+            "iconId": "lata_de_ra_ao_para_animal___tampa",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2152,15 +2152,15 @@ const categories = [
   },
   {
     "category": "Pacotes flexíveis/Sacos",
-    "icon": 'assets/svgs/cat_boxes.svg',
+    "iconId": "pacotes_flexiveis_sacos",
     "packages": [
       {
         "package": "Pacote flexível de açúcar e semelhantes (papel)",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "pacote_flex_vel_de_a_ucar___papel",
         "components": [
           {
             "component": "Pacote flexível",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "pacote_flex_vel_de_a_ucar___papel",
             "papel": 0.008,
             "cartao": null,
             "ecal": null,
@@ -2185,11 +2185,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de açúcar e semelhantes (plástico)",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "pacote_flex_vel_de_a_ucar___plastico",
         "components": [
           {
             "component": "Pacote flexível",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "pacote_flex_vel_de_a_ucar___plastico",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2214,11 +2214,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de manteiga e semelhantes",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "pacote_flex_vel_manteiga",
         "components": [
           {
             "component": "Pacote flexível",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "pacote_flex_vel_manteiga",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2243,11 +2243,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de pão",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "pacote_flexivel_pao___completo",
         "components": [
           {
             "component": "Pacote flexível",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "pacote_flexivel_pao___pacote",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2272,11 +2272,11 @@ const categories = [
       },
       {
         "package": "Saco para padaria e pastelaria (com janela de plástico)",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "pacote_padaria_com_janela___completo",
         "components": [
           {
             "component": "Saco para padaria e pastelaria",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "pacote_padaria_com_janela___pacote",
             "papel": 0.007,
             "cartao": null,
             "ecal": null,
@@ -2299,7 +2299,7 @@ const categories = [
           },
           {
             "component": "Janela de plástico",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "pacote_padaria_com_janela___janela",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2324,11 +2324,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de esparguete e massas secas",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "pacote_flexivel_esparguete",
         "components": [
           {
             "component": "Pacote flexível",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "pacote_flexivel_esparguete",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2353,11 +2353,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de papel higiénico (plástico)",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "pacote_flexivel_papel_higienico___plastico",
         "components": [
           {
             "component": "Pacote flexível",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "pacote_flexivel_papel_higienico___plastico",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2382,11 +2382,11 @@ const categories = [
       },
       {
         "package": "Pacote flexível de papel higiénico (papel)",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "pacote_flexivel_papel_higienico___papel",
         "components": [
           {
             "component": "Pacote flexível",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "pacote_flexivel_papel_higienico___papel",
             "papel": 0.01,
             "cartao": null,
             "ecal": null,
@@ -2411,11 +2411,11 @@ const categories = [
       },
       {
         "package": "Saco de asas para as compras (plástico)",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "saco_compras_plastico",
         "components": [
           {
-            "component": "Saco de asas para as compras",
-            "svgPath": "assets/svgs/circle.svg",
+            "component": "Saco de asas\npara as compras",
+            "iconId": "saco_compras_plastico",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2440,11 +2440,11 @@ const categories = [
       },
       {
         "package": "Saco de asas para as compras (papel)",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "saco_compras_papel",
         "components": [
           {
-            "component": "Saco de asas para as compras",
-            "svgPath": "assets/svgs/circle.svg",
+            "component": "Saco de asas\npara as compras",
+            "iconId": "saco_compras_papel",
             "papel": 0.059,
             "cartao": null,
             "ecal": null,
@@ -2471,15 +2471,15 @@ const categories = [
   },
   {
     "category": "Multi-embalagem",
-    "icon": 'assets/svgs/cat_boios.svg',
+    "iconId": "multi_embalagens",
     "packages": [
       {
         "package": "Caixa de pasta de dentes",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_pasta_de_dentes___completo",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_pasta_de_dentes___caixa",
             "papel": null,
             "cartao": 0.01,
             "ecal": null,
@@ -2502,7 +2502,7 @@ const categories = [
           },
           {
             "component": "Tubo da pasta de dentes",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "caixa_de_pasta_de_dentes___tubo",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2527,11 +2527,11 @@ const categories = [
       },
       {
         "package": "Caixa de peixe congelado",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_peixe_congelado___caixa",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_peixe_congelado___caixa",
             "papel": null,
             "cartao": 0.041,
             "ecal": null,
@@ -2554,7 +2554,7 @@ const categories = [
           },
           {
             "component": "Invólucros de plástico",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "caixa_de_peixe_congelado___involucro_plastico",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2579,11 +2579,11 @@ const categories = [
       },
       {
         "package": "Caixa de cereais",
-        "svgPath": "assets/svgs/box.svg",
+        "iconId": "caixa_de_cereais___caixa",
         "components": [
           {
             "component": "Caixa",
-            "svgPath": "assets/svgs/box.svg",
+            "iconId": "caixa_de_cereais___caixa",
             "papel": null,
             "cartao": 0.065,
             "ecal": null,
@@ -2606,7 +2606,7 @@ const categories = [
           },
           {
             "component": "Bolsa de plástico",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "caixa_de_cereais___bolsa_plastico",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2631,11 +2631,11 @@ const categories = [
       },
       {
         "package": "Cuvete de pronto-a-comer",
-        "svgPath": "assets/svgs/circle.svg",
+        "iconId": "cuvete_de_pronto_a_comer___completa",
         "components": [
           {
             "component": "Cuvete",
-            "svgPath": "assets/svgs/circle.svg",
+            "iconId": "cuvete_de_pronto_a_comer___cuvete",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2658,7 +2658,7 @@ const categories = [
           },
           {
             "component": "Película de selagem",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "cuvete_de_pronto_a_comer___pelicula",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -2681,7 +2681,7 @@ const categories = [
           },
           {
             "component": "Rótulo",
-            "svgPath": "assets/svgs/label.svg",
+            "iconId": "cuvete_de_pronto_a_comer___rotulo",
             "papel": null,
             "cartao": 0.007,
             "ecal": null,

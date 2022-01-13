@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simtech/src/constants/colors.dart';
+import 'package:simtech/src/constants/custom_icons.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/services/consumer_service.dart';
 import 'package:simtech/src/ui/screens/consumer/components/packages_dialog.dart';
@@ -54,14 +54,20 @@ class CategoriesScreen extends StatelessWidget {
                             vertical: 25,
                           ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SvgPicture.asset(category.icon),
-                              const SizedBox(height: 10),
-                              Text(
-                                category.category,
-                                textAlign: TextAlign.center,
-                                style: AppTextStyles.h4,
+                              const SizedBox(height: 5),
+                              Icon(
+                                CustomIcons.getIcon(category.iconId),
+                                size: 110,
+                              ),
+                              Expanded(
+                                child: Center(
+                                  child: Text(
+                                    category.category,
+                                    textAlign: TextAlign.center,
+                                    style: AppTextStyles.h4,
+                                  ),
+                                ),
                               )
                             ],
                           ),

@@ -8,7 +8,7 @@ part of 'component.dart';
 
 _$_Component _$$_ComponentFromJson(Map<String, dynamic> json) => _$_Component(
       component: json['component'] as String,
-      svgPath: json['svgPath'] as String? ?? 'assets/svgs/lid.svg',
+      iconId: json['iconId'] as String,
       papel: (json['papel'] as num?)?.toDouble(),
       cartao: (json['cartao'] as num?)?.toDouble(),
       ecal: (json['ecal'] as num?)?.toDouble(),
@@ -30,7 +30,7 @@ _$_Component _$$_ComponentFromJson(Map<String, dynamic> json) => _$_Component(
 Map<String, dynamic> _$$_ComponentToJson(_$_Component instance) =>
     <String, dynamic>{
       'component': instance.component,
-      'svgPath': instance.svgPath,
+      'iconId': instance.iconId,
       'papel': instance.papel,
       'cartao': instance.cartao,
       'ecal': instance.ecal,

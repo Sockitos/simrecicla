@@ -34,12 +34,7 @@ class ConsumerScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                            style: AppTextStyles.paragraph,
-                          ),
-                          const SizedBox(height: 20),
-                          Text(
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                            'Este simulador permite ao cidadão perceber o impacte das suas práticas de separação e encaminhamento das embalagens, e quantificar as consequências das suas ações tendo em conta as soluções de tratamento disponíveis, os processos a que os resíduos serão sujeitos e o potencial de reintrodução na economia dos materiais recuperados.',
                             style: AppTextStyles.paragraph,
                           ),
                         ],
@@ -103,10 +98,10 @@ class ConsumerScreen extends StatelessWidget {
               child: Ink(
                 color: AppColors.grey4,
                 child: OverflowBox(
-                  maxWidth: 1080,
-                  child: SvgPicture.asset(
-                    'assets/svgs/consumer_intro.svg',
-                    width: 1080,
+                  maxWidth: 1100,
+                  child: Image.asset(
+                    'assets/images/consumer_intro.png',
+                    width: 1100,
                   ),
                 ),
               ),

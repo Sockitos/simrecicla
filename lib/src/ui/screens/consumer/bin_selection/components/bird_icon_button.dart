@@ -8,14 +8,14 @@ class BirdIconButton extends StatelessWidget {
     Key? key,
     required this.radius,
     this.onPressed,
-    required this.svgPath,
+    required this.icon,
     this.isCorrect,
     this.isSelected = false,
   }) : super(key: key);
 
   final double radius;
   final VoidCallback? onPressed;
-  final String svgPath;
+  final IconData icon;
   final bool? isCorrect;
   final bool isSelected;
 
@@ -40,10 +40,8 @@ class BirdIconButton extends StatelessWidget {
                   customBorder: const CircleBorder(),
                   onTap: isSelected ? null : onPressed,
                   child: Padding(
-                    padding: svgPath == 'assets/svgs/lid.svg'
-                        ? const EdgeInsets.all(26)
-                        : const EdgeInsets.all(14),
-                    child: SvgPicture.asset(svgPath),
+                    padding: const EdgeInsets.all(14),
+                    child: Icon(icon, size: isSelected ? 58 : 50),
                   ),
                 ),
               ),

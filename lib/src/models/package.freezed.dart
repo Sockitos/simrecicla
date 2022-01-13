@@ -23,12 +23,11 @@ class _$PackageTearOff {
 
   _Package call(
       {required String package,
-      @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
-          required String svgPath,
+      required String iconId,
       required List<Component> components}) {
     return _Package(
       package: package,
-      svgPath: svgPath,
+      iconId: iconId,
       components: components,
     );
   }
@@ -44,8 +43,7 @@ const $Package = _$PackageTearOff();
 /// @nodoc
 mixin _$Package {
   String get package => throw _privateConstructorUsedError;
-  @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
-  String get svgPath => throw _privateConstructorUsedError;
+  String get iconId => throw _privateConstructorUsedError;
   List<Component> get components => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -57,10 +55,7 @@ mixin _$Package {
 abstract class $PackageCopyWith<$Res> {
   factory $PackageCopyWith(Package value, $Res Function(Package) then) =
       _$PackageCopyWithImpl<$Res>;
-  $Res call(
-      {String package,
-      @JsonKey(defaultValue: 'assets/svgs/test_package.svg') String svgPath,
-      List<Component> components});
+  $Res call({String package, String iconId, List<Component> components});
 }
 
 /// @nodoc
@@ -74,7 +69,7 @@ class _$PackageCopyWithImpl<$Res> implements $PackageCopyWith<$Res> {
   @override
   $Res call({
     Object? package = freezed,
-    Object? svgPath = freezed,
+    Object? iconId = freezed,
     Object? components = freezed,
   }) {
     return _then(_value.copyWith(
@@ -82,9 +77,9 @@ class _$PackageCopyWithImpl<$Res> implements $PackageCopyWith<$Res> {
           ? _value.package
           : package // ignore: cast_nullable_to_non_nullable
               as String,
-      svgPath: svgPath == freezed
-          ? _value.svgPath
-          : svgPath // ignore: cast_nullable_to_non_nullable
+      iconId: iconId == freezed
+          ? _value.iconId
+          : iconId // ignore: cast_nullable_to_non_nullable
               as String,
       components: components == freezed
           ? _value.components
@@ -99,10 +94,7 @@ abstract class _$PackageCopyWith<$Res> implements $PackageCopyWith<$Res> {
   factory _$PackageCopyWith(_Package value, $Res Function(_Package) then) =
       __$PackageCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String package,
-      @JsonKey(defaultValue: 'assets/svgs/test_package.svg') String svgPath,
-      List<Component> components});
+  $Res call({String package, String iconId, List<Component> components});
 }
 
 /// @nodoc
@@ -117,7 +109,7 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
   @override
   $Res call({
     Object? package = freezed,
-    Object? svgPath = freezed,
+    Object? iconId = freezed,
     Object? components = freezed,
   }) {
     return _then(_Package(
@@ -125,9 +117,9 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
           ? _value.package
           : package // ignore: cast_nullable_to_non_nullable
               as String,
-      svgPath: svgPath == freezed
-          ? _value.svgPath
-          : svgPath // ignore: cast_nullable_to_non_nullable
+      iconId: iconId == freezed
+          ? _value.iconId
+          : iconId // ignore: cast_nullable_to_non_nullable
               as String,
       components: components == freezed
           ? _value.components
@@ -141,10 +133,7 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Package extends _Package {
   const _$_Package(
-      {required this.package,
-      @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
-          required this.svgPath,
-      required this.components})
+      {required this.package, required this.iconId, required this.components})
       : super._();
 
   factory _$_Package.fromJson(Map<String, dynamic> json) =>
@@ -153,14 +142,13 @@ class _$_Package extends _Package {
   @override
   final String package;
   @override
-  @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
-  final String svgPath;
+  final String iconId;
   @override
   final List<Component> components;
 
   @override
   String toString() {
-    return 'Package(package: $package, svgPath: $svgPath, components: $components)';
+    return 'Package(package: $package, iconId: $iconId, components: $components)';
   }
 
   @override
@@ -169,7 +157,7 @@ class _$_Package extends _Package {
         (other.runtimeType == runtimeType &&
             other is _Package &&
             const DeepCollectionEquality().equals(other.package, package) &&
-            const DeepCollectionEquality().equals(other.svgPath, svgPath) &&
+            const DeepCollectionEquality().equals(other.iconId, iconId) &&
             const DeepCollectionEquality()
                 .equals(other.components, components));
   }
@@ -178,7 +166,7 @@ class _$_Package extends _Package {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(package),
-      const DeepCollectionEquality().hash(svgPath),
+      const DeepCollectionEquality().hash(iconId),
       const DeepCollectionEquality().hash(components));
 
   @JsonKey(ignore: true)
@@ -195,8 +183,7 @@ class _$_Package extends _Package {
 abstract class _Package extends Package {
   const factory _Package(
       {required String package,
-      @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
-          required String svgPath,
+      required String iconId,
       required List<Component> components}) = _$_Package;
   const _Package._() : super._();
 
@@ -205,8 +192,7 @@ abstract class _Package extends Package {
   @override
   String get package;
   @override
-  @JsonKey(defaultValue: 'assets/svgs/test_package.svg')
-  String get svgPath;
+  String get iconId;
   @override
   List<Component> get components;
   @override

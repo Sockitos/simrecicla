@@ -23,7 +23,7 @@ class ScreenWrapper extends StatelessWidget {
             toolbarHeight: 60,
             leading: const BackButton(),
             title: Text(
-              'SimTech',
+              'Circular SimTech',
               style: AppTextStyles.h4,
             ),
             actions: [

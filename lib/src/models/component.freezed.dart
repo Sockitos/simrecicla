@@ -23,7 +23,7 @@ class _$ComponentTearOff {
 
   _Component call(
       {required String component,
-      @JsonKey(defaultValue: 'assets/svgs/lid.svg') required String svgPath,
+      required String iconId,
       double? papel,
       double? cartao,
       double? ecal,
@@ -42,7 +42,7 @@ class _$ComponentTearOff {
       required String recomendacoes}) {
     return _Component(
       component: component,
-      svgPath: svgPath,
+      iconId: iconId,
       papel: papel,
       cartao: cartao,
       ecal: ecal,
@@ -73,8 +73,7 @@ const $Component = _$ComponentTearOff();
 /// @nodoc
 mixin _$Component {
   String get component => throw _privateConstructorUsedError;
-  @JsonKey(defaultValue: 'assets/svgs/lid.svg')
-  String get svgPath => throw _privateConstructorUsedError;
+  String get iconId => throw _privateConstructorUsedError;
   double? get papel => throw _privateConstructorUsedError;
   double? get cartao => throw _privateConstructorUsedError;
   double? get ecal => throw _privateConstructorUsedError;
@@ -110,7 +109,7 @@ abstract class $ComponentCopyWith<$Res> {
       _$ComponentCopyWithImpl<$Res>;
   $Res call(
       {String component,
-      @JsonKey(defaultValue: 'assets/svgs/lid.svg') String svgPath,
+      String iconId,
       double? papel,
       double? cartao,
       double? ecal,
@@ -140,7 +139,7 @@ class _$ComponentCopyWithImpl<$Res> implements $ComponentCopyWith<$Res> {
   @override
   $Res call({
     Object? component = freezed,
-    Object? svgPath = freezed,
+    Object? iconId = freezed,
     Object? papel = freezed,
     Object? cartao = freezed,
     Object? ecal = freezed,
@@ -163,9 +162,9 @@ class _$ComponentCopyWithImpl<$Res> implements $ComponentCopyWith<$Res> {
           ? _value.component
           : component // ignore: cast_nullable_to_non_nullable
               as String,
-      svgPath: svgPath == freezed
-          ? _value.svgPath
-          : svgPath // ignore: cast_nullable_to_non_nullable
+      iconId: iconId == freezed
+          ? _value.iconId
+          : iconId // ignore: cast_nullable_to_non_nullable
               as String,
       papel: papel == freezed
           ? _value.papel
@@ -243,7 +242,7 @@ abstract class _$ComponentCopyWith<$Res> implements $ComponentCopyWith<$Res> {
   @override
   $Res call(
       {String component,
-      @JsonKey(defaultValue: 'assets/svgs/lid.svg') String svgPath,
+      String iconId,
       double? papel,
       double? cartao,
       double? ecal,
@@ -274,7 +273,7 @@ class __$ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
   @override
   $Res call({
     Object? component = freezed,
-    Object? svgPath = freezed,
+    Object? iconId = freezed,
     Object? papel = freezed,
     Object? cartao = freezed,
     Object? ecal = freezed,
@@ -297,9 +296,9 @@ class __$ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
           ? _value.component
           : component // ignore: cast_nullable_to_non_nullable
               as String,
-      svgPath: svgPath == freezed
-          ? _value.svgPath
-          : svgPath // ignore: cast_nullable_to_non_nullable
+      iconId: iconId == freezed
+          ? _value.iconId
+          : iconId // ignore: cast_nullable_to_non_nullable
               as String,
       papel: papel == freezed
           ? _value.papel
@@ -374,7 +373,7 @@ class __$ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
 class _$_Component extends _Component {
   const _$_Component(
       {required this.component,
-      @JsonKey(defaultValue: 'assets/svgs/lid.svg') required this.svgPath,
+      required this.iconId,
       this.papel,
       this.cartao,
       this.ecal,
@@ -399,8 +398,7 @@ class _$_Component extends _Component {
   @override
   final String component;
   @override
-  @JsonKey(defaultValue: 'assets/svgs/lid.svg')
-  final String svgPath;
+  final String iconId;
   @override
   final double? papel;
   @override
@@ -442,7 +440,7 @@ class _$_Component extends _Component {
 
   @override
   String toString() {
-    return 'Component(component: $component, svgPath: $svgPath, papel: $papel, cartao: $cartao, ecal: $ecal, pebd: $pebd, pet: $pet, pead: $pead, plasticosMistos: $plasticosMistos, metaisFerrosos: $metaisFerrosos, metaisNaoFerrosos: $metaisNaoFerrosos, vidro: $vidro, eps: $eps, fracaoResto: $fracaoResto, where: $where, ifTrue: $ifTrue, ifFalse: $ifFalse, recomendacoes: $recomendacoes)';
+    return 'Component(component: $component, iconId: $iconId, papel: $papel, cartao: $cartao, ecal: $ecal, pebd: $pebd, pet: $pet, pead: $pead, plasticosMistos: $plasticosMistos, metaisFerrosos: $metaisFerrosos, metaisNaoFerrosos: $metaisNaoFerrosos, vidro: $vidro, eps: $eps, fracaoResto: $fracaoResto, where: $where, ifTrue: $ifTrue, ifFalse: $ifFalse, recomendacoes: $recomendacoes)';
   }
 
   @override
@@ -451,7 +449,7 @@ class _$_Component extends _Component {
         (other.runtimeType == runtimeType &&
             other is _Component &&
             const DeepCollectionEquality().equals(other.component, component) &&
-            const DeepCollectionEquality().equals(other.svgPath, svgPath) &&
+            const DeepCollectionEquality().equals(other.iconId, iconId) &&
             const DeepCollectionEquality().equals(other.papel, papel) &&
             const DeepCollectionEquality().equals(other.cartao, cartao) &&
             const DeepCollectionEquality().equals(other.ecal, ecal) &&
@@ -479,7 +477,7 @@ class _$_Component extends _Component {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(component),
-      const DeepCollectionEquality().hash(svgPath),
+      const DeepCollectionEquality().hash(iconId),
       const DeepCollectionEquality().hash(papel),
       const DeepCollectionEquality().hash(cartao),
       const DeepCollectionEquality().hash(ecal),
@@ -511,7 +509,7 @@ class _$_Component extends _Component {
 abstract class _Component extends Component {
   const factory _Component(
       {required String component,
-      @JsonKey(defaultValue: 'assets/svgs/lid.svg') required String svgPath,
+      required String iconId,
       double? papel,
       double? cartao,
       double? ecal,
@@ -536,8 +534,7 @@ abstract class _Component extends Component {
   @override
   String get component;
   @override
-  @JsonKey(defaultValue: 'assets/svgs/lid.svg')
-  String get svgPath;
+  String get iconId;
   @override
   double? get papel;
   @override
