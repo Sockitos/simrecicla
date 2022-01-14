@@ -323,7 +323,7 @@ class Results extends HookWidget {
           child: Ink(
             width: 855,
             height: 600,
-            padding: const EdgeInsets.fromLTRB(90, 30, 90, 30),
+            padding: const EdgeInsets.fromLTRB(90, 40, 80, 30),
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.circular(34),
@@ -481,7 +481,7 @@ class Results extends HookWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 40),
                     Row(
                       children: [
                         Expanded(
@@ -695,7 +695,7 @@ class Results extends HookWidget {
         ),
         Column(
           children: [
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             BirdIconButton(
               radius: 40,
               icon: CustomIcons.getIcon(package.iconId),

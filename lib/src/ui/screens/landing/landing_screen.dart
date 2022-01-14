@@ -42,7 +42,7 @@ class LandingScreen extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 70),
                   Text(
                     'Circular SimTech',
                     textAlign: TextAlign.center,
