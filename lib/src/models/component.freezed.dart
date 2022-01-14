@@ -22,7 +22,7 @@ class _$ComponentTearOff {
   const _$ComponentTearOff();
 
   _Component call(
-      {required String component,
+      {required String name,
       required String iconId,
       double? papel,
       double? cartao,
@@ -41,7 +41,7 @@ class _$ComponentTearOff {
       @JsonKey(name: 'if_false') required String ifFalse,
       required String recomendacoes}) {
     return _Component(
-      component: component,
+      name: name,
       iconId: iconId,
       papel: papel,
       cartao: cartao,
@@ -72,7 +72,7 @@ const $Component = _$ComponentTearOff();
 
 /// @nodoc
 mixin _$Component {
-  String get component => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String get iconId => throw _privateConstructorUsedError;
   double? get papel => throw _privateConstructorUsedError;
   double? get cartao => throw _privateConstructorUsedError;
@@ -108,7 +108,7 @@ abstract class $ComponentCopyWith<$Res> {
   factory $ComponentCopyWith(Component value, $Res Function(Component) then) =
       _$ComponentCopyWithImpl<$Res>;
   $Res call(
-      {String component,
+      {String name,
       String iconId,
       double? papel,
       double? cartao,
@@ -138,7 +138,7 @@ class _$ComponentCopyWithImpl<$Res> implements $ComponentCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? component = freezed,
+    Object? name = freezed,
     Object? iconId = freezed,
     Object? papel = freezed,
     Object? cartao = freezed,
@@ -158,9 +158,9 @@ class _$ComponentCopyWithImpl<$Res> implements $ComponentCopyWith<$Res> {
     Object? recomendacoes = freezed,
   }) {
     return _then(_value.copyWith(
-      component: component == freezed
-          ? _value.component
-          : component // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       iconId: iconId == freezed
           ? _value.iconId
@@ -241,7 +241,7 @@ abstract class _$ComponentCopyWith<$Res> implements $ComponentCopyWith<$Res> {
       __$ComponentCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String component,
+      {String name,
       String iconId,
       double? papel,
       double? cartao,
@@ -272,7 +272,7 @@ class __$ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? component = freezed,
+    Object? name = freezed,
     Object? iconId = freezed,
     Object? papel = freezed,
     Object? cartao = freezed,
@@ -292,9 +292,9 @@ class __$ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
     Object? recomendacoes = freezed,
   }) {
     return _then(_Component(
-      component: component == freezed
-          ? _value.component
-          : component // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       iconId: iconId == freezed
           ? _value.iconId
@@ -372,7 +372,7 @@ class __$ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Component extends _Component {
   const _$_Component(
-      {required this.component,
+      {required this.name,
       required this.iconId,
       this.papel,
       this.cartao,
@@ -396,7 +396,7 @@ class _$_Component extends _Component {
       _$$_ComponentFromJson(json);
 
   @override
-  final String component;
+  final String name;
   @override
   final String iconId;
   @override
@@ -440,7 +440,7 @@ class _$_Component extends _Component {
 
   @override
   String toString() {
-    return 'Component(component: $component, iconId: $iconId, papel: $papel, cartao: $cartao, ecal: $ecal, pebd: $pebd, pet: $pet, pead: $pead, plasticosMistos: $plasticosMistos, metaisFerrosos: $metaisFerrosos, metaisNaoFerrosos: $metaisNaoFerrosos, vidro: $vidro, eps: $eps, fracaoResto: $fracaoResto, where: $where, ifTrue: $ifTrue, ifFalse: $ifFalse, recomendacoes: $recomendacoes)';
+    return 'Component(name: $name, iconId: $iconId, papel: $papel, cartao: $cartao, ecal: $ecal, pebd: $pebd, pet: $pet, pead: $pead, plasticosMistos: $plasticosMistos, metaisFerrosos: $metaisFerrosos, metaisNaoFerrosos: $metaisNaoFerrosos, vidro: $vidro, eps: $eps, fracaoResto: $fracaoResto, where: $where, ifTrue: $ifTrue, ifFalse: $ifFalse, recomendacoes: $recomendacoes)';
   }
 
   @override
@@ -448,7 +448,7 @@ class _$_Component extends _Component {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Component &&
-            const DeepCollectionEquality().equals(other.component, component) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.iconId, iconId) &&
             const DeepCollectionEquality().equals(other.papel, papel) &&
             const DeepCollectionEquality().equals(other.cartao, cartao) &&
@@ -476,7 +476,7 @@ class _$_Component extends _Component {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(component),
+      const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(iconId),
       const DeepCollectionEquality().hash(papel),
       const DeepCollectionEquality().hash(cartao),
@@ -508,7 +508,7 @@ class _$_Component extends _Component {
 
 abstract class _Component extends Component {
   const factory _Component(
-      {required String component,
+      {required String name,
       required String iconId,
       double? papel,
       double? cartao,
@@ -532,7 +532,7 @@ abstract class _Component extends Component {
       _$_Component.fromJson;
 
   @override
-  String get component;
+  String get name;
   @override
   String get iconId;
   @override

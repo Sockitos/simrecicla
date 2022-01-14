@@ -115,7 +115,7 @@ class _DraggableComponent extends StatelessWidget {
               const SizedBox(height: 5),
               Expanded(
                 child: Text(
-                  component.component,
+                  component.name,
                   style: AppTextStyles.paragraph,
                   textAlign: TextAlign.center,
                 ),

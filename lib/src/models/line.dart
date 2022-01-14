@@ -14,7 +14,20 @@ class Line {
     this.fracaoResto = 0.0,
   });
 
-  factory Line.fromValue(double value) => zero.addAll(value);
+  factory Line.fromValue(double value) => Line(
+        papel: value,
+        cartao: value,
+        ecal: value,
+        filmePlastico: value,
+        pet: value,
+        pead: value,
+        plasticosMistos: value,
+        metaisFerrosos: value,
+        metaisNaoFerrosos: value,
+        vidro: value,
+        eps: value,
+        fracaoResto: value,
+      );
 
   static const Line zero = Line();
 
@@ -30,6 +43,26 @@ class Line {
   final double vidro;
   final double eps;
   final double fracaoResto;
+
+  @override
+  String toString() {
+    return '| ${papel.toStringAsFixed(7)} | ${cartao.toStringAsFixed(7)} | ${ecal.toStringAsFixed(7)} | ${filmePlastico.toStringAsFixed(7)} | ${pet.toStringAsFixed(7)} | ${pead.toStringAsFixed(7)} | ${plasticosMistos.toStringAsFixed(7)} | ${metaisFerrosos.toStringAsFixed(7)} | ${vidro.toStringAsFixed(7)} | ${eps.toStringAsFixed(7)} | ${fracaoResto.toStringAsFixed(7)} |';
+  }
+
+  double sum() {
+    return papel +
+        cartao +
+        ecal +
+        filmePlastico +
+        pet +
+        pead +
+        plasticosMistos +
+        metaisFerrosos +
+        metaisNaoFerrosos +
+        vidro +
+        eps +
+        fracaoResto;
+  }
 
   Line operator +(Line other) {
     return Line(

@@ -7,7 +7,7 @@ part 'package.g.dart';
 @freezed
 class Package with _$Package {
   const factory Package({
-    required String package,
+    required String name,
     required String iconId,
     required List<Component> components,
   }) = _Package;

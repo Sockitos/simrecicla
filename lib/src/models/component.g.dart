@@ -7,7 +7,7 @@ part of 'component.dart';
 // **************************************************************************
 
 _$_Component _$$_ComponentFromJson(Map<String, dynamic> json) => _$_Component(
-      component: json['component'] as String,
+      name: json['name'] as String,
       iconId: json['iconId'] as String,
       papel: (json['papel'] as num?)?.toDouble(),
       cartao: (json['cartao'] as num?)?.toDouble(),
@@ -29,7 +29,7 @@ _$_Component _$$_ComponentFromJson(Map<String, dynamic> json) => _$_Component(
 
 Map<String, dynamic> _$$_ComponentToJson(_$_Component instance) =>
     <String, dynamic>{
-      'component': instance.component,
+      'name': instance.name,
       'iconId': instance.iconId,
       'papel': instance.papel,
       'cartao': instance.cartao,
@@ -50,10 +50,10 @@ Map<String, dynamic> _$$_ComponentToJson(_$_Component instance) =>
     };
 
 const _$WhereEnumMap = {
-  Where.recolhaIndiferenciada: 'recolhaIndiferenciada',
-  Where.recolhaPapelCartao: 'recolhaPapelCartao',
-  Where.recolhaPlasticoMetal: 'recolhaPlasticoMetal',
-  Where.recolhaVidro: 'recolhaVidro',
+  Where.recolhaIndiferenciada: 'Contentor Indiferenciado',
+  Where.recolhaPapelCartao: 'Contentor Azul',
+  Where.recolhaPlasticoMetal: 'Contentor Amarelo',
+  Where.recolhaVidro: 'Contentor Verde',
   Where.recolhaEcocentro: 'recolhaEcocentro',
   Where.recolhaBiorresiduos: 'recolhaBiorresiduos',
 };

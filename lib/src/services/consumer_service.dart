@@ -1,117 +1,324 @@
-// ignore_for_file: prefer_single_quotes
-
-import 'dart:developer';
-
+import 'package:simtech/src/data/consumer_data.dart';
 import 'package:simtech/src/models/category.dart';
-import 'package:simtech/src/models/enums.dart';
+import 'package:simtech/src/models/component.dart';
 import 'package:simtech/src/models/line.dart';
 import 'package:simtech/src/models/matrix.dart';
+
+class ConsumerResults {
+  const ConsumerResults({
+    required this.isCorrect,
+    required this.userImpacts,
+    required this.alternativeImpacts,
+  });
+
+  final bool isCorrect;
+  final Impacts userImpacts;
+  final Impacts alternativeImpacts;
+}
+
+class Impacts {
+  const Impacts({
+    required this.economical,
+    required this.environmental,
+  });
+
+  final double economical;
+  final double environmental;
+}
+
+extension ComponentLine on Component {
+  Line toLine() {
+    return Line(
+      papel: papel ?? 0,
+      cartao: cartao ?? 0,
+      ecal: ecal ?? 0,
+      filmePlastico: pebd ?? 0,
+      pet: pet ?? 0,
+      pead: pead ?? 0,
+      plasticosMistos: plasticosMistos ?? 0,
+      metaisFerrosos: metaisFerrosos ?? 0,
+      metaisNaoFerrosos: metaisNaoFerrosos ?? 0,
+      vidro: vidro ?? 0,
+      eps: eps ?? 0,
+      fracaoResto: fracaoResto ?? 0,
+    );
+  }
+}
 
 class ConsumerService {
   static List<Category> getCategories() {
     return categories.map((d) => Category.fromJson(d)).toList();
   }
 
+  static ConsumerResults getResults(Map<Component, Where> components) {
+    var isCorrect = true;
+    for (final entry in components.entries) {
+      if (entry.key.where != entry.value) {
+        isCorrect = false;
+        break;
+      }
+    }
+
+    final alternative = isCorrect
+        ? {for (final c in components.keys) c: Where.recolhaIndiferenciada}
+        : {for (final c in components.keys) c: c.where};
+
+    final userImpacts = _calculateImpacts(components);
+
+    final alternativeImpacts = _calculateImpacts(alternative);
+
+    return ConsumerResults(
+      isCorrect: isCorrect,
+      userImpacts: userImpacts,
+      alternativeImpacts: alternativeImpacts,
+    );
+  }
+
   static final coeficientesTriagemPC = MatrixCoeficiente(
-    valorizacaoMaterial: const Line(
-      papel: 0.845,
-      cartao: 0.732,
+    reciclagem: const Line(
+      papel: 0.844802426423779,
+      cartao: 0.731710809985242,
     ),
   );
 
   static final coeficientesTriagemPM = MatrixCoeficiente(
-    valorizacaoMaterial: const Line(
-      ecal: 0.845,
-      filmePlastico: 0.732,
-      pet: 0.694,
-      pead: 0.673,
-      plasticosMistos: 0.138,
+    reciclagem: const Line(
+      ecal: 0.65,
+      filmePlastico: 0.452,
+      pet: 0.615,
+      pead: 0.672,
+      plasticosMistos: 0.137,
       metaisFerrosos: 0.628,
       metaisNaoFerrosos: 0.536,
     ),
   );
 
-  static final coeficientesTriagemVidro =
-      MatrixCoeficiente(valorizacaoMaterial: const Line(vidro: 1));
+  static const coeficientesTriagemVidro = Matrix(reciclagem: Line(vidro: 1));
 
-  static final coeficientesTriagemMecanico =
-      MatrixCoeficiente(valorizacaoMaterial: const Line(vidro: 1));
+  static final coeficientesTratamentoMecanico = MatrixCoeficiente(
+    reciclagem: const Line(
+      cartao: 0.0976139009896262,
+      filmePlastico: 0.0830280483357254,
+      pet: 0.0945477323669503,
+      pead: 0.0727384095137607,
+      metaisFerrosos: 0.486816103415331,
+      metaisNaoFerrosos: 0.147942003542171,
+      vidro: 0.264189935230159,
+    ),
+  );
 
-  void calculateImpacts() {
-    const where = Where.recolhaIndiferenciada;
-    const package = Line(pead: 0.03);
+  static final origemTriagem = Line.fromValue(1);
 
-    final io = calculateMatrixIO(where: where, package: package);
+  static final origemTMTMB = Line.fromValue(1);
 
-    final indicadoresEconomicos = Matrix(
-      recolhaIndiferenciada: Line.fromValue(38.980),
-      recolhaPapelCartao: Line.fromValue(139.640),
-      recolhaPlasticoMetal: Line.fromValue(207.420),
-      recolhaVidro: Line.fromValue(71.800),
+  static const eficienciaReciclagem = Line(
+    papel: 1.34770889487871,
+    cartao: 0.915674864130359,
+    ecal: 0.685,
+    filmePlastico: 0.872366556447804,
+    pet: 0.8,
+    pead: 0.944733112895607,
+    plasticosMistos: 0.872366556447804,
+    metaisFerrosos: 0.883866904134097,
+    metaisNaoFerrosos: 0.991099999999996,
+    vidro: 1.19760479041916,
+  );
+
+  static final substituicaoMateriais = Line.fromValue(-1);
+
+  static Impacts _calculateImpacts(Map<Component, Where> components) {
+    final io = calculateMatrixIO(components);
+
+    final custosCapital = Matrix(
+      recolhaIndiferenciada: Line.fromValue(0.00171988800874197),
+      recolhaPapelCartao: Line.fromValue(0.062364167852818),
+      recolhaPlasticoMetal: Line.fromValue(0.0828409688366877),
+      recolhaVidro: Line.fromValue(0.0631716120932816),
+      triagemPC: Line.fromValue(0.0257289079416138),
+      triagemPM: Line.fromValue(0.0257289079416138),
+      tratamentoMecanico: Line.fromValue(0.00017),
+      valorizacaoEnergetica: Line.fromValue(0.00881629926442008),
     );
 
-    final indicadoresAmbientais = Matrix(
-      recolhaIndiferenciada: Line.fromValue(14.700),
-      recolhaPapelCartao: Line.fromValue(47.540),
-      recolhaPlasticoMetal: Line.fromValue(64.080),
-      recolhaVidro: Line.fromValue(21.060),
-      triagemPC: Line.fromValue(26.990),
+    final custosOperacionais = Matrix(
+      recolhaIndiferenciada: Line.fromValue(0.00295841259309355),
+      recolhaPapelCartao: Line.fromValue(0.090428987111979),
+      recolhaPlasticoMetal: Line.fromValue(0.129933362029843),
+      recolhaVidro: Line.fromValue(0.0779251540514413),
+      triagemPC: Line.fromValue(0.0107568862628764),
+      triagemPM: Line.fromValue(0.013895149256976),
+      tratamentoMecanico: Line.fromValue(0.00023),
+      valorizacaoEnergetica: Line.fromValue(0.0015727069123326),
+      aterro: Line.fromValue(0.06776),
     );
 
-    final impactesEconomicos = io * indicadoresEconomicos;
-    final impactesAmbientais = io * indicadoresAmbientais;
+    final custosRH = Matrix(
+      recolhaIndiferenciada: Line.fromValue(0.00241174172399602),
+      recolhaPapelCartao: Line.fromValue(0.0667386506945778),
+      recolhaPlasticoMetal: Line.fromValue(0.0891203652353246),
+      recolhaVidro: Line.fromValue(0.0274024702194357),
+      triagemPC: Line.fromValue(0.00883378632742923),
+      triagemPM: Line.fromValue(0.0747091604552328),
+      tratamentoMecanico: Line.fromValue(0.00045),
+      valorizacaoEnergetica: Line.fromValue(0.0011208),
+    );
 
-    log(impactesEconomicos.toString());
-    log(impactesAmbientais.toString());
+    final custosTratamento = Matrix(
+      valorizacaoEnergetica: Line.fromValue(0.002166013248),
+    );
+
+    // ignore: unused_local_variable
+    const receitasRecuperaveis = Matrix(
+      triagemPC: Line(
+        papel: 0.04922,
+        cartao: 0.15903,
+      ),
+      triagemPM: Line(
+        ecal: 0.548,
+        filmePlastico: 0.48902,
+        pet: 0.52493,
+        pead: 0.531,
+        plasticosMistos: 0.47346,
+        metaisFerrosos: 0.631,
+        metaisNaoFerrosos: 0.73701,
+        eps: 0.531,
+      ),
+      triagemVidro: Line(vidro: 0.03192),
+      tratamentoMecanico: Line(
+        cartao: 0.112,
+        filmePlastico: 0.136,
+        pet: 0.136,
+        pead: 0.136,
+        metaisFerrosos: 0.131,
+        metaisNaoFerrosos: 0.79004,
+      ),
+      valorizacaoEnergetica: Line(
+        papel: 0.000612606917270245,
+        cartao: 0.000612606917270245,
+        ecal: 0.00330286173051334,
+        filmePlastico: 0.00330286173051334,
+        pet: 0.00330286173051334,
+        pead: 0.00330286173051334,
+        plasticosMistos: 0.00330286173051334,
+        metaisFerrosos: 0.00093,
+        metaisNaoFerrosos: 0.00093,
+        eps: 0.00330286173051334,
+        fracaoResto: 0.00720431096736,
+      ),
+    );
+
+    final emissoes = Matrix(
+      recolhaIndiferenciada: Line.fromValue(0.0136623514404446),
+      recolhaPapelCartao: Line.fromValue(0.047327167),
+      recolhaPlasticoMetal: Line.fromValue(0.063852493),
+      recolhaVidro: Line.fromValue(0.020903692),
+      triagemPC: Line.fromValue(0.013966866),
+      triagemPM: Line.fromValue(0.027895541),
+      tratamentoMecanico: Line.fromValue(0.00455646),
+      reciclagem: const Line(
+        papel: 1.042240371,
+        cartao: 0.72498961,
+        ecal: 0.677353573,
+        filmePlastico: 0.5157072885,
+        pet: 0.747955905,
+        pead: 0.283458672,
+        plasticosMistos: 0.5157072885,
+        metaisFerrosos: 0.525241982,
+        metaisNaoFerrosos: 0.491350856,
+        vidro: 0.820031838,
+      ),
+      valorizacaoEnergetica: const Line(
+        papel: 0.00700696156884493,
+        cartao: 0.00700696156884493,
+        ecal: 0.00700696156884493,
+        filmePlastico: 2.70142960393549,
+        pet: 2.70142960393549,
+        pead: 2.70142960393549,
+        plasticosMistos: 2.70142960393549,
+        eps: 2.70142960393549,
+        fracaoResto: 0.271876081813333,
+      ),
+      aterro: const Line(
+        papel: 1.283095,
+        cartao: 1.283095,
+        ecal: 0.960741,
+      ),
+      substituicao: const Line(
+        papel: 1.374576611,
+        cartao: 0.653545797,
+        ecal: 0.536670208,
+        filmePlastico: 2.045467888,
+        pet: 2.814709608,
+        pead: 1.992255357,
+        plasticosMistos: 0.255034653,
+        metaisFerrosos: 2.130689884,
+        metaisNaoFerrosos: 19.59503405,
+        vidro: 1.270669651,
+      ),
+    );
+
+    final economical = (io * custosCapital).sum() +
+        (io * custosOperacionais).sum() +
+        (io * custosRH).sum() +
+        (io * custosTratamento).sum();
+
+    final environmental = (io * emissoes).sum();
+    return Impacts(economical: economical, environmental: environmental);
   }
 
-  Matrix calculateMatrixIO({required Where where, required Line package}) {
-    final recolhaIndiferenciada =
-        where == Where.recolhaIndiferenciada ? package : Line.zero;
-    final recolhaPapelCartao =
-        where == Where.recolhaPapelCartao ? package : Line.zero;
-    final recolhaPlasticoMetal =
-        where == Where.recolhaPlasticoMetal ? package : Line.zero;
-    final recolhaVidro = where == Where.recolhaVidro ? package : Line.zero;
-    final recolhaEcocentro =
-        where == Where.recolhaEcocentro ? package : Line.zero;
-    final recolhaBiorresiduos =
-        where == Where.recolhaBiorresiduos ? package : Line.zero;
+  static Matrix calculateMatrixIO(Map<Component, Where> components) {
+    var recolhaIndiferenciada = Line.zero;
+    var recolhaPapelCartao = Line.zero;
+    var recolhaPlasticoMetal = Line.zero;
+    var recolhaVidro = Line.zero;
+    var recolhaEcocentro = Line.zero;
 
-    final triagemPC = recolhaPapelCartao +
-        Line(papel: recolhaEcocentro.papel, cartao: recolhaEcocentro.cartao);
-    final triagemPM = recolhaPlasticoMetal +
-        Line(
-          ecal: recolhaEcocentro.ecal,
-          filmePlastico: recolhaEcocentro.filmePlastico,
-          pet: recolhaEcocentro.pet,
-          pead: recolhaEcocentro.pead,
-          plasticosMistos: recolhaEcocentro.plasticosMistos,
-          metaisFerrosos: recolhaEcocentro.metaisFerrosos,
-          metaisNaoFerrosos: recolhaEcocentro.metaisNaoFerrosos,
-          eps: recolhaEcocentro.eps,
-        );
-    final triagemVidro = recolhaVidro + Line(vidro: recolhaEcocentro.vidro);
+    for (final entry in components.entries) {
+      recolhaIndiferenciada += entry.value == Where.recolhaIndiferenciada
+          ? entry.key.toLine()
+          : Line.zero;
+      recolhaPapelCartao += entry.value == Where.recolhaPapelCartao
+          ? entry.key.toLine()
+          : Line.zero;
+      recolhaPlasticoMetal += entry.value == Where.recolhaPlasticoMetal
+          ? entry.key.toLine()
+          : Line.zero;
+      recolhaVidro +=
+          entry.value == Where.recolhaVidro ? entry.key.toLine() : Line.zero;
+      recolhaEcocentro = entry.value == Where.recolhaEcocentro
+          ? entry.key.toLine()
+          : Line.zero;
+    }
+
+    final triagemPC = recolhaPapelCartao;
+    final triagemPM = recolhaPlasticoMetal;
+    final triagemVidro = recolhaVidro;
     final tratamentoMecanico = recolhaIndiferenciada;
 
-    final valorizacaoMaterial =
-        (triagemPC * coeficientesTriagemPC.valorizacaoMaterial) +
-            (triagemPM * coeficientesTriagemPM.valorizacaoMaterial) +
-            (triagemVidro * coeficientesTriagemVidro.valorizacaoMaterial);
-
-    final valorizacaoOrganica =
-        (triagemPC * coeficientesTriagemPC.valorizacaoOrganica) +
-            (triagemPM * coeficientesTriagemPM.valorizacaoOrganica) +
-            (triagemVidro * coeficientesTriagemVidro.valorizacaoOrganica);
+    final reciclagem =
+        ((triagemPC * origemTriagem * coeficientesTriagemPC.reciclagem) +
+                (triagemPM * origemTriagem * coeficientesTriagemPM.reciclagem) +
+                (triagemVidro *
+                    origemTriagem *
+                    coeficientesTriagemVidro.reciclagem) +
+                (tratamentoMecanico *
+                    origemTMTMB *
+                    coeficientesTratamentoMecanico.reciclagem)) *
+            eficienciaReciclagem;
 
     final valorizacaoEnergetica =
         (triagemPC * coeficientesTriagemPC.valorizacaoEnergetica) +
             (triagemPM * coeficientesTriagemPM.valorizacaoEnergetica) +
-            (triagemVidro * coeficientesTriagemVidro.valorizacaoEnergetica);
+            (triagemVidro * coeficientesTriagemVidro.valorizacaoEnergetica) +
+            (tratamentoMecanico *
+                coeficientesTratamentoMecanico.valorizacaoEnergetica);
 
     final aterro = (triagemPC * coeficientesTriagemPC.aterro) +
         (triagemPM * coeficientesTriagemPM.aterro) +
-        (triagemVidro * coeficientesTriagemVidro.aterro);
+        (triagemVidro * coeficientesTriagemVidro.aterro) +
+        (tratamentoMecanico * coeficientesTratamentoMecanico.aterro);
+
+    final substituicao = reciclagem * substituicaoMateriais;
 
     return Matrix(
       recolhaIndiferenciada: recolhaIndiferenciada,
@@ -119,2591 +326,14 @@ class ConsumerService {
       recolhaPlasticoMetal: recolhaPlasticoMetal,
       recolhaVidro: recolhaVidro,
       recolhaEcocentro: recolhaEcocentro,
-      recolhaBiorresiduos: recolhaBiorresiduos,
       triagemPC: triagemPC,
       triagemPM: triagemPM,
       triagemVidro: triagemVidro,
       tratamentoMecanico: tratamentoMecanico,
-      valorizacaoMaterial: valorizacaoMaterial,
-      valorizacaoOrganica: valorizacaoOrganica,
+      reciclagem: reciclagem,
       valorizacaoEnergetica: valorizacaoEnergetica,
       aterro: aterro,
+      substituicao: substituicao,
     );
   }
 }
-
-const categories = [
-  {
-    "category": "Garrafas",
-    "iconId": "garrafas",
-    "packages": [
-      {
-        "package": "Garrafa de iogurte líquido (grande)",
-        "iconId": "garrafa_de_iogurte_l_quido___completa",
-        "components": [
-          {
-            "component": "Corpo da garrafa",
-            "iconId": "garrafa_de_iogurte_l_quido__grande_",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.027,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_garrafa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.003,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          },
-          {
-            "component": "Manga de plástico",
-            "iconId": "manga",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.001,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Retira o rótulo que envolve a embalagem sempre que possível. Usa o picotado para ser mais fácil."
-          }
-        ]
-      },
-      {
-        "package": "Garrafão de água",
-        "iconId": "garrafao_de_agua___completa",
-        "components": [
-          {
-            "component": "Corpo do garrafão",
-            "iconId": "garrafao_de_agua",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": 0.083,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem, mantendo a tampa na embalagem espalmada."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_garrafa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.002,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          },
-          {
-            "component": "Rótulo",
-            "iconId": "manga",
-            "papel": 0.001,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "O rótulo de papel também é reciclável. Separa-o da embalagem e deposita-o no ecoponto azul."
-          }
-        ]
-      },
-      {
-        "package": "Garrafa de água (1,5L)",
-        "iconId": "garrafa_de_agua___completa",
-        "components": [
-          {
-            "component": "Corpo da garrafa",
-            "iconId": "garrafa_de_agua",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": 0.027,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem, mantendo a tampa na embalagem espalmada."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_garrafa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.001,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          },
-          {
-            "component": "Rótulo",
-            "iconId": "manga",
-            "papel": 0.001,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "O rótulo de papel também é reciclável. Separa-o da embalagem e deposita-o no ecoponto azul."
-          }
-        ]
-      },
-      {
-        "package": "Garrafa de óleo",
-        "iconId": "garrafa_de_oleo___completa",
-        "components": [
-          {
-            "component": "Corpo da garrafa",
-            "iconId": "garrafa_de_oleo",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": 0.026,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem, mantendo a tampa na embalagem espalmada."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_garrafa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.001,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          },
-          {
-            "component": "Rótulo",
-            "iconId": "manga",
-            "papel": 0.001,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "O rótulo de papel também é reciclável. Separa-o da embalagem e deposita-o no ecoponto azul."
-          }
-        ]
-      },
-      {
-        "package": "Garrafa de azeite",
-        "iconId": "garrafa_de_azeite___completa",
-        "components": [
-          {
-            "component": "Corpo da garrafa",
-            "iconId": "garrafa_de_azeite",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": 0.432,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaVidro",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de vidro e por isso deve ir para o contentor verde!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_garrafa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": 0.005,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As tampas metálicas também são recicláveis. Separa-as da embalagem e deposita-as no ecoponto amarelo."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Boiões",
-    "iconId": "boioes",
-    "packages": [
-      {
-        "package": "Boião de doce ou de conservas (vidro)",
-        "iconId": "boiao_de_doce_vidro___completa",
-        "components": [
-          {
-            "component": "Boião",
-            "iconId": "boiao_de_doce_vidro",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": 0.195,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaVidro",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de vidro e por isso deve ir para o contentor verde!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_boiao___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": 0.01,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As tampas metálicas também são recicláveis. Separa-as da embalagem e deposita-as no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Boião de doce ou de conservas (plástico)",
-        "iconId": "boiao_de_doce_plastico___completa",
-        "components": [
-          {
-            "component": "Boião",
-            "iconId": "boiao_de_doce_plastico",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": 0.34,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_boiao___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.01,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          },
-          {
-            "component": "Película de selagem",
-            "iconId": "pelicula_de_selagem",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": 0.001,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As películas de selagem são recicláveis desde que sejam depositadas isoladamente no ecoponto. Separa-as da restante embalagem e coloca-as no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Boião de creme hidratante",
-        "iconId": "boiao_de_creme_hidratante___completa",
-        "components": [
-          {
-            "component": "Boião",
-            "iconId": "boiao_de_creme_hidratante",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": 0.028,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaVidro",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de vidro e por isso deve ir para o contentor verde!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_boiao___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.004,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As tampas de plástico também são recicláveis. Separa-as da embalagem e deposita-as no ecoponto amarelo."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Copos/Baldes",
-    "iconId": "copos_baldes",
-    "packages": [
-      {
-        "package": "Copos de iogurte sólido",
-        "iconId": "copo_iogurte_solido",
-        "components": [
-          {
-            "component": "Copo",
-            "iconId": "copo_iogurte_solido",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.004,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          },
-          {
-            "component": "Película de selagem",
-            "iconId": "pelicula_de_selagem",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.001,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a película de selagem na embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Balde de iogurte sólido",
-        "iconId": "balde_iogurte_solido",
-        "components": [
-          {
-            "component": "Balde",
-            "iconId": "balde_iogurte_solido",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.033,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_boiao___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.007,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Copo de gelado",
-        "iconId": "copo_de_gelado",
-        "components": [
-          {
-            "component": "Copo",
-            "iconId": "copo_de_gelado",
-            "papel": null,
-            "cartao": 0.007,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_boiao___frasco",
-            "papel": null,
-            "cartao": 0.004,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          },
-          {
-            "component": "Película de selagem",
-            "iconId": "pelicula_de_selagem",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.001,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As películas de selagem são recicláveis desde que sejam depositadas isoladamente no ecoponto. Separa-as da restante embalagem e coloca-as no ecoponto amarelo."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Pacotes para bebidas",
-    "iconId": "pacotes_bebidas",
-    "packages": [
-      {
-        "package": "Pacote de leite sem tampa",
-        "iconId": "pacote_de_leite_sem_tampa",
-        "components": [
-          {
-            "component": "Pacote para bebidas",
-            "iconId": "pacote_de_leite_sem_tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": 0.027,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de ECAL e por isso deve ir para o contentor amarelo! As embalagens de ECAL, por serem constituídas por diferentes materiais (plástico, alumínio e cartão), devem ir para este ecoponto, porque depois vão para uma linha de triagem que separa as embalagens pelo seu tipo de material.",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Pacote de leite com tampa",
-        "iconId": "pacote_de_leite_com_tampa",
-        "components": [
-          {
-            "component": "Pacote para bebidas",
-            "iconId": "pacote_de_leite_com_tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": 0.035,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de ECAL e por isso deve ir para o contentor amarelo! As embalagens de ECAL, por serem constituídas por diferentes materiais (plástico, alumínio e cartão), devem ir para este ecoponto, porque depois vão para uma linha de triagem que separa as embalagens pelo seu tipo de material.",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem, mantendo a tampa na embalagem espalmada."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_garrafa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.002,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Pacote flexível para sumo",
-        "iconId": "pacote_flexivel_para_sumo___completa",
-        "components": [
-          {
-            "component": "Pacote para bebidas",
-            "iconId": "pacote_flexivel_para_sumo",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.005,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem, mantendo a tampa na embalagem espalmada."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_garrafa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.001,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Caixas",
-    "iconId": "caixas",
-    "packages": [
-      {
-        "package": "Caixa de sobremesa refrigerada",
-        "iconId": "caixa_de_sobremesa_refrigerada___completa",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_sobremesa_refrigerada___caixa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": 0.009,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "caixa_de_sobremesa_refrigerada___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": 0.004,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Caixa de ovos (cartão)",
-        "iconId": "caixa_de_ovos__cartao_",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_ovos__cartao_",
-            "papel": null,
-            "cartao": 0.03,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Caixa de ovos (plástico)",
-        "iconId": "caixa_de_ovos__plastico_",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_ovos__plastico_",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": 0.057,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Caixa de manteiga e semelhantes",
-        "iconId": "caixa_de_manteiga___completa",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_manteiga___caixa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.01,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "caixa_de_manteiga___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.007,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          },
-          {
-            "component": "Película de selagem",
-            "iconId": "caixa_de_manteiga___pelicula",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.001,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a película de selagem na embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Caixa de bolo fresco",
-        "iconId": "caixa_de_bolo_fresco",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_bolo_fresco",
-            "papel": null,
-            "cartao": 0.133,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaIndiferenciada",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Os resíduos desta embalagem de papel ou cartão vão ficar contaminados com sujidade e gordura, por isso devem ser colocados no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).",
-            "recomendacoes": ""
-          }
-        ]
-      },
-      {
-        "package": "Caixa de detergente em pó",
-        "iconId": "caixa_de_detergente_em_po",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_detergente_em_po",
-            "papel": null,
-            "cartao": 0.231,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Caixa de sapatos",
-        "iconId": "caixa_de_sapatos",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_sapatos",
-            "papel": null,
-            "cartao": 0.225,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Caixa de folha de alumínio ou de película",
-        "iconId": "caixa_de_folha_de_aluminio_ou_de_pelicula___caixa",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_folha_de_aluminio_ou_de_pelicula___caixa",
-            "papel": null,
-            "cartao": 0.028,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          },
-          {
-            "component": "Rolo",
-            "iconId": "caixa_de_folha_de_aluminio_ou_de_pelicula___rolo",
-            "papel": null,
-            "cartao": 0.032,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Deposita o rolo e a caixa separadamente no ecoponto azul, e facilita o processo de separação na central de triagem."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Cuvetes e Tubos",
-    "iconId": "cuvetes_e_tubos",
-    "packages": [
-      {
-        "package": "Cuvete de legumes frescos",
-        "iconId": "cuvete_de_legumes___completo",
-        "components": [
-          {
-            "component": "Cuvete",
-            "iconId": "cuvete_de_legumes___cuvete",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": 0.005,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Filme de selagem",
-            "iconId": "filme_de_selagem",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": 0.003,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Os filmes de selagem são recicláveis desde que sejam depositados isoladamente no ecoponto. Separa-os da restante embalagem e coloca-os no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Cuvete de carne ou peixe frescos",
-        "iconId": "cuvete_de_carne_ou_peixe_frescos___completo",
-        "components": [
-          {
-            "component": "Cuvete",
-            "iconId": "cuvete_de_legumes___cuvete",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.024,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Filme de selagem",
-            "iconId": "filme_de_selagem",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": 0.002,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Os filmes de selagem são recicláveis desde que sejam depositados isoladamente no ecoponto. Separa-os da restante embalagem e coloca-os no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Tabuleiro metálico de pronto-a-comer",
-        "iconId": "tabuleiro_met_lico_de_pronto_a_comer",
-        "components": [
-          {
-            "component": "Tabuleiro",
-            "iconId": "tabuleiro_met_lico_de_pronto_a_comer",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": 0.015,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          },
-          {
-            "component": "Filme de selagem",
-            "iconId": "filme_de_selagem",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": 0.003,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Os filmes de selagem são recicláveis desde que sejam depositados isoladamente no ecoponto. Separa-os da restante embalagem e coloca-os no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Tubo de creme hidratante",
-        "iconId": "tubo_de_creme_hidratante___completo",
-        "components": [
-          {
-            "component": "Tubo",
-            "iconId": "tubo_de_creme_hidratante___tubo",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": 0.013,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_garrafa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.005,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Frascos",
-    "iconId": "frascos",
-    "packages": [
-      {
-        "package": "Frasco de molho de tempero",
-        "iconId": "frasco_de_molho_de_tempero___completo",
-        "components": [
-          {
-            "component": "Frasco",
-            "iconId": "frasco_de_molho_de_tempero___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": 0.017,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_boiao___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.009,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Frasco de desodorizante roll-on",
-        "iconId": "frasco_de_desodorizante_roll_on___completo",
-        "components": [
-          {
-            "component": "Frasco",
-            "iconId": "frasco_de_desodorizante_roll_on___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": 0.099,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaVidro",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de vidro e por isso deve ir para o contentor verde!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "frasco_de_desodorizante_roll_on___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.006,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As tampas de plástico também são recicláveis. Separa-as da embalagem e deposita-as no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Frasco de café ou outras misturas solúveis",
-        "iconId": "frasco_de_cafe___completo",
-        "components": [
-          {
-            "component": "Frasco",
-            "iconId": "frasco_de_cafe___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": 0.239,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaVidro",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de vidro e por isso deve ir para o contentor verde!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "frasco_de_cafe___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.014,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As tampas de plástico também são recicláveis. Separa-as da embalagem e deposita-as no ecoponto amarelo."
-          },
-          {
-            "component": "Película de selagem",
-            "iconId": "pelicula_de_selagem",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": 0.001,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As películas de selagem são recicláveis desde que sejam depositadas isoladamente no ecoponto. Separa-as da restante embalagem e coloca-as no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Frasco de champô ou amaciador",
-        "iconId": "frasco_de_champo_ou_amaciador___completo",
-        "components": [
-          {
-            "component": "Frasco",
-            "iconId": "frasco_de_champo_ou_amaciador___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.037,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "frasco_de_champo_ou_amaciador___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.004,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Frasco de produto de limpeza com dispensador",
-        "iconId": "frasco_de_produto_de_limpeza_com_dispensador___completo",
-        "components": [
-          {
-            "component": "Frasco",
-            "iconId": "frasco_de_produto_de_limpeza_com_dispensador___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.046,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa com dispensador",
-            "iconId": "frasco_de_produto_de_limpeza_com_dispensador___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.025,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Separa o dispensador da embalagem e deposita tudo no ecoponto amarelo separadamente. Desta forma estás a facilitar a reciclagem de todos os componentes da embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Frasco de sal",
-        "iconId": "frasco_sal___completo",
-        "components": [
-          {
-            "component": "Frasco",
-            "iconId": "frasco_sal___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.019,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "frasco_sal___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.006,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na garrafa/embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Frasco de perfume",
-        "iconId": "frasco_de_perfume___completo",
-        "components": [
-          {
-            "component": "Frasco",
-            "iconId": "frasco_de_perfume___frasco",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": 0.142,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaVidro",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de vidro e por isso deve ir para o contentor verde!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "tampa_garrafa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.007,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As tampas de plástico também são recicláveis. Separa-as da embalagem e deposita-as no ecoponto amarelo."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Latas",
-    "iconId": "latas",
-    "packages": [
-      {
-        "package": "Lata de peixe em conserva",
-        "iconId": "lata_conserva___completo",
-        "components": [
-          {
-            "component": "Lata",
-            "iconId": "lata_conserva___lata",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": 0.023,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa metálica\n(com anilha)",
-            "iconId": "lata_conserva___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": 0.007,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Não separes as anilhas do resto da embalagem. Por serem pequenas perdem-se facilmente no processo de recolha e podem acabar a poluir o meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Lata de refrigerante",
-        "iconId": "lata_de_refrigerante___completo",
-        "components": [
-          {
-            "component": "Lata",
-            "iconId": "lata_de_refrigerante___lata",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": 0.01,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          },
-          {
-            "component": "Anilha",
-            "iconId": "lata_de_refrigerante___anilha",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": 0.001,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Não separes as anilhas do resto da embalagem. Por serem pequenas perdem-se facilmente no processo de recolha e podem acabar a poluir o meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Lata de espuma de barbear",
-        "iconId": "lata_de_espuma_barbear___completo",
-        "components": [
-          {
-            "component": "Lata",
-            "iconId": "lata_de_espuma_barbear___lata",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": 0.051,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa",
-            "iconId": "lata_de_espuma_barbear___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.005,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "As tampas de plástico são recicláveis desde que depositadas isoladamente no ecoponto. Separa-as da restante embalagem e coloca-as no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Lata de ração para animal",
-        "iconId": "lata_de_ra_ao_para_animal___completo",
-        "components": [
-          {
-            "component": "Lata",
-            "iconId": "lata_de_ra_ao_para_animal___lata",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": 0.042,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Tampa metálica\n(com anilha)",
-            "iconId": "lata_de_ra_ao_para_animal___tampa",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": 0.007,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de metal e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Não separes as anilhas do resto da embalagem. Por serem pequenas perdem-se facilmente no processo de recolha e podem acabar a poluir o meio natural."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Pacotes flexíveis/Sacos",
-    "iconId": "pacotes_flexiveis_sacos",
-    "packages": [
-      {
-        "package": "Pacote flexível de açúcar e semelhantes (papel)",
-        "iconId": "pacote_flex_vel_de_a_ucar___papel",
-        "components": [
-          {
-            "component": "Pacote flexível",
-            "iconId": "pacote_flex_vel_de_a_ucar___papel",
-            "papel": 0.008,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Pacote flexível de açúcar e semelhantes (plástico)",
-        "iconId": "pacote_flex_vel_de_a_ucar___plastico",
-        "components": [
-          {
-            "component": "Pacote flexível",
-            "iconId": "pacote_flex_vel_de_a_ucar___plastico",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": 0.006,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Pacote flexível de manteiga e semelhantes",
-        "iconId": "pacote_flex_vel_manteiga",
-        "components": [
-          {
-            "component": "Pacote flexível",
-            "iconId": "pacote_flex_vel_manteiga",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.002,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Pacote flexível de pão",
-        "iconId": "pacote_flexivel_pao___completo",
-        "components": [
-          {
-            "component": "Pacote flexível",
-            "iconId": "pacote_flexivel_pao___pacote",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.005,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Saco para padaria e pastelaria (com janela de plástico)",
-        "iconId": "pacote_padaria_com_janela___completo",
-        "components": [
-          {
-            "component": "Saco para padaria e pastelaria",
-            "iconId": "pacote_padaria_com_janela___pacote",
-            "papel": 0.007,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          },
-          {
-            "component": "Janela de plástico",
-            "iconId": "pacote_padaria_com_janela___janela",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.0006,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "A janela de plástico deve ser separada do saco e colocada no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Pacote flexível de esparguete e massas secas",
-        "iconId": "pacote_flexivel_esparguete",
-        "components": [
-          {
-            "component": "Pacote flexível",
-            "iconId": "pacote_flexivel_esparguete",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.006,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Pacote flexível de papel higiénico (plástico)",
-        "iconId": "pacote_flexivel_papel_higienico___plastico",
-        "components": [
-          {
-            "component": "Pacote flexível",
-            "iconId": "pacote_flexivel_papel_higienico___plastico",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": 0.026,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Pacote flexível de papel higiénico (papel)",
-        "iconId": "pacote_flexivel_papel_higienico___papel",
-        "components": [
-          {
-            "component": "Pacote flexível",
-            "iconId": "pacote_flexivel_papel_higienico___papel",
-            "papel": 0.01,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Saco de asas para as compras (plástico)",
-        "iconId": "saco_compras_plastico",
-        "components": [
-          {
-            "component": "Saco de asas\npara as compras",
-            "iconId": "saco_compras_plastico",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": 0.024,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      },
-      {
-        "package": "Saco de asas para as compras (papel)",
-        "iconId": "saco_compras_papel",
-        "components": [
-          {
-            "component": "Saco de asas\npara as compras",
-            "iconId": "saco_compras_papel",
-            "papel": 0.059,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Multi-embalagem",
-    "iconId": "multi_embalagens",
-    "packages": [
-      {
-        "package": "Caixa de pasta de dentes",
-        "iconId": "caixa_de_pasta_de_dentes___completo",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_pasta_de_dentes___caixa",
-            "papel": null,
-            "cartao": 0.01,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "A caixa de cartão que envolve a tua embalagem é reciclável se depositada no ecoponto correto. Espalma-a e coloca-a no ecoponto azul."
-          },
-          {
-            "component": "Tubo da pasta de dentes",
-            "iconId": "caixa_de_pasta_de_dentes___tubo",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.01,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a tampa na embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          }
-        ]
-      },
-      {
-        "package": "Caixa de peixe congelado",
-        "iconId": "caixa_de_peixe_congelado___caixa",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_peixe_congelado___caixa",
-            "papel": null,
-            "cartao": 0.041,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          },
-          {
-            "component": "Invólucros de plástico",
-            "iconId": "caixa_de_peixe_congelado___involucro_plastico",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": 0.001,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Separa os invólucros de plástico e deposita-os no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Caixa de cereais",
-        "iconId": "caixa_de_cereais___caixa",
-        "components": [
-          {
-            "component": "Caixa",
-            "iconId": "caixa_de_cereais___caixa",
-            "papel": null,
-            "cartao": 0.065,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar e espalmar a embalagem."
-          },
-          {
-            "component": "Bolsa de plástico",
-            "iconId": "caixa_de_cereais___bolsa_plastico",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.011,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Depois de vazia, coloca a bolsa de plástico no ecoponto amarelo."
-          }
-        ]
-      },
-      {
-        "package": "Cuvete de pronto-a-comer",
-        "iconId": "cuvete_de_pronto_a_comer___completa",
-        "components": [
-          {
-            "component": "Cuvete",
-            "iconId": "cuvete_de_pronto_a_comer___cuvete",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.024,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste a embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Antes de colocar no ecoponto, esvaziar a embalagem."
-          },
-          {
-            "component": "Película de selagem",
-            "iconId": "cuvete_de_pronto_a_comer___pelicula",
-            "papel": null,
-            "cartao": null,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": 0.001,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPlasticoMetal",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de plástico e por isso deve ir para o contentor amarelo!",
-            "recomendacoes":
-                "Mantém a película de selagem na embalagem quando a depositas no ecoponto. Evitas que se perca no processo de recolha e que acabe abandonada no meio natural."
-          },
-          {
-            "component": "Rótulo",
-            "iconId": "cuvete_de_pronto_a_comer___rotulo",
-            "papel": null,
-            "cartao": 0.007,
-            "ecal": null,
-            "pebd": null,
-            "pet": null,
-            "pead": null,
-            "plasticos_mistos": null,
-            "metais_ferrosos": null,
-            "metais_nao_ferrosos": null,
-            "vidro": null,
-            "eps": null,
-            "fracao_resto": null,
-            "where": "recolhaPapelCartao",
-            "if_true":
-                "Muito bem! Depositaste o componente de embalagem no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
-            "if_false":
-                "O destino selecionado não está correto. Este componente de embalagem é de papel ou cartão, e por isso deve ir para o contentor azul!",
-            "recomendacoes":
-                "O rótulo de papel também é reciclável. Separa-o da embalagem e deposita-o no ecoponto azul."
-          }
-        ]
-      }
-    ]
-  }
-];

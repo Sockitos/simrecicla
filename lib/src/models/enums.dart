@@ -53,12 +53,3 @@ extension PMaterialUtils on PMaterial {
     }
   }
 }
-
-enum Where {
-  recolhaIndiferenciada,
-  recolhaPapelCartao,
-  recolhaPlasticoMetal,
-  recolhaVidro,
-  recolhaEcocentro,
-  recolhaBiorresiduos,
-}

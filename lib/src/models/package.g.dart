@@ -7,7 +7,7 @@ part of 'package.dart';
 // **************************************************************************
 
 _$_Package _$$_PackageFromJson(Map<String, dynamic> json) => _$_Package(
-      package: json['package'] as String,
+      name: json['name'] as String,
       iconId: json['iconId'] as String,
       components: (json['components'] as List<dynamic>)
           .map((e) => Component.fromJson(e as Map<String, dynamic>))
@@ -16,7 +16,7 @@ _$_Package _$$_PackageFromJson(Map<String, dynamic> json) => _$_Package(
 
 Map<String, dynamic> _$$_PackageToJson(_$_Package instance) =>
     <String, dynamic>{
-      'package': instance.package,
+      'name': instance.name,
       'iconId': instance.iconId,
       'components': instance.components.map((e) => e.toJson()).toList(),
     };

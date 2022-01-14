@@ -1,3 +1,4 @@
+import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -5,8 +6,8 @@ import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/custom_icons.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/component.dart';
-import 'package:simtech/src/models/enums.dart';
 import 'package:simtech/src/models/package.dart';
+import 'package:simtech/src/services/consumer_service.dart';
 import 'package:simtech/src/ui/screens/consumer/bin_selection/components/bin_target.dart';
 import 'package:simtech/src/ui/screens/consumer/bin_selection/components/bird_icon_button.dart';
 import 'package:simtech/src/ui/screens/consumer/bin_selection/components/draggable_components.dart';
@@ -27,8 +28,7 @@ class BinSelectionScreen extends HookWidget {
     final whereComponents = useState<Map<Component, Where>>({});
     final isSelecting = useState<bool>(true);
     final isBinning = useState<bool>(false);
-    final mode =
-        useState<BinSelectionState>(const BinSelectionState.packageResults());
+
     return ScreenWrapper(
       body: Center(
         child: Column(
@@ -36,7 +36,7 @@ class BinSelectionScreen extends HookWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                package.package,
+                package.name,
                 style: AppTextStyles.h2.copyWith(
                   color: AppColors.lightGreen,
                 ),
@@ -90,207 +90,10 @@ class BinSelectionScreen extends HookWidget {
                     ),
                   ),
                 ] else
-                  Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 55),
-                        child: Ink(
-                          width: 855,
-                          height: 600,
-                          padding: const EdgeInsets.fromLTRB(100, 50, 200, 50),
-                          decoration: BoxDecoration(
-                            color: AppColors.white,
-                            borderRadius: BorderRadius.circular(34),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black12,
-                                offset: Offset(0, 3),
-                                blurRadius: 20,
-                              )
-                            ],
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: mode.value.when(
-                              packageResults: () => [
-                                Text(
-                                  'Embalagem completa',
-                                  style: AppTextStyles.h2,
-                                ),
-                                const SizedBox(height: 30),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      height: 54,
-                                      width: 54,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            width: 4,
-                                            color: AppColors.lightGreen,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 15),
-                                    Text(
-                                      'Impactes Ambientais',
-                                      style: AppTextStyles.h4.copyWith(
-                                        color: AppColors.lightGreen,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 15),
-                                Text(
-                                  'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                                  style: AppTextStyles.paragraph,
-                                ),
-                                const SizedBox(height: 30),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      height: 54,
-                                      width: 54,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            width: 4,
-                                            color: AppColors.lightGreen,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 15),
-                                    Text(
-                                      'Impactes Económicos',
-                                      style: AppTextStyles.h4.copyWith(
-                                        color: AppColors.lightGreen,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 15),
-                                Text(
-                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                                  style: AppTextStyles.paragraph,
-                                ),
-                                const SizedBox(height: 30),
-                                Text(
-                                  'Clique em cada componente para saber mais.',
-                                  style: AppTextStyles.paragraph,
-                                ),
-                              ],
-                              componentResults: (componentId) => [
-                                Text(
-                                  componentId,
-                                  style: AppTextStyles.h2,
-                                ),
-                                const SizedBox(height: 30),
-                                Text(
-                                  'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                                  style: AppTextStyles.paragraph,
-                                ),
-                                const SizedBox(height: 30),
-                                Text(
-                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                                  style: AppTextStyles.paragraph,
-                                ),
-                                const SizedBox(height: 45),
-                                Text(
-                                  'Recomendações',
-                                  style: AppTextStyles.h3.copyWith(
-                                    color: AppColors.lightGreen,
-                                  ),
-                                ),
-                                const SizedBox(height: 30),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      height: 64,
-                                      width: 64,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            width: 4,
-                                            color: AppColors.lightGreen,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 20),
-                                    Text(
-                                      'Lavar a embalagem',
-                                      style: AppTextStyles.paragraph,
-                                    ),
-                                    const SizedBox(width: 60),
-                                    SizedBox(
-                                      height: 64,
-                                      width: 64,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            width: 4,
-                                            color: AppColors.lightGreen,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 20),
-                                    Text(
-                                      'Espalmar',
-                                      style: AppTextStyles.paragraph,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        right: 15,
-                        top: 15,
-                        child: IconButton(
-                          onPressed: () => isSelecting.value = true,
-                          iconSize: 44,
-                          color: AppColors.lightGreen,
-                          icon: const Icon(Icons.close_outlined),
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          const SizedBox(height: 30),
-                          BirdIconButton(
-                            radius: 40,
-                            icon: CustomIcons.getIcon(package.iconId),
-                            isSelected: mode.value is PackageResults,
-                            onPressed: () => mode.value =
-                                const BinSelectionState.packageResults(),
-                          ),
-                          for (final c in package.components) ...[
-                            const SizedBox(height: 20),
-                            BirdIconButton(
-                              radius: 40,
-                              icon: CustomIcons.getIcon(c.iconId),
-                              isCorrect: whereComponents.value[c] == c.where,
-                              isSelected: mode.value is ComponentResults &&
-                                  (mode.value as ComponentResults)
-                                          .componentId ==
-                                      c.component,
-                              onPressed: () => mode.value =
-                                  BinSelectionState.componentResults(
-                                componentId: c.component,
-                              ),
-                            ),
-                          ]
-                        ],
-                      ),
-                    ],
+                  Results(
+                    whereComponents: whereComponents,
+                    isSelecting: isSelecting,
+                    package: package,
                   ),
                 const SizedBox(width: 180),
                 my.MouseRegion(
@@ -476,7 +279,12 @@ class BinSelectionScreen extends HookWidget {
                   child: isSelecting.value
                       ? Center(
                           child: ElevatedButton(
-                            onPressed: () => isSelecting.value = false,
+                            onPressed: whereComponents.value.keys.length ==
+                                    package.components.length
+                                ? () {
+                                    isSelecting.value = false;
+                                  }
+                                : null,
                             child: const Text('VERIFICAR'),
                           ),
                         )
@@ -490,4 +298,440 @@ class BinSelectionScreen extends HookWidget {
       ),
     );
   }
+}
+
+class Results extends HookWidget {
+  const Results({
+    Key? key,
+    required this.whereComponents,
+    required this.isSelecting,
+    required this.package,
+  }) : super(key: key);
+
+  final ValueNotifier<Map<Component, Where>> whereComponents;
+  final ValueNotifier<bool> isSelecting;
+  final Package package;
+
+  @override
+  Widget build(BuildContext context) {
+    final mode =
+        useState<BinSelectionState>(const BinSelectionState.packageResults());
+    return Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 55),
+          child: Ink(
+            width: 855,
+            height: 600,
+            padding: const EdgeInsets.fromLTRB(90, 30, 90, 30),
+            decoration: BoxDecoration(
+              color: AppColors.white,
+              borderRadius: BorderRadius.circular(34),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0, 3),
+                  blurRadius: 20,
+                )
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: mode.value.when(
+                packageResults: () {
+                  final results =
+                      ConsumerService.getResults(whereComponents.value);
+
+                  return [
+                    Text(
+                      'Embalagem completa',
+                      style: AppTextStyles.h2,
+                    ),
+                    const SizedBox(height: 30),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    height: 54,
+                                    width: 54,
+                                    child: DecoratedBox(
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                          width: 4,
+                                          color: AppColors.lightGreen,
+                                        ),
+                                      ),
+                                      child: const Icon(
+                                        Icons.spa_outlined,
+                                        size: 34,
+                                        color: AppColors.lightGreen,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 15),
+                                  Text(
+                                    'Impactes Ambientais',
+                                    style: AppTextStyles.h4.copyWith(
+                                      color: AppColors.lightGreen,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 15),
+                              Text(
+                                'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                style: AppTextStyles.paragraph,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 40),
+                        SizedBox(
+                          height: 180,
+                          width: 360,
+                          child: charts.BarChart(
+                            [
+                              charts.Series<DataPoint, String>(
+                                id: 'main',
+                                data: [
+                                  DataPoint(
+                                    id: 'user',
+                                    label: results.isCorrect
+                                        ? 'Escolha correta!'
+                                        : 'A sua escolha',
+                                    value: results.userImpacts.environmental,
+                                  ),
+                                  DataPoint(
+                                    id: 'id',
+                                    label: results.isCorrect
+                                        ? 'Se não reciclasse'
+                                        : 'Escolha correta',
+                                    value: results
+                                        .alternativeImpacts.environmental,
+                                  ),
+                                ],
+                                domainFn: (d, _) => d.label,
+                                measureFn: (d, _) => d.value * 10000000,
+                                colorFn: (d, __) =>
+                                    charts.ColorUtil.fromDartColor(
+                                  d.id == 'user'
+                                      ? results.isCorrect
+                                          ? AppColors.lightGreen
+                                          : AppColors.grey5
+                                      : results.isCorrect
+                                          ? AppColors.grey5
+                                          : AppColors.lightGreen,
+                                ),
+                              ),
+                            ],
+                            behaviors: [
+                              charts.ChartTitle(
+                                'kg CO2eq / Embalagem',
+                                behaviorPosition: charts.BehaviorPosition.start,
+                                titleOutsideJustification:
+                                    charts.OutsideJustification.endDrawArea,
+                                titleStyleSpec: const charts.TextStyleSpec(
+                                  fontSize: 13,
+                                  color: charts.MaterialPalette.black,
+                                ),
+                              ),
+                            ],
+                            domainAxis: charts.OrdinalAxisSpec(
+                              showAxisLine: false,
+                              renderSpec: charts.SmallTickRendererSpec(
+                                labelStyle: const charts.TextStyleSpec(
+                                  fontSize: 13,
+                                  color: charts.MaterialPalette.black,
+                                ),
+                                lineStyle: charts.LineStyleSpec(
+                                  color: charts.ColorUtil.fromDartColor(
+                                    Colors.transparent,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            primaryMeasureAxis: charts.NumericAxisSpec(
+                              renderSpec: charts.GridlineRendererSpec(
+                                labelStyle: const charts.TextStyleSpec(
+                                  fontFamily: 'Dosis',
+                                  color: charts.MaterialPalette.black,
+                                ),
+                                lineStyle: charts.LineStyleSpec(
+                                  color: charts.ColorUtil.fromDartColor(
+                                    AppColors.grey3,
+                                  ),
+                                ),
+                              ),
+                              tickProviderSpec:
+                                  const charts.BasicNumericTickProviderSpec(
+                                desiredTickCount: 5,
+                              ),
+                              tickFormatterSpec:
+                                  charts.BasicNumericTickFormatterSpec(
+                                (value) =>
+                                    value == 0 ? '' : '${value! / 10000000}',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 30),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    height: 54,
+                                    width: 54,
+                                    child: DecoratedBox(
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                          width: 4,
+                                          color: AppColors.lightGreen,
+                                        ),
+                                      ),
+                                      child: const Icon(
+                                        Icons.account_balance_wallet_outlined,
+                                        size: 34,
+                                        color: AppColors.lightGreen,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 15),
+                                  Text(
+                                    'Impactes Económicos',
+                                    style: AppTextStyles.h4.copyWith(
+                                      color: AppColors.lightGreen,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 15),
+                              Text(
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+                                style: AppTextStyles.paragraph,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 40),
+                        SizedBox(
+                          height: 180,
+                          width: 360,
+                          child: charts.BarChart(
+                            [
+                              charts.Series<DataPoint, String>(
+                                id: 'main',
+                                data: [
+                                  DataPoint(
+                                    id: 'user',
+                                    label: results.isCorrect
+                                        ? 'Escolha correta!'
+                                        : 'A sua escolha',
+                                    value: results.userImpacts.economical,
+                                  ),
+                                  DataPoint(
+                                    id: 'id',
+                                    label: results.isCorrect
+                                        ? 'Se não reciclasse'
+                                        : 'Escolha correta',
+                                    value:
+                                        results.alternativeImpacts.economical,
+                                  ),
+                                ],
+                                domainFn: (d, _) => d.label,
+                                measureFn: (d, _) => d.value * 10000000,
+                                colorFn: (d, __) =>
+                                    charts.ColorUtil.fromDartColor(
+                                  d.id == 'user'
+                                      ? results.isCorrect
+                                          ? AppColors.lightGreen
+                                          : AppColors.grey5
+                                      : results.isCorrect
+                                          ? AppColors.grey5
+                                          : AppColors.lightGreen,
+                                ),
+                              ),
+                            ],
+                            behaviors: [
+                              charts.ChartTitle(
+                                '€ / Embalagem',
+                                behaviorPosition: charts.BehaviorPosition.start,
+                                titleOutsideJustification:
+                                    charts.OutsideJustification.endDrawArea,
+                                titleStyleSpec: const charts.TextStyleSpec(
+                                  fontSize: 13,
+                                  color: charts.MaterialPalette.black,
+                                ),
+                              ),
+                            ],
+                            domainAxis: charts.OrdinalAxisSpec(
+                              showAxisLine: false,
+                              renderSpec: charts.SmallTickRendererSpec(
+                                labelStyle: const charts.TextStyleSpec(
+                                  fontSize: 13,
+                                  color: charts.MaterialPalette.black,
+                                ),
+                                lineStyle: charts.LineStyleSpec(
+                                  color: charts.ColorUtil.fromDartColor(
+                                    Colors.transparent,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            primaryMeasureAxis: charts.NumericAxisSpec(
+                              renderSpec: charts.GridlineRendererSpec(
+                                labelStyle: const charts.TextStyleSpec(
+                                  fontFamily: 'Dosis',
+                                  color: charts.MaterialPalette.black,
+                                ),
+                                lineStyle: charts.LineStyleSpec(
+                                  color: charts.ColorUtil.fromDartColor(
+                                    AppColors.grey3,
+                                  ),
+                                ),
+                              ),
+                              tickProviderSpec:
+                                  const charts.BasicNumericTickProviderSpec(
+                                desiredTickCount: 5,
+                              ),
+                              tickFormatterSpec:
+                                  charts.BasicNumericTickFormatterSpec(
+                                (value) =>
+                                    value == 0 ? '' : '${value! / 10000000}',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    Text(
+                      'Clique em cada componente para saber mais.',
+                      style:
+                          AppTextStyles.small.copyWith(color: AppColors.black),
+                    ),
+                  ];
+                },
+                componentResults: (componentId) {
+                  final component = whereComponents.value.keys
+                      .firstWhere((c) => c.name == componentId);
+                  final isCorrect =
+                      whereComponents.value[component] == component.where;
+                  return [
+                    Text(
+                      component.name,
+                      style: AppTextStyles.h2,
+                    ),
+                    const SizedBox(height: 30),
+                    Text(
+                      isCorrect ? component.ifTrue : component.ifFalse,
+                      style: AppTextStyles.paragraph,
+                    ),
+                    const SizedBox(height: 60),
+                    Text(
+                      'Recomendações',
+                      style: AppTextStyles.h3.copyWith(
+                        color: AppColors.lightGreen,
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        for (final r in component.recommendations) ...[
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(
+                                height: 55,
+                                width: 55,
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      width: 4,
+                                      color: AppColors.lightGreen,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 20),
+                              Text(
+                                r,
+                                style: AppTextStyles.paragraph,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20),
+                        ]
+                      ],
+                    ),
+                  ];
+                },
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          right: 15,
+          top: 15,
+          child: IconButton(
+            onPressed: () => isSelecting.value = true,
+            iconSize: 44,
+            color: AppColors.lightGreen,
+            icon: const Icon(Icons.close_outlined),
+          ),
+        ),
+        Column(
+          children: [
+            const SizedBox(height: 10),
+            BirdIconButton(
+              radius: 40,
+              icon: CustomIcons.getIcon(package.iconId),
+              isSelected: mode.value is PackageResults,
+              onPressed: () =>
+                  mode.value = const BinSelectionState.packageResults(),
+            ),
+            for (final c in package.components) ...[
+              const SizedBox(height: 20),
+              BirdIconButton(
+                radius: 40,
+                icon: CustomIcons.getIcon(c.iconId),
+                isCorrect: whereComponents.value[c] == c.where,
+                isSelected: mode.value is ComponentResults &&
+                    (mode.value as ComponentResults).componentId == c.name,
+                onPressed: () =>
+                    mode.value = BinSelectionState.componentResults(
+                  componentId: c.name,
+                ),
+              ),
+            ]
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class DataPoint {
+  DataPoint({
+    required this.id,
+    required this.label,
+    required this.value,
+  });
+
+  final String id;
+  final String label;
+  final double value;
 }

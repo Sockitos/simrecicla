@@ -89,7 +89,7 @@ class PackagesDialog extends HookWidget {
                                     Expanded(
                                       child: Center(
                                         child: Text(
-                                          package.package,
+                                          package.name,
                                           textAlign: TextAlign.center,
                                           style:
                                               AppTextStyles.paragraph.copyWith(

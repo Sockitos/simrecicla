@@ -1,13 +1,25 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:simtech/src/models/enums.dart';
 
 part 'component.freezed.dart';
 part 'component.g.dart';
 
+enum Where {
+  @JsonValue('Contentor Indiferenciado')
+  recolhaIndiferenciada,
+  @JsonValue('Contentor Azul')
+  recolhaPapelCartao,
+  @JsonValue('Contentor Amarelo')
+  recolhaPlasticoMetal,
+  @JsonValue('Contentor Verde')
+  recolhaVidro,
+  recolhaEcocentro,
+  recolhaBiorresiduos,
+}
+
 @freezed
 class Component with _$Component {
   const factory Component({
-    required String component,
+    required String name,
     required String iconId,
     double? papel,
     double? cartao,
@@ -30,4 +42,6 @@ class Component with _$Component {
 
   factory Component.fromJson(Map<String, dynamic> json) =>
       _$ComponentFromJson(json);
+
+  List<String> get recommendations => recomendacoes.split('; ');
 }

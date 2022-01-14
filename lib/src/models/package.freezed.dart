@@ -22,11 +22,11 @@ class _$PackageTearOff {
   const _$PackageTearOff();
 
   _Package call(
-      {required String package,
+      {required String name,
       required String iconId,
       required List<Component> components}) {
     return _Package(
-      package: package,
+      name: name,
       iconId: iconId,
       components: components,
     );
@@ -42,7 +42,7 @@ const $Package = _$PackageTearOff();
 
 /// @nodoc
 mixin _$Package {
-  String get package => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String get iconId => throw _privateConstructorUsedError;
   List<Component> get components => throw _privateConstructorUsedError;
 
@@ -55,7 +55,7 @@ mixin _$Package {
 abstract class $PackageCopyWith<$Res> {
   factory $PackageCopyWith(Package value, $Res Function(Package) then) =
       _$PackageCopyWithImpl<$Res>;
-  $Res call({String package, String iconId, List<Component> components});
+  $Res call({String name, String iconId, List<Component> components});
 }
 
 /// @nodoc
@@ -68,14 +68,14 @@ class _$PackageCopyWithImpl<$Res> implements $PackageCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? package = freezed,
+    Object? name = freezed,
     Object? iconId = freezed,
     Object? components = freezed,
   }) {
     return _then(_value.copyWith(
-      package: package == freezed
-          ? _value.package
-          : package // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       iconId: iconId == freezed
           ? _value.iconId
@@ -94,7 +94,7 @@ abstract class _$PackageCopyWith<$Res> implements $PackageCopyWith<$Res> {
   factory _$PackageCopyWith(_Package value, $Res Function(_Package) then) =
       __$PackageCopyWithImpl<$Res>;
   @override
-  $Res call({String package, String iconId, List<Component> components});
+  $Res call({String name, String iconId, List<Component> components});
 }
 
 /// @nodoc
@@ -108,14 +108,14 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? package = freezed,
+    Object? name = freezed,
     Object? iconId = freezed,
     Object? components = freezed,
   }) {
     return _then(_Package(
-      package: package == freezed
-          ? _value.package
-          : package // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       iconId: iconId == freezed
           ? _value.iconId
@@ -133,14 +133,14 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Package extends _Package {
   const _$_Package(
-      {required this.package, required this.iconId, required this.components})
+      {required this.name, required this.iconId, required this.components})
       : super._();
 
   factory _$_Package.fromJson(Map<String, dynamic> json) =>
       _$$_PackageFromJson(json);
 
   @override
-  final String package;
+  final String name;
   @override
   final String iconId;
   @override
@@ -148,7 +148,7 @@ class _$_Package extends _Package {
 
   @override
   String toString() {
-    return 'Package(package: $package, iconId: $iconId, components: $components)';
+    return 'Package(name: $name, iconId: $iconId, components: $components)';
   }
 
   @override
@@ -156,7 +156,7 @@ class _$_Package extends _Package {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Package &&
-            const DeepCollectionEquality().equals(other.package, package) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.iconId, iconId) &&
             const DeepCollectionEquality()
                 .equals(other.components, components));
@@ -165,7 +165,7 @@ class _$_Package extends _Package {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(package),
+      const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(iconId),
       const DeepCollectionEquality().hash(components));
 
@@ -182,7 +182,7 @@ class _$_Package extends _Package {
 
 abstract class _Package extends Package {
   const factory _Package(
-      {required String package,
+      {required String name,
       required String iconId,
       required List<Component> components}) = _$_Package;
   const _Package._() : super._();
@@ -190,7 +190,7 @@ abstract class _Package extends Package {
   factory _Package.fromJson(Map<String, dynamic> json) = _$_Package.fromJson;
 
   @override
-  String get package;
+  String get name;
   @override
   String get iconId;
   @override
