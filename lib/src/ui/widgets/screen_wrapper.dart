@@ -52,9 +52,10 @@ class ScreenWrapper extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: () => AutoRouter.of(context).push(
-                  const RecyclerScreenRoute(),
-                ),
+                onPressed: () {},
+                // onPressed: () => AutoRouter.of(context).push(
+                //   const RecyclerScreenRoute(),
+                // ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(

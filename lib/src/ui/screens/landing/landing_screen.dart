@@ -93,9 +93,7 @@ class LandingScreen extends StatelessWidget {
                             description: 'Quero optimizar uma linha de triagem',
                             tooltip:
                                 'Permite otimizar os resultados uma linha de triagem de embalagens, de acordo com a sequenciação de diferentes operações e equipamentos',
-                            onPressed: () => AutoRouter.of(context).push(
-                              const RecyclerScreenRoute(),
-                            ),
+                            onPressed: () {},
                           ),
                         ],
                       ),
@@ -150,9 +148,7 @@ class LandingScreen extends StatelessWidget {
                             description: 'Quero optimizar uma linha de triagem',
                             tooltip:
                                 'Permite calcular o impacte das práticas de separação e encaminhamento dos resíduos de embalagens',
-                            onPressed: () => AutoRouter.of(context).push(
-                              const RecyclerScreenRoute(),
-                            ),
+                            onPressed: () {},
                           ),
                         ),
                         SizedBox(
