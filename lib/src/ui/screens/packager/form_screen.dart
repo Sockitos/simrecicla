@@ -13,6 +13,7 @@ import 'package:simtech/src/models/question.dart';
 import 'package:simtech/src/router/router.gr.dart';
 import 'package:simtech/src/services/packager_service.dart';
 import 'package:simtech/src/ui/screens/packager/components/dropdown_field.dart';
+import 'package:simtech/src/ui/screens/packager/components/form_field.dart';
 import 'package:simtech/src/ui/screens/packager/components/number_field.dart';
 import 'package:simtech/src/ui/screens/packager/components/percentage_field.dart';
 import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
@@ -68,7 +69,7 @@ class FormScreen extends HookWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 50),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 60),
                     child: Text(
@@ -78,7 +79,7 @@ class FormScreen extends HookWidget {
                           .copyWith(color: AppColors.lightGreen),
                     ),
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 40),
                   QuestionsPageView(
                     onSubmit: isSubmittable
                         ? () => AutoRouter.of(context).push(
@@ -93,7 +94,10 @@ class FormScreen extends HookWidget {
                     questions: [
                       DropdownField<PMaterial>(
                         value: material.value,
-                        onChanged: (value) => material.value = value,
+                        onChanged: (value) {
+                          material.value = value;
+                          answers.value = {};
+                        },
                         hint: 'Qual o material base de embalagem?',
                         options: PMaterial.values.toList(),
                         optionToString: (option) => option.toStr(),
@@ -141,18 +145,18 @@ class FormScreen extends HookWidget {
                 color: rating.color.withOpacity(0.2),
                 child: Align(
                   alignment: Alignment.topCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 30),
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxHeight: max(
-                          MediaQuery.of(context).size.height -
-                              MediaQuery.of(context).padding.top -
-                              MediaQuery.of(context).padding.bottom -
-                              60,
-                          780,
-                        ),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: max(
+                        MediaQuery.of(context).size.height -
+                            MediaQuery.of(context).padding.top -
+                            MediaQuery.of(context).padding.bottom -
+                            60,
+                        840,
                       ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 30),
                       child: Center(
                         child: SizedBox(
                           height: 780,
@@ -274,7 +278,7 @@ class QuestionsPageView extends HookWidget {
         super(key: key);
 
   final VoidCallback? onSubmit;
-  final List<Widget> questions;
+  final List<MyFormField> questions;
 
   @override
   Widget build(BuildContext context) {
@@ -309,7 +313,7 @@ class QuestionsPageView extends HookWidget {
     return Column(
       children: [
         SizedBox(
-          height: rows * DropdownField.height,
+          height: rows * MyFormField.height,
           child: PageView(
             controller: controller,
             children: [
@@ -392,7 +396,7 @@ class QuestionsPageView extends HookWidget {
             ),
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 2),
         SizedBox(
           height: 70,
           child: Row(
@@ -405,6 +409,7 @@ class QuestionsPageView extends HookWidget {
                 ),
                 icon: const Icon(Icons.chevron_left_rounded),
                 iconSize: 48,
+                splashRadius: 36,
                 color: AppColors.lightGreen,
               ),
               SmoothPageIndicator(
@@ -423,6 +428,7 @@ class QuestionsPageView extends HookWidget {
                 ),
                 icon: const Icon(Icons.chevron_right_rounded),
                 iconSize: 48,
+                splashRadius: 36,
                 color: AppColors.lightGreen,
               ),
             ],

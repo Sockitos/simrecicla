@@ -331,11 +331,10 @@ class PackagerService {
     final eol = ((1 - a) * r2 * (ereceol - (evast * qsout)) +
             (1 - b) * r3 * (eer - (lhv * eficiencaEletrica * pu)) +
             (1 - r2 - r3) * ed) *
-        (weight / 1000) *
-        -1;
+        (weight / 1000);
     final materiais = ((1 - r1) * ev) +
         (r1 * (a * erecycled + (1 - a) * ev * qsin)) * (weight / 1000);
-    final impacteTotal = materiais - eol;
+    final impacteTotal = materiais + eol;
     final producao = ev * (weight / 1000);
     final incorporacao = (ev * (weight / 1000)) - materiais;
 

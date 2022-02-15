@@ -83,7 +83,7 @@ class ResultsScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                            'Resultado',
+                            'Impacte Ambiental',
                             style: AppTextStyles.h2(context.layout)
                                 .copyWith(color: AppColors.lightGreen),
                           ),
@@ -99,22 +99,22 @@ class ResultsScreen extends StatelessWidget {
                                       label:
                                           'Produção\nEmbalagem\n${impact.producao.toStringAsFixed(4)} gCO2eq',
                                       value: impact.producao,
-                                      color: AppColors.lightGreen,
+                                      color: AppColors.darkGreen,
                                     ),
                                     if (impact.incorporacao != 0)
                                       DataPoint(
                                         id: 'incorporacao',
                                         label:
-                                            'Incorporação\nMaterial Reciclado\n${impact.incorporacao.toStringAsFixed(4)} gCO2eq',
+                                            'Incorporação\nMaterial Reciclado\n-${impact.incorporacao.toStringAsFixed(4)} gCO2eq',
                                         value: impact.incorporacao,
-                                        color: AppColors.lightGreen,
+                                        color: AppColors.blue,
                                       ),
                                     DataPoint(
                                       id: 'eol',
                                       label:
-                                          'Fim de vida\n${impact.eol.toStringAsFixed(4)} gCO2eq',
-                                      value: impact.eol,
-                                      color: AppColors.lightGreen,
+                                          'Fim de Vida\n${impact.eol.toStringAsFixed(4)} gCO2eq',
+                                      value: impact.eol.abs(),
+                                      color: AppColors.yellow,
                                     ),
                                     DataPoint(
                                       id: 'total',
@@ -144,9 +144,12 @@ class ResultsScreen extends StatelessWidget {
                                     DataPoint(
                                       id: 'eol',
                                       label: '',
-                                      value: impact.producao -
-                                          impact.incorporacao -
-                                          impact.eol,
+                                      value: impact.eol.isNegative
+                                          ? (impact.producao -
+                                              impact.incorporacao +
+                                              impact.eol)
+                                          : (impact.producao -
+                                              impact.incorporacao),
                                       color: Colors.transparent,
                                     ),
                                   ],
@@ -233,18 +236,18 @@ class ResultsScreen extends StatelessWidget {
                 color: rating.color.withOpacity(0.2),
                 child: Align(
                   alignment: Alignment.topCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 30),
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxHeight: max(
-                          MediaQuery.of(context).size.height -
-                              MediaQuery.of(context).padding.top -
-                              MediaQuery.of(context).padding.bottom -
-                              60,
-                          780,
-                        ),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: max(
+                        MediaQuery.of(context).size.height -
+                            MediaQuery.of(context).padding.top -
+                            MediaQuery.of(context).padding.bottom -
+                            60,
+                        840,
                       ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 30),
                       child: Center(
                         child: SizedBox(
                           height: 780,

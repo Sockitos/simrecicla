@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/text_styles.dart';
+import 'package:simtech/src/ui/screens/packager/components/form_field.dart';
 
-class PercentageField extends StatelessWidget {
+class PercentageField extends MyFormField {
   const PercentageField({
     Key? key,
     this.value = 0,
@@ -16,8 +17,6 @@ class PercentageField extends StatelessWidget {
   final ValueChanged<double>? onChanged;
   final String hint;
   final String? info;
-
-  static const double height = 156;
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +41,9 @@ class PercentageField extends StatelessWidget {
       ),
     );
     return SizedBox(
-      height: height,
+      height: MyFormField.height,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
         children: [
           if (info == null)
             child
@@ -80,7 +78,7 @@ class PercentageField extends StatelessWidget {
               const SizedBox(width: 15),
             ],
           ),
-          const SizedBox(height: 20),
+          const Spacer(),
         ],
       ),
     );

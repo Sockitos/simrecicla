@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/text_styles.dart';
+import 'package:simtech/src/ui/screens/packager/components/form_field.dart';
 import 'package:simtech/src/ui/widgets/my_dropdown.dart';
 
-class DropdownField<T> extends StatelessWidget {
+class DropdownField<T> extends MyFormField {
   const DropdownField({
     Key? key,
     this.value,
@@ -23,8 +24,6 @@ class DropdownField<T> extends StatelessWidget {
   final String? info;
   final List<T> options;
   final String Function(T)? optionToString;
-
-  static const double height = 156;
 
   @override
   Widget build(BuildContext context) {
@@ -79,10 +78,9 @@ class DropdownField<T> extends StatelessWidget {
       ),
     );
     return SizedBox(
-      height: height,
+      height: MyFormField.height,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
         children: [
           if (info == null)
             child
@@ -105,7 +103,7 @@ class DropdownField<T> extends StatelessWidget {
               ),
             ),
           ],
-          const SizedBox(height: 20),
+          const Spacer(),
         ],
       ),
     );
