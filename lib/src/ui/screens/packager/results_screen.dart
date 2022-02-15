@@ -126,7 +126,7 @@ class ResultsScreen extends StatelessWidget {
                                   ],
                                   domainFn: (d, _) => d.id,
                                   labelAccessorFn: (d, _) => d.label,
-                                  measureFn: (d, _) => d.value,
+                                  measureFn: (d, _) => d.value * 100000,
                                   colorFn: (d, __) =>
                                       charts.ColorUtil.fromDartColor(d.color),
                                 ),
@@ -155,7 +155,7 @@ class ResultsScreen extends StatelessWidget {
                                   ],
                                   domainFn: (d, _) => d.id,
                                   labelAccessorFn: (d, _) => d.label,
-                                  measureFn: (d, _) => d.value,
+                                  measureFn: (d, _) => d.value * 100000,
                                   colorFn: (d, __) =>
                                       charts.ColorUtil.fromDartColor(d.color),
                                 ),
