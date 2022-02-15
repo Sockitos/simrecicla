@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/custom_icons.dart';
 import 'package:simtech/src/constants/text_styles.dart';
@@ -18,7 +19,8 @@ class CategoriesScreen extends StatelessWidget {
           const SizedBox(height: 80),
           Text(
             'Escolhe o tipo de embalagem que queres reciclar',
-            style: AppTextStyles.h2.copyWith(color: AppColors.lightGreen),
+            style: AppTextStyles.h2(context.layout)
+                .copyWith(color: AppColors.lightGreen),
           ),
           const SizedBox(height: 80),
           Padding(
@@ -65,7 +67,7 @@ class CategoriesScreen extends StatelessWidget {
                                   child: Text(
                                     category.category,
                                     textAlign: TextAlign.center,
-                                    style: AppTextStyles.h4,
+                                    style: AppTextStyles.h4(context.layout),
                                   ),
                                 ),
                               )

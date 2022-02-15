@@ -47,7 +47,7 @@ extension ComponentLine on Component {
 
 class ConsumerService {
   static List<Category> getCategories() {
-    return categories.map((d) => Category.fromJson(d)).toList();
+    return categories.map(Category.fromJson).toList();
   }
 
   static ConsumerResults getResults(Map<Component, Where> components) {

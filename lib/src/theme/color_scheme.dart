@@ -3,9 +3,9 @@ import 'package:simtech/src/constants/colors.dart';
 
 const colorScheme = ColorScheme(
   primary: AppColors.lightGreen,
-  primaryVariant: AppColors.lightGreen,
+  primaryContainer: AppColors.lightGreen,
   secondary: AppColors.lightGreen,
-  secondaryVariant: AppColors.lightGreen,
+  secondaryContainer: AppColors.lightGreen,
   surface: AppColors.white,
   background: AppColors.grey1,
   error: AppColors.lightGreen,

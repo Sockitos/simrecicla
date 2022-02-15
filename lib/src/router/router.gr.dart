@@ -7,12 +7,15 @@
 // **************************************************************************
 // AutoRouteGenerator
 // **************************************************************************
+//
+// ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i9;
 import 'package:flutter/material.dart' as _i10;
 
+import '../models/answer.dart' as _i13;
+import '../models/enums.dart' as _i12;
 import '../models/package.dart' as _i11;
-import '../services/packager_service.dart' as _i12;
 import '../ui/screens/consumer/bin_selection/bin_selection_screen.dart' as _i4;
 import '../ui/screens/consumer/categories_screen.dart' as _i3;
 import '../ui/screens/consumer/consumer_screen.dart' as _i2;
@@ -29,40 +32,83 @@ class AppRouter extends _i9.RootStackRouter {
   @override
   final Map<String, _i9.PageFactory> pagesMap = {
     LandingScreenRoute.name: (routeData) {
-      return _i9.MaterialPageX<void>(
-          routeData: routeData, child: const _i1.LandingScreen());
+      return _i9.CustomPage<void>(
+          routeData: routeData,
+          child: const _i1.LandingScreen(),
+          transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
     },
     ConsumerScreenRoute.name: (routeData) {
-      return _i9.MaterialPageX<void>(
-          routeData: routeData, child: const _i2.ConsumerScreen());
+      return _i9.CustomPage<void>(
+          routeData: routeData,
+          child: const _i2.ConsumerScreen(),
+          transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
     },
     CategoriesScreenRoute.name: (routeData) {
-      return _i9.MaterialPageX<void>(
-          routeData: routeData, child: const _i3.CategoriesScreen());
+      return _i9.CustomPage<void>(
+          routeData: routeData,
+          child: const _i3.CategoriesScreen(),
+          transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
     },
     BinSelectionScreenRoute.name: (routeData) {
       final args = routeData.argsAs<BinSelectionScreenRouteArgs>();
-      return _i9.MaterialPageX<void>(
+      return _i9.CustomPage<void>(
           routeData: routeData,
-          child: _i4.BinSelectionScreen(key: args.key, package: args.package));
+          child: _i4.BinSelectionScreen(key: args.key, package: args.package),
+          transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
     },
     PackagerScreenRoute.name: (routeData) {
-      return _i9.MaterialPageX<void>(
-          routeData: routeData, child: const _i5.PackagerScreen());
+      return _i9.CustomPage<void>(
+          routeData: routeData,
+          child: const _i5.PackagerScreen(),
+          transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
     },
     FormScreenRoute.name: (routeData) {
-      return _i9.MaterialPageX<void>(
-          routeData: routeData, child: const _i6.FormScreen());
+      return _i9.CustomPage<void>(
+          routeData: routeData,
+          child: const _i6.FormScreen(),
+          transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
     },
     ResultsScreenRoute.name: (routeData) {
       final args = routeData.argsAs<ResultsScreenRouteArgs>();
-      return _i9.MaterialPageX<void>(
+      return _i9.CustomPage<void>(
           routeData: routeData,
-          child: _i7.ResultsScreen(key: args.key, rating: args.rating));
+          child: _i7.ResultsScreen(
+              key: args.key,
+              material: args.material,
+              weight: args.weight,
+              recycledPercentage: args.recycledPercentage,
+              answers: args.answers),
+          transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
     },
     RecyclerScreenRoute.name: (routeData) {
-      return _i9.MaterialPageX<void>(
-          routeData: routeData, child: const _i8.RecyclerScreen());
+      return _i9.CustomPage<void>(
+          routeData: routeData,
+          child: const _i8.RecyclerScreen(),
+          transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
     }
   };
 
@@ -76,40 +122,45 @@ class AppRouter extends _i9.RootStackRouter {
             path: '/consumer/bin_selection?package=:package'),
         _i9.RouteConfig(PackagerScreenRoute.name, path: '/packager'),
         _i9.RouteConfig(FormScreenRoute.name, path: '/packager/form'),
-        _i9.RouteConfig(ResultsScreenRoute.name,
-            path: '/packager/results?rating=:rating'),
+        _i9.RouteConfig(ResultsScreenRoute.name, path: '/packager/results'),
         _i9.RouteConfig(RecyclerScreenRoute.name, path: '/recycler'),
         _i9.RouteConfig('*#redirect',
             path: '*', redirectTo: '/', fullMatch: true)
       ];
 }
 
-/// generated route for [_i1.LandingScreen]
+/// generated route for
+/// [_i1.LandingScreen]
 class LandingScreenRoute extends _i9.PageRouteInfo<void> {
-  const LandingScreenRoute() : super(name, path: '/');
+  const LandingScreenRoute() : super(LandingScreenRoute.name, path: '/');
 
   static const String name = 'LandingScreenRoute';
 }
 
-/// generated route for [_i2.ConsumerScreen]
+/// generated route for
+/// [_i2.ConsumerScreen]
 class ConsumerScreenRoute extends _i9.PageRouteInfo<void> {
-  const ConsumerScreenRoute() : super(name, path: '/consumer');
+  const ConsumerScreenRoute()
+      : super(ConsumerScreenRoute.name, path: '/consumer');
 
   static const String name = 'ConsumerScreenRoute';
 }
 
-/// generated route for [_i3.CategoriesScreen]
+/// generated route for
+/// [_i3.CategoriesScreen]
 class CategoriesScreenRoute extends _i9.PageRouteInfo<void> {
-  const CategoriesScreenRoute() : super(name, path: '/consumer/categories');
+  const CategoriesScreenRoute()
+      : super(CategoriesScreenRoute.name, path: '/consumer/categories');
 
   static const String name = 'CategoriesScreenRoute';
 }
 
-/// generated route for [_i4.BinSelectionScreen]
+/// generated route for
+/// [_i4.BinSelectionScreen]
 class BinSelectionScreenRoute
     extends _i9.PageRouteInfo<BinSelectionScreenRouteArgs> {
   BinSelectionScreenRoute({_i10.Key? key, required _i11.Package package})
-      : super(name,
+      : super(BinSelectionScreenRoute.name,
             path: '/consumer/bin_selection?package=:package',
             args: BinSelectionScreenRouteArgs(key: key, package: package));
 
@@ -129,46 +180,73 @@ class BinSelectionScreenRouteArgs {
   }
 }
 
-/// generated route for [_i5.PackagerScreen]
+/// generated route for
+/// [_i5.PackagerScreen]
 class PackagerScreenRoute extends _i9.PageRouteInfo<void> {
-  const PackagerScreenRoute() : super(name, path: '/packager');
+  const PackagerScreenRoute()
+      : super(PackagerScreenRoute.name, path: '/packager');
 
   static const String name = 'PackagerScreenRoute';
 }
 
-/// generated route for [_i6.FormScreen]
+/// generated route for
+/// [_i6.FormScreen]
 class FormScreenRoute extends _i9.PageRouteInfo<void> {
-  const FormScreenRoute() : super(name, path: '/packager/form');
+  const FormScreenRoute() : super(FormScreenRoute.name, path: '/packager/form');
 
   static const String name = 'FormScreenRoute';
 }
 
-/// generated route for [_i7.ResultsScreen]
+/// generated route for
+/// [_i7.ResultsScreen]
 class ResultsScreenRoute extends _i9.PageRouteInfo<ResultsScreenRouteArgs> {
-  ResultsScreenRoute({_i10.Key? key, required _i12.Rating rating})
-      : super(name,
-            path: '/packager/results?rating=:rating',
-            args: ResultsScreenRouteArgs(key: key, rating: rating));
+  ResultsScreenRoute(
+      {_i10.Key? key,
+      required _i12.PMaterial material,
+      required int weight,
+      required double recycledPercentage,
+      required Map<int, _i13.Answer> answers})
+      : super(ResultsScreenRoute.name,
+            path: '/packager/results',
+            args: ResultsScreenRouteArgs(
+                key: key,
+                material: material,
+                weight: weight,
+                recycledPercentage: recycledPercentage,
+                answers: answers));
 
   static const String name = 'ResultsScreenRoute';
 }
 
 class ResultsScreenRouteArgs {
-  const ResultsScreenRouteArgs({this.key, required this.rating});
+  const ResultsScreenRouteArgs(
+      {this.key,
+      required this.material,
+      required this.weight,
+      required this.recycledPercentage,
+      required this.answers});
 
   final _i10.Key? key;
 
-  final _i12.Rating rating;
+  final _i12.PMaterial material;
+
+  final int weight;
+
+  final double recycledPercentage;
+
+  final Map<int, _i13.Answer> answers;
 
   @override
   String toString() {
-    return 'ResultsScreenRouteArgs{key: $key, rating: $rating}';
+    return 'ResultsScreenRouteArgs{key: $key, material: $material, weight: $weight, recycledPercentage: $recycledPercentage, answers: $answers}';
   }
 }
 
-/// generated route for [_i8.RecyclerScreen]
+/// generated route for
+/// [_i8.RecyclerScreen]
 class RecyclerScreenRoute extends _i9.PageRouteInfo<void> {
-  const RecyclerScreenRoute() : super(name, path: '/recycler');
+  const RecyclerScreenRoute()
+      : super(RecyclerScreenRoute.name, path: '/recycler');
 
   static const String name = 'RecyclerScreenRoute';
 }

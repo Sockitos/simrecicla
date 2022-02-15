@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/custom_icons.dart';
 import 'package:simtech/src/constants/text_styles.dart';
@@ -116,7 +117,7 @@ class _DraggableComponent extends StatelessWidget {
               Expanded(
                 child: Text(
                   component.name,
-                  style: AppTextStyles.paragraph,
+                  style: AppTextStyles.paragraph(context.layout),
                   textAlign: TextAlign.center,
                 ),
               ),

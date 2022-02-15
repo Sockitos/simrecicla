@@ -20,34 +20,24 @@ extension PMaterialUtils on PMaterial {
         return 'Vidro';
       case PMaterial.aco:
         return 'Aço';
-
       case PMaterial.aluminio:
         return 'Alumínio';
-
       case PMaterial.pet:
         return 'PET';
-
       case PMaterial.pead:
         return 'PEAD';
-
       case PMaterial.pebd:
         return 'PEBD';
-
       case PMaterial.eps:
         return 'EPS';
-
       case PMaterial.pp:
         return 'PP';
-
       case PMaterial.outrosPlasticos:
         return 'Outros Plástics';
-
       case PMaterial.ecal:
         return 'ECAL';
-
       case PMaterial.papel:
         return 'Papel';
-
       case PMaterial.cartao:
         return 'Cartão';
     }

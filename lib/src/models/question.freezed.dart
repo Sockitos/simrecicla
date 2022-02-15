@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'question.dart';
@@ -25,12 +26,14 @@ class _$QuestionTearOff {
       {required int id,
       required String question,
       required List<Answer> answers,
-      required QuestionRequirement? requirement}) {
+      required QuestionRequirement? requirement,
+      required String? info}) {
     return _Question(
       id: id,
       question: question,
       answers: answers,
       requirement: requirement,
+      info: info,
     );
   }
 
@@ -48,6 +51,7 @@ mixin _$Question {
   String get question => throw _privateConstructorUsedError;
   List<Answer> get answers => throw _privateConstructorUsedError;
   QuestionRequirement? get requirement => throw _privateConstructorUsedError;
+  String? get info => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -63,7 +67,8 @@ abstract class $QuestionCopyWith<$Res> {
       {int id,
       String question,
       List<Answer> answers,
-      QuestionRequirement? requirement});
+      QuestionRequirement? requirement,
+      String? info});
 
   $QuestionRequirementCopyWith<$Res>? get requirement;
 }
@@ -82,6 +87,7 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
     Object? question = freezed,
     Object? answers = freezed,
     Object? requirement = freezed,
+    Object? info = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -100,6 +106,10 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
           ? _value.requirement
           : requirement // ignore: cast_nullable_to_non_nullable
               as QuestionRequirement?,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -124,7 +134,8 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       {int id,
       String question,
       List<Answer> answers,
-      QuestionRequirement? requirement});
+      QuestionRequirement? requirement,
+      String? info});
 
   @override
   $QuestionRequirementCopyWith<$Res>? get requirement;
@@ -145,6 +156,7 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
     Object? question = freezed,
     Object? answers = freezed,
     Object? requirement = freezed,
+    Object? info = freezed,
   }) {
     return _then(_Question(
       id: id == freezed
@@ -163,6 +175,10 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
           ? _value.requirement
           : requirement // ignore: cast_nullable_to_non_nullable
               as QuestionRequirement?,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -174,7 +190,8 @@ class _$_Question extends _Question {
       {required this.id,
       required this.question,
       required this.answers,
-      required this.requirement})
+      required this.requirement,
+      required this.info})
       : super._();
 
   factory _$_Question.fromJson(Map<String, dynamic> json) =>
@@ -188,10 +205,12 @@ class _$_Question extends _Question {
   final List<Answer> answers;
   @override
   final QuestionRequirement? requirement;
+  @override
+  final String? info;
 
   @override
   String toString() {
-    return 'Question(id: $id, question: $question, answers: $answers, requirement: $requirement)';
+    return 'Question(id: $id, question: $question, answers: $answers, requirement: $requirement, info: $info)';
   }
 
   @override
@@ -203,7 +222,8 @@ class _$_Question extends _Question {
             const DeepCollectionEquality().equals(other.question, question) &&
             const DeepCollectionEquality().equals(other.answers, answers) &&
             const DeepCollectionEquality()
-                .equals(other.requirement, requirement));
+                .equals(other.requirement, requirement) &&
+            const DeepCollectionEquality().equals(other.info, info));
   }
 
   @override
@@ -212,7 +232,8 @@ class _$_Question extends _Question {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(question),
       const DeepCollectionEquality().hash(answers),
-      const DeepCollectionEquality().hash(requirement));
+      const DeepCollectionEquality().hash(requirement),
+      const DeepCollectionEquality().hash(info));
 
   @JsonKey(ignore: true)
   @override
@@ -230,7 +251,8 @@ abstract class _Question extends Question {
       {required int id,
       required String question,
       required List<Answer> answers,
-      required QuestionRequirement? requirement}) = _$_Question;
+      required QuestionRequirement? requirement,
+      required String? info}) = _$_Question;
   const _Question._() : super._();
 
   factory _Question.fromJson(Map<String, dynamic> json) = _$_Question.fromJson;
@@ -243,6 +265,8 @@ abstract class _Question extends Question {
   List<Answer> get answers;
   @override
   QuestionRequirement? get requirement;
+  @override
+  String? get info;
   @override
   @JsonKey(ignore: true)
   _$QuestionCopyWith<_Question> get copyWith =>

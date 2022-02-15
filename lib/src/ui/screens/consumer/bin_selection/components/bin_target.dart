@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/component.dart';
 import 'package:simtech/src/ui/screens/consumer/bin_selection/components/draggable_components.dart';
@@ -56,23 +57,20 @@ class BinTarget extends HookWidget {
                     : highlight.value
                         ? 1.0
                         : 0.4,
-                child: Column(
-                  children: [
-                    const SizedBox(height: 5),
-                    SvgPicture.asset(
-                      svgPath,
-                      height: 170,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      labels.first,
-                      style: AppTextStyles.h3,
-                    ),
-                    Text(
-                      labels.last,
-                      style: AppTextStyles.h3,
-                    ),
-                  ],
+                child: DefaultTextStyle(
+                  style: AppTextStyles.h3(context.layout),
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 5),
+                      SvgPicture.asset(
+                        svgPath,
+                        height: 170,
+                      ),
+                      const SizedBox(height: 10),
+                      Text(labels.first),
+                      Text(labels.last),
+                    ],
+                  ),
                 ),
               ),
             ],

@@ -12,6 +12,6 @@ final elevatedButtonTheme = ElevatedButtonThemeData(
     padding: const EdgeInsets.symmetric(
       horizontal: 40,
     ),
-    textStyle: AppTextStyles.button,
+    textStyle: AppTextStyles.buttonStyle,
   ),
 );

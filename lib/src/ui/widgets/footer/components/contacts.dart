@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 
 class Contacts extends StatelessWidget {
@@ -12,7 +13,7 @@ class Contacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTextStyle(
-      style: AppTextStyles.small,
+      style: AppTextStyles.small(context.layout),
       textAlign: textAlign,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

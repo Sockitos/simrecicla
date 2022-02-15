@@ -13,12 +13,14 @@ class Question with _$Question {
     required String question,
     required List<Answer> answers,
     required QuestionRequirement? requirement,
+    required String? info,
   }) = _Question;
   const Question._();
 
   factory Question.fromJson(Map<String, dynamic> json) =>
       _$QuestionFromJson(json);
 
-  List<Answer> getFilteredAnswers(PMaterial material) =>
-      answers.where((a) => a.isRelevant(material)).toList();
+  List<Answer> getFilteredAnswers(PMaterial? material) => material == null
+      ? <Answer>[]
+      : answers.where((a) => a.isRelevant(material)).toList();
 }

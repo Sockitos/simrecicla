@@ -1,4 +1,7 @@
+// ignore_for_file: null_check_on_nullable_type_parameter
+
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/ui/widgets/my_dropdown.dart';
@@ -7,8 +10,9 @@ class DropdownField<T> extends StatelessWidget {
   const DropdownField({
     Key? key,
     this.value,
-    required this.onChanged,
+    this.onChanged,
     required this.hint,
+    this.info,
     required this.options,
     this.optionToString,
   }) : super(key: key);
@@ -16,12 +20,15 @@ class DropdownField<T> extends StatelessWidget {
   final T? value;
   final ValueChanged<T?>? onChanged;
   final String hint;
+  final String? info;
   final List<T> options;
   final String Function(T)? optionToString;
 
+  static const double height = 156;
+
   @override
   Widget build(BuildContext context) {
-    return Material(
+    final child = Material(
       color: AppColors.grey3,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(34),
@@ -39,7 +46,7 @@ class DropdownField<T> extends StatelessWidget {
                 itemHeight: 88,
                 hint: Text(
                   hint,
-                  style: AppTextStyles.h4,
+                  style: AppTextStyles.h4(context.layout),
                 ),
                 icon: value != null
                     ? const Icon(Icons.check_rounded)
@@ -59,7 +66,7 @@ class DropdownField<T> extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         child: Text(
                           optionToString == null ? '$o' : optionToString!(o),
-                          style: AppTextStyles.dropdown,
+                          style: AppTextStyles.dropdown(context.layout),
                         ),
                       ),
                     ),
@@ -69,6 +76,37 @@ class DropdownField<T> extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+    return SizedBox(
+      height: height,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (info == null)
+            child
+          else
+            Tooltip(
+              verticalOffset: 50,
+              message: info,
+              child: child,
+            ),
+          if (value != null) ...[
+            const SizedBox(height: 2),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Text(
+                optionToString == null ? '$value' : optionToString!(value!),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.dropdown(context.layout)
+                    .copyWith(color: AppColors.grey5),
+              ),
+            ),
+          ],
+          const SizedBox(height: 20),
+        ],
       ),
     );
   }

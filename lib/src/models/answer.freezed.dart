@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'answer.dart';
@@ -24,21 +25,24 @@ class _$AnswerTearOff {
   _Answer call(
       {required int id,
       required String answer,
-      required int? vidro,
-      required int? aco,
-      required int? aluminio,
-      required int? pet,
-      required int? pead,
-      required int? pebd,
-      required int? eps,
-      required int? pp,
-      @JsonKey(name: 'outros_plasticos') required int? outrosPlasticos,
-      required int? ecal,
-      required int? papel,
-      required int? cartao}) {
+      required String? recommendation,
+      required AnswerComponent vidro,
+      required AnswerComponent aco,
+      required AnswerComponent aluminio,
+      required AnswerComponent pet,
+      required AnswerComponent pead,
+      required AnswerComponent pebd,
+      required AnswerComponent eps,
+      required AnswerComponent pp,
+      @JsonKey(name: 'outros_plasticos')
+          required AnswerComponent outrosPlasticos,
+      required AnswerComponent ecal,
+      required AnswerComponent papel,
+      required AnswerComponent cartao}) {
     return _Answer(
       id: id,
       answer: answer,
+      recommendation: recommendation,
       vidro: vidro,
       aco: aco,
       aluminio: aluminio,
@@ -66,19 +70,20 @@ const $Answer = _$AnswerTearOff();
 mixin _$Answer {
   int get id => throw _privateConstructorUsedError;
   String get answer => throw _privateConstructorUsedError;
-  int? get vidro => throw _privateConstructorUsedError;
-  int? get aco => throw _privateConstructorUsedError;
-  int? get aluminio => throw _privateConstructorUsedError;
-  int? get pet => throw _privateConstructorUsedError;
-  int? get pead => throw _privateConstructorUsedError;
-  int? get pebd => throw _privateConstructorUsedError;
-  int? get eps => throw _privateConstructorUsedError;
-  int? get pp => throw _privateConstructorUsedError;
+  String? get recommendation => throw _privateConstructorUsedError;
+  AnswerComponent get vidro => throw _privateConstructorUsedError;
+  AnswerComponent get aco => throw _privateConstructorUsedError;
+  AnswerComponent get aluminio => throw _privateConstructorUsedError;
+  AnswerComponent get pet => throw _privateConstructorUsedError;
+  AnswerComponent get pead => throw _privateConstructorUsedError;
+  AnswerComponent get pebd => throw _privateConstructorUsedError;
+  AnswerComponent get eps => throw _privateConstructorUsedError;
+  AnswerComponent get pp => throw _privateConstructorUsedError;
   @JsonKey(name: 'outros_plasticos')
-  int? get outrosPlasticos => throw _privateConstructorUsedError;
-  int? get ecal => throw _privateConstructorUsedError;
-  int? get papel => throw _privateConstructorUsedError;
-  int? get cartao => throw _privateConstructorUsedError;
+  AnswerComponent get outrosPlasticos => throw _privateConstructorUsedError;
+  AnswerComponent get ecal => throw _privateConstructorUsedError;
+  AnswerComponent get papel => throw _privateConstructorUsedError;
+  AnswerComponent get cartao => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -92,18 +97,32 @@ abstract class $AnswerCopyWith<$Res> {
   $Res call(
       {int id,
       String answer,
-      int? vidro,
-      int? aco,
-      int? aluminio,
-      int? pet,
-      int? pead,
-      int? pebd,
-      int? eps,
-      int? pp,
-      @JsonKey(name: 'outros_plasticos') int? outrosPlasticos,
-      int? ecal,
-      int? papel,
-      int? cartao});
+      String? recommendation,
+      AnswerComponent vidro,
+      AnswerComponent aco,
+      AnswerComponent aluminio,
+      AnswerComponent pet,
+      AnswerComponent pead,
+      AnswerComponent pebd,
+      AnswerComponent eps,
+      AnswerComponent pp,
+      @JsonKey(name: 'outros_plasticos') AnswerComponent outrosPlasticos,
+      AnswerComponent ecal,
+      AnswerComponent papel,
+      AnswerComponent cartao});
+
+  $AnswerComponentCopyWith<$Res> get vidro;
+  $AnswerComponentCopyWith<$Res> get aco;
+  $AnswerComponentCopyWith<$Res> get aluminio;
+  $AnswerComponentCopyWith<$Res> get pet;
+  $AnswerComponentCopyWith<$Res> get pead;
+  $AnswerComponentCopyWith<$Res> get pebd;
+  $AnswerComponentCopyWith<$Res> get eps;
+  $AnswerComponentCopyWith<$Res> get pp;
+  $AnswerComponentCopyWith<$Res> get outrosPlasticos;
+  $AnswerComponentCopyWith<$Res> get ecal;
+  $AnswerComponentCopyWith<$Res> get papel;
+  $AnswerComponentCopyWith<$Res> get cartao;
 }
 
 /// @nodoc
@@ -118,6 +137,7 @@ class _$AnswerCopyWithImpl<$Res> implements $AnswerCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? answer = freezed,
+    Object? recommendation = freezed,
     Object? vidro = freezed,
     Object? aco = freezed,
     Object? aluminio = freezed,
@@ -140,55 +160,143 @@ class _$AnswerCopyWithImpl<$Res> implements $AnswerCopyWith<$Res> {
           ? _value.answer
           : answer // ignore: cast_nullable_to_non_nullable
               as String,
+      recommendation: recommendation == freezed
+          ? _value.recommendation
+          : recommendation // ignore: cast_nullable_to_non_nullable
+              as String?,
       vidro: vidro == freezed
           ? _value.vidro
           : vidro // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       aco: aco == freezed
           ? _value.aco
           : aco // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       aluminio: aluminio == freezed
           ? _value.aluminio
           : aluminio // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       pet: pet == freezed
           ? _value.pet
           : pet // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       pead: pead == freezed
           ? _value.pead
           : pead // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       pebd: pebd == freezed
           ? _value.pebd
           : pebd // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       eps: eps == freezed
           ? _value.eps
           : eps // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       pp: pp == freezed
           ? _value.pp
           : pp // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       outrosPlasticos: outrosPlasticos == freezed
           ? _value.outrosPlasticos
           : outrosPlasticos // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       ecal: ecal == freezed
           ? _value.ecal
           : ecal // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       papel: papel == freezed
           ? _value.papel
           : papel // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       cartao: cartao == freezed
           ? _value.cartao
           : cartao // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
     ));
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get vidro {
+    return $AnswerComponentCopyWith<$Res>(_value.vidro, (value) {
+      return _then(_value.copyWith(vidro: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get aco {
+    return $AnswerComponentCopyWith<$Res>(_value.aco, (value) {
+      return _then(_value.copyWith(aco: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get aluminio {
+    return $AnswerComponentCopyWith<$Res>(_value.aluminio, (value) {
+      return _then(_value.copyWith(aluminio: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get pet {
+    return $AnswerComponentCopyWith<$Res>(_value.pet, (value) {
+      return _then(_value.copyWith(pet: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get pead {
+    return $AnswerComponentCopyWith<$Res>(_value.pead, (value) {
+      return _then(_value.copyWith(pead: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get pebd {
+    return $AnswerComponentCopyWith<$Res>(_value.pebd, (value) {
+      return _then(_value.copyWith(pebd: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get eps {
+    return $AnswerComponentCopyWith<$Res>(_value.eps, (value) {
+      return _then(_value.copyWith(eps: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get pp {
+    return $AnswerComponentCopyWith<$Res>(_value.pp, (value) {
+      return _then(_value.copyWith(pp: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get outrosPlasticos {
+    return $AnswerComponentCopyWith<$Res>(_value.outrosPlasticos, (value) {
+      return _then(_value.copyWith(outrosPlasticos: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get ecal {
+    return $AnswerComponentCopyWith<$Res>(_value.ecal, (value) {
+      return _then(_value.copyWith(ecal: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get papel {
+    return $AnswerComponentCopyWith<$Res>(_value.papel, (value) {
+      return _then(_value.copyWith(papel: value));
+    });
+  }
+
+  @override
+  $AnswerComponentCopyWith<$Res> get cartao {
+    return $AnswerComponentCopyWith<$Res>(_value.cartao, (value) {
+      return _then(_value.copyWith(cartao: value));
+    });
   }
 }
 
@@ -200,18 +308,44 @@ abstract class _$AnswerCopyWith<$Res> implements $AnswerCopyWith<$Res> {
   $Res call(
       {int id,
       String answer,
-      int? vidro,
-      int? aco,
-      int? aluminio,
-      int? pet,
-      int? pead,
-      int? pebd,
-      int? eps,
-      int? pp,
-      @JsonKey(name: 'outros_plasticos') int? outrosPlasticos,
-      int? ecal,
-      int? papel,
-      int? cartao});
+      String? recommendation,
+      AnswerComponent vidro,
+      AnswerComponent aco,
+      AnswerComponent aluminio,
+      AnswerComponent pet,
+      AnswerComponent pead,
+      AnswerComponent pebd,
+      AnswerComponent eps,
+      AnswerComponent pp,
+      @JsonKey(name: 'outros_plasticos') AnswerComponent outrosPlasticos,
+      AnswerComponent ecal,
+      AnswerComponent papel,
+      AnswerComponent cartao});
+
+  @override
+  $AnswerComponentCopyWith<$Res> get vidro;
+  @override
+  $AnswerComponentCopyWith<$Res> get aco;
+  @override
+  $AnswerComponentCopyWith<$Res> get aluminio;
+  @override
+  $AnswerComponentCopyWith<$Res> get pet;
+  @override
+  $AnswerComponentCopyWith<$Res> get pead;
+  @override
+  $AnswerComponentCopyWith<$Res> get pebd;
+  @override
+  $AnswerComponentCopyWith<$Res> get eps;
+  @override
+  $AnswerComponentCopyWith<$Res> get pp;
+  @override
+  $AnswerComponentCopyWith<$Res> get outrosPlasticos;
+  @override
+  $AnswerComponentCopyWith<$Res> get ecal;
+  @override
+  $AnswerComponentCopyWith<$Res> get papel;
+  @override
+  $AnswerComponentCopyWith<$Res> get cartao;
 }
 
 /// @nodoc
@@ -227,6 +361,7 @@ class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? answer = freezed,
+    Object? recommendation = freezed,
     Object? vidro = freezed,
     Object? aco = freezed,
     Object? aluminio = freezed,
@@ -249,54 +384,58 @@ class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
           ? _value.answer
           : answer // ignore: cast_nullable_to_non_nullable
               as String,
+      recommendation: recommendation == freezed
+          ? _value.recommendation
+          : recommendation // ignore: cast_nullable_to_non_nullable
+              as String?,
       vidro: vidro == freezed
           ? _value.vidro
           : vidro // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       aco: aco == freezed
           ? _value.aco
           : aco // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       aluminio: aluminio == freezed
           ? _value.aluminio
           : aluminio // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       pet: pet == freezed
           ? _value.pet
           : pet // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       pead: pead == freezed
           ? _value.pead
           : pead // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       pebd: pebd == freezed
           ? _value.pebd
           : pebd // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       eps: eps == freezed
           ? _value.eps
           : eps // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       pp: pp == freezed
           ? _value.pp
           : pp // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       outrosPlasticos: outrosPlasticos == freezed
           ? _value.outrosPlasticos
           : outrosPlasticos // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       ecal: ecal == freezed
           ? _value.ecal
           : ecal // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       papel: papel == freezed
           ? _value.papel
           : papel // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
       cartao: cartao == freezed
           ? _value.cartao
           : cartao // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as AnswerComponent,
     ));
   }
 }
@@ -307,6 +446,7 @@ class _$_Answer extends _Answer {
   const _$_Answer(
       {required this.id,
       required this.answer,
+      required this.recommendation,
       required this.vidro,
       required this.aco,
       required this.aluminio,
@@ -329,34 +469,36 @@ class _$_Answer extends _Answer {
   @override
   final String answer;
   @override
-  final int? vidro;
+  final String? recommendation;
   @override
-  final int? aco;
+  final AnswerComponent vidro;
   @override
-  final int? aluminio;
+  final AnswerComponent aco;
   @override
-  final int? pet;
+  final AnswerComponent aluminio;
   @override
-  final int? pead;
+  final AnswerComponent pet;
   @override
-  final int? pebd;
+  final AnswerComponent pead;
   @override
-  final int? eps;
+  final AnswerComponent pebd;
   @override
-  final int? pp;
+  final AnswerComponent eps;
+  @override
+  final AnswerComponent pp;
   @override
   @JsonKey(name: 'outros_plasticos')
-  final int? outrosPlasticos;
+  final AnswerComponent outrosPlasticos;
   @override
-  final int? ecal;
+  final AnswerComponent ecal;
   @override
-  final int? papel;
+  final AnswerComponent papel;
   @override
-  final int? cartao;
+  final AnswerComponent cartao;
 
   @override
   String toString() {
-    return 'Answer(id: $id, answer: $answer, vidro: $vidro, aco: $aco, aluminio: $aluminio, pet: $pet, pead: $pead, pebd: $pebd, eps: $eps, pp: $pp, outrosPlasticos: $outrosPlasticos, ecal: $ecal, papel: $papel, cartao: $cartao)';
+    return 'Answer(id: $id, answer: $answer, recommendation: $recommendation, vidro: $vidro, aco: $aco, aluminio: $aluminio, pet: $pet, pead: $pead, pebd: $pebd, eps: $eps, pp: $pp, outrosPlasticos: $outrosPlasticos, ecal: $ecal, papel: $papel, cartao: $cartao)';
   }
 
   @override
@@ -366,6 +508,8 @@ class _$_Answer extends _Answer {
             other is _Answer &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.answer, answer) &&
+            const DeepCollectionEquality()
+                .equals(other.recommendation, recommendation) &&
             const DeepCollectionEquality().equals(other.vidro, vidro) &&
             const DeepCollectionEquality().equals(other.aco, aco) &&
             const DeepCollectionEquality().equals(other.aluminio, aluminio) &&
@@ -386,6 +530,7 @@ class _$_Answer extends _Answer {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(answer),
+      const DeepCollectionEquality().hash(recommendation),
       const DeepCollectionEquality().hash(vidro),
       const DeepCollectionEquality().hash(aco),
       const DeepCollectionEquality().hash(aluminio),
@@ -414,18 +559,20 @@ abstract class _Answer extends Answer {
   const factory _Answer(
       {required int id,
       required String answer,
-      required int? vidro,
-      required int? aco,
-      required int? aluminio,
-      required int? pet,
-      required int? pead,
-      required int? pebd,
-      required int? eps,
-      required int? pp,
-      @JsonKey(name: 'outros_plasticos') required int? outrosPlasticos,
-      required int? ecal,
-      required int? papel,
-      required int? cartao}) = _$_Answer;
+      required String? recommendation,
+      required AnswerComponent vidro,
+      required AnswerComponent aco,
+      required AnswerComponent aluminio,
+      required AnswerComponent pet,
+      required AnswerComponent pead,
+      required AnswerComponent pebd,
+      required AnswerComponent eps,
+      required AnswerComponent pp,
+      @JsonKey(name: 'outros_plasticos')
+          required AnswerComponent outrosPlasticos,
+      required AnswerComponent ecal,
+      required AnswerComponent papel,
+      required AnswerComponent cartao}) = _$_Answer;
   const _Answer._() : super._();
 
   factory _Answer.fromJson(Map<String, dynamic> json) = _$_Answer.fromJson;
@@ -435,30 +582,32 @@ abstract class _Answer extends Answer {
   @override
   String get answer;
   @override
-  int? get vidro;
+  String? get recommendation;
   @override
-  int? get aco;
+  AnswerComponent get vidro;
   @override
-  int? get aluminio;
+  AnswerComponent get aco;
   @override
-  int? get pet;
+  AnswerComponent get aluminio;
   @override
-  int? get pead;
+  AnswerComponent get pet;
   @override
-  int? get pebd;
+  AnswerComponent get pead;
   @override
-  int? get eps;
+  AnswerComponent get pebd;
   @override
-  int? get pp;
+  AnswerComponent get eps;
+  @override
+  AnswerComponent get pp;
   @override
   @JsonKey(name: 'outros_plasticos')
-  int? get outrosPlasticos;
+  AnswerComponent get outrosPlasticos;
   @override
-  int? get ecal;
+  AnswerComponent get ecal;
   @override
-  int? get papel;
+  AnswerComponent get papel;
   @override
-  int? get cartao;
+  AnswerComponent get cartao;
   @override
   @JsonKey(ignore: true)
   _$AnswerCopyWith<_Answer> get copyWith => throw _privateConstructorUsedError;

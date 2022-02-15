@@ -35,6 +35,7 @@ class _SimtechAppState extends State<SimtechApp> {
   @override
   Widget build(BuildContext context) {
     return Layout(
+      format: MaterialLayoutFormat(),
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         routerDelegate: AutoRouterDelegate(

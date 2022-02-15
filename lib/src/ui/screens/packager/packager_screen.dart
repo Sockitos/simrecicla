@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/router/router.gr.dart';
@@ -13,107 +14,137 @@ class PackagerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenWrapper(
       padding: EdgeInsets.zero,
-      body: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              flex: 6,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 60),
-                child: Column(
+      body: AdaptiveBuilder(
+        xs: (context) => const _PackagerIntro(),
+        md: (context) => IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const Expanded(child: _PackagerIntro()),
+              Expanded(
+                child: Stack(
+                  clipBehavior: Clip.none,
                   children: [
-                    const SizedBox(height: 60),
-                    Text(
-                      'Melhorar a reciclabilidade de uma embalagem',
-                      style: AppTextStyles.h1,
-                    ),
-                    const SizedBox(height: 40),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 60),
-                      child: Column(
-                        children: [
-                          Text(
-                            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                            style: AppTextStyles.paragraph,
-                          ),
-                          const SizedBox(height: 20),
-                          Text(
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                            style: AppTextStyles.paragraph,
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 60),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: SizedBox(
-                        height: 400,
-                        width: 500,
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Positioned(
-                              left: 0,
-                              right: 0,
-                              top: 20,
-                              child: SizedBox(
-                                height: 360,
-                                width: 360,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    color: AppColors.grey3.withOpacity(0.4),
-                                    shape: BoxShape.circle,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Column(
-                              children: [
-                                SvgPicture.asset('assets/svgs/arrow_down.svg'),
-                                const SizedBox(height: 40),
-                                Text(
-                                  'Quero testar a minha embalagem',
-                                  style: AppTextStyles.h2,
-                                ),
-                                const SizedBox(height: 40),
-                                ElevatedButton(
-                                  onPressed: () => AutoRouter.of(context).push(
-                                    const FormScreenRoute(),
-                                  ),
-                                  child: const Text('Questionário'),
-                                ),
-                              ],
-                            )
-                          ],
+                    Row(
+                      children: [
+                        const Spacer(),
+                        Expanded(
+                          flex: 9,
+                          child: Ink(color: AppColors.grey4),
                         ),
+                      ],
+                    ),
+                    Positioned(
+                      top: 0,
+                      bottom: 0,
+                      left: -40,
+                      right: 60,
+                      child: Image.asset(
+                        'assets/images/packager_intro.png',
+                        fit: BoxFit.fitWidth,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
-            ),
-            const Spacer(flex: 2),
-            SizedBox(
-              width: 800,
-              child: Ink(
-                color: AppColors.grey4,
-                child: OverflowBox(
-                  maxWidth: 980,
-                  alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 80),
-                    child: Image.asset(
-                      'assets/images/packager_intro.png',
-                      width: 900,
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _PackagerIntro extends StatelessWidget {
+  const _PackagerIntro({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final textAlign = context.breakpoint < LayoutBreakpoint.md
+        ? TextAlign.center
+        : TextAlign.start;
+    final bigSpacing = context.layout.value<double>(
+      xs: 30,
+      sm: 40,
+      lg: 60,
+      xl: 70,
+    );
+    final smallSpacing = context.layout.value<double>(
+      xs: 20,
+      sm: 30,
+      lg: 40,
+      xl: 60,
+    );
+
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: bigSpacing,
+        vertical: bigSpacing,
+      ),
+      child: Column(
+        children: [
+          Text(
+            'Melhorar a reciclabilidade de uma embalagem',
+            style: AppTextStyles.h1(context.layout),
+            textAlign: textAlign,
+          ),
+          SizedBox(height: smallSpacing),
+          Text(
+            'Venha descobrir como melhorar a reciclabilidade das suas embalagens através de um conjunto de questões que avaliam parâmetros de design e conceção, e de recomendações para as opções de conceção que possam ser menos favoráveis para a reciclabilidade. Este simulador determina também o impacte ou benefício ambiental das suas embalagens, tendo em conta o resultado de reciclabilidade (A-totalmente reciclável a F-não reciclável), a possibilidade de recuperação dos materiais para reciclagem e o teor de material reciclado utilizado na embalagem.',
+            style: AppTextStyles.paragraph(context.layout),
+            textAlign: textAlign,
+          ),
+          SizedBox(height: bigSpacing),
+          Align(
+            alignment: context.breakpoint < LayoutBreakpoint.md
+                ? Alignment.center
+                : Alignment.centerLeft,
+            child: Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.topCenter,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: SizedBox(
+                    height: context.layout.value<double>(
+                      xs: 300,
+                      lg: 360,
+                    ),
+                    width: context.layout.value<double>(
+                      xs: 300,
+                      lg: 360,
+                    ),
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: AppColors.grey3.withOpacity(0.4),
+                        shape: BoxShape.circle,
+                      ),
                     ),
                   ),
                 ),
-              ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset('assets/svgs/arrow_down.svg'),
+                    const SizedBox(height: 40),
+                    Text(
+                      'Quero testar a minha embalagem',
+                      style: AppTextStyles.h2(context.layout),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 40),
+                    ElevatedButton(
+                      onPressed: () => AutoRouter.of(context).push(
+                        const FormScreenRoute(),
+                      ),
+                      child: const Text('Questionário'),
+                    ),
+                  ],
+                )
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

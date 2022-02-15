@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 
@@ -74,7 +75,7 @@ class LandingOption extends StatelessWidget {
                       child: Text(
                         description,
                         textAlign: TextAlign.center,
-                        style: AppTextStyles.h2,
+                        style: AppTextStyles.h2(context.layout),
                       ),
                     ),
                   ),

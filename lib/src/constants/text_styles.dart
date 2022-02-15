@@ -1,63 +1,87 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 
 class AppTextStyles {
-  static final h1 = GoogleFonts.dosis(
-    textStyle: const TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 70,
-      color: AppColors.lightGreen,
-      height: 1.1,
-    ),
-  );
+  static TextStyle h1(LayoutData layout) {
+    return GoogleFonts.dosis(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: layout.value(xs: 40, sm: 50, lg: 60, xl: 70),
+        color: AppColors.lightGreen,
+        height: 1.1,
+      ),
+    );
+  }
 
-  static final h2 = GoogleFonts.dosis(
-    textStyle: const TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 34,
-      color: AppColors.black,
-      height: 1.3,
-    ),
-  );
+  static TextStyle h2(LayoutData layout) {
+    return GoogleFonts.dosis(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: layout.value(xs: 30, lg: 34, xl: 36),
+        color: AppColors.black,
+        height: 1.3,
+      ),
+    );
+  }
 
-  static final h3 = GoogleFonts.dosis(
-    textStyle: const TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 30,
-      color: AppColors.black,
-      height: 1.2,
-    ),
-  );
+  static TextStyle h3(LayoutData layout) {
+    return GoogleFonts.dosis(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: layout.value(xs: 30),
+        color: AppColors.black,
+        height: 1.2,
+      ),
+    );
+  }
 
-  static final h4 = GoogleFonts.dosis(
-    textStyle: const TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 24,
-      color: AppColors.black,
-      height: 1.2,
-    ),
-  );
+  static TextStyle h4(LayoutData layout) {
+    return GoogleFonts.dosis(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: layout.value(xs: 24),
+        color: AppColors.black,
+        height: 1.2,
+      ),
+    );
+  }
 
-  static final paragraph = GoogleFonts.barlow(
-    textStyle: const TextStyle(
-      fontWeight: FontWeight.w500,
-      fontSize: 20,
-      color: AppColors.black,
-      height: 1.3,
-    ),
-  );
+  static TextStyle paragraph(LayoutData layout) {
+    return GoogleFonts.dosis(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.w500,
+        fontSize: layout.value(xs: 20),
+        color: AppColors.black,
+        height: 1.3,
+      ),
+    );
+  }
 
-  static final dropdown = GoogleFonts.barlow(
-    textStyle: const TextStyle(
-      fontWeight: FontWeight.w500,
-      fontSize: 18,
-      color: AppColors.black,
-      height: 1.3,
-    ),
-  );
+  static TextStyle dropdown(LayoutData layout) {
+    return GoogleFonts.dosis(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.w500,
+        fontSize: layout.value(xs: 18),
+        color: AppColors.black,
+        height: 1.3,
+      ),
+    );
+  }
 
-  static final button = GoogleFonts.barlow(
+  static TextStyle button(LayoutData layout) {
+    return GoogleFonts.dosis(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: layout.value(xs: 25),
+        color: AppColors.white,
+        height: 1.1,
+      ),
+    );
+  }
+
+  static final buttonStyle = GoogleFonts.dosis(
     textStyle: const TextStyle(
       fontWeight: FontWeight.bold,
       fontSize: 25,
@@ -66,12 +90,14 @@ class AppTextStyles {
     ),
   );
 
-  static final small = GoogleFonts.barlow(
-    textStyle: const TextStyle(
-      fontWeight: FontWeight.w500,
-      fontSize: 15,
-      color: AppColors.white,
-      height: 1.2,
-    ),
-  );
+  static TextStyle small(LayoutData layout) {
+    return GoogleFonts.dosis(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.w500,
+        fontSize: layout.value(xs: 15),
+        color: AppColors.white,
+        height: 1.2,
+      ),
+    );
+  }
 }

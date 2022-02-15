@@ -8,8 +8,10 @@ import 'package:simtech/src/ui/screens/packager/packager_screen.dart';
 import 'package:simtech/src/ui/screens/packager/results_screen.dart';
 import 'package:simtech/src/ui/screens/recycler/recycler_screen.dart';
 
-@MaterialAutoRouter(
+@CustomAutoRouter(
   replaceInRouteName: 'Page,Route,Screen',
+  transitionsBuilder: TransitionsBuilders.fadeIn,
+  durationInMilliseconds: 250,
   routes: <AutoRoute>[
     AutoRoute<void>(
       path: '/',
@@ -37,7 +39,7 @@ import 'package:simtech/src/ui/screens/recycler/recycler_screen.dart';
       page: FormScreen,
     ),
     AutoRoute<void>(
-      path: '/packager/results?rating=:rating',
+      path: '/packager/results',
       page: ResultsScreen,
     ),
     AutoRoute<void>(

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/custom_icons.dart';
 import 'package:simtech/src/constants/text_styles.dart';
@@ -52,7 +53,7 @@ class PackagesDialog extends HookWidget {
                   Text(
                     category.category,
                     textAlign: TextAlign.center,
-                    style: AppTextStyles.h2,
+                    style: AppTextStyles.h2(context.layout),
                   ),
                   const SizedBox(height: 50),
                   Wrap(
@@ -91,8 +92,9 @@ class PackagesDialog extends HookWidget {
                                         child: Text(
                                           package.name,
                                           textAlign: TextAlign.center,
-                                          style:
-                                              AppTextStyles.paragraph.copyWith(
+                                          style: AppTextStyles.paragraph(
+                                            context.layout,
+                                          ).copyWith(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16,
                                           ),

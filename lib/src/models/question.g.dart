@@ -16,6 +16,7 @@ _$_Question _$$_QuestionFromJson(Map<String, dynamic> json) => _$_Question(
           ? null
           : QuestionRequirement.fromJson(
               json['requirement'] as Map<String, dynamic>),
+      info: json['info'] as String?,
     );
 
 Map<String, dynamic> _$$_QuestionToJson(_$_Question instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$_QuestionToJson(_$_Question instance) =>
       'question': instance.question,
       'answers': instance.answers.map((e) => e.toJson()).toList(),
       'requirement': instance.requirement?.toJson(),
+      'info': instance.info,
     };

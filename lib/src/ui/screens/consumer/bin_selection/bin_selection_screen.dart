@@ -2,6 +2,7 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/custom_icons.dart';
 import 'package:simtech/src/constants/text_styles.dart';
@@ -37,9 +38,8 @@ class BinSelectionScreen extends HookWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 package.name,
-                style: AppTextStyles.h2.copyWith(
-                  color: AppColors.lightGreen,
-                ),
+                style: AppTextStyles.h2(context.layout)
+                    .copyWith(color: AppColors.lightGreen),
               ),
             ),
             const SizedBox(height: 20),
@@ -71,13 +71,13 @@ class BinSelectionScreen extends HookWidget {
                               Text(
                                 'Qual o contentor correto?',
                                 textAlign: TextAlign.center,
-                                style: AppTextStyles.h3,
+                                style: AppTextStyles.h3(context.layout),
                               ),
                               const SizedBox(height: 10),
                               Text(
                                 'Arrasta cada componente para o respectivo contentor.',
                                 textAlign: TextAlign.center,
-                                style: AppTextStyles.paragraph,
+                                style: AppTextStyles.paragraph(context.layout),
                               ),
                             ],
                           ),
@@ -252,7 +252,7 @@ class BinSelectionScreen extends HookWidget {
                       child: RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
-                          style: AppTextStyles.dropdown,
+                          style: AppTextStyles.dropdown(context.layout),
                           children: const [
                             TextSpan(
                               text: 'Mas não vai tudo para o mesmo sítio?\n',
@@ -345,7 +345,7 @@ class Results extends HookWidget {
                   return [
                     Text(
                       'Embalagem completa',
-                      style: AppTextStyles.h2,
+                      style: AppTextStyles.h2(context.layout),
                     ),
                     const SizedBox(height: 30),
                     Row(
@@ -376,16 +376,15 @@ class Results extends HookWidget {
                                   const SizedBox(width: 15),
                                   Text(
                                     'Impactes Ambientais',
-                                    style: AppTextStyles.h4.copyWith(
-                                      color: AppColors.lightGreen,
-                                    ),
+                                    style: AppTextStyles.h4(context.layout)
+                                        .copyWith(color: AppColors.lightGreen),
                                   ),
                                 ],
                               ),
                               const SizedBox(height: 15),
                               Text(
                                 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-                                style: AppTextStyles.paragraph,
+                                style: AppTextStyles.paragraph(context.layout),
                               ),
                             ],
                           ),
@@ -510,16 +509,15 @@ class Results extends HookWidget {
                                   const SizedBox(width: 15),
                                   Text(
                                     'Impactes Económicos',
-                                    style: AppTextStyles.h4.copyWith(
-                                      color: AppColors.lightGreen,
-                                    ),
+                                    style: AppTextStyles.h4(context.layout)
+                                        .copyWith(color: AppColors.lightGreen),
                                   ),
                                 ],
                               ),
                               const SizedBox(height: 15),
                               Text(
                                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-                                style: AppTextStyles.paragraph,
+                                style: AppTextStyles.paragraph(context.layout),
                               ),
                             ],
                           ),
@@ -618,8 +616,8 @@ class Results extends HookWidget {
                     const Spacer(),
                     Text(
                       'Clique em cada componente para saber mais.',
-                      style:
-                          AppTextStyles.small.copyWith(color: AppColors.black),
+                      style: AppTextStyles.small(context.layout)
+                          .copyWith(color: AppColors.black),
                     ),
                   ];
                 },
@@ -631,17 +629,17 @@ class Results extends HookWidget {
                   return [
                     Text(
                       component.name,
-                      style: AppTextStyles.h2,
+                      style: AppTextStyles.h2(context.layout),
                     ),
                     const SizedBox(height: 30),
                     Text(
                       isCorrect ? component.ifTrue : component.ifFalse,
-                      style: AppTextStyles.paragraph,
+                      style: AppTextStyles.paragraph(context.layout),
                     ),
                     const SizedBox(height: 60),
                     Text(
                       'Recomendações',
-                      style: AppTextStyles.h3.copyWith(
+                      style: AppTextStyles.h3(context.layout).copyWith(
                         color: AppColors.lightGreen,
                       ),
                     ),
@@ -649,13 +647,15 @@ class Results extends HookWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        for (final r in component.recommendations) ...[
+                        for (var i = 0;
+                            i < component.recommendations.length;
+                            i++) ...[
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               SizedBox(
-                                height: 55,
-                                width: 55,
+                                height: 54,
+                                width: 54,
                                 child: DecoratedBox(
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
@@ -664,12 +664,22 @@ class Results extends HookWidget {
                                       color: AppColors.lightGreen,
                                     ),
                                   ),
+                                  child: Center(
+                                    child: Text(
+                                      '${i + 1}',
+                                      style: AppTextStyles.h3(context.layout)
+                                          .copyWith(
+                                        color: AppColors.lightGreen,
+                                        height: 1.1,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
                               const SizedBox(width: 20),
                               Text(
-                                r,
-                                style: AppTextStyles.paragraph,
+                                component.recommendations[i],
+                                style: AppTextStyles.paragraph(context.layout),
                               ),
                             ],
                           ),
