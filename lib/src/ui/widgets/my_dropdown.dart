@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_asserts_with_message
+
 import 'dart:math' as math;
 import 'dart:ui' show window;
 
@@ -94,7 +96,7 @@ class _DropdownMenuPainter extends CustomPainter {
 // The widget that is the button wrapping the menu items.
 class _DropdownMenuItemButton<T> extends StatefulWidget {
   const _DropdownMenuItemButton({
-    Key? key,
+    super.key,
     this.padding,
     required this.borderRadius,
     required this.route,
@@ -102,7 +104,7 @@ class _DropdownMenuItemButton<T> extends StatefulWidget {
     required this.constraints,
     required this.itemIndex,
     required this.enableFeedback,
-  }) : super(key: key);
+  });
 
   final _DropdownRoute<T> route;
   final EdgeInsets? padding;
@@ -225,7 +227,7 @@ class _DropdownMenuItemButtonState<T>
 
 class _DropdownMenu<T> extends StatefulWidget {
   const _DropdownMenu({
-    Key? key,
+    super.key,
     this.padding,
     required this.route,
     required this.buttonRect,
@@ -233,7 +235,7 @@ class _DropdownMenu<T> extends StatefulWidget {
     this.dropdownColor,
     required this.enableFeedback,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final _DropdownRoute<T> route;
   final EdgeInsets? padding;
@@ -332,6 +334,7 @@ class _DropdownMenuState<T> extends State<_DropdownMenu<T>> {
                 controller: widget.route.scrollController!,
                 child: MyScrollbar(
                   thumbColor: AppColors.lightGreen,
+                  trackColor: AppColors.grey4,
                   radius: const Radius.circular(5),
                   thickness: 8,
                   crossAxisMargin: 8,
@@ -611,7 +614,7 @@ class _DropdownRoute<T> extends PopupRoute<_DropdownRouteResult<T>> {
 
 class _DropdownRoutePage<T> extends StatelessWidget {
   const _DropdownRoutePage({
-    Key? key,
+    super.key,
     required this.route,
     required this.constraints,
     this.items,
@@ -624,7 +627,7 @@ class _DropdownRoutePage<T> extends StatelessWidget {
     required this.dropdownColor,
     required this.enableFeedback,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final _DropdownRoute<T> route;
   final BoxConstraints constraints;
@@ -696,10 +699,10 @@ class _DropdownRoutePage<T> extends StatelessWidget {
 // as closely as possible.
 class _MenuItem<T> extends SingleChildRenderObjectWidget {
   const _MenuItem({
-    Key? key,
+    super.key,
     required this.onLayout,
     required this.item,
-  }) : super(key: key, child: item);
+  }) : super(child: item);
 
   final ValueChanged<Size> onLayout;
   final MyDropdownMenuItem<T>? item;
@@ -735,34 +738,49 @@ class _RenderMenuItem extends RenderProxyBox {
 // [DropdownButton]'s hint and disabledHint widgets.
 class _DropdownMenuItemContainer extends StatelessWidget {
   const _DropdownMenuItemContainer({
-    Key? key,
+    super.key,
     this.alignment = AlignmentDirectional.centerStart,
     required this.child,
-  }) : super(key: key);
+    this.tooltip,
+  });
 
   final Widget child;
 
   final AlignmentGeometry alignment;
 
+  final String? tooltip;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: const BoxConstraints(minHeight: _kMenuItemHeight),
-      alignment: alignment,
-      child: child,
-    );
+    return tooltip != null
+        ? Tooltip(
+            message: tooltip,
+            preferBelow: false,
+            verticalOffset: _kMenuItemHeight / 2 + 10,
+            child: Container(
+              constraints: const BoxConstraints(minHeight: _kMenuItemHeight),
+              alignment: alignment,
+              child: child,
+            ),
+          )
+        : Container(
+            constraints: const BoxConstraints(minHeight: _kMenuItemHeight),
+            alignment: alignment,
+            child: child,
+          );
   }
 }
 
 class MyDropdownMenuItem<T> extends _DropdownMenuItemContainer {
   const MyDropdownMenuItem({
-    Key? key,
+    super.key,
     this.onTap,
     this.value,
     this.enabled = true,
-    AlignmentGeometry alignment = AlignmentDirectional.centerStart,
-    required Widget child,
-  }) : super(key: key, alignment: alignment, child: child);
+    super.alignment,
+    required super.child,
+    super.tooltip,
+  });
 
   final VoidCallback? onTap;
 
@@ -773,7 +791,7 @@ class MyDropdownMenuItem<T> extends _DropdownMenuItemContainer {
 
 class MyDropdownButton<T> extends StatefulWidget {
   MyDropdownButton({
-    Key? key,
+    super.key,
     required this.items,
     this.selectedItemBuilder,
     this.value,
@@ -814,8 +832,7 @@ class MyDropdownButton<T> extends StatefulWidget {
           'Either zero or 2 or more [DropdownMenuItem]s were detected '
           'with the same value',
         ),
-        assert(itemHeight == null || itemHeight >= kMinInteractiveDimension),
-        super(key: key);
+        assert(itemHeight == null || itemHeight >= kMinInteractiveDimension);
 
   final List<MyDropdownMenuItem<T>>? items;
 
@@ -905,16 +922,16 @@ class _MyDropdownButtonState<T> extends State<MyDropdownButton<T>>
       ),
     };
     focusNode!.addListener(_handleFocusChanged);
-    final focusManager = WidgetsBinding.instance!.focusManager;
+    final focusManager = WidgetsBinding.instance.focusManager;
     _focusHighlightMode = focusManager.highlightMode;
     focusManager.addHighlightModeListener(_handleFocusHighlightModeChange);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     _removeDropdownRoute();
-    WidgetsBinding.instance!.focusManager
+    WidgetsBinding.instance.focusManager
         .removeHighlightModeListener(_handleFocusHighlightModeChange);
     focusNode!.removeListener(_handleFocusChanged);
     _internalNode?.dispose();
@@ -1261,7 +1278,7 @@ class _MyDropdownButtonState<T> extends State<MyDropdownButton<T>>
 
 class DropdownButtonFormField<T> extends FormField<T> {
   DropdownButtonFormField({
-    Key? key,
+    super.key,
     required List<DropdownMenuItem<T>>? items,
     DropdownButtonBuilder? selectedItemBuilder,
     T? value,
@@ -1283,8 +1300,8 @@ class DropdownButtonFormField<T> extends FormField<T> {
     bool autofocus = false,
     Color? dropdownColor,
     InputDecoration? decoration,
-    FormFieldSetter<T>? onSaved,
-    FormFieldValidator<T>? validator,
+    super.onSaved,
+    super.validator,
     @Deprecated(
       'Use autovalidateMode parameter which provide more specific '
       'behaviour related to auto validation. '
@@ -1316,10 +1333,7 @@ class DropdownButtonFormField<T> extends FormField<T> {
         ),
         decoration = decoration ?? InputDecoration(focusColor: focusColor),
         super(
-          key: key,
-          onSaved: onSaved,
           initialValue: value,
-          validator: validator,
           autovalidateMode: autovalidate
               ? AutovalidateMode.always
               : (autovalidateMode ?? AutovalidateMode.disabled),

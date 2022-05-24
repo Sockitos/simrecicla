@@ -5,13 +5,13 @@ import 'package:simtech/src/ui/screens/consumer/bin_selection/components/bird_sh
 
 class BirdIconButton extends StatelessWidget {
   const BirdIconButton({
-    Key? key,
+    super.key,
     required this.radius,
     this.onPressed,
     required this.icon,
     this.isCorrect,
     this.isSelected = false,
-  }) : super(key: key);
+  });
 
   final double radius;
   final VoidCallback? onPressed;

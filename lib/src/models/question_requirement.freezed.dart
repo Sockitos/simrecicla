@@ -12,31 +12,11 @@ part of 'question_requirement.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 QuestionRequirement _$QuestionRequirementFromJson(Map<String, dynamic> json) {
   return _QuestionRequirement.fromJson(json);
 }
-
-/// @nodoc
-class _$QuestionRequirementTearOff {
-  const _$QuestionRequirementTearOff();
-
-  _QuestionRequirement call(
-      {required int question, required List<int> answers}) {
-    return _QuestionRequirement(
-      question: question,
-      answers: answers,
-    );
-  }
-
-  QuestionRequirement fromJson(Map<String, Object?> json) {
-    return QuestionRequirement.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $QuestionRequirement = _$QuestionRequirementTearOff();
 
 /// @nodoc
 mixin _$QuestionRequirement {
@@ -85,38 +65,38 @@ class _$QuestionRequirementCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$QuestionRequirementCopyWith<$Res>
+abstract class _$$_QuestionRequirementCopyWith<$Res>
     implements $QuestionRequirementCopyWith<$Res> {
-  factory _$QuestionRequirementCopyWith(_QuestionRequirement value,
-          $Res Function(_QuestionRequirement) then) =
-      __$QuestionRequirementCopyWithImpl<$Res>;
+  factory _$$_QuestionRequirementCopyWith(_$_QuestionRequirement value,
+          $Res Function(_$_QuestionRequirement) then) =
+      __$$_QuestionRequirementCopyWithImpl<$Res>;
   @override
   $Res call({int question, List<int> answers});
 }
 
 /// @nodoc
-class __$QuestionRequirementCopyWithImpl<$Res>
+class __$$_QuestionRequirementCopyWithImpl<$Res>
     extends _$QuestionRequirementCopyWithImpl<$Res>
-    implements _$QuestionRequirementCopyWith<$Res> {
-  __$QuestionRequirementCopyWithImpl(
-      _QuestionRequirement _value, $Res Function(_QuestionRequirement) _then)
-      : super(_value, (v) => _then(v as _QuestionRequirement));
+    implements _$$_QuestionRequirementCopyWith<$Res> {
+  __$$_QuestionRequirementCopyWithImpl(_$_QuestionRequirement _value,
+      $Res Function(_$_QuestionRequirement) _then)
+      : super(_value, (v) => _then(v as _$_QuestionRequirement));
 
   @override
-  _QuestionRequirement get _value => super._value as _QuestionRequirement;
+  _$_QuestionRequirement get _value => super._value as _$_QuestionRequirement;
 
   @override
   $Res call({
     Object? question = freezed,
     Object? answers = freezed,
   }) {
-    return _then(_QuestionRequirement(
+    return _then(_$_QuestionRequirement(
       question: question == freezed
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
               as int,
       answers: answers == freezed
-          ? _value.answers
+          ? _value._answers
           : answers // ignore: cast_nullable_to_non_nullable
               as List<int>,
     ));
@@ -126,16 +106,22 @@ class __$QuestionRequirementCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_QuestionRequirement extends _QuestionRequirement {
-  const _$_QuestionRequirement({required this.question, required this.answers})
-      : super._();
+  const _$_QuestionRequirement(
+      {required this.question, required final List<int> answers})
+      : _answers = answers,
+        super._();
 
   factory _$_QuestionRequirement.fromJson(Map<String, dynamic> json) =>
       _$$_QuestionRequirementFromJson(json);
 
   @override
   final int question;
+  final List<int> _answers;
   @override
-  final List<int> answers;
+  List<int> get answers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_answers);
+  }
 
   @override
   String toString() {
@@ -146,21 +132,22 @@ class _$_QuestionRequirement extends _QuestionRequirement {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _QuestionRequirement &&
+            other is _$_QuestionRequirement &&
             const DeepCollectionEquality().equals(other.question, question) &&
-            const DeepCollectionEquality().equals(other.answers, answers));
+            const DeepCollectionEquality().equals(other._answers, _answers));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(question),
-      const DeepCollectionEquality().hash(answers));
+      const DeepCollectionEquality().hash(_answers));
 
   @JsonKey(ignore: true)
   @override
-  _$QuestionRequirementCopyWith<_QuestionRequirement> get copyWith =>
-      __$QuestionRequirementCopyWithImpl<_QuestionRequirement>(
+  _$$_QuestionRequirementCopyWith<_$_QuestionRequirement> get copyWith =>
+      __$$_QuestionRequirementCopyWithImpl<_$_QuestionRequirement>(
           this, _$identity);
 
   @override
@@ -171,19 +158,19 @@ class _$_QuestionRequirement extends _QuestionRequirement {
 
 abstract class _QuestionRequirement extends QuestionRequirement {
   const factory _QuestionRequirement(
-      {required int question,
-      required List<int> answers}) = _$_QuestionRequirement;
+      {required final int question,
+      required final List<int> answers}) = _$_QuestionRequirement;
   const _QuestionRequirement._() : super._();
 
   factory _QuestionRequirement.fromJson(Map<String, dynamic> json) =
       _$_QuestionRequirement.fromJson;
 
   @override
-  int get question;
+  int get question => throw _privateConstructorUsedError;
   @override
-  List<int> get answers;
+  List<int> get answers => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$QuestionRequirementCopyWith<_QuestionRequirement> get copyWith =>
+  _$$_QuestionRequirementCopyWith<_$_QuestionRequirement> get copyWith =>
       throw _privateConstructorUsedError;
 }

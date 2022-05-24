@@ -33,7 +33,7 @@ extension PMaterialUtils on PMaterial {
       case PMaterial.pp:
         return 'PP';
       case PMaterial.outrosPlasticos:
-        return 'Outros Plástics';
+        return 'Outros Plásticos';
       case PMaterial.ecal:
         return 'ECAL';
       case PMaterial.papel:

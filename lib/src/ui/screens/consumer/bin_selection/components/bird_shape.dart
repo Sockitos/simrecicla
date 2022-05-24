@@ -5,7 +5,7 @@ class BirdBorder extends OutlinedBorder {
   /// Create a circle border.
   ///
   /// The [side] argument must not be null.
-  const BirdBorder({BorderSide side = BorderSide.none}) : super(side: side);
+  const BirdBorder({super.side});
 
   @override
   EdgeInsetsGeometry get dimensions {

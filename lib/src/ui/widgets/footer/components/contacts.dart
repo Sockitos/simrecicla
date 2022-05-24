@@ -4,9 +4,9 @@ import 'package:simtech/src/constants/text_styles.dart';
 
 class Contacts extends StatelessWidget {
   const Contacts({
-    Key? key,
+    super.key,
     this.textAlign,
-  }) : super(key: key);
+  });
 
   final TextAlign? textAlign;
 

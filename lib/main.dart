@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:simtech/src/simtech_app.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -18,20 +19,6 @@ Future<void> main() async {
       ExactAssetPicture(
         SvgPicture.svgStringDecoderBuilder,
         'assets/svgs/circles.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/arrow_right.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/arrow_down.svg',
       ),
       null,
     ),
@@ -106,5 +93,5 @@ Future<void> main() async {
       null,
     ),
   ]);
-  runApp(const SimtechApp());
+  runApp(const ProviderScope(child: SimtechApp()));
 }

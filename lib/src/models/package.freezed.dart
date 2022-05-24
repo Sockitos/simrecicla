@@ -12,34 +12,11 @@ part of 'package.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Package _$PackageFromJson(Map<String, dynamic> json) {
   return _Package.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageTearOff {
-  const _$PackageTearOff();
-
-  _Package call(
-      {required String name,
-      required String iconId,
-      required List<Component> components}) {
-    return _Package(
-      name: name,
-      iconId: iconId,
-      components: components,
-    );
-  }
-
-  Package fromJson(Map<String, Object?> json) {
-    return Package.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Package = _$PackageTearOff();
 
 /// @nodoc
 mixin _$Package {
@@ -91,21 +68,22 @@ class _$PackageCopyWithImpl<$Res> implements $PackageCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PackageCopyWith<$Res> implements $PackageCopyWith<$Res> {
-  factory _$PackageCopyWith(_Package value, $Res Function(_Package) then) =
-      __$PackageCopyWithImpl<$Res>;
+abstract class _$$_PackageCopyWith<$Res> implements $PackageCopyWith<$Res> {
+  factory _$$_PackageCopyWith(
+          _$_Package value, $Res Function(_$_Package) then) =
+      __$$_PackageCopyWithImpl<$Res>;
   @override
   $Res call({String name, String iconId, List<Component> components});
 }
 
 /// @nodoc
-class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
-    implements _$PackageCopyWith<$Res> {
-  __$PackageCopyWithImpl(_Package _value, $Res Function(_Package) _then)
-      : super(_value, (v) => _then(v as _Package));
+class __$$_PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
+    implements _$$_PackageCopyWith<$Res> {
+  __$$_PackageCopyWithImpl(_$_Package _value, $Res Function(_$_Package) _then)
+      : super(_value, (v) => _then(v as _$_Package));
 
   @override
-  _Package get _value => super._value as _Package;
+  _$_Package get _value => super._value as _$_Package;
 
   @override
   $Res call({
@@ -113,7 +91,7 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
     Object? iconId = freezed,
     Object? components = freezed,
   }) {
-    return _then(_Package(
+    return _then(_$_Package(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -123,7 +101,7 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
           : iconId // ignore: cast_nullable_to_non_nullable
               as String,
       components: components == freezed
-          ? _value.components
+          ? _value._components
           : components // ignore: cast_nullable_to_non_nullable
               as List<Component>,
     ));
@@ -134,8 +112,11 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Package extends _Package {
   const _$_Package(
-      {required this.name, required this.iconId, required this.components})
-      : super._();
+      {required this.name,
+      required this.iconId,
+      required final List<Component> components})
+      : _components = components,
+        super._();
 
   factory _$_Package.fromJson(Map<String, dynamic> json) =>
       _$$_PackageFromJson(json);
@@ -144,8 +125,12 @@ class _$_Package extends _Package {
   final String name;
   @override
   final String iconId;
+  final List<Component> _components;
   @override
-  final List<Component> components;
+  List<Component> get components {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_components);
+  }
 
   @override
   String toString() {
@@ -156,24 +141,25 @@ class _$_Package extends _Package {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Package &&
+            other is _$_Package &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.iconId, iconId) &&
             const DeepCollectionEquality()
-                .equals(other.components, components));
+                .equals(other._components, _components));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(iconId),
-      const DeepCollectionEquality().hash(components));
+      const DeepCollectionEquality().hash(_components));
 
   @JsonKey(ignore: true)
   @override
-  _$PackageCopyWith<_Package> get copyWith =>
-      __$PackageCopyWithImpl<_Package>(this, _$identity);
+  _$$_PackageCopyWith<_$_Package> get copyWith =>
+      __$$_PackageCopyWithImpl<_$_Package>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -183,21 +169,21 @@ class _$_Package extends _Package {
 
 abstract class _Package extends Package {
   const factory _Package(
-      {required String name,
-      required String iconId,
-      required List<Component> components}) = _$_Package;
+      {required final String name,
+      required final String iconId,
+      required final List<Component> components}) = _$_Package;
   const _Package._() : super._();
 
   factory _Package.fromJson(Map<String, dynamic> json) = _$_Package.fromJson;
 
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  String get iconId;
+  String get iconId => throw _privateConstructorUsedError;
   @override
-  List<Component> get components;
+  List<Component> get components => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PackageCopyWith<_Package> get copyWith =>
+  _$$_PackageCopyWith<_$_Package> get copyWith =>
       throw _privateConstructorUsedError;
 }

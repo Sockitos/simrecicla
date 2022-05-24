@@ -18,9 +18,9 @@ import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
 
 class BinSelectionScreen extends HookWidget {
   const BinSelectionScreen({
-    Key? key,
+    super.key,
     required this.package,
-  }) : super(key: key);
+  });
 
   final Package package;
 
@@ -75,7 +75,7 @@ class BinSelectionScreen extends HookWidget {
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                'Arrasta cada componente para o respectivo contentor.',
+                                'Arrasta cada componente para o respetivo contentor.',
                                 textAlign: TextAlign.center,
                                 style: AppTextStyles.paragraph(context.layout),
                               ),
@@ -302,11 +302,11 @@ class BinSelectionScreen extends HookWidget {
 
 class Results extends HookWidget {
   const Results({
-    Key? key,
+    super.key,
     required this.whereComponents,
     required this.isSelecting,
     required this.package,
-  }) : super(key: key);
+  });
 
   final ValueNotifier<Map<Component, Where>> whereComponents;
   final ValueNotifier<bool> isSelecting;
@@ -383,7 +383,12 @@ class Results extends HookWidget {
                               ),
                               const SizedBox(height: 15),
                               Text(
-                                'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                results.isCorrect
+                                    ? results.userImpacts.environmental
+                                            .isNegative
+                                        ? 'A deposição da embalagem no contentor adequado representa benefícios ambientais face à não reciclagem destes materiais.'
+                                        : 'Ao colocar a embalagem no contentor adequado contribui para a redução dos impactes ambientais associados à gestão destes resíduos.'
+                                    : 'Os destinos selecionados apresentam impactes ambientais superiores à adequada deposição da embalagem no contentor correto.',
                                 style: AppTextStyles.paragraph(context.layout),
                               ),
                             ],

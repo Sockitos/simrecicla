@@ -6,12 +6,12 @@ import 'package:simtech/src/ui/screens/packager/components/form_field.dart';
 
 class PercentageField extends MyFormField {
   const PercentageField({
-    Key? key,
+    super.key,
     this.value = 0,
     this.onChanged,
     required this.hint,
     this.info,
-  }) : super(key: key);
+  });
 
   final double value;
   final ValueChanged<double>? onChanged;

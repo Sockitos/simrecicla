@@ -12,46 +12,19 @@ part of 'machine.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-Machine _$MachineFromJson(Map<String, dynamic> json) {
-  return _Machine.fromJson(json);
-}
-
-/// @nodoc
-class _$MachineTearOff {
-  const _$MachineTearOff();
-
-  _Machine call(
-      {required String name,
-      required String description,
-      @JsonKey(name: 'input_count') required int inputCount,
-      required List<MachineOutput> outputs}) {
-    return _Machine(
-      name: name,
-      description: description,
-      inputCount: inputCount,
-      outputs: outputs,
-    );
-  }
-
-  Machine fromJson(Map<String, Object?> json) {
-    return Machine.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Machine = _$MachineTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Machine {
+  String get id => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  IconData get icon => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  @JsonKey(name: 'input_count')
-  int get inputCount => throw _privateConstructorUsedError;
-  List<MachineOutput> get outputs => throw _privateConstructorUsedError;
+  Map<AxisDirection, MachinePort?> get ports =>
+      throw _privateConstructorUsedError;
+  bool get isFixed => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MachineCopyWith<Machine> get copyWith => throw _privateConstructorUsedError;
 }
@@ -61,10 +34,13 @@ abstract class $MachineCopyWith<$Res> {
   factory $MachineCopyWith(Machine value, $Res Function(Machine) then) =
       _$MachineCopyWithImpl<$Res>;
   $Res call(
-      {String name,
+      {String id,
+      int index,
+      String name,
+      IconData icon,
       String description,
-      @JsonKey(name: 'input_count') int inputCount,
-      List<MachineOutput> outputs});
+      Map<AxisDirection, MachinePort?> ports,
+      bool isFixed});
 }
 
 /// @nodoc
@@ -77,162 +53,216 @@ class _$MachineCopyWithImpl<$Res> implements $MachineCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? id = freezed,
+    Object? index = freezed,
     Object? name = freezed,
+    Object? icon = freezed,
     Object? description = freezed,
-    Object? inputCount = freezed,
-    Object? outputs = freezed,
+    Object? ports = freezed,
+    Object? isFixed = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      icon: icon == freezed
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as IconData,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      inputCount: inputCount == freezed
-          ? _value.inputCount
-          : inputCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      outputs: outputs == freezed
-          ? _value.outputs
-          : outputs // ignore: cast_nullable_to_non_nullable
-              as List<MachineOutput>,
+      ports: ports == freezed
+          ? _value.ports
+          : ports // ignore: cast_nullable_to_non_nullable
+              as Map<AxisDirection, MachinePort?>,
+      isFixed: isFixed == freezed
+          ? _value.isFixed
+          : isFixed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$MachineCopyWith<$Res> implements $MachineCopyWith<$Res> {
-  factory _$MachineCopyWith(_Machine value, $Res Function(_Machine) then) =
-      __$MachineCopyWithImpl<$Res>;
+abstract class _$$_MachineCopyWith<$Res> implements $MachineCopyWith<$Res> {
+  factory _$$_MachineCopyWith(
+          _$_Machine value, $Res Function(_$_Machine) then) =
+      __$$_MachineCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String name,
+      {String id,
+      int index,
+      String name,
+      IconData icon,
       String description,
-      @JsonKey(name: 'input_count') int inputCount,
-      List<MachineOutput> outputs});
+      Map<AxisDirection, MachinePort?> ports,
+      bool isFixed});
 }
 
 /// @nodoc
-class __$MachineCopyWithImpl<$Res> extends _$MachineCopyWithImpl<$Res>
-    implements _$MachineCopyWith<$Res> {
-  __$MachineCopyWithImpl(_Machine _value, $Res Function(_Machine) _then)
-      : super(_value, (v) => _then(v as _Machine));
+class __$$_MachineCopyWithImpl<$Res> extends _$MachineCopyWithImpl<$Res>
+    implements _$$_MachineCopyWith<$Res> {
+  __$$_MachineCopyWithImpl(_$_Machine _value, $Res Function(_$_Machine) _then)
+      : super(_value, (v) => _then(v as _$_Machine));
 
   @override
-  _Machine get _value => super._value as _Machine;
+  _$_Machine get _value => super._value as _$_Machine;
 
   @override
   $Res call({
+    Object? id = freezed,
+    Object? index = freezed,
     Object? name = freezed,
+    Object? icon = freezed,
     Object? description = freezed,
-    Object? inputCount = freezed,
-    Object? outputs = freezed,
+    Object? ports = freezed,
+    Object? isFixed = freezed,
   }) {
-    return _then(_Machine(
+    return _then(_$_Machine(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      icon: icon == freezed
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as IconData,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      inputCount: inputCount == freezed
-          ? _value.inputCount
-          : inputCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      outputs: outputs == freezed
-          ? _value.outputs
-          : outputs // ignore: cast_nullable_to_non_nullable
-              as List<MachineOutput>,
+      ports: ports == freezed
+          ? _value._ports
+          : ports // ignore: cast_nullable_to_non_nullable
+              as Map<AxisDirection, MachinePort?>,
+      isFixed: isFixed == freezed
+          ? _value.isFixed
+          : isFixed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_Machine extends _Machine {
   const _$_Machine(
-      {required this.name,
+      {required this.id,
+      this.index = 0,
+      required this.name,
+      required this.icon,
       required this.description,
-      @JsonKey(name: 'input_count') required this.inputCount,
-      required this.outputs})
-      : super._();
+      required final Map<AxisDirection, MachinePort?> ports,
+      this.isFixed = false})
+      : _ports = ports,
+        super._();
 
-  factory _$_Machine.fromJson(Map<String, dynamic> json) =>
-      _$$_MachineFromJson(json);
-
+  @override
+  final String id;
+  @override
+  @JsonKey()
+  final int index;
   @override
   final String name;
   @override
+  final IconData icon;
+  @override
   final String description;
+  final Map<AxisDirection, MachinePort?> _ports;
   @override
-  @JsonKey(name: 'input_count')
-  final int inputCount;
+  Map<AxisDirection, MachinePort?> get ports {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_ports);
+  }
+
   @override
-  final List<MachineOutput> outputs;
+  @JsonKey()
+  final bool isFixed;
 
   @override
   String toString() {
-    return 'Machine(name: $name, description: $description, inputCount: $inputCount, outputs: $outputs)';
+    return 'Machine(id: $id, index: $index, name: $name, icon: $icon, description: $description, ports: $ports, isFixed: $isFixed)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Machine &&
+            other is _$_Machine &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.index, index) &&
             const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.icon, icon) &&
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
-            const DeepCollectionEquality()
-                .equals(other.inputCount, inputCount) &&
-            const DeepCollectionEquality().equals(other.outputs, outputs));
+            const DeepCollectionEquality().equals(other._ports, _ports) &&
+            const DeepCollectionEquality().equals(other.isFixed, isFixed));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(index),
       const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(icon),
       const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(inputCount),
-      const DeepCollectionEquality().hash(outputs));
+      const DeepCollectionEquality().hash(_ports),
+      const DeepCollectionEquality().hash(isFixed));
 
   @JsonKey(ignore: true)
   @override
-  _$MachineCopyWith<_Machine> get copyWith =>
-      __$MachineCopyWithImpl<_Machine>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_MachineToJson(this);
-  }
+  _$$_MachineCopyWith<_$_Machine> get copyWith =>
+      __$$_MachineCopyWithImpl<_$_Machine>(this, _$identity);
 }
 
 abstract class _Machine extends Machine {
   const factory _Machine(
-      {required String name,
-      required String description,
-      @JsonKey(name: 'input_count') required int inputCount,
-      required List<MachineOutput> outputs}) = _$_Machine;
+      {required final String id,
+      final int index,
+      required final String name,
+      required final IconData icon,
+      required final String description,
+      required final Map<AxisDirection, MachinePort?> ports,
+      final bool isFixed}) = _$_Machine;
   const _Machine._() : super._();
 
-  factory _Machine.fromJson(Map<String, dynamic> json) = _$_Machine.fromJson;
-
   @override
-  String get name;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get description;
+  int get index => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'input_count')
-  int get inputCount;
+  String get name => throw _privateConstructorUsedError;
   @override
-  List<MachineOutput> get outputs;
+  IconData get icon => throw _privateConstructorUsedError;
+  @override
+  String get description => throw _privateConstructorUsedError;
+  @override
+  Map<AxisDirection, MachinePort?> get ports =>
+      throw _privateConstructorUsedError;
+  @override
+  bool get isFixed => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MachineCopyWith<_Machine> get copyWith =>
+  _$$_MachineCopyWith<_$_Machine> get copyWith =>
       throw _privateConstructorUsedError;
 }

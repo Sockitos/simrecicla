@@ -12,64 +12,11 @@ part of 'component.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Component _$ComponentFromJson(Map<String, dynamic> json) {
   return _Component.fromJson(json);
 }
-
-/// @nodoc
-class _$ComponentTearOff {
-  const _$ComponentTearOff();
-
-  _Component call(
-      {required String name,
-      required String iconId,
-      double? papel,
-      double? cartao,
-      double? ecal,
-      double? pebd,
-      double? pet,
-      double? pead,
-      @JsonKey(name: 'plasticos_mistos') double? plasticosMistos,
-      @JsonKey(name: 'metais_ferrosos') double? metaisFerrosos,
-      @JsonKey(name: 'metais_nao_ferrosos') double? metaisNaoFerrosos,
-      double? vidro,
-      double? eps,
-      @JsonKey(name: 'fracao_resto') double? fracaoResto,
-      required Where where,
-      @JsonKey(name: 'if_true') required String ifTrue,
-      @JsonKey(name: 'if_false') required String ifFalse,
-      required String recomendacoes}) {
-    return _Component(
-      name: name,
-      iconId: iconId,
-      papel: papel,
-      cartao: cartao,
-      ecal: ecal,
-      pebd: pebd,
-      pet: pet,
-      pead: pead,
-      plasticosMistos: plasticosMistos,
-      metaisFerrosos: metaisFerrosos,
-      metaisNaoFerrosos: metaisNaoFerrosos,
-      vidro: vidro,
-      eps: eps,
-      fracaoResto: fracaoResto,
-      where: where,
-      ifTrue: ifTrue,
-      ifFalse: ifFalse,
-      recomendacoes: recomendacoes,
-    );
-  }
-
-  Component fromJson(Map<String, Object?> json) {
-    return Component.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Component = _$ComponentTearOff();
 
 /// @nodoc
 mixin _$Component {
@@ -236,10 +183,10 @@ class _$ComponentCopyWithImpl<$Res> implements $ComponentCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ComponentCopyWith<$Res> implements $ComponentCopyWith<$Res> {
-  factory _$ComponentCopyWith(
-          _Component value, $Res Function(_Component) then) =
-      __$ComponentCopyWithImpl<$Res>;
+abstract class _$$_ComponentCopyWith<$Res> implements $ComponentCopyWith<$Res> {
+  factory _$$_ComponentCopyWith(
+          _$_Component value, $Res Function(_$_Component) then) =
+      __$$_ComponentCopyWithImpl<$Res>;
   @override
   $Res call(
       {String name,
@@ -263,13 +210,14 @@ abstract class _$ComponentCopyWith<$Res> implements $ComponentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
-    implements _$ComponentCopyWith<$Res> {
-  __$ComponentCopyWithImpl(_Component _value, $Res Function(_Component) _then)
-      : super(_value, (v) => _then(v as _Component));
+class __$$_ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
+    implements _$$_ComponentCopyWith<$Res> {
+  __$$_ComponentCopyWithImpl(
+      _$_Component _value, $Res Function(_$_Component) _then)
+      : super(_value, (v) => _then(v as _$_Component));
 
   @override
-  _Component get _value => super._value as _Component;
+  _$_Component get _value => super._value as _$_Component;
 
   @override
   $Res call({
@@ -292,7 +240,7 @@ class __$ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
     Object? ifFalse = freezed,
     Object? recomendacoes = freezed,
   }) {
-    return _then(_Component(
+    return _then(_$_Component(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -448,7 +396,7 @@ class _$_Component extends _Component {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Component &&
+            other is _$_Component &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.iconId, iconId) &&
             const DeepCollectionEquality().equals(other.papel, papel) &&
@@ -474,6 +422,7 @@ class _$_Component extends _Component {
                 .equals(other.recomendacoes, recomendacoes));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -498,8 +447,8 @@ class _$_Component extends _Component {
 
   @JsonKey(ignore: true)
   @override
-  _$ComponentCopyWith<_Component> get copyWith =>
-      __$ComponentCopyWithImpl<_Component>(this, _$identity);
+  _$$_ComponentCopyWith<_$_Component> get copyWith =>
+      __$$_ComponentCopyWithImpl<_$_Component>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -509,73 +458,73 @@ class _$_Component extends _Component {
 
 abstract class _Component extends Component {
   const factory _Component(
-      {required String name,
-      required String iconId,
-      double? papel,
-      double? cartao,
-      double? ecal,
-      double? pebd,
-      double? pet,
-      double? pead,
-      @JsonKey(name: 'plasticos_mistos') double? plasticosMistos,
-      @JsonKey(name: 'metais_ferrosos') double? metaisFerrosos,
-      @JsonKey(name: 'metais_nao_ferrosos') double? metaisNaoFerrosos,
-      double? vidro,
-      double? eps,
-      @JsonKey(name: 'fracao_resto') double? fracaoResto,
-      required Where where,
-      @JsonKey(name: 'if_true') required String ifTrue,
-      @JsonKey(name: 'if_false') required String ifFalse,
-      required String recomendacoes}) = _$_Component;
+      {required final String name,
+      required final String iconId,
+      final double? papel,
+      final double? cartao,
+      final double? ecal,
+      final double? pebd,
+      final double? pet,
+      final double? pead,
+      @JsonKey(name: 'plasticos_mistos') final double? plasticosMistos,
+      @JsonKey(name: 'metais_ferrosos') final double? metaisFerrosos,
+      @JsonKey(name: 'metais_nao_ferrosos') final double? metaisNaoFerrosos,
+      final double? vidro,
+      final double? eps,
+      @JsonKey(name: 'fracao_resto') final double? fracaoResto,
+      required final Where where,
+      @JsonKey(name: 'if_true') required final String ifTrue,
+      @JsonKey(name: 'if_false') required final String ifFalse,
+      required final String recomendacoes}) = _$_Component;
   const _Component._() : super._();
 
   factory _Component.fromJson(Map<String, dynamic> json) =
       _$_Component.fromJson;
 
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  String get iconId;
+  String get iconId => throw _privateConstructorUsedError;
   @override
-  double? get papel;
+  double? get papel => throw _privateConstructorUsedError;
   @override
-  double? get cartao;
+  double? get cartao => throw _privateConstructorUsedError;
   @override
-  double? get ecal;
+  double? get ecal => throw _privateConstructorUsedError;
   @override
-  double? get pebd;
+  double? get pebd => throw _privateConstructorUsedError;
   @override
-  double? get pet;
+  double? get pet => throw _privateConstructorUsedError;
   @override
-  double? get pead;
+  double? get pead => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'plasticos_mistos')
-  double? get plasticosMistos;
+  double? get plasticosMistos => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'metais_ferrosos')
-  double? get metaisFerrosos;
+  double? get metaisFerrosos => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'metais_nao_ferrosos')
-  double? get metaisNaoFerrosos;
+  double? get metaisNaoFerrosos => throw _privateConstructorUsedError;
   @override
-  double? get vidro;
+  double? get vidro => throw _privateConstructorUsedError;
   @override
-  double? get eps;
+  double? get eps => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'fracao_resto')
-  double? get fracaoResto;
+  double? get fracaoResto => throw _privateConstructorUsedError;
   @override
-  Where get where;
+  Where get where => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'if_true')
-  String get ifTrue;
+  String get ifTrue => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'if_false')
-  String get ifFalse;
+  String get ifFalse => throw _privateConstructorUsedError;
   @override
-  String get recomendacoes;
+  String get recomendacoes => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ComponentCopyWith<_Component> get copyWith =>
+  _$$_ComponentCopyWith<_$_Component> get copyWith =>
       throw _privateConstructorUsedError;
 }

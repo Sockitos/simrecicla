@@ -12,25 +12,7 @@ part of 'bin_selection_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$BinSelectionStateTearOff {
-  const _$BinSelectionStateTearOff();
-
-  PackageResults packageResults() {
-    return const PackageResults();
-  }
-
-  ComponentResults componentResults({required String componentId}) {
-    return ComponentResults(
-      componentId: componentId,
-    );
-  }
-}
-
-/// @nodoc
-const $BinSelectionState = _$BinSelectionStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$BinSelectionState {
@@ -92,22 +74,22 @@ class _$BinSelectionStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $PackageResultsCopyWith<$Res> {
-  factory $PackageResultsCopyWith(
-          PackageResults value, $Res Function(PackageResults) then) =
-      _$PackageResultsCopyWithImpl<$Res>;
+abstract class _$$PackageResultsCopyWith<$Res> {
+  factory _$$PackageResultsCopyWith(
+          _$PackageResults value, $Res Function(_$PackageResults) then) =
+      __$$PackageResultsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$PackageResultsCopyWithImpl<$Res>
+class __$$PackageResultsCopyWithImpl<$Res>
     extends _$BinSelectionStateCopyWithImpl<$Res>
-    implements $PackageResultsCopyWith<$Res> {
-  _$PackageResultsCopyWithImpl(
-      PackageResults _value, $Res Function(PackageResults) _then)
-      : super(_value, (v) => _then(v as PackageResults));
+    implements _$$PackageResultsCopyWith<$Res> {
+  __$$PackageResultsCopyWithImpl(
+      _$PackageResults _value, $Res Function(_$PackageResults) _then)
+      : super(_value, (v) => _then(v as _$PackageResults));
 
   @override
-  PackageResults get _value => super._value as PackageResults;
+  _$PackageResults get _value => super._value as _$PackageResults;
 }
 
 /// @nodoc
@@ -123,7 +105,7 @@ class _$PackageResults implements PackageResults {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is PackageResults);
+        (other.runtimeType == runtimeType && other is _$PackageResults);
   }
 
   @override
@@ -197,29 +179,29 @@ abstract class PackageResults implements BinSelectionState {
 }
 
 /// @nodoc
-abstract class $ComponentResultsCopyWith<$Res> {
-  factory $ComponentResultsCopyWith(
-          ComponentResults value, $Res Function(ComponentResults) then) =
-      _$ComponentResultsCopyWithImpl<$Res>;
+abstract class _$$ComponentResultsCopyWith<$Res> {
+  factory _$$ComponentResultsCopyWith(
+          _$ComponentResults value, $Res Function(_$ComponentResults) then) =
+      __$$ComponentResultsCopyWithImpl<$Res>;
   $Res call({String componentId});
 }
 
 /// @nodoc
-class _$ComponentResultsCopyWithImpl<$Res>
+class __$$ComponentResultsCopyWithImpl<$Res>
     extends _$BinSelectionStateCopyWithImpl<$Res>
-    implements $ComponentResultsCopyWith<$Res> {
-  _$ComponentResultsCopyWithImpl(
-      ComponentResults _value, $Res Function(ComponentResults) _then)
-      : super(_value, (v) => _then(v as ComponentResults));
+    implements _$$ComponentResultsCopyWith<$Res> {
+  __$$ComponentResultsCopyWithImpl(
+      _$ComponentResults _value, $Res Function(_$ComponentResults) _then)
+      : super(_value, (v) => _then(v as _$ComponentResults));
 
   @override
-  ComponentResults get _value => super._value as ComponentResults;
+  _$ComponentResults get _value => super._value as _$ComponentResults;
 
   @override
   $Res call({
     Object? componentId = freezed,
   }) {
-    return _then(ComponentResults(
+    return _then(_$ComponentResults(
       componentId: componentId == freezed
           ? _value.componentId
           : componentId // ignore: cast_nullable_to_non_nullable
@@ -245,7 +227,7 @@ class _$ComponentResults implements ComponentResults {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ComponentResults &&
+            other is _$ComponentResults &&
             const DeepCollectionEquality()
                 .equals(other.componentId, componentId));
   }
@@ -256,8 +238,8 @@ class _$ComponentResults implements ComponentResults {
 
   @JsonKey(ignore: true)
   @override
-  $ComponentResultsCopyWith<ComponentResults> get copyWith =>
-      _$ComponentResultsCopyWithImpl<ComponentResults>(this, _$identity);
+  _$$ComponentResultsCopyWith<_$ComponentResults> get copyWith =>
+      __$$ComponentResultsCopyWithImpl<_$ComponentResults>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -323,11 +305,11 @@ class _$ComponentResults implements ComponentResults {
 }
 
 abstract class ComponentResults implements BinSelectionState {
-  const factory ComponentResults({required String componentId}) =
+  const factory ComponentResults({required final String componentId}) =
       _$ComponentResults;
 
-  String get componentId;
+  String get componentId => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ComponentResultsCopyWith<ComponentResults> get copyWith =>
+  _$$ComponentResultsCopyWith<_$ComponentResults> get copyWith =>
       throw _privateConstructorUsedError;
 }

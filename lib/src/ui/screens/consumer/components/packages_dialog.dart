@@ -10,9 +10,9 @@ import 'package:simtech/src/router/router.gr.dart';
 
 class PackagesDialog extends HookWidget {
   const PackagesDialog({
-    Key? key,
+    super.key,
     required this.category,
-  }) : super(key: key);
+  });
 
   final Category category;
 

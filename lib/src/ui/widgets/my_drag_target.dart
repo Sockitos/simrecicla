@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// ignore_for_file: deprecated_member_use_from_same_package, avoid_private_typedef_functions
+// ignore_for_file: deprecated_member_use_from_same_package, avoid_private_typedef_functions, prefer_asserts_with_message
 
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/gestures.dart';
@@ -11,7 +11,6 @@ import 'package:flutter/widgets.dart'
     show
         BuildContext,
         IgnorePointer,
-        Key,
         Listener,
         MetaData,
         MouseRegion,
@@ -95,7 +94,7 @@ enum MyDragAnchor {
 
 class MyDraggable<T extends Object> extends StatefulWidget {
   const MyDraggable({
-    Key? key,
+    super.key,
     required this.child,
     required this.feedback,
     this.data,
@@ -120,8 +119,7 @@ class MyDraggable<T extends Object> extends StatefulWidget {
     this.ignoringFeedbackSemantics = true,
     this.rootOverlay = false,
     this.hitTestBehavior = HitTestBehavior.deferToChild,
-  })  : assert(maxSimultaneousDrags == null || maxSimultaneousDrags >= 0),
-        super(key: key);
+  }) : assert(maxSimultaneousDrags == null || maxSimultaneousDrags >= 0);
 
   final T? data;
 
@@ -332,7 +330,7 @@ class MyDragTargetDetails<T> {
 
 class MyDragTarget<T extends Object> extends StatefulWidget {
   const MyDragTarget({
-    Key? key,
+    super.key,
     required this.builder,
     this.onWillAccept,
     this.onAccept,
@@ -340,7 +338,7 @@ class MyDragTarget<T extends Object> extends StatefulWidget {
     this.onLeave,
     this.onMove,
     this.hitTestBehavior = HitTestBehavior.translucent,
-  }) : super(key: key);
+  });
 
   final DragTargetBuilder<T> builder;
 
@@ -451,6 +449,7 @@ class _DragTargetState<T extends Object> extends State<MyDragTarget<T>> {
 }
 
 enum _DragEndKind { dropped, canceled }
+
 typedef _OnDragEnd = void Function(
   Velocity velocity,
   Offset offset,
@@ -520,7 +519,7 @@ class _DragAvatar<T extends Object> extends Drag {
     _lastOffset = globalPosition - dragStartPoint;
     _entry!.markNeedsBuild();
     final result = HitTestResult();
-    WidgetsBinding.instance!.hitTest(result, globalPosition + feedbackOffset);
+    WidgetsBinding.instance.hitTest(result, globalPosition + feedbackOffset);
 
     final targets = _getDragTargets(result.path).toList();
 

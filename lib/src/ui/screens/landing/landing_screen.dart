@@ -9,7 +9,7 @@ import 'package:simtech/src/ui/screens/landing/components/landing_option.dart';
 import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
 
 class LandingScreen extends StatelessWidget {
-  const LandingScreen({Key? key}) : super(key: key);
+  const LandingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class LandingScreen extends StatelessWidget {
                     children: [
                       LandingOption(
                         svg: 'assets/svgs/consumer_option.svg',
-                        description: 'Quero reciclar uma embalagem',
+                        description: 'Onde coloco a minha embalagem',
                         tooltip:
                             'Permite calcular o impacte das práticas de separação e encaminhamento dos resíduos de embalagens',
                         onPressed: () => AutoRouter.of(context).push(
@@ -91,7 +91,9 @@ class LandingScreen extends StatelessWidget {
                         description: 'Quero optimizar uma linha de triagem',
                         tooltip:
                             'Permite otimizar os resultados uma linha de triagem de embalagens, de acordo com a sequenciação de diferentes operações e equipamentos',
-                        onPressed: () {},
+                        onPressed: () => AutoRouter.of(context).push(
+                          const RecyclerScreenRoute(),
+                        ),
                       ),
                     ],
                   ),
@@ -108,7 +110,7 @@ class LandingScreen extends StatelessWidget {
                     Flexible(
                       child: LandingOption(
                         svg: 'assets/svgs/consumer_option.svg',
-                        description: 'Quero reciclar uma embalagem',
+                        description: 'Onde coloco a minha embalagem',
                         tooltip:
                             'Permite calcular o impacte das práticas de separação e encaminhamento dos resíduos de embalagens',
                         onPressed: () => AutoRouter.of(context).push(
@@ -146,7 +148,9 @@ class LandingScreen extends StatelessWidget {
                         description: 'Quero optimizar uma linha de triagem',
                         tooltip:
                             'Permite calcular o impacte das práticas de separação e encaminhamento dos resíduos de embalagens',
-                        onPressed: () {},
+                        onPressed: () => AutoRouter.of(context).push(
+                          const RecyclerScreenRoute(),
+                        ),
                       ),
                     ),
                     SizedBox(

@@ -9,10 +9,10 @@ import 'package:simtech/src/ui/widgets/my_drag_target.dart';
 
 class DraggableComponents extends StatelessWidget {
   const DraggableComponents({
-    Key? key,
+    super.key,
     required this.package,
     required this.hiddenComponents,
-  }) : super(key: key);
+  });
 
   final Package package;
   final List<Component> hiddenComponents;
@@ -79,10 +79,9 @@ class DraggableComponents extends StatelessWidget {
 
 class _DraggableComponent extends StatelessWidget {
   const _DraggableComponent({
-    Key? key,
     required this.component,
     this.hideComponent = false,
-  }) : super(key: key);
+  });
 
   final Component component;
   final bool hideComponent;
@@ -132,10 +131,10 @@ class _DraggableComponent extends StatelessWidget {
 
 class DraggableComponent extends StatelessWidget {
   const DraggableComponent({
-    Key? key,
+    super.key,
     required this.component,
     this.isInBin = false,
-  }) : super(key: key);
+  });
 
   final Component component;
   final bool isInBin;

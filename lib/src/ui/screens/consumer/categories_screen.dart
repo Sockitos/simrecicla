@@ -8,7 +8,7 @@ import 'package:simtech/src/ui/screens/consumer/components/packages_dialog.dart'
 import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({Key? key}) : super(key: key);
+  const CategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

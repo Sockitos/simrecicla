@@ -4,8 +4,8 @@ import 'package:simtech/src/constants/colors.dart';
 
 class Copyright extends StatelessWidget {
   const Copyright({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

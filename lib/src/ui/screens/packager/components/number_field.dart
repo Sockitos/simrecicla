@@ -27,13 +27,13 @@ bool useNodeHasFocus(FocusNode focusNode) {
 
 class NumberField extends MyFormField {
   const NumberField({
-    Key? key,
+    super.key,
     this.value,
     this.onChanged,
     required this.hint,
     required this.inputHint,
     this.info,
-  }) : super(key: key);
+  });
 
   final int? value;
   final ValueChanged<int?>? onChanged;
@@ -92,7 +92,8 @@ class NumberField extends MyFormField {
                             border: InputBorder.none,
                           ),
                           inputFormatters: <TextInputFormatter>[
-                            FilteringTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly,
+                            LengthLimitingTextInputFormatter(7),
                           ],
                         ),
                       ),

@@ -12,59 +12,11 @@ part of 'answer.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Answer _$AnswerFromJson(Map<String, dynamic> json) {
   return _Answer.fromJson(json);
 }
-
-/// @nodoc
-class _$AnswerTearOff {
-  const _$AnswerTearOff();
-
-  _Answer call(
-      {required int id,
-      required String answer,
-      required String? recommendation,
-      required AnswerComponent vidro,
-      required AnswerComponent aco,
-      required AnswerComponent aluminio,
-      required AnswerComponent pet,
-      required AnswerComponent pead,
-      required AnswerComponent pebd,
-      required AnswerComponent eps,
-      required AnswerComponent pp,
-      @JsonKey(name: 'outros_plasticos')
-          required AnswerComponent outrosPlasticos,
-      required AnswerComponent ecal,
-      required AnswerComponent papel,
-      required AnswerComponent cartao}) {
-    return _Answer(
-      id: id,
-      answer: answer,
-      recommendation: recommendation,
-      vidro: vidro,
-      aco: aco,
-      aluminio: aluminio,
-      pet: pet,
-      pead: pead,
-      pebd: pebd,
-      eps: eps,
-      pp: pp,
-      outrosPlasticos: outrosPlasticos,
-      ecal: ecal,
-      papel: papel,
-      cartao: cartao,
-    );
-  }
-
-  Answer fromJson(Map<String, Object?> json) {
-    return Answer.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Answer = _$AnswerTearOff();
 
 /// @nodoc
 mixin _$Answer {
@@ -301,9 +253,9 @@ class _$AnswerCopyWithImpl<$Res> implements $AnswerCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AnswerCopyWith<$Res> implements $AnswerCopyWith<$Res> {
-  factory _$AnswerCopyWith(_Answer value, $Res Function(_Answer) then) =
-      __$AnswerCopyWithImpl<$Res>;
+abstract class _$$_AnswerCopyWith<$Res> implements $AnswerCopyWith<$Res> {
+  factory _$$_AnswerCopyWith(_$_Answer value, $Res Function(_$_Answer) then) =
+      __$$_AnswerCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -349,13 +301,13 @@ abstract class _$AnswerCopyWith<$Res> implements $AnswerCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
-    implements _$AnswerCopyWith<$Res> {
-  __$AnswerCopyWithImpl(_Answer _value, $Res Function(_Answer) _then)
-      : super(_value, (v) => _then(v as _Answer));
+class __$$_AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
+    implements _$$_AnswerCopyWith<$Res> {
+  __$$_AnswerCopyWithImpl(_$_Answer _value, $Res Function(_$_Answer) _then)
+      : super(_value, (v) => _then(v as _$_Answer));
 
   @override
-  _Answer get _value => super._value as _Answer;
+  _$_Answer get _value => super._value as _$_Answer;
 
   @override
   $Res call({
@@ -375,7 +327,7 @@ class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
     Object? papel = freezed,
     Object? cartao = freezed,
   }) {
-    return _then(_Answer(
+    return _then(_$_Answer(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -505,7 +457,7 @@ class _$_Answer extends _Answer {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Answer &&
+            other is _$_Answer &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.answer, answer) &&
             const DeepCollectionEquality()
@@ -525,6 +477,7 @@ class _$_Answer extends _Answer {
             const DeepCollectionEquality().equals(other.cartao, cartao));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -546,8 +499,8 @@ class _$_Answer extends _Answer {
 
   @JsonKey(ignore: true)
   @override
-  _$AnswerCopyWith<_Answer> get copyWith =>
-      __$AnswerCopyWithImpl<_Answer>(this, _$identity);
+  _$$_AnswerCopyWith<_$_Answer> get copyWith =>
+      __$$_AnswerCopyWithImpl<_$_Answer>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -557,58 +510,59 @@ class _$_Answer extends _Answer {
 
 abstract class _Answer extends Answer {
   const factory _Answer(
-      {required int id,
-      required String answer,
-      required String? recommendation,
-      required AnswerComponent vidro,
-      required AnswerComponent aco,
-      required AnswerComponent aluminio,
-      required AnswerComponent pet,
-      required AnswerComponent pead,
-      required AnswerComponent pebd,
-      required AnswerComponent eps,
-      required AnswerComponent pp,
+      {required final int id,
+      required final String answer,
+      required final String? recommendation,
+      required final AnswerComponent vidro,
+      required final AnswerComponent aco,
+      required final AnswerComponent aluminio,
+      required final AnswerComponent pet,
+      required final AnswerComponent pead,
+      required final AnswerComponent pebd,
+      required final AnswerComponent eps,
+      required final AnswerComponent pp,
       @JsonKey(name: 'outros_plasticos')
-          required AnswerComponent outrosPlasticos,
-      required AnswerComponent ecal,
-      required AnswerComponent papel,
-      required AnswerComponent cartao}) = _$_Answer;
+          required final AnswerComponent outrosPlasticos,
+      required final AnswerComponent ecal,
+      required final AnswerComponent papel,
+      required final AnswerComponent cartao}) = _$_Answer;
   const _Answer._() : super._();
 
   factory _Answer.fromJson(Map<String, dynamic> json) = _$_Answer.fromJson;
 
   @override
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
-  String get answer;
+  String get answer => throw _privateConstructorUsedError;
   @override
-  String? get recommendation;
+  String? get recommendation => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get vidro;
+  AnswerComponent get vidro => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get aco;
+  AnswerComponent get aco => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get aluminio;
+  AnswerComponent get aluminio => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get pet;
+  AnswerComponent get pet => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get pead;
+  AnswerComponent get pead => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get pebd;
+  AnswerComponent get pebd => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get eps;
+  AnswerComponent get eps => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get pp;
+  AnswerComponent get pp => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'outros_plasticos')
-  AnswerComponent get outrosPlasticos;
+  AnswerComponent get outrosPlasticos => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get ecal;
+  AnswerComponent get ecal => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get papel;
+  AnswerComponent get papel => throw _privateConstructorUsedError;
   @override
-  AnswerComponent get cartao;
+  AnswerComponent get cartao => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AnswerCopyWith<_Answer> get copyWith => throw _privateConstructorUsedError;
+  _$$_AnswerCopyWith<_$_Answer> get copyWith =>
+      throw _privateConstructorUsedError;
 }

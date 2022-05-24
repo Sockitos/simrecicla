@@ -12,34 +12,11 @@ part of 'category.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Category _$CategoryFromJson(Map<String, dynamic> json) {
   return _Category.fromJson(json);
 }
-
-/// @nodoc
-class _$CategoryTearOff {
-  const _$CategoryTearOff();
-
-  _Category call(
-      {required String category,
-      required String iconId,
-      required List<Package> packages}) {
-    return _Category(
-      category: category,
-      iconId: iconId,
-      packages: packages,
-    );
-  }
-
-  Category fromJson(Map<String, Object?> json) {
-    return Category.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Category = _$CategoryTearOff();
 
 /// @nodoc
 mixin _$Category {
@@ -92,21 +69,23 @@ class _$CategoryCopyWithImpl<$Res> implements $CategoryCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CategoryCopyWith<$Res> implements $CategoryCopyWith<$Res> {
-  factory _$CategoryCopyWith(_Category value, $Res Function(_Category) then) =
-      __$CategoryCopyWithImpl<$Res>;
+abstract class _$$_CategoryCopyWith<$Res> implements $CategoryCopyWith<$Res> {
+  factory _$$_CategoryCopyWith(
+          _$_Category value, $Res Function(_$_Category) then) =
+      __$$_CategoryCopyWithImpl<$Res>;
   @override
   $Res call({String category, String iconId, List<Package> packages});
 }
 
 /// @nodoc
-class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
-    implements _$CategoryCopyWith<$Res> {
-  __$CategoryCopyWithImpl(_Category _value, $Res Function(_Category) _then)
-      : super(_value, (v) => _then(v as _Category));
+class __$$_CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
+    implements _$$_CategoryCopyWith<$Res> {
+  __$$_CategoryCopyWithImpl(
+      _$_Category _value, $Res Function(_$_Category) _then)
+      : super(_value, (v) => _then(v as _$_Category));
 
   @override
-  _Category get _value => super._value as _Category;
+  _$_Category get _value => super._value as _$_Category;
 
   @override
   $Res call({
@@ -114,7 +93,7 @@ class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
     Object? iconId = freezed,
     Object? packages = freezed,
   }) {
-    return _then(_Category(
+    return _then(_$_Category(
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -124,7 +103,7 @@ class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
           : iconId // ignore: cast_nullable_to_non_nullable
               as String,
       packages: packages == freezed
-          ? _value.packages
+          ? _value._packages
           : packages // ignore: cast_nullable_to_non_nullable
               as List<Package>,
     ));
@@ -135,8 +114,11 @@ class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Category extends _Category {
   const _$_Category(
-      {required this.category, required this.iconId, required this.packages})
-      : super._();
+      {required this.category,
+      required this.iconId,
+      required final List<Package> packages})
+      : _packages = packages,
+        super._();
 
   factory _$_Category.fromJson(Map<String, dynamic> json) =>
       _$$_CategoryFromJson(json);
@@ -145,8 +127,12 @@ class _$_Category extends _Category {
   final String category;
   @override
   final String iconId;
+  final List<Package> _packages;
   @override
-  final List<Package> packages;
+  List<Package> get packages {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_packages);
+  }
 
   @override
   String toString() {
@@ -157,23 +143,24 @@ class _$_Category extends _Category {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Category &&
+            other is _$_Category &&
             const DeepCollectionEquality().equals(other.category, category) &&
             const DeepCollectionEquality().equals(other.iconId, iconId) &&
-            const DeepCollectionEquality().equals(other.packages, packages));
+            const DeepCollectionEquality().equals(other._packages, _packages));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(category),
       const DeepCollectionEquality().hash(iconId),
-      const DeepCollectionEquality().hash(packages));
+      const DeepCollectionEquality().hash(_packages));
 
   @JsonKey(ignore: true)
   @override
-  _$CategoryCopyWith<_Category> get copyWith =>
-      __$CategoryCopyWithImpl<_Category>(this, _$identity);
+  _$$_CategoryCopyWith<_$_Category> get copyWith =>
+      __$$_CategoryCopyWithImpl<_$_Category>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -183,21 +170,21 @@ class _$_Category extends _Category {
 
 abstract class _Category extends Category {
   const factory _Category(
-      {required String category,
-      required String iconId,
-      required List<Package> packages}) = _$_Category;
+      {required final String category,
+      required final String iconId,
+      required final List<Package> packages}) = _$_Category;
   const _Category._() : super._();
 
   factory _Category.fromJson(Map<String, dynamic> json) = _$_Category.fromJson;
 
   @override
-  String get category;
+  String get category => throw _privateConstructorUsedError;
   @override
-  String get iconId;
+  String get iconId => throw _privateConstructorUsedError;
   @override
-  List<Package> get packages;
+  List<Package> get packages => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CategoryCopyWith<_Category> get copyWith =>
+  _$$_CategoryCopyWith<_$_Category> get copyWith =>
       throw _privateConstructorUsedError;
 }

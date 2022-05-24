@@ -12,31 +12,11 @@ part of 'answer_component.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 AnswerComponent _$AnswerComponentFromJson(Map<String, dynamic> json) {
   return _AnswerComponent.fromJson(json);
 }
-
-/// @nodoc
-class _$AnswerComponentTearOff {
-  const _$AnswerComponentTearOff();
-
-  _AnswerComponent call(
-      {required int? value, required String? recommendation}) {
-    return _AnswerComponent(
-      value: value,
-      recommendation: recommendation,
-    );
-  }
-
-  AnswerComponent fromJson(Map<String, Object?> json) {
-    return AnswerComponent.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AnswerComponent = _$AnswerComponentTearOff();
 
 /// @nodoc
 mixin _$AnswerComponent {
@@ -85,32 +65,32 @@ class _$AnswerComponentCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AnswerComponentCopyWith<$Res>
+abstract class _$$_AnswerComponentCopyWith<$Res>
     implements $AnswerComponentCopyWith<$Res> {
-  factory _$AnswerComponentCopyWith(
-          _AnswerComponent value, $Res Function(_AnswerComponent) then) =
-      __$AnswerComponentCopyWithImpl<$Res>;
+  factory _$$_AnswerComponentCopyWith(
+          _$_AnswerComponent value, $Res Function(_$_AnswerComponent) then) =
+      __$$_AnswerComponentCopyWithImpl<$Res>;
   @override
   $Res call({int? value, String? recommendation});
 }
 
 /// @nodoc
-class __$AnswerComponentCopyWithImpl<$Res>
+class __$$_AnswerComponentCopyWithImpl<$Res>
     extends _$AnswerComponentCopyWithImpl<$Res>
-    implements _$AnswerComponentCopyWith<$Res> {
-  __$AnswerComponentCopyWithImpl(
-      _AnswerComponent _value, $Res Function(_AnswerComponent) _then)
-      : super(_value, (v) => _then(v as _AnswerComponent));
+    implements _$$_AnswerComponentCopyWith<$Res> {
+  __$$_AnswerComponentCopyWithImpl(
+      _$_AnswerComponent _value, $Res Function(_$_AnswerComponent) _then)
+      : super(_value, (v) => _then(v as _$_AnswerComponent));
 
   @override
-  _AnswerComponent get _value => super._value as _AnswerComponent;
+  _$_AnswerComponent get _value => super._value as _$_AnswerComponent;
 
   @override
   $Res call({
     Object? value = freezed,
     Object? recommendation = freezed,
   }) {
-    return _then(_AnswerComponent(
+    return _then(_$_AnswerComponent(
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -146,12 +126,13 @@ class _$_AnswerComponent extends _AnswerComponent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AnswerComponent &&
+            other is _$_AnswerComponent &&
             const DeepCollectionEquality().equals(other.value, value) &&
             const DeepCollectionEquality()
                 .equals(other.recommendation, recommendation));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -160,8 +141,8 @@ class _$_AnswerComponent extends _AnswerComponent {
 
   @JsonKey(ignore: true)
   @override
-  _$AnswerComponentCopyWith<_AnswerComponent> get copyWith =>
-      __$AnswerComponentCopyWithImpl<_AnswerComponent>(this, _$identity);
+  _$$_AnswerComponentCopyWith<_$_AnswerComponent> get copyWith =>
+      __$$_AnswerComponentCopyWithImpl<_$_AnswerComponent>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -171,19 +152,19 @@ class _$_AnswerComponent extends _AnswerComponent {
 
 abstract class _AnswerComponent extends AnswerComponent {
   const factory _AnswerComponent(
-      {required int? value,
-      required String? recommendation}) = _$_AnswerComponent;
+      {required final int? value,
+      required final String? recommendation}) = _$_AnswerComponent;
   const _AnswerComponent._() : super._();
 
   factory _AnswerComponent.fromJson(Map<String, dynamic> json) =
       _$_AnswerComponent.fromJson;
 
   @override
-  int? get value;
+  int? get value => throw _privateConstructorUsedError;
   @override
-  String? get recommendation;
+  String? get recommendation => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AnswerComponentCopyWith<_AnswerComponent> get copyWith =>
+  _$$_AnswerComponentCopyWith<_$_AnswerComponent> get copyWith =>
       throw _privateConstructorUsedError;
 }

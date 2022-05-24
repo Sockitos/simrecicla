@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/router/router.gr.dart';
+import 'package:simtech/src/ui/widgets/arrow_widget.dart';
 import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
 
 class ConsumerScreen extends StatelessWidget {
-  const ConsumerScreen({Key? key}) : super(key: key);
+  const ConsumerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class ConsumerScreen extends StatelessWidget {
 }
 
 class _ConsumerIntro extends StatelessWidget {
-  const _ConsumerIntro({Key? key}) : super(key: key);
+  const _ConsumerIntro();
 
   @override
   Widget build(BuildContext context) {
@@ -126,9 +126,10 @@ class _ConsumerIntro extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    SvgPicture.asset(
-                      'assets/svgs/arrow_down.svg',
+                    const ArrowWidget(
+                      size: Size(44, 80),
                       color: AppColors.blue,
+                      direction: AxisDirection.down,
                     ),
                     const SizedBox(height: 40),
                     Text(

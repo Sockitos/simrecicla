@@ -3,15 +3,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/text_styles.dart';
+import 'package:simtech/src/ui/widgets/arrow_widget.dart';
 
 class LandingOption extends StatelessWidget {
   const LandingOption({
-    Key? key,
+    super.key,
     required this.svg,
     required this.description,
     required this.tooltip,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final String svg;
   final String description;
@@ -80,9 +81,10 @@ class LandingOption extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  SvgPicture.asset(
-                    'assets/svgs/arrow_right.svg',
+                  const ArrowWidget(
+                    size: Size(60, 32),
                     color: AppColors.lightGreen,
+                    direction: AxisDirection.right,
                   ),
                   const SizedBox(height: 25),
                 ],

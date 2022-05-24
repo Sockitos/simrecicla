@@ -12,28 +12,7 @@ part of 'package_impact.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$PackageImpactTearOff {
-  const _$PackageImpactTearOff();
-
-  _PackageImpact call(
-      {required double producao,
-      required double incorporacao,
-      required double eol,
-      required double impacteTotal}) {
-    return _PackageImpact(
-      producao: producao,
-      incorporacao: incorporacao,
-      eol: eol,
-      impacteTotal: impacteTotal,
-    );
-  }
-}
-
-/// @nodoc
-const $PackageImpact = _$PackageImpactTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$PackageImpact {
@@ -94,26 +73,26 @@ class _$PackageImpactCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PackageImpactCopyWith<$Res>
+abstract class _$$_PackageImpactCopyWith<$Res>
     implements $PackageImpactCopyWith<$Res> {
-  factory _$PackageImpactCopyWith(
-          _PackageImpact value, $Res Function(_PackageImpact) then) =
-      __$PackageImpactCopyWithImpl<$Res>;
+  factory _$$_PackageImpactCopyWith(
+          _$_PackageImpact value, $Res Function(_$_PackageImpact) then) =
+      __$$_PackageImpactCopyWithImpl<$Res>;
   @override
   $Res call(
       {double producao, double incorporacao, double eol, double impacteTotal});
 }
 
 /// @nodoc
-class __$PackageImpactCopyWithImpl<$Res>
+class __$$_PackageImpactCopyWithImpl<$Res>
     extends _$PackageImpactCopyWithImpl<$Res>
-    implements _$PackageImpactCopyWith<$Res> {
-  __$PackageImpactCopyWithImpl(
-      _PackageImpact _value, $Res Function(_PackageImpact) _then)
-      : super(_value, (v) => _then(v as _PackageImpact));
+    implements _$$_PackageImpactCopyWith<$Res> {
+  __$$_PackageImpactCopyWithImpl(
+      _$_PackageImpact _value, $Res Function(_$_PackageImpact) _then)
+      : super(_value, (v) => _then(v as _$_PackageImpact));
 
   @override
-  _PackageImpact get _value => super._value as _PackageImpact;
+  _$_PackageImpact get _value => super._value as _$_PackageImpact;
 
   @override
   $Res call({
@@ -122,7 +101,7 @@ class __$PackageImpactCopyWithImpl<$Res>
     Object? eol = freezed,
     Object? impacteTotal = freezed,
   }) {
-    return _then(_PackageImpact(
+    return _then(_$_PackageImpact(
       producao: producao == freezed
           ? _value.producao
           : producao // ignore: cast_nullable_to_non_nullable
@@ -171,7 +150,7 @@ class _$_PackageImpact extends _PackageImpact {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageImpact &&
+            other is _$_PackageImpact &&
             const DeepCollectionEquality().equals(other.producao, producao) &&
             const DeepCollectionEquality()
                 .equals(other.incorporacao, incorporacao) &&
@@ -190,28 +169,28 @@ class _$_PackageImpact extends _PackageImpact {
 
   @JsonKey(ignore: true)
   @override
-  _$PackageImpactCopyWith<_PackageImpact> get copyWith =>
-      __$PackageImpactCopyWithImpl<_PackageImpact>(this, _$identity);
+  _$$_PackageImpactCopyWith<_$_PackageImpact> get copyWith =>
+      __$$_PackageImpactCopyWithImpl<_$_PackageImpact>(this, _$identity);
 }
 
 abstract class _PackageImpact extends PackageImpact {
   const factory _PackageImpact(
-      {required double producao,
-      required double incorporacao,
-      required double eol,
-      required double impacteTotal}) = _$_PackageImpact;
+      {required final double producao,
+      required final double incorporacao,
+      required final double eol,
+      required final double impacteTotal}) = _$_PackageImpact;
   const _PackageImpact._() : super._();
 
   @override
-  double get producao;
+  double get producao => throw _privateConstructorUsedError;
   @override
-  double get incorporacao;
+  double get incorporacao => throw _privateConstructorUsedError;
   @override
-  double get eol;
+  double get eol => throw _privateConstructorUsedError;
   @override
-  double get impacteTotal;
+  double get impacteTotal => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PackageImpactCopyWith<_PackageImpact> get copyWith =>
+  _$$_PackageImpactCopyWith<_$_PackageImpact> get copyWith =>
       throw _privateConstructorUsedError;
 }

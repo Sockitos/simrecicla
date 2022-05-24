@@ -9,14 +9,14 @@ import 'package:simtech/src/ui/widgets/my_dropdown.dart';
 
 class DropdownField<T> extends MyFormField {
   const DropdownField({
-    Key? key,
+    super.key,
     this.value,
     this.onChanged,
     required this.hint,
     this.info,
     required this.options,
     this.optionToString,
-  }) : super(key: key);
+  });
 
   final T? value;
   final ValueChanged<T?>? onChanged;
@@ -57,19 +57,22 @@ class DropdownField<T> extends MyFormField {
                 isExpanded: true,
                 elevation: 0,
                 menuMaxHeight: 500,
-                items: [
-                  for (final o in options)
-                    MyDropdownMenuItem<T>(
-                      value: o,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Text(
-                          optionToString == null ? '$o' : optionToString!(o),
-                          style: AppTextStyles.dropdown(context.layout),
-                        ),
+                items: options.map((o) {
+                  final text =
+                      optionToString == null ? '$o' : optionToString!(o);
+                  final isNaoSei = text == 'Não sei';
+                  return MyDropdownMenuItem<T>(
+                    value: o,
+                    tooltip: isNaoSei ? 'Insert não sei text here' : null,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Text(
+                        isNaoSei ? '$text*' : text,
+                        style: AppTextStyles.dropdown(context.layout),
                       ),
                     ),
-                ],
+                  );
+                }).toList(),
                 onTap: () {},
               ),
             ),

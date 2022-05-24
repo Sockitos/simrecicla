@@ -6,7 +6,7 @@ import 'package:simtech/src/theme/theme.dart';
 import 'package:universal_html/html.dart';
 
 class SimtechApp extends StatefulWidget {
-  const SimtechApp({Key? key}) : super(key: key);
+  const SimtechApp({super.key});
 
   @override
   State<SimtechApp> createState() => _SimtechAppState();
@@ -25,7 +25,11 @@ class _SimtechAppState extends State<SimtechApp> {
       const AssetImage('assets/images/packager_intro.png'),
       context,
     );
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    precacheImage(
+      const AssetImage('assets/images/recycler_intro.png'),
+      context,
+    );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       final loader = document.getElementById('loading');
       loader?.remove();
     });

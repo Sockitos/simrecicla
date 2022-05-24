@@ -4,6 +4,8 @@ import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 
 class AppTextStyles {
+  const AppTextStyles._();
+
   static TextStyle h1(LayoutData layout) {
     return GoogleFonts.dosis(
       textStyle: TextStyle(
@@ -48,6 +50,17 @@ class AppTextStyles {
     );
   }
 
+  static TextStyle h5(LayoutData layout) {
+    return GoogleFonts.dosis(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: layout.value(xs: 20),
+        color: AppColors.black,
+        height: 1.2,
+      ),
+    );
+  }
+
   static TextStyle paragraph(LayoutData layout) {
     return GoogleFonts.dosis(
       textStyle: TextStyle(
@@ -81,15 +94,6 @@ class AppTextStyles {
     );
   }
 
-  static final buttonStyle = GoogleFonts.dosis(
-    textStyle: const TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 25,
-      color: AppColors.white,
-      height: 1.1,
-    ),
-  );
-
   static TextStyle small(LayoutData layout) {
     return GoogleFonts.dosis(
       textStyle: TextStyle(
@@ -100,4 +104,22 @@ class AppTextStyles {
       ),
     );
   }
+
+  static final buttonStyle = GoogleFonts.dosis(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 25,
+      color: AppColors.white,
+      height: 1.1,
+    ),
+  );
+
+  static final tooltipStyle = GoogleFonts.dosis(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 18,
+      color: AppColors.black,
+      height: 1.1,
+    ),
+  );
 }

@@ -296,7 +296,7 @@ const questions = [
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a minimização da diversidade de revestimentos e a consulta das condicionantes relativamente às quantidades compatíveis e aplicação final. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a minimização da diversidade de revestimentos e a consulta das condicionantes relativamente às quantidades compatíveis e aplicação final. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': null, 'recommendation': null},
         'papel': {'value': null, 'recommendation': null},
@@ -918,12 +918,12 @@ const questions = [
         'papel': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de revestimentos duplos não hidro-solúveis não são compatíveis com a reciclagem de embalagens de papel e cartão, na medida em que não permitem a recuperação das suas fibras no processo de reciclagem.'
@@ -945,12 +945,12 @@ const questions = [
         'papel': {
           'value': -3,
           'recommendation':
-              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -3,
           'recommendation':
-              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de superfícies lacadas opacas ou com espessura >5 micrometros  não são compatíveis com a reciclagem de embalagens de papel e cartão, na medida em que não permitem a recuperação das suas fibras no processo de reciclagem.'
@@ -971,12 +971,12 @@ const questions = [
         'papel': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de revestimentos de plástico ou laminados não são compatíveis com a reciclagem de embalagens de papel e cartão, na medida em que não permitem a recuperação das suas fibras no processo de reciclagem.'
@@ -998,12 +998,12 @@ const questions = [
         'papel': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de revestimentos de cera, silicone ou agentes impermeabilizantes não são compatíveis com a reciclagem de embalagens de papel e cartão, na medida em que não permitem a recuperação das suas fibras no processo de reciclagem.'
@@ -1014,17 +1014,17 @@ const questions = [
         'vidro': {
           'value': -2,
           'recommendation':
-              'Os tratamentos de superfície compatíveis com a reciclagem do vidro são a desalcalização (com SO2, flúor, entre outros) ou a resistência mecânica (revestimento a quente ou a frio). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Os tratamentos de superfície compatíveis com a reciclagem do vidro são a desalcalização (com SO2, flúor, entre outros) ou a resistência mecânica (revestimento a quente ou a frio). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -2,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do aço são folha de flandres e revestimentos de estanho ou de laca. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Os revestimentos compatíveis com a reciclagem do aço são folha de flandres e revestimentos de estanho ou de laca. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -2,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do alumínio são revestimentos de laca ou de alumina (óxido natural do alumínio). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Os revestimentos compatíveis com a reciclagem do alumínio são revestimentos de laca ou de alumina (óxido natural do alumínio). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {'value': null, 'recommendation': null},
         'pead': {'value': null, 'recommendation': null},
@@ -1032,7 +1032,7 @@ const questions = [
         'eps': {
           'value': -2,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do EPS são agentes ligantes ou PE e PP que atuam como filmes de selo. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Os revestimentos compatíveis com a reciclagem do EPS são agentes ligantes ou PE e PP que atuam como filmes de selo. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {'value': null, 'recommendation': null},
         'outros_plasticos': {'value': null, 'recommendation': null},
@@ -1048,62 +1048,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Os tratamentos de superfície compatíveis com a reciclagem do vidro são a desalcalização (com SO2, flúor, entre outros) ou a resistência mecânica (revestimento a quente ou a frio). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Os tratamentos de superfície compatíveis com a reciclagem do vidro são a desalcalização (com SO2, flúor, entre outros) ou a resistência mecânica (revestimento a quente ou a frio). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do aço são folha de flandres e revestimentos de estanho ou de laca. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Os revestimentos compatíveis com a reciclagem do aço são folha de flandres e revestimentos de estanho ou de laca. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do alumínio são revestimentos de laca ou de alumina (óxido natural do alumínio). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Os revestimentos compatíveis com a reciclagem do alumínio são revestimentos de laca ou de alumina (óxido natural do alumínio). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do PET são o revestimento externo de SiOx e o removedor de O2 à base de PET, sem efeito de amarelecimento após teste de forno. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Os revestimentos compatíveis com a reciclagem do PET são o revestimento externo de SiOx e o removedor de O2 à base de PET, sem efeito de amarelecimento após teste de forno. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do PEAD são a barreira de álcool de vinil e etileno (EVOH) < 6 wt% com PE-g-MAH, e MAH > 0,1 wt% ou Enkase (fluoração). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Os revestimentos compatíveis com a reciclagem do PEAD são a barreira de álcool de vinil e etileno (EVOH) < 6 wt% com PE-g-MAH, e MAH > 0,1 wt% ou Enkase (fluoração). Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do PEBD são revestimentos de SiOx e AlOx sem barreiras adicionais. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Os revestimentos compatíveis com a reciclagem do PEBD são revestimentos de SiOx e AlOx sem barreiras adicionais. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do EPS são agentes ligantes ou PE e PP que atuam como filmes de selo. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Os revestimentos compatíveis com a reciclagem do EPS são agentes ligantes ou PE e PP que atuam como filmes de selo. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do PP são barreira de álcool de vinil e etileno (EVOH) < 6 wt% com PP-g-MAH ou revestimentos de SiOx e AlOx sem barreiras adicionais. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Os revestimentos compatíveis com a reciclagem do PP são barreira de álcool de vinil e etileno (EVOH) < 6 wt% com PP-g-MAH ou revestimentos de SiOx e AlOx sem barreiras adicionais. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a minimização da diversidade de revestimentos e a consulta das condicionantes relativamente às quantidades compatíveis e aplicação final. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a minimização da diversidade de revestimentos e a consulta das condicionantes relativamente às quantidades compatíveis e aplicação final. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do ECAL não devem sobrepor-se ao teor de papel e cartão na embalagem, pelo que os revestimentos de polietileno ou alumínio devem ser utilizados em quantidades reduzidas. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Os revestimentos compatíveis com a reciclagem do ECAL não devem sobrepor-se ao teor de papel e cartão na embalagem, pelo que os revestimentos de polietileno ou alumínio devem ser utilizados em quantidades reduzidas. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do Papel têm de permitir a recuperação das suas fibras, como os revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Os revestimentos compatíveis com a reciclagem do Papel têm de permitir a recuperação das suas fibras, como os revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Os revestimentos compatíveis com a reciclagem do Cartão têm de permitir a recuperação das suas fibras, como os revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Os revestimentos compatíveis com a reciclagem do Cartão têm de permitir a recuperação das suas fibras, como os revestimentos hidro-solúveis. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de outras barreiras ou revestimentos não especificados podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -1212,7 +1212,7 @@ const questions = [
         'pet': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {'value': null, 'recommendation': null},
         'pebd': {'value': null, 'recommendation': null},
@@ -1234,7 +1234,7 @@ const questions = [
         'pet': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {'value': null, 'recommendation': null},
         'pebd': {'value': null, 'recommendation': null},
@@ -1253,7 +1253,7 @@ const questions = [
         'vidro': {
           'value': -2,
           'recommendation':
-              'No caso de utilização de aditivos para coloração de embalagens de vidro, é recomendado o uso de aditivos como óxido de cobalto (azul transparente), óxidos de cobre, crómio e de ferro (verde) e óxidos de carbono, enxofre e níquel (castanho), que correspondem à coloração mais compatível com a reciclagem do vidro. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'No caso de utilização de aditivos para coloração de embalagens de vidro, é recomendado o uso de aditivos como óxido de cobalto (azul transparente), óxidos de cobre, crómio e de ferro (verde) e óxidos de carbono, enxofre e níquel (castanho), que correspondem à coloração mais compatível com a reciclagem do vidro. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {'value': null, 'recommendation': null},
         'aluminio': {'value': null, 'recommendation': null},
@@ -1282,7 +1282,7 @@ const questions = [
         'pet': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {'value': null, 'recommendation': null},
         'pebd': {'value': null, 'recommendation': null},
@@ -1304,7 +1304,7 @@ const questions = [
         'pet': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {'value': null, 'recommendation': null},
         'pebd': {'value': null, 'recommendation': null},
@@ -1326,23 +1326,23 @@ const questions = [
         'pet': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': null, 'recommendation': null},
         'pp': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': null, 'recommendation': null},
         'ecal': {'value': null, 'recommendation': null},
@@ -1360,23 +1360,23 @@ const questions = [
         'pet': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': null, 'recommendation': null},
         'pp': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': null, 'recommendation': null},
         'ecal': {'value': null, 'recommendation': null},
@@ -1394,23 +1394,23 @@ const questions = [
         'pet': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': null, 'recommendation': null},
         'pp': {
           'value': -10,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': null, 'recommendation': null},
         'ecal': {'value': null, 'recommendation': null},
@@ -1428,7 +1428,7 @@ const questions = [
         'pet': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {'value': null, 'recommendation': null},
         'pebd': {'value': null, 'recommendation': null},
@@ -1487,30 +1487,30 @@ const questions = [
         'pead': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos separáveis e que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'É recomendado o uso de aditivos separáveis e que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos separáveis e que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos separáveis e que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': null, 'recommendation': null},
         'pp': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': null, 'recommendation': null},
         'ecal': {'value': null, 'recommendation': null},
         'papel': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de aditivos de talco podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -1525,30 +1525,30 @@ const questions = [
         'pead': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos separáveis e que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'É recomendado o uso de aditivos separáveis e que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos separáveis e que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos separáveis e que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': null, 'recommendation': null},
         'pp': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': null, 'recommendation': null},
         'ecal': {'value': null, 'recommendation': null},
         'papel': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de aditivos de carbonato de cálcio podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -1581,18 +1581,18 @@ const questions = [
         'pead': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': null, 'recommendation': null},
         'pp': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': null, 'recommendation': null},
         'ecal': {'value': null, 'recommendation': null},
@@ -1610,23 +1610,23 @@ const questions = [
         'pet': {
           'value': -4,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -8,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': null, 'recommendation': null},
         'pp': {
           'value': -4,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
@@ -1637,12 +1637,12 @@ const questions = [
         'papel': {
           'value': -4,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de combinação de aditivos podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -1664,12 +1664,12 @@ const questions = [
         'papel': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A reciclabilidade de embalagens com fibras de algodão, está dependente da quantidade de aditivo utilizado e da aplicação final.'
@@ -1690,12 +1690,12 @@ const questions = [
         'papel': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -2,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A reciclabilidade de embalagens com aditivos de dióxido de titânio (TiO2), está dependente da quantidade de aditivo utilizado e da aplicação final.'
@@ -1706,7 +1706,7 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'No caso de utilização de aditivos para coloração de embalagens de vidro, é recomendado o uso de aditivos como óxido de cobalto (azul transparente), óxidos de cobre, crómio e de ferro (verde) e óxidos de carbono, enxofre e níquel (castanho), que correspondem à coloração mais compatível com a reciclagem do vidro. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'No caso de utilização de aditivos para coloração de embalagens de vidro, é recomendado o uso de aditivos como óxido de cobalto (azul transparente), óxidos de cobre, crómio e de ferro (verde) e óxidos de carbono, enxofre e níquel (castanho), que correspondem à coloração mais compatível com a reciclagem do vidro. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
@@ -1721,17 +1721,17 @@ const questions = [
         'pet': {
           'value': -1,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do PET, como tratamento superficial de silicone ou anti-bloqueio masterbatch (máx. 3%), no caso de PET termoformado. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEAD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PEBD. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
@@ -1741,7 +1741,7 @@ const questions = [
         'pp': {
           'value': -1,
           'recommendation':
-              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'É recomendado o uso de aditivos que não aumentem a densidade do PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
@@ -1756,12 +1756,12 @@ const questions = [
         'papel': {
           'value': -1,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do papel, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'É recomendado o uso de aditivos totalmente compatíveis com a reciclagem do cartão, aditivos com maior solubilidade, que permitam a fácil remoção dos contaminantes e a fácil recuperação das fibras de celulose. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de aditivos não compatíveis ou não especificados podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -1866,23 +1866,23 @@ const questions = [
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEAD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -1900,23 +1900,23 @@ const questions = [
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEBD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -1932,7 +1932,7 @@ const questions = [
         'pebd': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 2, 'recommendation': null},
         'pp': {'value': 3, 'recommendation': null},
@@ -1940,17 +1940,17 @@ const questions = [
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PP não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -1964,43 +1964,43 @@ const questions = [
         'pet': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PVC não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -2014,43 +2014,43 @@ const questions = [
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -2066,33 +2066,33 @@ const questions = [
         'pebd': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 3, 'recommendation': null},
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de EPS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -2107,42 +2107,42 @@ const questions = [
         'pead': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PET não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -2156,32 +2156,32 @@ const questions = [
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {'value': 3, 'recommendation': null},
@@ -2195,58 +2195,58 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {'value': 3, 'recommendation': null},
         'aluminio': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de aço não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -2257,54 +2257,54 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {'value': 3, 'recommendation': null},
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de alumínio não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -2315,62 +2315,62 @@ const questions = [
         'vidro': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de tampa com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de cerâmica não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -2381,62 +2381,62 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de sistema de fecho/tampa com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -2447,62 +2447,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de tampa cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de tampa com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de tampa de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de sistema de fecho/tampa com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -2531,23 +2531,23 @@ const questions = [
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEAD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -2565,23 +2565,23 @@ const questions = [
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEBD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -2597,7 +2597,7 @@ const questions = [
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 0, 'recommendation': null},
         'pp': {'value': 0, 'recommendation': null},
@@ -2605,17 +2605,17 @@ const questions = [
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PP não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -2629,43 +2629,43 @@ const questions = [
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PVC não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -2679,43 +2679,43 @@ const questions = [
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -2731,33 +2731,33 @@ const questions = [
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 0, 'recommendation': null},
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de EPS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -2772,42 +2772,42 @@ const questions = [
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PET não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -2821,32 +2821,32 @@ const questions = [
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {'value': 0, 'recommendation': null},
@@ -2860,58 +2860,58 @@ const questions = [
         'vidro': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {'value': 0, 'recommendation': null},
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de aço não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -2922,54 +2922,54 @@ const questions = [
         'vidro': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {'value': 0, 'recommendation': null},
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de alumínio não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -2980,62 +2980,62 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de cerâmica não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -3046,62 +3046,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de anel de inviolabilidade com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -3112,62 +3112,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de anel de inviolabilidade cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de anel de inviolabilidade de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de anel de inviolabilidade com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -3196,23 +3196,23 @@ const questions = [
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEAD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -3230,23 +3230,23 @@ const questions = [
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEBD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -3262,7 +3262,7 @@ const questions = [
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 0, 'recommendation': null},
         'pp': {'value': 0, 'recommendation': null},
@@ -3270,17 +3270,17 @@ const questions = [
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PP não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -3294,43 +3294,43 @@ const questions = [
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PVC não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -3344,43 +3344,43 @@ const questions = [
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -3396,33 +3396,33 @@ const questions = [
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 0, 'recommendation': null},
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de EPS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -3437,42 +3437,42 @@ const questions = [
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PET não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -3486,32 +3486,32 @@ const questions = [
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {'value': 0, 'recommendation': null},
@@ -3525,58 +3525,58 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {'value': 0, 'recommendation': null},
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de aço não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -3587,54 +3587,54 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {'value': 0, 'recommendation': null},
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de alumínio não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -3645,62 +3645,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de selos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de cerâmica não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -3711,62 +3711,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de selos com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -3777,62 +3777,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de selos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de selos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de selos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de selos com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -4014,23 +4014,23 @@ const questions = [
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEAD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -4048,23 +4048,23 @@ const questions = [
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEBD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -4080,7 +4080,7 @@ const questions = [
         'pebd': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 2, 'recommendation': null},
         'pp': {'value': 3, 'recommendation': null},
@@ -4088,17 +4088,17 @@ const questions = [
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PP não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -4112,43 +4112,43 @@ const questions = [
         'pet': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PVC não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -4162,43 +4162,43 @@ const questions = [
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -4213,42 +4213,42 @@ const questions = [
         'pead': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PET não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -4262,32 +4262,32 @@ const questions = [
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {'value': 3, 'recommendation': null},
@@ -4301,58 +4301,58 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {'value': 3, 'recommendation': null},
         'aluminio': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de aço não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -4363,54 +4363,54 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {'value': 3, 'recommendation': null},
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de alumínio não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -4421,62 +4421,62 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de rótulos com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -4487,62 +4487,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de rótulos cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de rótulos com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de rótulos com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -4571,23 +4571,23 @@ const questions = [
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEAD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -4605,23 +4605,23 @@ const questions = [
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEBD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -4637,7 +4637,7 @@ const questions = [
         'pebd': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 2, 'recommendation': null},
         'pp': {'value': 3, 'recommendation': null},
@@ -4645,17 +4645,17 @@ const questions = [
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PP não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -4669,43 +4669,43 @@ const questions = [
         'pet': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PVC não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -4719,43 +4719,43 @@ const questions = [
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {'value': 0, 'recommendation': null},
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -4770,42 +4770,42 @@ const questions = [
         'pead': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PET não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -4819,32 +4819,32 @@ const questions = [
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {'value': 3, 'recommendation': null},
@@ -4858,58 +4858,58 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de mangas com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {'value': 3, 'recommendation': null},
         'aluminio': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de mangas com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de aço não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -4920,54 +4920,54 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de mangas com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de mangas com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {'value': 3, 'recommendation': null},
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 3, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de rótulos de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de alumínio não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -4978,62 +4978,62 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de mangas com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -5044,62 +5044,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PET, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de mangas cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de mangas com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de mangas de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de mangas com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -5884,23 +5884,23 @@ const questions = [
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEAD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -5922,23 +5922,23 @@ const questions = [
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PEBD não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -5958,29 +5958,29 @@ const questions = [
         'pebd': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 0, 'recommendation': null},
         'pp': {'value': 0, 'recommendation': null},
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PP não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -5994,47 +5994,47 @@ const questions = [
         'pet': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PVC não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -6048,47 +6048,47 @@ const questions = [
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -6104,33 +6104,33 @@ const questions = [
         'pebd': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {'value': 0, 'recommendation': null},
         'pp': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de EPS não separáveis podem ser prejudiciais para a reciclagem deste material, ou a sua compatibilidade estar dependente da quantidade utilizada e da aplicação final.'
@@ -6145,42 +6145,42 @@ const questions = [
         'pead': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -2,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de PET não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -6194,32 +6194,32 @@ const questions = [
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {'value': 0, 'recommendation': null},
@@ -6233,58 +6233,58 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {'value': 0, 'recommendation': null},
         'aluminio': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de aço não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -6295,54 +6295,54 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {'value': 0, 'recommendation': null},
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de alumínio não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -6353,62 +6353,62 @@ const questions = [
         'vidro': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de componentes com materiais com temperaturas de fusão (°C) compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes de cerâmica não separáveis vai prejudicar a reciclagem do material de embalagem, impedindo a sua recuperação.'
@@ -6422,32 +6422,32 @@ const questions = [
         'pet': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -6,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {'value': 0, 'recommendation': null},
         'papel': {'value': 0, 'recommendation': null},
@@ -6461,62 +6461,62 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -3,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -6527,62 +6527,62 @@ const questions = [
         'vidro': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do vidro, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do aço, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do alumínio, como os plásticos de embalagem e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Deve ser privilegiada a utilização de componentes com materiais com densidades compatíveis com a reciclagem do PET, como o EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PEAD, como o PE, PP e EPS. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do filme, como o PE. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do EPS, como o PE e PP. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do PP, como o PP rígido e flexível. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Deve ser privilegiada a produção de embalagens e utilização de componentes cujo material base dispõe de fluxo próprio de reciclagem. A reciclagem de outros plásticos representa downcycling, não sendo possível recuperar estes materiais com o valor técnico e económico que tinham inicialmente. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Deve ser privilegiada a utilização de componentes com materiais compatíveis com a reciclagem do ECAL, como o PE, o alumínio e o papel/cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -1,
           'recommendation':
-              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Deve ser privilegiada a utilização de componentes de papel e cartão. Para mais informações, consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes com outros materiais não especificados ou não compatíveis, são prejudiciais para a reciclagem deste material.'
@@ -6620,62 +6620,62 @@ const questions = [
         'vidro': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/vidro/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/vidro/.'
         },
         'aco': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/aco/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/aco/.'
         },
         'aluminio': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/aluminio/.'
         },
         'pet': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/pet/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/pet/.'
         },
         'pead': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/pead-rigido/.'
         },
         'pebd': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'eps': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/eps/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/eps/.'
         },
         'pp': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/filme-plastico/.'
         },
         'outros_plasticos': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/plasticos-mistos/.'
         },
         'ecal': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-cartao-para-alimentos-liquidos-ecal/.'
         },
         'papel': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'cartao': {
           'value': -4,
           'recommendation':
-              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/'
+              'Sempre que seja necessário utilizar componentes multimateriais, dificilmente separáveis, estes deverão ser compatíveis com o processo de reciclagem do material base da embalagem. Para mais informações consultar https://www.pontoverdelab.pt/pack4recycling/embalagens-de-papel-cartao/.'
         },
         'recommendation':
             'A utilização de componentes não separáveis e não compatíveis com o material do corpo da embalagem impossibilita a sua reciclagem.'
@@ -7100,62 +7100,62 @@ const questions = [
         'vidro': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'aco': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'aluminio': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'pet': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'pead': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'pebd': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'eps': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'pp': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'outros_plasticos': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'ecal': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'papel': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'cartao': {
           'value': -13,
           'recommendation':
-              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/'
+              'As embalagens devem apresentar dimensões adequadas às bocas dos ecopontos. Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/principios-chave-para-uma-embalagem-mais-reciclavel/.'
         },
         'recommendation':
             'A produção de embalagens com dimensões superiores às das bocas dos ecopontos impossibilitam a sua deposição e o correto encaminhamento para reciclagem.'
@@ -7336,62 +7336,62 @@ const questions = [
         'vidro': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'aco': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'aluminio': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'pet': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'pead': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'pebd': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'eps': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'pp': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'outros_plasticos': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'ecal': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'papel': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'cartao': {
           'value': -3,
           'recommendation':
-              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/'
+              'Para que a embalagem possa ser colocada no ecoponto adequado, é fundamental que a mesma contenha o ícone desse ecoponto. Nas situações de presença de componentes de materiais diferentes, superiores a 5 cm e separáveis, deve informar-se o consumidor sobre o ecoponto onde deve ser colocado cada componente. Caso o destino correto da embalagem não seja o ecoponto, então o ícone a apresentar é       . Para mais informações consultar https://www.pontoverdelab.pt/ecodesign/desenhar-para-reciclar/torne-a-sua-embalagem-mais-reciclavel/.'
         },
         'recommendation':
             'A ausência de identificação clara dos materiais que compõem as embalagens e do contentor adequado, pode prejudicar a sua deposição e o correto encaminhamento para reciclagem.'

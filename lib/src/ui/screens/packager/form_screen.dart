@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/text_styles.dart';
@@ -16,11 +15,12 @@ import 'package:simtech/src/ui/screens/packager/components/dropdown_field.dart';
 import 'package:simtech/src/ui/screens/packager/components/form_field.dart';
 import 'package:simtech/src/ui/screens/packager/components/number_field.dart';
 import 'package:simtech/src/ui/screens/packager/components/percentage_field.dart';
+import 'package:simtech/src/ui/widgets/arrow_widget.dart';
 import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class FormScreen extends HookWidget {
-  const FormScreen({Key? key}) : super(key: key);
+  const FormScreen({super.key});
 
   ValueChanged<Answer?>? _setAnswer(
     PMaterial? material,
@@ -177,9 +177,9 @@ class FormScreen extends HookWidget {
 
 class RatingBar extends StatelessWidget {
   const RatingBar({
-    Key? key,
+    super.key,
     required this.rating,
-  }) : super(key: key);
+  });
 
   final Rating rating;
 
@@ -248,10 +248,10 @@ class RatingBar extends StatelessWidget {
                     duration: const Duration(milliseconds: 300),
                     left: -55,
                     top: _getArrowPosition(rating),
-                    child: SvgPicture.asset(
-                      'assets/svgs/arrow_right.svg',
+                    child: const ArrowWidget(
+                      size: Size(66, 40),
                       color: AppColors.lightGreen,
-                      height: 40,
+                      direction: AxisDirection.right,
                     ),
                   ),
                 ],
@@ -271,11 +271,10 @@ class RatingBar extends StatelessWidget {
 
 class QuestionsPageView extends HookWidget {
   const QuestionsPageView({
-    Key? key,
+    super.key,
     this.onSubmit,
     required this.questions,
-  })  : assert(questions.length > 1),
-        super(key: key);
+  });
 
   final VoidCallback? onSubmit;
   final List<MyFormField> questions;
@@ -363,36 +362,27 @@ class QuestionsPageView extends HookWidget {
         ),
         const SizedBox(height: 10),
         Center(
-          child: ElevatedButtonTheme(
-            data: ElevatedButtonThemeData(
-              style: ElevatedButton.styleFrom(
-                primary:
-                    isLastPage.value ? AppColors.blue : AppColors.lightGreen,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: isLastPage.value ? AppColors.blue : AppColors.lightGreen,
+              onSurface: AppColors.grey7,
+              elevation: 0,
+              shape: const StadiumBorder(),
+              minimumSize: const Size(0, 62),
+              maximumSize: const Size(double.maxFinite, 62),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 40,
               ),
+              textStyle: AppTextStyles.button(context.layout),
             ),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary:
-                    isLastPage.value ? AppColors.blue : AppColors.lightGreen,
-                onSurface: AppColors.grey5,
-                elevation: 0,
-                shape: const StadiumBorder(),
-                minimumSize: const Size(0, 62),
-                maximumSize: const Size(double.maxFinite, 62),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 40,
-                ),
-                textStyle: AppTextStyles.button(context.layout),
-              ),
-              onPressed: isLastPage.value
-                  ? onSubmit
-                  : () => controller.nextPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.linear,
-                      ),
-              child: Text(
-                isLastPage.value ? 'Ver Resultado e Recomendações' : 'Seguinte',
-              ),
+            onPressed: isLastPage.value
+                ? onSubmit
+                : () => controller.nextPage(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.linear,
+                    ),
+            child: Text(
+              isLastPage.value ? 'Ver Resultado e Recomendações' : 'Seguinte',
             ),
           ),
         ),

@@ -6,6 +6,7 @@ import 'package:simtech/src/ui/screens/landing/landing_screen.dart';
 import 'package:simtech/src/ui/screens/packager/form_screen.dart';
 import 'package:simtech/src/ui/screens/packager/packager_screen.dart';
 import 'package:simtech/src/ui/screens/packager/results_screen.dart';
+import 'package:simtech/src/ui/screens/recycler/grid_screen.dart';
 import 'package:simtech/src/ui/screens/recycler/recycler_screen.dart';
 
 @CustomAutoRouter(
@@ -45,6 +46,10 @@ import 'package:simtech/src/ui/screens/recycler/recycler_screen.dart';
     AutoRoute<void>(
       path: '/recycler',
       page: RecyclerScreen,
+    ),
+    AutoRoute<void>(
+      path: '/recycler/grid',
+      page: GridScreen,
     ),
 
     // redirect all other paths

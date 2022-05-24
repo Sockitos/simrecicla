@@ -7,7 +7,7 @@ import 'package:simtech/src/ui/widgets/footer/components/social_buttons.dart';
 import 'package:simtech/src/ui/widgets/footer/components/sponsors.dart';
 
 class Footer extends StatelessWidget {
-  const Footer({Key? key}) : super(key: key);
+  const Footer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class Footer extends StatelessWidget {
 }
 
 class _LgFooter extends StatelessWidget {
-  const _LgFooter({Key? key}) : super(key: key);
+  const _LgFooter();
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class _LgFooter extends StatelessWidget {
 }
 
 class _MdFooter extends StatelessWidget {
-  const _MdFooter({Key? key}) : super(key: key);
+  const _MdFooter();
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +125,7 @@ class _MdFooter extends StatelessWidget {
 }
 
 class _SmFooter extends StatelessWidget {
-  const _SmFooter({Key? key}) : super(key: key);
+  const _SmFooter();
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +171,7 @@ class _SmFooter extends StatelessWidget {
 }
 
 class _XsFooter extends StatelessWidget {
-  const _XsFooter({Key? key}) : super(key: key);
+  const _XsFooter();
 
   @override
   Widget build(BuildContext context) {

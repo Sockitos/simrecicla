@@ -82,9 +82,8 @@ class Matrix {
 }
 
 class MatrixCoeficiente extends Matrix {
-  MatrixCoeficiente({required Line reciclagem})
+  MatrixCoeficiente({required super.reciclagem})
       : super(
-          reciclagem: reciclagem,
           valorizacaoEnergetica: (Line.fromValue(1) - reciclagem).mulAll(kVE),
           aterro: (Line.fromValue(1) - reciclagem).mulAll(kAterro),
         );

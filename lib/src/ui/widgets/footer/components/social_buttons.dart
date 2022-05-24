@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simtech/src/constants/colors.dart';
 
 class SocialButtons extends StatelessWidget {
-  const SocialButtons({Key? key}) : super(key: key);
+  const SocialButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +32,9 @@ class SocialButtons extends StatelessWidget {
 
 class SocialButton extends StatelessWidget {
   const SocialButton({
-    Key? key,
+    super.key,
     required this.svg,
-  }) : super(key: key);
+  });
 
   final String svg;
 

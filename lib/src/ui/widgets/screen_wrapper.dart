@@ -7,17 +7,20 @@ import 'package:simtech/src/ui/widgets/footer/footer.dart';
 
 class ScreenWrapper extends StatelessWidget {
   const ScreenWrapper({
-    Key? key,
+    super.key,
     required this.body,
     this.padding = const EdgeInsets.symmetric(horizontal: 60),
-  }) : super(key: key);
+    this.backgroundColor,
+  });
 
   final Widget body;
   final EdgeInsets padding;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       drawer: Drawer(
         child: ListView(
           primary: false,
@@ -40,7 +43,7 @@ class ScreenWrapper extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             TextButton(
-              onPressed: () => AutoRouter.of(context).push(
+              onPressed: () => AutoRouter.of(context).navigate(
                 const ConsumerScreenRoute(),
               ),
               child: Padding(
@@ -60,7 +63,7 @@ class ScreenWrapper extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () => AutoRouter.of(context).push(
+              onPressed: () => AutoRouter.of(context).navigate(
                 const PackagerScreenRoute(),
               ),
               child: Padding(
@@ -80,10 +83,9 @@ class ScreenWrapper extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {},
-              // onPressed: () => AutoRouter.of(context).push(
-              //   const RecyclerScreenRoute(),
-              // ),
+              onPressed: () => AutoRouter.of(context).navigate(
+                const RecyclerScreenRoute(),
+              ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 10,
@@ -116,7 +118,7 @@ class ScreenWrapper extends StatelessWidget {
             actions: context.breakpoint > LayoutBreakpoint.sm
                 ? [
                     TextButton(
-                      onPressed: () => AutoRouter.of(context).push(
+                      onPressed: () => AutoRouter.of(context).navigate(
                         const ConsumerScreenRoute(),
                       ),
                       child: Padding(
@@ -128,7 +130,7 @@ class ScreenWrapper extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () => AutoRouter.of(context).push(
+                      onPressed: () => AutoRouter.of(context).navigate(
                         const PackagerScreenRoute(),
                       ),
                       child: Padding(
@@ -140,10 +142,9 @@ class ScreenWrapper extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
-                      // onPressed: () => AutoRouter.of(context).push(
-                      //   const RecyclerScreenRoute(),
-                      // ),
+                      onPressed: () => AutoRouter.of(context).navigate(
+                        const RecyclerScreenRoute(),
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text(

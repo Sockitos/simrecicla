@@ -1,8 +1,6 @@
 import 'dart:math';
 
-import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
@@ -10,17 +8,21 @@ import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/answer.dart';
 import 'package:simtech/src/models/enums.dart';
 import 'package:simtech/src/services/packager_service.dart';
+import 'package:simtech/src/ui/screens/packager/components/package_impact_chart.dart';
 import 'package:simtech/src/ui/screens/packager/form_screen.dart';
+import 'package:simtech/src/ui/widgets/arrow_widget.dart';
+import 'package:simtech/src/ui/widgets/linkify.dart';
 import 'package:simtech/src/ui/widgets/screen_wrapper.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
-    Key? key,
+    super.key,
     required this.material,
     required this.weight,
     required this.recycledPercentage,
     required this.answers,
-  }) : super(key: key);
+  });
 
   final PMaterial material;
   final int weight;
@@ -83,119 +85,24 @@ class ResultsScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                            'Impacte Ambiental',
+                            'Resultado',
                             style: AppTextStyles.h2(context.layout)
                                 .copyWith(color: AppColors.lightGreen),
                           ),
+                          const SizedBox(height: 20),
+                          Text(
+                            'Impacte Ambiental',
+                            style: AppTextStyles.h4(context.layout),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'kg CO2 produzido',
+                            style: AppTextStyles.paragraph(context.layout),
+                          ),
+                          const SizedBox(height: 60),
                           SizedBox(
-                            height: 350,
-                            child: charts.BarChart(
-                              [
-                                charts.Series<DataPoint, String>(
-                                  id: 'pain',
-                                  data: [
-                                    DataPoint(
-                                      id: 'producao',
-                                      label:
-                                          'Produção\nEmbalagem\n${impact.producao.toStringAsFixed(4)} gCO2eq',
-                                      value: impact.producao,
-                                      color: AppColors.darkGreen,
-                                    ),
-                                    if (impact.incorporacao != 0)
-                                      DataPoint(
-                                        id: 'incorporacao',
-                                        label:
-                                            'Incorporação\nMaterial Reciclado\n-${impact.incorporacao.toStringAsFixed(4)} gCO2eq',
-                                        value: impact.incorporacao,
-                                        color: AppColors.blue,
-                                      ),
-                                    DataPoint(
-                                      id: 'eol',
-                                      label:
-                                          'Fim de Vida\n${impact.eol.toStringAsFixed(4)} gCO2eq',
-                                      value: impact.eol.abs(),
-                                      color: AppColors.yellow,
-                                    ),
-                                    DataPoint(
-                                      id: 'total',
-                                      label:
-                                          'Impacte Total\n${impact.impacteTotal.toStringAsFixed(4)} gCO2eq',
-                                      value: impact.impacteTotal,
-                                      color: AppColors.lightGreen,
-                                    ),
-                                  ],
-                                  domainFn: (d, _) => d.id,
-                                  labelAccessorFn: (d, _) => d.label,
-                                  measureFn: (d, _) => d.value * 100000,
-                                  colorFn: (d, __) =>
-                                      charts.ColorUtil.fromDartColor(d.color),
-                                ),
-                                charts.Series<DataPoint, String>(
-                                  id: 'main',
-                                  data: [
-                                    if (impact.incorporacao != 0)
-                                      DataPoint(
-                                        id: 'incorporacao',
-                                        label: '',
-                                        value: impact.producao -
-                                            impact.incorporacao,
-                                        color: Colors.transparent,
-                                      ),
-                                    DataPoint(
-                                      id: 'eol',
-                                      label: '',
-                                      value: impact.eol.isNegative
-                                          ? (impact.producao -
-                                              impact.incorporacao +
-                                              impact.eol)
-                                          : (impact.producao -
-                                              impact.incorporacao),
-                                      color: Colors.transparent,
-                                    ),
-                                  ],
-                                  domainFn: (d, _) => d.id,
-                                  labelAccessorFn: (d, _) => d.label,
-                                  measureFn: (d, _) => d.value * 100000,
-                                  colorFn: (d, __) =>
-                                      charts.ColorUtil.fromDartColor(d.color),
-                                ),
-                              ],
-                              barGroupingType: charts.BarGroupingType.stacked,
-                              barRendererDecorator:
-                                  charts.BarLabelDecorator<String>(
-                                insideLabelStyleSpec:
-                                    const charts.TextStyleSpec(
-                                  color: charts.MaterialPalette.white,
-                                  fontSize: 16,
-                                  lineHeight: 1.4,
-                                ),
-                                outsideLabelStyleSpec:
-                                    const charts.TextStyleSpec(
-                                  color: charts.MaterialPalette.black,
-                                  fontSize: 16,
-                                  lineHeight: 1.4,
-                                ),
-                              ),
-                              domainAxis: const charts.OrdinalAxisSpec(
-                                renderSpec: charts.NoneRenderSpec(),
-                              ),
-                              primaryMeasureAxis: charts.NumericAxisSpec(
-                                renderSpec: charts.GridlineRendererSpec(
-                                  labelStyle: const charts.TextStyleSpec(
-                                    color: charts.MaterialPalette.transparent,
-                                  ),
-                                  lineStyle: charts.LineStyleSpec(
-                                    color: charts.ColorUtil.fromDartColor(
-                                      AppColors.grey4,
-                                    ),
-                                  ),
-                                ),
-                                tickProviderSpec:
-                                    const charts.BasicNumericTickProviderSpec(
-                                  desiredTickCount: 5,
-                                ),
-                              ),
-                            ),
+                            height: 640,
+                            child: PackageImpactChart(impact: impact),
                           ),
                         ],
                       ),
@@ -334,27 +241,13 @@ class ResultsScreen extends StatelessWidget {
   }
 }
 
-class DataPoint {
-  DataPoint({
-    required this.id,
-    required this.label,
-    required this.value,
-    required this.color,
-  });
-
-  final String id;
-  final String label;
-  final double value;
-  final Color color;
-}
-
 class Recommendation extends StatelessWidget {
   const Recommendation({
-    Key? key,
+    super.key,
     required this.number,
     required this.wrong,
     required this.right,
-  }) : super(key: key);
+  });
 
   final int number;
   final String wrong;
@@ -393,15 +286,17 @@ class Recommendation extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 24),
-        SvgPicture.asset(
-          'assets/svgs/arrow_right.svg',
+        const ArrowWidget(
+          size: Size(66, 40),
           color: AppColors.lightGreen,
-          height: 40,
+          direction: AxisDirection.right,
         ),
         const SizedBox(width: 24),
         Expanded(
-          child: Text(
-            right,
+          child: Linkify(
+            text: right,
+            formatter: (_) => 'aqui',
+            onOpen: (url) => launchUrlString(url.url),
             style: AppTextStyles.paragraph(context.layout),
           ),
         ),

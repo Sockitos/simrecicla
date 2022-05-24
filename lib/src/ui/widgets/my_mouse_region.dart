@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_asserts_with_message
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
@@ -6,14 +8,14 @@ import 'package:flutter/widgets.dart';
 
 class MouseRegion extends StatefulWidget {
   const MouseRegion({
-    Key? key,
+    super.key,
     this.onEnter,
     this.onExit,
     this.onHover,
     this.cursor = MouseCursor.defer,
     this.opaque = true,
     this.child,
-  }) : super(key: key);
+  });
 
   final PointerEnterEventListener? onEnter;
 

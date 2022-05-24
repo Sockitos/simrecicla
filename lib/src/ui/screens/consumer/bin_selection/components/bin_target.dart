@@ -9,13 +9,13 @@ import 'package:simtech/src/ui/widgets/my_drag_target.dart';
 
 class BinTarget extends HookWidget {
   const BinTarget({
-    Key? key,
+    super.key,
     required this.label,
     required this.svgPath,
     this.components,
     this.onAccept,
     this.forceHighlighted = false,
-  }) : super(key: key);
+  });
 
   final String label;
   final String svgPath;
