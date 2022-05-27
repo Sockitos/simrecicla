@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
+import 'package:simtech/src/constants/spacings.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/router/router.gr.dart';
 import 'package:simtech/src/ui/screens/landing/components/landing_option.dart';
@@ -15,32 +16,52 @@ class LandingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenWrapper(
       body: Stack(
+        clipBehavior: Clip.none,
         children: [
-          Positioned(
-            left: 0,
-            right: 0,
+          Positioned.fill(
             top: -200,
-            child: Container(
-              height: 1100,
-              width: 1100,
-              decoration: BoxDecoration(
-                color: AppColors.grey3.withOpacity(0.4),
-                shape: BoxShape.circle,
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(
+                  maxHeight: 1100,
+                  maxWidth: 1100,
+                ),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: OverflowBox(
+                    minWidth: 1100,
+                    maxWidth: 1100,
+                    minHeight: 1100,
+                    maxHeight: 1100,
+                    child: Stack(
+                      fit: StackFit.expand,
+                      clipBehavior: Clip.none,
+                      children: [
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: AppColors.grey3.withOpacity(0.4),
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Positioned(
+                          top: 250,
+                          right: -40,
+                          child: SvgPicture.asset(
+                            'assets/svgs/circles.svg',
+                            color: AppColors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-          Positioned(
-            top: 40,
-            left: 1050,
-            right: 0,
-            child: SvgPicture.asset(
-              'assets/svgs/circles.svg',
-              color: AppColors.white,
             ),
           ),
           Column(
             children: [
-              const SizedBox(height: 70),
+              SizedBox(height: AppSpacings.big(context.layout)),
               Text(
                 'Circular SimTech',
                 textAlign: TextAlign.center,
@@ -51,7 +72,7 @@ class LandingScreen extends StatelessWidget {
                 'assets/svgs/waves.svg',
                 color: AppColors.darkGreen,
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: AppSpacings.small(context.layout)),
               SizedBox(
                 width: 859,
                 child: Text(
@@ -60,7 +81,7 @@ class LandingScreen extends StatelessWidget {
                   style: AppTextStyles.paragraph(context.layout),
                 ),
               ),
-              const SizedBox(height: 60),
+              SizedBox(height: AppSpacings.big(context.layout)),
               AdaptiveBuilder(
                 xs: (context) => Center(
                   child: Column(
@@ -74,7 +95,7 @@ class LandingScreen extends StatelessWidget {
                           const ConsumerScreenRoute(),
                         ),
                       ),
-                      const SizedBox(height: 80),
+                      const SizedBox(height: 60),
                       LandingOption(
                         svg: 'assets/svgs/packager_option.svg',
                         description:
@@ -85,7 +106,7 @@ class LandingScreen extends StatelessWidget {
                           const PackagerScreenRoute(),
                         ),
                       ),
-                      const SizedBox(height: 80),
+                      const SizedBox(height: 60),
                       LandingOption(
                         svg: 'assets/svgs/recycler_option.svg',
                         description: 'Quero optimizar uma linha de triagem',
@@ -95,6 +116,7 @@ class LandingScreen extends StatelessWidget {
                           const RecyclerScreenRoute(),
                         ),
                       ),
+                      const SizedBox(height: 30),
                     ],
                   ),
                 ),
@@ -103,8 +125,8 @@ class LandingScreen extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: context.layout.value(
-                        xs: 30,
-                        lg: 60,
+                        xs: 40,
+                        lg: 80,
                       ),
                     ),
                     Flexible(
@@ -120,8 +142,8 @@ class LandingScreen extends StatelessWidget {
                     ),
                     SizedBox(
                       width: context.layout.value(
-                        xs: 30,
-                        lg: 60,
+                        xs: 40,
+                        lg: 80,
                       ),
                     ),
                     Flexible(
@@ -162,7 +184,7 @@ class LandingScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 70),
+              SizedBox(height: AppSpacings.big(context.layout)),
             ],
           ),
         ],

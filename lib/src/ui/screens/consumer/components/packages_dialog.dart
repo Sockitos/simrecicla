@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
 import 'package:simtech/src/constants/custom_icons.dart';
+import 'package:simtech/src/constants/spacings.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/category.dart';
 import 'package:simtech/src/router/router.gr.dart';
@@ -18,8 +19,12 @@ class PackagesDialog extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return Dialog(
-      insetPadding: const EdgeInsets.fromLTRB(100, 150, 100, 100),
+      insetPadding: EdgeInsets.symmetric(
+        horizontal: AppSpacings.big(context.layout),
+        vertical: screenHeight / 8,
+      ),
       backgroundColor: Colors.transparent,
       elevation: 0,
       child: DecoratedBox(
@@ -37,131 +42,80 @@ class PackagesDialog extends HookWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(34)),
           color: AppColors.white,
-          child: SizedBox(
-            width: 880,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 56,
-                vertical: 30,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 880),
+            child: ListView(
+              shrinkWrap: true,
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSpacings.big(context.layout),
               ),
-              child: ListView(
-                shrinkWrap: true,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 44,
+              children: [
+                Text(
+                  category.category,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.h2(context.layout),
                 ),
-                children: [
-                  Text(
-                    category.category,
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.h2(context.layout),
-                  ),
-                  const SizedBox(height: 50),
-                  Wrap(
-                    spacing: 44,
-                    runSpacing: 44,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      for (final package in category.packages)
-                        SizedBox(
-                          width: 190,
-                          height: 190,
-                          child: Material(
-                            color: AppColors.grey3,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(34),
+                SizedBox(height: AppSpacings.big(context.layout)),
+                Wrap(
+                  spacing: AppSpacings.big(context.layout),
+                  runSpacing: AppSpacings.big(context.layout),
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    for (final package in category.packages)
+                      SizedBox(
+                        width: 190,
+                        height: 190,
+                        child: Material(
+                          color: AppColors.grey3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(34),
+                          ),
+                          child: InkWell(
+                            onTap: () => AutoRouter.of(context).push(
+                              BinSelectionScreenRoute(package: package),
                             ),
-                            child: InkWell(
-                              onTap: () => AutoRouter.of(context).push(
-                                BinSelectionScreenRoute(package: package),
+                            borderRadius: BorderRadius.circular(34),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 15,
+                                vertical: 15,
                               ),
-                              borderRadius: BorderRadius.circular(34),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 15,
-                                  vertical: 15,
-                                ),
-                                child: Column(
-                                  children: [
-                                    const SizedBox(height: 5),
-                                    Icon(
-                                      CustomIcons.getIcon(package.iconId),
-                                      size: 90,
-                                    ),
-                                    Expanded(
-                                      child: Center(
-                                        child: Text(
-                                          package.name,
-                                          textAlign: TextAlign.center,
-                                          style: AppTextStyles.paragraph(
-                                            context.layout,
-                                          ).copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
+                              child: Column(
+                                children: [
+                                  const SizedBox(height: 5),
+                                  Icon(
+                                    CustomIcons.getIcon(package.iconId),
+                                    size: 90,
+                                  ),
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        package.name,
+                                        textAlign: TextAlign.center,
+                                        style: AppTextStyles.paragraph(
+                                          context.layout,
+                                        ).copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
                                         ),
                                       ),
-                                    )
-                                  ],
-                                ),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                           ),
-                        )
-                    ],
-                  ),
-                  const SizedBox(height: 50),
-                ],
-              ),
+                        ),
+                      )
+                  ],
+                ),
+                const SizedBox(height: 50),
+              ],
             ),
           ),
         ),
       ),
     );
   }
-}
-
-class HeroDialogRoute<T> extends PageRoute<T> {
-  HeroDialogRoute({required this.builder}) : super();
-
-  final WidgetBuilder builder;
-
-  @override
-  bool get opaque => false;
-
-  @override
-  bool get barrierDismissible => true;
-
-  @override
-  Duration get transitionDuration => const Duration(milliseconds: 300);
-
-  @override
-  bool get maintainState => true;
-
-  @override
-  Color get barrierColor => Colors.black12;
-
-  @override
-  Widget buildTransitions(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-    Widget child,
-  ) {
-    return FadeTransition(
-      opacity: CurvedAnimation(parent: animation, curve: Curves.easeOut),
-      child: child,
-    );
-  }
-
-  @override
-  Widget buildPage(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-  ) {
-    return builder(context);
-  }
-
-  @override
-  String? get barrierLabel => null;
 }

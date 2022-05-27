@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
+import 'package:simtech/src/constants/spacings.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/models/answer.dart';
 import 'package:simtech/src/models/enums.dart';
@@ -69,9 +70,11 @@ class FormScreen extends HookWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 50),
+                  SizedBox(height: AppSpacings.big(context.layout)),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 60),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSpacings.big(context.layout),
+                    ),
                     child: Text(
                       'Como é a sua embalagem?',
                       textAlign: TextAlign.left,
@@ -79,7 +82,7 @@ class FormScreen extends HookWidget {
                           .copyWith(color: AppColors.lightGreen),
                     ),
                   ),
-                  const SizedBox(height: 40),
+                  SizedBox(height: AppSpacings.small(context.layout)),
                   QuestionsPageView(
                     onSubmit: isSubmittable
                         ? () => AutoRouter.of(context).push(
@@ -138,36 +141,41 @@ class FormScreen extends HookWidget {
                 ],
               ),
             ),
-            SizedBox(
-              width: 550,
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 300),
-                color: rating.color.withOpacity(0.2),
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: max(
-                        MediaQuery.of(context).size.height -
-                            MediaQuery.of(context).padding.top -
-                            MediaQuery.of(context).padding.bottom -
-                            60,
-                        840,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 30),
-                      child: Center(
-                        child: SizedBox(
-                          height: 780,
-                          child: RatingBar(rating: rating),
+            if (context.breakpoint > LayoutBreakpoint.sm)
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 550),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width *
+                      context.layout.value(xs: 0.33, lg: 0.25),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    color: rating.color.withOpacity(0.2),
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxHeight: max(
+                            MediaQuery.of(context).size.height -
+                                MediaQuery.of(context).padding.top -
+                                MediaQuery.of(context).padding.bottom -
+                                60,
+                            840,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 30),
+                          child: Center(
+                            child: SizedBox(
+                              height: 780,
+                              child: RatingBar(rating: rating),
+                            ),
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
           ],
         ),
       ),
@@ -281,7 +289,7 @@ class QuestionsPageView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    const columns = 2;
+    final columns = context.layout.value(xs: 1, lg: 2);
     const rows = 4;
     final pages = (questions.length / (columns * rows)).ceil();
 
@@ -318,7 +326,9 @@ class QuestionsPageView extends HookWidget {
             children: [
               for (var p = 0; p < pages; p++)
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 60),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppSpacings.big(context.layout),
+                  ),
                   child: columns == 1
                       ? Column(
                           children: [
@@ -342,7 +352,7 @@ class QuestionsPageView extends HookWidget {
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 50),
+                            SizedBox(width: AppSpacings.small(context.layout)),
                             Expanded(
                               child: Column(
                                 children: [

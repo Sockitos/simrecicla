@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
+import 'package:simtech/src/constants/spacings.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/router/router.gr.dart';
 import 'package:simtech/src/ui/widgets/arrow_widget.dart';
@@ -63,23 +64,10 @@ class _ConsumerIntro extends StatelessWidget {
     final textAlign = context.breakpoint < LayoutBreakpoint.md
         ? TextAlign.center
         : TextAlign.start;
-    final bigSpacing = context.layout.value<double>(
-      xs: 30,
-      sm: 40,
-      lg: 60,
-      xl: 70,
-    );
-    final smallSpacing = context.layout.value<double>(
-      xs: 20,
-      sm: 30,
-      lg: 40,
-      xl: 50,
-    );
-
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: bigSpacing,
-        vertical: bigSpacing,
+        horizontal: AppSpacings.big(context.layout),
+        vertical: AppSpacings.big(context.layout),
       ),
       child: Column(
         children: [
@@ -88,14 +76,14 @@ class _ConsumerIntro extends StatelessWidget {
             style: AppTextStyles.h1(context.layout),
             textAlign: textAlign,
           ),
-          SizedBox(height: smallSpacing),
+          SizedBox(height: AppSpacings.small(context.layout)),
           Text(
             'Este simulador permite ao cidadão perceber o impacte das suas práticas de separação e encaminhamento das embalagens, e quantificar as consequências das suas ações tendo em conta as soluções de tratamento disponíveis, os processos a que os resíduos serão sujeitos e o potencial de reintrodução na economia dos materiais recuperados.',
             style: AppTextStyles.paragraph(context.layout),
             textAlign: textAlign,
           ),
-          SizedBox(height: smallSpacing),
-          SizedBox(height: smallSpacing),
+          SizedBox(height: AppSpacings.small(context.layout)),
+          SizedBox(height: AppSpacings.small(context.layout)),
           Align(
             alignment: context.breakpoint < LayoutBreakpoint.md
                 ? Alignment.center

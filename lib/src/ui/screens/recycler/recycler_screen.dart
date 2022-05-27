@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
+import 'package:simtech/src/constants/spacings.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/router/router.gr.dart';
 import 'package:simtech/src/ui/widgets/arrow_widget.dart';
@@ -63,23 +64,10 @@ class _RecyclerIntro extends StatelessWidget {
     final textAlign = context.breakpoint < LayoutBreakpoint.md
         ? TextAlign.center
         : TextAlign.start;
-    final bigSpacing = context.layout.value<double>(
-      xs: 30,
-      sm: 40,
-      lg: 60,
-      xl: 70,
-    );
-    final smallSpacing = context.layout.value<double>(
-      xs: 20,
-      sm: 30,
-      lg: 40,
-      xl: 60,
-    );
-
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: bigSpacing,
-        vertical: bigSpacing,
+        horizontal: AppSpacings.big(context.layout),
+        vertical: AppSpacings.big(context.layout),
       ),
       child: Column(
         children: [
@@ -88,13 +76,13 @@ class _RecyclerIntro extends StatelessWidget {
             style: AppTextStyles.h1(context.layout),
             textAlign: textAlign,
           ),
-          SizedBox(height: smallSpacing),
+          SizedBox(height: AppSpacings.small(context.layout)),
           Text(
             'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             style: AppTextStyles.paragraph(context.layout),
             textAlign: textAlign,
           ),
-          SizedBox(height: bigSpacing),
+          SizedBox(height: AppSpacings.big(context.layout)),
           Align(
             alignment: context.breakpoint < LayoutBreakpoint.md
                 ? Alignment.center

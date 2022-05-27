@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/src/constants/colors.dart';
+import 'package:simtech/src/constants/spacings.dart';
 import 'package:simtech/src/constants/text_styles.dart';
 import 'package:simtech/src/router/router.gr.dart';
 import 'package:simtech/src/ui/widgets/arrow_widget.dart';
@@ -63,23 +64,10 @@ class _PackagerIntro extends StatelessWidget {
     final textAlign = context.breakpoint < LayoutBreakpoint.md
         ? TextAlign.center
         : TextAlign.start;
-    final bigSpacing = context.layout.value<double>(
-      xs: 30,
-      sm: 40,
-      lg: 60,
-      xl: 70,
-    );
-    final smallSpacing = context.layout.value<double>(
-      xs: 20,
-      sm: 30,
-      lg: 40,
-      xl: 60,
-    );
-
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: bigSpacing,
-        vertical: bigSpacing,
+        horizontal: AppSpacings.big(context.layout),
+        vertical: AppSpacings.big(context.layout),
       ),
       child: Column(
         children: [
@@ -88,13 +76,13 @@ class _PackagerIntro extends StatelessWidget {
             style: AppTextStyles.h1(context.layout),
             textAlign: textAlign,
           ),
-          SizedBox(height: smallSpacing),
+          SizedBox(height: AppSpacings.small(context.layout)),
           Text(
             'Venha descobrir como melhorar a reciclabilidade das suas embalagens através de um conjunto de questões que avaliam parâmetros de design e conceção, e de recomendações para as opções de conceção que possam ser menos favoráveis para a reciclabilidade. Este simulador determina também o impacte ou benefício ambiental das suas embalagens, tendo em conta o resultado de reciclabilidade (A-totalmente reciclável a F-não reciclável), a possibilidade de recuperação dos materiais para reciclagem e o teor de material reciclado utilizado na embalagem.',
             style: AppTextStyles.paragraph(context.layout),
             textAlign: textAlign,
           ),
-          SizedBox(height: bigSpacing),
+          SizedBox(height: AppSpacings.big(context.layout)),
           Align(
             alignment: context.breakpoint < LayoutBreakpoint.md
                 ? Alignment.center

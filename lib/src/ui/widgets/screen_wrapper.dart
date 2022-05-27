@@ -9,16 +9,25 @@ class ScreenWrapper extends StatelessWidget {
   const ScreenWrapper({
     super.key,
     required this.body,
-    this.padding = const EdgeInsets.symmetric(horizontal: 60),
+    this.padding,
     this.backgroundColor,
   });
 
   final Widget body;
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
   final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
+    final padding = this.padding ??
+        EdgeInsets.symmetric(
+          horizontal: context.layout.value<double>(
+            xs: 30,
+            sm: 40,
+            lg: 60,
+            xl: 70,
+          ),
+        );
     return Scaffold(
       backgroundColor: backgroundColor,
       drawer: Drawer(
@@ -167,16 +176,18 @@ class ScreenWrapper extends StatelessWidget {
                     const SizedBox(width: 30),
                   ],
           ),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: MediaQuery.of(context).size.height -
-                  MediaQuery.of(context).padding.top -
-                  MediaQuery.of(context).padding.bottom -
-                  60,
-            ),
-            child: Padding(
-              padding: padding,
-              child: body,
+          ClipRect(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).padding.top -
+                    MediaQuery.of(context).padding.bottom -
+                    60,
+              ),
+              child: Padding(
+                padding: padding,
+                child: body,
+              ),
             ),
           ),
           const Footer()
