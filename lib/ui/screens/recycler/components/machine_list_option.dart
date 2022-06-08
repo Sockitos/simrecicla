@@ -101,7 +101,7 @@ class MachineListOption extends HookWidget {
                                 final machines =
                                     useState(machine.getMachineVersions());
                                 return CircularWidgets(
-                                  radiusOfItem: 55,
+                                  radiusOfItem: 50,
                                   centerWidgetRadius: 50,
                                   innerSpacing: 40,
                                   centerWidgetBuilder: (context) => IconButton(
@@ -121,7 +121,7 @@ class MachineListOption extends HookWidget {
                                       machine: machine,
                                       size: const Size(44, 44),
                                       portSize: const Size(11, 7),
-                                      draggingSize: const Size(55, 55),
+                                      draggingSize: const Size(50, 50),
                                       draggingPortSize: const Size(13, 9),
                                     );
                                   },
@@ -153,45 +153,58 @@ class MachineListOption extends HookWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 200,
-      child: Column(
+      child: Row(
         children: [
-          const Spacer(),
-          Expanded(
-            child: Row(
-              children: [
-                Text(
-                  machine.name,
-                  style: AppTextStyles.h5(context.layout),
-                ),
-                const Spacer(),
-                SizedBox(
-                  height: 55,
-                  width: 55,
-                  child: InkResponse(
-                    radius: 45,
-                    onTapDown: (details) {},
-                    onTap: () {
-                      _showOptions(context);
-                    },
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2,
-                        ),
-                      ),
-                      child: Icon(
-                        machine.icon,
-                        size: 30,
-                        color: AppColors.black,
-                      ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Spacer(),
+              Text(
+                machine.name,
+                style: AppTextStyles.h5(context.layout),
+              ),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    onPressed: () {},
+                    color: AppColors.lightGreen,
+                    icon: const Icon(
+                      Icons.add_circle_outline_rounded,
                     ),
+                    splashRadius: 24,
+                    constraints: const BoxConstraints(),
+                    padding: const EdgeInsets.fromLTRB(0, 5, 5, 5),
                   ),
                 ),
-                const SizedBox(width: 60),
-              ],
-            ),
+              ),
+            ],
           ),
           const Spacer(),
+          SizedBox(
+            height: 50,
+            width: 50,
+            child: InkResponse(
+              radius: 45,
+              onTapDown: (details) {},
+              onTap: () {
+                _showOptions(context);
+              },
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 2,
+                  ),
+                ),
+                child: Icon(
+                  machine.icon,
+                  size: 30,
+                  color: AppColors.black,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 60),
         ],
       ),
     );

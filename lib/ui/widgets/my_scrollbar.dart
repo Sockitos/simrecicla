@@ -1150,7 +1150,13 @@ class MyScrollbarState<T extends MyScrollbar> extends State<T>
               child: CustomPaint(
                 key: _scrollbarPainterKey,
                 foregroundPainter: scrollbarPainter,
-                child: RepaintBoundary(child: widget.child),
+                child: RepaintBoundary(
+                  child: ScrollConfiguration(
+                    behavior: ScrollConfiguration.of(context)
+                        .copyWith(scrollbars: false),
+                    child: widget.child,
+                  ),
+                ),
               ),
             ),
           ),

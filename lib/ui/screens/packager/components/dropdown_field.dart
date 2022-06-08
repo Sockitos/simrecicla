@@ -63,7 +63,9 @@ class DropdownField<T> extends MyFormField {
                   final isNaoSei = text == 'Não sei';
                   return MyDropdownMenuItem<T>(
                     value: o,
-                    tooltip: isNaoSei ? 'Insert não sei text here' : null,
+                    tooltip: isNaoSei
+                        ? 'Esta opção tem um elevado impacto na reciclabilidade'
+                        : null,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Text(

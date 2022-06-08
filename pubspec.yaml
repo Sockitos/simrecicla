@@ -24,6 +24,7 @@ dependencies:
   json_annotation: ^4.5.0
   layout: ^1.0.2
   linkify: ^4.1.0
+  percent_indicator: ^4.2.2
   smooth_page_indicator: ^1.0.0+2
   tuple: ^2.0.0
   universal_html: ^2.0.8

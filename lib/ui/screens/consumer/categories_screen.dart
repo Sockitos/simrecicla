@@ -21,14 +21,14 @@ class CategoriesScreen extends StatelessWidget {
     return ScreenWrapper(
       body: Column(
         children: [
-          SizedBox(height: 2 * AppSpacings.big(context.layout)),
+          SizedBox(height: AppSpacings.big(context.layout)),
           Text(
             'Escolhe o tipo de embalagem que queres reciclar',
             style: AppTextStyles.h2(context.layout)
                 .copyWith(color: AppColors.lightGreen),
             textAlign: textAlign,
           ),
-          SizedBox(height: 2 * AppSpacings.big(context.layout)),
+          SizedBox(height: AppSpacings.big(context.layout)),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1500),
             child: Wrap(
@@ -42,7 +42,7 @@ class CategoriesScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 2 * AppSpacings.big(context.layout)),
+          SizedBox(height: AppSpacings.big(context.layout)),
         ],
       ),
     );

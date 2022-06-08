@@ -41,14 +41,14 @@ class _LgFooter extends StatelessWidget {
           Expanded(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(child: Sponsors.sociedadePontoverde),
-                const SizedBox(width: 40),
+              children: const [
                 Expanded(child: Sponsors.tratolixo),
-                const SizedBox(width: 40),
+                SizedBox(width: 40),
                 Expanded(child: Sponsors.drivers),
-                const SizedBox(width: 40),
+                SizedBox(width: 40),
                 Expanded(child: Sponsors.ist),
+                SizedBox(width: 40),
+                Expanded(child: Sponsors.sociedadePontoverde),
               ],
             ),
           ),
@@ -87,14 +87,14 @@ class _MdFooter extends StatelessWidget {
     return Column(
       children: [
         Row(
-          children: [
-            Expanded(child: Sponsors.sociedadePontoverde),
-            const SizedBox(width: 40),
+          children: const [
             Expanded(child: Sponsors.tratolixo),
-            const SizedBox(width: 40),
+            SizedBox(width: 40),
             Expanded(child: Sponsors.drivers),
-            const SizedBox(width: 40),
+            SizedBox(width: 40),
             Expanded(child: Sponsors.ist),
+            SizedBox(width: 40),
+            Expanded(child: Sponsors.sociedadePontoverde),
           ],
         ),
         const SizedBox(height: 60),
@@ -132,18 +132,18 @@ class _SmFooter extends StatelessWidget {
     return Column(
       children: [
         Row(
-          children: [
-            Expanded(child: Sponsors.sociedadePontoverde),
-            const SizedBox(width: 40),
+          children: const [
+            Expanded(child: Sponsors.drivers),
+            SizedBox(width: 40),
             Expanded(child: Sponsors.tratolixo),
           ],
         ),
         const SizedBox(height: 40),
         Row(
-          children: [
-            Expanded(child: Sponsors.drivers),
-            const SizedBox(width: 40),
+          children: const [
             Expanded(child: Sponsors.ist),
+            SizedBox(width: 40),
+            Expanded(child: Sponsors.sociedadePontoverde),
           ],
         ),
         const SizedBox(height: 60),
@@ -176,25 +176,25 @@ class _XsFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        Sponsors.sociedadePontoverde,
-        const SizedBox(height: 40),
+      children: const [
         Sponsors.tratolixo,
-        const SizedBox(height: 40),
+        SizedBox(height: 40),
         Sponsors.drivers,
-        const SizedBox(height: 40),
+        SizedBox(height: 40),
         Sponsors.ist,
-        const SizedBox(height: 60),
-        const SizedBox(
+        SizedBox(height: 40),
+        Sponsors.sociedadePontoverde,
+        SizedBox(height: 60),
+        SizedBox(
           height: 120,
           child: Contacts(
             textAlign: TextAlign.center,
           ),
         ),
-        const SizedBox(height: 40),
-        const SocialButtons(),
-        const SizedBox(height: 40),
-        const Copyright(),
+        SizedBox(height: 40),
+        SocialButtons(),
+        SizedBox(height: 40),
+        Copyright(),
       ],
     );
   }

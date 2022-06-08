@@ -755,8 +755,7 @@ class _DropdownMenuItemContainer extends StatelessWidget {
     return tooltip != null
         ? Tooltip(
             message: tooltip,
-            preferBelow: false,
-            verticalOffset: _kMenuItemHeight / 2 + 10,
+            verticalOffset: -12,
             child: Container(
               constraints: const BoxConstraints(minHeight: _kMenuItemHeight),
               alignment: alignment,

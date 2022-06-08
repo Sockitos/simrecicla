@@ -116,4 +116,82 @@ class MaterialSample with _$MaterialSample {
         metaisNaoFerrosos +
         naoRecuperaveis;
   }
+
+  MaterialSample filterByValue(double value) {
+    var hasCandidate = false;
+    var sample = const MaterialSample();
+    if (ecal >= value) {
+      hasCandidate = true;
+      sample = const MaterialSample(ecal: 1);
+    }
+    if (filmePlastico >= value) {
+      if (hasCandidate) {
+        return const MaterialSample();
+      }
+      hasCandidate = true;
+      sample = const MaterialSample(filmePlastico: 1);
+    }
+    if (pet >= value) {
+      if (hasCandidate) {
+        return const MaterialSample();
+      }
+      hasCandidate = true;
+      sample = const MaterialSample(pet: 1);
+    }
+    if (petOleo >= value) {
+      if (hasCandidate) {
+        return const MaterialSample();
+      }
+      hasCandidate = true;
+      sample = const MaterialSample(petOleo: 1);
+    }
+    if (pead >= value) {
+      if (hasCandidate) {
+        return const MaterialSample();
+      }
+      hasCandidate = true;
+      sample = const MaterialSample(pead: 1);
+    }
+    if (plasticosMistos >= value) {
+      if (hasCandidate) {
+        return const MaterialSample();
+      }
+      hasCandidate = true;
+      sample = const MaterialSample(plasticosMistos: 1);
+    }
+    if (metaisFerrosos >= value) {
+      if (hasCandidate) {
+        return const MaterialSample();
+      }
+      hasCandidate = true;
+      sample = const MaterialSample(metaisFerrosos: 1);
+    }
+    if (metaisNaoFerrosos >= value) {
+      if (hasCandidate) {
+        return const MaterialSample();
+      }
+      hasCandidate = true;
+      sample = const MaterialSample(metaisNaoFerrosos: 1);
+    }
+    if (naoRecuperaveis >= value) {
+      if (hasCandidate) {
+        return const MaterialSample();
+      }
+      hasCandidate = true;
+      sample = const MaterialSample(naoRecuperaveis: 1);
+    }
+    return sample;
+  }
+
+  MaterialSample replaceNans(double value) => MaterialSample(
+        ecal: ecal.isNaN ? value : ecal,
+        filmePlastico: filmePlastico.isNaN ? value : filmePlastico,
+        pet: pet.isNaN ? value : pet,
+        petOleo: petOleo.isNaN ? value : petOleo,
+        pead: pead.isNaN ? value : pead,
+        plasticosMistos: plasticosMistos.isNaN ? value : plasticosMistos,
+        metaisFerrosos: metaisFerrosos.isNaN ? value : metaisFerrosos,
+        metaisNaoFerrosos: metaisNaoFerrosos.isNaN ? value : metaisNaoFerrosos,
+        naoRecuperaveis: naoRecuperaveis.isNaN ? value : naoRecuperaveis,
+      );
 }

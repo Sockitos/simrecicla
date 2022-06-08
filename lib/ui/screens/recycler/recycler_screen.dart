@@ -131,7 +131,7 @@ class _RecyclerIntro extends StatelessWidget {
                         const GridScreenRoute(),
                       ),
                       style: ElevatedButton.styleFrom(primary: AppColors.blue),
-                      child: const Text('Linha de Papel e Cartão'),
+                      child: const Text('Papel e Cartão'),
                     ),
                     const SizedBox(height: 15),
                     ElevatedButton(
@@ -140,7 +140,7 @@ class _RecyclerIntro extends StatelessWidget {
                       ),
                       style:
                           ElevatedButton.styleFrom(primary: AppColors.yellow),
-                      child: const Text('Linha de Plástico e Metal'),
+                      child: const Text('Plástico e Metal'),
                     ),
                   ],
                 )

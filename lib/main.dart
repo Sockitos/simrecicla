@@ -96,6 +96,13 @@ Future<void> main() async {
       ),
       null,
     ),
+    precachePicture(
+      ExactAssetPicture(
+        SvgPicture.svgStringDecoderBuilder,
+        'assets/svgs/same_bin.svg',
+      ),
+      null,
+    ),
   ]);
   runApp(const ProviderScope(child: SimtechApp()));
 }

@@ -131,7 +131,8 @@ class PackageImpactChart extends StatelessWidget {
                                           maxValue: maxValue,
                                           value: impact.producao,
                                           color: AppColors.grey6,
-                                          label: 'Produção da\nembalagem',
+                                          label:
+                                              'Utilização de\nmateriais virgens',
                                         ),
                                       ),
                                       const Spacer(flex: 2),
@@ -162,8 +163,7 @@ class PackageImpactChart extends StatelessWidget {
                                           color: impact.eol.isNegative
                                               ? AppColors.ratingA
                                               : AppColors.ratingF,
-                                          label:
-                                              'Reciclabilidade\nem fim de vida',
+                                          label: 'Reciclagem\n',
                                         ),
                                       ),
                                       const Spacer(),
@@ -174,7 +174,8 @@ class PackageImpactChart extends StatelessWidget {
                                           maxValue: maxValue,
                                           value: impact.impacteTotal,
                                           color: AppColors.blue,
-                                          label: 'Impacte total\nda embalagem',
+                                          label:
+                                              'Impacte global\nde uma embalagem',
                                         ),
                                       ),
                                       const Spacer(),
