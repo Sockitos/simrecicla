@@ -1,49 +1,59 @@
 name: simtech
 description: A new Flutter project.
-
 publish_to: 'none'
-
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.0 <3.0.0"
+  sdk: ">=2.17.1 <3.0.0"
 
 dependencies:
-  auto_route: ^3.2.2
+  auto_route: ^4.0.1
   charts_flutter: ^0.12.0
+  circular_widgets: ^2.0.0
+  collection: ^1.16.0
   cupertino_icons: ^1.0.4
+  directed_graph: ^0.3.7
   flutter:
     sdk: flutter
-  flutter_hooks: ^0.18.1
-  flutter_svg: ^1.0.0
-  freezed_annotation: ^1.0.0
-  google_fonts: ^2.3.1
-  json_annotation: ^4.4.0
+  flutter_hooks: ^0.18.4
+  flutter_svg: ^1.1.0
+  freezed_annotation: ^2.0.3
+  google_fonts: ^3.0.1
+  hooks_riverpod: ^1.0.4
+  intl: ^0.17.0
+  json_annotation: ^4.5.0
   layout: ^1.0.2
+  linkify: ^4.1.0
+  percent_indicator: ^4.2.2
   smooth_page_indicator: ^1.0.0+2
   tuple: ^2.0.0
   universal_html: ^2.0.8
+  url_launcher: ^6.1.2
   url_strategy: ^0.2.0
 
 dev_dependencies:
-  auto_route_generator: ^3.1.0
-  build_runner: ^2.1.5
+  auto_route_generator: ^4.0.0
+  build_runner: ^2.1.11
+  flutter_lints:
+    git: https://github.com/Sockitos/flutter_lints/
   flutter_test:
     sdk: flutter
-  freezed: ^1.0.2+1
-  json_serializable: ^6.1.1
+  freezed: ^2.0.3+1
+  json_serializable: ^6.2.0
 
 dependency_overrides:
-  flutter_svg: ^1.0.0
+  charts_flutter:
+    git:
+      url: https://github.com/fzyzcjy/charts/
+      ref: master
+      path: charts_flutter
 
 flutter:
   uses-material-design: true
-
   assets:
     - assets/images/
     - assets/svgs/
     - assets/fonts/
-
   fonts:
     - family: CustomIcons
       fonts:
