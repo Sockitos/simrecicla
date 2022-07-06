@@ -4,7 +4,6 @@ import 'package:simtech/models/machine.dart';
 import 'package:simtech/models/machine_port.dart';
 
 part 'machine_definition.freezed.dart';
-// part 'machine_definition.g.dart';
 
 @freezed
 class MachineDefinition with _$MachineDefinition {
@@ -17,9 +16,6 @@ class MachineDefinition with _$MachineDefinition {
     required List<MachineOutput> outputs,
   }) = _MachineDefinition;
   const MachineDefinition._();
-
-  // factory MachineDefinition.fromJson(Map<String, dynamic> json) =>
-  //     _$MachineDefinitionFromJson(json);
 
   List<Machine> getMachineVersions() {
     final machines = <Machine>[];

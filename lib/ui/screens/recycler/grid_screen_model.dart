@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:simtech/data/recycler_data.dart';
 import 'package:simtech/models/grid.dart';
 import 'package:simtech/models/machine.dart';
 import 'package:simtech/models/machine_graph.dart';
@@ -16,8 +15,8 @@ class GridScreenModel with _$GridScreenModel {
         Map<MachineOutputId, MachineInputId?> connections,
     @Default(false) bool showFeedOptions,
     @Default(true) bool useDefaultFeed,
-    @Default(defaultWeight) double feedWeight,
-    @Default(defaultSample) MaterialSample feedSample,
+    required double feedWeight,
+    required MaterialSample feedSample,
     @Default(null) String? machineIOInfo,
     required MachineGraph graph,
     @Default(false) bool showResults,

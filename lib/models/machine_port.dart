@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:simtech/models/material_sample.dart';
 
 part 'machine_port.freezed.dart';
-part 'machine_port.g.dart';
 
 enum MachineOutputType {
   one,
@@ -16,11 +15,8 @@ class MachinePort with _$MachinePort {
   const factory MachinePort.output({
     required String id,
     required MachineOutputType type,
-    @Default(MaterialSample()) MaterialSample materialConversion,
+    required MaterialSample materialConversion,
   }) = MachineOutput;
-
-  factory MachinePort.fromJson(Map<String, dynamic> json) =>
-      _$MachinePortFromJson(json);
 }
 
 @freezed

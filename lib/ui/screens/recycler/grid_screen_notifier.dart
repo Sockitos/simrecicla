@@ -11,19 +11,22 @@ import 'package:simtech/ui/screens/recycler/grid_screen_model.dart';
 
 final gridScreenSNProvider =
     StateNotifierProvider.autoDispose<GridScreenNotifier, GridScreenModel>(
-        (ref) {
-  return GridScreenNotifier();
-});
+  (ref) => throw UnimplementedError(),
+);
 
 class GridScreenNotifier extends StateNotifier<GridScreenModel> {
-  GridScreenNotifier()
-      : super(
+  GridScreenNotifier({
+    required double feedWeight,
+    required MaterialSample feedSample,
+  }) : super(
           GridScreenModel(
+            feedWeight: feedWeight,
+            feedSample: feedSample,
             grid: Grid<Machine>(13, 14)
               ..setCell(
                 6,
                 0,
-                cell: const Machine(
+                cell: Machine(
                   id: 'feed',
                   name: 'feed',
                   icon: Icons.stream_outlined,
@@ -32,7 +35,26 @@ class GridScreenNotifier extends StateNotifier<GridScreenModel> {
                     AxisDirection.down: MachineOutput(
                       id: 'feed',
                       type: MachineOutputType.one,
-                    )
+                      materialConversion: feedSample.map(
+                        pm: (_) => const MaterialSample.pm(
+                          ecal: 1,
+                          filmePlastico: 1,
+                          pet: 1,
+                          petOleo: 1,
+                          pead: 1,
+                          plasticosMistos: 1,
+                          metaisFerrosos: 1,
+                          metaisNaoFerrosos: 1,
+                          naoRecuperaveis: 1,
+                        ),
+                        pc: (_) => const MaterialSample.pc(
+                          papel: 1,
+                          cartao: 1,
+                          jornaisRevistas: 1,
+                          naoRecuperaveis: 1,
+                        ),
+                      ),
+                    ),
                   },
                   isFixed: true,
                 ),

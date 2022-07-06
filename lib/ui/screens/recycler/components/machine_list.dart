@@ -4,18 +4,22 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/services/recycler_service.dart';
+import 'package:simtech/models/machine_definition.dart';
 import 'package:simtech/ui/screens/recycler/components/instructions_dialog.dart';
 import 'package:simtech/ui/screens/recycler/components/machine_list_option.dart';
 import 'package:simtech/ui/widgets/my_card.dart';
 import 'package:simtech/ui/widgets/my_scrollbar.dart';
 
 class MachineList extends HookWidget {
-  const MachineList({super.key});
+  const MachineList({
+    super.key,
+    required this.machines,
+  });
+
+  final List<MachineDefinition> machines;
 
   @override
   Widget build(BuildContext context) {
-    final machines = RecyclerService.getMachines();
     final scrollController = useScrollController();
     return MyScrollbar(
       controller: scrollController,

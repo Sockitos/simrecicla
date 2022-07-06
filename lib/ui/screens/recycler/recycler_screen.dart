@@ -4,6 +4,7 @@ import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
+import 'package:simtech/data/recycler_data.dart';
 import 'package:simtech/router/router.gr.dart';
 import 'package:simtech/ui/widgets/arrow_widget.dart';
 import 'package:simtech/ui/widgets/screen_wrapper.dart';
@@ -128,7 +129,11 @@ class _RecyclerIntro extends StatelessWidget {
                     const SizedBox(height: 40),
                     ElevatedButton(
                       onPressed: () => AutoRouter.of(context).push(
-                        const GridScreenRoute(),
+                        GridScreenRoute(
+                          machines: machinesPC,
+                          defaultWeight: defaultWeight,
+                          defaultSample: defaultSamplePC,
+                        ),
                       ),
                       style: ElevatedButton.styleFrom(primary: AppColors.blue),
                       child: const Text('Papel e Cartão'),
@@ -136,7 +141,11 @@ class _RecyclerIntro extends StatelessWidget {
                     const SizedBox(height: 15),
                     ElevatedButton(
                       onPressed: () => AutoRouter.of(context).push(
-                        const GridScreenRoute(),
+                        GridScreenRoute(
+                          machines: machinesPM,
+                          defaultWeight: defaultWeight,
+                          defaultSample: defaultSamplePM,
+                        ),
                       ),
                       style:
                           ElevatedButton.styleFrom(primary: AppColors.yellow),

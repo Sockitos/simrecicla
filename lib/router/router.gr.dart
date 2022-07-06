@@ -15,6 +15,8 @@ import 'package:flutter/material.dart' as _i11;
 
 import '../models/answer.dart' as _i14;
 import '../models/enums.dart' as _i13;
+import '../models/machine_definition.dart' as _i15;
+import '../models/material_sample.dart' as _i16;
 import '../models/package.dart' as _i12;
 import '../ui/screens/consumer/bin_selection/bin_selection_screen.dart' as _i4;
 import '../ui/screens/consumer/categories_screen.dart' as _i3;
@@ -112,9 +114,14 @@ class AppRouter extends _i10.RootStackRouter {
           barrierDismissible: false);
     },
     GridScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<GridScreenRouteArgs>();
       return _i10.CustomPage<void>(
           routeData: routeData,
-          child: const _i9.GridScreen(),
+          child: _i9.GridScreen(
+              key: args.key,
+              machines: args.machines,
+              defaultWeight: args.defaultWeight,
+              defaultSample: args.defaultSample),
           transitionsBuilder: _i10.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
@@ -264,8 +271,40 @@ class RecyclerScreenRoute extends _i10.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i9.GridScreen]
-class GridScreenRoute extends _i10.PageRouteInfo<void> {
-  const GridScreenRoute() : super(GridScreenRoute.name, path: '/recycler/grid');
+class GridScreenRoute extends _i10.PageRouteInfo<GridScreenRouteArgs> {
+  GridScreenRoute(
+      {_i11.Key? key,
+      required List<_i15.MachineDefinition> machines,
+      required double defaultWeight,
+      required _i16.MaterialSample defaultSample})
+      : super(GridScreenRoute.name,
+            path: '/recycler/grid',
+            args: GridScreenRouteArgs(
+                key: key,
+                machines: machines,
+                defaultWeight: defaultWeight,
+                defaultSample: defaultSample));
 
   static const String name = 'GridScreenRoute';
+}
+
+class GridScreenRouteArgs {
+  const GridScreenRouteArgs(
+      {this.key,
+      required this.machines,
+      required this.defaultWeight,
+      required this.defaultSample});
+
+  final _i11.Key? key;
+
+  final List<_i15.MachineDefinition> machines;
+
+  final double defaultWeight;
+
+  final _i16.MaterialSample defaultSample;
+
+  @override
+  String toString() {
+    return 'GridScreenRouteArgs{key: $key, machines: $machines, defaultWeight: $defaultWeight, defaultSample: $defaultSample}';
+  }
 }

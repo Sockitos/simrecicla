@@ -24,11 +24,11 @@ class MachineIOInfo extends HookConsumerWidget {
 
     final inputWeights = state.graph.inputs[machineId]!;
     final outputWeights = selectedOutput.value == null
-        ? const MaterialSample()
+        ? null
         : state
             .graph.outputs[MachineOutputId(machineId!, selectedOutput.value!)]!;
 
-    final weights = showInput.value ? inputWeights : outputWeights;
+    final weights = showInput.value ? inputWeights : outputWeights!;
     final compositions = weights.divAll(weights.sum());
     final recovered = weights / state.feedSample.mulAll(state.feedWeight);
     return MyCard(
@@ -59,8 +59,7 @@ class MachineIOInfo extends HookConsumerWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(14),
                             ),
-                            minimumSize: const Size(0, 50),
-                            maximumSize: const Size(double.maxFinite, 50),
+                            fixedSize: const Size.fromHeight(48),
                             padding: const EdgeInsets.symmetric(horizontal: 30),
                             textStyle: showInput.value
                                 ? AppTextStyles.dropdown(context.layout)
@@ -85,8 +84,7 @@ class MachineIOInfo extends HookConsumerWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(14),
                               ),
-                              minimumSize: const Size(0, 50),
-                              maximumSize: const Size(double.maxFinite, 50),
+                              fixedSize: const Size.fromHeight(48),
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 30),
                               textStyle: selectedOutput.value == output.id
@@ -132,54 +130,80 @@ class MachineIOInfo extends HookConsumerWidget {
                       ),
                     ),
                     const SizedBox(height: 15),
-                    MaterialInfo(
-                      label: 'ECAL',
-                      weight: weights.ecal,
-                      composition: compositions.ecal,
-                      recovered: recovered.ecal,
-                    ),
-                    MaterialInfo(
-                      label: 'Filme plástico',
-                      weight: weights.filmePlastico,
-                      composition: compositions.filmePlastico,
-                      recovered: recovered.filmePlastico,
-                    ),
-                    MaterialInfo(
-                      label: 'PET',
-                      weight: weights.pet,
-                      composition: compositions.pet,
-                      recovered: recovered.pet,
-                    ),
-                    MaterialInfo(
-                      label: 'PET óleo',
-                      weight: weights.petOleo,
-                      composition: compositions.petOleo,
-                      recovered: recovered.petOleo,
-                    ),
-                    MaterialInfo(
-                      label: 'PEAD',
-                      weight: weights.pead,
-                      composition: compositions.pead,
-                      recovered: recovered.pead,
-                    ),
-                    MaterialInfo(
-                      label: 'Plásticos Mistos',
-                      weight: weights.plasticosMistos,
-                      composition: compositions.plasticosMistos,
-                      recovered: recovered.plasticosMistos,
-                    ),
-                    MaterialInfo(
-                      label: 'Metais Ferrosos',
-                      weight: weights.metaisFerrosos,
-                      composition: compositions.metaisFerrosos,
-                      recovered: recovered.metaisFerrosos,
-                    ),
-                    MaterialInfo(
-                      label: 'Metais não Ferrosos',
-                      weight: weights.metaisNaoFerrosos,
-                      composition: compositions.metaisNaoFerrosos,
-                      recovered: recovered.metaisNaoFerrosos,
-                    ),
+                    if (weights is MaterialSamplePM &&
+                        compositions is MaterialSamplePM &&
+                        recovered is MaterialSamplePM) ...[
+                      MaterialInfo(
+                        label: 'ECAL',
+                        weight: weights.ecal,
+                        composition: compositions.ecal,
+                        recovered: recovered.ecal,
+                      ),
+                      MaterialInfo(
+                        label: 'Filme plástico',
+                        weight: weights.filmePlastico,
+                        composition: compositions.filmePlastico,
+                        recovered: recovered.filmePlastico,
+                      ),
+                      MaterialInfo(
+                        label: 'PET',
+                        weight: weights.pet,
+                        composition: compositions.pet,
+                        recovered: recovered.pet,
+                      ),
+                      MaterialInfo(
+                        label: 'PET óleo',
+                        weight: weights.petOleo,
+                        composition: compositions.petOleo,
+                        recovered: recovered.petOleo,
+                      ),
+                      MaterialInfo(
+                        label: 'PEAD',
+                        weight: weights.pead,
+                        composition: compositions.pead,
+                        recovered: recovered.pead,
+                      ),
+                      MaterialInfo(
+                        label: 'Plásticos Mistos',
+                        weight: weights.plasticosMistos,
+                        composition: compositions.plasticosMistos,
+                        recovered: recovered.plasticosMistos,
+                      ),
+                      MaterialInfo(
+                        label: 'Metais Ferrosos',
+                        weight: weights.metaisFerrosos,
+                        composition: compositions.metaisFerrosos,
+                        recovered: recovered.metaisFerrosos,
+                      ),
+                      MaterialInfo(
+                        label: 'Metais não Ferrosos',
+                        weight: weights.metaisNaoFerrosos,
+                        composition: compositions.metaisNaoFerrosos,
+                        recovered: recovered.metaisNaoFerrosos,
+                      ),
+                    ],
+                    if (weights is MaterialSamplePC &&
+                        compositions is MaterialSamplePC &&
+                        recovered is MaterialSamplePC) ...[
+                      MaterialInfo(
+                        label: 'Papel',
+                        weight: weights.papel,
+                        composition: compositions.papel,
+                        recovered: recovered.papel,
+                      ),
+                      MaterialInfo(
+                        label: 'Cartão',
+                        weight: weights.cartao,
+                        composition: compositions.cartao,
+                        recovered: recovered.cartao,
+                      ),
+                      MaterialInfo(
+                        label: 'Jornais e Revistas',
+                        weight: weights.jornaisRevistas,
+                        composition: compositions.jornaisRevistas,
+                        recovered: recovered.jornaisRevistas,
+                      ),
+                    ],
                     const SizedBox(height: 20),
                     MaterialInfo(
                       label: 'Não recuperáveis',

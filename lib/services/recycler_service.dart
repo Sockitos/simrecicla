@@ -1,15 +1,11 @@
 import 'package:collection/collection.dart';
 import 'package:directed_graph/directed_graph.dart';
-import 'package:simtech/data/recycler_data.dart';
 import 'package:simtech/models/machine.dart';
-import 'package:simtech/models/machine_definition.dart';
 import 'package:simtech/models/machine_graph.dart';
 import 'package:simtech/models/machine_port.dart';
 import 'package:simtech/models/material_sample.dart';
 
 class RecyclerService {
-  static List<MachineDefinition> getMachines() => machines;
-
   static MachineGraph buildGraph({
     required MaterialSample feedSample,
     required List<Machine> machines,
@@ -68,20 +64,28 @@ class RecyclerService {
     for (final machineId in calculationOrder) {
       if (machineId == 'feed0') continue;
       final machine = machines.firstWhere((m) => m.id0 == machineId);
-      var machineInputTotal = const MaterialSample();
+      MaterialSample? machineInputTotal;
+
       for (final input in machine.inputs) {
         final outputId = connections.keys.firstWhereOrNull(
           (key) => connections[key] == MachineInputId(machineId, input.id),
         );
         if (outputId == null) continue;
-        final outputMaterial = outputs[outputId] ?? const MaterialSample();
-        machineInputTotal = machineInputTotal + outputMaterial;
+        final outputMaterial = outputs[outputId];
+        if (outputMaterial != null) {
+          if (machineInputTotal == null) {
+            machineInputTotal = outputMaterial;
+          } else {
+            machineInputTotal = machineInputTotal + outputMaterial;
+          }
+        }
       }
-      inputs[machineId] = machineInputTotal;
-
-      for (final output in machine.outputs) {
-        outputs[MachineOutputId(machineId, output.id)] =
-            machineInputTotal * output.materialConversion;
+      if (machineInputTotal != null) {
+        inputs[machineId] = machineInputTotal;
+        for (final output in machine.outputs) {
+          outputs[MachineOutputId(machineId, output.id)] =
+              machineInputTotal * output.materialConversion;
+        }
       }
     }
 

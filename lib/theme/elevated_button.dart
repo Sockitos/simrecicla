@@ -8,8 +8,7 @@ final elevatedButtonTheme = ElevatedButtonThemeData(
     shadowColor: Colors.transparent,
     elevation: 0,
     shape: const StadiumBorder(),
-    minimumSize: const Size(0, 62),
-    maximumSize: const Size(double.maxFinite, 62),
+    fixedSize: const Size.fromHeight(56),
     padding: const EdgeInsets.symmetric(
       horizontal: 40,
     ),

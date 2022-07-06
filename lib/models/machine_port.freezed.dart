@@ -14,19 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-MachinePort _$MachinePortFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'input':
-      return MachineInput.fromJson(json);
-    case 'output':
-      return MachineOutput.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'MachinePort',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
-}
-
 /// @nodoc
 mixin _$MachinePort {
   String get id => throw _privateConstructorUsedError;
@@ -74,7 +61,7 @@ mixin _$MachinePort {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $MachinePortCopyWith<MachinePort> get copyWith =>
       throw _privateConstructorUsedError;
@@ -143,19 +130,12 @@ class __$$MachineInputCopyWithImpl<$Res> extends _$MachinePortCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$MachineInput implements MachineInput {
-  const _$MachineInput({required this.id, final String? $type})
-      : $type = $type ?? 'input';
 
-  factory _$MachineInput.fromJson(Map<String, dynamic> json) =>
-      _$$MachineInputFromJson(json);
+class _$MachineInput implements MachineInput {
+  const _$MachineInput({required this.id});
 
   @override
   final String id;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
 
   @override
   String toString() {
@@ -170,7 +150,6 @@ class _$MachineInput implements MachineInput {
             const DeepCollectionEquality().equals(other.id, id));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
@@ -247,18 +226,10 @@ class _$MachineInput implements MachineInput {
     }
     return orElse();
   }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MachineInputToJson(this);
-  }
 }
 
 abstract class MachineInput implements MachinePort {
   const factory MachineInput({required final String id}) = _$MachineInput;
-
-  factory MachineInput.fromJson(Map<String, dynamic> json) =
-      _$MachineInput.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -323,28 +294,17 @@ class __$$MachineOutputCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$MachineOutput implements MachineOutput {
   const _$MachineOutput(
-      {required this.id,
-      required this.type,
-      this.materialConversion = const MaterialSample(),
-      final String? $type})
-      : $type = $type ?? 'output';
-
-  factory _$MachineOutput.fromJson(Map<String, dynamic> json) =>
-      _$$MachineOutputFromJson(json);
+      {required this.id, required this.type, required this.materialConversion});
 
   @override
   final String id;
   @override
   final MachineOutputType type;
   @override
-  @JsonKey()
   final MaterialSample materialConversion;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
 
   @override
   String toString() {
@@ -362,7 +322,6 @@ class _$MachineOutput implements MachineOutput {
                 .equals(other.materialConversion, materialConversion));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -442,21 +401,13 @@ class _$MachineOutput implements MachineOutput {
     }
     return orElse();
   }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MachineOutputToJson(this);
-  }
 }
 
 abstract class MachineOutput implements MachinePort {
   const factory MachineOutput(
       {required final String id,
       required final MachineOutputType type,
-      final MaterialSample materialConversion}) = _$MachineOutput;
-
-  factory MachineOutput.fromJson(Map<String, dynamic> json) =
-      _$MachineOutput.fromJson;
+      required final MaterialSample materialConversion}) = _$MachineOutput;
 
   @override
   String get id => throw _privateConstructorUsedError;

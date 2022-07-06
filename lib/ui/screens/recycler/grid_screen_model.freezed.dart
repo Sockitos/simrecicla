@@ -225,8 +225,8 @@ class _$_GridScreenModel implements _GridScreenModel {
           const <MachineOutputId, MachineInputId?>{},
       this.showFeedOptions = false,
       this.useDefaultFeed = true,
-      this.feedWeight = defaultWeight,
-      this.feedSample = defaultSample,
+      required this.feedWeight,
+      required this.feedSample,
       this.machineIOInfo = null,
       required this.graph,
       this.showResults = false})
@@ -249,10 +249,8 @@ class _$_GridScreenModel implements _GridScreenModel {
   @JsonKey()
   final bool useDefaultFeed;
   @override
-  @JsonKey()
   final double feedWeight;
   @override
-  @JsonKey()
   final MaterialSample feedSample;
   @override
   @JsonKey()
@@ -316,8 +314,8 @@ abstract class _GridScreenModel implements GridScreenModel {
       final Map<MachineOutputId, MachineInputId?> connections,
       final bool showFeedOptions,
       final bool useDefaultFeed,
-      final double feedWeight,
-      final MaterialSample feedSample,
+      required final double feedWeight,
+      required final MaterialSample feedSample,
       final String? machineIOInfo,
       required final MachineGraph graph,
       final bool showResults}) = _$_GridScreenModel;

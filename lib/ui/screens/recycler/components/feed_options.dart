@@ -8,6 +8,8 @@ import 'package:intl/intl.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/text_styles.dart';
+import 'package:simtech/data/recycler_data.dart';
+import 'package:simtech/models/material_sample.dart';
 import 'package:simtech/ui/screens/recycler/grid_screen_notifier.dart';
 import 'package:simtech/ui/widgets/my_card.dart';
 
@@ -41,6 +43,17 @@ class FeedOptions extends HookConsumerWidget {
                               ? () {}
                               : () {
                                   useDefault.value = true;
+                                  weight.value = defaultWeight;
+                                  percentages.value.map(
+                                    pm: (_) {
+                                      percentages.value = defaultSamplePM;
+                                    },
+                                    pc: (_) {
+                                      percentages.value = defaultSamplePC;
+                                    },
+                                  );
+                                  weights.value =
+                                      percentages.value.mulAll(weight.value);
                                 },
                           style: ElevatedButton.styleFrom(
                             primary: useDefault.value
@@ -50,8 +63,7 @@ class FeedOptions extends HookConsumerWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(14),
                             ),
-                            minimumSize: const Size(0, 50),
-                            maximumSize: const Size(double.maxFinite, 50),
+                            fixedSize: const Size.fromHeight(48),
                             padding: const EdgeInsets.symmetric(horizontal: 30),
                             textStyle: useDefault.value
                                 ? AppTextStyles.dropdown(context.layout)
@@ -75,8 +87,7 @@ class FeedOptions extends HookConsumerWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(14),
                             ),
-                            minimumSize: const Size(0, 50),
-                            maximumSize: const Size(double.maxFinite, 50),
+                            fixedSize: const Size.fromHeight(48),
                             padding: const EdgeInsets.symmetric(horizontal: 30),
                             textStyle: !useDefault.value
                                 ? AppTextStyles.dropdown(context.layout)
@@ -183,108 +194,202 @@ class FeedOptions extends HookConsumerWidget {
                       ),
                     ),
                     const SizedBox(height: 15),
-                    _MaterialOption(
-                      label: 'ECAL',
-                      weight: weights.value.ecal,
-                      percentage: percentages.value.ecal,
-                      isEditable: !useDefault.value,
-                      onWeightChange: (newWeight) {
-                        final diff = weights.value.ecal - newWeight;
-                        weight.value -= diff;
-                        weights.value = weights.value.copyWith(ecal: newWeight);
-                        percentages.value = weights.value.divAll(weight.value);
-                      },
-                    ),
-                    _MaterialOption(
-                      label: 'Filme plástico',
-                      weight: weights.value.filmePlastico,
-                      percentage: percentages.value.filmePlastico,
-                      isEditable: !useDefault.value,
-                      onWeightChange: (newWeight) {
-                        final diff = weights.value.filmePlastico - newWeight;
-                        weight.value -= diff;
-                        weights.value =
-                            weights.value.copyWith(filmePlastico: newWeight);
-                        percentages.value = weights.value.divAll(weight.value);
-                      },
-                    ),
-                    _MaterialOption(
-                      label: 'PET',
-                      weight: weights.value.pet,
-                      percentage: percentages.value.pet,
-                      isEditable: !useDefault.value,
-                      onWeightChange: (newWeight) {
-                        final diff = weights.value.pet - newWeight;
-                        weight.value -= diff;
-                        weights.value = weights.value.copyWith(pet: newWeight);
-                        percentages.value = weights.value.divAll(weight.value);
-                      },
-                    ),
-                    _MaterialOption(
-                      label: 'PET óleo',
-                      weight: weights.value.petOleo,
-                      percentage: percentages.value.petOleo,
-                      isEditable: !useDefault.value,
-                      onWeightChange: (newWeight) {
-                        final diff = weights.value.petOleo - newWeight;
-                        weight.value -= diff;
-                        weights.value =
-                            weights.value.copyWith(petOleo: newWeight);
-                        percentages.value = weights.value.divAll(weight.value);
-                      },
-                    ),
-                    _MaterialOption(
-                      label: 'PEAD',
-                      weight: weights.value.pead,
-                      percentage: percentages.value.pead,
-                      isEditable: !useDefault.value,
-                      onWeightChange: (newWeight) {
-                        final diff = weights.value.pead - newWeight;
-                        weight.value -= diff;
-                        weights.value = weights.value.copyWith(pead: newWeight);
-                        percentages.value = weights.value.divAll(weight.value);
-                      },
-                    ),
-                    _MaterialOption(
-                      label: 'Plásticos Mistos',
-                      weight: weights.value.plasticosMistos,
-                      percentage: percentages.value.plasticosMistos,
-                      isEditable: !useDefault.value,
-                      onWeightChange: (newWeight) {
-                        final diff = weights.value.plasticosMistos - newWeight;
-                        weight.value -= diff;
-                        weights.value =
-                            weights.value.copyWith(plasticosMistos: newWeight);
-                        percentages.value = weights.value.divAll(weight.value);
-                      },
-                    ),
-                    _MaterialOption(
-                      label: 'Metais Ferrosos',
-                      weight: weights.value.metaisFerrosos,
-                      percentage: percentages.value.metaisFerrosos,
-                      isEditable: !useDefault.value,
-                      onWeightChange: (newWeight) {
-                        final diff = weights.value.metaisFerrosos - newWeight;
-                        weight.value -= diff;
-                        weights.value =
-                            weights.value.copyWith(metaisFerrosos: newWeight);
-                        percentages.value = weights.value.divAll(weight.value);
-                      },
-                    ),
-                    _MaterialOption(
-                      label: 'Metais não Ferrosos',
-                      weight: weights.value.metaisNaoFerrosos,
-                      percentage: percentages.value.metaisNaoFerrosos,
-                      isEditable: !useDefault.value,
-                      onWeightChange: (newWeight) {
-                        final diff =
-                            weights.value.metaisNaoFerrosos - newWeight;
-                        weight.value -= diff;
-                        weights.value = weights.value
-                            .copyWith(metaisNaoFerrosos: newWeight);
-                        percentages.value = weights.value.divAll(weight.value);
-                      },
-                    ),
+                    if (weights.value is MaterialSamplePM &&
+                        percentages.value is MaterialSamplePM) ...[
+                      _MaterialOption(
+                        label: 'ECAL',
+                        weight: (weights.value as MaterialSamplePM).ecal,
+                        percentage:
+                            (percentages.value as MaterialSamplePM).ecal,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff =
+                              (weights.value as MaterialSamplePM).ecal -
+                                  newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePM)
+                              .copyWith(ecal: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePM;
+                        },
+                      ),
+                      _MaterialOption(
+                        label: 'Filme plástico',
+                        weight:
+                            (weights.value as MaterialSamplePM).filmePlastico,
+                        percentage: (percentages.value as MaterialSamplePM)
+                            .filmePlastico,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff = (weights.value as MaterialSamplePM)
+                                  .filmePlastico -
+                              newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePM)
+                              .copyWith(filmePlastico: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePM;
+                        },
+                      ),
+                      _MaterialOption(
+                        label: 'PET',
+                        weight: (weights.value as MaterialSamplePM).pet,
+                        percentage: (percentages.value as MaterialSamplePM).pet,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff = (weights.value as MaterialSamplePM).pet -
+                              newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePM)
+                              .copyWith(pet: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePM;
+                        },
+                      ),
+                      _MaterialOption(
+                        label: 'PET óleo',
+                        weight: (weights.value as MaterialSamplePM).petOleo,
+                        percentage:
+                            (percentages.value as MaterialSamplePM).petOleo,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff =
+                              (weights.value as MaterialSamplePM).petOleo -
+                                  newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePM)
+                              .copyWith(petOleo: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePM;
+                        },
+                      ),
+                      _MaterialOption(
+                        label: 'PEAD',
+                        weight: (weights.value as MaterialSamplePM).pead,
+                        percentage:
+                            (percentages.value as MaterialSamplePM).pead,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff =
+                              (weights.value as MaterialSamplePM).pead -
+                                  newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePM)
+                              .copyWith(pead: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePM;
+                        },
+                      ),
+                      _MaterialOption(
+                        label: 'Plásticos Mistos',
+                        weight:
+                            (weights.value as MaterialSamplePM).plasticosMistos,
+                        percentage: (percentages.value as MaterialSamplePM)
+                            .plasticosMistos,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff = (weights.value as MaterialSamplePM)
+                                  .plasticosMistos -
+                              newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePM)
+                              .copyWith(plasticosMistos: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePM;
+                        },
+                      ),
+                      _MaterialOption(
+                        label: 'Metais Ferrosos',
+                        weight:
+                            (weights.value as MaterialSamplePM).metaisFerrosos,
+                        percentage: (percentages.value as MaterialSamplePM)
+                            .metaisFerrosos,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff = (weights.value as MaterialSamplePM)
+                                  .metaisFerrosos -
+                              newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePM)
+                              .copyWith(metaisFerrosos: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePM;
+                        },
+                      ),
+                      _MaterialOption(
+                        label: 'Metais não Ferrosos',
+                        weight: (weights.value as MaterialSamplePM)
+                            .metaisNaoFerrosos,
+                        percentage: (percentages.value as MaterialSamplePM)
+                            .metaisNaoFerrosos,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff = (weights.value as MaterialSamplePM)
+                                  .metaisNaoFerrosos -
+                              newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePM)
+                              .copyWith(metaisNaoFerrosos: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePM;
+                        },
+                      ),
+                    ],
+                    if (weights.value is MaterialSamplePC &&
+                        percentages.value is MaterialSamplePC) ...[
+                      _MaterialOption(
+                        label: 'Papel',
+                        weight: (weights.value as MaterialSamplePC).papel,
+                        percentage:
+                            (percentages.value as MaterialSamplePC).papel,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff =
+                              (weights.value as MaterialSamplePC).papel -
+                                  newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePC)
+                              .copyWith(papel: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePC;
+                        },
+                      ),
+                      _MaterialOption(
+                        label: 'Cartão',
+                        weight: (weights.value as MaterialSamplePC).cartao,
+                        percentage:
+                            (percentages.value as MaterialSamplePC).cartao,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff =
+                              (weights.value as MaterialSamplePC).cartao -
+                                  newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePC)
+                              .copyWith(cartao: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePC;
+                        },
+                      ),
+                      _MaterialOption(
+                        label: 'Jornais e Revistas',
+                        weight:
+                            (weights.value as MaterialSamplePC).jornaisRevistas,
+                        percentage: (percentages.value as MaterialSamplePC)
+                            .jornaisRevistas,
+                        isEditable: !useDefault.value,
+                        onWeightChange: (newWeight) {
+                          final diff = (weights.value as MaterialSamplePC)
+                                  .jornaisRevistas -
+                              newWeight;
+                          weight.value -= diff;
+                          weights.value = (weights.value as MaterialSamplePC)
+                              .copyWith(jornaisRevistas: newWeight);
+                          percentages.value = weights.value.divAll(weight.value)
+                              as MaterialSamplePC;
+                        },
+                      ),
+                    ],
                     const SizedBox(height: 20),
                     _MaterialOption(
                       label: 'Não recuperáveis',
@@ -314,8 +419,7 @@ class FeedOptions extends HookConsumerWidget {
                           notifier.hideFeedOptions();
                         },
                         style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(0, 50),
-                          maximumSize: const Size(double.maxFinite, 50),
+                          fixedSize: const Size.fromHeight(48),
                           textStyle: AppTextStyles.h5(context.layout)
                               .copyWith(height: 1),
                           padding: const EdgeInsets.symmetric(horizontal: 30),

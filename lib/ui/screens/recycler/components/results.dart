@@ -13,14 +13,93 @@ import 'package:simtech/ui/widgets/my_card.dart';
 class Results extends HookConsumerWidget {
   const Results({super.key});
 
+  bool useIsScrollable(ScrollController controller) {
+    final isScrollable = useState(false);
+    useEffect(
+      () {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          isScrollable.value = controller.position.maxScrollExtent > 0;
+        });
+        return;
+      },
+      [WidgetsBinding.instance],
+    );
+
+    return isScrollable.value;
+  }
+
+  bool useIsMinScrolled(ScrollController controller) {
+    final isMinScrolled = useState(
+      controller.position.pixels == controller.position.minScrollExtent,
+    );
+    useEffect(
+      () {
+        void listener() {
+          if (controller.position.pixels ==
+                  controller.position.minScrollExtent &&
+              !isMinScrolled.value) {
+            isMinScrolled.value = true;
+          }
+          if (!(controller.position.pixels ==
+                  controller.position.minScrollExtent) &&
+              isMinScrolled.value) {
+            isMinScrolled.value = false;
+          }
+        }
+
+        controller.addListener(listener);
+        return () {
+          controller.removeListener(listener);
+        };
+      },
+      [controller],
+    );
+
+    return isMinScrolled.value;
+  }
+
+  bool useIsMaxScrolled(ScrollController controller) {
+    final isMaxScrolled = useState(
+      controller.position.pixels == controller.position.maxScrollExtent,
+    );
+    useEffect(
+      () {
+        void listener() {
+          if (controller.position.pixels ==
+                  controller.position.maxScrollExtent &&
+              !isMaxScrolled.value) {
+            isMaxScrolled.value = true;
+          }
+          if (!(controller.position.pixels ==
+                  controller.position.maxScrollExtent) &&
+              isMaxScrolled.value) {
+            isMaxScrolled.value = false;
+          }
+        }
+
+        controller.addListener(listener);
+        return () {
+          controller.removeListener(listener);
+        };
+      },
+      [controller],
+    );
+
+    return isMaxScrolled.value;
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final showEfficiency = useState(true);
     final selectedProduct = useState<String?>(null);
 
     final state = ref.watch(gridScreenSNProvider);
-    final products =
-        state.grid.getData().where((m) => m.id == 'F').map((p) => p.id0);
+
+    final products = state.grid
+        .getData()
+        .where((m) => m.id == 'F')
+        .map((p) => p.id0)
+        .where(state.graph.graph.vertices.contains);
     final productWeights = Map.fromEntries(
       state.graph.inputs.entries.where(
         (e) => products.contains(e.key),
@@ -43,22 +122,28 @@ class Results extends HookConsumerWidget {
       ),
     );
 
-    final weights =
-        productWeights[selectedProduct.value] ?? const MaterialSample();
-    final compositions =
-        productCompositions[selectedProduct.value] ?? const MaterialSample();
-    var recovered =
-        productRecovered[selectedProduct.value] ?? const MaterialSample();
+    final weights = productWeights[selectedProduct.value];
+    final compositions = productCompositions[selectedProduct.value];
+    var recovered = productRecovered[selectedProduct.value];
 
-    var product = const MaterialSample();
-    for (final p in products) {
-      final filter =
-          productRecovered[p]?.filterByValue(0.95) ?? const MaterialSample();
-      product += filter * (productWeights[p] ?? const MaterialSample());
+    MaterialSample? product;
+    if (showEfficiency.value) {
+      for (final p in products) {
+        final filter = productCompositions[p]!.filterByValue(0.9);
+        if (product == null) {
+          product = filter * productWeights[p]!;
+        } else {
+          product += filter * productWeights[p]!;
+        }
+      }
+      recovered = product! / feed;
+      recovered = recovered.replaceNans(1);
     }
-    recovered = product / feed;
-    recovered = recovered.replaceNans(1);
-    final efficiency = (recovered.sum() - recovered.naoRecuperaveis) / 8;
+
+    final efficiency = product != null
+        ? (product.sum() - product.naoRecuperaveis) /
+            (feed.sum() - feed.naoRecuperaveis)
+        : 0.0;
 
     return MyCard(
       child: Stack(
@@ -73,60 +158,160 @@ class Results extends HookConsumerWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Row(
-                      children: [
-                        for (final product in products) ...[
-                          ElevatedButton(
-                            onPressed: () {
-                              selectedProduct.value = product;
-                              showEfficiency.value = false;
-                            },
-                            style: ElevatedButton.styleFrom(
-                              primary: selectedProduct.value == product
-                                  ? AppColors.grey3
-                                  : AppColors.grey1,
-                              onPrimary: AppColors.black,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(14),
+                    HookBuilder(
+                      builder: (context) {
+                        final scrollController = useScrollController();
+                        return Row(
+                          children: [
+                            HookBuilder(
+                              builder: (context) {
+                                final isScrollable =
+                                    useIsScrollable(scrollController);
+                                return isScrollable
+                                    ? HookBuilder(
+                                        builder: (context) {
+                                          final isMinScrolled =
+                                              useIsMinScrolled(
+                                            scrollController,
+                                          );
+                                          return IconButton(
+                                            onPressed: isMinScrolled
+                                                ? null
+                                                : () {
+                                                    scrollController.animateTo(
+                                                      scrollController.offset -
+                                                          100,
+                                                      duration: const Duration(
+                                                        milliseconds: 250,
+                                                      ),
+                                                      curve: Curves.linear,
+                                                    );
+                                                  },
+                                            iconSize: 30,
+                                            splashRadius: 30,
+                                            color: AppColors.lightGreen,
+                                            icon: const Icon(
+                                              Icons
+                                                  .keyboard_double_arrow_left_rounded,
+                                            ),
+                                          );
+                                        },
+                                      )
+                                    : const SizedBox();
+                              },
+                            ),
+                            const SizedBox(width: 15),
+                            Expanded(
+                              child: SizedBox(
+                                height: 50,
+                                child: ListView(
+                                  controller: scrollController,
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    for (final product in products) ...[
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          selectedProduct.value = product;
+                                          showEfficiency.value = false;
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                          primary:
+                                              selectedProduct.value == product
+                                                  ? AppColors.grey3
+                                                  : AppColors.grey1,
+                                          onPrimary: AppColors.black,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(14),
+                                          ),
+                                          fixedSize: const Size.fromHeight(48),
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 30,
+                                          ),
+                                          textStyle: selectedProduct.value ==
+                                                  product
+                                              ? AppTextStyles.dropdown(
+                                                  context.layout,
+                                                ).copyWith(
+                                                  fontWeight: FontWeight.bold,
+                                                )
+                                              : AppTextStyles.dropdown(
+                                                  context.layout,
+                                                ),
+                                        ),
+                                        child: const Text('Produto'),
+                                      ),
+                                      const SizedBox(width: 15),
+                                    ],
+                                  ],
+                                ),
                               ),
-                              minimumSize: const Size(0, 50),
-                              maximumSize: const Size(double.maxFinite, 50),
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 30),
-                              textStyle: selectedProduct.value == product
-                                  ? AppTextStyles.dropdown(context.layout)
-                                      .copyWith(fontWeight: FontWeight.bold)
-                                  : AppTextStyles.dropdown(context.layout),
                             ),
-                            child: const Text('Produto'),
-                          ),
-                          const SizedBox(width: 15),
-                        ],
-                        const SizedBox(width: 15),
-                        ElevatedButton(
-                          onPressed: () {
-                            selectedProduct.value = null;
-                            showEfficiency.value = true;
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: showEfficiency.value
-                                ? AppColors.grey3
-                                : AppColors.grey1,
-                            onPrimary: AppColors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14),
+                            HookBuilder(
+                              builder: (context) {
+                                final isScrollable =
+                                    useIsScrollable(scrollController);
+                                return isScrollable
+                                    ? HookBuilder(
+                                        builder: (context) {
+                                          final isMaxScrolled =
+                                              useIsMaxScrolled(
+                                            scrollController,
+                                          );
+                                          return IconButton(
+                                            onPressed: isMaxScrolled
+                                                ? null
+                                                : () {
+                                                    scrollController.animateTo(
+                                                      scrollController.offset +
+                                                          100,
+                                                      duration: const Duration(
+                                                        milliseconds: 250,
+                                                      ),
+                                                      curve: Curves.linear,
+                                                    );
+                                                  },
+                                            iconSize: 30,
+                                            splashRadius: 30,
+                                            color: AppColors.lightGreen,
+                                            icon: const Icon(
+                                              Icons
+                                                  .keyboard_double_arrow_right_rounded,
+                                            ),
+                                          );
+                                        },
+                                      )
+                                    : const SizedBox();
+                              },
                             ),
-                            minimumSize: const Size(0, 50),
-                            maximumSize: const Size(double.maxFinite, 50),
-                            padding: const EdgeInsets.symmetric(horizontal: 30),
-                            textStyle: showEfficiency.value
-                                ? AppTextStyles.dropdown(context.layout)
-                                    .copyWith(fontWeight: FontWeight.bold)
-                                : AppTextStyles.dropdown(context.layout),
-                          ),
-                          child: const Text('Eficiência'),
-                        ),
-                      ],
+                            const SizedBox(width: 15),
+                            ElevatedButton(
+                              onPressed: () {
+                                selectedProduct.value = null;
+                                showEfficiency.value = true;
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: showEfficiency.value
+                                    ? AppColors.grey3
+                                    : AppColors.grey1,
+                                onPrimary: AppColors.black,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                fixedSize: const Size.fromHeight(48),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 30),
+                                textStyle: showEfficiency.value
+                                    ? AppTextStyles.dropdown(context.layout)
+                                        .copyWith(fontWeight: FontWeight.bold)
+                                    : AppTextStyles.dropdown(context.layout),
+                              ),
+                              child: const Text('Eficiência'),
+                            ),
+                            const SizedBox(width: 60),
+                          ],
+                        );
+                      },
                     ),
                     const SizedBox(height: 30),
                     if (showEfficiency.value) ...[
@@ -162,54 +347,80 @@ class Results extends HookConsumerWidget {
                         ),
                       ),
                       const SizedBox(height: 15),
-                      EfficiencyMaterialInfo(
-                        label: 'ECAL',
-                        feed: feed.ecal,
-                        product: product.ecal,
-                        recovered: recovered.ecal,
-                      ),
-                      EfficiencyMaterialInfo(
-                        label: 'Filme plástico',
-                        feed: feed.filmePlastico,
-                        product: product.filmePlastico,
-                        recovered: recovered.filmePlastico,
-                      ),
-                      EfficiencyMaterialInfo(
-                        label: 'PET',
-                        feed: feed.pet,
-                        product: product.pet,
-                        recovered: recovered.pet,
-                      ),
-                      EfficiencyMaterialInfo(
-                        label: 'PET óleo',
-                        feed: feed.petOleo,
-                        product: product.petOleo,
-                        recovered: recovered.petOleo,
-                      ),
-                      EfficiencyMaterialInfo(
-                        label: 'PEAD',
-                        feed: feed.pead,
-                        product: product.pead,
-                        recovered: recovered.pead,
-                      ),
-                      EfficiencyMaterialInfo(
-                        label: 'Plásticos Mistos',
-                        feed: feed.plasticosMistos,
-                        product: product.plasticosMistos,
-                        recovered: recovered.plasticosMistos,
-                      ),
-                      EfficiencyMaterialInfo(
-                        label: 'Metais Ferrosos',
-                        feed: feed.metaisFerrosos,
-                        product: product.metaisFerrosos,
-                        recovered: recovered.metaisFerrosos,
-                      ),
-                      EfficiencyMaterialInfo(
-                        label: 'Metais não Ferrosos',
-                        feed: feed.metaisNaoFerrosos,
-                        product: product.metaisNaoFerrosos,
-                        recovered: recovered.metaisNaoFerrosos,
-                      ),
+                      if (feed is MaterialSamplePM &&
+                          product is MaterialSamplePM &&
+                          recovered is MaterialSamplePM) ...[
+                        EfficiencyMaterialInfo(
+                          label: 'ECAL',
+                          feed: feed.ecal,
+                          product: product.ecal,
+                          recovered: recovered.ecal,
+                        ),
+                        EfficiencyMaterialInfo(
+                          label: 'Filme plástico',
+                          feed: feed.filmePlastico,
+                          product: product.filmePlastico,
+                          recovered: recovered.filmePlastico,
+                        ),
+                        EfficiencyMaterialInfo(
+                          label: 'PET',
+                          feed: feed.pet,
+                          product: product.pet,
+                          recovered: recovered.pet,
+                        ),
+                        EfficiencyMaterialInfo(
+                          label: 'PET óleo',
+                          feed: feed.petOleo,
+                          product: product.petOleo,
+                          recovered: recovered.petOleo,
+                        ),
+                        EfficiencyMaterialInfo(
+                          label: 'PEAD',
+                          feed: feed.pead,
+                          product: product.pead,
+                          recovered: recovered.pead,
+                        ),
+                        EfficiencyMaterialInfo(
+                          label: 'Plásticos Mistos',
+                          feed: feed.plasticosMistos,
+                          product: product.plasticosMistos,
+                          recovered: recovered.plasticosMistos,
+                        ),
+                        EfficiencyMaterialInfo(
+                          label: 'Metais Ferrosos',
+                          feed: feed.metaisFerrosos,
+                          product: product.metaisFerrosos,
+                          recovered: recovered.metaisFerrosos,
+                        ),
+                        EfficiencyMaterialInfo(
+                          label: 'Metais não Ferrosos',
+                          feed: feed.metaisNaoFerrosos,
+                          product: product.metaisNaoFerrosos,
+                          recovered: recovered.metaisNaoFerrosos,
+                        ),
+                      ],
+                      if (feed is MaterialSamplePC &&
+                          product is MaterialSamplePC &&
+                          recovered is MaterialSamplePC) ...[
+                        EfficiencyMaterialInfo(
+                          label: 'Papel',
+                          feed: feed.papel,
+                          product: product.papel,
+                          recovered: recovered.papel,
+                        ),
+                        EfficiencyMaterialInfo(
+                          label: 'Cartão',
+                          feed: feed.cartao,
+                          product: product.cartao,
+                          recovered: recovered.cartao,
+                        ),
+                        EfficiencyMaterialInfo(
+                          label: 'Jornais e Revistas',
+                          feed: feed.jornaisRevistas,
+                          product: product.jornaisRevistas,
+                          recovered: recovered.jornaisRevistas,
+                        ),
+                      ],
                       const SizedBox(height: 20),
                       Row(
                         children: [
@@ -269,60 +480,86 @@ class Results extends HookConsumerWidget {
                         ),
                       ),
                       const SizedBox(height: 15),
-                      MaterialInfo(
-                        label: 'ECAL',
-                        weight: weights.ecal,
-                        composition: compositions.ecal,
-                        recovered: recovered.ecal,
-                      ),
-                      MaterialInfo(
-                        label: 'Filme plástico',
-                        weight: weights.filmePlastico,
-                        composition: compositions.filmePlastico,
-                        recovered: recovered.filmePlastico,
-                      ),
-                      MaterialInfo(
-                        label: 'PET',
-                        weight: weights.pet,
-                        composition: compositions.pet,
-                        recovered: recovered.pet,
-                      ),
-                      MaterialInfo(
-                        label: 'PET óleo',
-                        weight: weights.petOleo,
-                        composition: compositions.petOleo,
-                        recovered: recovered.petOleo,
-                      ),
-                      MaterialInfo(
-                        label: 'PEAD',
-                        weight: weights.pead,
-                        composition: compositions.pead,
-                        recovered: recovered.pead,
-                      ),
-                      MaterialInfo(
-                        label: 'Plásticos Mistos',
-                        weight: weights.plasticosMistos,
-                        composition: compositions.plasticosMistos,
-                        recovered: recovered.plasticosMistos,
-                      ),
-                      MaterialInfo(
-                        label: 'Metais Ferrosos',
-                        weight: weights.metaisFerrosos,
-                        composition: compositions.metaisFerrosos,
-                        recovered: recovered.metaisFerrosos,
-                      ),
-                      MaterialInfo(
-                        label: 'Metais não Ferrosos',
-                        weight: weights.metaisNaoFerrosos,
-                        composition: compositions.metaisNaoFerrosos,
-                        recovered: recovered.metaisNaoFerrosos,
-                      ),
+                      if (weights is MaterialSamplePM &&
+                          compositions is MaterialSamplePM &&
+                          recovered is MaterialSamplePM) ...[
+                        MaterialInfo(
+                          label: 'ECAL',
+                          weight: weights.ecal,
+                          composition: compositions.ecal,
+                          recovered: recovered.ecal,
+                        ),
+                        MaterialInfo(
+                          label: 'Filme plástico',
+                          weight: weights.filmePlastico,
+                          composition: compositions.filmePlastico,
+                          recovered: recovered.filmePlastico,
+                        ),
+                        MaterialInfo(
+                          label: 'PET',
+                          weight: weights.pet,
+                          composition: compositions.pet,
+                          recovered: recovered.pet,
+                        ),
+                        MaterialInfo(
+                          label: 'PET óleo',
+                          weight: weights.petOleo,
+                          composition: compositions.petOleo,
+                          recovered: recovered.petOleo,
+                        ),
+                        MaterialInfo(
+                          label: 'PEAD',
+                          weight: weights.pead,
+                          composition: compositions.pead,
+                          recovered: recovered.pead,
+                        ),
+                        MaterialInfo(
+                          label: 'Plásticos Mistos',
+                          weight: weights.plasticosMistos,
+                          composition: compositions.plasticosMistos,
+                          recovered: recovered.plasticosMistos,
+                        ),
+                        MaterialInfo(
+                          label: 'Metais Ferrosos',
+                          weight: weights.metaisFerrosos,
+                          composition: compositions.metaisFerrosos,
+                          recovered: recovered.metaisFerrosos,
+                        ),
+                        MaterialInfo(
+                          label: 'Metais não Ferrosos',
+                          weight: weights.metaisNaoFerrosos,
+                          composition: compositions.metaisNaoFerrosos,
+                          recovered: recovered.metaisNaoFerrosos,
+                        ),
+                      ],
+                      if (weights is MaterialSamplePC &&
+                          compositions is MaterialSamplePC &&
+                          recovered is MaterialSamplePC) ...[
+                        MaterialInfo(
+                          label: 'Papel',
+                          weight: weights.papel,
+                          composition: compositions.papel,
+                          recovered: recovered.papel,
+                        ),
+                        MaterialInfo(
+                          label: 'Cartão',
+                          weight: weights.cartao,
+                          composition: compositions.cartao,
+                          recovered: recovered.cartao,
+                        ),
+                        MaterialInfo(
+                          label: 'Jornais e Revistas',
+                          weight: weights.jornaisRevistas,
+                          composition: compositions.jornaisRevistas,
+                          recovered: recovered.jornaisRevistas,
+                        ),
+                      ],
                       const SizedBox(height: 20),
                       MaterialInfo(
                         label: 'Não recuperáveis',
-                        weight: weights.naoRecuperaveis,
-                        composition: compositions.naoRecuperaveis,
-                        recovered: recovered.naoRecuperaveis,
+                        weight: weights!.naoRecuperaveis,
+                        composition: compositions!.naoRecuperaveis,
+                        recovered: recovered!.naoRecuperaveis,
                         labelStyle:
                             const TextStyle(fontWeight: FontWeight.bold),
                       ),

@@ -14,23 +14,84 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-MaterialSample _$MaterialSampleFromJson(Map<String, dynamic> json) {
-  return _MaterialSample.fromJson(json);
-}
-
 /// @nodoc
 mixin _$MaterialSample {
-  double get ecal => throw _privateConstructorUsedError;
-  double get filmePlastico => throw _privateConstructorUsedError;
-  double get pet => throw _privateConstructorUsedError;
-  double get petOleo => throw _privateConstructorUsedError;
-  double get pead => throw _privateConstructorUsedError;
-  double get plasticosMistos => throw _privateConstructorUsedError;
-  double get metaisFerrosos => throw _privateConstructorUsedError;
-  double get metaisNaoFerrosos => throw _privateConstructorUsedError;
   double get naoRecuperaveis => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            double ecal,
+            double filmePlastico,
+            double pet,
+            double petOleo,
+            double pead,
+            double plasticosMistos,
+            double metaisFerrosos,
+            double metaisNaoFerrosos,
+            double naoRecuperaveis)
+        pm,
+    required TResult Function(double papel, double cartao,
+            double jornaisRevistas, double naoRecuperaveis)
+        pc,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            double ecal,
+            double filmePlastico,
+            double pet,
+            double petOleo,
+            double pead,
+            double plasticosMistos,
+            double metaisFerrosos,
+            double metaisNaoFerrosos,
+            double naoRecuperaveis)?
+        pm,
+    TResult Function(double papel, double cartao, double jornaisRevistas,
+            double naoRecuperaveis)?
+        pc,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            double ecal,
+            double filmePlastico,
+            double pet,
+            double petOleo,
+            double pead,
+            double plasticosMistos,
+            double metaisFerrosos,
+            double metaisNaoFerrosos,
+            double naoRecuperaveis)?
+        pm,
+    TResult Function(double papel, double cartao, double jornaisRevistas,
+            double naoRecuperaveis)?
+        pc,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MaterialSamplePM value) pm,
+    required TResult Function(MaterialSamplePC value) pc,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MaterialSamplePM value)? pm,
+    TResult Function(MaterialSamplePC value)? pc,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MaterialSamplePM value)? pm,
+    TResult Function(MaterialSamplePC value)? pc,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MaterialSampleCopyWith<MaterialSample> get copyWith =>
       throw _privateConstructorUsedError;
@@ -41,16 +102,7 @@ abstract class $MaterialSampleCopyWith<$Res> {
   factory $MaterialSampleCopyWith(
           MaterialSample value, $Res Function(MaterialSample) then) =
       _$MaterialSampleCopyWithImpl<$Res>;
-  $Res call(
-      {double ecal,
-      double filmePlastico,
-      double pet,
-      double petOleo,
-      double pead,
-      double plasticosMistos,
-      double metaisFerrosos,
-      double metaisNaoFerrosos,
-      double naoRecuperaveis});
+  $Res call({double naoRecuperaveis});
 }
 
 /// @nodoc
@@ -64,49 +116,9 @@ class _$MaterialSampleCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? ecal = freezed,
-    Object? filmePlastico = freezed,
-    Object? pet = freezed,
-    Object? petOleo = freezed,
-    Object? pead = freezed,
-    Object? plasticosMistos = freezed,
-    Object? metaisFerrosos = freezed,
-    Object? metaisNaoFerrosos = freezed,
     Object? naoRecuperaveis = freezed,
   }) {
     return _then(_value.copyWith(
-      ecal: ecal == freezed
-          ? _value.ecal
-          : ecal // ignore: cast_nullable_to_non_nullable
-              as double,
-      filmePlastico: filmePlastico == freezed
-          ? _value.filmePlastico
-          : filmePlastico // ignore: cast_nullable_to_non_nullable
-              as double,
-      pet: pet == freezed
-          ? _value.pet
-          : pet // ignore: cast_nullable_to_non_nullable
-              as double,
-      petOleo: petOleo == freezed
-          ? _value.petOleo
-          : petOleo // ignore: cast_nullable_to_non_nullable
-              as double,
-      pead: pead == freezed
-          ? _value.pead
-          : pead // ignore: cast_nullable_to_non_nullable
-              as double,
-      plasticosMistos: plasticosMistos == freezed
-          ? _value.plasticosMistos
-          : plasticosMistos // ignore: cast_nullable_to_non_nullable
-              as double,
-      metaisFerrosos: metaisFerrosos == freezed
-          ? _value.metaisFerrosos
-          : metaisFerrosos // ignore: cast_nullable_to_non_nullable
-              as double,
-      metaisNaoFerrosos: metaisNaoFerrosos == freezed
-          ? _value.metaisNaoFerrosos
-          : metaisNaoFerrosos // ignore: cast_nullable_to_non_nullable
-              as double,
       naoRecuperaveis: naoRecuperaveis == freezed
           ? _value.naoRecuperaveis
           : naoRecuperaveis // ignore: cast_nullable_to_non_nullable
@@ -116,11 +128,11 @@ class _$MaterialSampleCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_MaterialSampleCopyWith<$Res>
+abstract class _$$MaterialSamplePMCopyWith<$Res>
     implements $MaterialSampleCopyWith<$Res> {
-  factory _$$_MaterialSampleCopyWith(
-          _$_MaterialSample value, $Res Function(_$_MaterialSample) then) =
-      __$$_MaterialSampleCopyWithImpl<$Res>;
+  factory _$$MaterialSamplePMCopyWith(
+          _$MaterialSamplePM value, $Res Function(_$MaterialSamplePM) then) =
+      __$$MaterialSamplePMCopyWithImpl<$Res>;
   @override
   $Res call(
       {double ecal,
@@ -135,15 +147,15 @@ abstract class _$$_MaterialSampleCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MaterialSampleCopyWithImpl<$Res>
+class __$$MaterialSamplePMCopyWithImpl<$Res>
     extends _$MaterialSampleCopyWithImpl<$Res>
-    implements _$$_MaterialSampleCopyWith<$Res> {
-  __$$_MaterialSampleCopyWithImpl(
-      _$_MaterialSample _value, $Res Function(_$_MaterialSample) _then)
-      : super(_value, (v) => _then(v as _$_MaterialSample));
+    implements _$$MaterialSamplePMCopyWith<$Res> {
+  __$$MaterialSamplePMCopyWithImpl(
+      _$MaterialSamplePM _value, $Res Function(_$MaterialSamplePM) _then)
+      : super(_value, (v) => _then(v as _$MaterialSamplePM));
 
   @override
-  _$_MaterialSample get _value => super._value as _$_MaterialSample;
+  _$MaterialSamplePM get _value => super._value as _$MaterialSamplePM;
 
   @override
   $Res call({
@@ -157,7 +169,7 @@ class __$$_MaterialSampleCopyWithImpl<$Res>
     Object? metaisNaoFerrosos = freezed,
     Object? naoRecuperaveis = freezed,
   }) {
-    return _then(_$_MaterialSample(
+    return _then(_$MaterialSamplePM(
       ecal: ecal == freezed
           ? _value.ecal
           : ecal // ignore: cast_nullable_to_non_nullable
@@ -199,9 +211,9 @@ class __$$_MaterialSampleCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_MaterialSample extends _MaterialSample {
-  const _$_MaterialSample(
+
+class _$MaterialSamplePM extends MaterialSamplePM {
+  const _$MaterialSamplePM(
       {this.ecal = 0,
       this.filmePlastico = 0,
       this.pet = 0,
@@ -212,9 +224,6 @@ class _$_MaterialSample extends _MaterialSample {
       this.metaisNaoFerrosos = 0,
       this.naoRecuperaveis = 0})
       : super._();
-
-  factory _$_MaterialSample.fromJson(Map<String, dynamic> json) =>
-      _$$_MaterialSampleFromJson(json);
 
   @override
   @JsonKey()
@@ -246,14 +255,14 @@ class _$_MaterialSample extends _MaterialSample {
 
   @override
   String toString() {
-    return 'MaterialSample(ecal: $ecal, filmePlastico: $filmePlastico, pet: $pet, petOleo: $petOleo, pead: $pead, plasticosMistos: $plasticosMistos, metaisFerrosos: $metaisFerrosos, metaisNaoFerrosos: $metaisNaoFerrosos, naoRecuperaveis: $naoRecuperaveis)';
+    return 'MaterialSample.pm(ecal: $ecal, filmePlastico: $filmePlastico, pet: $pet, petOleo: $petOleo, pead: $pead, plasticosMistos: $plasticosMistos, metaisFerrosos: $metaisFerrosos, metaisNaoFerrosos: $metaisNaoFerrosos, naoRecuperaveis: $naoRecuperaveis)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MaterialSample &&
+            other is _$MaterialSamplePM &&
             const DeepCollectionEquality().equals(other.ecal, ecal) &&
             const DeepCollectionEquality()
                 .equals(other.filmePlastico, filmePlastico) &&
@@ -270,7 +279,6 @@ class _$_MaterialSample extends _MaterialSample {
                 .equals(other.naoRecuperaveis, naoRecuperaveis));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -286,17 +294,113 @@ class _$_MaterialSample extends _MaterialSample {
 
   @JsonKey(ignore: true)
   @override
-  _$$_MaterialSampleCopyWith<_$_MaterialSample> get copyWith =>
-      __$$_MaterialSampleCopyWithImpl<_$_MaterialSample>(this, _$identity);
+  _$$MaterialSamplePMCopyWith<_$MaterialSamplePM> get copyWith =>
+      __$$MaterialSamplePMCopyWithImpl<_$MaterialSamplePM>(this, _$identity);
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$_MaterialSampleToJson(this);
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            double ecal,
+            double filmePlastico,
+            double pet,
+            double petOleo,
+            double pead,
+            double plasticosMistos,
+            double metaisFerrosos,
+            double metaisNaoFerrosos,
+            double naoRecuperaveis)
+        pm,
+    required TResult Function(double papel, double cartao,
+            double jornaisRevistas, double naoRecuperaveis)
+        pc,
+  }) {
+    return pm(ecal, filmePlastico, pet, petOleo, pead, plasticosMistos,
+        metaisFerrosos, metaisNaoFerrosos, naoRecuperaveis);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            double ecal,
+            double filmePlastico,
+            double pet,
+            double petOleo,
+            double pead,
+            double plasticosMistos,
+            double metaisFerrosos,
+            double metaisNaoFerrosos,
+            double naoRecuperaveis)?
+        pm,
+    TResult Function(double papel, double cartao, double jornaisRevistas,
+            double naoRecuperaveis)?
+        pc,
+  }) {
+    return pm?.call(ecal, filmePlastico, pet, petOleo, pead, plasticosMistos,
+        metaisFerrosos, metaisNaoFerrosos, naoRecuperaveis);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            double ecal,
+            double filmePlastico,
+            double pet,
+            double petOleo,
+            double pead,
+            double plasticosMistos,
+            double metaisFerrosos,
+            double metaisNaoFerrosos,
+            double naoRecuperaveis)?
+        pm,
+    TResult Function(double papel, double cartao, double jornaisRevistas,
+            double naoRecuperaveis)?
+        pc,
+    required TResult orElse(),
+  }) {
+    if (pm != null) {
+      return pm(ecal, filmePlastico, pet, petOleo, pead, plasticosMistos,
+          metaisFerrosos, metaisNaoFerrosos, naoRecuperaveis);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MaterialSamplePM value) pm,
+    required TResult Function(MaterialSamplePC value) pc,
+  }) {
+    return pm(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MaterialSamplePM value)? pm,
+    TResult Function(MaterialSamplePC value)? pc,
+  }) {
+    return pm?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MaterialSamplePM value)? pm,
+    TResult Function(MaterialSamplePC value)? pc,
+    required TResult orElse(),
+  }) {
+    if (pm != null) {
+      return pm(this);
+    }
+    return orElse();
   }
 }
 
-abstract class _MaterialSample extends MaterialSample {
-  const factory _MaterialSample(
+abstract class MaterialSamplePM extends MaterialSample {
+  const factory MaterialSamplePM(
       {final double ecal,
       final double filmePlastico,
       final double pet,
@@ -305,32 +409,246 @@ abstract class _MaterialSample extends MaterialSample {
       final double plasticosMistos,
       final double metaisFerrosos,
       final double metaisNaoFerrosos,
-      final double naoRecuperaveis}) = _$_MaterialSample;
-  const _MaterialSample._() : super._();
+      final double naoRecuperaveis}) = _$MaterialSamplePM;
+  const MaterialSamplePM._() : super._();
 
-  factory _MaterialSample.fromJson(Map<String, dynamic> json) =
-      _$_MaterialSample.fromJson;
-
-  @override
   double get ecal => throw _privateConstructorUsedError;
-  @override
   double get filmePlastico => throw _privateConstructorUsedError;
-  @override
   double get pet => throw _privateConstructorUsedError;
-  @override
   double get petOleo => throw _privateConstructorUsedError;
-  @override
   double get pead => throw _privateConstructorUsedError;
-  @override
   double get plasticosMistos => throw _privateConstructorUsedError;
-  @override
   double get metaisFerrosos => throw _privateConstructorUsedError;
-  @override
   double get metaisNaoFerrosos => throw _privateConstructorUsedError;
   @override
   double get naoRecuperaveis => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_MaterialSampleCopyWith<_$_MaterialSample> get copyWith =>
+  _$$MaterialSamplePMCopyWith<_$MaterialSamplePM> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MaterialSamplePCCopyWith<$Res>
+    implements $MaterialSampleCopyWith<$Res> {
+  factory _$$MaterialSamplePCCopyWith(
+          _$MaterialSamplePC value, $Res Function(_$MaterialSamplePC) then) =
+      __$$MaterialSamplePCCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {double papel,
+      double cartao,
+      double jornaisRevistas,
+      double naoRecuperaveis});
+}
+
+/// @nodoc
+class __$$MaterialSamplePCCopyWithImpl<$Res>
+    extends _$MaterialSampleCopyWithImpl<$Res>
+    implements _$$MaterialSamplePCCopyWith<$Res> {
+  __$$MaterialSamplePCCopyWithImpl(
+      _$MaterialSamplePC _value, $Res Function(_$MaterialSamplePC) _then)
+      : super(_value, (v) => _then(v as _$MaterialSamplePC));
+
+  @override
+  _$MaterialSamplePC get _value => super._value as _$MaterialSamplePC;
+
+  @override
+  $Res call({
+    Object? papel = freezed,
+    Object? cartao = freezed,
+    Object? jornaisRevistas = freezed,
+    Object? naoRecuperaveis = freezed,
+  }) {
+    return _then(_$MaterialSamplePC(
+      papel: papel == freezed
+          ? _value.papel
+          : papel // ignore: cast_nullable_to_non_nullable
+              as double,
+      cartao: cartao == freezed
+          ? _value.cartao
+          : cartao // ignore: cast_nullable_to_non_nullable
+              as double,
+      jornaisRevistas: jornaisRevistas == freezed
+          ? _value.jornaisRevistas
+          : jornaisRevistas // ignore: cast_nullable_to_non_nullable
+              as double,
+      naoRecuperaveis: naoRecuperaveis == freezed
+          ? _value.naoRecuperaveis
+          : naoRecuperaveis // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MaterialSamplePC extends MaterialSamplePC {
+  const _$MaterialSamplePC(
+      {this.papel = 0,
+      this.cartao = 0,
+      this.jornaisRevistas = 0,
+      this.naoRecuperaveis = 0})
+      : super._();
+
+  @override
+  @JsonKey()
+  final double papel;
+  @override
+  @JsonKey()
+  final double cartao;
+  @override
+  @JsonKey()
+  final double jornaisRevistas;
+  @override
+  @JsonKey()
+  final double naoRecuperaveis;
+
+  @override
+  String toString() {
+    return 'MaterialSample.pc(papel: $papel, cartao: $cartao, jornaisRevistas: $jornaisRevistas, naoRecuperaveis: $naoRecuperaveis)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MaterialSamplePC &&
+            const DeepCollectionEquality().equals(other.papel, papel) &&
+            const DeepCollectionEquality().equals(other.cartao, cartao) &&
+            const DeepCollectionEquality()
+                .equals(other.jornaisRevistas, jornaisRevistas) &&
+            const DeepCollectionEquality()
+                .equals(other.naoRecuperaveis, naoRecuperaveis));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(papel),
+      const DeepCollectionEquality().hash(cartao),
+      const DeepCollectionEquality().hash(jornaisRevistas),
+      const DeepCollectionEquality().hash(naoRecuperaveis));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$MaterialSamplePCCopyWith<_$MaterialSamplePC> get copyWith =>
+      __$$MaterialSamplePCCopyWithImpl<_$MaterialSamplePC>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            double ecal,
+            double filmePlastico,
+            double pet,
+            double petOleo,
+            double pead,
+            double plasticosMistos,
+            double metaisFerrosos,
+            double metaisNaoFerrosos,
+            double naoRecuperaveis)
+        pm,
+    required TResult Function(double papel, double cartao,
+            double jornaisRevistas, double naoRecuperaveis)
+        pc,
+  }) {
+    return pc(papel, cartao, jornaisRevistas, naoRecuperaveis);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            double ecal,
+            double filmePlastico,
+            double pet,
+            double petOleo,
+            double pead,
+            double plasticosMistos,
+            double metaisFerrosos,
+            double metaisNaoFerrosos,
+            double naoRecuperaveis)?
+        pm,
+    TResult Function(double papel, double cartao, double jornaisRevistas,
+            double naoRecuperaveis)?
+        pc,
+  }) {
+    return pc?.call(papel, cartao, jornaisRevistas, naoRecuperaveis);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            double ecal,
+            double filmePlastico,
+            double pet,
+            double petOleo,
+            double pead,
+            double plasticosMistos,
+            double metaisFerrosos,
+            double metaisNaoFerrosos,
+            double naoRecuperaveis)?
+        pm,
+    TResult Function(double papel, double cartao, double jornaisRevistas,
+            double naoRecuperaveis)?
+        pc,
+    required TResult orElse(),
+  }) {
+    if (pc != null) {
+      return pc(papel, cartao, jornaisRevistas, naoRecuperaveis);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MaterialSamplePM value) pm,
+    required TResult Function(MaterialSamplePC value) pc,
+  }) {
+    return pc(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MaterialSamplePM value)? pm,
+    TResult Function(MaterialSamplePC value)? pc,
+  }) {
+    return pc?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MaterialSamplePM value)? pm,
+    TResult Function(MaterialSamplePC value)? pc,
+    required TResult orElse(),
+  }) {
+    if (pc != null) {
+      return pc(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MaterialSamplePC extends MaterialSample {
+  const factory MaterialSamplePC(
+      {final double papel,
+      final double cartao,
+      final double jornaisRevistas,
+      final double naoRecuperaveis}) = _$MaterialSamplePC;
+  const MaterialSamplePC._() : super._();
+
+  double get papel => throw _privateConstructorUsedError;
+  double get cartao => throw _privateConstructorUsedError;
+  double get jornaisRevistas => throw _privateConstructorUsedError;
+  @override
+  double get naoRecuperaveis => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$MaterialSamplePCCopyWith<_$MaterialSamplePC> get copyWith =>
       throw _privateConstructorUsedError;
 }
