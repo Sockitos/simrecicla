@@ -7,6 +7,7 @@ import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/machine_port.dart';
 import 'package:simtech/models/material_sample.dart';
 import 'package:simtech/ui/screens/recycler/components/material_info.dart';
+import 'package:simtech/ui/screens/recycler/components/output_indicator.dart';
 import 'package:simtech/ui/screens/recycler/grid_screen_notifier.dart';
 import 'package:simtech/ui/widgets/my_card.dart';
 
@@ -50,7 +51,7 @@ class MachineIOInfo extends HookConsumerWidget {
                           machine.name,
                           style: AppTextStyles.h5(context.layout),
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: 15),
                         DecoratedBox(
                           decoration: BoxDecoration(
                             border: Border.all(width: 2),
@@ -87,8 +88,12 @@ class MachineIOInfo extends HookConsumerWidget {
                                   const EdgeInsets.symmetric(horizontal: 30),
                               textStyle: showInput.value
                                   ? AppTextStyles.dropdown(context.layout)
-                                      .copyWith(fontWeight: FontWeight.bold)
-                                  : AppTextStyles.dropdown(context.layout),
+                                      .copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      height: 1,
+                                    )
+                                  : AppTextStyles.dropdown(context.layout)
+                                      .copyWith(height: 1),
                             ),
                             child: const Text('Input'),
                           ),
@@ -120,10 +125,24 @@ class MachineIOInfo extends HookConsumerWidget {
                                     const EdgeInsets.symmetric(horizontal: 30),
                                 textStyle: selectedOutput.value == output.id
                                     ? AppTextStyles.dropdown(context.layout)
-                                        .copyWith(fontWeight: FontWeight.bold)
-                                    : AppTextStyles.dropdown(context.layout),
+                                        .copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        height: 1,
+                                      )
+                                    : AppTextStyles.dropdown(context.layout)
+                                        .copyWith(height: 1),
                               ),
-                              child: const Text('Output'),
+                              child: Row(
+                                children: [
+                                  const Text('Output'),
+                                  const SizedBox(width: 8),
+                                  OutputIndicator(
+                                    output: output,
+                                    width: 16,
+                                    height: 16,
+                                  ),
+                                ],
+                              ),
                             ),
                           ]
                         ],
