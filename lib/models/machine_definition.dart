@@ -104,35 +104,9 @@ class MachineDefinition with _$MachineDefinition {
             icon: icon,
             description: description,
             ports: {
-              AxisDirection.up: ports[1],
-              AxisDirection.left: ports[0],
-              AxisDirection.right: ports[2],
-            },
-          ),
-        );
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[1],
-              AxisDirection.left: ports[2],
-              AxisDirection.right: ports[0],
-            },
-          ),
-        );
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[2],
-              AxisDirection.left: ports[0],
+              AxisDirection.up: ports[0],
               AxisDirection.right: ports[1],
+              AxisDirection.down: ports[2],
             },
           ),
         );
@@ -143,98 +117,141 @@ class MachineDefinition with _$MachineDefinition {
             icon: icon,
             description: description,
             ports: {
-              AxisDirection.up: ports[2],
+              AxisDirection.up: ports[0],
               AxisDirection.left: ports[1],
-              AxisDirection.right: ports[0],
+              AxisDirection.down: ports[2],
+            },
+          ),
+        );
+        machines.add(
+          Machine(
+            id: id,
+            name: name,
+            icon: icon,
+            description: description,
+            ports: {
+              AxisDirection.up: ports[0],
+              AxisDirection.right: ports[2],
+              AxisDirection.down: ports[1],
+            },
+          ),
+        );
+        machines.add(
+          Machine(
+            id: id,
+            name: name,
+            icon: icon,
+            description: description,
+            ports: {
+              AxisDirection.up: ports[0],
+              AxisDirection.left: ports[2],
+              AxisDirection.down: ports[1],
             },
           ),
         );
         break;
       case 4:
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[0],
-              AxisDirection.left: ports[1],
-              AxisDirection.right: ports[2],
-              AxisDirection.down: ports[3],
-            },
-          ),
-        );
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[0],
-              AxisDirection.left: ports[1],
-              AxisDirection.right: ports[3],
-              AxisDirection.down: ports[2],
-            },
-          ),
-        );
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[0],
-              AxisDirection.left: ports[2],
-              AxisDirection.right: ports[1],
-              AxisDirection.down: ports[3],
-            },
-          ),
-        );
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[0],
-              AxisDirection.left: ports[2],
-              AxisDirection.right: ports[3],
-              AxisDirection.down: ports[1],
-            },
-          ),
-        );
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[0],
-              AxisDirection.left: ports[3],
-              AxisDirection.right: ports[1],
-              AxisDirection.down: ports[2],
-            },
-          ),
-        );
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[0],
-              AxisDirection.left: ports[3],
-              AxisDirection.right: ports[2],
-              AxisDirection.down: ports[1],
-            },
-          ),
-        );
+        if (inputs.length == 3) {
+          machines.add(
+            Machine(
+              id: id,
+              name: name,
+              icon: icon,
+              description: description,
+              ports: {
+                AxisDirection.up: ports[0],
+                AxisDirection.left: ports[1],
+                AxisDirection.right: ports[2],
+                AxisDirection.down: ports[3],
+              },
+            ),
+          );
+        } else {
+          machines.add(
+            Machine(
+              id: id,
+              name: name,
+              icon: icon,
+              description: description,
+              ports: {
+                AxisDirection.up: ports[0],
+                AxisDirection.left: ports[1],
+                AxisDirection.right: ports[2],
+                AxisDirection.down: ports[3],
+              },
+            ),
+          );
+          machines.add(
+            Machine(
+              id: id,
+              name: name,
+              icon: icon,
+              description: description,
+              ports: {
+                AxisDirection.up: ports[0],
+                AxisDirection.left: ports[1],
+                AxisDirection.right: ports[3],
+                AxisDirection.down: ports[2],
+              },
+            ),
+          );
+          machines.add(
+            Machine(
+              id: id,
+              name: name,
+              icon: icon,
+              description: description,
+              ports: {
+                AxisDirection.up: ports[0],
+                AxisDirection.left: ports[2],
+                AxisDirection.right: ports[1],
+                AxisDirection.down: ports[3],
+              },
+            ),
+          );
+          machines.add(
+            Machine(
+              id: id,
+              name: name,
+              icon: icon,
+              description: description,
+              ports: {
+                AxisDirection.up: ports[0],
+                AxisDirection.left: ports[2],
+                AxisDirection.right: ports[3],
+                AxisDirection.down: ports[1],
+              },
+            ),
+          );
+          machines.add(
+            Machine(
+              id: id,
+              name: name,
+              icon: icon,
+              description: description,
+              ports: {
+                AxisDirection.up: ports[0],
+                AxisDirection.left: ports[3],
+                AxisDirection.right: ports[1],
+                AxisDirection.down: ports[2],
+              },
+            ),
+          );
+          machines.add(
+            Machine(
+              id: id,
+              name: name,
+              icon: icon,
+              description: description,
+              ports: {
+                AxisDirection.up: ports[0],
+                AxisDirection.left: ports[3],
+                AxisDirection.right: ports[2],
+                AxisDirection.down: ports[1],
+              },
+            ),
+          );
+        }
         break;
       default:
         throw Exception();
