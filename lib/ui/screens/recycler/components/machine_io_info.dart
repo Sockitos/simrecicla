@@ -66,47 +66,16 @@ class MachineIOInfo extends HookConsumerWidget {
                       ],
                     ),
                     const SizedBox(height: 30),
-                    Row(
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            selectedOutput.value = null;
-                            showInput.value = true;
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: showInput.value
-                                ? AppColors.grey3
-                                : AppColors.grey1,
-                            onPrimary: AppColors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                            fixedSize: const Size.fromHeight(48),
-                            padding: const EdgeInsets.symmetric(horizontal: 30),
-                            textStyle: showInput.value
-                                ? AppTextStyles.dropdown(context.layout)
-                                    .copyWith(fontWeight: FontWeight.bold)
-                                : AppTextStyles.dropdown(context.layout),
-                          ),
-                          child: const Text('Input'),
-                        ),
-                        const SizedBox(width: 15),
-                        const SizedBox(
-                          height: 40,
-                          child: VerticalDivider(
-                            color: AppColors.grey4,
-                            thickness: 1,
-                          ),
-                        ),
-                        for (final output in machine.outputs) ...[
-                          const SizedBox(width: 15),
+                    if (machine.outputs.isNotEmpty) ...[
+                      Row(
+                        children: [
                           ElevatedButton(
                             onPressed: () {
-                              selectedOutput.value = output.id;
-                              showInput.value = false;
+                              selectedOutput.value = null;
+                              showInput.value = true;
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: selectedOutput.value == output.id
+                              primary: showInput.value
                                   ? AppColors.grey3
                                   : AppColors.grey1,
                               onPrimary: AppColors.black,
@@ -116,17 +85,51 @@ class MachineIOInfo extends HookConsumerWidget {
                               fixedSize: const Size.fromHeight(48),
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 30),
-                              textStyle: selectedOutput.value == output.id
+                              textStyle: showInput.value
                                   ? AppTextStyles.dropdown(context.layout)
                                       .copyWith(fontWeight: FontWeight.bold)
                                   : AppTextStyles.dropdown(context.layout),
                             ),
-                            child: const Text('Output'),
+                            child: const Text('Input'),
                           ),
-                        ]
-                      ],
-                    ),
-                    const SizedBox(height: 25),
+                          const SizedBox(width: 15),
+                          const SizedBox(
+                            height: 40,
+                            child: VerticalDivider(
+                              color: AppColors.grey4,
+                              thickness: 1,
+                            ),
+                          ),
+                          for (final output in machine.outputs) ...[
+                            const SizedBox(width: 15),
+                            ElevatedButton(
+                              onPressed: () {
+                                selectedOutput.value = output.id;
+                                showInput.value = false;
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: selectedOutput.value == output.id
+                                    ? AppColors.grey3
+                                    : AppColors.grey1,
+                                onPrimary: AppColors.black,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                fixedSize: const Size.fromHeight(48),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 30),
+                                textStyle: selectedOutput.value == output.id
+                                    ? AppTextStyles.dropdown(context.layout)
+                                        .copyWith(fontWeight: FontWeight.bold)
+                                    : AppTextStyles.dropdown(context.layout),
+                              ),
+                              child: const Text('Output'),
+                            ),
+                          ]
+                        ],
+                      ),
+                      const SizedBox(height: 25),
+                    ],
                     DefaultTextStyle.merge(
                       style: const TextStyle(fontWeight: FontWeight.bold),
                       child: Row(
