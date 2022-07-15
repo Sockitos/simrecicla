@@ -30,7 +30,7 @@ class MachineIOInfo extends HookConsumerWidget {
 
     final weights = showInput.value ? inputWeights : outputWeights!;
     final compositions = weights.divAll(weights.sum());
-    final recovered = weights / state.feedSample.mulAll(state.feedWeight);
+    final recovered = weights / inputWeights;
     return MyCard(
       child: Stack(
         children: [
@@ -101,31 +101,32 @@ class MachineIOInfo extends HookConsumerWidget {
                     DefaultTextStyle.merge(
                       style: const TextStyle(fontWeight: FontWeight.bold),
                       child: Row(
-                        children: const [
-                          Expanded(
+                        children: [
+                          const Expanded(
                             flex: 2,
                             child: Text(
                               'Materiais',
                             ),
                           ),
-                          Expanded(
+                          const Expanded(
                             child: Text(
                               'Massa',
                               textAlign: TextAlign.center,
                             ),
                           ),
-                          Expanded(
+                          const Expanded(
                             child: Text(
                               'Composição',
                               textAlign: TextAlign.center,
                             ),
                           ),
-                          Expanded(
-                            child: Text(
-                              'Recuperação',
-                              textAlign: TextAlign.center,
+                          if (!showInput.value)
+                            const Expanded(
+                              child: Text(
+                                'Recuperação',
+                                textAlign: TextAlign.center,
+                              ),
                             ),
-                          ),
                         ],
                       ),
                     ),
@@ -137,49 +138,54 @@ class MachineIOInfo extends HookConsumerWidget {
                         label: 'ECAL',
                         weight: weights.ecal,
                         composition: compositions.ecal,
-                        recovered: recovered.ecal,
+                        recovered: showInput.value ? null : recovered.ecal,
                       ),
                       MaterialInfo(
                         label: 'Filme plástico',
                         weight: weights.filmePlastico,
                         composition: compositions.filmePlastico,
-                        recovered: recovered.filmePlastico,
+                        recovered:
+                            showInput.value ? null : recovered.filmePlastico,
                       ),
                       MaterialInfo(
                         label: 'PET',
                         weight: weights.pet,
                         composition: compositions.pet,
-                        recovered: recovered.pet,
+                        recovered: showInput.value ? null : recovered.pet,
                       ),
                       MaterialInfo(
                         label: 'PET óleo',
                         weight: weights.petOleo,
                         composition: compositions.petOleo,
-                        recovered: recovered.petOleo,
+                        recovered: showInput.value ? null : recovered.petOleo,
                       ),
                       MaterialInfo(
                         label: 'PEAD',
                         weight: weights.pead,
                         composition: compositions.pead,
-                        recovered: recovered.pead,
+                        recovered: showInput.value ? null : recovered.pead,
                       ),
                       MaterialInfo(
                         label: 'Plásticos Mistos',
                         weight: weights.plasticosMistos,
                         composition: compositions.plasticosMistos,
-                        recovered: recovered.plasticosMistos,
+                        recovered:
+                            showInput.value ? null : recovered.plasticosMistos,
                       ),
                       MaterialInfo(
                         label: 'Metais Ferrosos',
                         weight: weights.metaisFerrosos,
                         composition: compositions.metaisFerrosos,
-                        recovered: recovered.metaisFerrosos,
+                        recovered:
+                            showInput.value ? null : recovered.metaisFerrosos,
                       ),
                       MaterialInfo(
                         label: 'Metais não Ferrosos',
                         weight: weights.metaisNaoFerrosos,
                         composition: compositions.metaisNaoFerrosos,
-                        recovered: recovered.metaisNaoFerrosos,
+                        recovered: showInput.value
+                            ? null
+                            : recovered.metaisNaoFerrosos,
                       ),
                     ],
                     if (weights is MaterialSamplePC &&
@@ -189,19 +195,20 @@ class MachineIOInfo extends HookConsumerWidget {
                         label: 'Papel',
                         weight: weights.papel,
                         composition: compositions.papel,
-                        recovered: recovered.papel,
+                        recovered: showInput.value ? null : recovered.papel,
                       ),
                       MaterialInfo(
                         label: 'Cartão',
                         weight: weights.cartao,
                         composition: compositions.cartao,
-                        recovered: recovered.cartao,
+                        recovered: showInput.value ? null : recovered.cartao,
                       ),
                       MaterialInfo(
                         label: 'Jornais e Revistas',
                         weight: weights.jornaisRevistas,
                         composition: compositions.jornaisRevistas,
-                        recovered: recovered.jornaisRevistas,
+                        recovered:
+                            showInput.value ? null : recovered.jornaisRevistas,
                       ),
                     ],
                     const SizedBox(height: 20),
@@ -209,7 +216,8 @@ class MachineIOInfo extends HookConsumerWidget {
                       label: 'Não recuperáveis',
                       weight: weights.naoRecuperaveis,
                       composition: compositions.naoRecuperaveis,
-                      recovered: recovered.naoRecuperaveis,
+                      recovered:
+                          showInput.value ? null : recovered.naoRecuperaveis,
                       labelStyle: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 20),
