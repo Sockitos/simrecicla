@@ -174,25 +174,33 @@ class Results extends HookConsumerWidget {
                                               useIsMinScrolled(
                                             scrollController,
                                           );
-                                          return IconButton(
-                                            onPressed: isMinScrolled
-                                                ? null
-                                                : () {
-                                                    scrollController.animateTo(
-                                                      scrollController.offset -
-                                                          100,
-                                                      duration: const Duration(
-                                                        milliseconds: 250,
-                                                      ),
-                                                      curve: Curves.linear,
-                                                    );
-                                                  },
-                                            iconSize: 30,
-                                            splashRadius: 30,
-                                            color: AppColors.lightGreen,
-                                            icon: const Icon(
-                                              Icons
-                                                  .keyboard_double_arrow_left_rounded,
+                                          return Padding(
+                                            padding: const EdgeInsets.only(
+                                              right: 15,
+                                            ),
+                                            child: IconButton(
+                                              onPressed: isMinScrolled
+                                                  ? null
+                                                  : () {
+                                                      scrollController
+                                                          .animateTo(
+                                                        scrollController
+                                                                .offset -
+                                                            100,
+                                                        duration:
+                                                            const Duration(
+                                                          milliseconds: 250,
+                                                        ),
+                                                        curve: Curves.linear,
+                                                      );
+                                                    },
+                                              iconSize: 30,
+                                              splashRadius: 30,
+                                              color: AppColors.lightGreen,
+                                              icon: const Icon(
+                                                Icons
+                                                    .keyboard_double_arrow_left_rounded,
+                                              ),
                                             ),
                                           );
                                         },
@@ -200,7 +208,6 @@ class Results extends HookConsumerWidget {
                                     : const SizedBox();
                               },
                             ),
-                            const SizedBox(width: 15),
                             Expanded(
                               child: SizedBox(
                                 height: 50,
@@ -234,10 +241,11 @@ class Results extends HookConsumerWidget {
                                                   context.layout,
                                                 ).copyWith(
                                                   fontWeight: FontWeight.bold,
+                                                  height: 1,
                                                 )
                                               : AppTextStyles.dropdown(
                                                   context.layout,
-                                                ),
+                                                ).copyWith(height: 1),
                                         ),
                                         child: const Text('Produto'),
                                       ),
@@ -258,25 +266,33 @@ class Results extends HookConsumerWidget {
                                               useIsMaxScrolled(
                                             scrollController,
                                           );
-                                          return IconButton(
-                                            onPressed: isMaxScrolled
-                                                ? null
-                                                : () {
-                                                    scrollController.animateTo(
-                                                      scrollController.offset +
-                                                          100,
-                                                      duration: const Duration(
-                                                        milliseconds: 250,
-                                                      ),
-                                                      curve: Curves.linear,
-                                                    );
-                                                  },
-                                            iconSize: 30,
-                                            splashRadius: 30,
-                                            color: AppColors.lightGreen,
-                                            icon: const Icon(
-                                              Icons
-                                                  .keyboard_double_arrow_right_rounded,
+                                          return Padding(
+                                            padding: const EdgeInsets.only(
+                                              right: 15,
+                                            ),
+                                            child: IconButton(
+                                              onPressed: isMaxScrolled
+                                                  ? null
+                                                  : () {
+                                                      scrollController
+                                                          .animateTo(
+                                                        scrollController
+                                                                .offset +
+                                                            100,
+                                                        duration:
+                                                            const Duration(
+                                                          milliseconds: 250,
+                                                        ),
+                                                        curve: Curves.linear,
+                                                      );
+                                                    },
+                                              iconSize: 30,
+                                              splashRadius: 30,
+                                              color: AppColors.lightGreen,
+                                              icon: const Icon(
+                                                Icons
+                                                    .keyboard_double_arrow_right_rounded,
+                                              ),
                                             ),
                                           );
                                         },
@@ -284,7 +300,6 @@ class Results extends HookConsumerWidget {
                                     : const SizedBox();
                               },
                             ),
-                            const SizedBox(width: 15),
                             ElevatedButton(
                               onPressed: () {
                                 selectedProduct.value = null;
@@ -303,8 +318,12 @@ class Results extends HookConsumerWidget {
                                     const EdgeInsets.symmetric(horizontal: 30),
                                 textStyle: showEfficiency.value
                                     ? AppTextStyles.dropdown(context.layout)
-                                        .copyWith(fontWeight: FontWeight.bold)
-                                    : AppTextStyles.dropdown(context.layout),
+                                        .copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        height: 1,
+                                      )
+                                    : AppTextStyles.dropdown(context.layout)
+                                        .copyWith(height: 1),
                               ),
                               child: const Text('Eficiência'),
                             ),
