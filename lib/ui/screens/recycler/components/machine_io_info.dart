@@ -46,6 +46,28 @@ class MachineIOInfo extends HookConsumerWidget {
                   children: [
                     Row(
                       children: [
+                        Text(
+                          machine.name,
+                          style: AppTextStyles.h5(context.layout),
+                        ),
+                        const SizedBox(width: 10),
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            border: Border.all(width: 2),
+                          ),
+                          child: SizedBox(
+                            height: 40,
+                            width: 40,
+                            child: Center(
+                              child: Icon(machine.icon),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 30),
+                    Row(
+                      children: [
                         ElevatedButton(
                           onPressed: () {
                             selectedOutput.value = null;
@@ -69,6 +91,13 @@ class MachineIOInfo extends HookConsumerWidget {
                           child: const Text('Input'),
                         ),
                         const SizedBox(width: 15),
+                        const SizedBox(
+                          height: 40,
+                          child: VerticalDivider(
+                            color: AppColors.grey4,
+                            thickness: 1,
+                          ),
+                        ),
                         for (final output in machine.outputs) ...[
                           const SizedBox(width: 15),
                           ElevatedButton(
@@ -97,7 +126,7 @@ class MachineIOInfo extends HookConsumerWidget {
                         ]
                       ],
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 25),
                     DefaultTextStyle.merge(
                       style: const TextStyle(fontWeight: FontWeight.bold),
                       child: Row(
