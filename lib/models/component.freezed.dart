@@ -452,7 +452,9 @@ class _$_Component extends _Component {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ComponentToJson(this);
+    return _$$_ComponentToJson(
+      this,
+    );
   }
 }
 
@@ -482,47 +484,47 @@ abstract class _Component extends Component {
       _$_Component.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get iconId => throw _privateConstructorUsedError;
+  String get iconId;
   @override
-  double? get papel => throw _privateConstructorUsedError;
+  double? get papel;
   @override
-  double? get cartao => throw _privateConstructorUsedError;
+  double? get cartao;
   @override
-  double? get ecal => throw _privateConstructorUsedError;
+  double? get ecal;
   @override
-  double? get pebd => throw _privateConstructorUsedError;
+  double? get pebd;
   @override
-  double? get pet => throw _privateConstructorUsedError;
+  double? get pet;
   @override
-  double? get pead => throw _privateConstructorUsedError;
+  double? get pead;
   @override
   @JsonKey(name: 'plasticos_mistos')
-  double? get plasticosMistos => throw _privateConstructorUsedError;
+  double? get plasticosMistos;
   @override
   @JsonKey(name: 'metais_ferrosos')
-  double? get metaisFerrosos => throw _privateConstructorUsedError;
+  double? get metaisFerrosos;
   @override
   @JsonKey(name: 'metais_nao_ferrosos')
-  double? get metaisNaoFerrosos => throw _privateConstructorUsedError;
+  double? get metaisNaoFerrosos;
   @override
-  double? get vidro => throw _privateConstructorUsedError;
+  double? get vidro;
   @override
-  double? get eps => throw _privateConstructorUsedError;
+  double? get eps;
   @override
   @JsonKey(name: 'fracao_resto')
-  double? get fracaoResto => throw _privateConstructorUsedError;
+  double? get fracaoResto;
   @override
-  Where get where => throw _privateConstructorUsedError;
+  Where get where;
   @override
   @JsonKey(name: 'if_true')
-  String get ifTrue => throw _privateConstructorUsedError;
+  String get ifTrue;
   @override
   @JsonKey(name: 'if_false')
-  String get ifFalse => throw _privateConstructorUsedError;
+  String get ifFalse;
   @override
-  String get recomendacoes => throw _privateConstructorUsedError;
+  String get recomendacoes;
   @override
   @JsonKey(ignore: true)
   _$$_ComponentCopyWith<_$_Component> get copyWith =>

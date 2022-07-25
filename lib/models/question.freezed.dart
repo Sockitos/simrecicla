@@ -224,7 +224,9 @@ class _$_Question extends _Question {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_QuestionToJson(this);
+    return _$$_QuestionToJson(
+      this,
+    );
   }
 }
 
@@ -240,15 +242,15 @@ abstract class _Question extends Question {
   factory _Question.fromJson(Map<String, dynamic> json) = _$_Question.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @override
-  String get question => throw _privateConstructorUsedError;
+  String get question;
   @override
-  List<Answer> get answers => throw _privateConstructorUsedError;
+  List<Answer> get answers;
   @override
-  QuestionRequirement? get requirement => throw _privateConstructorUsedError;
+  QuestionRequirement? get requirement;
   @override
-  String? get info => throw _privateConstructorUsedError;
+  String? get info;
   @override
   @JsonKey(ignore: true)
   _$$_QuestionCopyWith<_$_Question> get copyWith =>

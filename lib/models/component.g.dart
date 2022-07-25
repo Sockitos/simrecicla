@@ -43,7 +43,7 @@ Map<String, dynamic> _$$_ComponentToJson(_$_Component instance) =>
       'vidro': instance.vidro,
       'eps': instance.eps,
       'fracao_resto': instance.fracaoResto,
-      'where': _$WhereEnumMap[instance.where],
+      'where': _$WhereEnumMap[instance.where]!,
       'if_true': instance.ifTrue,
       'if_false': instance.ifFalse,
       'recomendacoes': instance.recomendacoes,

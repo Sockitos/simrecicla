@@ -32,6 +32,7 @@ class MachineIOInfo extends HookConsumerWidget {
     final weights = showInput.value ? inputWeights : outputWeights!;
     final compositions = weights.divAll(weights.sum());
     final recovered = weights / inputWeights;
+    final max = compositions.max();
     return MyCard(
       child: Stack(
         children: [
@@ -184,15 +185,18 @@ class MachineIOInfo extends HookConsumerWidget {
                     const SizedBox(height: 15),
                     if (weights is MaterialSamplePM &&
                         compositions is MaterialSamplePM &&
-                        recovered is MaterialSamplePM) ...[
+                        recovered is MaterialSamplePM &&
+                        max is MaterialSamplePM) ...[
                       MaterialInfo(
                         label: 'ECAL',
+                        highlight: max.ecal == 1,
                         weight: weights.ecal,
                         composition: compositions.ecal,
                         recovered: showInput.value ? null : recovered.ecal,
                       ),
                       MaterialInfo(
                         label: 'Filme plástico',
+                        highlight: max.filmePlastico == 1,
                         weight: weights.filmePlastico,
                         composition: compositions.filmePlastico,
                         recovered:
@@ -200,24 +204,28 @@ class MachineIOInfo extends HookConsumerWidget {
                       ),
                       MaterialInfo(
                         label: 'PET',
+                        highlight: max.pet == 1,
                         weight: weights.pet,
                         composition: compositions.pet,
                         recovered: showInput.value ? null : recovered.pet,
                       ),
                       MaterialInfo(
                         label: 'PET óleo',
+                        highlight: max.petOleo == 1,
                         weight: weights.petOleo,
                         composition: compositions.petOleo,
                         recovered: showInput.value ? null : recovered.petOleo,
                       ),
                       MaterialInfo(
                         label: 'PEAD',
+                        highlight: max.pead == 1,
                         weight: weights.pead,
                         composition: compositions.pead,
                         recovered: showInput.value ? null : recovered.pead,
                       ),
                       MaterialInfo(
                         label: 'Plásticos Mistos',
+                        highlight: max.plasticosMistos == 1,
                         weight: weights.plasticosMistos,
                         composition: compositions.plasticosMistos,
                         recovered:
@@ -225,6 +233,7 @@ class MachineIOInfo extends HookConsumerWidget {
                       ),
                       MaterialInfo(
                         label: 'Metais Ferrosos',
+                        highlight: max.metaisFerrosos == 1,
                         weight: weights.metaisFerrosos,
                         composition: compositions.metaisFerrosos,
                         recovered:
@@ -232,6 +241,7 @@ class MachineIOInfo extends HookConsumerWidget {
                       ),
                       MaterialInfo(
                         label: 'Metais não Ferrosos',
+                        highlight: max.metaisNaoFerrosos == 1,
                         weight: weights.metaisNaoFerrosos,
                         composition: compositions.metaisNaoFerrosos,
                         recovered: showInput.value
@@ -241,21 +251,25 @@ class MachineIOInfo extends HookConsumerWidget {
                     ],
                     if (weights is MaterialSamplePC &&
                         compositions is MaterialSamplePC &&
-                        recovered is MaterialSamplePC) ...[
+                        recovered is MaterialSamplePC &&
+                        max is MaterialSamplePC) ...[
                       MaterialInfo(
                         label: 'Papel',
+                        highlight: max.papel == 1,
                         weight: weights.papel,
                         composition: compositions.papel,
                         recovered: showInput.value ? null : recovered.papel,
                       ),
                       MaterialInfo(
                         label: 'Cartão',
+                        highlight: max.cartao == 1,
                         weight: weights.cartao,
                         composition: compositions.cartao,
                         recovered: showInput.value ? null : recovered.cartao,
                       ),
                       MaterialInfo(
                         label: 'Jornais e Revistas',
+                        highlight: max.jornaisRevistas == 1,
                         weight: weights.jornaisRevistas,
                         composition: compositions.jornaisRevistas,
                         recovered:
@@ -265,6 +279,7 @@ class MachineIOInfo extends HookConsumerWidget {
                     const SizedBox(height: 20),
                     MaterialInfo(
                       label: 'Não recuperáveis',
+                      highlight: max.naoRecuperaveis == 1,
                       weight: weights.naoRecuperaveis,
                       composition: compositions.naoRecuperaveis,
                       recovered:

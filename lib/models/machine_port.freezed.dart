@@ -232,7 +232,7 @@ abstract class MachineInput implements MachinePort {
   const factory MachineInput({required final String id}) = _$MachineInput;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
   @JsonKey(ignore: true)
   _$$MachineInputCopyWith<_$MachineInput> get copyWith =>
@@ -410,9 +410,9 @@ abstract class MachineOutput implements MachinePort {
       required final MaterialSample materialConversion}) = _$MachineOutput;
 
   @override
-  String get id => throw _privateConstructorUsedError;
-  MachineOutputType get type => throw _privateConstructorUsedError;
-  MaterialSample get materialConversion => throw _privateConstructorUsedError;
+  String get id;
+  MachineOutputType get type;
+  MaterialSample get materialConversion;
   @override
   @JsonKey(ignore: true)
   _$$MachineOutputCopyWith<_$MachineOutput> get copyWith =>
@@ -544,9 +544,9 @@ abstract class _MachineInputId implements MachineInputId {
       _$_MachineInputId;
 
   @override
-  String get machineId => throw _privateConstructorUsedError;
+  String get machineId;
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
   @JsonKey(ignore: true)
   _$$_MachineInputIdCopyWith<_$_MachineInputId> get copyWith =>
@@ -678,9 +678,9 @@ abstract class _MachineOutputId implements MachineOutputId {
       _$_MachineOutputId;
 
   @override
-  String get machineId => throw _privateConstructorUsedError;
+  String get machineId;
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
   @JsonKey(ignore: true)
   _$$_MachineOutputIdCopyWith<_$_MachineOutputId> get copyWith =>

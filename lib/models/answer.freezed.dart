@@ -504,7 +504,9 @@ class _$_Answer extends _Answer {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnswerToJson(this);
+    return _$$_AnswerToJson(
+      this,
+    );
   }
 }
 
@@ -531,36 +533,36 @@ abstract class _Answer extends Answer {
   factory _Answer.fromJson(Map<String, dynamic> json) = _$_Answer.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @override
-  String get answer => throw _privateConstructorUsedError;
+  String get answer;
   @override
-  String? get recommendation => throw _privateConstructorUsedError;
+  String? get recommendation;
   @override
-  AnswerComponent get vidro => throw _privateConstructorUsedError;
+  AnswerComponent get vidro;
   @override
-  AnswerComponent get aco => throw _privateConstructorUsedError;
+  AnswerComponent get aco;
   @override
-  AnswerComponent get aluminio => throw _privateConstructorUsedError;
+  AnswerComponent get aluminio;
   @override
-  AnswerComponent get pet => throw _privateConstructorUsedError;
+  AnswerComponent get pet;
   @override
-  AnswerComponent get pead => throw _privateConstructorUsedError;
+  AnswerComponent get pead;
   @override
-  AnswerComponent get pebd => throw _privateConstructorUsedError;
+  AnswerComponent get pebd;
   @override
-  AnswerComponent get eps => throw _privateConstructorUsedError;
+  AnswerComponent get eps;
   @override
-  AnswerComponent get pp => throw _privateConstructorUsedError;
+  AnswerComponent get pp;
   @override
   @JsonKey(name: 'outros_plasticos')
-  AnswerComponent get outrosPlasticos => throw _privateConstructorUsedError;
+  AnswerComponent get outrosPlasticos;
   @override
-  AnswerComponent get ecal => throw _privateConstructorUsedError;
+  AnswerComponent get ecal;
   @override
-  AnswerComponent get papel => throw _privateConstructorUsedError;
+  AnswerComponent get papel;
   @override
-  AnswerComponent get cartao => throw _privateConstructorUsedError;
+  AnswerComponent get cartao;
   @override
   @JsonKey(ignore: true)
   _$$_AnswerCopyWith<_$_Answer> get copyWith =>

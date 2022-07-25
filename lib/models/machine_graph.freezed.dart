@@ -201,14 +201,13 @@ abstract class _MachineGraph implements MachineGraph {
       final Map<MachineOutputId, MaterialSample> outputs}) = _$_MachineGraph;
 
   @override
-  DirectedGraph<String> get graph => throw _privateConstructorUsedError;
+  DirectedGraph<String> get graph;
   @override
-  bool get isValidated => throw _privateConstructorUsedError;
+  bool get isValidated;
   @override
-  Map<String, MaterialSample> get inputs => throw _privateConstructorUsedError;
+  Map<String, MaterialSample> get inputs;
   @override
-  Map<MachineOutputId, MaterialSample> get outputs =>
-      throw _privateConstructorUsedError;
+  Map<MachineOutputId, MaterialSample> get outputs;
   @override
   @JsonKey(ignore: true)
   _$$_MachineGraphCopyWith<_$_MachineGraph> get copyWith =>

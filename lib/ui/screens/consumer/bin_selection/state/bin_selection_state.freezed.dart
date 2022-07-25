@@ -308,7 +308,7 @@ abstract class ComponentResults implements BinSelectionState {
   const factory ComponentResults({required final String componentId}) =
       _$ComponentResults;
 
-  String get componentId => throw _privateConstructorUsedError;
+  String get componentId;
   @JsonKey(ignore: true)
   _$$ComponentResultsCopyWith<_$ComponentResults> get copyWith =>
       throw _privateConstructorUsedError;

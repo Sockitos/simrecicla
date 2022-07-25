@@ -237,17 +237,17 @@ abstract class _MachineDefinition extends MachineDefinition {
   const _MachineDefinition._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  IconData get icon => throw _privateConstructorUsedError;
+  IconData get icon;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  List<MachineInput> get inputs => throw _privateConstructorUsedError;
+  List<MachineInput> get inputs;
   @override
-  List<MachineOutput> get outputs => throw _privateConstructorUsedError;
+  List<MachineOutput> get outputs;
   @override
   @JsonKey(ignore: true)
   _$$_MachineDefinitionCopyWith<_$_MachineDefinition> get copyWith =>

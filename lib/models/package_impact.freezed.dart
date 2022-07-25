@@ -182,13 +182,13 @@ abstract class _PackageImpact extends PackageImpact {
   const _PackageImpact._() : super._();
 
   @override
-  double get producao => throw _privateConstructorUsedError;
+  double get producao;
   @override
-  double get incorporacao => throw _privateConstructorUsedError;
+  double get incorporacao;
   @override
-  double get eol => throw _privateConstructorUsedError;
+  double get eol;
   @override
-  double get impacteTotal => throw _privateConstructorUsedError;
+  double get impacteTotal;
   @override
   @JsonKey(ignore: true)
   _$$_PackageImpactCopyWith<_$_PackageImpact> get copyWith =>

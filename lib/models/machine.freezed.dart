@@ -247,20 +247,19 @@ abstract class _Machine extends Machine {
   const _Machine._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  IconData get icon => throw _privateConstructorUsedError;
+  IconData get icon;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  Map<AxisDirection, MachinePort?> get ports =>
-      throw _privateConstructorUsedError;
+  Map<AxisDirection, MachinePort?> get ports;
   @override
-  bool get isFixed => throw _privateConstructorUsedError;
+  bool get isFixed;
   @override
   @JsonKey(ignore: true)
   _$$_MachineCopyWith<_$_Machine> get copyWith =>

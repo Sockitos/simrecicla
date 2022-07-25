@@ -321,24 +321,23 @@ abstract class _GridScreenModel implements GridScreenModel {
       final bool showResults}) = _$_GridScreenModel;
 
   @override
-  Grid<Machine> get grid => throw _privateConstructorUsedError;
+  Grid<Machine> get grid;
   @override
-  Map<MachineOutputId, MachineInputId?> get connections =>
-      throw _privateConstructorUsedError;
+  Map<MachineOutputId, MachineInputId?> get connections;
   @override
-  bool get showFeedOptions => throw _privateConstructorUsedError;
+  bool get showFeedOptions;
   @override
-  bool get useDefaultFeed => throw _privateConstructorUsedError;
+  bool get useDefaultFeed;
   @override
-  double get feedWeight => throw _privateConstructorUsedError;
+  double get feedWeight;
   @override
-  MaterialSample get feedSample => throw _privateConstructorUsedError;
+  MaterialSample get feedSample;
   @override
-  String? get machineIOInfo => throw _privateConstructorUsedError;
+  String? get machineIOInfo;
   @override
-  MachineGraph get graph => throw _privateConstructorUsedError;
+  MachineGraph get graph;
   @override
-  bool get showResults => throw _privateConstructorUsedError;
+  bool get showResults;
   @override
   @JsonKey(ignore: true)
   _$$_GridScreenModelCopyWith<_$_GridScreenModel> get copyWith =>

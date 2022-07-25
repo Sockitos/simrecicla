@@ -215,6 +215,72 @@ class MaterialSample with _$MaterialSample {
     );
   }
 
+  MaterialSample max() {
+    var max = 0.0;
+    return map(
+      pm: (sample) {
+        var maxFilter = const MaterialSamplePM();
+        if (sample.ecal >= max) {
+          max = sample.ecal;
+          maxFilter = const MaterialSamplePM(ecal: 1);
+        }
+        if (sample.filmePlastico >= max) {
+          max = sample.filmePlastico;
+          maxFilter = const MaterialSamplePM(filmePlastico: 1);
+        }
+        if (sample.pet >= max) {
+          max = sample.pet;
+          maxFilter = const MaterialSamplePM(pet: 1);
+        }
+        if (sample.petOleo >= max) {
+          max = sample.petOleo;
+          maxFilter = const MaterialSamplePM(petOleo: 1);
+        }
+        if (sample.pead >= max) {
+          max = sample.pead;
+          maxFilter = const MaterialSamplePM(pead: 1);
+        }
+        if (sample.plasticosMistos >= max) {
+          max = sample.plasticosMistos;
+          maxFilter = const MaterialSamplePM(plasticosMistos: 1);
+        }
+        if (sample.metaisFerrosos >= max) {
+          max = sample.metaisFerrosos;
+          maxFilter = const MaterialSamplePM(metaisFerrosos: 1);
+        }
+        if (sample.metaisNaoFerrosos >= max) {
+          max = sample.metaisNaoFerrosos;
+          maxFilter = const MaterialSamplePM(metaisNaoFerrosos: 1);
+        }
+        if (sample.naoRecuperaveis >= max) {
+          max = sample.naoRecuperaveis;
+          maxFilter = const MaterialSamplePM(naoRecuperaveis: 1);
+        }
+        return maxFilter;
+      },
+      pc: (sample) {
+        var maxFilter = const MaterialSamplePC();
+        if (sample.papel >= max) {
+          max = sample.papel;
+          maxFilter = const MaterialSamplePC(papel: 1);
+        }
+        if (sample.cartao >= max) {
+          max = sample.cartao;
+          maxFilter = const MaterialSamplePC(cartao: 1);
+        }
+        if (sample.jornaisRevistas >= max) {
+          max = sample.jornaisRevistas;
+          maxFilter = const MaterialSamplePC(jornaisRevistas: 1);
+        }
+        if (sample.naoRecuperaveis >= max) {
+          max = sample.naoRecuperaveis;
+          maxFilter = const MaterialSamplePC(naoRecuperaveis: 1);
+        }
+        return maxFilter;
+      },
+    );
+  }
+
   MaterialSample filterByValue(double value) {
     var hasCandidate = false;
     return map(

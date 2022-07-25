@@ -152,7 +152,9 @@ class _$_QuestionRequirement extends _QuestionRequirement {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_QuestionRequirementToJson(this);
+    return _$$_QuestionRequirementToJson(
+      this,
+    );
   }
 }
 
@@ -166,9 +168,9 @@ abstract class _QuestionRequirement extends QuestionRequirement {
       _$_QuestionRequirement.fromJson;
 
   @override
-  int get question => throw _privateConstructorUsedError;
+  int get question;
   @override
-  List<int> get answers => throw _privateConstructorUsedError;
+  List<int> get answers;
   @override
   @JsonKey(ignore: true)
   _$$_QuestionRequirementCopyWith<_$_QuestionRequirement> get copyWith =>

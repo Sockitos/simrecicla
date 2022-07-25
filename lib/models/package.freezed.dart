@@ -163,7 +163,9 @@ class _$_Package extends _Package {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackageToJson(this);
+    return _$$_PackageToJson(
+      this,
+    );
   }
 }
 
@@ -177,11 +179,11 @@ abstract class _Package extends Package {
   factory _Package.fromJson(Map<String, dynamic> json) = _$_Package.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get iconId => throw _privateConstructorUsedError;
+  String get iconId;
   @override
-  List<Component> get components => throw _privateConstructorUsedError;
+  List<Component> get components;
   @override
   @JsonKey(ignore: true)
   _$$_PackageCopyWith<_$_Package> get copyWith =>

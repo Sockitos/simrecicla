@@ -146,7 +146,9 @@ class _$_AnswerComponent extends _AnswerComponent {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnswerComponentToJson(this);
+    return _$$_AnswerComponentToJson(
+      this,
+    );
   }
 }
 
@@ -160,9 +162,9 @@ abstract class _AnswerComponent extends AnswerComponent {
       _$_AnswerComponent.fromJson;
 
   @override
-  int? get value => throw _privateConstructorUsedError;
+  int? get value;
   @override
-  String? get recommendation => throw _privateConstructorUsedError;
+  String? get recommendation;
   @override
   @JsonKey(ignore: true)
   _$$_AnswerComponentCopyWith<_$_AnswerComponent> get copyWith =>

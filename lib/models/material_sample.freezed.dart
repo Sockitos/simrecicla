@@ -412,16 +412,16 @@ abstract class MaterialSamplePM extends MaterialSample {
       final double naoRecuperaveis}) = _$MaterialSamplePM;
   const MaterialSamplePM._() : super._();
 
-  double get ecal => throw _privateConstructorUsedError;
-  double get filmePlastico => throw _privateConstructorUsedError;
-  double get pet => throw _privateConstructorUsedError;
-  double get petOleo => throw _privateConstructorUsedError;
-  double get pead => throw _privateConstructorUsedError;
-  double get plasticosMistos => throw _privateConstructorUsedError;
-  double get metaisFerrosos => throw _privateConstructorUsedError;
-  double get metaisNaoFerrosos => throw _privateConstructorUsedError;
+  double get ecal;
+  double get filmePlastico;
+  double get pet;
+  double get petOleo;
+  double get pead;
+  double get plasticosMistos;
+  double get metaisFerrosos;
+  double get metaisNaoFerrosos;
   @override
-  double get naoRecuperaveis => throw _privateConstructorUsedError;
+  double get naoRecuperaveis;
   @override
   @JsonKey(ignore: true)
   _$$MaterialSamplePMCopyWith<_$MaterialSamplePM> get copyWith =>
@@ -642,11 +642,11 @@ abstract class MaterialSamplePC extends MaterialSample {
       final double naoRecuperaveis}) = _$MaterialSamplePC;
   const MaterialSamplePC._() : super._();
 
-  double get papel => throw _privateConstructorUsedError;
-  double get cartao => throw _privateConstructorUsedError;
-  double get jornaisRevistas => throw _privateConstructorUsedError;
+  double get papel;
+  double get cartao;
+  double get jornaisRevistas;
   @override
-  double get naoRecuperaveis => throw _privateConstructorUsedError;
+  double get naoRecuperaveis;
   @override
   @JsonKey(ignore: true)
   _$$MaterialSamplePCCopyWith<_$MaterialSamplePC> get copyWith =>

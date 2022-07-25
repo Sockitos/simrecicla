@@ -164,7 +164,9 @@ class _$_Category extends _Category {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CategoryToJson(this);
+    return _$$_CategoryToJson(
+      this,
+    );
   }
 }
 
@@ -178,11 +180,11 @@ abstract class _Category extends Category {
   factory _Category.fromJson(Map<String, dynamic> json) = _$_Category.fromJson;
 
   @override
-  String get category => throw _privateConstructorUsedError;
+  String get category;
   @override
-  String get iconId => throw _privateConstructorUsedError;
+  String get iconId;
   @override
-  List<Package> get packages => throw _privateConstructorUsedError;
+  List<Package> get packages;
   @override
   @JsonKey(ignore: true)
   _$$_CategoryCopyWith<_$_Category> get copyWith =>
