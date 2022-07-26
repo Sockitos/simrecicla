@@ -20,15 +20,15 @@ mixin _$MachinePort {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) input,
-    required TResult Function(String id, MachineOutputType type,
-            MaterialSample materialConversion)
+    required TResult Function(String id, String description,
+            MachineOutputType type, MaterialSample materialConversion)
         output,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String id)? input,
-    TResult Function(String id, MachineOutputType type,
+    TResult Function(String id, String description, MachineOutputType type,
             MaterialSample materialConversion)?
         output,
   }) =>
@@ -36,7 +36,7 @@ mixin _$MachinePort {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? input,
-    TResult Function(String id, MachineOutputType type,
+    TResult Function(String id, String description, MachineOutputType type,
             MaterialSample materialConversion)?
         output,
     required TResult orElse(),
@@ -163,8 +163,8 @@ class _$MachineInput implements MachineInput {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) input,
-    required TResult Function(String id, MachineOutputType type,
-            MaterialSample materialConversion)
+    required TResult Function(String id, String description,
+            MachineOutputType type, MaterialSample materialConversion)
         output,
   }) {
     return input(id);
@@ -174,7 +174,7 @@ class _$MachineInput implements MachineInput {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String id)? input,
-    TResult Function(String id, MachineOutputType type,
+    TResult Function(String id, String description, MachineOutputType type,
             MaterialSample materialConversion)?
         output,
   }) {
@@ -185,7 +185,7 @@ class _$MachineInput implements MachineInput {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? input,
-    TResult Function(String id, MachineOutputType type,
+    TResult Function(String id, String description, MachineOutputType type,
             MaterialSample materialConversion)?
         output,
     required TResult orElse(),
@@ -247,7 +247,10 @@ abstract class _$$MachineOutputCopyWith<$Res>
       __$$MachineOutputCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id, MachineOutputType type, MaterialSample materialConversion});
+      {String id,
+      String description,
+      MachineOutputType type,
+      MaterialSample materialConversion});
 
   $MaterialSampleCopyWith<$Res> get materialConversion;
 }
@@ -266,6 +269,7 @@ class __$$MachineOutputCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? description = freezed,
     Object? type = freezed,
     Object? materialConversion = freezed,
   }) {
@@ -273,6 +277,10 @@ class __$$MachineOutputCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       type: type == freezed
           ? _value.type
@@ -297,10 +305,15 @@ class __$$MachineOutputCopyWithImpl<$Res>
 
 class _$MachineOutput implements MachineOutput {
   const _$MachineOutput(
-      {required this.id, required this.type, required this.materialConversion});
+      {required this.id,
+      required this.description,
+      required this.type,
+      required this.materialConversion});
 
   @override
   final String id;
+  @override
+  final String description;
   @override
   final MachineOutputType type;
   @override
@@ -308,7 +321,7 @@ class _$MachineOutput implements MachineOutput {
 
   @override
   String toString() {
-    return 'MachinePort.output(id: $id, type: $type, materialConversion: $materialConversion)';
+    return 'MachinePort.output(id: $id, description: $description, type: $type, materialConversion: $materialConversion)';
   }
 
   @override
@@ -317,6 +330,8 @@ class _$MachineOutput implements MachineOutput {
         (other.runtimeType == runtimeType &&
             other is _$MachineOutput &&
             const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality()
                 .equals(other.materialConversion, materialConversion));
@@ -326,6 +341,7 @@ class _$MachineOutput implements MachineOutput {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(description),
       const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(materialConversion));
 
@@ -338,35 +354,35 @@ class _$MachineOutput implements MachineOutput {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) input,
-    required TResult Function(String id, MachineOutputType type,
-            MaterialSample materialConversion)
+    required TResult Function(String id, String description,
+            MachineOutputType type, MaterialSample materialConversion)
         output,
   }) {
-    return output(id, type, materialConversion);
+    return output(id, description, type, materialConversion);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String id)? input,
-    TResult Function(String id, MachineOutputType type,
+    TResult Function(String id, String description, MachineOutputType type,
             MaterialSample materialConversion)?
         output,
   }) {
-    return output?.call(id, type, materialConversion);
+    return output?.call(id, description, type, materialConversion);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? input,
-    TResult Function(String id, MachineOutputType type,
+    TResult Function(String id, String description, MachineOutputType type,
             MaterialSample materialConversion)?
         output,
     required TResult orElse(),
   }) {
     if (output != null) {
-      return output(id, type, materialConversion);
+      return output(id, description, type, materialConversion);
     }
     return orElse();
   }
@@ -406,11 +422,13 @@ class _$MachineOutput implements MachineOutput {
 abstract class MachineOutput implements MachinePort {
   const factory MachineOutput(
       {required final String id,
+      required final String description,
       required final MachineOutputType type,
       required final MaterialSample materialConversion}) = _$MachineOutput;
 
   @override
   String get id;
+  String get description;
   MachineOutputType get type;
   MaterialSample get materialConversion;
   @override

@@ -7,6 +7,8 @@ import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/machine_definition.dart';
 import 'package:simtech/ui/screens/recycler/components/draggable_machine.dart';
+import 'package:simtech/ui/screens/recycler/components/output_indicator.dart';
+import 'package:simtech/ui/widgets/popup_info.dart';
 
 class MachineListOption extends HookWidget {
   const MachineListOption({
@@ -152,7 +154,7 @@ class MachineListOption extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 100,
       child: Row(
         children: [
           Column(
@@ -163,18 +165,96 @@ class MachineListOption extends HookWidget {
                 machine.name,
                 style: AppTextStyles.h5(context.layout),
               ),
+              const SizedBox(height: 5),
               Expanded(
                 child: Align(
                   alignment: Alignment.topLeft,
-                  child: IconButton(
-                    onPressed: () {},
-                    color: AppColors.lightGreen,
-                    icon: const Icon(
-                      Icons.add_circle_outline_rounded,
-                    ),
-                    splashRadius: 24,
-                    constraints: const BoxConstraints(),
-                    padding: const EdgeInsets.fromLTRB(0, 5, 5, 5),
+                  child: Builder(
+                    builder: (context) {
+                      return IconButton(
+                        onPressed: () {
+                          final button =
+                              context.findRenderObject()! as RenderBox;
+                          final overlay = Navigator.of(context)
+                              .overlay!
+                              .context
+                              .findRenderObject()! as RenderBox;
+                          final offset = Offset(
+                            button.size.width + 5,
+                            0,
+                          );
+
+                          final position = RelativeRect.fromRect(
+                            Rect.fromPoints(
+                              button.localToGlobal(offset, ancestor: overlay),
+                              button.localToGlobal(
+                                button.size.bottomRight(Offset.zero) + offset,
+                                ancestor: overlay,
+                              ),
+                            ),
+                            Offset.zero & overlay.size,
+                          );
+
+                          showInfo(
+                            context: context,
+                            position: position,
+                            constraints: const BoxConstraints.tightFor(
+                              width: 400,
+                            ),
+                            child: DefaultTextStyle(
+                              style: AppTextStyles.paragraph(context.layout),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 20,
+                                  horizontal: 25,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Text(
+                                      machine.description,
+                                    ),
+                                    if (machine.outputs.isNotEmpty) ...[
+                                      const SizedBox(height: 15),
+                                      const Text(
+                                        'Outputs:',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 5),
+                                      for (final o in machine.outputs) ...[
+                                        const SizedBox(height: 5),
+                                        Row(
+                                          children: [
+                                            OutputIndicator(
+                                              output: o,
+                                              width: 16,
+                                              height: 16,
+                                            ),
+                                            const SizedBox(width: 10),
+                                            Text(o.description),
+                                          ],
+                                        ),
+                                      ],
+                                    ],
+                                    const SizedBox(height: 5),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        color: AppColors.lightGreen,
+                        icon: const Icon(
+                          Icons.add_circle_outline_rounded,
+                        ),
+                        splashRadius: 24,
+                        constraints: const BoxConstraints(),
+                        padding: EdgeInsets.zero,
+                      );
+                    },
                   ),
                 ),
               ),

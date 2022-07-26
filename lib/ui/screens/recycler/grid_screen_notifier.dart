@@ -34,6 +34,7 @@ class GridScreenNotifier extends StateNotifier<GridScreenModel> {
                   ports: {
                     AxisDirection.down: MachineOutput(
                       id: 'feed',
+                      description: '',
                       type: MachineOutputType.one,
                       materialConversion: feedSample.map(
                         pm: (_) => const MaterialSample.pm(

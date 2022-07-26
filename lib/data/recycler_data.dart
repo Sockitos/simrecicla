@@ -22,7 +22,8 @@ const machinesPM = <MachineDefinition>[
     id: 'F',
     name: 'Produto Final',
     icon: Icons.flag_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [],
     inputs: [MachineInput(id: 'final')],
   ),
@@ -30,10 +31,12 @@ const machinesPM = <MachineDefinition>[
     id: 'P',
     name: 'Passadeira',
     icon: Icons.double_arrow_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'out',
+        description: '',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 1,
@@ -54,10 +57,12 @@ const machinesPM = <MachineDefinition>[
     id: 'JC',
     name: 'Junção de Caudais',
     icon: Icons.merge_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'JC',
+        description: '',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 1,
@@ -82,10 +87,12 @@ const machinesPM = <MachineDefinition>[
     id: 'BO',
     name: 'Abre-Sacos',
     icon: Icons.shopping_bag_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'BO_P',
+        description: '',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 1,
@@ -106,10 +113,12 @@ const machinesPM = <MachineDefinition>[
     id: 'COM',
     name: 'Compactador',
     icon: Icons.expand_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'COM_P',
+        description: '',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 1,
@@ -130,10 +139,12 @@ const machinesPM = <MachineDefinition>[
     id: 'MG',
     name: 'Separador Magnético',
     icon: Icons.swap_horiz_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'MG_MAG',
+        description: 'Fluxo de materiais Magnéticos',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 0.0064,
@@ -149,6 +160,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'MG_NMAG',
+        description: 'Fluxo de materiais Não-Magnéticos',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePM(
           ecal: 0.9936,
@@ -169,10 +181,12 @@ const machinesPM = <MachineDefinition>[
     id: 'ECS',
     name: 'Separador de Focault',
     icon: Icons.swap_horiz_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'ECS_COND',
+        description: 'Fluxo de materiais Condutores',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 0.0160,
@@ -188,6 +202,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'ECS_NCOND',
+        description: 'Fluxo de materiais Não-Condutores',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePM(
           ecal: 0.9840,
@@ -208,10 +223,12 @@ const machinesPM = <MachineDefinition>[
     id: 'OS_PETECAL',
     name: 'Separador Ótico (PET & ECAL)',
     icon: Icons.visibility_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'OS_PETECAL_PET',
+        description: 'Fluxo de materiais Alvo 1 (PET)',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 0.0010,
@@ -227,6 +244,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'OS_PETECAL_ECAL',
+        description: 'Fluxo de materiais Alvo 2 (ECAL)',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePM(
           ecal: 0.5564,
@@ -242,6 +260,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'OS_PETECAL_NB',
+        description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
         materialConversion: MaterialSamplePM(
           ecal: 0.4426,
@@ -262,10 +281,12 @@ const machinesPM = <MachineDefinition>[
     id: 'OS_PEADMIX',
     name: 'Separador de Ótico (PEAD & MISTOS)',
     icon: Icons.visibility_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'OS_PEADMIX_PEAD',
+        description: 'Fluxo de materiais Alvo 1 (PEAD)',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 0.0006,
@@ -281,6 +302,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'OS_PEADMIX_MIX',
+        description: 'Fluxo de materiais Alvo 2 (Plásticos Mistos)',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePM(
           ecal: 0.0055,
@@ -296,6 +318,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'OS_PEADMIX_NB',
+        description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
         materialConversion: MaterialSamplePM(
           ecal: 0.9940,
@@ -316,10 +339,12 @@ const machinesPM = <MachineDefinition>[
     id: 'BS',
     name: 'Separador Balístico',
     icon: Icons.swap_horiz_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'BS_PM_2D',
+        description: 'Fluxo de materiais Planares (2D)',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 0.3604,
@@ -335,6 +360,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'BS_PM_F',
+        description: 'Fluxo de materiais Finos',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePM(
           ecal: 0,
@@ -350,6 +376,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'BS_PM_3D',
+        description: 'Fluxo de materiais Rolantes (3D)',
         type: MachineOutputType.three,
         materialConversion: MaterialSamplePM(
           ecal: 0.6396,
@@ -370,10 +397,12 @@ const machinesPM = <MachineDefinition>[
     id: 'MS_PETol',
     name: 'Triagem Manual de PET Óleo',
     icon: Icons.swap_horiz_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'MS_PETol_T',
+        description: 'Fluxo de materiais Alvo (PET Óleo)',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 0,
@@ -389,6 +418,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'MS_PETol_NT',
+        description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePM(
           ecal: 1,
@@ -409,10 +439,12 @@ const machinesPM = <MachineDefinition>[
     id: 'MS_Bulk1',
     name: 'Triagem Manual de Volumosos 1',
     icon: Icons.swap_horiz_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'MS_Bulk1_Tcont',
+        description: '',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 0.0003,
@@ -428,6 +460,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'MS_Bulk1_Tgradbidon',
+        description: 'Fluxo de materiais Alvo 2 (Grades de Plástico e Bidons)',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePM(
           ecal: 0,
@@ -443,6 +476,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'MS_Bulk1_NT',
+        description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
         materialConversion: MaterialSamplePM(
           ecal: 0.9997,
@@ -463,10 +497,12 @@ const machinesPM = <MachineDefinition>[
     id: 'MS_Bulk2',
     name: 'Triagem Manual de Volumosos 2',
     icon: Icons.swap_horiz_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'MS_Bulk2_Tcont',
+        description: 'Fluxo de materiais Alvo 1 (Contaminantes Volumosos)',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 0.0131,
@@ -482,6 +518,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'MS_Bulk2_Tfilme',
+        description: 'Fluxo de materiais Alvo 2 (Filme Plástico)',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePM(
           ecal: 0.0031,
@@ -497,6 +534,7 @@ const machinesPM = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'MS_Bulk2_NT',
+        description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
         materialConversion: MaterialSamplePM(
           ecal: 0.9838,
@@ -527,7 +565,8 @@ const machinesPC = <MachineDefinition>[
     id: 'F',
     name: 'Produto Final',
     icon: Icons.flag_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [],
     inputs: [MachineInput(id: 'final')],
   ),
@@ -535,10 +574,12 @@ const machinesPC = <MachineDefinition>[
     id: 'P',
     name: 'Passadeira',
     icon: Icons.double_arrow_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'out',
+        description: '',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePC(
           papel: 1,
@@ -554,10 +595,12 @@ const machinesPC = <MachineDefinition>[
     id: 'JC',
     name: 'Junção de Caudais',
     icon: Icons.merge_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'JC',
+        description: '',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePC(
           papel: 1,
@@ -577,10 +620,12 @@ const machinesPC = <MachineDefinition>[
     id: 'DC',
     name: 'Crivo de Discos',
     icon: Icons.album_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'DS_CB_OS',
+        description: 'Fluxo de materiais Supra-Crivo',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePC(
           papel: 0.0667,
@@ -591,6 +636,7 @@ const machinesPC = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'DS_CB_US',
+        description: 'Fluxo de materiais Infra-Crivo',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePC(
           papel: 0.9333,
@@ -606,10 +652,12 @@ const machinesPC = <MachineDefinition>[
     id: 'BS',
     name: 'Separador Balístico',
     icon: Icons.swap_horiz_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'BS_PC_2D',
+        description: 'Fluxo de materiais Planares (2D)',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePC(
           papel: 0.9589,
@@ -620,6 +668,7 @@ const machinesPC = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'BS_PC_F',
+        description: 'Fluxo de materiais Finos',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePC(
           papel: 0,
@@ -630,6 +679,7 @@ const machinesPC = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'BS_PC_3D',
+        description: 'Fluxo de materiais Rolantes (3D)',
         type: MachineOutputType.three,
         materialConversion: MaterialSamplePC(
           papel: 0.0411,
@@ -645,10 +695,12 @@ const machinesPC = <MachineDefinition>[
     id: 'MS_CB',
     name: 'Triagem Manual de Contaminantes do Cartão',
     icon: Icons.swap_horiz_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'MS_CB_T',
+        description: 'Fluxo de materiais Alvo (Contaminantes)',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePC(
           papel: 0,
@@ -659,6 +711,7 @@ const machinesPC = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'MS_CB_NT',
+        description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePC(
           papel: 1,
@@ -674,10 +727,12 @@ const machinesPC = <MachineDefinition>[
     id: 'MS_P',
     name: 'Triagem Manual de Contaminantes do Papel',
     icon: Icons.swap_horiz_outlined,
-    description: '',
+    description:
+        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
       MachineOutput(
         id: 'MS_P_TCONT',
+        description: 'Fluxo de materiais Alvo 1 (Contaminantes)',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePC(
           papel: 0,
@@ -688,6 +743,7 @@ const machinesPC = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'MS_P_TSCB',
+        description: 'Fluxo de materiais Alvo 2 (Cartão de Pequenas Dimensões)',
         type: MachineOutputType.two,
         materialConversion: MaterialSamplePC(
           papel: 0.0060,
@@ -698,6 +754,7 @@ const machinesPC = <MachineDefinition>[
       ),
       MachineOutput(
         id: 'MS_P_NT',
+        description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
         materialConversion: MaterialSamplePC(
           papel: 0.9940,

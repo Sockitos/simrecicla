@@ -14,6 +14,7 @@ class MachinePort with _$MachinePort {
   const factory MachinePort.input({required String id}) = MachineInput;
   const factory MachinePort.output({
     required String id,
+    required String description,
     required MachineOutputType type,
     required MaterialSample materialConversion,
   }) = MachineOutput;
