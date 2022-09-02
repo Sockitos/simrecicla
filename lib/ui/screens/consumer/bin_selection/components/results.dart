@@ -101,8 +101,7 @@ class Results extends HookWidget {
                               ),
                             ),
                             const SizedBox(width: 40),
-                            Container(
-                              color: Colors.red,
+                            SizedBox(
                               height: 180,
                               width: 360,
                               child: charts.BarChart(
