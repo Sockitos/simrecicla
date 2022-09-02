@@ -93,8 +93,7 @@ class _PopupInfoRouteLayout extends SingleChildLayoutDelegate {
 
   @override
   Offset getPositionForChild(Size size, Size childSize) {
-    final buttonHeight = size.height - position.top - position.bottom;
-    var y = position.top;
+    final y = position.top;
     double x;
     if (position.left > position.right) {
       x = size.width - position.right - childSize.width;
@@ -255,6 +254,7 @@ Future<void> showInfo({
   bool useRootNavigator = false,
   BoxConstraints? constraints,
 }) {
+  // ignore: prefer_asserts_with_message
   assert(debugCheckHasMaterialLocalizations(context));
 
   switch (Theme.of(context).platform) {
