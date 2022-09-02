@@ -156,30 +156,30 @@ class PackagerService {
     PMaterial.vidro: 1,
     PMaterial.aco: 1,
     PMaterial.aluminio: 1,
-    PMaterial.pet: 0.9,
-    PMaterial.pead: 0.9,
-    PMaterial.pebd: 0.75,
-    PMaterial.eps: 0.75,
-    PMaterial.pp: 0.9,
-    PMaterial.outrosPlasticos: 0.9,
-    PMaterial.ecal: 0.85,
-    PMaterial.papel: 0.85,
-    PMaterial.cartao: 0.85,
+    PMaterial.pet: 1,
+    PMaterial.pead: 1,
+    PMaterial.pebd: 1,
+    PMaterial.eps: 1,
+    PMaterial.pp: 1,
+    PMaterial.outrosPlasticos: 1,
+    PMaterial.ecal: 1,
+    PMaterial.papel: 1,
+    PMaterial.cartao: 1,
   };
 
   static const soutMap = <PMaterial, double>{
     PMaterial.vidro: 1,
     PMaterial.aco: 1,
     PMaterial.aluminio: 1,
-    PMaterial.pet: 0.9,
-    PMaterial.pead: 0.9,
-    PMaterial.pebd: 0.75,
-    PMaterial.eps: 0.75,
-    PMaterial.pp: 0.9,
-    PMaterial.outrosPlasticos: 0.9,
-    PMaterial.ecal: 0.85,
-    PMaterial.papel: 0.85,
-    PMaterial.cartao: 0.85,
+    PMaterial.pet: 1,
+    PMaterial.pead: 1,
+    PMaterial.pebd: 1,
+    PMaterial.eps: 1,
+    PMaterial.pp: 1,
+    PMaterial.outrosPlasticos: 1,
+    PMaterial.ecal: 1,
+    PMaterial.papel: 1,
+    PMaterial.cartao: 1,
   };
 
   static const bMap = <PMaterial, double>{
@@ -198,108 +198,108 @@ class PackagerService {
   };
 
   static const lhvMap = <PMaterial, double>{
-    PMaterial.vidro: -0.00555556,
-    PMaterial.aco: -0.00555556,
-    PMaterial.aluminio: -0.00555556,
+    PMaterial.vidro: 0,
+    PMaterial.aco: 0,
+    PMaterial.aluminio: 0,
     PMaterial.pet: 7.11945014,
     PMaterial.pead: 7.11945014,
     PMaterial.pebd: 7.11945014,
     PMaterial.eps: 7.11945014,
     PMaterial.pp: 7.11945014,
     PMaterial.outrosPlasticos: 7.11945014,
-    PMaterial.ecal: 3.01111352,
+    PMaterial.ecal: 3.7534196694,
     PMaterial.papel: 3.01111352,
     PMaterial.cartao: 3.01111352,
   };
 
   static const evMap = <PMaterial, double>{
-    PMaterial.papel: 1.30637282600000,
-    PMaterial.cartao: 0.77339966500000,
-    PMaterial.ecal: 1.92160738500000,
-    PMaterial.vidro: 1.26207242200000,
-    PMaterial.aco: 2.09492328200000,
-    PMaterial.aluminio: 19.6110164400000,
-    PMaterial.pet: 3.82377621539920,
-    PMaterial.pead: 2.79863413114644,
-    PMaterial.pebd: 2.45527042364000,
-    PMaterial.eps: 3.72564350600000,
-    PMaterial.pp: 2.78532057247041,
-    PMaterial.outrosPlasticos: 3.45243818179074,
+    PMaterial.papel: 1.306372826,
+    PMaterial.cartao: 0.640671321,
+    PMaterial.ecal: 1.921607385,
+    PMaterial.vidro: 1.262072422,
+    PMaterial.aco: 2.094923282,
+    PMaterial.aluminio: 19.611016440,
+    PMaterial.pet: 3.003695266,
+    PMaterial.pead: 1.981628608,
+    PMaterial.pebd: 2.023176932,
+    PMaterial.eps: 3.725643506,
+    PMaterial.pp: 1.968354990,
+    PMaterial.outrosPlasticos: 2.513638265,
   };
 
   static const erecycledMap = <PMaterial, double>{
-    PMaterial.papel: 1.437710111859840,
-    PMaterial.cartao: 0.853332379874917,
-    PMaterial.ecal: 0.731627912000000,
-    PMaterial.vidro: 0.997140261077844,
-    PMaterial.aco: 0.682783764362378,
-    PMaterial.aluminio: 0.584939072747455,
-    PMaterial.pet: 1.022421466250000,
-    PMaterial.pead: 0.384816452432500,
-    PMaterial.pebd: 0.677172920756443,
-    PMaterial.eps: 0.677172920756443,
-    PMaterial.pp: 0.677172920756443,
-    PMaterial.outrosPlasticos: 0.677172920756443,
+    PMaterial.papel: 1.049480451132000,
+    PMaterial.cartao: 0.427792406398400,
+    PMaterial.ecal: 0.682674786140593,
+    PMaterial.vidro: 0.829253311565000,
+    PMaterial.aco: 0.814024028393000,
+    PMaterial.aluminio: 1.067753310901160,
+    PMaterial.pet: 1.639968058960880,
+    PMaterial.pead: 1.167603887874620,
+    PMaterial.pebd: 0.997647876162264,
+    PMaterial.eps: 0.594135218786533,
+    PMaterial.pp: 1.403058309749780,
+    PMaterial.outrosPlasticos: 1.519620709074980,
   };
 
   static const ereceolMap = <PMaterial, double>{
-    PMaterial.papel: 0.807365291572000,
-    PMaterial.cartao: 0.720654085030306,
-    PMaterial.ecal: 0.731627912000000,
-    PMaterial.vidro: 0.698680227710000,
-    PMaterial.aco: 0.544059796339510,
-    PMaterial.aluminio: 0.575390047770198,
-    PMaterial.pet: 0.672699345000000,
-    PMaterial.pead: 0.348527260208314,
-    PMaterial.pebd: 0.527054561897874,
-    PMaterial.eps: 0.527054561897874,
-    PMaterial.pp: 0.621015056897874,
-    PMaterial.outrosPlasticos: 0.527054561897874,
+    PMaterial.papel: 1.414394138991910,
+    PMaterial.cartao: 0.395957429098852,
+    PMaterial.ecal: 1.155006298936210,
+    PMaterial.vidro: 0.993564719045931,
+    PMaterial.aco: 0.539074877076000,
+    PMaterial.aluminio: 0.570288219262000,
+    PMaterial.pet: 0.664267391000000,
+    PMaterial.pead: 0.339555411640000,
+    PMaterial.pebd: 0.518382978391250,
+    PMaterial.eps: 0.518382978391250,
+    PMaterial.pp: 0.121856035000000,
+    PMaterial.outrosPlasticos: 0.518382978391250,
   };
 
   static const edMap = <PMaterial, double>{
-    PMaterial.papel: 1.8469708820,
-    PMaterial.cartao: 1.8469708820,
-    PMaterial.ecal: 1.1530396484,
-    PMaterial.vidro: 0.0080415570,
-    PMaterial.aco: 0.0086443530,
-    PMaterial.aluminio: 0.0130592450,
-    PMaterial.pet: 0.1431767990,
-    PMaterial.pead: 0.1431767990,
-    PMaterial.pebd: 0.1431767990,
-    PMaterial.eps: 0.1121427980,
-    PMaterial.pp: 0.1218560350,
-    PMaterial.outrosPlasticos: 0.1121427980,
+    PMaterial.papel: 1.691104081709160,
+    PMaterial.cartao: 1.691104081709160,
+    PMaterial.ecal: 1.298995723619230,
+    PMaterial.vidro: 0.993564719045931,
+    PMaterial.aco: 0.008644353000000,
+    PMaterial.aluminio: 0.013059245000000,
+    PMaterial.pet: 0.143176799000000,
+    PMaterial.pead: 0.143176799000000,
+    PMaterial.pebd: 0.143176799000000,
+    PMaterial.eps: 0.112142798000000,
+    PMaterial.pp: 0.121856035000000,
+    PMaterial.outrosPlasticos: 0.112142798000000,
   };
 
   static const eerMap = <PMaterial, double>{
-    PMaterial.papel: 0.0231414590,
-    PMaterial.cartao: 0.0231414590,
-    PMaterial.ecal: 0.9523313122,
-    PMaterial.vidro: 0.0127948280,
-    PMaterial.aco: 0.0104051270,
-    PMaterial.aluminio: 0.0160623730,
-    PMaterial.pet: 2.9932185980,
-    PMaterial.pead: 2.9932185980,
-    PMaterial.pebd: 2.9932185980,
-    PMaterial.eps: 3.1742333490,
-    PMaterial.pp: 2.5322341270,
-    PMaterial.outrosPlasticos: 2.3461160920,
+    PMaterial.papel: 0.02314145900,
+    PMaterial.cartao: 0.02314145900,
+    PMaterial.ecal: 0.51068296849,
+    PMaterial.vidro: 0.01279482800,
+    PMaterial.aco: 0.01040512700,
+    PMaterial.aluminio: 0.01606237300,
+    PMaterial.pet: 2.99321859800,
+    PMaterial.pead: 2.99321859800,
+    PMaterial.pebd: 2.99321859800,
+    PMaterial.eps: 3.17423334900,
+    PMaterial.pp: 2.53223412700,
+    PMaterial.outrosPlasticos: 2.34611609200,
   };
 
   static const evastMap = <PMaterial, double>{
-    PMaterial.papel: 0.96932863689200,
-    PMaterial.cartao: 0.58909828657009,
-    PMaterial.ecal: 0.36010492470000,
-    PMaterial.vidro: 1.05383047237000,
-    PMaterial.aco: 1.85163335565978,
-    PMaterial.aluminio: 19.4364783936839,
-    PMaterial.pet: 2.40295621280000,
-    PMaterial.pead: 1.87211016343883,
-    PMaterial.pebd: 1.76495189325347,
-    PMaterial.eps: 3.25012679588134,
-    PMaterial.pp: 1.71712706449315,
-    PMaterial.outrosPlasticos: 0.22626674837260,
+    PMaterial.papel: 1.760610277628030,
+    PMaterial.cartao: 0.435138709274343,
+    PMaterial.ecal: 0.295486173745000,
+    PMaterial.vidro: 1.512158959457010,
+    PMaterial.aco: 1.851912181288000,
+    PMaterial.aluminio: 19.434517292040000,
+    PMaterial.pet: 2.402956212800000,
+    PMaterial.pead: 1.872639034560000,
+    PMaterial.pebd: 1.765221873170000,
+    PMaterial.eps: 3.250623958985000,
+    PMaterial.pp: 1.717389728775000,
+    PMaterial.outrosPlasticos: 0.139980222540424,
   };
 
   static PackageImpact getPackageImpact({
@@ -310,7 +310,7 @@ class PackagerService {
   }) {
     final r1 = recycledPercentage;
     final r2 = rating.potential;
-    final r3 = (1 - r2) * 0.27;
+    final r3 = (1 - r2) * 27 / 100;
 
     final a = aMap[material]!;
     final qsin = sinMap[material]!;
@@ -319,7 +319,7 @@ class PackagerService {
 
     final lhv = lhvMap[material]!;
     const eficiencaEletrica = 0.3;
-    const pu = 0.259743372;
+    const pu = 0.398805993;
 
     final ev = evMap[material]!;
     final erecycled = erecycledMap[material]!;
