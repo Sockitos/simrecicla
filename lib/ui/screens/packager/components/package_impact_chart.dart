@@ -216,27 +216,34 @@ class PackageImpactChart extends StatelessWidget {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
-                                      '100 embalagens',
+                                      'A produção de',
                                       textAlign: TextAlign.center,
-                                      style: AppTextStyles.h2(context.layout),
+                                      style: AppTextStyles.dropdown(
+                                        context.layout,
+                                      ),
                                     ),
-                                    const SizedBox(height: 20),
-                                    const LineWidget(
-                                      size: Size(30, 3),
-                                      color: AppColors.blue,
-                                      axis: Axis.horizontal,
-                                      strokeWidth: 3,
+                                    Text(
+                                      '1000 embalagens',
+                                      textAlign: TextAlign.center,
+                                      style: AppTextStyles.h4(context.layout),
+                                    ),
+                                    Text(
+                                      'equivale a',
+                                      textAlign: TextAlign.center,
+                                      style: AppTextStyles.dropdown(
+                                        context.layout,
+                                      ),
                                     ),
                                     const SizedBox(height: 10),
-                                    const LineWidget(
-                                      size: Size(30, 3),
+                                    const ArrowWidget(
+                                      size: Size(22, 32),
+                                      strokeWidth: 2,
                                       color: AppColors.blue,
-                                      axis: Axis.horizontal,
-                                      strokeWidth: 3,
+                                      direction: AxisDirection.down,
                                     ),
-                                    const SizedBox(height: 20),
+                                    const SizedBox(height: 10),
                                     Text(
-                                      'CO2 absorvido\nnum mês por',
+                                      'CO2 emitido por\num ligeiro em',
                                       textAlign: TextAlign.center,
                                       style: AppTextStyles.dropdown(
                                         context.layout,
@@ -249,16 +256,28 @@ class PackageImpactChart extends StatelessWidget {
                                           MainAxisAlignment.center,
                                       children: [
                                         const Icon(
-                                          Icons.spa_outlined,
+                                          Icons.drive_eta_outlined,
                                           color: AppColors.lightGreen,
-                                          size: 48,
+                                          size: 52,
                                         ),
-                                        Text(
-                                          '10\nárvores',
-                                          textAlign: TextAlign.center,
-                                          style: AppTextStyles.h2(
-                                            context.layout,
-                                          ).copyWith(height: 1),
+                                        const SizedBox(width: 5),
+                                        Column(
+                                          children: [
+                                            Text(
+                                              '${((impact.impacteTotal * 1000) / 0.21294).round()}',
+                                              textAlign: TextAlign.center,
+                                              style: AppTextStyles.h3(
+                                                context.layout,
+                                              ).copyWith(height: 1),
+                                            ),
+                                            Text(
+                                              'km',
+                                              textAlign: TextAlign.center,
+                                              style: AppTextStyles.h4(
+                                                context.layout,
+                                              ).copyWith(height: 1),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),

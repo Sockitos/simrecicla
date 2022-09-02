@@ -62,7 +62,7 @@ class AppTextStyles {
   }
 
   static TextStyle paragraph(LayoutData layout) {
-    return GoogleFonts.dosis(
+    return GoogleFonts.barlow(
       textStyle: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: layout.value(xs: 20),
@@ -73,7 +73,7 @@ class AppTextStyles {
   }
 
   static TextStyle dropdown(LayoutData layout) {
-    return GoogleFonts.dosis(
+    return GoogleFonts.barlow(
       textStyle: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: layout.value(xs: 18),
@@ -84,7 +84,7 @@ class AppTextStyles {
   }
 
   static TextStyle button(LayoutData layout) {
-    return GoogleFonts.dosis(
+    return GoogleFonts.barlow(
       textStyle: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: layout.value(xs: 25),
@@ -95,7 +95,7 @@ class AppTextStyles {
   }
 
   static TextStyle small(LayoutData layout) {
-    return GoogleFonts.dosis(
+    return GoogleFonts.barlow(
       textStyle: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: layout.value(xs: 15),
@@ -105,7 +105,7 @@ class AppTextStyles {
     );
   }
 
-  static final buttonStyle = GoogleFonts.dosis(
+  static final buttonStyle = GoogleFonts.barlow(
     textStyle: const TextStyle(
       fontWeight: FontWeight.bold,
       fontSize: 25,
@@ -114,7 +114,7 @@ class AppTextStyles {
     ),
   );
 
-  static final tooltipStyle = GoogleFonts.dosis(
+  static final tooltipStyle = GoogleFonts.barlow(
     textStyle: const TextStyle(
       fontWeight: FontWeight.w500,
       fontSize: 18,
