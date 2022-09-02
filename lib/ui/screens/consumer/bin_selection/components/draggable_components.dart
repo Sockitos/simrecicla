@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/custom_icons.dart';
+import 'package:simtech/constants/packages_icons.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/component.dart';
 import 'package:simtech/models/package.dart';
@@ -88,7 +88,7 @@ class _DraggableComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconData = CustomIcons.getIcon(component.iconId);
+    final iconData = PackagesIcons.getIcon(component.iconId);
     return SizedBox(
       height: 260,
       width: 260,
@@ -141,7 +141,7 @@ class DraggableComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconData = CustomIcons.getIcon(component.iconId);
+    final iconData = PackagesIcons.getIcon(component.iconId);
     return SizedBox(
       height: isInBin ? 45 : 145,
       width: isInBin ? 45 : 145,

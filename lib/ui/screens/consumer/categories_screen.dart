@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/custom_icons.dart';
+import 'package:simtech/constants/packages_icons.dart';
 import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/category.dart';
@@ -84,7 +84,7 @@ class _CategoryCard extends StatelessWidget {
               children: [
                 const SizedBox(height: 5),
                 Icon(
-                  CustomIcons.getIcon(category.iconId),
+                  PackagesIcons.getIcon(category.iconId),
                   size: 110,
                 ),
                 Expanded(

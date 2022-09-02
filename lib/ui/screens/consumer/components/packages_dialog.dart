@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/custom_icons.dart';
+import 'package:simtech/constants/packages_icons.dart';
 import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/category.dart';
@@ -65,7 +65,7 @@ class PackagesDialog extends HookWidget {
                             children: [
                               const SizedBox(height: 5),
                               Icon(
-                                CustomIcons.getIcon(package.iconId),
+                                PackagesIcons.getIcon(package.iconId),
                                 size: 90,
                               ),
                               Expanded(

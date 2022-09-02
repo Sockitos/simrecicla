@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/custom_icons.dart';
+import 'package:simtech/constants/packages_icons.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/component.dart';
 import 'package:simtech/models/package.dart';
@@ -432,7 +432,7 @@ class Results extends HookWidget {
             const SizedBox(height: 20),
             BirdIconButton(
               radius: 40,
-              icon: CustomIcons.getIcon(package.iconId),
+              icon: PackagesIcons.getIcon(package.iconId),
               isSelected: mode.value is PackageResults,
               onPressed: () =>
                   mode.value = const BinSelectionState.packageResults(),
@@ -441,7 +441,7 @@ class Results extends HookWidget {
               const SizedBox(height: 20),
               BirdIconButton(
                 radius: 40,
-                icon: CustomIcons.getIcon(c.iconId),
+                icon: PackagesIcons.getIcon(c.iconId),
                 isCorrect: whereComponents.value[c] == c.where,
                 isSelected: mode.value is ComponentResults &&
                     (mode.value as ComponentResults).componentId == c.name,

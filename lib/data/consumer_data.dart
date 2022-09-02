@@ -54,7 +54,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           },
           {
@@ -77,9 +77,8 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, sempre que possível, deve ser separado da embalagem e colocado isoladamente no contentor amarelo!",
-            "recomendacoes":
-                "Retirar o rótulo que envolve a embalagem; Destacar pelo picotado; Depositar isoladamente"
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Caso apresente picotado, este componente deve ser destacado e colocado isoladamente no contentor amarelo!",
+            "recomendacoes": "Destacar manga se apresentar picotado"
           }
         ]
       },
@@ -132,11 +131,11 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           },
           {
-            "iconId": "manga",
+            "iconId": "rotulo",
             "name": "Rótulo",
             "id": "02Rótulo",
             "papel": 0.001,
@@ -151,19 +150,19 @@ const categories = [
             "vidro": null,
             "eps": null,
             "fracao_resto": null,
-            "where": "Contentor Azul",
+            "where": "Contentor Amarelo",
             "if_true":
-                "Muito bem! Este componente é de papel e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+                "Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de papel e, sempre que possível, deve ser separado da embalagem e colocado no contentor azul!",
-            "recomendacoes": "Separar o rótulo de papel"
+                "O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo!",
+            "recomendacoes": "Manter o rótulo na embalagem"
           }
         ]
       },
       {
         "iconId": "garrafa_de_agua___completa",
         "id": 3,
-        "name": "Garrafa de água (1,5L)",
+        "name": "Garrafa de água\n(1,5L)",
         "components": [
           {
             "iconId": "garrafa_de_agua",
@@ -209,11 +208,11 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           },
           {
-            "iconId": "manga",
+            "iconId": "rotulo",
             "name": "Rótulo",
             "id": "03Rótulo",
             "papel": 0.001,
@@ -228,12 +227,12 @@ const categories = [
             "vidro": null,
             "eps": null,
             "fracao_resto": null,
-            "where": "Contentor Azul",
+            "where": "Contentor Amarelo",
             "if_true":
-                "Muito bem! Este componente é de papel e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+                "Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de papel e, sempre que possível, deve ser separado da embalagem e colocado no contentor azul!",
-            "recomendacoes": "Separar o rótulo de papel"
+                "O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo!",
+            "recomendacoes": "Manter o rótulo na embalagem"
           }
         ]
       },
@@ -286,11 +285,11 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           },
           {
-            "iconId": "manga",
+            "iconId": "rotulo",
             "name": "Rótulo",
             "id": "04Rótulo",
             "papel": 0.001,
@@ -305,19 +304,19 @@ const categories = [
             "vidro": null,
             "eps": null,
             "fracao_resto": null,
-            "where": "Contentor Azul",
+            "where": "Contentor Amarelo",
             "if_true":
-                "Muito bem! Este componente é de papel e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+                "Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de papel e, sempre que possível, deve ser separado da embalagem e colocado no contentor azul!",
-            "recomendacoes": "Separar o rótulo de papel"
+                "O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo!",
+            "recomendacoes": "Manter o rótulo na embalagem"
           }
         ]
       },
       {
         "iconId": "garrafa_de_azeite___completa",
         "id": 5,
-        "name": "Garrafa de azeite",
+        "name": "Garrafa de azeite\n(vidro)",
         "components": [
           {
             "iconId": "garrafa_de_azeite",
@@ -340,7 +339,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar; Manter a tampa na embalagem"
           },
           {
             "iconId": "tampa_garrafa",
@@ -358,12 +357,88 @@ const categories = [
             "vidro": null,
             "eps": null,
             "fracao_resto": null,
-            "where": "Contentor Amarelo",
+            "where": "Contentor Verde",
             "if_true":
-                "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+                "Muito bem! Apesar de este componente ser de metal, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de metal e deve ser separado da embalagem e colocado no contentor amarelo!",
-            "recomendacoes": "Separar a tampa de metal"
+                "O destino selecionado não está correto. Apesar de este componente ser de metal, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde!",
+            "recomendacoes": "Manter a tampa na embalagem"
+          }
+        ]
+      },
+      {
+        "iconId": "garrafa_de_cerveja___completa",
+        "id": 52,
+        "name": "Garrafa de cerveja",
+        "components": [
+          {
+            "iconId": "garrafa_de_cerveja___garrafa",
+            "name": "Corpo da garrafa",
+            "id": "52Corpo da garrafa",
+            "papel": null,
+            "cartao": null,
+            "ecal": null,
+            "pebd": null,
+            "pet": null,
+            "pead": null,
+            "plasticos_mistos": null,
+            "metais_ferrosos": null,
+            "metais_nao_ferrosos": null,
+            "vidro": 0.14,
+            "eps": null,
+            "fracao_resto": null,
+            "where": "Contentor Verde",
+            "if_true":
+                "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+            "if_false":
+                "O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!",
+            "recomendacoes": "Esvaziar; Manter a tampa na embalagem"
+          },
+          {
+            "iconId": "garrafa_de_cerveja___carica",
+            "name": "Carica",
+            "id": "52Carica",
+            "papel": null,
+            "cartao": null,
+            "ecal": null,
+            "pebd": null,
+            "pet": null,
+            "pead": null,
+            "plasticos_mistos": null,
+            "metais_ferrosos": 0.002,
+            "metais_nao_ferrosos": null,
+            "vidro": null,
+            "eps": null,
+            "fracao_resto": null,
+            "where": "Contentor Verde",
+            "if_true":
+                "Muito bem! Apesar de este componente ser de metal, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+            "if_false":
+                "O destino selecionado não está correto. Apesar de este componente ser de metal, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde!",
+            "recomendacoes": "Manter a carica na embalagem"
+          },
+          {
+            "iconId": "rotulo",
+            "name": "Rótulo",
+            "id": "52Rótulo",
+            "papel": 0.001,
+            "cartao": null,
+            "ecal": null,
+            "pebd": null,
+            "pet": null,
+            "pead": null,
+            "plasticos_mistos": null,
+            "metais_ferrosos": null,
+            "metais_nao_ferrosos": null,
+            "vidro": null,
+            "eps": null,
+            "fracao_resto": null,
+            "where": "Contentor Verde",
+            "if_true":
+                "Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+            "if_false":
+                "O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo!",
+            "recomendacoes": "Manter o rótulo na embalagem"
           }
         ]
       }
@@ -474,8 +549,9 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
-            "recomendacoes": "Manter a tampa na embalagem"
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo!",
+            "recomendacoes":
+                "Separar a tampa de plástico; Depositar isoladamente"
           },
           {
             "iconId": "pelicula_de_selagem",
@@ -499,14 +575,14 @@ const categories = [
             "if_false":
                 "O destino selecionado não está correto. Este componente é de metal e deve ser separado da embalagem e colocado isoladamente no contentor amarelo!",
             "recomendacoes":
-                "Separar a película de plástico; Depositar isoladamente"
+                "Separar a película de metal; Depositar isoladamente"
           }
         ]
       },
       {
         "iconId": "boiao_de_creme_hidratante___completa",
         "id": 8,
-        "name": "Boião de creme hidratante",
+        "name": "Boião de creme hidratante (vidro)",
         "components": [
           {
             "iconId": "boiao_de_creme_hidratante",
@@ -610,7 +686,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este material é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componentes com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a película de selagem na embalagem"
           }
         ]
@@ -663,15 +739,16 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
-            "recomendacoes": "Manter a tampa na embalagem"
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo!",
+            "recomendacoes":
+                "Separar a tampa de plástico; Depositar isoladamente"
           }
         ]
       },
       {
         "iconId": "copo_de_gelado",
         "id": 11,
-        "name": "Copo de gelado",
+        "name": "Copo de gelado\n(cartão)",
         "components": [
           {
             "iconId": "copo_de_gelado",
@@ -689,12 +766,13 @@ const categories = [
             "vidro": null,
             "eps": null,
             "fracao_resto": null,
-            "where": "Contentor Azul",
+            "where": "Contentor Indiferenciado",
             "if_true":
-                "Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+                "Muito bem! Esta embalagem não é reciclável e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!",
-            "recomendacoes": "Esvaziar; Espalmar"
+                "O destino selecionado não está correto. Esta embalagem é de cartão mas está suja e com gordura, pelo que deve ser mantida separada do cartão reciclável. Esta embalagem deve ser colocada no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).",
+            "recomendacoes":
+                "Esvaziar; Espalmar; Manter a tampa na embalagem espalmada"
           },
           {
             "iconId": "tampa_boiao___frasco",
@@ -712,11 +790,11 @@ const categories = [
             "vidro": null,
             "eps": null,
             "fracao_resto": null,
-            "where": "Contentor Azul",
+            "where": "Contentor Indiferenciado",
             "if_true":
-                "Muito bem! Este componente é de cartão e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+                "Muito bem! Este componente não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de cartão e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor azul!",
+                "O destino selecionado não está correto. Este componente é de cartão mas está sujo e com gordura, pelo que deve ser mantido separado do cartão reciclável. Este material deve ser colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).",
             "recomendacoes": "Manter a tampa na embalagem"
           },
           {
@@ -747,13 +825,13 @@ const categories = [
     ]
   },
   {
-    "category": "Pacotes para bebidas",
+    "category": "Pacotes para líquidos alimentares",
     "iconId": "pacotes_bebidas",
     "packages": [
       {
         "iconId": "pacote_de_leite_sem_tampa",
         "id": 12,
-        "name": "Pacote de leite sem tampa",
+        "name": "Pacote sem tampa",
         "components": [
           {
             "iconId": "pacote_de_leite_sem_tampa",
@@ -783,7 +861,7 @@ const categories = [
       {
         "iconId": "pacote_de_leite_com_tampa",
         "id": 13,
-        "name": "Pacote de leite com tampa",
+        "name": "Pacote com tampa",
         "components": [
           {
             "iconId": "pacote_de_leite_com_tampa",
@@ -829,7 +907,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           }
         ]
@@ -837,7 +915,7 @@ const categories = [
       {
         "iconId": "pacote_flexivel_para_sumo___completa",
         "id": 14,
-        "name": "Pacote flexível para sumo",
+        "name": "Pacote flexível",
         "components": [
           {
             "iconId": "pacote_flexivel_para_sumo",
@@ -883,7 +961,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           }
         ]
@@ -942,15 +1020,16 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
-            "recomendacoes": "Manter a tampa na embalagem"
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo!",
+            "recomendacoes":
+                "Separar a tampa de plástico; Depositar isoladamente"
           }
         ]
       },
       {
         "iconId": "caixa_de_ovos__cartao_",
         "id": 16,
-        "name": "Caixa de ovos (cartão)",
+        "name": "Caixa de ovos\n(cartão)",
         "components": [
           {
             "iconId": "caixa_de_ovos__cartao_",
@@ -980,7 +1059,7 @@ const categories = [
       {
         "iconId": "caixa_de_ovos__plastico_",
         "id": 17,
-        "name": "Caixa de ovos (plástico)",
+        "name": "Caixa de ovos\n(plástico)",
         "components": [
           {
             "iconId": "caixa_de_ovos__plastico_",
@@ -1003,14 +1082,14 @@ const categories = [
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           }
         ]
       },
       {
         "iconId": "caixa_de_manteiga___completa",
         "id": 18,
-        "name": "Caixa de manteiga e semelhantes",
+        "name": "Caixa de manteiga\ne semelhantes",
         "components": [
           {
             "iconId": "caixa_de_manteiga___caixa",
@@ -1033,7 +1112,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "caixa_de_manteiga___tampa",
@@ -1055,8 +1134,9 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
-            "recomendacoes": "Manter a tampa na embalagem"
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo!",
+            "recomendacoes":
+                "Separar a tampa de plástico; Depositar isoladamente"
           },
           {
             "iconId": "caixa_de_manteiga___pelicula",
@@ -1078,7 +1158,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este material é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a película de selagem na embalagem"
           }
         ]
@@ -1089,7 +1169,7 @@ const categories = [
         "name": "Caixa de bolo fresco",
         "components": [
           {
-            "iconId": "caixa_de_bolo_fresco",
+            "iconId": "caixa_de_bolo_fresco___caixa",
             "name": "Caixa",
             "id": "19Caixa",
             "papel": null,
@@ -1108,15 +1188,61 @@ const categories = [
             "if_true":
                 "Muito bem! Esta embalagem não é reciclável e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Esta embalagem é de cartão mas está suja e com gordura e deve ser colocada no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).",
-            "recomendacoes": "Separar do cartão reciclável"
+                "O destino selecionado não está correto. Esta embalagem é de cartão mas está suja e com gordura, pelo que deve ser mantida separada do cartão reciclável. Esta embalagem deve ser colocada no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).",
+            "recomendacoes": "Esvaziar; Espalmar"
+          },
+          {
+            "iconId": "caixa_de_bolo_fresco___pelicula_interior",
+            "name": "Película interior",
+            "id": "19Película interior",
+            "papel": 0.001,
+            "cartao": null,
+            "ecal": null,
+            "pebd": null,
+            "pet": null,
+            "pead": null,
+            "plasticos_mistos": null,
+            "metais_ferrosos": null,
+            "metais_nao_ferrosos": null,
+            "vidro": null,
+            "eps": null,
+            "fracao_resto": null,
+            "where": "Contentor Indiferenciado",
+            "if_true":
+                "Muito bem! Este material de embalagem não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+            "if_false":
+                "O destino selecionado não está correto. Este material é de papel mas está sujo e com gordura, pelo que deve ser mantido separado do papel reciclável. Este material deve ser ser colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).",
+            "recomendacoes": "Manter a película na embalagem"
+          },
+          {
+            "iconId": "caixa_de_bolo_fresco___janela",
+            "name": "Janela de plástico",
+            "id": "19Janela de plástico",
+            "papel": null,
+            "cartao": null,
+            "ecal": null,
+            "pebd": null,
+            "pet": null,
+            "pead": null,
+            "plasticos_mistos": 0.0006,
+            "metais_ferrosos": null,
+            "metais_nao_ferrosos": null,
+            "vidro": null,
+            "eps": null,
+            "fracao_resto": null,
+            "where": "Contentor Indiferenciado",
+            "if_true":
+                "Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+            "if_false":
+                "O destino selecionado não está correto. Apesar de este componente ser de plástico, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).",
+            "recomendacoes": "Manter na embalagem"
           }
         ]
       },
       {
         "iconId": "caixa_de_detergente_em_po",
         "id": 20,
-        "name": "Caixa de detergente em pó",
+        "name": "Caixa de detergente\nem pó",
         "components": [
           {
             "iconId": "caixa_de_detergente_em_po",
@@ -1290,7 +1416,7 @@ const categories = [
       {
         "iconId": "cuvete_de_carne_ou_peixe_frescos___completo",
         "id": 24,
-        "name": "Cuvete de carne ou peixe frescos",
+        "name": "Cuvete de carne ou\npeixe frescos",
         "components": [
           {
             "iconId": "cuvete_de_legumes___cuvete",
@@ -1342,12 +1468,12 @@ const categories = [
         ]
       },
       {
-        "iconId": "tabuleiro_met_lico_de_pronto_a_comer",
+        "iconId": "tabuleiro_met_lico_de_pronto_a_comer___completo",
         "id": 25,
         "name": "Tabuleiro metálico de pronto-a-comer",
         "components": [
           {
-            "iconId": "tabuleiro_met_lico_de_pronto_a_comer",
+            "iconId": "tabuleiro_met_lico_de_pronto_a_comer___tabuleiro",
             "name": "Tabuleiro",
             "id": "25Tabuleiro",
             "papel": null,
@@ -1370,13 +1496,13 @@ const categories = [
             "recomendacoes": "Esvaziar; Espalmar"
           },
           {
-            "iconId": "filme_de_selagem",
-            "name": "Filme de selagem",
-            "id": "25Filme de selagem",
+            "iconId": "tabuleiro_met_lico_de_pronto_a_comer___tampa_cartao",
+            "name": "Tampa de cartão",
+            "id": "25Tampa de cartão",
             "papel": null,
-            "cartao": null,
+            "cartao": 0.003,
             "ecal": null,
-            "pebd": 0.003,
+            "pebd": null,
             "pet": null,
             "pead": null,
             "plasticos_mistos": null,
@@ -1385,20 +1511,19 @@ const categories = [
             "vidro": null,
             "eps": null,
             "fracao_resto": null,
-            "where": "Contentor Amarelo",
+            "where": "Contentor Indiferenciado",
             "if_true":
-                "Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+                "Muito bem! Este material de embalagem não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este material é de plástico e deve ser separado da embalagem e colocado isoladamente no contentor amarelo!",
-            "recomendacoes":
-                "Separar o filme de selagem da embalagem; Depositar isoladamente"
+                "O destino selecionado não está correto. Este material é de cartão plastificado, está sujo e com gordurapelo que deve ser mantido separado do cartão reciclável. Este material deve ser colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).",
+            "recomendacoes": "Separar a tampa de cartão"
           }
         ]
       },
       {
         "iconId": "tubo_de_creme_hidratante___completo",
         "id": 26,
-        "name": "Tubo de creme hidratante",
+        "name": "Tubo de creme\nhidratante",
         "components": [
           {
             "iconId": "tubo_de_creme_hidratante___tubo",
@@ -1421,7 +1546,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "tampa_garrafa",
@@ -1443,7 +1568,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           }
         ]
@@ -1457,7 +1582,7 @@ const categories = [
       {
         "iconId": "frasco_de_molho_de_tempero___completo",
         "id": 27,
-        "name": "Frasco de molho de tempero",
+        "name": "Frasco de molho de tempero (plástico)",
         "components": [
           {
             "iconId": "frasco_de_molho_de_tempero___frasco",
@@ -1480,7 +1605,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "tampa_boiao___frasco",
@@ -1502,7 +1627,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           }
         ]
@@ -1510,7 +1635,7 @@ const categories = [
       {
         "iconId": "frasco_de_desodorizante_roll_on___completo",
         "id": 28,
-        "name": "Frasco de desodorizante roll-on",
+        "name": "Frasco de desodorizante roll-on (vidro)",
         "components": [
           {
             "iconId": "frasco_de_desodorizante_roll_on___frasco",
@@ -1533,7 +1658,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "frasco_de_desodorizante_roll_on___tampa",
@@ -1551,19 +1676,19 @@ const categories = [
             "vidro": null,
             "eps": null,
             "fracao_resto": null,
-            "where": "Contentor Amarelo",
+            "where": "Contentor Verde",
             "if_true":
-                "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+                "Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e deve ser separado da embalagem e colocado no contentor amarelo!",
-            "recomendacoes": "Separar a tampa de plástico"
+                "O destino selecionado não está correto. Apesar de este componente ser de plástico, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde!",
+            "recomendacoes": "Manter a tampa na embalagem"
           }
         ]
       },
       {
         "iconId": "frasco_de_cafe___completo",
         "id": 29,
-        "name": "Frasco de café ou outras misturas solúveis",
+        "name": "Frasco de café ou outras misturas solúveis (vidro)",
         "components": [
           {
             "iconId": "frasco_de_cafe___frasco",
@@ -1586,7 +1711,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "frasco_de_cafe___tampa",
@@ -1632,14 +1757,15 @@ const categories = [
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Este componente é de metal e deve ser separado da embalagem e colocado no contentor amarelo!",
-            "recomendacoes": "Separar a película de plástico"
+            "recomendacoes":
+                "Separar a película de metal; Depositar isoladamente"
           }
         ]
       },
       {
         "iconId": "frasco_de_champo_ou_amaciador___completo",
         "id": 30,
-        "name": "Frasco de champô ou amaciador",
+        "name": "Frasco de produtos\nde higiene",
         "components": [
           {
             "iconId": "frasco_de_champo_ou_amaciador___frasco",
@@ -1662,7 +1788,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "frasco_de_champo_ou_amaciador___tampa",
@@ -1684,7 +1810,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           }
         ]
@@ -1715,7 +1841,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "frasco_de_produto_de_limpeza_com_dispensador___tampa",
@@ -1769,7 +1895,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "frasco_sal___tampa",
@@ -1791,7 +1917,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter a tampa na embalagem"
           }
         ]
@@ -1822,7 +1948,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "tampa_garrafa",
@@ -1840,12 +1966,12 @@ const categories = [
             "vidro": null,
             "eps": null,
             "fracao_resto": null,
-            "where": "Contentor Amarelo",
+            "where": "Contentor Verde",
             "if_true":
-                "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
+                "Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de plástico e deve ser separado da embalagem e colocado no contentor amarelo!",
-            "recomendacoes": "Separar a tampa de plástico"
+                "O destino selecionado não está correto. Apesar de este componente ser de plástico, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde!",
+            "recomendacoes": "Manter a tampa na embalagem"
           }
         ]
       }
@@ -1881,12 +2007,12 @@ const categories = [
                 "Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de metal e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "lata_conserva___tampa",
-            "name": "Tampa metálica\n(com anilha)",
-            "id": "34Tampa metálica (com anilha)",
+            "name": "Tampa metálica (com anilha)",
+            "id": "34Tampa metálica removível (com anilha)",
             "papel": null,
             "cartao": null,
             "ecal": null,
@@ -1903,7 +2029,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de metal e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de metal e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter as anilhas na embalagem"
           }
         ]
@@ -1956,7 +2082,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de metal e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de metal e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter as anilhas na embalagem"
           }
         ]
@@ -1987,7 +2113,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de metal e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "lata_de_espuma_barbear___tampa",
@@ -2018,7 +2144,7 @@ const categories = [
       {
         "iconId": "lata_de_ra_ao_para_animal___completo",
         "id": 37,
-        "name": "Lata de ração para animal",
+        "name": "Lata de ração\npara animal",
         "components": [
           {
             "iconId": "lata_de_ra_ao_para_animal___lata",
@@ -2041,11 +2167,11 @@ const categories = [
                 "Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de metal e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "lata_de_ra_ao_para_animal___tampa",
-            "name": "Tampa metálica\n(com anilha)",
+            "name": "Tampa metálica (com anilha)",
             "id": "37Tampa metálica removível (com anilha)",
             "papel": null,
             "cartao": null,
@@ -2063,7 +2189,7 @@ const categories = [
             "if_true":
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
-                "O destino selecionado não está correto. Este componente é de metal e, pelas suas dimensões, deve ser mantido na embalagem e colocado no contentor amarelo!",
+                "O destino selecionado não está correto. Este componente é de metal e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!",
             "recomendacoes": "Manter as anilhas na embalagem"
           }
         ]
@@ -2077,7 +2203,7 @@ const categories = [
       {
         "iconId": "pacote_flex_vel_de_a_ucar___papel",
         "id": 38,
-        "name": "Pacote flexível de açúcar e semelhantes (papel)",
+        "name": "Pacote de açúcar e semelhantes (papel)",
         "components": [
           {
             "iconId": "pacote_flex_vel_de_a_ucar___papel",
@@ -2107,7 +2233,7 @@ const categories = [
       {
         "iconId": "pacote_flex_vel_de_a_ucar___plastico",
         "id": 39,
-        "name": "Pacote flexível de açúcar e semelhantes (plástico)",
+        "name": "Pacote de açúcar e semelhantes (plástico)",
         "components": [
           {
             "iconId": "pacote_flex_vel_de_a_ucar___plastico",
@@ -2137,7 +2263,7 @@ const categories = [
       {
         "iconId": "pacote_flex_vel_manteiga",
         "id": 40,
-        "name": "Pacote flexível de manteiga e semelhantes",
+        "name": "Pacote de margarina\ne semelhantes\n(plástico metalizado)",
         "components": [
           {
             "iconId": "pacote_flex_vel_manteiga",
@@ -2197,7 +2323,7 @@ const categories = [
       {
         "iconId": "pacote_padaria_com_janela___completo",
         "id": 42,
-        "name": "Saco para padaria e pastelaria (com janela de plástico)",
+        "name": "Saco para padaria\ne pastelaria\n(com janela de plástico)",
         "components": [
           {
             "iconId": "pacote_padaria_com_janela___pacote",
@@ -2250,7 +2376,7 @@ const categories = [
       {
         "iconId": "pacote_flexivel_esparguete",
         "id": 43,
-        "name": "Pacote flexível de esparguete e massas secas",
+        "name": "Pacote de esparguete e massas secas",
         "components": [
           {
             "iconId": "pacote_flexivel_esparguete",
@@ -2280,7 +2406,7 @@ const categories = [
       {
         "iconId": "pacote_flexivel_papel_higienico___plastico",
         "id": 44,
-        "name": "Pacote flexível de papel higiénico (plástico)",
+        "name": "Pacote de papel higiénico (plástico)",
         "components": [
           {
             "iconId": "pacote_flexivel_papel_higienico___plastico",
@@ -2310,7 +2436,7 @@ const categories = [
       {
         "iconId": "pacote_flexivel_papel_higienico___papel",
         "id": 45,
-        "name": "Pacote flexível de papel higiénico (papel)",
+        "name": "Pacote de papel higiénico (papel)",
         "components": [
           {
             "iconId": "pacote_flexivel_papel_higienico___papel",
@@ -2429,8 +2555,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!",
-            "recomendacoes":
-                "Separar os materiais de embalagem; Espalmar a caixa"
+            "recomendacoes": "Separar os materiais de embalagem; Espalmar"
           },
           {
             "iconId": "caixa_de_pasta_de_dentes___tubo",
@@ -2485,7 +2610,7 @@ const categories = [
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!",
             "recomendacoes":
-                "Separar os materiais de embalagem;Esvaziar; Espalmar"
+                "Separar os materiais de embalagem; Esvaziar; Espalmar"
           },
           {
             "iconId": "caixa_de_peixe_congelado___involucro_plastico",
@@ -2563,15 +2688,14 @@ const categories = [
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!",
-            "recomendacoes":
-                "Separar os materiais de embalagem; Esvaziar a bolsa de plástico"
+            "recomendacoes": "Separar os materiais de embalagem; Esvaziar"
           }
         ]
       },
       {
         "iconId": "cuvete_de_pronto_a_comer___completa",
         "id": 51,
-        "name": "Cuvete de pronto-a-comer",
+        "name": "Cuvete de\npronto-a-comer",
         "components": [
           {
             "iconId": "cuvete_de_pronto_a_comer___cuvete",
@@ -2594,7 +2718,7 @@ const categories = [
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
                 "O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!",
-            "recomendacoes": "Esvaziar a embalagem"
+            "recomendacoes": "Esvaziar"
           },
           {
             "iconId": "cuvete_de_pronto_a_comer___pelicula",

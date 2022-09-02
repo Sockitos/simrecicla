@@ -55,9 +55,9 @@ flutter:
     - assets/svgs/
     - assets/fonts/
   fonts:
-    - family: CustomIcons
+    - family: PackagesIcons
       fonts:
-        - asset: assets/fonts/CustomIcons.ttf
+        - asset: assets/fonts/PackagesIcons.ttf
     - family: Barlow
       fonts:
         # - asset: assets/fonts/Barlow-Black.ttf
