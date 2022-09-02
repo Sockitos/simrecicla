@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/machines_icons.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/machine.dart';
 import 'package:simtech/ui/screens/recycler/components/draggable_machine.dart';
@@ -173,7 +174,7 @@ class MachineGrid extends ConsumerWidget {
               },
               builder: (context, candidates, _) {
                 return Icon(
-                  Icons.delete_outline_rounded,
+                  MachinesIcons.lixo,
                   size: 64,
                   color: candidates.isEmpty ? null : AppColors.ratingF,
                 );

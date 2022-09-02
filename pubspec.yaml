@@ -58,6 +58,9 @@ flutter:
     - family: PackagesIcons
       fonts:
         - asset: assets/fonts/PackagesIcons.ttf
+    - family: MachinesIcons
+      fonts:
+        - asset: assets/fonts/MachinesIcons.ttf
     - family: Barlow
       fonts:
         # - asset: assets/fonts/Barlow-Black.ttf

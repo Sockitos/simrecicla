@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/machines_icons.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/machine_definition.dart';
 import 'package:simtech/ui/screens/recycler/components/draggable_machine.dart';
@@ -114,8 +115,7 @@ class MachineListOption extends HookWidget {
                                           .map((m) => m.rotate())
                                           .toList();
                                     },
-                                    icon:
-                                        const Icon(Icons.rotate_right_rounded),
+                                    icon: const Icon(MachinesIcons.rotacao),
                                   ),
                                   itemBuilder: (context, index) {
                                     final machine = machines.value[index];
@@ -278,7 +278,7 @@ class MachineListOption extends HookWidget {
                 ),
                 child: Icon(
                   machine.icon,
-                  size: 30,
+                  size: 42,
                   color: AppColors.black,
                 ),
               ),

@@ -183,7 +183,7 @@ class _MachinePainter extends CustomPainter {
         style: TextStyle(
           fontFamily: icon.fontFamily,
           color: accentColor,
-          fontSize: min(size.height, size.width) - portSize.height - 15,
+          fontSize: min(size.height, size.width) - portSize.height - 4,
         ),
       ),
       textDirection: TextDirection.ltr,

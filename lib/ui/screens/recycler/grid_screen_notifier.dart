@@ -1,6 +1,7 @@
 import 'package:directed_graph/directed_graph.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:simtech/constants/machines_icons.dart';
 import 'package:simtech/models/grid.dart';
 import 'package:simtech/models/machine.dart';
 import 'package:simtech/models/machine_graph.dart';
@@ -29,7 +30,7 @@ class GridScreenNotifier extends StateNotifier<GridScreenModel> {
                 cell: Machine(
                   id: 'feed',
                   name: 'feed',
-                  icon: Icons.stream_outlined,
+                  icon: MachinesIcons.entrada,
                   description: 'feed',
                   ports: {
                     AxisDirection.down: MachineOutput(

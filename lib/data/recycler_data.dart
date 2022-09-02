@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:simtech/constants/machines_icons.dart';
 import 'package:simtech/models/machine_definition.dart';
 import 'package:simtech/models/machine_port.dart';
 import 'package:simtech/models/material_sample.dart';
@@ -21,7 +21,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'F',
     name: 'Produto Final',
-    icon: Icons.flag_outlined,
+    icon: MachinesIcons.produto_final,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [],
@@ -30,7 +30,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'P',
     name: 'Passadeira',
-    icon: Icons.double_arrow_outlined,
+    icon: MachinesIcons.passadeira_down,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -56,7 +56,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'JC',
     name: 'Junção de Caudais',
-    icon: Icons.merge_outlined,
+    icon: MachinesIcons.juncao_caudais,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -86,7 +86,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'BO',
     name: 'Abre-Sacos',
-    icon: Icons.shopping_bag_outlined,
+    icon: MachinesIcons.abre_sacos,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -112,7 +112,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'COM',
     name: 'Compactador',
-    icon: Icons.expand_outlined,
+    icon: MachinesIcons.compactador,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -138,7 +138,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'MG',
     name: 'Separador Magnético',
-    icon: Icons.swap_horiz_outlined,
+    icon: MachinesIcons.separador_magnetico,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -180,7 +180,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'ECS',
     name: 'Separador de Focault',
-    icon: Icons.swap_horiz_outlined,
+    icon: MachinesIcons.separador_focault,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -222,7 +222,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'OS_PETECAL',
     name: 'Separador Ótico (PET & ECAL)',
-    icon: Icons.visibility_outlined,
+    icon: MachinesIcons.separador_otico_pe,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -280,7 +280,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'OS_PEADMIX',
     name: 'Separador de Ótico (PEAD & MISTOS)',
-    icon: Icons.visibility_outlined,
+    icon: MachinesIcons.separador_otico_pm,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -338,7 +338,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'BS',
     name: 'Separador Balístico',
-    icon: Icons.swap_horiz_outlined,
+    icon: MachinesIcons.separador_balistico,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -396,7 +396,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'MS_PETol',
     name: 'Triagem Manual de PET Óleo',
-    icon: Icons.swap_horiz_outlined,
+    icon: MachinesIcons.triagem_manual_po,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -438,7 +438,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'MS_Bulk1',
     name: 'Triagem Manual de Volumosos 1',
-    icon: Icons.swap_horiz_outlined,
+    icon: MachinesIcons.triagem_manual_v1,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -496,7 +496,7 @@ const machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'MS_Bulk2',
     name: 'Triagem Manual de Volumosos 2',
-    icon: Icons.swap_horiz_outlined,
+    icon: MachinesIcons.triagem_manual_v2,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -564,7 +564,7 @@ const machinesPC = <MachineDefinition>[
   MachineDefinition(
     id: 'F',
     name: 'Produto Final',
-    icon: Icons.flag_outlined,
+    icon: MachinesIcons.produto_final,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [],
@@ -573,7 +573,7 @@ const machinesPC = <MachineDefinition>[
   MachineDefinition(
     id: 'P',
     name: 'Passadeira',
-    icon: Icons.double_arrow_outlined,
+    icon: MachinesIcons.passadeira_down,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -594,7 +594,7 @@ const machinesPC = <MachineDefinition>[
   MachineDefinition(
     id: 'JC',
     name: 'Junção de Caudais',
-    icon: Icons.merge_outlined,
+    icon: MachinesIcons.juncao_caudais,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -619,7 +619,7 @@ const machinesPC = <MachineDefinition>[
   MachineDefinition(
     id: 'DC',
     name: 'Crivo de Discos',
-    icon: Icons.album_outlined,
+    icon: MachinesIcons.crivo_de_discos,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -651,7 +651,7 @@ const machinesPC = <MachineDefinition>[
   MachineDefinition(
     id: 'BS',
     name: 'Separador Balístico',
-    icon: Icons.swap_horiz_outlined,
+    icon: MachinesIcons.separador_balistico,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -694,7 +694,7 @@ const machinesPC = <MachineDefinition>[
   MachineDefinition(
     id: 'MS_CB',
     name: 'Triagem Manual de Contaminantes do Cartão',
-    icon: Icons.swap_horiz_outlined,
+    icon: MachinesIcons.triagem_manual_c,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
@@ -726,7 +726,7 @@ const machinesPC = <MachineDefinition>[
   MachineDefinition(
     id: 'MS_P',
     name: 'Triagem Manual de Contaminantes do Papel',
-    icon: Icons.swap_horiz_outlined,
+    icon: MachinesIcons.triagem_manual_p,
     description:
         'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     outputs: [
