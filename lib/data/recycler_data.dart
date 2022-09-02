@@ -14,7 +14,7 @@ const defaultSamplePM = MaterialSamplePM(
   plasticosMistos: 0.2370,
   metaisFerrosos: 0.0440,
   metaisNaoFerrosos: 0.0143,
-  naoRecuperaveis: 0.3514,
+  naoRecuperaveis: 0.3513,
 );
 
 const machinesPM = <MachineDefinition>[
