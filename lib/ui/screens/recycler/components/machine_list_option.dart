@@ -234,7 +234,9 @@ class MachineListOption extends HookWidget {
                                               height: 16,
                                             ),
                                             const SizedBox(width: 10),
-                                            Text(o.description),
+                                            Expanded(
+                                              child: Text(o.description),
+                                            ),
                                           ],
                                         ),
                                       ],
