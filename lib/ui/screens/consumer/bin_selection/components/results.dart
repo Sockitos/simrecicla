@@ -37,7 +37,7 @@ class Results extends HookWidget {
               width: 855,
               height: 600,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(90, 40, 70, 30),
+                padding: const EdgeInsets.fromLTRB(90, 40, 30, 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: mode.value.when(
