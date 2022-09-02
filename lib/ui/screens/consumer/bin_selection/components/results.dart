@@ -37,7 +37,7 @@ class Results extends HookWidget {
               width: 855,
               height: 600,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(90, 40, 80, 30),
+                padding: const EdgeInsets.fromLTRB(90, 40, 70, 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: mode.value.when(
@@ -101,7 +101,8 @@ class Results extends HookWidget {
                               ),
                             ),
                             const SizedBox(width: 40),
-                            SizedBox(
+                            Container(
+                              color: Colors.red,
                               height: 180,
                               width: 360,
                               child: charts.BarChart(
@@ -194,7 +195,7 @@ class Results extends HookWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 35),
                         Row(
                           children: [
                             Expanded(
@@ -233,7 +234,9 @@ class Results extends HookWidget {
                                   ),
                                   const SizedBox(height: 15),
                                   Text(
-                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+                                    results.isCorrect
+                                        ? 'A deposição da embalagem nos contentores adequados representa um contributo para a riqueza em Portugal superior face à não reciclagem destes materiais.'
+                                        : 'Os destinos selecionados apresentam um contributo para a riqueza em Portugal inferior à colocação nos contentores adequados.',
                                     style:
                                         AppTextStyles.paragraph(context.layout),
                                   ),
