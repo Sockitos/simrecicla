@@ -246,7 +246,6 @@ class PackagesIcons {
   static IconData getIcon(String iconId) => iconMap[iconId] ?? manga;
 
   static const Map<String, IconData> iconMap = {
-    'missing': Icons.question_mark,
     'lata_de_refrigerante___lata': lata_de_refrigerante___lata,
     'manga': manga,
     'pacote_de_leite_com_tampa': pacote_de_leite_com_tampa,
