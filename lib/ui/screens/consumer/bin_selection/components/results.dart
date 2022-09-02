@@ -142,7 +142,7 @@ class Results extends HookWidget {
                                 ],
                                 behaviors: [
                                   charts.ChartTitle(
-                                    'kg CO2eq / Embalagem',
+                                    'g CO2eq / Embalagem',
                                     behaviorPosition:
                                         charts.BehaviorPosition.start,
                                     titleOutsideJustification:
@@ -186,7 +186,7 @@ class Results extends HookWidget {
                                   tickFormatterSpec:
                                       charts.BasicNumericTickFormatterSpec(
                                     (value) => value == 0
-                                        ? ''
+                                        ? '0'
                                         : '${value! / 10000000}',
                                   ),
                                 ),
@@ -325,7 +325,7 @@ class Results extends HookWidget {
                                   tickFormatterSpec:
                                       charts.BasicNumericTickFormatterSpec(
                                     (value) => value == 0
-                                        ? ''
+                                        ? '0'
                                         : '${value! / 10000000}',
                                   ),
                                 ),

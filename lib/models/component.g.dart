@@ -54,6 +54,4 @@ const _$WhereEnumMap = {
   Where.recolhaPapelCartao: 'Contentor Azul',
   Where.recolhaPlasticoMetal: 'Contentor Amarelo',
   Where.recolhaVidro: 'Contentor Verde',
-  Where.recolhaEcocentro: 'recolhaEcocentro',
-  Where.recolhaBiorresiduos: 'recolhaBiorresiduos',
 };

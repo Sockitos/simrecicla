@@ -12,8 +12,6 @@ enum Where {
   recolhaPlasticoMetal,
   @JsonValue('Contentor Verde')
   recolhaVidro,
-  recolhaEcocentro,
-  recolhaBiorresiduos,
 }
 
 @freezed

@@ -11,23 +11,20 @@ class Line {
     this.metaisNaoFerrosos = 0.0,
     this.vidro = 0.0,
     this.eps = 0.0,
-    this.fracaoResto = 0.0,
   });
 
-  factory Line.fromValue(double value) => Line(
-        papel: value,
-        cartao: value,
-        ecal: value,
-        filmePlastico: value,
-        pet: value,
-        pead: value,
-        plasticosMistos: value,
-        metaisFerrosos: value,
-        metaisNaoFerrosos: value,
-        vidro: value,
-        eps: value,
-        fracaoResto: value,
-      );
+  const Line.fromValue(double value)
+      : papel = value,
+        cartao = value,
+        ecal = value,
+        filmePlastico = value,
+        pet = value,
+        pead = value,
+        plasticosMistos = value,
+        metaisFerrosos = value,
+        metaisNaoFerrosos = value,
+        vidro = value,
+        eps = value;
 
   static const Line zero = Line();
 
@@ -42,11 +39,10 @@ class Line {
   final double metaisNaoFerrosos;
   final double vidro;
   final double eps;
-  final double fracaoResto;
 
   @override
   String toString() {
-    return '| ${papel.toStringAsFixed(7)} | ${cartao.toStringAsFixed(7)} | ${ecal.toStringAsFixed(7)} | ${filmePlastico.toStringAsFixed(7)} | ${pet.toStringAsFixed(7)} | ${pead.toStringAsFixed(7)} | ${plasticosMistos.toStringAsFixed(7)} | ${metaisFerrosos.toStringAsFixed(7)} | ${vidro.toStringAsFixed(7)} | ${eps.toStringAsFixed(7)} | ${fracaoResto.toStringAsFixed(7)} |';
+    return '| ${papel.toStringAsFixed(7)} | ${cartao.toStringAsFixed(7)} | ${ecal.toStringAsFixed(7)} | ${filmePlastico.toStringAsFixed(7)} | ${pet.toStringAsFixed(7)} | ${pead.toStringAsFixed(7)} | ${plasticosMistos.toStringAsFixed(7)} | ${metaisFerrosos.toStringAsFixed(7)} | ${vidro.toStringAsFixed(7)} | ${eps.toStringAsFixed(7)} |';
   }
 
   double sum() {
@@ -60,8 +56,7 @@ class Line {
         metaisFerrosos +
         metaisNaoFerrosos +
         vidro +
-        eps +
-        fracaoResto;
+        eps;
   }
 
   Line operator +(Line other) {
@@ -77,7 +72,6 @@ class Line {
       metaisNaoFerrosos: metaisNaoFerrosos + other.metaisNaoFerrosos,
       vidro: vidro + other.vidro,
       eps: eps + other.eps,
-      fracaoResto: fracaoResto + other.fracaoResto,
     );
   }
 
@@ -94,7 +88,6 @@ class Line {
       metaisNaoFerrosos: metaisNaoFerrosos - other.metaisNaoFerrosos,
       vidro: vidro - other.vidro,
       eps: eps - other.eps,
-      fracaoResto: fracaoResto - other.fracaoResto,
     );
   }
 
@@ -111,7 +104,22 @@ class Line {
       metaisNaoFerrosos: metaisNaoFerrosos * other.metaisNaoFerrosos,
       vidro: vidro * other.vidro,
       eps: eps * other.eps,
-      fracaoResto: fracaoResto * other.fracaoResto,
+    );
+  }
+
+  Line operator /(Line other) {
+    return Line(
+      papel: papel / other.papel,
+      cartao: cartao / other.cartao,
+      ecal: ecal / other.ecal,
+      filmePlastico: filmePlastico / other.filmePlastico,
+      pet: pet / other.pet,
+      pead: pead / other.pead,
+      plasticosMistos: plasticosMistos / other.plasticosMistos,
+      metaisFerrosos: metaisFerrosos / other.metaisFerrosos,
+      metaisNaoFerrosos: metaisNaoFerrosos / other.metaisNaoFerrosos,
+      vidro: vidro / other.vidro,
+      eps: eps / other.eps,
     );
   }
 
@@ -128,7 +136,6 @@ class Line {
       metaisNaoFerrosos: metaisNaoFerrosos + other,
       vidro: vidro + other,
       eps: eps + other,
-      fracaoResto: fracaoResto + other,
     );
   }
 
@@ -145,7 +152,6 @@ class Line {
       metaisNaoFerrosos: metaisNaoFerrosos * other,
       vidro: vidro * other,
       eps: eps * other,
-      fracaoResto: fracaoResto * other,
     );
   }
 }
