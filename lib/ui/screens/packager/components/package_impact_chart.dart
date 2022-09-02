@@ -132,7 +132,7 @@ class PackageImpactChart extends StatelessWidget {
                                           value: impact.producao,
                                           color: AppColors.grey6,
                                           label:
-                                              'Utilização de\nmateriais virgens',
+                                              'Produção com\nmaterial virgem',
                                         ),
                                       ),
                                       const Spacer(flex: 2),
@@ -145,7 +145,7 @@ class PackageImpactChart extends StatelessWidget {
                                               impact.incorporacao,
                                           color: AppColors.ratingB,
                                           label:
-                                              'Incorporação de\nmateriais reciclados',
+                                              'Incorporação de\nmaterial reciclado',
                                         ),
                                       ),
                                       const Spacer(flex: 2),
@@ -163,7 +163,7 @@ class PackageImpactChart extends StatelessWidget {
                                           color: impact.eol.isNegative
                                               ? AppColors.ratingA
                                               : AppColors.ratingF,
-                                          label: 'Reciclagem\n',
+                                          label: 'Fim de vida\n',
                                         ),
                                       ),
                                       const Spacer(),
@@ -174,8 +174,7 @@ class PackageImpactChart extends StatelessWidget {
                                           maxValue: maxValue,
                                           value: impact.impacteTotal,
                                           color: AppColors.blue,
-                                          label:
-                                              'Impacte global\nde uma embalagem',
+                                          label: 'Impacte total\nda embalagem',
                                         ),
                                       ),
                                       const Spacer(),
