@@ -80,7 +80,7 @@ class _RecyclerIntro extends StatelessWidget {
           ),
           SizedBox(height: AppSpacings.small(context.layout)),
           Text(
-            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            'Este simulador permite ao utilizador desenhar uma linha de triagem através da escolha um conjunto de equipamentos e avaliar as eficiências de recuperação de materiais de embalagem, inerentes às diferentes sequências dos equipamentos mais usados nestas instalações.',
             style: AppTextStyles.paragraph(context.layout),
             textAlign: textAlign,
           ),
