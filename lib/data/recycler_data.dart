@@ -23,7 +23,7 @@ const machinesPM = <MachineDefinition>[
     name: 'Produto Final',
     icon: MachinesIcons.produto_final,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Saída de produto da linha de triagem, seja este o material-alvo ou rejeitado. Deve ser associado a todas as saídas finais da linha.',
     outputs: [],
     inputs: [MachineInput(id: 'final')],
   ),
@@ -32,7 +32,7 @@ const machinesPM = <MachineDefinition>[
     name: 'Passadeira',
     icon: MachinesIcons.passadeira_down,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Transporte do fluxo de materiais através de uma tela transportadora. Deve ser adicionada as vezes necessárias para criar a linha com dimensão desejada.',
     outputs: [
       MachineOutput(
         id: 'out',
@@ -58,7 +58,7 @@ const machinesPM = <MachineDefinition>[
     name: 'Junção de Caudais',
     icon: MachinesIcons.juncao_caudais,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Junção de caudais de materiais provenientes de diferentes saídas.',
     outputs: [
       MachineOutput(
         id: 'JC',
@@ -87,8 +87,7 @@ const machinesPM = <MachineDefinition>[
     id: 'BO',
     name: 'Abre-Sacos',
     icon: MachinesIcons.abre_sacos,
-    description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    description: 'Abertura de sacos para libertação de resíduos na linha.',
     outputs: [
       MachineOutput(
         id: 'BO_P',
@@ -113,8 +112,7 @@ const machinesPM = <MachineDefinition>[
     id: 'COM',
     name: 'Compactador',
     icon: MachinesIcons.compactador,
-    description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    description: 'Compactação dos materiais em fardo.',
     outputs: [
       MachineOutput(
         id: 'COM_P',
@@ -139,8 +137,7 @@ const machinesPM = <MachineDefinition>[
     id: 'MG',
     name: 'Separador Magnético',
     icon: MachinesIcons.separador_magnetico,
-    description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    description: 'Separação dos materiais ferrosos dos restantes materiais.',
     outputs: [
       MachineOutput(
         id: 'MG_MAG',
@@ -182,7 +179,7 @@ const machinesPM = <MachineDefinition>[
     name: 'Separador de Focault',
     icon: MachinesIcons.separador_focault,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Separação dos materiais não ferrosos dos restantes materiais.',
     outputs: [
       MachineOutput(
         id: 'ECS_COND',
@@ -224,7 +221,7 @@ const machinesPM = <MachineDefinition>[
     name: 'Separador Ótico (PET & ECAL)',
     icon: MachinesIcons.separador_otico_pe,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Separação dos materiais de PET e ECAL dos restantes materiais.',
     outputs: [
       MachineOutput(
         id: 'OS_PETECAL_PET',
@@ -279,10 +276,10 @@ const machinesPM = <MachineDefinition>[
   ),
   MachineDefinition(
     id: 'OS_PEADMIX',
-    name: 'Separador de Ótico (PEAD & MISTOS)',
+    name: 'Separador Ótico (PEAD & MISTOS)',
     icon: MachinesIcons.separador_otico_pm,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Separação dos materiais de PEAD e Mistos dos restantes materiais.',
     outputs: [
       MachineOutput(
         id: 'OS_PEADMIX_PEAD',
@@ -340,7 +337,7 @@ const machinesPM = <MachineDefinition>[
     name: 'Separador Balístico',
     icon: MachinesIcons.separador_balistico,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Separação dos materiais em três frações, em função das suas caracteristicas, nomeadamente, fluxo de materiais planares, finos e rolantes.',
     outputs: [
       MachineOutput(
         id: 'BS_PM_2D',
@@ -397,8 +394,7 @@ const machinesPM = <MachineDefinition>[
     id: 'MS_PETol',
     name: 'Triagem Manual de PET Óleo',
     icon: MachinesIcons.triagem_manual_po,
-    description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    description: 'Triagem manual com vista à separação do PET óleo.',
     outputs: [
       MachineOutput(
         id: 'MS_PETol_T',
@@ -440,11 +436,11 @@ const machinesPM = <MachineDefinition>[
     name: 'Triagem Manual de Volumosos 1',
     icon: MachinesIcons.triagem_manual_v1,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Triagem manual com vista à separação de volumosos (grades de plástico e bidons).',
     outputs: [
       MachineOutput(
         id: 'MS_Bulk1_Tcont',
-        description: '',
+        description: 'Fluxo de materiais Alvo 1 (Contaminantes Volumosos)',
         type: MachineOutputType.one,
         materialConversion: MaterialSamplePM(
           ecal: 0.0003,
@@ -498,7 +494,7 @@ const machinesPM = <MachineDefinition>[
     name: 'Triagem Manual de Volumosos 2',
     icon: MachinesIcons.triagem_manual_v2,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Triagem manual com vista à separação de volumosos (filme plástico).',
     outputs: [
       MachineOutput(
         id: 'MS_Bulk2_Tcont',
@@ -566,7 +562,7 @@ const machinesPC = <MachineDefinition>[
     name: 'Produto Final',
     icon: MachinesIcons.produto_final,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Saída de produto da linha de triagem, seja este o material-alvo ou rejeitado. Deve ser associado a todas as saídas finais da linha.',
     outputs: [],
     inputs: [MachineInput(id: 'final')],
   ),
@@ -575,7 +571,7 @@ const machinesPC = <MachineDefinition>[
     name: 'Passadeira',
     icon: MachinesIcons.passadeira_down,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Transporte do fluxo de materiais através de uma tela transportadora. Deve ser adicionada as vezes necessárias para criar a linha com dimensão desejada.',
     outputs: [
       MachineOutput(
         id: 'out',
@@ -596,7 +592,7 @@ const machinesPC = <MachineDefinition>[
     name: 'Junção de Caudais',
     icon: MachinesIcons.juncao_caudais,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Junção de caudais de materiais provenientes de diferentes saídas.',
     outputs: [
       MachineOutput(
         id: 'JC',
@@ -621,7 +617,7 @@ const machinesPC = <MachineDefinition>[
     name: 'Crivo de Discos',
     icon: MachinesIcons.crivo_de_discos,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Separação dos materiais em duas frações, em função da sua dimensão. A fração supra-crivo recupera materiais de grandes dimensões e a fração infra-crivo descarta materiais de pequenas dimensões.',
     outputs: [
       MachineOutput(
         id: 'DS_CB_OS',
@@ -653,7 +649,7 @@ const machinesPC = <MachineDefinition>[
     name: 'Separador Balístico',
     icon: MachinesIcons.separador_balistico,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Separação dos materiais em três frações, em função das suas características, nomeadamente, fluxo de materiais planares (no qual se inclui papel e cartão), finos e rolantes.',
     outputs: [
       MachineOutput(
         id: 'BS_PC_2D',
@@ -696,7 +692,7 @@ const machinesPC = <MachineDefinition>[
     name: 'Triagem Manual de Contaminantes do Cartão',
     icon: MachinesIcons.triagem_manual_c,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Triagem manual com vista à remoção dos contaminantes presentes.',
     outputs: [
       MachineOutput(
         id: 'MS_CB_T',
@@ -728,7 +724,7 @@ const machinesPC = <MachineDefinition>[
     name: 'Triagem Manual de Contaminantes do Papel',
     icon: MachinesIcons.triagem_manual_p,
     description:
-        'Sobre a máquina lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Triagem manual com vista à remoção dos contaminantes presentes.',
     outputs: [
       MachineOutput(
         id: 'MS_P_TCONT',
