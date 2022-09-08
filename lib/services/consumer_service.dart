@@ -121,7 +121,7 @@ class ConsumerService {
     pet: 0.8,
     pead: 0.944287063267233,
     plasticosMistos: 0.872143531633617,
-    metaisFerrosos: 0.872143531633617,
+    metaisFerrosos: 0.884173297966401,
     metaisNaoFerrosos: 0.991080277502478,
     vidro: 1.1981554569275,
     eps: 0.872143531633617,
@@ -135,7 +135,7 @@ class ConsumerService {
     pet: -0.8,
     pead: -0.944287063267233,
     plasticosMistos: -0.872143531633617,
-    metaisFerrosos: -0.872143531633617,
+    metaisFerrosos: -0.884173297966401,
     metaisNaoFerrosos: -0.991080277502478,
     vidro: -1.1981554569275,
     eps: -0.872143531633617,
@@ -409,8 +409,8 @@ class ConsumerService {
     final reciclagem = ((triagemPC * cOrigemTriagem * cTriagemPC) +
             (triagemPM * cOrigemTriagem * cTriagemPM) +
             (triagemVidro * cOrigemTriagem * cTriagemVidro.reciclagem) +
-            (tratamentoMecanico * cOrigemTMTMBDA * cTratamentoMecanico) *
-                (digestaoAnaerobia * cOrigemTMTMBDA * cDigestaoAnaerobia)) *
+            (tratamentoMecanico * cOrigemTMTMBDA * cTratamentoMecanico) +
+            (digestaoAnaerobia * cOrigemTMTMBDA * cDigestaoAnaerobia)) *
         cAlocacaoFluxoResiduos;
 
     final valorizacaoEnergetica = (recolhaPapelCartao +
