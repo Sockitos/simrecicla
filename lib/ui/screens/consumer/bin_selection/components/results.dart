@@ -283,7 +283,7 @@ class Results extends HookWidget {
                                 ],
                                 behaviors: [
                                   charts.ChartTitle(
-                                    '€ / Embalagem',
+                                    '€ VAB / Embalagem',
                                     behaviorPosition:
                                         charts.BehaviorPosition.start,
                                     titleOutsideJustification:

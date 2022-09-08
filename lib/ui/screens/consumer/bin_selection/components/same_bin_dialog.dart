@@ -47,7 +47,7 @@ class SameBinDialog extends StatelessWidget {
             ),
             const SizedBox(height: 25),
             Text(
-              'Na grande maioria das situações, a viatura recolhe apenas um tipo de ecoponto por circuito, facto que poderá confirmar na prática se acompanhar uma recolha na sua área de residência. ',
+              'Na maioria dos Sistemas de Gestão de Resíduos Urbanos, a viatura recolhe apenas um tipo de ecoponto por circuito, facto que poderá confirmar na prática se acompanhar uma recolha na sua área de residência. ',
               style: AppTextStyles.paragraph(context.layout),
             ),
             const SizedBox(height: 25),

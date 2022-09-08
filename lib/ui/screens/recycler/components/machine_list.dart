@@ -41,7 +41,7 @@ class MachineList extends HookWidget {
                 children: [
                   const TextSpan(
                     text:
-                        'Arraste os icons referentes a cada máquina para a grelha. Com cada máquina e passadeira, vai construindo a sua linha de triagem. Se tiver dúvidas, consulte as ',
+                        'Arraste os ícones referentes a cada máquina para a grelha. Com cada máquina e passadeira, vai construindo a sua linha de triagem. Se tiver dúvidas, consulte as ',
                   ),
                   TextSpan(
                     text: 'instruções',

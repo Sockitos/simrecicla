@@ -42,7 +42,7 @@ class Line {
 
   @override
   String toString() {
-    return '| ${papel.toStringAsFixed(7)} | ${cartao.toStringAsFixed(7)} | ${ecal.toStringAsFixed(7)} | ${filmePlastico.toStringAsFixed(7)} | ${pet.toStringAsFixed(7)} | ${pead.toStringAsFixed(7)} | ${plasticosMistos.toStringAsFixed(7)} | ${metaisFerrosos.toStringAsFixed(7)} | ${vidro.toStringAsFixed(7)} | ${eps.toStringAsFixed(7)} |';
+    return '| ${papel.toStringAsFixed(7)} | ${cartao.toStringAsFixed(7)} | ${ecal.toStringAsFixed(7)} | ${filmePlastico.toStringAsFixed(7)} | ${pet.toStringAsFixed(7)} | ${pead.toStringAsFixed(7)} | ${plasticosMistos.toStringAsFixed(7)} | ${metaisFerrosos.toStringAsFixed(7)} | ${metaisNaoFerrosos.toStringAsFixed(7)} | ${vidro.toStringAsFixed(7)} | ${eps.toStringAsFixed(7)} |';
   }
 
   double sum() {
