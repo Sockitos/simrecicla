@@ -56,10 +56,10 @@ class FeedOptions extends HookConsumerWidget {
                                       percentages.value.mulAll(weight.value);
                                 },
                           style: ElevatedButton.styleFrom(
-                            primary: useDefault.value
+                            backgroundColor: useDefault.value
                                 ? AppColors.grey3
                                 : AppColors.grey1,
-                            onPrimary: AppColors.black,
+                            foregroundColor: AppColors.black,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(14),
                             ),
@@ -80,10 +80,10 @@ class FeedOptions extends HookConsumerWidget {
                                   useDefault.value = false;
                                 },
                           style: ElevatedButton.styleFrom(
-                            primary: !useDefault.value
+                            backgroundColor: !useDefault.value
                                 ? AppColors.grey3
                                 : AppColors.grey1,
-                            onPrimary: AppColors.black,
+                            foregroundColor: AppColors.black,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(14),
                             ),

@@ -4,7 +4,7 @@ import 'package:simtech/constants/text_styles.dart';
 
 final elevatedButtonTheme = ElevatedButtonThemeData(
   style: ElevatedButton.styleFrom(
-    primary: AppColors.lightGreen,
+    backgroundColor: AppColors.lightGreen,
     shadowColor: Colors.transparent,
     elevation: 0,
     shape: const StadiumBorder(),

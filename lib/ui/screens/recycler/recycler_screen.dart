@@ -135,7 +135,9 @@ class _RecyclerIntro extends StatelessWidget {
                           defaultSample: defaultSamplePC,
                         ),
                       ),
-                      style: ElevatedButton.styleFrom(primary: AppColors.blue),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.blue,
+                      ),
                       child: const Text('Papel e Cartão'),
                     ),
                     const SizedBox(height: 15),
@@ -147,8 +149,9 @@ class _RecyclerIntro extends StatelessWidget {
                           defaultSample: defaultSamplePM,
                         ),
                       ),
-                      style:
-                          ElevatedButton.styleFrom(primary: AppColors.yellow),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.yellow,
+                      ),
                       child: const Text('Plástico e Metal'),
                     ),
                   ],

@@ -107,10 +107,6 @@ class GridScreen extends StatelessWidget {
                                 const MachineGrid(),
                                 const SizedBox(height: 50),
                                 ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    primary: AppColors.lightGreen,
-                                    onSurface: AppColors.grey7,
-                                  ),
                                   onPressed: state.graph.isValidated
                                       ? () {
                                           final notifier = ref.read(

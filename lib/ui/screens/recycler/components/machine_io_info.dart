@@ -77,10 +77,10 @@ class MachineIOInfo extends HookConsumerWidget {
                               showInput.value = true;
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: showInput.value
+                              backgroundColor: showInput.value
                                   ? AppColors.grey3
                                   : AppColors.grey1,
-                              onPrimary: AppColors.black,
+                              foregroundColor: AppColors.black,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(14),
                               ),
@@ -114,10 +114,11 @@ class MachineIOInfo extends HookConsumerWidget {
                                 showInput.value = false;
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: selectedOutput.value == output.id
-                                    ? AppColors.grey3
-                                    : AppColors.grey1,
-                                onPrimary: AppColors.black,
+                                backgroundColor:
+                                    selectedOutput.value == output.id
+                                        ? AppColors.grey3
+                                        : AppColors.grey1,
+                                foregroundColor: AppColors.black,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(14),
                                 ),

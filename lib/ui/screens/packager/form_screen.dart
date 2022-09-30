@@ -374,8 +374,8 @@ class QuestionsPageView extends HookWidget {
         Center(
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: isLastPage.value ? AppColors.blue : AppColors.lightGreen,
-              onSurface: AppColors.grey7,
+              backgroundColor:
+                  isLastPage.value ? AppColors.blue : AppColors.lightGreen,
               elevation: 0,
               shape: const StadiumBorder(),
               fixedSize: const Size.fromHeight(62),
