@@ -39,6 +39,7 @@ mixin _$Component {
   @JsonKey(name: 'fracao_resto')
   double? get fracaoResto => throw _privateConstructorUsedError;
   Where get where => throw _privateConstructorUsedError;
+  bool get reciclavel => throw _privateConstructorUsedError;
   @JsonKey(name: 'if_true')
   String get ifTrue => throw _privateConstructorUsedError;
   @JsonKey(name: 'if_false')
@@ -71,6 +72,7 @@ abstract class $ComponentCopyWith<$Res> {
       double? eps,
       @JsonKey(name: 'fracao_resto') double? fracaoResto,
       Where where,
+      bool reciclavel,
       @JsonKey(name: 'if_true') String ifTrue,
       @JsonKey(name: 'if_false') String ifFalse,
       String recomendacoes});
@@ -101,6 +103,7 @@ class _$ComponentCopyWithImpl<$Res> implements $ComponentCopyWith<$Res> {
     Object? eps = freezed,
     Object? fracaoResto = freezed,
     Object? where = freezed,
+    Object? reciclavel = freezed,
     Object? ifTrue = freezed,
     Object? ifFalse = freezed,
     Object? recomendacoes = freezed,
@@ -166,6 +169,10 @@ class _$ComponentCopyWithImpl<$Res> implements $ComponentCopyWith<$Res> {
           ? _value.where
           : where // ignore: cast_nullable_to_non_nullable
               as Where,
+      reciclavel: reciclavel == freezed
+          ? _value.reciclavel
+          : reciclavel // ignore: cast_nullable_to_non_nullable
+              as bool,
       ifTrue: ifTrue == freezed
           ? _value.ifTrue
           : ifTrue // ignore: cast_nullable_to_non_nullable
@@ -204,6 +211,7 @@ abstract class _$$_ComponentCopyWith<$Res> implements $ComponentCopyWith<$Res> {
       double? eps,
       @JsonKey(name: 'fracao_resto') double? fracaoResto,
       Where where,
+      bool reciclavel,
       @JsonKey(name: 'if_true') String ifTrue,
       @JsonKey(name: 'if_false') String ifFalse,
       String recomendacoes});
@@ -236,6 +244,7 @@ class __$$_ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
     Object? eps = freezed,
     Object? fracaoResto = freezed,
     Object? where = freezed,
+    Object? reciclavel = freezed,
     Object? ifTrue = freezed,
     Object? ifFalse = freezed,
     Object? recomendacoes = freezed,
@@ -301,6 +310,10 @@ class __$$_ComponentCopyWithImpl<$Res> extends _$ComponentCopyWithImpl<$Res>
           ? _value.where
           : where // ignore: cast_nullable_to_non_nullable
               as Where,
+      reciclavel: reciclavel == freezed
+          ? _value.reciclavel
+          : reciclavel // ignore: cast_nullable_to_non_nullable
+              as bool,
       ifTrue: ifTrue == freezed
           ? _value.ifTrue
           : ifTrue // ignore: cast_nullable_to_non_nullable
@@ -336,6 +349,7 @@ class _$_Component extends _Component {
       this.eps,
       @JsonKey(name: 'fracao_resto') this.fracaoResto,
       required this.where,
+      required this.reciclavel,
       @JsonKey(name: 'if_true') required this.ifTrue,
       @JsonKey(name: 'if_false') required this.ifFalse,
       required this.recomendacoes})
@@ -379,6 +393,8 @@ class _$_Component extends _Component {
   @override
   final Where where;
   @override
+  final bool reciclavel;
+  @override
   @JsonKey(name: 'if_true')
   final String ifTrue;
   @override
@@ -389,7 +405,7 @@ class _$_Component extends _Component {
 
   @override
   String toString() {
-    return 'Component(name: $name, iconId: $iconId, papel: $papel, cartao: $cartao, ecal: $ecal, pebd: $pebd, pet: $pet, pead: $pead, plasticosMistos: $plasticosMistos, metaisFerrosos: $metaisFerrosos, metaisNaoFerrosos: $metaisNaoFerrosos, vidro: $vidro, eps: $eps, fracaoResto: $fracaoResto, where: $where, ifTrue: $ifTrue, ifFalse: $ifFalse, recomendacoes: $recomendacoes)';
+    return 'Component(name: $name, iconId: $iconId, papel: $papel, cartao: $cartao, ecal: $ecal, pebd: $pebd, pet: $pet, pead: $pead, plasticosMistos: $plasticosMistos, metaisFerrosos: $metaisFerrosos, metaisNaoFerrosos: $metaisNaoFerrosos, vidro: $vidro, eps: $eps, fracaoResto: $fracaoResto, where: $where, reciclavel: $reciclavel, ifTrue: $ifTrue, ifFalse: $ifFalse, recomendacoes: $recomendacoes)';
   }
 
   @override
@@ -416,6 +432,8 @@ class _$_Component extends _Component {
             const DeepCollectionEquality()
                 .equals(other.fracaoResto, fracaoResto) &&
             const DeepCollectionEquality().equals(other.where, where) &&
+            const DeepCollectionEquality()
+                .equals(other.reciclavel, reciclavel) &&
             const DeepCollectionEquality().equals(other.ifTrue, ifTrue) &&
             const DeepCollectionEquality().equals(other.ifFalse, ifFalse) &&
             const DeepCollectionEquality()
@@ -424,26 +442,28 @@ class _$_Component extends _Component {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(iconId),
-      const DeepCollectionEquality().hash(papel),
-      const DeepCollectionEquality().hash(cartao),
-      const DeepCollectionEquality().hash(ecal),
-      const DeepCollectionEquality().hash(pebd),
-      const DeepCollectionEquality().hash(pet),
-      const DeepCollectionEquality().hash(pead),
-      const DeepCollectionEquality().hash(plasticosMistos),
-      const DeepCollectionEquality().hash(metaisFerrosos),
-      const DeepCollectionEquality().hash(metaisNaoFerrosos),
-      const DeepCollectionEquality().hash(vidro),
-      const DeepCollectionEquality().hash(eps),
-      const DeepCollectionEquality().hash(fracaoResto),
-      const DeepCollectionEquality().hash(where),
-      const DeepCollectionEquality().hash(ifTrue),
-      const DeepCollectionEquality().hash(ifFalse),
-      const DeepCollectionEquality().hash(recomendacoes));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(name),
+        const DeepCollectionEquality().hash(iconId),
+        const DeepCollectionEquality().hash(papel),
+        const DeepCollectionEquality().hash(cartao),
+        const DeepCollectionEquality().hash(ecal),
+        const DeepCollectionEquality().hash(pebd),
+        const DeepCollectionEquality().hash(pet),
+        const DeepCollectionEquality().hash(pead),
+        const DeepCollectionEquality().hash(plasticosMistos),
+        const DeepCollectionEquality().hash(metaisFerrosos),
+        const DeepCollectionEquality().hash(metaisNaoFerrosos),
+        const DeepCollectionEquality().hash(vidro),
+        const DeepCollectionEquality().hash(eps),
+        const DeepCollectionEquality().hash(fracaoResto),
+        const DeepCollectionEquality().hash(where),
+        const DeepCollectionEquality().hash(reciclavel),
+        const DeepCollectionEquality().hash(ifTrue),
+        const DeepCollectionEquality().hash(ifFalse),
+        const DeepCollectionEquality().hash(recomendacoes)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -475,6 +495,7 @@ abstract class _Component extends Component {
       final double? eps,
       @JsonKey(name: 'fracao_resto') final double? fracaoResto,
       required final Where where,
+      required final bool reciclavel,
       @JsonKey(name: 'if_true') required final String ifTrue,
       @JsonKey(name: 'if_false') required final String ifFalse,
       required final String recomendacoes}) = _$_Component;
@@ -517,6 +538,8 @@ abstract class _Component extends Component {
   double? get fracaoResto;
   @override
   Where get where;
+  @override
+  bool get reciclavel;
   @override
   @JsonKey(name: 'if_true')
   String get ifTrue;

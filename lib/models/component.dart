@@ -32,6 +32,7 @@ class Component with _$Component {
     double? eps,
     @JsonKey(name: 'fracao_resto') double? fracaoResto,
     required Where where,
+    required bool reciclavel,
     @JsonKey(name: 'if_true') required String ifTrue,
     @JsonKey(name: 'if_false') required String ifFalse,
     required String recomendacoes,

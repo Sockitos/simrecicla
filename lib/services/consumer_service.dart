@@ -386,6 +386,10 @@ class ConsumerService {
     var recolhaPlasticoMetal = Line.zero;
     var recolhaVidro = Line.zero;
 
+    var recolhaReciclavelPapelCartao = Line.zero;
+    var recolhaReiclavelPlasticoMetal = Line.zero;
+    var recolhaReiclavelVidro = Line.zero;
+
     for (final entry in components.entries) {
       recolhaIndiferenciada += entry.value == Where.recolhaIndiferenciada
           ? entry.key.toLine()
@@ -393,11 +397,23 @@ class ConsumerService {
       recolhaPapelCartao += entry.value == Where.recolhaPapelCartao
           ? entry.key.toLine()
           : Line.zero;
+      recolhaReciclavelPapelCartao +=
+          (entry.value == Where.recolhaPapelCartao && entry.key.reciclavel)
+              ? entry.key.toLine()
+              : Line.zero;
       recolhaPlasticoMetal += entry.value == Where.recolhaPlasticoMetal
           ? entry.key.toLine()
           : Line.zero;
+      recolhaReiclavelPlasticoMetal +=
+          (entry.value == Where.recolhaPlasticoMetal && entry.key.reciclavel)
+              ? entry.key.toLine()
+              : Line.zero;
       recolhaVidro +=
           entry.value == Where.recolhaVidro ? entry.key.toLine() : Line.zero;
+      recolhaReiclavelVidro +=
+          (entry.value == Where.recolhaVidro && entry.key.reciclavel)
+              ? entry.key.toLine()
+              : Line.zero;
     }
 
     final triagemPC = recolhaPapelCartao;
@@ -406,12 +422,15 @@ class ConsumerService {
     final tratamentoMecanico = recolhaIndiferenciada;
     final digestaoAnaerobia = recolhaIndiferenciada * cAlocaoImpactes;
 
-    final reciclagem = ((triagemPC * cOrigemTriagem * cTriagemPC) +
-            (triagemPM * cOrigemTriagem * cTriagemPM) +
-            (triagemVidro * cOrigemTriagem * cTriagemVidro.reciclagem) +
-            (tratamentoMecanico * cOrigemTMTMBDA * cTratamentoMecanico) +
-            (digestaoAnaerobia * cOrigemTMTMBDA * cDigestaoAnaerobia)) *
-        cAlocacaoFluxoResiduos;
+    final reciclagem =
+        ((recolhaReciclavelPapelCartao * cOrigemTriagem * cTriagemPC) +
+                (recolhaReiclavelPlasticoMetal * cOrigemTriagem * cTriagemPM) +
+                (recolhaReiclavelVidro *
+                    cOrigemTriagem *
+                    cTriagemVidro.reciclagem) +
+                (tratamentoMecanico * cOrigemTMTMBDA * cTratamentoMecanico) +
+                (digestaoAnaerobia * cOrigemTMTMBDA * cDigestaoAnaerobia)) *
+            cAlocacaoFluxoResiduos;
 
     final valorizacaoEnergetica = (recolhaPapelCartao +
             recolhaPlasticoMetal +

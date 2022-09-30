@@ -27,6 +27,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -51,6 +52,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -74,6 +76,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -104,6 +107,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -128,6 +132,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -151,6 +156,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -181,6 +187,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -205,6 +212,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -228,6 +236,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -258,6 +267,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -282,6 +292,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -305,6 +316,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -335,6 +347,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -358,6 +371,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Apesar de este componente ser de metal, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -388,6 +402,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -411,6 +426,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Apesar de este componente ser de metal, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -434,6 +450,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -470,6 +487,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -493,6 +511,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -523,6 +542,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -546,6 +566,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -570,6 +591,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -601,6 +623,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -624,6 +647,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -660,6 +684,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -683,6 +708,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -713,6 +739,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -736,6 +763,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -767,6 +795,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Indiferenciado",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Esta embalagem não é reciclável e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -791,6 +820,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Indiferenciado",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Este componente não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -814,6 +844,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -850,6 +881,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de ECAL e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -880,6 +912,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de ECAL e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -904,6 +937,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -934,6 +968,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -958,6 +993,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -994,6 +1030,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1017,6 +1054,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1048,6 +1086,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1078,6 +1117,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1108,6 +1148,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1131,6 +1172,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1155,6 +1197,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1185,6 +1228,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Indiferenciado",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Esta embalagem não é reciclável e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1208,6 +1252,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Indiferenciado",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Este material de embalagem não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1231,6 +1276,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Indiferenciado",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1261,6 +1307,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1291,6 +1338,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1321,6 +1369,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1344,6 +1393,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de cartão e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1381,6 +1431,7 @@ const categories = [
             "eps": 0.005,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1404,6 +1455,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1435,6 +1487,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1458,6 +1511,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1489,6 +1543,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1512,6 +1567,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Indiferenciado",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Este material de embalagem não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1542,6 +1598,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1565,6 +1622,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1601,6 +1659,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1624,6 +1683,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1654,6 +1714,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1677,6 +1738,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1707,6 +1769,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1730,6 +1793,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1753,6 +1817,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1784,6 +1849,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1807,6 +1873,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1837,6 +1904,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1860,6 +1928,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1891,6 +1960,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1914,6 +1984,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1944,6 +2015,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -1967,6 +2039,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Verde",
+            "reciclavel": false,
             "if_true":
                 "Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2003,6 +2076,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2026,6 +2100,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2056,6 +2131,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2079,6 +2155,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2109,6 +2186,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2132,6 +2210,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2163,6 +2242,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2186,6 +2266,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2222,6 +2303,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de papel e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2252,6 +2334,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2282,6 +2365,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2312,6 +2396,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2342,6 +2427,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de papel e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2365,6 +2451,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2395,6 +2482,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2425,6 +2513,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2455,6 +2544,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de papel e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2485,6 +2575,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2515,6 +2606,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de papel e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2551,6 +2643,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2574,6 +2667,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2605,6 +2699,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2629,6 +2724,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2660,6 +2756,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2684,6 +2781,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2714,6 +2812,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2737,6 +2836,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Amarelo",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
@@ -2760,6 +2860,7 @@ const categories = [
             "eps": null,
             "fracao_resto": null,
             "where": "Contentor Azul",
+            "reciclavel": true,
             "if_true":
                 "Muito bem! Este componente é de papel e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.",
             "if_false":
