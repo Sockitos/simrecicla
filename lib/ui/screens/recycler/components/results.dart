@@ -95,14 +95,16 @@ class Results extends HookConsumerWidget {
 
     final state = ref.watch(gridScreenSNProvider);
 
-    final products = state.grid
-        .getData()
-        .where((m) => m.id == 'F')
-        .map((p) => p.id0)
-        .where(state.graph.graph.vertices.contains);
+    final products = Map.fromEntries(
+      state.grid
+          .getData()
+          .where((m) => m.id == 'F')
+          .where((m) => state.graph.graph.vertices.contains(m.id0))
+          .map((p) => MapEntry(p.id0, p)),
+    );
     final productWeights = Map.fromEntries(
       state.graph.inputs.entries.where(
-        (e) => products.contains(e.key),
+        (e) => products.keys.contains(e.key),
       ),
     );
     final productSums = Map.fromEntries(
@@ -128,7 +130,7 @@ class Results extends HookConsumerWidget {
 
     MaterialSample? product;
     if (showEfficiency.value) {
-      for (final p in products) {
+      for (final p in products.keys) {
         final filter = productCompositions[p]!.filterByValue(0.9);
         if (product == null) {
           product = filter * productWeights[p]!;
@@ -215,18 +217,19 @@ class Results extends HookConsumerWidget {
                                   controller: scrollController,
                                   scrollDirection: Axis.horizontal,
                                   children: [
-                                    for (final product in products) ...[
+                                    for (final product in products.values) ...[
                                       ElevatedButton(
                                         onPressed: () {
-                                          selectedProduct.value = product;
+                                          selectedProduct.value = product.id0;
                                           showEfficiency.value = false;
                                         },
                                         style: ElevatedButton.styleFrom(
-                                          primary:
-                                              selectedProduct.value == product
+                                          backgroundColor:
+                                              selectedProduct.value ==
+                                                      product.id0
                                                   ? AppColors.grey3
                                                   : AppColors.grey1,
-                                          onPrimary: AppColors.black,
+                                          foregroundColor: AppColors.black,
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(14),
@@ -236,7 +239,7 @@ class Results extends HookConsumerWidget {
                                             horizontal: 30,
                                           ),
                                           textStyle: selectedProduct.value ==
-                                                  product
+                                                  product.id0
                                               ? AppTextStyles.dropdown(
                                                   context.layout,
                                                 ).copyWith(
@@ -247,7 +250,7 @@ class Results extends HookConsumerWidget {
                                                   context.layout,
                                                 ).copyWith(height: 1),
                                         ),
-                                        child: const Text('Produto'),
+                                        child: Text('Produto ${product.index}'),
                                       ),
                                       const SizedBox(width: 15),
                                     ],
@@ -306,10 +309,10 @@ class Results extends HookConsumerWidget {
                                 showEfficiency.value = true;
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: showEfficiency.value
+                                backgroundColor: showEfficiency.value
                                     ? AppColors.grey3
                                     : AppColors.grey1,
-                                onPrimary: AppColors.black,
+                                foregroundColor: AppColors.black,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(14),
                                 ),

@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/machine.dart';
 import 'package:simtech/models/machine_port.dart';
 import 'package:simtech/ui/widgets/my_drag_target.dart';
@@ -123,21 +125,52 @@ class DraggableMachine extends StatelessWidget {
                   ),
                 ),
           child: Center(
-            child: SizedBox(
-              height: size.height,
-              width: size.width,
-              child: CustomPaint(
-                painter: _MachinePainter(
-                  icon: machine.icon,
-                  portSize: portSize,
-                  top: machine.topPort,
-                  left: machine.leftPort,
-                  bottom: machine.bottomPort,
-                  right: machine.rightPort,
-                  color: color,
-                  accentColor: accentColor,
+            child: Stack(
+              children: [
+                SizedBox(
+                  height: size.height,
+                  width: size.width,
+                  child: CustomPaint(
+                    painter: _MachinePainter(
+                      icon: machine.icon,
+                      portSize: portSize,
+                      top: machine.topPort,
+                      left: machine.leftPort,
+                      bottom: machine.bottomPort,
+                      right: machine.rightPort,
+                      color: color,
+                      accentColor: accentColor,
+                      hideIcon:
+                          machine.isFinal && state == MachineState.validated,
+                    ),
+                  ),
                 ),
-              ),
+                if (machine.isFinal && state == MachineState.validated)
+                  Center(
+                    child: DecoratedBox(
+                      decoration: const BoxDecoration(
+                        color: AppColors.lightGreen,
+                        shape: BoxShape.circle,
+                      ),
+                      child: SizedBox(
+                        height: 26,
+                        width: 26,
+                        child: Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: FittedBox(
+                            child: Center(
+                              child: Text(
+                                '${machine.index}',
+                                style: AppTextStyles.small(context.layout)
+                                    .copyWith(height: 1),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
             ),
           ),
         ),
@@ -156,6 +189,7 @@ class _MachinePainter extends CustomPainter {
     this.right,
     required this.color,
     required this.accentColor,
+    this.hideIcon = false,
   });
 
   final IconData icon;
@@ -166,6 +200,7 @@ class _MachinePainter extends CustomPainter {
   final MachinePort? right;
   final Color color;
   final Color accentColor;
+  final bool hideIcon;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -177,21 +212,7 @@ class _MachinePainter extends CustomPainter {
     paint.strokeWidth = 2;
     paint.color = color;
 
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: String.fromCharCode(icon.codePoint),
-        style: TextStyle(
-          fontFamily: icon.fontFamily,
-          color: accentColor,
-          fontSize: min(size.height, size.width) - portSize.height - 4,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-      textAlign: TextAlign.center,
-    );
-    textPainter.layout();
-
-    void _paintOutput(
+    void paintOutput(
       Rect rect,
       AxisDirection direction,
       MachineOutputType type,
@@ -243,12 +264,6 @@ class _MachinePainter extends CustomPainter {
       }
     }
 
-    final offset = Offset(
-      size.width / 2 - textPainter.width / 2,
-      size.height / 2 - textPainter.height / 2,
-    );
-    textPainter.paint(canvas, offset);
-
     path.moveTo(0, 0);
 
     top?.map(
@@ -266,7 +281,7 @@ class _MachinePainter extends CustomPainter {
             0 - portSize.height,
           ),
         );
-        _paintOutput(rect, AxisDirection.up, output.type);
+        paintOutput(rect, AxisDirection.up, output.type);
       },
     );
     path.lineTo(size.width, 0);
@@ -292,7 +307,7 @@ class _MachinePainter extends CustomPainter {
             size.height / 2 + portSize.width / 2,
           ),
         );
-        _paintOutput(rect, AxisDirection.right, output.type);
+        paintOutput(rect, AxisDirection.right, output.type);
       },
     );
     path.lineTo(size.width, size.height);
@@ -318,7 +333,7 @@ class _MachinePainter extends CustomPainter {
             size.height + portSize.height,
           ),
         );
-        _paintOutput(rect, AxisDirection.down, output.type);
+        paintOutput(rect, AxisDirection.down, output.type);
       },
     );
     path.lineTo(0, size.height);
@@ -335,10 +350,32 @@ class _MachinePainter extends CustomPainter {
           Offset(0, size.height / 2 + portSize.width / 2),
           Offset(0 - portSize.height, size.height / 2 - portSize.width / 2),
         );
-        _paintOutput(rect, AxisDirection.left, output.type);
+        paintOutput(rect, AxisDirection.left, output.type);
       },
     );
     path.lineTo(0, 0);
+
+    if (!hideIcon) {
+      final textPainter = TextPainter(
+        text: TextSpan(
+          text: String.fromCharCode(icon.codePoint),
+          style: TextStyle(
+            fontFamily: icon.fontFamily,
+            color: accentColor,
+            fontSize: min(size.height, size.width) - portSize.height - 4,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+        textAlign: TextAlign.center,
+      );
+      textPainter.layout();
+
+      final offset = Offset(
+        size.width / 2 - textPainter.width / 2,
+        size.height / 2 - textPainter.height / 2,
+      );
+      textPainter.paint(canvas, offset);
+    }
 
     canvas.drawPath(path, paint);
   }
