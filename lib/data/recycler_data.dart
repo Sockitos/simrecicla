@@ -2,6 +2,7 @@ import 'package:simtech/constants/machines_icons.dart';
 import 'package:simtech/models/machine_definition.dart';
 import 'package:simtech/models/machine_port.dart';
 import 'package:simtech/models/material_sample.dart';
+import 'package:simtech/models/rotatable_icon_data.dart';
 
 const defaultWeight = 6000.0;
 
@@ -17,23 +18,48 @@ const defaultSamplePM = MaterialSamplePM(
   naoRecuperaveis: 0.3513,
 );
 
-const machinesPM = <MachineDefinition>[
+final machinesPM = <MachineDefinition>[
   MachineDefinition(
     id: 'F',
     name: 'Produto Final',
-    icon: MachinesIcons.produto_final,
+    icons: [MachinesIcons.produto_final.toRotatable()],
     description:
         'Saída de produto da linha de triagem, seja este o material-alvo ou rejeitado. Deve ser associado a todas as saídas finais da linha.',
     outputs: [],
-    inputs: [MachineInput(id: 'final')],
+    inputs: const [MachineInput(id: 'final')],
   ),
   MachineDefinition(
     id: 'P',
     name: 'Passadeira',
-    icon: MachinesIcons.passadeira_down,
+    icons: [
+      RotatableIconData(
+        icons: const [
+          MachinesIcons.passadeira_down_1,
+          MachinesIcons.passadeira_down_2,
+          MachinesIcons.passadeira_down_3,
+          MachinesIcons.passadeira_down_4,
+        ],
+      ),
+      RotatableIconData(
+        icons: const [
+          MachinesIcons.passadeira_left_1,
+          MachinesIcons.passadeira_left_2,
+          MachinesIcons.passadeira_left_3,
+          MachinesIcons.passadeira_left_4,
+        ],
+      ),
+      RotatableIconData(
+        icons: const [
+          MachinesIcons.passadeira_right_1,
+          MachinesIcons.passadeira_right_2,
+          MachinesIcons.passadeira_right_3,
+          MachinesIcons.passadeira_right_4,
+        ],
+      ),
+    ],
     description:
         'Transporte do fluxo de materiais através de uma tela transportadora. Deve ser adicionada as vezes necessárias para criar a linha com dimensão desejada.',
-    outputs: [
+    outputs: const [
       MachineOutput(
         id: 'out',
         description: '',
@@ -51,16 +77,25 @@ const machinesPM = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'in')],
+    inputs: [const MachineInput(id: 'in')],
   ),
   MachineDefinition(
     id: 'JC',
     name: 'Junção de Caudais',
-    icon: MachinesIcons.juncao_caudais,
+    icons: [
+      RotatableIconData(
+        icons: const [
+          MachinesIcons.juncao_caudais_1,
+          MachinesIcons.juncao_caudais_2,
+          MachinesIcons.juncao_caudais_3,
+          MachinesIcons.juncao_caudais_4,
+        ],
+      ),
+    ],
     description:
         'Junção de caudais de materiais provenientes de diferentes saídas.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'JC',
         description: '',
         type: MachineOutputType.one,
@@ -78,18 +113,18 @@ const machinesPM = <MachineDefinition>[
       ),
     ],
     inputs: [
-      MachineInput(id: 'feed1'),
-      MachineInput(id: 'feed2'),
-      MachineInput(id: 'feed3'),
+      const MachineInput(id: 'feed1'),
+      const MachineInput(id: 'feed2'),
+      const MachineInput(id: 'feed3'),
     ],
   ),
   MachineDefinition(
     id: 'BO',
     name: 'Abre-Sacos',
-    icon: MachinesIcons.abre_sacos,
+    icons: [MachinesIcons.abre_sacos.toRotatable()],
     description: 'Abertura de sacos para libertação de resíduos na linha.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'BO_P',
         description: '',
         type: MachineOutputType.one,
@@ -106,15 +141,15 @@ const machinesPM = <MachineDefinition>[
         ),
       )
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'COM',
     name: 'Compactador',
-    icon: MachinesIcons.compactador,
+    icons: [MachinesIcons.compactador.toRotatable()],
     description: 'Compactação dos materiais em fardo.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'COM_P',
         description: '',
         type: MachineOutputType.one,
@@ -131,15 +166,15 @@ const machinesPM = <MachineDefinition>[
         ),
       )
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'MG',
     name: 'Separador Magnético',
-    icon: MachinesIcons.separador_magnetico,
+    icons: [MachinesIcons.separador_magnetico.toRotatable()],
     description: 'Separação dos materiais ferrosos dos restantes materiais.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'MG_MAG',
         description: 'Fluxo de materiais Magnéticos',
         type: MachineOutputType.one,
@@ -155,7 +190,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.0066,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'MG_NMAG',
         description: 'Fluxo de materiais Não-Magnéticos',
         type: MachineOutputType.two,
@@ -172,16 +207,16 @@ const machinesPM = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'ECS',
     name: 'Separador de Focault',
-    icon: MachinesIcons.separador_focault,
+    icons: [MachinesIcons.separador_focault.toRotatable()],
     description:
         'Separação dos materiais não ferrosos dos restantes materiais.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'ECS_COND',
         description: 'Fluxo de materiais Condutores',
         type: MachineOutputType.one,
@@ -197,7 +232,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.0042,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'ECS_NCOND',
         description: 'Fluxo de materiais Não-Condutores',
         type: MachineOutputType.two,
@@ -214,16 +249,16 @@ const machinesPM = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'OS_PETECAL',
     name: 'Separador Ótico (PET & ECAL)',
-    icon: MachinesIcons.separador_otico_pe,
+    icons: [MachinesIcons.separador_otico_pe.toRotatable()],
     description:
         'Separação dos materiais de PET e ECAL dos restantes materiais.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'OS_PETECAL_PET',
         description: 'Fluxo de materiais Alvo 1 (PET)',
         type: MachineOutputType.one,
@@ -239,7 +274,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.0087,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'OS_PETECAL_ECAL',
         description: 'Fluxo de materiais Alvo 2 (ECAL)',
         type: MachineOutputType.two,
@@ -255,7 +290,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.0016,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'OS_PETECAL_NB',
         description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
@@ -272,16 +307,16 @@ const machinesPM = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'OS_PEADMIX',
     name: 'Separador Ótico (PEAD & MISTOS)',
-    icon: MachinesIcons.separador_otico_pm,
+    icons: [MachinesIcons.separador_otico_pm.toRotatable()],
     description:
         'Separação dos materiais de PEAD e Mistos dos restantes materiais.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'OS_PEADMIX_PEAD',
         description: 'Fluxo de materiais Alvo 1 (PEAD)',
         type: MachineOutputType.one,
@@ -297,7 +332,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.0010,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'OS_PEADMIX_MIX',
         description: 'Fluxo de materiais Alvo 2 (Plásticos Mistos)',
         type: MachineOutputType.two,
@@ -313,7 +348,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.0182,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'OS_PEADMIX_NB',
         description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
@@ -330,16 +365,16 @@ const machinesPM = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'BS',
     name: 'Separador Balístico',
-    icon: MachinesIcons.separador_balistico,
+    icons: [MachinesIcons.separador_balistico.toRotatable()],
     description:
         'Separação dos materiais em três frações, em função das suas caracteristicas, nomeadamente, fluxo de materiais planares, finos e rolantes.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'BS_PM_2D',
         description: 'Fluxo de materiais Planares (2D)',
         type: MachineOutputType.one,
@@ -355,7 +390,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.3274,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'BS_PM_F',
         description: 'Fluxo de materiais Finos',
         type: MachineOutputType.two,
@@ -371,7 +406,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.0325,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'BS_PM_3D',
         description: 'Fluxo de materiais Rolantes (3D)',
         type: MachineOutputType.three,
@@ -388,15 +423,15 @@ const machinesPM = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'MS_PETol',
     name: 'Triagem Manual de PET Óleo',
-    icon: MachinesIcons.triagem_manual_po,
+    icons: [MachinesIcons.triagem_manual_po.toRotatable()],
     description: 'Triagem manual com vista à separação do PET óleo.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_PETol_T',
         description: 'Fluxo de materiais Alvo (PET Óleo)',
         type: MachineOutputType.one,
@@ -412,7 +447,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_PETol_NT',
         description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.two,
@@ -429,16 +464,16 @@ const machinesPM = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'MS_Bulk1',
     name: 'Triagem Manual de Volumosos 1',
-    icon: MachinesIcons.triagem_manual_v1,
+    icons: [MachinesIcons.triagem_manual_v1.toRotatable()],
     description:
         'Triagem manual com vista à separação de volumosos (grades de plástico e bidons).',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_Bulk1_Tcont',
         description: 'Fluxo de materiais Alvo 1 (Contaminantes Volumosos)',
         type: MachineOutputType.one,
@@ -454,7 +489,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.1115,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_Bulk1_Tgradbidon',
         description: 'Fluxo de materiais Alvo 2 (Grades de Plástico e Bidons)',
         type: MachineOutputType.two,
@@ -470,7 +505,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_Bulk1_NT',
         description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
@@ -487,16 +522,16 @@ const machinesPM = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'MS_Bulk2',
     name: 'Triagem Manual de Volumosos 2',
-    icon: MachinesIcons.triagem_manual_v2,
+    icons: [MachinesIcons.triagem_manual_v2.toRotatable()],
     description:
         'Triagem manual com vista à separação de volumosos (filme plástico).',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_Bulk2_Tcont',
         description: 'Fluxo de materiais Alvo 1 (Contaminantes Volumosos)',
         type: MachineOutputType.one,
@@ -512,7 +547,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.3332,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_Bulk2_Tfilme',
         description: 'Fluxo de materiais Alvo 2 (Filme Plástico)',
         type: MachineOutputType.two,
@@ -528,7 +563,7 @@ const machinesPM = <MachineDefinition>[
           naoRecuperaveis: 0.0021,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_Bulk2_NT',
         description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
@@ -545,7 +580,7 @@ const machinesPM = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
 ];
 
@@ -556,23 +591,48 @@ const defaultSamplePC = MaterialSamplePC(
   naoRecuperaveis: 0.0901,
 );
 
-const machinesPC = <MachineDefinition>[
+final machinesPC = <MachineDefinition>[
   MachineDefinition(
     id: 'F',
     name: 'Produto Final',
-    icon: MachinesIcons.produto_final,
+    icons: [MachinesIcons.produto_final.toRotatable()],
     description:
         'Saída de produto da linha de triagem, seja este o material-alvo ou rejeitado. Deve ser associado a todas as saídas finais da linha.',
     outputs: [],
-    inputs: [MachineInput(id: 'final')],
+    inputs: const [MachineInput(id: 'final')],
   ),
   MachineDefinition(
     id: 'P',
     name: 'Passadeira',
-    icon: MachinesIcons.passadeira_down,
+    icons: [
+      RotatableIconData(
+        icons: const [
+          MachinesIcons.passadeira_down_1,
+          MachinesIcons.passadeira_down_2,
+          MachinesIcons.passadeira_down_3,
+          MachinesIcons.passadeira_down_4,
+        ],
+      ),
+      RotatableIconData(
+        icons: const [
+          MachinesIcons.passadeira_left_1,
+          MachinesIcons.passadeira_left_2,
+          MachinesIcons.passadeira_left_3,
+          MachinesIcons.passadeira_left_4,
+        ],
+      ),
+      RotatableIconData(
+        icons: const [
+          MachinesIcons.passadeira_right_1,
+          MachinesIcons.passadeira_right_2,
+          MachinesIcons.passadeira_right_3,
+          MachinesIcons.passadeira_right_4,
+        ],
+      ),
+    ],
     description:
         'Transporte do fluxo de materiais através de uma tela transportadora. Deve ser adicionada as vezes necessárias para criar a linha com dimensão desejada.',
-    outputs: [
+    outputs: const [
       MachineOutput(
         id: 'out',
         description: '',
@@ -585,16 +645,25 @@ const machinesPC = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'in')],
+    inputs: [const MachineInput(id: 'in')],
   ),
   MachineDefinition(
     id: 'JC',
     name: 'Junção de Caudais',
-    icon: MachinesIcons.juncao_caudais,
+    icons: [
+      RotatableIconData(
+        icons: const [
+          MachinesIcons.juncao_caudais_1,
+          MachinesIcons.juncao_caudais_2,
+          MachinesIcons.juncao_caudais_3,
+          MachinesIcons.juncao_caudais_4,
+        ],
+      ),
+    ],
     description:
         'Junção de caudais de materiais provenientes de diferentes saídas.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'JC',
         description: '',
         type: MachineOutputType.one,
@@ -607,19 +676,19 @@ const machinesPC = <MachineDefinition>[
       ),
     ],
     inputs: [
-      MachineInput(id: 'feed1'),
-      MachineInput(id: 'feed2'),
-      MachineInput(id: 'feed3'),
+      const MachineInput(id: 'feed1'),
+      const MachineInput(id: 'feed2'),
+      const MachineInput(id: 'feed3'),
     ],
   ),
   MachineDefinition(
     id: 'DC',
     name: 'Crivo de Discos',
-    icon: MachinesIcons.crivo_de_discos,
+    icons: [MachinesIcons.crivo_de_discos.toRotatable()],
     description:
         'Separação dos materiais em duas frações, em função da sua dimensão. A fração supra-crivo recupera materiais de grandes dimensões e a fração infra-crivo descarta materiais de pequenas dimensões.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'DS_CB_OS',
         description: 'Fluxo de materiais Supra-Crivo',
         type: MachineOutputType.one,
@@ -630,7 +699,7 @@ const machinesPC = <MachineDefinition>[
           naoRecuperaveis: 0.2468,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'DS_CB_US',
         description: 'Fluxo de materiais Infra-Crivo',
         type: MachineOutputType.two,
@@ -642,16 +711,16 @@ const machinesPC = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'BS',
     name: 'Separador Balístico',
-    icon: MachinesIcons.separador_balistico,
+    icons: [MachinesIcons.separador_balistico.toRotatable()],
     description:
         'Separação dos materiais em três frações, em função das suas características, nomeadamente, fluxo de materiais planares (no qual se inclui papel e cartão), finos e rolantes.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'BS_PC_2D',
         description: 'Fluxo de materiais Planares (2D)',
         type: MachineOutputType.one,
@@ -662,7 +731,7 @@ const machinesPC = <MachineDefinition>[
           naoRecuperaveis: 0.7556,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'BS_PC_F',
         description: 'Fluxo de materiais Finos',
         type: MachineOutputType.two,
@@ -673,7 +742,7 @@ const machinesPC = <MachineDefinition>[
           naoRecuperaveis: 0.0405,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'BS_PC_3D',
         description: 'Fluxo de materiais Rolantes (3D)',
         type: MachineOutputType.three,
@@ -685,16 +754,16 @@ const machinesPC = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'MS_CB',
     name: 'Triagem Manual de Contaminantes do Cartão',
-    icon: MachinesIcons.triagem_manual_c,
+    icons: [MachinesIcons.triagem_manual_c.toRotatable()],
     description:
         'Triagem manual com vista à remoção dos contaminantes presentes.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_CB_T',
         description: 'Fluxo de materiais Alvo (Contaminantes)',
         type: MachineOutputType.one,
@@ -705,7 +774,7 @@ const machinesPC = <MachineDefinition>[
           naoRecuperaveis: 0.5912,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_CB_NT',
         description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.two,
@@ -717,16 +786,16 @@ const machinesPC = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
   MachineDefinition(
     id: 'MS_P',
     name: 'Triagem Manual de Contaminantes do Papel',
-    icon: MachinesIcons.triagem_manual_p,
+    icons: [MachinesIcons.triagem_manual_p.toRotatable()],
     description:
         'Triagem manual com vista à remoção dos contaminantes presentes.',
     outputs: [
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_P_TCONT',
         description: 'Fluxo de materiais Alvo 1 (Contaminantes)',
         type: MachineOutputType.one,
@@ -737,7 +806,7 @@ const machinesPC = <MachineDefinition>[
           naoRecuperaveis: 0.5128,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_P_TSCB',
         description: 'Fluxo de materiais Alvo 2 (Cartão de Pequenas Dimensões)',
         type: MachineOutputType.two,
@@ -748,7 +817,7 @@ const machinesPC = <MachineDefinition>[
           naoRecuperaveis: 0.0020,
         ),
       ),
-      MachineOutput(
+      const MachineOutput(
         id: 'MS_P_NT',
         description: 'Fluxo de materiais Não-Alvo (Resto)',
         type: MachineOutputType.three,
@@ -760,6 +829,6 @@ const machinesPC = <MachineDefinition>[
         ),
       ),
     ],
-    inputs: [MachineInput(id: 'feed')],
+    inputs: [const MachineInput(id: 'feed')],
   ),
 ];

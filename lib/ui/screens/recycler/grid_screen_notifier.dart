@@ -7,6 +7,7 @@ import 'package:simtech/models/machine.dart';
 import 'package:simtech/models/machine_graph.dart';
 import 'package:simtech/models/machine_port.dart';
 import 'package:simtech/models/material_sample.dart';
+import 'package:simtech/models/rotatable_icon_data.dart';
 import 'package:simtech/services/recycler_service.dart';
 import 'package:simtech/ui/screens/recycler/grid_screen_model.dart';
 
@@ -30,7 +31,7 @@ class GridScreenNotifier extends StateNotifier<GridScreenModel> {
                 cell: Machine(
                   id: 'feed',
                   name: 'feed',
-                  icon: MachinesIcons.entrada,
+                  icon: MachinesIcons.entrada.toRotatable(),
                   description: 'feed',
                   ports: {
                     AxisDirection.down: MachineOutput(

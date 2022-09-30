@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:simtech/models/machine.dart';
 import 'package:simtech/models/machine_port.dart';
+import 'package:simtech/models/rotatable_icon_data.dart';
 
 part 'machine_definition.freezed.dart';
 
@@ -10,73 +13,64 @@ class MachineDefinition with _$MachineDefinition {
   const factory MachineDefinition({
     required String id,
     required String name,
-    required IconData icon,
+    required List<RotatableIconData> icons,
     required String description,
     required List<MachineInput> inputs,
     required List<MachineOutput> outputs,
   }) = _MachineDefinition;
   const MachineDefinition._();
 
+  IconData get icon => icons.first;
+
   List<Machine> getMachineVersions() {
     final machines = <Machine>[];
     final ports = [...inputs, ...outputs];
+    final machine = Machine(
+      id: id,
+      name: name,
+      icon: icons.first,
+      description: description,
+      ports: {},
+    );
     switch (ports.length) {
       case 1:
         machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
+          machine.copyWith(
             ports: {AxisDirection.up: ports[0]},
           ),
         );
         break;
       case 2:
         machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[0],
-              AxisDirection.right: ports[1],
-            },
-          ),
-        );
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
-            ports: {
-              AxisDirection.up: ports[0],
-              AxisDirection.left: ports[1],
-            },
-          ),
-        );
-        machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
+          machine.copyWith(
             ports: {
               AxisDirection.up: ports[0],
               AxisDirection.down: ports[1],
             },
+          ),
+        );
+        machines.add(
+          machine.copyWith(
+            ports: {
+              AxisDirection.up: ports[0],
+              AxisDirection.left: ports[1],
+            },
+            icon: icons[min(1, icons.length - 1)],
+          ),
+        );
+        machines.add(
+          machine.copyWith(
+            ports: {
+              AxisDirection.up: ports[0],
+              AxisDirection.right: ports[1],
+            },
+            icon: icons[min(2, icons.length - 1)],
           ),
         );
         break;
       case 3:
         machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
+          machine.copyWith(
             ports: {
               AxisDirection.up: ports[0],
               AxisDirection.left: ports[1],
@@ -85,79 +79,60 @@ class MachineDefinition with _$MachineDefinition {
           ),
         );
         machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
+          machine.copyWith(
             ports: {
               AxisDirection.up: ports[0],
               AxisDirection.left: ports[2],
               AxisDirection.right: ports[1],
             },
+            icon: icons[min(1, icons.length - 1)],
           ),
         );
         machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
+          machine.copyWith(
             ports: {
               AxisDirection.up: ports[0],
               AxisDirection.right: ports[1],
               AxisDirection.down: ports[2],
             },
+            icon: icons[min(2, icons.length - 1)],
           ),
         );
         machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
+          machine.copyWith(
             ports: {
               AxisDirection.up: ports[0],
               AxisDirection.left: ports[1],
               AxisDirection.down: ports[2],
             },
+            icon: icons[min(3, icons.length - 1)],
           ),
         );
         machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
+          machine.copyWith(
             ports: {
               AxisDirection.up: ports[0],
               AxisDirection.right: ports[2],
               AxisDirection.down: ports[1],
             },
+            icon: icons[min(4, icons.length - 1)],
           ),
         );
         machines.add(
-          Machine(
-            id: id,
-            name: name,
-            icon: icon,
-            description: description,
+          machine.copyWith(
             ports: {
               AxisDirection.up: ports[0],
               AxisDirection.left: ports[2],
               AxisDirection.down: ports[1],
             },
+            icon: icons[min(5, icons.length - 1)],
           ),
         );
         break;
       case 4:
         if (inputs.length == 3) {
           machines.add(
-            Machine(
-              id: id,
-              name: name,
-              icon: icon,
-              description: description,
+            machine.copyWith(
               ports: {
                 AxisDirection.up: ports[0],
                 AxisDirection.left: ports[1],
@@ -168,11 +143,7 @@ class MachineDefinition with _$MachineDefinition {
           );
         } else {
           machines.add(
-            Machine(
-              id: id,
-              name: name,
-              icon: icon,
-              description: description,
+            machine.copyWith(
               ports: {
                 AxisDirection.up: ports[0],
                 AxisDirection.left: ports[1],
@@ -182,38 +153,29 @@ class MachineDefinition with _$MachineDefinition {
             ),
           );
           machines.add(
-            Machine(
-              id: id,
-              name: name,
-              icon: icon,
-              description: description,
+            machine.copyWith(
               ports: {
                 AxisDirection.up: ports[0],
                 AxisDirection.left: ports[1],
                 AxisDirection.right: ports[3],
                 AxisDirection.down: ports[2],
               },
+              icon: icons[min(1, icons.length - 1)],
             ),
           );
           machines.add(
-            Machine(
-              id: id,
-              name: name,
-              icon: icon,
-              description: description,
+            machine.copyWith(
               ports: {
                 AxisDirection.up: ports[0],
                 AxisDirection.left: ports[2],
                 AxisDirection.right: ports[1],
                 AxisDirection.down: ports[3],
               },
+              icon: icons[min(2, icons.length - 1)],
             ),
           );
           machines.add(
-            Machine(
-              id: id,
-              name: name,
-              icon: icon,
+            machine.copyWith(
               description: description,
               ports: {
                 AxisDirection.up: ports[0],
@@ -221,34 +183,29 @@ class MachineDefinition with _$MachineDefinition {
                 AxisDirection.right: ports[3],
                 AxisDirection.down: ports[1],
               },
+              icon: icons[min(3, icons.length - 1)],
             ),
           );
           machines.add(
-            Machine(
-              id: id,
-              name: name,
-              icon: icon,
-              description: description,
+            machine.copyWith(
               ports: {
                 AxisDirection.up: ports[0],
                 AxisDirection.left: ports[3],
                 AxisDirection.right: ports[1],
                 AxisDirection.down: ports[2],
               },
+              icon: icons[min(3, icons.length - 1)],
             ),
           );
           machines.add(
-            Machine(
-              id: id,
-              name: name,
-              icon: icon,
-              description: description,
+            machine.copyWith(
               ports: {
                 AxisDirection.up: ports[0],
                 AxisDirection.left: ports[3],
                 AxisDirection.right: ports[2],
                 AxisDirection.down: ports[1],
               },
+              icon: icons[min(4, icons.length - 1)],
             ),
           );
         }

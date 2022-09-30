@@ -19,7 +19,7 @@ mixin _$Machine {
   String get id => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  IconData get icon => throw _privateConstructorUsedError;
+  RotatableIconData get icon => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   Map<AxisDirection, MachinePort?> get ports =>
       throw _privateConstructorUsedError;
@@ -37,7 +37,7 @@ abstract class $MachineCopyWith<$Res> {
       {String id,
       int index,
       String name,
-      IconData icon,
+      RotatableIconData icon,
       String description,
       Map<AxisDirection, MachinePort?> ports,
       bool isFixed});
@@ -77,7 +77,7 @@ class _$MachineCopyWithImpl<$Res> implements $MachineCopyWith<$Res> {
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as IconData,
+              as RotatableIconData,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -104,7 +104,7 @@ abstract class _$$_MachineCopyWith<$Res> implements $MachineCopyWith<$Res> {
       {String id,
       int index,
       String name,
-      IconData icon,
+      RotatableIconData icon,
       String description,
       Map<AxisDirection, MachinePort?> ports,
       bool isFixed});
@@ -145,7 +145,7 @@ class __$$_MachineCopyWithImpl<$Res> extends _$MachineCopyWithImpl<$Res>
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as IconData,
+              as RotatableIconData,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -184,7 +184,7 @@ class _$_Machine extends _Machine {
   @override
   final String name;
   @override
-  final IconData icon;
+  final RotatableIconData icon;
   @override
   final String description;
   final Map<AxisDirection, MachinePort?> _ports;
@@ -240,7 +240,7 @@ abstract class _Machine extends Machine {
       {required final String id,
       final int index,
       required final String name,
-      required final IconData icon,
+      required final RotatableIconData icon,
       required final String description,
       required final Map<AxisDirection, MachinePort?> ports,
       final bool isFixed}) = _$_Machine;
@@ -253,7 +253,7 @@ abstract class _Machine extends Machine {
   @override
   String get name;
   @override
-  IconData get icon;
+  RotatableIconData get icon;
   @override
   String get description;
   @override

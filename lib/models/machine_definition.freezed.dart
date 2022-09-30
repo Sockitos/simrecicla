@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$MachineDefinition {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  IconData get icon => throw _privateConstructorUsedError;
+  List<RotatableIconData> get icons => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   List<MachineInput> get inputs => throw _privateConstructorUsedError;
   List<MachineOutput> get outputs => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $MachineDefinitionCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      IconData icon,
+      List<RotatableIconData> icons,
       String description,
       List<MachineInput> inputs,
       List<MachineOutput> outputs});
@@ -55,7 +55,7 @@ class _$MachineDefinitionCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? icon = freezed,
+    Object? icons = freezed,
     Object? description = freezed,
     Object? inputs = freezed,
     Object? outputs = freezed,
@@ -69,10 +69,10 @@ class _$MachineDefinitionCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData,
+      icons: icons == freezed
+          ? _value.icons
+          : icons // ignore: cast_nullable_to_non_nullable
+              as List<RotatableIconData>,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -99,7 +99,7 @@ abstract class _$$_MachineDefinitionCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      IconData icon,
+      List<RotatableIconData> icons,
       String description,
       List<MachineInput> inputs,
       List<MachineOutput> outputs});
@@ -120,7 +120,7 @@ class __$$_MachineDefinitionCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? icon = freezed,
+    Object? icons = freezed,
     Object? description = freezed,
     Object? inputs = freezed,
     Object? outputs = freezed,
@@ -134,10 +134,10 @@ class __$$_MachineDefinitionCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData,
+      icons: icons == freezed
+          ? _value._icons
+          : icons // ignore: cast_nullable_to_non_nullable
+              as List<RotatableIconData>,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -160,11 +160,12 @@ class _$_MachineDefinition extends _MachineDefinition {
   const _$_MachineDefinition(
       {required this.id,
       required this.name,
-      required this.icon,
+      required final List<RotatableIconData> icons,
       required this.description,
       required final List<MachineInput> inputs,
       required final List<MachineOutput> outputs})
-      : _inputs = inputs,
+      : _icons = icons,
+        _inputs = inputs,
         _outputs = outputs,
         super._();
 
@@ -172,8 +173,13 @@ class _$_MachineDefinition extends _MachineDefinition {
   final String id;
   @override
   final String name;
+  final List<RotatableIconData> _icons;
   @override
-  final IconData icon;
+  List<RotatableIconData> get icons {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_icons);
+  }
+
   @override
   final String description;
   final List<MachineInput> _inputs;
@@ -192,7 +198,7 @@ class _$_MachineDefinition extends _MachineDefinition {
 
   @override
   String toString() {
-    return 'MachineDefinition(id: $id, name: $name, icon: $icon, description: $description, inputs: $inputs, outputs: $outputs)';
+    return 'MachineDefinition(id: $id, name: $name, icons: $icons, description: $description, inputs: $inputs, outputs: $outputs)';
   }
 
   @override
@@ -202,7 +208,7 @@ class _$_MachineDefinition extends _MachineDefinition {
             other is _$_MachineDefinition &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.icon, icon) &&
+            const DeepCollectionEquality().equals(other._icons, _icons) &&
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
             const DeepCollectionEquality().equals(other._inputs, _inputs) &&
@@ -214,7 +220,7 @@ class _$_MachineDefinition extends _MachineDefinition {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(icon),
+      const DeepCollectionEquality().hash(_icons),
       const DeepCollectionEquality().hash(description),
       const DeepCollectionEquality().hash(_inputs),
       const DeepCollectionEquality().hash(_outputs));
@@ -230,7 +236,7 @@ abstract class _MachineDefinition extends MachineDefinition {
   const factory _MachineDefinition(
       {required final String id,
       required final String name,
-      required final IconData icon,
+      required final List<RotatableIconData> icons,
       required final String description,
       required final List<MachineInput> inputs,
       required final List<MachineOutput> outputs}) = _$_MachineDefinition;
@@ -241,7 +247,7 @@ abstract class _MachineDefinition extends MachineDefinition {
   @override
   String get name;
   @override
-  IconData get icon;
+  List<RotatableIconData> get icons;
   @override
   String get description;
   @override

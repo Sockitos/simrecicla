@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:simtech/models/machine_port.dart';
+import 'package:simtech/models/rotatable_icon_data.dart';
 
 part 'machine.freezed.dart';
 
@@ -10,7 +11,7 @@ class Machine with _$Machine {
     required String id,
     @Default(0) int index,
     required String name,
-    required IconData icon,
+    required RotatableIconData icon,
     required String description,
     required Map<AxisDirection, MachinePort?> ports,
     @Default(false) bool isFixed,
@@ -18,6 +19,7 @@ class Machine with _$Machine {
   const Machine._();
 
   String get id0 => '$id$index';
+  bool get isFinal => id == 'F';
 
   MachinePort? get topPort => ports[AxisDirection.up];
   MachinePort? get leftPort => ports[AxisDirection.left];
@@ -37,6 +39,7 @@ class Machine with _$Machine {
         AxisDirection.down: ports[AxisDirection.right],
         AxisDirection.right: ports[AxisDirection.up],
       },
+      icon: icon.rotate(),
     );
   }
 
