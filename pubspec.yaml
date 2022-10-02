@@ -16,30 +16,30 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_hooks: ^0.18.5+1
-  flutter_svg: ^1.1.4
+  flutter_svg: ^1.1.5
   freezed_annotation: ^2.1.0
   google_fonts: ^3.0.1
   hooks_riverpod: ^1.0.4
   intl: ^0.17.0
-  json_annotation: ^4.6.0
+  json_annotation: ^4.7.0
   layout: ^1.0.3
   linkify: ^4.1.0
   percent_indicator: ^4.2.2
   smooth_page_indicator: ^1.0.0+2
   tuple: ^2.0.0
   universal_html: ^2.0.8
-  url_launcher: ^6.1.5
+  url_launcher: ^6.1.6
   url_strategy: ^0.2.0
 
 dev_dependencies:
   auto_route_generator: ^5.0.2
-  build_runner: ^2.2.0
+  build_runner: ^2.2.1
   flutter_lints:
     git: https://github.com/Sockitos/flutter_lints/
   flutter_test:
     sdk: flutter
   freezed: ^2.1.0+1
-  json_serializable: ^6.3.1
+  json_serializable: ^6.4.1
 
 dependency_overrides:
   charts_flutter:
