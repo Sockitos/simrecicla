@@ -1,59 +1,181 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:collection/collection.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:simtech/data/consumer_data.dart';
+import 'package:simtech/services/packager_service.dart';
 import 'package:simtech/ui/screens/consumer/bin_selection/bin_selection_screen.dart';
-import 'package:simtech/ui/screens/consumer/categories_screen.dart';
+import 'package:simtech/ui/screens/consumer/categories/categories_screen.dart';
 import 'package:simtech/ui/screens/consumer/consumer_screen.dart';
+import 'package:simtech/ui/screens/error/error_screen.dart';
 import 'package:simtech/ui/screens/landing/landing_screen.dart';
-import 'package:simtech/ui/screens/packager/form_screen.dart';
+import 'package:simtech/ui/screens/packager/form/form_screen.dart';
+import 'package:simtech/ui/screens/packager/form/form_screen_model.dart';
 import 'package:simtech/ui/screens/packager/packager_screen.dart';
-import 'package:simtech/ui/screens/packager/results_screen.dart';
-import 'package:simtech/ui/screens/recycler/grid_screen.dart';
+import 'package:simtech/ui/screens/packager/results/results_screen.dart';
+import 'package:simtech/ui/screens/recycler/grid/grid_screen.dart';
 import 'package:simtech/ui/screens/recycler/recycler_screen.dart';
 
-@CustomAutoRouter(
-  replaceInRouteName: 'Page,Route,Screen',
-  transitionsBuilder: TransitionsBuilders.fadeIn,
-  durationInMilliseconds: 250,
-  routes: <AutoRoute>[
-    AutoRoute<void>(
-      path: '/',
-      initial: true,
-      page: LandingScreen,
-    ),
-    AutoRoute<void>(
-      path: '/consumer',
-      page: ConsumerScreen,
-    ),
-    AutoRoute<void>(
-      path: '/consumer/categories',
-      page: CategoriesScreen,
-    ),
-    AutoRoute<void>(
-      path: '/consumer/bin_selection?package=:package',
-      page: BinSelectionScreen,
-    ),
-    AutoRoute<void>(
-      path: '/packager',
-      page: PackagerScreen,
-    ),
-    AutoRoute<void>(
-      path: '/packager/form',
-      page: FormScreen,
-    ),
-    AutoRoute<void>(
-      path: '/packager/results',
-      page: ResultsScreen,
-    ),
-    AutoRoute<void>(
-      path: '/recycler',
-      page: RecyclerScreen,
-    ),
-    AutoRoute<void>(
-      path: '/recycler/grid',
-      page: GridScreen,
-    ),
+CustomTransitionPage pageBuilder<T>({
+  required BuildContext context,
+  required GoRouterState state,
+  required Widget child,
+}) {
+  return CustomTransitionPage<T>(
+    key: state.pageKey,
+    child: child,
+    transitionDuration: const Duration(milliseconds: 250),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+        FadeTransition(opacity: animation, child: child),
+  );
+}
 
-    // redirect all other paths
-    RedirectRoute(path: '*', redirectTo: '/'),
-  ],
-)
-class $AppRouter {}
+final routerProvider = Provider<GoRouter>((ref) {
+  return GoRouter(
+    routes: <GoRoute>[
+      GoRoute(
+        path: '/',
+        pageBuilder: (context, state) => pageBuilder<void>(
+          context: context,
+          state: state,
+          child: const LandingScreen(),
+        ),
+        routes: [
+          GoRoute(
+            path: 'consumer',
+            pageBuilder: (context, state) => pageBuilder<void>(
+              context: context,
+              state: state,
+              child: const ConsumerScreen(),
+            ),
+            routes: [
+              GoRoute(
+                path: 'categories',
+                pageBuilder: (context, state) => pageBuilder<void>(
+                  context: context,
+                  state: state,
+                  child: const CategoriesScreen(),
+                ),
+              ),
+              GoRoute(
+                path: 'bin_selection',
+                pageBuilder: (context, state) {
+                  final packageId = int.parse(state.queryParams['package']!);
+                  const categories = ConsumerData.categories;
+                  final packages = [for (final c in categories) ...c.packages];
+                  final package = packages.firstWhere((c) => c.id == packageId);
+                  return pageBuilder<void>(
+                    context: context,
+                    state: state,
+                    child: ProviderScope(
+                      overrides: [packageProvider.overrideWithValue(package)],
+                      child: const BinSelectionScreen(),
+                    ),
+                  );
+                },
+                redirect: (context, state) {
+                  final rawPackageId = state.queryParams['package'];
+                  if (rawPackageId == null) return '/consumer/categories';
+                  final packageId = int.tryParse(rawPackageId);
+                  if (packageId == null) return '/consumer/categories';
+                  const categories = ConsumerData.categories;
+                  final packages = [for (final c in categories) ...c.packages];
+                  final package =
+                      packages.firstWhereOrNull((c) => c.id == packageId);
+                  if (package == null) return '/consumer/categories';
+                  return null;
+                },
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'packager',
+            pageBuilder: (context, state) => pageBuilder<void>(
+              context: context,
+              state: state,
+              child: const PackagerScreen(),
+            ),
+            routes: [
+              GoRoute(
+                path: 'form',
+                pageBuilder: (context, state) => pageBuilder<void>(
+                  context: context,
+                  state: state,
+                  child: const FormScreen(),
+                ),
+                routes: [
+                  GoRoute(
+                    path: 'results',
+                    pageBuilder: (context, state) {
+                      final formState = ref.read(formScreenSNProvider);
+                      return pageBuilder<void>(
+                        context: context,
+                        state: state,
+                        child: ResultsScreen(
+                          rating: formState.rating,
+                          recommendations: formState.recommendations,
+                          impact: PackagerService.calculateImpact(
+                            material: formState.material!,
+                            weight: formState.weight!,
+                            recycledPercentage: formState.recycledPercentage,
+                            rating: formState.rating,
+                          ),
+                        ),
+                      );
+                    },
+                    redirect: (context, state) {
+                      final formState = ref.read(formScreenSNProvider);
+                      if (!formState.isSubmittable) return '/packager/form';
+                      return null;
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'recycler',
+            pageBuilder: (context, state) => pageBuilder<void>(
+              context: context,
+              state: state,
+              child: const RecyclerScreen(),
+            ),
+            routes: [
+              GoRoute(
+                path: 'grid',
+                pageBuilder: (context, state) {
+                  final type = GridType.values.firstWhere(
+                    (t) => t.name == state.queryParams['type'],
+                  );
+                  return pageBuilder<void>(
+                    context: context,
+                    state: state,
+                    child: ProviderScope(
+                      overrides: [typeProvider.overrideWithValue(type)],
+                      child: const GridScreen(),
+                    ),
+                  );
+                },
+                redirect: (context, state) {
+                  if (state.queryParams.containsKey('type')) {
+                    final type = GridType.values.firstWhereOrNull(
+                      (t) => t.name == state.queryParams['type'],
+                    );
+                    return type == null ? '/recycler' : null;
+                  } else {
+                    return '/recycler';
+                  }
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    ],
+    errorPageBuilder: (context, state) => pageBuilder<void>(
+      context: context,
+      state: state,
+      child: const ErrorScreen(),
+    ),
+  );
+});

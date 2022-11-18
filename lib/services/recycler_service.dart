@@ -1,38 +1,37 @@
 import 'package:collection/collection.dart';
 import 'package:directed_graph/directed_graph.dart';
-import 'package:simtech/models/machine.dart';
-import 'package:simtech/models/machine_graph.dart';
-import 'package:simtech/models/machine_port.dart';
-import 'package:simtech/models/material_sample.dart';
+import 'package:simtech/models/recycler/machine.dart';
+import 'package:simtech/models/recycler/machine_graph.dart';
+import 'package:simtech/models/recycler/machine_port.dart';
+import 'package:simtech/models/recycler/material_sample.dart';
 
 class RecyclerService {
+  const RecyclerService._();
+
   static MachineGraph buildGraph({
     required MaterialSample feedSample,
     required List<Machine> machines,
     required Map<MachineOutputId, MachineInputId?> connections,
   }) {
-    int comparator(String s1, String s2) => s1.compareTo(s2);
-
     final edges = <String, Set<String>>{};
-
     for (final entry in connections.entries) {
+      final outputId = entry.key;
+      final inputId = entry.value;
       edges.update(
-        entry.key.machineId,
+        outputId.machineId,
         (value) => {
           ...value,
-          if (entry.value?.machineId != null) entry.value!.machineId,
+          if (inputId?.machineId != null) inputId!.machineId,
         },
         ifAbsent: () => {
-          if (entry.value?.machineId != null) entry.value!.machineId,
+          if (inputId?.machineId != null) inputId!.machineId,
         },
       );
     }
-
     final graph = DirectedGraph<String>(
       edges,
-      comparator: comparator,
+      comparator: (a, b) => a.compareTo(b),
     );
-
     final vertices = graph.vertices.toSet();
     final validVertices = graph.reachableVertices('feed0')..add('feed0');
     final invalidVertices = vertices.difference(validVertices);
@@ -56,7 +55,6 @@ class RecyclerService {
     }
 
     final calculationOrder = graph.topologicalOrdering!;
-
     final inputs = <String, MaterialSample>{};
     final outputs = <MachineOutputId, MaterialSample>{
       const MachineOutputId('feed0', 'feed'): feedSample,
@@ -76,7 +74,7 @@ class RecyclerService {
           if (machineInputTotal == null) {
             machineInputTotal = outputMaterial;
           } else {
-            machineInputTotal = machineInputTotal + outputMaterial;
+            machineInputTotal += outputMaterial;
           }
         }
       }
@@ -93,7 +91,6 @@ class RecyclerService {
       graph: graph,
       isValidated: isValid,
       inputs: inputs,
-      outputs: outputs,
     );
   }
 }

@@ -1,19 +1,19 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/router/router.gr.dart';
-import 'package:simtech/ui/widgets/arrow_widget.dart';
-import 'package:simtech/ui/widgets/screen_wrapper.dart';
+import 'package:simtech/gen/assets.gen.dart';
+import 'package:simtech/ui/widgets/app_screen.dart';
+import 'package:simtech/ui/widgets/arrow.dart';
 
 class PackagerScreen extends StatelessWidget {
   const PackagerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ScreenWrapper(
+    return AppScreen(
       padding: EdgeInsets.zero,
       body: AdaptiveBuilder(
         xs: (context) => const _PackagerIntro(),
@@ -40,8 +40,7 @@ class PackagerScreen extends StatelessWidget {
                       bottom: 0,
                       left: -40,
                       right: 60,
-                      child: Image.asset(
-                        'assets/images/packager_intro.png',
+                      child: Assets.images.packagerIntro.image(
                         fit: BoxFit.fitWidth,
                       ),
                     ),
@@ -80,7 +79,7 @@ class _PackagerIntro extends StatelessWidget {
           SizedBox(height: AppSpacings.small(context.layout)),
           Text(
             'Venha descobrir como melhorar a reciclabilidade das suas embalagens através de um conjunto de questões que avaliam parâmetros de design e conceção, e de recomendações para as opções de conceção que possam ser menos favoráveis para a reciclabilidade. Este simulador determina também o impacte ou benefício ambiental das suas embalagens, tendo em conta o resultado de reciclabilidade (A-totalmente reciclável a F-não reciclável), a possibilidade de recuperação dos materiais para reciclagem e o teor de material reciclado utilizado na embalagem.',
-            style: AppTextStyles.paragraph(context.layout),
+            style: AppTextStyles.bodyL(context.layout),
             textAlign: textAlign,
           ),
           SizedBox(height: AppSpacings.big(context.layout)),
@@ -114,7 +113,7 @@ class _PackagerIntro extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const ArrowWidget(
+                    const Arrow(
                       size: Size(44, 80),
                       color: AppColors.yellow,
                       direction: AxisDirection.down,
@@ -127,9 +126,7 @@ class _PackagerIntro extends StatelessWidget {
                     ),
                     const SizedBox(height: 40),
                     ElevatedButton(
-                      onPressed: () => AutoRouter.of(context).push(
-                        const FormScreenRoute(),
-                      ),
+                      onPressed: () => context.go('/packager/form'),
                       child: const Text('Questionário'),
                     ),
                   ],

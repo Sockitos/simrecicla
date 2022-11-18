@@ -1,56 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/data/packager_data.dart';
-import 'package:simtech/models/answer.dart';
-import 'package:simtech/models/enums.dart';
-import 'package:simtech/models/package_impact.dart';
-import 'package:simtech/models/question.dart';
-import 'package:tuple/tuple.dart';
-
-enum Rating { a, b, c, d, e, f }
-
-extension RatingDetails on Rating {
-  Color get color {
-    switch (this) {
-      case Rating.a:
-        return AppColors.ratingA;
-      case Rating.b:
-        return AppColors.ratingB;
-      case Rating.c:
-        return AppColors.ratingC;
-      case Rating.d:
-        return AppColors.ratingD;
-      case Rating.e:
-        return AppColors.ratingE;
-      case Rating.f:
-        return AppColors.ratingF;
-    }
-  }
-
-  double get potential {
-    switch (this) {
-      case Rating.a:
-        return 1;
-      case Rating.b:
-        return 0.9;
-      case Rating.c:
-        return 0.85;
-      case Rating.d:
-        return 0.75;
-      case Rating.e:
-        return 0.7;
-      case Rating.f:
-        return 0;
-    }
-  }
-}
+import 'package:simtech/models/packager/answer.dart';
+import 'package:simtech/models/packager/enums.dart';
+import 'package:simtech/models/packager/package_impact.dart';
 
 class PackagerService {
-  static List<Question> getQuestions() {
-    return questions.map(Question.fromJson).toList();
-  }
+  const PackagerService._();
 
-  static Rating getRating({
+  static Rating calculateRating({
     required PMaterial material,
     required List<Answer> answers,
   }) {
@@ -72,70 +27,6 @@ class PackagerService {
       return Rating.f;
     }
   }
-
-  static bool validateQuestion({
-    required Map<int, Answer> answers,
-    required Question question,
-  }) {
-    final requirement = question.requirement;
-    if (requirement == null) return true;
-
-    final answer = answers[requirement.question];
-    if (answer == null) return false;
-
-    return requirement.answers.contains(answer.id);
-  }
-
-  static bool validateAnswers({
-    required Map<int, Answer> answers,
-    required PMaterial? material,
-  }) {
-    if (material == null) return false;
-    final questions = getQuestions();
-
-    final requiredQuestions = questions
-        .where((q) => validateQuestion(answers: answers, question: q))
-        .toList();
-
-    for (final q in requiredQuestions) {
-      if (!answers.containsKey(q.id)) return false;
-    }
-
-    return true;
-  }
-
-  static List<Tuple2<String, String>> getRecommendations({
-    required Map<int, Answer> answers,
-    required PMaterial material,
-  }) {
-    final recommendations = <Tuple2<String, String>>[];
-    for (final a in answers.values) {
-      final critical = a.recommendation;
-      final alternative = a.getRecommendation(material);
-      if (critical != null && alternative != null) {
-        recommendations.add(Tuple2(critical, alternative));
-      }
-    }
-    return recommendations;
-  }
-
-  static const _ratingToDescription = {
-    Rating.a:
-        'As características de conceção da sua embalagem permitem que seja totalmente reciclável. Caso aplicável, consulte a lista de recomendações apresentada para as características que ainda podem ser melhoradas.',
-    Rating.b:
-        'A sua embalagem reúne uma ou mais características que podem afetar ligeiramente a reciclabilidade, mas sem comprometer a sua recuperação nas estações de triagem para que possa ser encaminhada para reciclagem. Consulte a lista de recomendações apresentada para as características de conceção que podem ser melhoradas.',
-    Rating.c:
-        'A sua embalagem reúne uma ou mais características que podem condicionar moderadamente a reciclabilidade, assim como reduzir a probabilidade de os materiais da embalagem serem recuperados nas estações de triagem e posteriormente encaminhados para reciclagem. Consulte a lista de recomendações apresentada para as características de conceção que devem ser melhoradas.',
-    Rating.d:
-        'A sua embalagem reúne uma ou mais características que condicionam a reciclabilidade, assim como reduzem a capacidade de recuperação dos materiais da embalagem nas estações de triagem e posteriormente encaminhamento para reciclagem. Consulte a lista de recomendações apresentada para as características de conceção que devem ser melhoradas.',
-    Rating.e:
-        'A sua embalagem reúne uma ou mais características que condicionam muito a reciclabilidade, impedindo a capacidade de recuperação dos materiais da embalagem nas estações de triagem, não podendo ser encaminhados para reciclagem. Consulte a lista de recomendações apresentada para as características de conceção que devem ser melhoradas.',
-    Rating.f:
-        'A sua embalagem reúne uma ou mais características que condicionam totalmente a reciclabilidade, impedindo a capacidade de recuperação dos materiais da embalagem nas estações de triagem, não podendo ser encaminhados para reciclagem. Consulte a lista de recomendações apresentada para as características de conceção que devem ser melhoradas.',
-  };
-
-  static String getRatingDescription(Rating rating) =>
-      _ratingToDescription[rating] ?? '';
 
   static const aMap = <PMaterial, double>{
     PMaterial.vidro: 0.2,
@@ -302,7 +193,7 @@ class PackagerService {
     PMaterial.outrosPlasticos: 0.139980222540424,
   };
 
-  static PackageImpact getPackageImpact({
+  static PackageImpact calculateImpact({
     required PMaterial material,
     required int weight,
     required double recycledPercentage,

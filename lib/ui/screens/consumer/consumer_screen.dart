@@ -1,19 +1,19 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/router/router.gr.dart';
-import 'package:simtech/ui/widgets/arrow_widget.dart';
-import 'package:simtech/ui/widgets/screen_wrapper.dart';
+import 'package:simtech/gen/assets.gen.dart';
+import 'package:simtech/ui/widgets/app_screen.dart';
+import 'package:simtech/ui/widgets/arrow.dart';
 
 class ConsumerScreen extends StatelessWidget {
   const ConsumerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ScreenWrapper(
+    return AppScreen(
       padding: EdgeInsets.zero,
       body: AdaptiveBuilder(
         xs: (context) => const _ConsumerIntro(),
@@ -40,8 +40,7 @@ class ConsumerScreen extends StatelessWidget {
                       bottom: 0,
                       left: -40,
                       right: -60,
-                      child: Image.asset(
-                        'assets/images/consumer_intro.png',
+                      child: Assets.images.consumerIntro.image(
                         fit: BoxFit.fitWidth,
                       ),
                     ),
@@ -80,7 +79,7 @@ class _ConsumerIntro extends StatelessWidget {
           SizedBox(height: AppSpacings.small(context.layout)),
           Text(
             'Este simulador permite ao cidadão perceber o impacte das suas práticas de separação e encaminhamento das embalagens, e quantificar as consequências das suas ações tendo em conta as soluções de tratamento disponíveis, os processos a que os resíduos serão sujeitos e o potencial de reintrodução na economia dos materiais recuperados.',
-            style: AppTextStyles.paragraph(context.layout),
+            style: AppTextStyles.bodyL(context.layout),
             textAlign: textAlign,
           ),
           SizedBox(height: AppSpacings.small(context.layout)),
@@ -115,7 +114,7 @@ class _ConsumerIntro extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const ArrowWidget(
+                    const Arrow(
                       size: Size(44, 80),
                       color: AppColors.blue,
                       direction: AxisDirection.down,
@@ -128,9 +127,7 @@ class _ConsumerIntro extends StatelessWidget {
                     ),
                     const SizedBox(height: 40),
                     ElevatedButton(
-                      onPressed: () => AutoRouter.of(context).push(
-                        const CategoriesScreenRoute(),
-                      ),
+                      onPressed: () => context.go('/consumer/categories'),
                       child: const Text('Vamos lá!'),
                     ),
                   ],

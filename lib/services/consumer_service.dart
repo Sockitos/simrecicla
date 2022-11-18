@@ -1,55 +1,13 @@
-import 'package:simtech/data/consumer_data.dart';
-import 'package:simtech/models/category.dart';
-import 'package:simtech/models/component.dart';
-import 'package:simtech/models/line.dart';
-import 'package:simtech/models/matrix.dart';
-
-class ConsumerResults {
-  const ConsumerResults({
-    required this.isCorrect,
-    required this.userImpacts,
-    required this.alternativeImpacts,
-  });
-
-  final bool isCorrect;
-  final Impacts userImpacts;
-  final Impacts alternativeImpacts;
-}
-
-class Impacts {
-  const Impacts({
-    required this.economical,
-    required this.environmental,
-  });
-
-  final double economical;
-  final double environmental;
-}
-
-extension ComponentLine on Component {
-  Line toLine() {
-    return Line(
-      papel: papel ?? 0,
-      cartao: cartao ?? 0,
-      ecal: ecal ?? 0,
-      filmePlastico: pebd ?? 0,
-      pet: pet ?? 0,
-      pead: pead ?? 0,
-      plasticosMistos: plasticosMistos ?? 0,
-      metaisFerrosos: metaisFerrosos ?? 0,
-      metaisNaoFerrosos: metaisNaoFerrosos ?? 0,
-      vidro: vidro ?? 0,
-      eps: eps ?? 0,
-    );
-  }
-}
+import 'package:simtech/models/consumer/component.dart';
+import 'package:simtech/models/consumer/line.dart';
+import 'package:simtech/models/consumer/matrix.dart';
+import 'package:simtech/models/consumer/selection_impacts.dart';
+import 'package:simtech/models/consumer/selection_results.dart';
 
 class ConsumerService {
-  static List<Category> getCategories() {
-    return categories.map(Category.fromJson).toList();
-  }
+  const ConsumerService._();
 
-  static ConsumerResults getResults(Map<Component, Where> components) {
+  static SelectionResults getResults(Map<Component, Where> components) {
     var isCorrect = true;
     for (final entry in components.entries) {
       if (entry.key.where != entry.value) {
@@ -66,7 +24,7 @@ class ConsumerService {
 
     final alternativeImpacts = _calculateImpacts(alternative);
 
-    return ConsumerResults(
+    return SelectionResults(
       isCorrect: isCorrect,
       userImpacts: userImpacts,
       alternativeImpacts: alternativeImpacts,
@@ -90,7 +48,7 @@ class ConsumerService {
     metaisNaoFerrosos: 0.6119,
   );
 
-  static const cTriagemVidro = Matrix(reciclagem: Line(vidro: 1));
+  static const cTriagemVidro = Line(vidro: 1);
 
   static const cTratamentoMecanico = Line(
     cartao: 0.0976139009896262,
@@ -109,9 +67,9 @@ class ConsumerService {
 
   static const cAlocaoImpactes = Line(papel: 1, cartao: 1);
 
-  static const cOrigemTriagem = Line.fromValue(1);
+  static final cOrigemTriagem = Line.fromValue(1);
 
-  static const cOrigemTMTMBDA = Line.fromValue(1);
+  static final cOrigemTMTMBDA = Line.fromValue(1);
 
   static const cAlocacaoFluxoResiduos = Line(
     papel: 1.34770889487871,
@@ -168,7 +126,7 @@ class ConsumerService {
 
   // MATRIZES //
 
-  static const mCustosCapital = Matrix(
+  static final mCustosCapital = Matrix(
     recolhaIndiferenciada: Line.fromValue(0.00171988800874197),
     recolhaPapelCartao: Line.fromValue(0.0625035505185231),
     recolhaPlasticoMetal: Line.fromValue(0.0828755149978058),
@@ -177,7 +135,7 @@ class ConsumerService {
     triagemPM: Line.fromValue(0.0257289079416138),
     tratamentoMecanico: Line.fromValue(0.00438374818965225),
     digestaoAnaerobia: Line.fromValue(0.046194627189554),
-    reciclagem: Line(
+    reciclagem: const Line(
       papel: 0.01042,
       cartao: 0.01042,
       ecal: 0.05029,
@@ -192,7 +150,7 @@ class ConsumerService {
     ),
   );
 
-  static const mCustosOperacionais = Matrix(
+  static final mCustosOperacionais = Matrix(
     recolhaIndiferenciada: Line.fromValue(0.00295841259309355),
     recolhaPapelCartao: Line.fromValue(0.0910883772161662),
     recolhaPlasticoMetal: Line.fromValue(0.130096792659209),
@@ -201,7 +159,7 @@ class ConsumerService {
     triagemPM: Line.fromValue(0.013895149256976),
     tratamentoMecanico: Line.fromValue(0.00182577529703806),
     digestaoAnaerobia: Line.fromValue(0.0627800058890157),
-    reciclagem: Line(
+    reciclagem: const Line(
       papel: 0.01726,
       cartao: 0.01726,
       ecal: 0.02506,
@@ -216,7 +174,7 @@ class ConsumerService {
     ),
   );
 
-  static const mCustosRecursosHumanos = Matrix(
+  static final mCustosRecursosHumanos = Matrix(
     recolhaIndiferenciada: Line.fromValue(0.00241174172399602),
     recolhaPapelCartao: Line.fromValue(0.0670180814098054),
     recolhaPlasticoMetal: Line.fromValue(0.0891896224737391),
@@ -225,7 +183,7 @@ class ConsumerService {
     triagemPM: Line.fromValue(0.0747091604552328),
     tratamentoMecanico: Line.fromValue(0.00359729367411351),
     digestaoAnaerobia: Line.fromValue(0.0137322501472631),
-    reciclagem: Line(
+    reciclagem: const Line(
       papel: 0.02864,
       cartao: 0.02864,
       ecal: 0.04317,
@@ -240,12 +198,12 @@ class ConsumerService {
     ),
   );
 
-  static const mCustosTratementoRefugosTarifa = Matrix(
+  static final mCustosTratementoRefugosTarifa = Matrix(
     valorizacaoEnergetica: Line.fromValue(0.0353),
     aterro: Line.fromValue(0.0142710014320122),
   );
 
-  static const mCustosTratementoRefugosTGR = Matrix(
+  static final mCustosTratementoRefugosTGR = Matrix(
     valorizacaoEnergetica: Line.fromValue(0.0000061512),
     aterro: Line.fromValue(0.022),
   );
@@ -302,7 +260,7 @@ class ConsumerService {
     ),
   );
 
-  static const mEmissoes = Matrix(
+  static final mEmissoes = Matrix(
     recolhaIndiferenciada: Line.fromValue(0.00199575701377748),
     recolhaPapelCartao: Line.fromValue(0.0480031266949336),
     recolhaPlasticoMetal: Line.fromValue(0.0640622236285195),
@@ -311,7 +269,7 @@ class ConsumerService {
     triagemPM: Line.fromValue(0.022748637),
     tratamentoMecanico: Line.fromValue(0.003885989),
     digestaoAnaerobia: Line.fromValue(0.112748203),
-    reciclagem: Line(
+    reciclagem: const Line(
       papel: 1.005486866,
       cartao: 0.3637349005,
       ecal: 1.06831129593621,
@@ -324,7 +282,7 @@ class ConsumerService {
       vidro: 0.811708426,
       eps: 0.4947713185,
     ),
-    valorizacaoEnergetica: Line(
+    valorizacaoEnergetica: const Line(
       papel: -0.0769341171337302,
       cartao: -0.0769341171337302,
       ecal: 0.385936547143893,
@@ -337,7 +295,7 @@ class ConsumerService {
       vidro: 0.012794828,
       eps: 2.93761554306757,
     ),
-    aterro: Line(
+    aterro: const Line(
       papel: 1.80367250081299,
       cartao: 1.80367250081299,
       ecal: 1.80367250081299,
@@ -350,7 +308,7 @@ class ConsumerService {
       vidro: 0.008041557,
       eps: 0.112142798,
     ),
-    substituicao: Line(
+    substituicao: const Line(
       papel: 1.306372826,
       cartao: 0.4701238615,
       ecal: 0.431366677,
@@ -365,7 +323,7 @@ class ConsumerService {
     ),
   );
 
-  static Impacts _calculateImpacts(Map<Component, Where> components) {
+  static SelectionImpacts _calculateImpacts(Map<Component, Where> components) {
     final io = calculateMatrixIO(components);
 
     final economical = ((io * mCustosCapital).sum() * 0) +
@@ -377,7 +335,10 @@ class ConsumerService {
 
     final environmental = (io * mEmissoes).sum() * 1000;
 
-    return Impacts(economical: economical, environmental: environmental);
+    return SelectionImpacts(
+      economical: economical,
+      environmental: environmental,
+    );
   }
 
   static Matrix calculateMatrixIO(Map<Component, Where> components) {
@@ -425,9 +386,7 @@ class ConsumerService {
     final reciclagem =
         ((recolhaReciclavelPapelCartao * cOrigemTriagem * cTriagemPC) +
                 (recolhaReiclavelPlasticoMetal * cOrigemTriagem * cTriagemPM) +
-                (recolhaReiclavelVidro *
-                    cOrigemTriagem *
-                    cTriagemVidro.reciclagem) +
+                (recolhaReiclavelVidro * cOrigemTriagem * cTriagemVidro) +
                 (tratamentoMecanico * cOrigemTMTMBDA * cTratamentoMecanico) +
                 (digestaoAnaerobia * cOrigemTMTMBDA * cDigestaoAnaerobia)) *
             cAlocacaoFluxoResiduos;

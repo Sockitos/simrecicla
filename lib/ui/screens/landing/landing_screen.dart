@@ -1,20 +1,19 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/router/router.gr.dart';
+import 'package:simtech/gen/assets.gen.dart';
 import 'package:simtech/ui/screens/landing/components/landing_option.dart';
-import 'package:simtech/ui/widgets/screen_wrapper.dart';
+import 'package:simtech/ui/widgets/app_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ScreenWrapper(
+    return AppScreen(
       body: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -47,8 +46,7 @@ class LandingScreen extends StatelessWidget {
                         Positioned(
                           top: 250,
                           right: -40,
-                          child: SvgPicture.asset(
-                            'assets/svgs/circles.svg',
+                          child: Assets.svgs.circles.svg(
                             color: AppColors.white,
                           ),
                         ),
@@ -68,8 +66,7 @@ class LandingScreen extends StatelessWidget {
                 style: AppTextStyles.h1(context.layout),
               ),
               const SizedBox(height: 20),
-              SvgPicture.asset(
-                'assets/svgs/waves.svg',
+              Assets.svgs.waves.svg(
                 color: AppColors.darkGreen,
               ),
               SizedBox(height: AppSpacings.small(context.layout)),
@@ -78,7 +75,7 @@ class LandingScreen extends StatelessWidget {
                 child: Text(
                   'O projeto Circular SimTech surge do desafio de promover a economia circular, a descarbonização da gestão de resíduos e o uso eficiente dos recursos, através do desenvolvimento e da disponibilização de simuladores precisos, baseados na caracterização detalhada dos processos e tecnologias de produção, processamento e reciclagem de resíduos de embalagens.\nExperimenta os três simuladores!',
                   textAlign: TextAlign.center,
-                  style: AppTextStyles.paragraph(context.layout),
+                  style: AppTextStyles.bodyL(context.layout),
                 ),
               ),
               SizedBox(height: AppSpacings.big(context.layout)),
@@ -87,34 +84,28 @@ class LandingScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       LandingOption(
-                        svg: 'assets/svgs/consumer_option.svg',
+                        svg: Assets.svgs.consumerOption.path,
                         description: 'Onde coloco a minha embalagem',
                         tooltip:
                             'Permite calcular o impacte das práticas de separação e encaminhamento dos resíduos de embalagens',
-                        onPressed: () => AutoRouter.of(context).push(
-                          const ConsumerScreenRoute(),
-                        ),
+                        onPressed: () => context.go('/consumer'),
                       ),
                       const SizedBox(height: 60),
                       LandingOption(
-                        svg: 'assets/svgs/packager_option.svg',
+                        svg: Assets.svgs.packagerOption.path,
                         description:
                             'Quero melhorar a reciclabilidade de uma embalagem',
                         tooltip:
                             'Permite perceber o impacte das opções de produção, materiais e componentes adotados',
-                        onPressed: () => AutoRouter.of(context).push(
-                          const PackagerScreenRoute(),
-                        ),
+                        onPressed: () => context.go('/packager'),
                       ),
                       const SizedBox(height: 60),
                       LandingOption(
-                        svg: 'assets/svgs/recycler_option.svg',
+                        svg: Assets.svgs.recyclerOption.path,
                         description: 'Quero optimizar uma linha de triagem',
                         tooltip:
                             'Permite otimizar os resultados uma linha de triagem de embalagens, de acordo com a sequenciação de diferentes operações e equipamentos',
-                        onPressed: () => AutoRouter.of(context).push(
-                          const RecyclerScreenRoute(),
-                        ),
+                        onPressed: () => context.go('/recycler'),
                       ),
                       const SizedBox(height: 30),
                     ],
@@ -131,13 +122,11 @@ class LandingScreen extends StatelessWidget {
                     ),
                     Flexible(
                       child: LandingOption(
-                        svg: 'assets/svgs/consumer_option.svg',
+                        svg: Assets.svgs.consumerOption.path,
                         description: 'Onde coloco a minha embalagem',
                         tooltip:
                             'Permite calcular o impacte das práticas de separação e encaminhamento dos resíduos de embalagens',
-                        onPressed: () => AutoRouter.of(context).push(
-                          const ConsumerScreenRoute(),
-                        ),
+                        onPressed: () => context.go('/consumer'),
                       ),
                     ),
                     SizedBox(
@@ -148,14 +137,12 @@ class LandingScreen extends StatelessWidget {
                     ),
                     Flexible(
                       child: LandingOption(
-                        svg: 'assets/svgs/packager_option.svg',
+                        svg: Assets.svgs.packagerOption.path,
                         description:
                             'Quero melhorar a reciclabilidade de uma embalagem',
                         tooltip:
                             'Permite perceber o impacte das opções de produção, materiais e componentes adotados',
-                        onPressed: () => AutoRouter.of(context).push(
-                          const PackagerScreenRoute(),
-                        ),
+                        onPressed: () => context.go('/packager'),
                       ),
                     ),
                     SizedBox(
@@ -166,13 +153,11 @@ class LandingScreen extends StatelessWidget {
                     ),
                     Flexible(
                       child: LandingOption(
-                        svg: 'assets/svgs/recycler_option.svg',
+                        svg: Assets.svgs.recyclerOption.path,
                         description: 'Quero optimizar uma linha de triagem',
                         tooltip:
                             'Permite calcular o impacte das práticas de separação e encaminhamento dos resíduos de embalagens',
-                        onPressed: () => AutoRouter.of(context).push(
-                          const RecyclerScreenRoute(),
-                        ),
+                        onPressed: () => context.go('/recycler'),
                       ),
                     ),
                     SizedBox(

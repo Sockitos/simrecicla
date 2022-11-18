@@ -1,20 +1,19 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/data/recycler_data.dart';
-import 'package:simtech/router/router.gr.dart';
-import 'package:simtech/ui/widgets/arrow_widget.dart';
-import 'package:simtech/ui/widgets/screen_wrapper.dart';
+import 'package:simtech/gen/assets.gen.dart';
+import 'package:simtech/ui/widgets/app_screen.dart';
+import 'package:simtech/ui/widgets/arrow.dart';
 
 class RecyclerScreen extends StatelessWidget {
   const RecyclerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ScreenWrapper(
+    return AppScreen(
       padding: EdgeInsets.zero,
       body: AdaptiveBuilder(
         xs: (context) => const _RecyclerIntro(),
@@ -41,8 +40,7 @@ class RecyclerScreen extends StatelessWidget {
                       bottom: 0,
                       left: -40,
                       right: 60,
-                      child: Image.asset(
-                        'assets/images/recycler_intro.png',
+                      child: Assets.images.recyclerIntro.image(
                         fit: BoxFit.fitWidth,
                       ),
                     ),
@@ -81,7 +79,7 @@ class _RecyclerIntro extends StatelessWidget {
           SizedBox(height: AppSpacings.small(context.layout)),
           Text(
             'Este simulador permite ao utilizador desenhar uma linha de triagem através da escolha um conjunto de equipamentos e avaliar as eficiências de recuperação de materiais de embalagem, inerentes às diferentes sequências dos equipamentos mais usados nestas instalações.',
-            style: AppTextStyles.paragraph(context.layout),
+            style: AppTextStyles.bodyL(context.layout),
             textAlign: textAlign,
           ),
           SizedBox(height: AppSpacings.big(context.layout)),
@@ -115,7 +113,7 @@ class _RecyclerIntro extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const ArrowWidget(
+                    const Arrow(
                       size: Size(44, 80),
                       color: AppColors.darkGreen,
                       direction: AxisDirection.down,
@@ -128,13 +126,7 @@ class _RecyclerIntro extends StatelessWidget {
                     ),
                     const SizedBox(height: 40),
                     ElevatedButton(
-                      onPressed: () => AutoRouter.of(context).push(
-                        GridScreenRoute(
-                          machines: machinesPC,
-                          defaultWeight: defaultWeight,
-                          defaultSample: defaultSamplePC,
-                        ),
-                      ),
+                      onPressed: () => context.go('/recycler/grid?type=pc'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.blue,
                       ),
@@ -142,13 +134,7 @@ class _RecyclerIntro extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     ElevatedButton(
-                      onPressed: () => AutoRouter.of(context).push(
-                        GridScreenRoute(
-                          machines: machinesPM,
-                          defaultWeight: defaultWeight,
-                          defaultSample: defaultSamplePM,
-                        ),
-                      ),
+                      onPressed: () => context.go('/recycler/grid?type=pm'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.yellow,
                       ),

@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/packages_icons.dart';
 import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/component.dart';
-import 'package:simtech/models/package.dart';
-import 'package:simtech/ui/widgets/my_drag_target.dart';
+import 'package:simtech/models/consumer/component.dart';
 
 class DraggableComponents extends StatelessWidget {
   const DraggableComponents({
     super.key,
-    required this.package,
-    required this.hiddenComponents,
+    required this.components,
+    required this.isDisabled,
   });
 
-  final Package package;
-  final List<Component> hiddenComponents;
+  final List<Component> components;
+  final bool Function(Component c) isDisabled;
 
   @override
   Widget build(BuildContext context) {
-    switch (package.components.length) {
+    switch (components.length) {
       case 1:
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 165),
           child: _DraggableComponent(
-            component: package.components[0],
-            hideComponent: hiddenComponents.contains(package.components[0]),
+            component: components[0],
+            isDisabled: isDisabled(components[0]),
           ),
         );
 
@@ -34,13 +31,13 @@ class DraggableComponents extends StatelessWidget {
           children: [
             const SizedBox(height: 10),
             _DraggableComponent(
-              component: package.components[0],
-              hideComponent: hiddenComponents.contains(package.components[0]),
+              component: components[0],
+              isDisabled: isDisabled(components[0]),
             ),
             const SizedBox(height: 20),
             _DraggableComponent(
-              component: package.components[1],
-              hideComponent: hiddenComponents.contains(package.components[1]),
+              component: components[1],
+              isDisabled: isDisabled(components[1]),
             ),
             const SizedBox(height: 50),
           ],
@@ -52,21 +49,19 @@ class DraggableComponents extends StatelessWidget {
             Column(
               children: [
                 _DraggableComponent(
-                  component: package.components[0],
-                  hideComponent:
-                      hiddenComponents.contains(package.components[0]),
+                  component: components[0],
+                  isDisabled: isDisabled(components[0]),
                 ),
                 const SizedBox(height: 40),
                 _DraggableComponent(
-                  component: package.components[1],
-                  hideComponent:
-                      hiddenComponents.contains(package.components[1]),
+                  component: components[1],
+                  isDisabled: isDisabled(components[1]),
                 ),
               ],
             ),
             _DraggableComponent(
-              component: package.components[2],
-              hideComponent: hiddenComponents.contains(package.components[2]),
+              component: components[2],
+              isDisabled: isDisabled(components[2]),
             ),
           ],
         );
@@ -80,15 +75,15 @@ class DraggableComponents extends StatelessWidget {
 class _DraggableComponent extends StatelessWidget {
   const _DraggableComponent({
     required this.component,
-    this.hideComponent = false,
+    this.isDisabled = false,
   });
 
   final Component component;
-  final bool hideComponent;
+  final bool isDisabled;
 
   @override
   Widget build(BuildContext context) {
-    final iconData = PackagesIcons.getIcon(component.iconId);
+    final iconData = component.icon;
     return SizedBox(
       height: 260,
       width: 260,
@@ -104,7 +99,7 @@ class _DraggableComponent extends StatelessWidget {
           ),
           child: Column(
             children: [
-              if (hideComponent)
+              if (isDisabled)
                 Icon(
                   iconData,
                   color: AppColors.black.withOpacity(0.1),
@@ -116,7 +111,7 @@ class _DraggableComponent extends StatelessWidget {
               Expanded(
                 child: Text(
                   component.name,
-                  style: AppTextStyles.paragraph(context.layout),
+                  style: AppTextStyles.bodyL(context.layout),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -141,7 +136,6 @@ class DraggableComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconData = PackagesIcons.getIcon(component.iconId);
     return SizedBox(
       height: isInBin ? 45 : 145,
       width: isInBin ? 45 : 145,
@@ -150,28 +144,36 @@ class DraggableComponent extends StatelessWidget {
         minHeight: 145,
         maxWidth: 145,
         minWidth: 145,
-        child: MyDraggable(
+        child: Draggable(
+          ignoringFeedbackPointer: false,
           data: component,
           childWhenDragging: SizedBox(
             height: isInBin ? 45 : 145,
             width: isInBin ? 45 : 145,
             child: Icon(
-              iconData,
+              component.icon,
               color: AppColors.black.withOpacity(0.1),
               size: isInBin ? 45 : 145,
             ),
           ),
-          feedback: SizedBox(
-            height: 145,
-            width: 145,
-            child: Icon(
-              iconData,
-              size: 90,
+          feedback: MouseRegion(
+            cursor: SystemMouseCursors.grabbing,
+            opaque: false,
+            child: SizedBox(
+              height: 145,
+              width: 145,
+              child: Icon(
+                component.icon,
+                size: 90,
+              ),
             ),
           ),
-          child: Icon(
-            iconData,
-            size: isInBin ? 45 : 145,
+          child: MouseRegion(
+            cursor: SystemMouseCursors.grab,
+            child: Icon(
+              component.icon,
+              size: isInBin ? 45 : 145,
+            ),
           ),
         ),
       ),

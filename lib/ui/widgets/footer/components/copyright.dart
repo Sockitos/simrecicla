@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/text_styles.dart';
 
 class Copyright extends StatelessWidget {
   const Copyright({
@@ -12,13 +13,8 @@ class Copyright extends StatelessWidget {
     return Text(
       '© 2021 Sociedade Ponto Verde / Tratolixo',
       textAlign: TextAlign.end,
-      style: GoogleFonts.barlow(
-        textStyle: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 15,
-          color: AppColors.white.withOpacity(0.5),
-        ),
-      ),
+      style: AppTextStyles.bodyS(context.layout)
+          .withColor(AppColors.white.withOpacity(0.5)),
     );
   }
 }

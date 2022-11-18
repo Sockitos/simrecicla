@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:simtech/ui/widgets/my_card.dart';
+import 'package:simtech/ui/widgets/app_card.dart';
 
 const Duration _kMenuDuration = Duration(milliseconds: 300);
 const double _kMenuCloseIntervalEnd = 2.0 / 3.0;
@@ -8,12 +8,6 @@ const double _kMenuMaxWidth = 5.0 * _kMenuWidthStep;
 const double _kMenuMinWidth = 2.0 * _kMenuWidthStep;
 const double _kMenuWidthStep = 56;
 const double _kMenuScreenPadding = 8;
-
-enum PopupMenuPosition {
-  over,
-
-  under,
-}
 
 class _PopupInfo extends StatelessWidget {
   const _PopupInfo({
@@ -43,7 +37,7 @@ class _PopupInfo extends StatelessWidget {
         namesRoute: true,
         explicitChildNodes: true,
         label: semanticLabel,
-        child: MyCard(
+        child: AppCard(
           child: SingleChildScrollView(
             child: route.child,
           ),
@@ -69,7 +63,6 @@ class _PopupInfo extends StatelessWidget {
   }
 }
 
-// Positioning of the menu on the screen.
 class _PopupInfoRouteLayout extends SingleChildLayoutDelegate {
   _PopupInfoRouteLayout(
     this.position,
@@ -284,11 +277,3 @@ Future<void> showInfo({
     ),
   );
 }
-
-typedef PopupMenuItemSelected<T> = void Function(T value);
-
-typedef PopupMenuCanceled = void Function();
-
-typedef PopupMenuItemBuilder<T> = List<PopupMenuEntry<T>> Function(
-  BuildContext context,
-);

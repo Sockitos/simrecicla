@@ -1,16 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/text_styles.dart';
+import 'package:simtech/gen/assets.gen.dart';
 
 class Sponsors {
   static const tratolixo = _Tratolixo();
-
   static const drivers = _Drivers();
-
   static const ist = _Ist();
-
   static const sociedadePontoverde = _SociedadePontoverde();
 }
 
@@ -19,8 +16,7 @@ class _Tratolixo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      'assets/svgs/tratolixo.svg',
+    return Assets.svgs.tratolixo.svg(
       color: AppColors.white,
     );
   }
@@ -31,8 +27,7 @@ class _Drivers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      'assets/svgs/3drivers.svg',
+    return Assets.svgs.drivers.svg(
       color: AppColors.white,
     );
   }
@@ -43,8 +38,7 @@ class _Ist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      'assets/svgs/ist.svg',
+    return Assets.svgs.ist.svg(
       color: AppColors.white,
     );
   }
@@ -61,12 +55,12 @@ class _SociedadePontoverde extends StatelessWidget {
         children: [
           Text(
             'Cofinanciado por',
-            style: AppTextStyles.small(context.layout)
+            style: AppTextStyles.bodyS(context.layout)
+                .withColor(AppColors.white)
                 .copyWith(fontWeight: FontWeight.bold),
             textAlign: TextAlign.start,
           ),
-          SvgPicture.asset(
-            'assets/svgs/sociedade_pontoverde.svg',
+          Assets.svgs.sociedadePontoverde.svg(
             color: AppColors.white,
             height: 50,
           ),

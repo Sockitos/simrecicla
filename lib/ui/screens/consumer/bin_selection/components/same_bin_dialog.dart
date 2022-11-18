@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/ui/widgets/my_dialog.dart';
+import 'package:simtech/gen/assets.gen.dart';
+import 'package:simtech/ui/widgets/app_dialog.dart';
 
 class SameBinDialog extends StatelessWidget {
   const SameBinDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MyDialog(
+    return AppDialog(
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 800),
         child: ListView(
@@ -22,10 +22,7 @@ class SameBinDialog extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                SvgPicture.asset(
-                  'assets/svgs/same_bin.svg',
-                  width: 440,
-                ),
+                Assets.svgs.sameBin.svg(width: 440),
                 Positioned(
                   left: 146,
                   top: 50,
@@ -48,11 +45,11 @@ class SameBinDialog extends StatelessWidget {
             const SizedBox(height: 25),
             Text(
               'Na maioria dos Sistemas de Gestão de Resíduos Urbanos, a viatura recolhe apenas um tipo de ecoponto por circuito, facto que poderá confirmar na prática se acompanhar uma recolha na sua área de residência. ',
-              style: AppTextStyles.paragraph(context.layout),
+              style: AppTextStyles.bodyL(context.layout),
             ),
             const SizedBox(height: 25),
             Text(
-              style: AppTextStyles.paragraph(context.layout),
+              style: AppTextStyles.bodyL(context.layout),
               'Em alguns locais é realizada a recolha simultânea de ecopontos de cores diferentes, mas nesse caso a recolha seletiva é assegurada por veículos bicompartimentados, que permitem recolher mais que um tipo de material de embalagem.',
             ),
             const SizedBox(height: 10),

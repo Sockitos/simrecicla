@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:linkify/linkify.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/text_styles.dart';
 
 export 'package:linkify/linkify.dart'
     show
@@ -77,10 +78,8 @@ class Linkify extends StatelessWidget {
             .textTheme
             .bodyText2
             ?.merge(style)
-            .copyWith(
-              color: AppColors.lightGreen,
-              decoration: TextDecoration.underline,
-            )
+            .withColor(AppColors.lightGreen)
+            .copyWith(decoration: TextDecoration.underline)
             .merge(linkStyle),
       ),
       textAlign: textAlign,

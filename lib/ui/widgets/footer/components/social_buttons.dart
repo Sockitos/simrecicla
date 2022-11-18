@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/gen/assets.gen.dart';
 
 class SocialButtons extends StatelessWidget {
   const SocialButtons({super.key});
@@ -9,21 +10,21 @@ class SocialButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
-      children: const [
+      children: [
         SocialButton(
-          svg: 'assets/svgs/facebook.svg',
+          svg: Assets.svgs.facebook.path,
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         SocialButton(
-          svg: 'assets/svgs/instagram.svg',
+          svg: Assets.svgs.instagram.path,
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         SocialButton(
-          svg: 'assets/svgs/youtube.svg',
+          svg: Assets.svgs.youtube.path,
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         SocialButton(
-          svg: 'assets/svgs/linkedin.svg',
+          svg: Assets.svgs.linkedin.path,
         ),
       ],
     );

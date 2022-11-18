@@ -1,134 +1,66 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/router/router.gr.dart';
+import 'package:simtech/gen/assets.gen.dart';
+import 'package:simtech/router/router.dart';
+import 'package:simtech/theme/app_scroll_behavior.dart';
 import 'package:simtech/theme/theme.dart';
 import 'package:universal_html/html.dart';
 import 'package:url_strategy/url_strategy.dart';
+
+extension SvgGenImageX on SvgGenImage {
+  Future<void> precache() => precachePicture(
+        ExactAssetPicture(
+          SvgPicture.svgStringDecoderBuilder,
+          path,
+        ),
+        null,
+      );
+}
 
 Future<void> main() async {
   setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
   await Future.wait<void>([
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/waves.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/circles.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/big_arrow.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/consumer_option.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/packager_option.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/recycler_option.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/yellow_bin.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/green_bin.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/blue_bin.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/grey_bin.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/right.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/wrong.svg',
-      ),
-      null,
-    ),
-    precachePicture(
-      ExactAssetPicture(
-        SvgPicture.svgStringDecoderBuilder,
-        'assets/svgs/same_bin.svg',
-      ),
-      null,
-    ),
+    Assets.svgs.waves.precache(),
+    Assets.svgs.circles.precache(),
+    Assets.svgs.bigArrow.precache(),
+    Assets.svgs.consumerOption.precache(),
+    Assets.svgs.packagerOption.precache(),
+    Assets.svgs.recyclerOption.precache(),
+    Assets.svgs.yellowBin.precache(),
+    Assets.svgs.greenBin.precache(),
+    Assets.svgs.blueBin.precache(),
+    Assets.svgs.greyBin.precache(),
+    Assets.svgs.right.precache(),
+    Assets.svgs.wrong.precache(),
+    Assets.svgs.sameBin.precache(),
   ]);
   runApp(const ProviderScope(child: SimtechApp()));
 }
 
-class SimtechApp extends StatefulWidget {
+class SimtechApp extends ConsumerStatefulWidget {
   const SimtechApp({super.key});
 
   @override
-  State<SimtechApp> createState() => _SimtechAppState();
+  ConsumerState<SimtechApp> createState() => _SimtechAppState();
 }
 
-class _SimtechAppState extends State<SimtechApp> {
-  final _appRouter = AppRouter();
-
+class _SimtechAppState extends ConsumerState<SimtechApp> {
   @override
   void initState() {
     precacheImage(
-      const AssetImage('assets/images/consumer_intro.png'),
+      AssetImage(Assets.images.consumerIntro.path),
       context,
     );
     precacheImage(
-      const AssetImage('assets/images/packager_intro.png'),
+      AssetImage(Assets.images.packagerIntro.path),
       context,
     );
     precacheImage(
-      const AssetImage('assets/images/recycler_intro.png'),
+      AssetImage(Assets.images.recyclerIntro.path),
       context,
     );
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -141,15 +73,17 @@ class _SimtechAppState extends State<SimtechApp> {
   @override
   Widget build(BuildContext context) {
     return Layout(
-      format: MaterialLayoutFormat(),
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        routerDelegate: AutoRouterDelegate(
-          _appRouter,
-          navigatorObservers: () => [HeroController()],
-        ),
-        routeInformationParser: _appRouter.defaultRouteParser(),
+        routerConfig: ref.watch(routerProvider),
         theme: theme,
+        scrollBehavior: AppScrollBehavior(),
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [Locale('pt')],
       ),
     );
   }
