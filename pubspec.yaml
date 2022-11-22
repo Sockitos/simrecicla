@@ -64,7 +64,7 @@ flutter:
         - asset: assets/fonts/MachinesIcons.ttf
     - family: Barlow
       fonts:
-        - asset: assets/fonts/Barlow-Black.ttf
+        - asset: assets/fonts/Barlow/Barlow-Black.ttf
           weight: 900
         - asset: assets/fonts/Barlow/Barlow-ExtraBold.ttf
           weight: 800
