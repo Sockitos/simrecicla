@@ -23,6 +23,8 @@ class DraggableMachine extends StatelessWidget {
     this.draggingPortSize,
     this.isInGrid = false,
     this.state = MachineState.connected,
+    this.onDragStart,
+    this.onDragEnd,
   });
 
   final Machine machine;
@@ -32,6 +34,8 @@ class DraggableMachine extends StatelessWidget {
   final Size? draggingPortSize;
   final bool isInGrid;
   final MachineState state;
+  final VoidCallback? onDragStart;
+  final VoidCallback? onDragEnd;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +45,6 @@ class DraggableMachine extends StatelessWidget {
             max(size.width, draggingSize!.width),
             max(size.height, draggingSize!.height),
           );
-    final iconSize = min(size.height, size.width) - portSize.height - 4;
 
     final Color color;
     if (!isInGrid) {
@@ -84,30 +87,42 @@ class DraggableMachine extends StatelessWidget {
         maxWidth: maxSize.width,
         maxHeight: maxSize.height,
         child: Draggable<Machine>(
+          onDragStarted: onDragStart,
+          onDragCompleted: onDragEnd,
+          onDraggableCanceled: (_, __) => onDragEnd?.call(),
           ignoringFeedbackPointer: false,
           data: machine,
           maxSimultaneousDrags: machine.isFixed ? 0 : 1,
-          feedback: Center(
-            child: MouseRegion(
-              cursor: SystemMouseCursors.grabbing,
-              opaque: false,
-              child: SizedBox(
-                height: (draggingSize ?? size).height,
-                width: (draggingSize ?? size).width,
-                child: CustomPaint(
-                  painter: _MachinePainter(
-                    portSize: draggingPortSize ?? portSize,
-                    top: machine.topPort,
-                    left: machine.leftPort,
-                    bottom: machine.bottomPort,
-                    right: machine.rightPort,
-                    color: color,
-                    accentColor: accentColor,
-                  ),
-                  child: Icon(
-                    machine.icon,
-                    size: iconSize,
-                    color: accentColor,
+          feedback: SizedBox(
+            height: maxSize.height,
+            width: maxSize.width,
+            child: Center(
+              child: MouseRegion(
+                cursor: SystemMouseCursors.grabbing,
+                opaque: false,
+                child: SizedBox(
+                  height: (draggingSize ?? size).height,
+                  width: (draggingSize ?? size).width,
+                  child: CustomPaint(
+                    painter: _MachinePainter(
+                      portSize: draggingPortSize ?? portSize,
+                      top: machine.topPort,
+                      left: machine.leftPort,
+                      bottom: machine.bottomPort,
+                      right: machine.rightPort,
+                      color: color,
+                      accentColor: accentColor,
+                    ),
+                    child: Icon(
+                      machine.icon,
+                      size: min(
+                            (draggingSize ?? size).height,
+                            (draggingSize ?? size).width,
+                          ) -
+                          (draggingPortSize ?? portSize).height -
+                          4,
+                      color: accentColor,
+                    ),
                   ),
                 ),
               ),
@@ -131,7 +146,8 @@ class DraggableMachine extends StatelessWidget {
                       ),
                       child: Icon(
                         machine.icon,
-                        size: iconSize,
+                        size:
+                            min(size.height, size.width) - portSize.height - 4,
                         color: accentColor,
                       ),
                     ),
@@ -180,7 +196,9 @@ class DraggableMachine extends StatelessWidget {
                           )
                         : Icon(
                             machine.icon,
-                            size: iconSize,
+                            size: min(size.height, size.width) -
+                                portSize.height -
+                                4,
                             color: accentColor,
                           ),
                   ),

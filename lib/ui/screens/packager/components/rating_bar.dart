@@ -36,61 +36,127 @@ class RatingBar extends StatelessWidget {
       tag: 'rating_bar',
       child: Material(
         type: MaterialType.transparency,
-        child: Column(
-          children: [
-            Text(
-              'Totalmente reciclável',
-              style: AppTextStyles.bodyL(context.layout),
-            ),
-            const Spacer(),
-            SizedBox(
-              height: 660,
-              child: Stack(
-                alignment: Alignment.center,
-                clipBehavior: Clip.none,
-                children: [
-                  DefaultTextStyle(
-                    style: AppTextStyles.h2(context.layout),
-                    child: Column(
-                      children: [
-                        for (final r in Rating.values)
-                          Expanded(
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                const SizedBox(width: 35),
-                                Container(color: r.color, width: 60),
-                                const SizedBox(width: 25),
-                                SizedBox(
-                                  width: 10,
-                                  child: Center(
-                                    child: Text(r.name.toUpperCase()),
-                                  ),
-                                ),
-                              ],
+        child: context.layout.breakpoint > LayoutBreakpoint.sm
+            ? _VerticalRatingBar(rating: rating)
+            : _HorizontalRatingBar(rating: rating),
+      ),
+    );
+  }
+}
+
+class _VerticalRatingBar extends StatelessWidget {
+  const _VerticalRatingBar({
+    required this.rating,
+  });
+
+  final Rating rating;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          'Totalmente reciclável',
+          style: AppTextStyles.bodyL(context.layout),
+        ),
+        const SizedBox(height: 30),
+        Expanded(
+          child: Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
+            children: [
+              DefaultTextStyle(
+                style: AppTextStyles.h2(context.layout),
+                child: Column(
+                  children: [
+                    for (final r in Rating.values)
+                      Expanded(
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            const SizedBox(width: 35),
+                            Container(color: r.color, width: 60),
+                            const SizedBox(width: 25),
+                            SizedBox(
+                              width: 10,
+                              child: Center(
+                                child: Text(r.name.toUpperCase()),
+                              ),
                             ),
-                          ),
-                      ],
-                    ),
-                  ),
-                  AnimatedPositioned(
-                    duration: const Duration(milliseconds: 300),
-                    left: -55,
-                    top: getArrowPosition(rating),
-                    child: const Arrow(
-                      size: Size(66, 40),
-                      color: AppColors.lightGreen,
-                      direction: AxisDirection.right,
-                    ),
-                  ),
-                ],
+                          ],
+                        ),
+                      ),
+                  ],
+                ),
               ),
+              AnimatedPositioned(
+                duration: const Duration(milliseconds: 250),
+                left: -55,
+                top: RatingBar.getArrowPosition(rating),
+                child: const Arrow(
+                  size: Size(66, 40),
+                  color: AppColors.lightGreen,
+                  direction: AxisDirection.right,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 30),
+        Text(
+          'Não reciclável',
+          style: AppTextStyles.bodyL(context.layout),
+        ),
+      ],
+    );
+  }
+}
+
+class _HorizontalRatingBar extends StatelessWidget {
+  const _HorizontalRatingBar({
+    required this.rating,
+  });
+
+  final Rating rating;
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTextStyle(
+      style: AppTextStyles.h4(context.layout),
+      child: SizedBox(
+        height: context.layout.value(xs: 52, sm: 72),
+        child: Stack(
+          children: [
+            Row(
+              children: [
+                for (final r in Rating.values)
+                  Expanded(
+                    child: ColoredBox(
+                      color: r.color,
+                      child: Center(
+                        child: Text(r.name.toUpperCase()),
+                      ),
+                    ),
+                  ),
+              ],
             ),
-            const Spacer(),
-            Text(
-              'Não reciclável',
-              style: AppTextStyles.bodyL(context.layout),
+            AnimatedAlign(
+              duration: const Duration(milliseconds: 250),
+              alignment: FractionalOffset(
+                Rating.values.indexOf(rating) / (Rating.values.length - 1),
+                0,
+              ),
+              child: FractionallySizedBox(
+                widthFactor: 1 / 6,
+                child: SizedBox.expand(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 3),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

@@ -323,7 +323,10 @@ class _AppDropdownMenuState<T> extends State<_AppDropdownMenu<T>> {
                 child: PrimaryScrollController(
                   controller: widget.route.scrollController!,
                   child: AppScrollbar(
-                    crossAxisMargin: 8,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 30,
+                      horizontal: 8,
+                    ),
                     child: ListView(
                       // Ensure this always inherits the PrimaryScrollController
                       primary: true,

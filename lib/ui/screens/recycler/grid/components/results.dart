@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layout/layout.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/recycler/material_sample.dart';
 import 'package:simtech/ui/widgets/app_dialog.dart';
@@ -49,53 +50,74 @@ class Results extends HookWidget {
         (feed.sum() - feed.naoRecuperaveis);
     efficiency = efficiency.isNaN ? 0 : efficiency;
     return AppDialog(
-      child: SizedBox(
-        width: 850,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 850),
         child: Padding(
-          padding: const EdgeInsets.all(30),
+          padding: AppSpacings.dialogPadding(context.layout),
           child: DefaultTextStyle(
             style: AppTextStyles.bodyM(context.layout),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                if (context.layout.breakpoint < LayoutBreakpoint.sm) ...[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        state.value = const ResultsModel.efficiency();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: state.value.showEfficiency
+                            ? AppColors.grey3
+                            : AppColors.grey1,
+                        foregroundColor: AppColors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        fixedSize: const Size.fromHeight(48),
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        textStyle: state.value.showEfficiency
+                            ? AppTextStyles.smallButton(context.layout)
+                                .copyWith(fontWeight: FontWeight.bold)
+                            : AppTextStyles.smallButton(context.layout),
+                      ),
+                      child: const Text('Eficiência'),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                ],
                 HookBuilder(
                   builder: (context) {
                     final scrollController = useScrollController();
-                    final isScrollable = useIsScrollable(scrollController);
+                    final isScrollable = useIsScrollable(
+                      scrollController,
+                      mediaQueryData: MediaQuery.of(context),
+                    );
                     return Row(
                       children: [
                         if (isScrollable)
-                          HookBuilder(
-                            builder: (context) {
-                              final isMinScrolled = useIsMinScrolled(
-                                scrollController,
-                              );
-                              return Padding(
-                                padding: const EdgeInsets.only(
-                                  right: 15,
-                                ),
-                                child: IconButton(
-                                  onPressed: isMinScrolled
-                                      ? null
-                                      : () {
-                                          scrollController.animateTo(
-                                            scrollController.offset - 100,
-                                            duration: const Duration(
-                                              milliseconds: 250,
-                                            ),
-                                            curve: Curves.linear,
-                                          );
-                                        },
-                                  iconSize: 30,
-                                  splashRadius: 30,
-                                  color: AppColors.lightGreen,
-                                  icon: const Icon(
-                                    Icons.keyboard_double_arrow_left_rounded,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              right: 15,
+                            ),
+                            child: IconButton(
+                              onPressed: () {
+                                scrollController.animateTo(
+                                  scrollController.offset - 100,
+                                  duration: const Duration(
+                                    milliseconds: 250,
                                   ),
-                                ),
-                              );
-                            },
+                                  curve: Curves.linear,
+                                );
+                              },
+                              iconSize: 30,
+                              splashRadius: 30,
+                              color: AppColors.lightGreen,
+                              icon: const Icon(
+                                Icons.keyboard_double_arrow_left_rounded,
+                              ),
+                            ),
                           ),
                         Expanded(
                           child: SizedBox(
@@ -146,59 +168,54 @@ class Results extends HookWidget {
                           ),
                         ),
                         if (isScrollable)
-                          HookBuilder(
-                            builder: (context) {
-                              final isMaxScrolled = useIsMaxScrolled(
-                                scrollController,
-                              );
-                              return Padding(
-                                padding: const EdgeInsets.only(
-                                  right: 15,
-                                ),
-                                child: IconButton(
-                                  onPressed: isMaxScrolled
-                                      ? null
-                                      : () {
-                                          scrollController.animateTo(
-                                            scrollController.offset + 100,
-                                            duration: const Duration(
-                                              milliseconds: 250,
-                                            ),
-                                            curve: Curves.linear,
-                                          );
-                                        },
-                                  iconSize: 30,
-                                  splashRadius: 30,
-                                  color: AppColors.lightGreen,
-                                  icon: const Icon(
-                                    Icons.keyboard_double_arrow_right_rounded,
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ElevatedButton(
-                          onPressed: () {
-                            state.value = const ResultsModel.efficiency();
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: state.value.showEfficiency
-                                ? AppColors.grey3
-                                : AppColors.grey1,
-                            foregroundColor: AppColors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              right: 15,
                             ),
-                            fixedSize: const Size.fromHeight(48),
-                            padding: const EdgeInsets.symmetric(horizontal: 30),
-                            textStyle: state.value.showEfficiency
-                                ? AppTextStyles.smallButton(context.layout)
-                                    .copyWith(fontWeight: FontWeight.bold)
-                                : AppTextStyles.smallButton(context.layout),
+                            child: IconButton(
+                              onPressed: () {
+                                scrollController.animateTo(
+                                  scrollController.offset + 100,
+                                  duration: const Duration(
+                                    milliseconds: 250,
+                                  ),
+                                  curve: Curves.linear,
+                                );
+                              },
+                              iconSize: 30,
+                              splashRadius: 30,
+                              color: AppColors.lightGreen,
+                              icon: const Icon(
+                                Icons.keyboard_double_arrow_right_rounded,
+                              ),
+                            ),
                           ),
-                          child: const Text('Eficiência'),
-                        ),
-                        const SizedBox(width: 60),
+                        if (context.layout.breakpoint >
+                            LayoutBreakpoint.xs) ...[
+                          ElevatedButton(
+                            onPressed: () {
+                              state.value = const ResultsModel.efficiency();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: state.value.showEfficiency
+                                  ? AppColors.grey3
+                                  : AppColors.grey1,
+                              foregroundColor: AppColors.black,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
+                              ),
+                              fixedSize: const Size.fromHeight(48),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 30),
+                              textStyle: state.value.showEfficiency
+                                  ? AppTextStyles.smallButton(context.layout)
+                                      .copyWith(fontWeight: FontWeight.bold)
+                                  : AppTextStyles.smallButton(context.layout),
+                            ),
+                            child: const Text('Eficiência'),
+                          ),
+                          const SizedBox(width: 50),
+                        ],
                       ],
                     );
                   },
@@ -207,7 +224,10 @@ class Results extends HookWidget {
                 ...state.value.when(
                   efficiency: () => [
                     DefaultTextStyle.merge(
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                       child: Row(
                         children: const [
                           Expanded(
@@ -249,14 +269,18 @@ class Results extends HookWidget {
                     Row(
                       children: [
                         const SizedBox(width: 20),
-                        const Text(
-                          'Eficiência Global na Linha:',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                        const Flexible(
+                          child: Text(
+                            'Eficiência Global na Linha:',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ),
                         const SizedBox(width: 30),
                         CircularPercentIndicator(
-                          radius: 50,
-                          lineWidth: 20,
+                          addAutomaticKeepAlive: false,
+                          radius: context.layout.value(xs: 30, sm: 40, md: 50),
+                          lineWidth:
+                              context.layout.value(xs: 10, sm: 15, md: 20),
                           percent: efficiency,
                           progressColor: AppColors.lightGreen,
                           backgroundColor: AppColors.grey4,
@@ -274,7 +298,10 @@ class Results extends HookWidget {
                   ],
                   product: (productId) => [
                     DefaultTextStyle.merge(
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                       child: Row(
                         children: const [
                           Expanded(

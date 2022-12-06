@@ -22,11 +22,10 @@ class LandingOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         minWidth: 350,
         maxWidth: 400,
-        minHeight: 400,
-        maxHeight: 400,
+        maxHeight: context.layout.value(xs: 380, md: 400),
       ),
       child: Stack(
         children: [
@@ -60,7 +59,7 @@ class LandingOption extends StatelessWidget {
           ),
           IgnorePointer(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [

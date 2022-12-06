@@ -33,9 +33,7 @@ class QuestionsPageView extends HookWidget {
             children: [
               for (var p = 0; p < pages; p++)
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSpacings.big(context.layout),
-                  ),
+                  padding: AppSpacings.screenPadding(context.layout),
                   child: columns == 1
                       ? Column(
                           children: [
@@ -91,7 +89,11 @@ class QuestionsPageView extends HookWidget {
                       curve: Curves.linear,
                     ),
             child: Text(
-              isLastPage ? 'Ver Resultado e Recomendações' : 'Seguinte',
+              isLastPage
+                  ? context.layout.breakpoint > LayoutBreakpoint.xs
+                      ? 'Ver Resultado e Recomendações'
+                      : 'Ver Resultado'
+                  : 'Seguinte',
             ),
           ),
         ),

@@ -31,60 +31,55 @@ class FormScreen extends ConsumerWidget {
     final stateProvider = formScreenSNProvider;
     final state = ref.watch(stateProvider);
     final questions = ref.watch(questionsProvider);
-    return AppScreen(
-      padding: EdgeInsets.zero,
-      body: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  SizedBox(height: AppSpacings.big(context.layout)),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: AppSpacings.big(context.layout),
-                    ),
-                    child: Text(
-                      'Como é a sua embalagem?',
-                      textAlign: TextAlign.left,
-                      style: AppTextStyles.h2(context.layout)
-                          .withColor(AppColors.lightGreen),
-                    ),
+    final child = Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              if (context.layout.breakpoint < LayoutBreakpoint.md)
+                RatingBar(rating: state.rating),
+              SizedBox(height: AppSpacings.big(context.layout)),
+              Padding(
+                padding: AppSpacings.screenPadding(context.layout),
+                child: Text(
+                  'Como é a sua embalagem?',
+                  textAlign: TextAlign.left,
+                  style: AppTextStyles.h2(context.layout)
+                      .withColor(AppColors.lightGreen),
+                ),
+              ),
+              SizedBox(height: AppSpacings.small(context.layout)),
+              QuestionsPageView(
+                onSubmit: state.isSubmittable
+                    ? () => context.go('/packager/form/results')
+                    : null,
+                questions: [
+                  DropdownField<PMaterial>(
+                    value: state.material,
+                    onChanged: ref.read(stateProvider.notifier).setMaterial,
+                    hint: 'Qual o material base de embalagem?',
+                    options: PMaterial.values.toList(),
+                    optionToString: (option) => option.name,
                   ),
-                  SizedBox(height: AppSpacings.small(context.layout)),
-                  QuestionsPageView(
-                    onSubmit: state.isSubmittable
-                        ? () => context.go('/packager/form/results')
-                        : null,
-                    questions: [
-                      DropdownField<PMaterial>(
-                        value: state.material,
-                        onChanged: ref.read(stateProvider.notifier).setMaterial,
-                        hint: 'Qual o material base de embalagem?',
-                        options: PMaterial.values.toList(),
-                        optionToString: (option) => option.name,
-                      ),
-                      NumberField(
-                        value: state.weight,
-                        onChanged: ref.read(stateProvider.notifier).setWeight,
-                        hint: 'Qual o seu peso (g)?',
-                        inputHint: 'peso (g)',
-                      ),
-                      PercentageField(
-                        value: state.recycledPercentage,
-                        onChanged: ref
-                            .read(stateProvider.notifier)
-                            .setRecycledPercentage,
-                        hint: 'Teor de material reciclado incorporado (%)?',
-                      ),
-                      for (final q in questions)
-                        DropdownField<Answer>(
-                          value: state.answers[q.id],
-                          onChanged: state.material != null &&
-                                  state.isQuestionRequired(q)
+                  NumberField(
+                    value: state.weight,
+                    onChanged: ref.read(stateProvider.notifier).setWeight,
+                    hint: 'Qual o seu peso (g)?',
+                    inputHint: 'peso (g)',
+                  ),
+                  PercentageField(
+                    value: state.recycledPercentage,
+                    onChanged:
+                        ref.read(stateProvider.notifier).setRecycledPercentage,
+                    hint: 'Teor de material reciclado incorporado (%)?',
+                  ),
+                  for (final q in questions)
+                    DropdownField<Answer>(
+                      value: state.answers[q.id],
+                      onChanged:
+                          state.material != null && state.isQuestionRequired(q)
                               ? (answer) {
                                   if (answer == null) return;
                                   ref.read(stateProvider.notifier).setAnswer(
@@ -93,54 +88,58 @@ class FormScreen extends ConsumerWidget {
                                       );
                                 }
                               : null,
-                          hint: q.question,
-                          info: q.info,
-                          options: q.getFilteredAnswers(state.material),
-                          optionToString: (answer) => answer.answer,
-                        ),
-                    ],
-                  ),
+                      hint: q.question,
+                      info: q.info,
+                      options: q.getFilteredAnswers(state.material),
+                      optionToString: (answer) => answer.answer,
+                    ),
                 ],
               ),
-            ),
-            if (context.breakpoint > LayoutBreakpoint.sm)
-              ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 550),
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width *
-                      context.layout.value(xs: 0.33, lg: 0.25),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 300),
-                    color: state.rating.color.withOpacity(0.2),
-                    child: Align(
-                      alignment: Alignment.topCenter,
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(
-                          maxHeight: max(
-                            MediaQuery.of(context).size.height -
-                                MediaQuery.of(context).padding.top -
-                                MediaQuery.of(context).padding.bottom -
-                                60,
-                            840,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 30),
-                          child: Center(
-                            child: SizedBox(
-                              height: 780,
-                              child: RatingBar(rating: state.rating),
-                            ),
-                          ),
+            ],
+          ),
+        ),
+        if (context.breakpoint > LayoutBreakpoint.sm)
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 550),
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width *
+                  context.layout.value(xs: 0.36, lg: 0.30),
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                color: state.rating.color.withOpacity(0.2),
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: max(
+                        MediaQuery.of(context).size.height -
+                            MediaQuery.of(context).padding.top -
+                            MediaQuery.of(context).padding.bottom -
+                            60,
+                        840,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 30),
+                      child: Center(
+                        child: SizedBox(
+                          height: 780,
+                          child: RatingBar(rating: state.rating),
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-          ],
-        ),
-      ),
+            ),
+          ),
+      ],
+    );
+    return AppScreen(
+      padding: EdgeInsets.zero,
+      body: context.breakpoint > LayoutBreakpoint.sm
+          ? IntrinsicHeight(child: child)
+          : child,
     );
   }
 }

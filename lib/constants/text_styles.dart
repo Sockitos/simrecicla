@@ -25,7 +25,7 @@ class AppTextStyles {
     return GoogleFonts.dosis(
       textStyle: TextStyle(
         fontWeight: FontWeight.w600,
-        fontSize: layout?.value(xs: 30, lg: 34, xl: 36) ?? 34,
+        fontSize: layout?.value(xs: 30, sm: 32, lg: 34, xl: 36) ?? 34,
         color: AppColors.black,
         height: 1.3,
       ),
@@ -36,7 +36,7 @@ class AppTextStyles {
     return GoogleFonts.dosis(
       textStyle: TextStyle(
         fontWeight: FontWeight.w600,
-        fontSize: layout?.value(xs: 30) ?? 30,
+        fontSize: layout?.value(xs: 24, sm: 26, md: 28, lg: 30) ?? 30,
         color: AppColors.black,
         height: 1.2,
       ),
@@ -47,7 +47,7 @@ class AppTextStyles {
     return GoogleFonts.dosis(
       textStyle: TextStyle(
         fontWeight: FontWeight.w600,
-        fontSize: layout?.value(xs: 24) ?? 24,
+        fontSize: layout?.value(xs: 20, sm: 22, md: 24) ?? 24,
         color: AppColors.black,
         height: 1.2,
       ),
@@ -58,7 +58,7 @@ class AppTextStyles {
     return GoogleFonts.dosis(
       textStyle: TextStyle(
         fontWeight: FontWeight.w600,
-        fontSize: layout?.value(xs: 20) ?? 20,
+        fontSize: layout?.value(xs: 18, sm: 20) ?? 20,
         color: AppColors.black,
         height: 1.2,
       ),

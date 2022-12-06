@@ -15,9 +15,10 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = context.layout.value<double>(xs: 156, sm: 200, md: 222);
     return SizedBox(
-      width: 222,
-      height: 222,
+      width: size,
+      height: size,
       child: Material(
         color: AppColors.grey3,
         shape: RoundedRectangleBorder(
@@ -33,22 +34,22 @@ class CategoryCard extends StatelessWidget {
           },
           borderRadius: BorderRadius.circular(34),
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 25,
+            padding: EdgeInsets.all(
+              context.layout.value<double>(xs: 15, sm: 20, md: 25),
             ),
             child: Column(
               children: [
                 const SizedBox(height: 5),
                 Icon(
                   category.icon,
-                  size: 110,
+                  size: context.layout.value(xs: 65, sm: 100, md: 110),
                 ),
                 Expanded(
                   child: Center(
                     child: Text(
                       category.category,
                       textAlign: TextAlign.center,
+                      maxLines: 2,
                       style: AppTextStyles.h4(context.layout),
                     ),
                   ),

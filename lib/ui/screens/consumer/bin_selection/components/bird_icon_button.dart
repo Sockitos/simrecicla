@@ -11,6 +11,7 @@ class BirdIconButton extends StatelessWidget {
     required this.icon,
     this.isCorrect,
     this.isSelected = false,
+    this.aimDown = false,
   });
 
   final double radius;
@@ -18,30 +19,35 @@ class BirdIconButton extends StatelessWidget {
   final IconData icon;
   final bool? isCorrect;
   final bool isSelected;
+  final bool aimDown;
 
   @override
   Widget build(BuildContext context) {
-    final radius = isSelected ? this.radius + 4 : this.radius;
+    final outerRadius = this.radius + (this.radius * 1 / 10);
+    final radius = isSelected ? outerRadius : this.radius;
+    final triangleDimension = radius * 3 / 10;
+    final iconSize = radius * 1.38;
+    final checkRadius = outerRadius / 2.8;
+
     return SizedBox(
-      height: (this.radius + 4) * 2,
-      width: (this.radius + 4 + 12) * 2,
+      height: aimDown ? (outerRadius + triangleDimension) * 2 : outerRadius * 2,
+      width: aimDown ? outerRadius * 2 : (outerRadius + triangleDimension) * 2,
       child: Stack(
         fit: StackFit.expand,
         clipBehavior: Clip.none,
         children: [
           Center(
             child: SizedBox(
-              height: radius * 2,
-              width: (radius + 12) * 2,
+              height: aimDown ? (radius + triangleDimension) * 2 : radius * 2,
+              width: aimDown ? radius * 2 : (radius + triangleDimension) * 2,
               child: Material(
                 color: isSelected ? AppColors.grey5 : AppColors.grey3,
                 shape: isSelected ? const BirdBorder() : const CircleBorder(),
                 child: InkWell(
                   customBorder: const CircleBorder(),
                   onTap: isSelected ? null : onPressed,
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
-                    child: Icon(icon, size: isSelected ? 58 : 50),
+                  child: Center(
+                    child: Icon(icon, size: iconSize),
                   ),
                 ),
               ),
@@ -49,12 +55,14 @@ class BirdIconButton extends StatelessWidget {
           ),
           if (isCorrect != null)
             Positioned(
-              bottom: 2,
-              left: 2,
+              top: aimDown ? 4 : null,
+              right: aimDown ? 0 : null,
+              bottom: aimDown ? null : 2,
+              left: aimDown ? null : 2,
               child: SvgPicture.asset(
                 isCorrect! ? Assets.svgs.right.path : Assets.svgs.wrong.path,
-                height: 34,
-                width: 34,
+                height: checkRadius * 2,
+                width: checkRadius * 2,
               ),
             ),
         ],
@@ -92,35 +100,82 @@ class BirdBorder extends OutlinedBorder {
 
   @override
   Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
+    final triangleDimension = (rect.longestSide - rect.shortestSide) / 2;
     final circlePath = Path()
       ..addOval(
         Rect.fromCircle(
           center: rect.center,
-          radius: rect.longestSide / 2.0 - 12,
+          radius: rect.longestSide / 2.0 - triangleDimension,
         ),
       );
-    final trianglePath = Path()
-      ..moveTo(rect.longestSide - 13, rect.shortestSide / 2 - 10)
-      ..lineTo(rect.longestSide, rect.shortestSide / 2)
-      ..lineTo(rect.longestSide - 13, rect.shortestSide / 2 + 10)
-      ..close();
+
+    final Path trianglePath;
+    if (rect.size.height > rect.size.width) {
+      trianglePath = Path()
+        ..moveTo(
+          rect.shortestSide / 2 - (triangleDimension * 5 / 6),
+          rect.longestSide - triangleDimension - 1,
+        )
+        ..lineTo(rect.shortestSide / 2, rect.longestSide)
+        ..lineTo(
+          rect.shortestSide / 2 + (triangleDimension * 5 / 6),
+          rect.longestSide - triangleDimension - 1,
+        )
+        ..close();
+    } else {
+      trianglePath = Path()
+        ..moveTo(
+          rect.longestSide - triangleDimension - 1,
+          rect.shortestSide / 2 - (triangleDimension * 5 / 6),
+        )
+        ..lineTo(rect.longestSide, rect.shortestSide / 2)
+        ..lineTo(
+          rect.longestSide - triangleDimension - 1,
+          rect.shortestSide / 2 + (triangleDimension * 5 / 6),
+        )
+        ..close();
+    }
+
     return Path.combine(PathOperation.union, circlePath, trianglePath);
   }
 
   @override
   Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
+    final triangleDimension = (rect.longestSide - rect.shortestSide) / 2;
     final circlePath = Path()
       ..addOval(
         Rect.fromCircle(
           center: rect.center,
-          radius: rect.longestSide / 2.0 - 12,
+          radius: rect.longestSide / 2.0 - triangleDimension,
         ),
       );
-    final trianglePath = Path()
-      ..moveTo(rect.longestSide - 13, rect.shortestSide / 2 - 10)
-      ..lineTo(rect.longestSide, rect.shortestSide / 2)
-      ..lineTo(rect.longestSide - 13, rect.shortestSide / 2 + 10)
-      ..close();
+
+    final Path trianglePath;
+    if (rect.size.height > rect.size.width) {
+      trianglePath = Path()
+        ..moveTo(
+          rect.shortestSide / 2 - (triangleDimension * 5 / 6),
+          rect.longestSide - triangleDimension - 1,
+        )
+        ..lineTo(rect.shortestSide / 2, rect.longestSide)
+        ..lineTo(
+          rect.shortestSide / 2 + (triangleDimension * 5 / 6),
+          rect.longestSide - triangleDimension - 1,
+        )
+        ..close();
+    } else {
+      trianglePath = Path()
+        ..moveTo(
+          rect.longestSide - triangleDimension - 1,
+          rect.shortestSide / 2 - (triangleDimension * 5 / 6),
+        )
+        ..lineTo(rect.longestSide, rect.shortestSide / 2)
+        ..lineTo(
+          rect.longestSide - triangleDimension - 1,
+          rect.shortestSide / 2 + (triangleDimension * 5 / 6),
+        )
+        ..close();
+    }
     return Path.combine(PathOperation.union, circlePath, trianglePath);
   }
 

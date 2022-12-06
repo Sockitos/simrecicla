@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/packager/package_impact.dart';
 import 'package:simtech/ui/widgets/arrow.dart';
@@ -22,10 +23,10 @@ class PackageImpactChart extends StatelessWidget {
   Widget build(BuildContext context) {
     final maxValue = max(impact.producao, impact.impacteTotal);
     return Stack(
+      alignment: Alignment.bottomCenter,
       children: [
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: SizedBox(
+        if (context.layout.breakpoint > LayoutBreakpoint.md)
+          SizedBox(
             height: 200,
             child: Padding(
               padding: const EdgeInsets.fromLTRB(120, 30, 120, 0),
@@ -38,22 +39,80 @@ class PackageImpactChart extends StatelessWidget {
               ),
             ),
           ),
-        ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(
+            DefaultTextStyle(
+              style: context.layout
+                  .value(
+                    xs: AppTextStyles.bodyS(context.layout),
+                    md: AppTextStyles.bodyM(context.layout),
+                  )
+                  .withColor(AppColors.grey6),
               child: Row(
                 children: [
+                  if (context.layout.breakpoint > LayoutBreakpoint.xs)
+                    const Spacer(),
                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 80),
+                    flex: 8,
+                    child: _ChartBarHeader(
+                      lineColor: AppColors.grey6,
+                      label: context.layout.value(
+                        xs: 'Produção',
+                        sm: 'Produção com\nmaterial virgem',
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 8,
+                    child: _ChartBarHeader(
+                      lineColor: AppColors.ratingB,
+                      label: context.layout.value(
+                        xs: 'Material\nreciclado',
+                        sm: 'Incorporação de\nmaterial reciclado',
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 8,
+                    child: _ChartBarHeader(
+                      lineColor: impact.eol.isNegative
+                          ? AppColors.ratingA
+                          : AppColors.ratingF,
+                      label: context.layout.value(
+                        xs: 'Fim de\nvida',
+                        sm: 'Fim de vida\n',
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: context.layout.value(xs: 6, sm: 7),
+                    child: _ChartBarHeader(
+                      lineColor: AppColors.blue,
+                      label: context.layout.value(
+                        xs: 'Impacte\ntotal',
+                        sm: 'Impacte total\nda embalagem',
+                      ),
+                    ),
+                  ),
+                  if (context.layout.breakpoint > LayoutBreakpoint.md)
+                    const SizedBox(width: 260),
+                ],
+              ),
+            ),
+            SizedBox(height: AppSpacings.big(context.layout)),
+            Expanded(
+              child: SizedBox(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Expanded(
                             child: Stack(
-                              alignment: Alignment.topCenter,
+                              alignment: Alignment.bottomCenter,
                               clipBehavior: Clip.none,
                               children: [
                                 _ChartSupportLine(
@@ -71,231 +130,286 @@ class PackageImpactChart extends StatelessWidget {
                                   maxValue: maxValue,
                                   flexValues: const Tuple3(5, 14, 5),
                                 ),
-                                Column(
-                                  children: [
-                                    const SizedBox(height: 88),
-                                    const Spacer(),
-                                    Expanded(
-                                      flex: 3,
-                                      child: FractionallySizedBox(
-                                        heightFactor:
-                                            impact.impacteTotal / maxValue,
-                                        alignment: Alignment.bottomCenter,
-                                        child: Stack(
-                                          clipBehavior: Clip.none,
-                                          children: const [
-                                            Positioned.fill(
-                                              right: -50,
-                                              child: Align(
-                                                alignment:
-                                                    Alignment.centerRight,
-                                                child: SizedBox(
-                                                  height: double.maxFinite,
-                                                  width: 20,
-                                                  child: DecoratedBox(
-                                                    decoration: BoxDecoration(
-                                                      border: Border(
-                                                        top: BorderSide(
-                                                          color: AppColors.blue,
-                                                          width: 2,
-                                                        ),
-                                                        bottom: BorderSide(
-                                                          color: AppColors.blue,
-                                                          width: 2,
-                                                        ),
-                                                        right: BorderSide(
-                                                          color: AppColors.blue,
-                                                          width: 2,
-                                                        ),
-                                                      ),
+                                if (context.layout.breakpoint >
+                                    LayoutBreakpoint.md)
+                                  FractionallySizedBox(
+                                    heightFactor:
+                                        impact.impacteTotal / maxValue,
+                                    alignment: Alignment.bottomCenter,
+                                    child: Stack(
+                                      clipBehavior: Clip.none,
+                                      children: const [
+                                        Positioned.fill(
+                                          right: -50,
+                                          child: Align(
+                                            alignment: Alignment.centerRight,
+                                            child: SizedBox(
+                                              height: double.maxFinite,
+                                              width: 20,
+                                              child: DecoratedBox(
+                                                decoration: BoxDecoration(
+                                                  border: Border(
+                                                    top: BorderSide(
+                                                      color: AppColors.blue,
+                                                      width: 2,
+                                                    ),
+                                                    bottom: BorderSide(
+                                                      color: AppColors.blue,
+                                                      width: 2,
+                                                    ),
+                                                    right: BorderSide(
+                                                      color: AppColors.blue,
+                                                      width: 2,
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                          ],
+                                          ),
                                         ),
+                                      ],
+                                    ),
+                                  ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    if (context.layout.breakpoint >
+                                        LayoutBreakpoint.xs)
+                                      const Spacer(),
+                                    Expanded(
+                                      flex: 6,
+                                      child: _ChartBar(
+                                        maxValue: maxValue,
+                                        value: impact.producao,
+                                        color: AppColors.grey6,
                                       ),
                                     ),
+                                    if (context.layout.breakpoint >
+                                        LayoutBreakpoint.xs)
+                                      const Spacer(flex: 2),
+                                    Expanded(
+                                      flex: 6,
+                                      child: _ChartBar(
+                                        maxValue: maxValue,
+                                        value: -1 * impact.incorporacao,
+                                        offsetValue: impact.producao -
+                                            impact.incorporacao,
+                                        color: AppColors.ratingB,
+                                      ),
+                                    ),
+                                    if (context.layout.breakpoint >
+                                        LayoutBreakpoint.xs)
+                                      const Spacer(flex: 2),
+                                    Expanded(
+                                      flex: 6,
+                                      child: _ChartBar(
+                                        maxValue: maxValue,
+                                        value: impact.eol,
+                                        offsetValue: impact.eol.isNegative
+                                            ? impact.producao -
+                                                impact.incorporacao +
+                                                impact.eol
+                                            : impact.producao -
+                                                impact.incorporacao,
+                                        color: impact.eol.isNegative
+                                            ? AppColors.ratingA
+                                            : AppColors.ratingF,
+                                      ),
+                                    ),
+                                    if (context.layout.breakpoint >
+                                        LayoutBreakpoint.xs)
+                                      const Spacer(flex: 2),
+                                    Expanded(
+                                      flex: 6,
+                                      child: _ChartBar(
+                                        maxValue: maxValue,
+                                        value: impact.impacteTotal,
+                                        color: AppColors.blue,
+                                      ),
+                                    ),
+                                    if (context.layout.breakpoint >
+                                        LayoutBreakpoint.xs)
+                                      const Spacer(),
                                   ],
-                                ),
-                                DefaultTextStyle(
-                                  style: AppTextStyles.bodyM(context.layout)
-                                      .withColor(AppColors.grey6),
-                                  child: Row(
-                                    children: [
-                                      const Spacer(),
-                                      Expanded(
-                                        flex: 4,
-                                        child: _ChartBarWithHeader(
-                                          maxValue: maxValue,
-                                          value: impact.producao,
-                                          color: AppColors.grey6,
-                                          label:
-                                              'Produção com\nmaterial virgem',
-                                        ),
-                                      ),
-                                      const Spacer(flex: 2),
-                                      Expanded(
-                                        flex: 4,
-                                        child: _ChartBarWithHeader(
-                                          maxValue: maxValue,
-                                          value: -1 * impact.incorporacao,
-                                          offsetValue: impact.producao -
-                                              impact.incorporacao,
-                                          color: AppColors.ratingB,
-                                          label:
-                                              'Incorporação de\nmaterial reciclado',
-                                        ),
-                                      ),
-                                      const Spacer(flex: 2),
-                                      Expanded(
-                                        flex: 4,
-                                        child: _ChartBarWithHeader(
-                                          maxValue: maxValue,
-                                          value: impact.eol,
-                                          offsetValue: impact.eol.isNegative
-                                              ? impact.producao -
-                                                  impact.incorporacao +
-                                                  impact.eol
-                                              : impact.producao -
-                                                  impact.incorporacao,
-                                          color: impact.eol.isNegative
-                                              ? AppColors.ratingA
-                                              : AppColors.ratingF,
-                                          label: 'Fim de vida\n',
-                                        ),
-                                      ),
-                                      const Spacer(),
-                                      const Spacer(),
-                                      Expanded(
-                                        flex: 4,
-                                        child: _ChartBarWithHeader(
-                                          maxValue: maxValue,
-                                          value: impact.impacteTotal,
-                                          color: AppColors.blue,
-                                          label: 'Impacte total\nda embalagem',
-                                        ),
-                                      ),
-                                      const Spacer(),
-                                    ],
-                                  ),
                                 ),
                               ],
                             ),
                           ),
                           const SizedBox(
-                            height: 2,
+                            height: 1,
                             child: ColoredBox(color: AppColors.grey6),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 250,
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 88),
-                        const Spacer(),
-                        Expanded(
-                          flex: 3,
-                          child: FractionallySizedBox(
-                            heightFactor:
-                                max(impact.impacteTotal / maxValue, 0.15),
-                            alignment: Alignment.bottomCenter,
-                            child: OverflowBox(
-                              alignment: Alignment.topCenter,
-                              maxHeight: 300,
-                              maxWidth: 250,
-                              child: ColoredBox(
-                                color: AppColors.grey2,
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      'A produção de',
-                                      textAlign: TextAlign.center,
-                                      style: AppTextStyles.bodyM(
-                                        context.layout,
+                    if (context.layout.breakpoint > LayoutBreakpoint.md) ...[
+                      const SizedBox(width: 80),
+                      SizedBox(
+                        width: 180,
+                        child: FractionallySizedBox(
+                          heightFactor:
+                              max(impact.impacteTotal / maxValue, 0.1),
+                          alignment: Alignment.bottomCenter,
+                          child: OverflowBox(
+                            alignment: Alignment.topCenter,
+                            maxHeight: 400,
+                            maxWidth: 180,
+                            child: ColoredBox(
+                              color: AppColors.grey2,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'A produção de',
+                                    textAlign: TextAlign.center,
+                                    style: AppTextStyles.bodyM(
+                                      context.layout,
+                                    ),
+                                  ),
+                                  Text(
+                                    '1000 embalagens',
+                                    textAlign: TextAlign.center,
+                                    style: AppTextStyles.h4(context.layout),
+                                  ),
+                                  Text(
+                                    'equivale a',
+                                    textAlign: TextAlign.center,
+                                    style: AppTextStyles.bodyM(
+                                      context.layout,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  const Arrow(
+                                    size: Size(22, 32),
+                                    strokeWidth: 2,
+                                    color: AppColors.blue,
+                                    direction: AxisDirection.down,
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    'CO2 emitido por\num ligeiro em',
+                                    textAlign: TextAlign.center,
+                                    style: AppTextStyles.bodyM(
+                                      context.layout,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(
+                                        Icons.drive_eta_outlined,
+                                        color: AppColors.lightGreen,
+                                        size: 52,
                                       ),
-                                    ),
-                                    Text(
-                                      '1000 embalagens',
-                                      textAlign: TextAlign.center,
-                                      style: AppTextStyles.h4(context.layout),
-                                    ),
-                                    Text(
-                                      'equivale a',
-                                      textAlign: TextAlign.center,
-                                      style: AppTextStyles.bodyM(
-                                        context.layout,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    const Arrow(
-                                      size: Size(22, 32),
-                                      strokeWidth: 2,
-                                      color: AppColors.blue,
-                                      direction: AxisDirection.down,
-                                    ),
-                                    const SizedBox(height: 10),
-                                    Text(
-                                      'CO2 emitido por\num ligeiro em',
-                                      textAlign: TextAlign.center,
-                                      style: AppTextStyles.bodyM(
-                                        context.layout,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        const Icon(
-                                          Icons.drive_eta_outlined,
-                                          color: AppColors.lightGreen,
-                                          size: 52,
-                                        ),
-                                        const SizedBox(width: 5),
-                                        Column(
-                                          children: [
-                                            Text(
-                                              '${((impact.impacteTotal * 1000) / 0.21294).round()}',
-                                              textAlign: TextAlign.center,
-                                              style: AppTextStyles.h3(
-                                                context.layout,
-                                              ),
+                                      const SizedBox(width: 5),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            '${((impact.impacteTotal * 1000) / 0.21294).round()}',
+                                            textAlign: TextAlign.center,
+                                            style: AppTextStyles.h3(
+                                              context.layout,
                                             ),
-                                            Text(
-                                              'km',
-                                              textAlign: TextAlign.center,
-                                              style: AppTextStyles.h4(
-                                                context.layout,
-                                              ).copyWith(height: 1),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 20),
-                                  ],
-                                ),
+                                          ),
+                                          Text(
+                                            'km',
+                                            textAlign: TextAlign.center,
+                                            style: AppTextStyles.h4(
+                                              context.layout,
+                                            ).copyWith(height: 1),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 20),
+                                ],
                               ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                ],
+                      ),
+                    ],
+                  ],
+                ),
               ),
             ),
-            const SizedBox(height: 200),
+            if (context.layout.breakpoint > LayoutBreakpoint.md)
+              const SizedBox(height: 200)
+            else ...[
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Spacer(),
+                  Column(
+                    children: [
+                      Text(
+                        'A produção de',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.bodyM(
+                          context.layout,
+                        ),
+                      ),
+                      Text(
+                        '1000 embalagens',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.h4(context.layout),
+                      ),
+                      Text(
+                        'equivale a',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.bodyM(
+                          context.layout,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  Arrow(
+                    size: Size(context.layout.value(xs: 32, sm: 62), 22),
+                    strokeWidth: 2,
+                    color: AppColors.blue,
+                    direction: AxisDirection.right,
+                  ),
+                  const Spacer(),
+                  Column(
+                    children: [
+                      Text(
+                        'CO2 emitido por\num ligeiro em',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.bodyM(
+                          context.layout,
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.drive_eta_outlined,
+                            color: AppColors.lightGreen,
+                            size: 44,
+                          ),
+                          const SizedBox(width: 5),
+                          Text(
+                            '${((impact.impacteTotal * 1000) / 0.21294).round()} km',
+                            textAlign: TextAlign.center,
+                            style: AppTextStyles.h4(
+                              context.layout,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                ],
+              ),
+            ],
           ],
         ),
       ],
@@ -316,88 +430,40 @@ class _ChartSupportLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const SizedBox(height: 88),
-        const Spacer(),
+        Spacer(flex: flexValues.item1),
         Expanded(
-          flex: 3,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Spacer(flex: flexValues.item1),
-              Expanded(
-                flex: flexValues.item2,
-                child: FractionallySizedBox(
-                  heightFactor: value / maxValue,
-                  alignment: Alignment.bottomCenter,
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20,
-                    ),
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          top: BorderSide(
-                            color: AppColors.grey4,
-                            width: 2,
-                          ),
-                        ),
-                      ),
+          flex: flexValues.item2,
+          child: FractionallySizedBox(
+            heightFactor: value / maxValue,
+            alignment: Alignment.bottomCenter,
+            child: const Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  border: Border(
+                    top: BorderSide(
+                      color: AppColors.grey4,
+                      width: 2,
                     ),
                   ),
                 ),
               ),
-              Spacer(flex: flexValues.item3),
-            ],
+            ),
           ),
         ),
+        Spacer(flex: flexValues.item3),
       ],
     );
   }
 }
 
-class _ChartBarWithHeader extends StatelessWidget {
-  const _ChartBarWithHeader({
-    required this.maxValue,
-    required this.value,
-    this.offsetValue = 0,
-    required this.color,
-    required this.label,
-  });
-
-  final double maxValue;
-  final double value;
-  final double offsetValue;
-  final Color color;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _BarHeader(
-          label: label,
-          lineColor: color,
-        ),
-        const Spacer(),
-        Expanded(
-          flex: 3,
-          child: _ImpactBar(
-            maxValue: maxValue,
-            value: value,
-            offsetValue: offsetValue,
-            color: color,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _BarHeader extends StatelessWidget {
-  const _BarHeader({
+class _ChartBarHeader extends StatelessWidget {
+  const _ChartBarHeader({
     required this.label,
     required this.lineColor,
   });
@@ -408,15 +474,11 @@ class _BarHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 88,
+      height: context.layout.value(xs: 74, md: 88),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            label,
-            maxLines: 2,
-            overflow: TextOverflow.visible,
-          ),
+          Text(label),
           const Spacer(),
           Line(
             size: const Size(2, 24),
@@ -429,8 +491,8 @@ class _BarHeader extends StatelessWidget {
   }
 }
 
-class _ImpactBar extends StatelessWidget {
-  const _ImpactBar({
+class _ChartBar extends StatelessWidget {
+  const _ChartBar({
     required this.maxValue,
     required this.value,
     this.offsetValue = 0,
@@ -471,17 +533,19 @@ class _ImpactBar extends StatelessWidget {
               ),
             ),
             if (offsetValue != 0 && value != 0)
-              Positioned(
-                left: -40,
-                bottom: 10,
-                child: Arrow(
-                  size: const Size(22, 32),
-                  strokeWidth: 2,
-                  color: color,
-                  direction:
-                      value.isNegative ? AxisDirection.down : AxisDirection.up,
+              if (context.layout.breakpoint > LayoutBreakpoint.xs)
+                Positioned(
+                  left: -40,
+                  bottom: 10,
+                  child: Arrow(
+                    size: const Size(22, 32),
+                    strokeWidth: 2,
+                    color: color,
+                    direction: value.isNegative
+                        ? AxisDirection.down
+                        : AxisDirection.up,
+                  ),
                 ),
-              ),
           ],
         ),
       ),

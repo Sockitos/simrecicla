@@ -8,7 +8,7 @@ environment:
 
 dependencies:
   charts_flutter: ^0.12.0
-  circular_widgets: ^2.1.0
+  circular_widgets: ^3.0.0
   collection: ^1.16.0
   directed_graph: ^0.3.7
   flutter:
@@ -18,7 +18,7 @@ dependencies:
     sdk: flutter
   flutter_svg: ^1.1.6
   freezed_annotation: ^2.2.0
-  go_router: ^5.1.10
+  go_router: 5.1.10
   google_fonts: ^3.0.1
   hooks_riverpod: ^2.1.1
   intl: ^0.17.0
@@ -28,7 +28,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   tuple: ^2.0.1
   universal_html: ^2.0.8
-  url_launcher: ^6.1.6
+  url_launcher: ^6.1.7
   url_strategy: ^0.2.0
 
 dev_dependencies:
@@ -36,14 +36,7 @@ dev_dependencies:
   flutter_gen: ^5.1.0+1
   flutter_lints:
     git: https://github.com/Sockitos/flutter_lints/
-  freezed: ^2.2.1
-
-dependency_overrides:
-  charts_flutter:
-    git:
-      url: https://github.com/fzyzcjy/charts/
-      ref: master
-      path: charts_flutter
+  freezed: ^2.3.0
 
 flutter_gen:
   integrations:

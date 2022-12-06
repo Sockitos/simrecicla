@@ -16,64 +16,69 @@ class DraggableComponents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget child;
     switch (components.length) {
       case 1:
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 165),
-          child: _DraggableComponent(
+        child = Center(
+          child: DraggableComponentWithProps(
             component: components[0],
             isDisabled: isDisabled(components[0]),
           ),
         );
-
+        break;
       case 2:
-        return Column(
+        child = Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 10),
-            _DraggableComponent(
+            DraggableComponentWithProps(
               component: components[0],
               isDisabled: isDisabled(components[0]),
             ),
-            const SizedBox(height: 20),
-            _DraggableComponent(
+            const Spacer(),
+            DraggableComponentWithProps(
               component: components[1],
               isDisabled: isDisabled(components[1]),
             ),
-            const SizedBox(height: 50),
           ],
         );
-
+        break;
       case 3:
-        return Row(
+        child = Row(
           children: [
             Column(
               children: [
-                _DraggableComponent(
+                DraggableComponentWithProps(
                   component: components[0],
                   isDisabled: isDisabled(components[0]),
                 ),
-                const SizedBox(height: 40),
-                _DraggableComponent(
+                const Spacer(),
+                DraggableComponentWithProps(
                   component: components[1],
                   isDisabled: isDisabled(components[1]),
                 ),
               ],
             ),
-            _DraggableComponent(
+            const Spacer(),
+            DraggableComponentWithProps(
               component: components[2],
               isDisabled: isDisabled(components[2]),
             ),
           ],
         );
-
+        break;
       default:
         return const SizedBox();
     }
+    return AspectRatio(
+      aspectRatio: 0.95,
+      child: child,
+    );
   }
 }
 
-class _DraggableComponent extends StatelessWidget {
-  const _DraggableComponent({
+class DraggableComponentWithProps extends StatelessWidget {
+  const DraggableComponentWithProps({
+    super.key,
     required this.component,
     this.isDisabled = false,
   });
@@ -83,27 +88,42 @@ class _DraggableComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconData = component.icon;
+    final size = context.layout.value<double>(xs: 100, sm: 160, lg: 260);
+    final iconSize = context.layout.value<double>(
+      xs: 30,
+      sm: 55,
+      lg: 145,
+    );
     return SizedBox(
-      height: 260,
-      width: 260,
+      height: size,
+      width: size,
       child: DecoratedBox(
         decoration: const BoxDecoration(
           color: AppColors.grey3,
           shape: BoxShape.circle,
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 30,
-            vertical: 25,
+          padding: context.layout.value(
+            xs: const EdgeInsets.symmetric(
+              horizontal: 10,
+              vertical: 10,
+            ),
+            sm: const EdgeInsets.symmetric(
+              horizontal: 15,
+              vertical: 25,
+            ),
+            lg: const EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 25,
+            ),
           ),
           child: Column(
             children: [
               if (isDisabled)
                 Icon(
-                  iconData,
+                  component.icon,
                   color: AppColors.black.withOpacity(0.1),
-                  size: 145,
+                  size: iconSize,
                 )
               else
                 DraggableComponent(component: component),
@@ -111,8 +131,14 @@ class _DraggableComponent extends StatelessWidget {
               Expanded(
                 child: Text(
                   component.name,
-                  style: AppTextStyles.bodyL(context.layout),
+                  style: context.layout.value(
+                    xs: AppTextStyles.bodyS(context.layout),
+                    sm: AppTextStyles.bodyM(context.layout),
+                    lg: AppTextStyles.bodyL(context.layout),
+                  ),
                   textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               const SizedBox(height: 5),
@@ -136,35 +162,51 @@ class DraggableComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = context.layout.value<double>(
+      xs: 30,
+      sm: 55,
+      lg: 145,
+    );
+    final draggingSize = context.layout.value<double>(
+      xs: 30,
+      sm: 45,
+      lg: 90,
+    );
+    final inBinSize = context.layout.value<double>(
+      xs: 30,
+      sm: 45,
+      md: 35,
+      lg: 45,
+    );
     return SizedBox(
-      height: isInBin ? 45 : 145,
-      width: isInBin ? 45 : 145,
+      height: isInBin ? inBinSize : size,
+      width: isInBin ? inBinSize : size,
       child: OverflowBox(
-        maxHeight: 145,
-        minHeight: 145,
-        maxWidth: 145,
-        minWidth: 145,
+        maxHeight: size,
+        minHeight: size,
+        maxWidth: size,
+        minWidth: size,
         child: Draggable(
           ignoringFeedbackPointer: false,
           data: component,
           childWhenDragging: SizedBox(
-            height: isInBin ? 45 : 145,
-            width: isInBin ? 45 : 145,
+            height: isInBin ? inBinSize : size,
+            width: isInBin ? inBinSize : size,
             child: Icon(
               component.icon,
               color: AppColors.black.withOpacity(0.1),
-              size: isInBin ? 45 : 145,
+              size: isInBin ? inBinSize : size,
             ),
           ),
           feedback: MouseRegion(
             cursor: SystemMouseCursors.grabbing,
             opaque: false,
             child: SizedBox(
-              height: 145,
-              width: 145,
+              height: size,
+              width: size,
               child: Icon(
                 component.icon,
-                size: 90,
+                size: draggingSize,
               ),
             ),
           ),
@@ -172,7 +214,7 @@ class DraggableComponent extends StatelessWidget {
             cursor: SystemMouseCursors.grab,
             child: Icon(
               component.icon,
-              size: isInBin ? 45 : 145,
+              size: isInBin ? inBinSize : size,
             ),
           ),
         ),

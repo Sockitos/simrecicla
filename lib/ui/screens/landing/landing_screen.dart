@@ -116,7 +116,7 @@ class LandingScreen extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: context.layout.value(
-                        xs: 40,
+                        xs: 30,
                         lg: 80,
                       ),
                     ),
@@ -131,7 +131,7 @@ class LandingScreen extends StatelessWidget {
                     ),
                     SizedBox(
                       width: context.layout.value(
-                        xs: 40,
+                        xs: 30,
                         lg: 80,
                       ),
                     ),
@@ -147,7 +147,7 @@ class LandingScreen extends StatelessWidget {
                     ),
                     SizedBox(
                       width: context.layout.value(
-                        xs: 40,
+                        xs: 30,
                         lg: 80,
                       ),
                     ),
@@ -162,7 +162,7 @@ class LandingScreen extends StatelessWidget {
                     ),
                     SizedBox(
                       width: context.layout.value(
-                        xs: 40,
+                        xs: 30,
                         lg: 80,
                       ),
                     ),

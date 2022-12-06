@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/ui/widgets/app_scrollbar.dart';
 
 class AppDialog extends StatelessWidget {
   const AppDialog({
@@ -14,18 +13,8 @@ class AppDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
     return Dialog(
-      insetPadding: context.layout.value(
-        xs: const EdgeInsets.symmetric(
-          vertical: 30,
-          horizontal: 10,
-        ),
-        sm: EdgeInsets.symmetric(
-          horizontal: AppSpacings.big(context.layout),
-          vertical: screenHeight / 10,
-        ),
-      ),
+      insetPadding: AppSpacings.dialogMargin(context.layout),
       backgroundColor: Colors.transparent,
       elevation: 0,
       child: DecoratedBox(
@@ -40,18 +29,19 @@ class AppDialog extends StatelessWidget {
           ],
         ),
         child: Material(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(34)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(34),
+          ),
           color: AppColors.white,
           child: Stack(
             children: [
-              AppScrollbar(child: child),
+              child,
               Positioned(
                 right: 15,
                 top: 15,
                 child: IconButton(
                   onPressed: Navigator.of(context).pop,
-                  iconSize: 44,
+                  iconSize: 40,
                   color: AppColors.lightGreen,
                   icon: const Icon(Icons.close_outlined),
                 ),

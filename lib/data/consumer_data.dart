@@ -1226,7 +1226,7 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.lata_conserva___tampa,
-              name: 'Tampa metálica (com anilha)',
+              name: 'Tampa metálica\n(com anilha)',
               metaisFerrosos: 0.007,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
@@ -1320,7 +1320,7 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.lata_de_ra_ao_para_animal___tampa,
-              name: 'Tampa metálica (com anilha)',
+              name: 'Tampa metálica\n(com anilha)',
               metaisFerrosos: 0.007,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
@@ -1417,7 +1417,7 @@ class ConsumerData {
         Package(
           id: 42,
           icon: PackagesIcons.pacote_padaria_com_janela___completo,
-          name: 'Saco para padaria\ne pastelaria\n(com janela de plástico)',
+          name: 'Saco para padaria\ne pastelaria\n(com janela)',
           components: [
             Component(
               icon: PackagesIcons.pacote_padaria_com_janela___pacote,

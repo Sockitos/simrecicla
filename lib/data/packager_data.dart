@@ -6239,7 +6239,7 @@ class PackagerData {
     Question(
       id: 17,
       question:
-          'A embalagem tem informação sobre os diferentes materiais que a constituem?',
+          'A embalagem tem informação sobre os materiais que a constituem?',
       info:
           'Sistema de identificação dos materiais de embalagem, de acordo com a Decisão n.º 97/129/CE',
       answers: [

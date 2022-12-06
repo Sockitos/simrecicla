@@ -64,13 +64,11 @@ class _ConsumerIntro extends StatelessWidget {
         ? TextAlign.center
         : TextAlign.start;
     return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacings.big(context.layout),
-        vertical: AppSpacings.big(context.layout),
-      ),
+      padding: AppSpacings.screenPadding(context.layout),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(height: AppSpacings.big(context.layout)),
           Text(
             'Quero saber como reciclar uma embalagem',
             style: AppTextStyles.h1(context.layout),
@@ -82,8 +80,7 @@ class _ConsumerIntro extends StatelessWidget {
             style: AppTextStyles.bodyL(context.layout),
             textAlign: textAlign,
           ),
-          SizedBox(height: AppSpacings.small(context.layout)),
-          SizedBox(height: AppSpacings.small(context.layout)),
+          SizedBox(height: AppSpacings.big(context.layout)),
           Align(
             alignment: context.breakpoint < LayoutBreakpoint.md
                 ? Alignment.center
@@ -135,6 +132,7 @@ class _ConsumerIntro extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: AppSpacings.big(context.layout)),
         ],
       ),
     );

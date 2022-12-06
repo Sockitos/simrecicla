@@ -7,6 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/recycler/material_sample.dart';
 import 'package:simtech/ui/widgets/app_dialog.dart';
@@ -61,10 +62,10 @@ class FeedOptions extends HookWidget {
             ),
     );
     return AppDialog(
-      child: SizedBox(
-        width: 500,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 500),
         child: Padding(
-          padding: const EdgeInsets.all(30),
+          padding: AppSpacings.dialogPadding(context.layout),
           child: DefaultTextStyle(
             style: AppTextStyles.bodyM(context.layout),
             child: Column(
@@ -132,13 +133,12 @@ class FeedOptions extends HookWidget {
                 const SizedBox(height: 25),
                 Row(
                   children: [
-                    const Expanded(
-                      child: Text(
-                        'Peso Total (kg/h)',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
+                    const Text(
+                      'Peso Total (kg/h)',
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Expanded(
+                    const SizedBox(width: 10),
+                    Flexible(
                       child: HookBuilder(
                         builder: (context) {
                           final textController = useTextEditingController(
@@ -156,49 +156,56 @@ class FeedOptions extends HookWidget {
                             },
                             [state.value.weight],
                           );
-                          return TextFormField(
-                            controller: textController,
-                            onChanged: (value) {
-                              final newWeight = double.parse(value);
-                              state.value = state.value.copyWith(
-                                weight: newWeight,
-                              );
-                            },
-                            style: AppTextStyles.bodyM(context.layout),
-                            inputFormatters: [DecimalFormatter()],
-                            keyboardType: const TextInputType.numberWithOptions(
-                              decimal: true,
-                            ),
-                            maxLength: 8,
-                            maxLengthEnforcement: MaxLengthEnforcement.enforced,
-                            decoration: InputDecoration(
-                              isDense: true,
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  width: 3,
-                                  color: AppColors.grey3,
-                                ),
-                                borderRadius: BorderRadius.circular(14),
+                          return ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 150),
+                            child: TextFormField(
+                              controller: textController,
+                              onChanged: (value) {
+                                final newWeight = double.parse(value);
+                                state.value = state.value.copyWith(
+                                  weight: newWeight,
+                                );
+                              },
+                              style: AppTextStyles.bodyM(context.layout),
+                              inputFormatters: [DecimalFormatter()],
+                              keyboardType:
+                                  const TextInputType.numberWithOptions(
+                                decimal: true,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  width: 3,
-                                  color: AppColors.lightGreen,
+                              maxLength: 8,
+                              maxLengthEnforcement:
+                                  MaxLengthEnforcement.enforced,
+                              decoration: InputDecoration(
+                                isDense: true,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    width: 3,
+                                    color: AppColors.grey3,
+                                  ),
+                                  borderRadius: BorderRadius.circular(14),
                                 ),
-                                borderRadius: BorderRadius.circular(14),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    width: 3,
+                                    color: AppColors.lightGreen,
+                                  ),
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                counterText: '',
                               ),
-                              counterText: '',
                             ),
                           );
                         },
                       ),
                     ),
-                    const Spacer(),
                   ],
                 ),
                 const SizedBox(height: 30),
                 DefaultTextStyle.merge(
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                   child: Row(
                     children: const [
                       Expanded(

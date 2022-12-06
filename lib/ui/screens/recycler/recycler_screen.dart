@@ -64,13 +64,11 @@ class _RecyclerIntro extends StatelessWidget {
         ? TextAlign.center
         : TextAlign.start;
     return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacings.big(context.layout),
-        vertical: AppSpacings.big(context.layout),
-      ),
+      padding: AppSpacings.screenPadding(context.layout),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(height: AppSpacings.big(context.layout)),
           Text(
             'Criar e optimizar uma linha de triagem',
             style: AppTextStyles.h1(context.layout),
@@ -145,6 +143,7 @@ class _RecyclerIntro extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: AppSpacings.big(context.layout)),
         ],
       ),
     );

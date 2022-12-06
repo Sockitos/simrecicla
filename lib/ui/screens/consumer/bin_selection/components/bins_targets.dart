@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,24 +27,26 @@ class BinsTargets extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final isBinning = useState(false);
-    return MouseRegion(
-      onEnter: (_) => isBinning.value = true,
-      onExit: (_) => isBinning.value = false,
-      child: SizedBox(
-        height: 640,
-        width: 550,
+    return AspectRatio(
+      aspectRatio: 0.8,
+      child: MouseRegion(
+        onEnter: (_) => isBinning.value = true,
+        onExit: (_) => isBinning.value = false,
         child: Stack(
+          fit: StackFit.expand,
           clipBehavior: Clip.none,
           children: [
-            const Center(
-              child: SizedBox(
-                height: 400,
-                width: 400,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: AppColors.grey3,
-                    shape: BoxShape.circle,
-                  ),
+            Padding(
+              padding: EdgeInsets.all(
+                context.layout.value(
+                  xs: 60,
+                  lg: 80,
+                ),
+              ),
+              child: const DecoratedBox(
+                decoration: BoxDecoration(
+                  color: AppColors.grey3,
+                  shape: BoxShape.circle,
                 ),
               ),
             ),
@@ -159,6 +162,7 @@ class _BinTarget extends HookWidget {
                 height: 40,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     for (final c in components)
                       DraggableComponent(
@@ -178,7 +182,12 @@ class _BinTarget extends HookWidget {
                       const SizedBox(height: 5),
                       SvgPicture.asset(
                         svgPath,
-                        height: 170,
+                        height: context.layout.value(
+                          xs: 100,
+                          sm: 150,
+                          md: 110,
+                          lg: 170,
+                        ),
                       ),
                       const SizedBox(height: 10),
                       Text(labels.first),

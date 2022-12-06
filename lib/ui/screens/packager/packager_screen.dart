@@ -64,13 +64,11 @@ class _PackagerIntro extends StatelessWidget {
         ? TextAlign.center
         : TextAlign.start;
     return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacings.big(context.layout),
-        vertical: AppSpacings.big(context.layout),
-      ),
+      padding: AppSpacings.screenPadding(context.layout),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(height: AppSpacings.big(context.layout)),
           Text(
             'Melhorar a reciclabilidade de uma embalagem',
             style: AppTextStyles.h1(context.layout),
@@ -134,6 +132,7 @@ class _PackagerIntro extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: AppSpacings.big(context.layout)),
         ],
       ),
     );

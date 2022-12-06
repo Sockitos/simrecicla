@@ -109,11 +109,9 @@ packages:
   charts_flutter:
     dependency: "direct main"
     description:
-      path: charts_flutter
-      ref: master
-      resolved-ref: b177e3a53f7b7c4fa70f875e74d746b24e741ac5
-      url: "https://github.com/fzyzcjy/charts/"
-    source: git
+      name: charts_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.12.0"
   checked_yaml:
     dependency: transitive
@@ -128,7 +126,7 @@ packages:
       name: circular_widgets
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "3.0.0"
   clock:
     dependency: transitive
     description:
@@ -292,7 +290,7 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.1"
+    version: "2.3.0"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -738,7 +736,7 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.6"
+    version: "6.1.7"
   url_launcher_android:
     dependency: transitive
     description:

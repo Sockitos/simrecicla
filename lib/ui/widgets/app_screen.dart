@@ -1,6 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:layout/layout.dart';
+import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/ui/widgets/footer/footer.dart';
 
@@ -18,15 +21,7 @@ class AppScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final padding = this.padding ??
-        EdgeInsets.symmetric(
-          horizontal: context.layout.value<double>(
-            xs: 30,
-            sm: 40,
-            lg: 60,
-            xl: 70,
-          ),
-        );
+    final isTooSmall = MediaQuery.of(context).size.width < 375;
     return Scaffold(
       backgroundColor: backgroundColor,
       drawer: Drawer(
@@ -109,79 +104,91 @@ class AppScreen extends StatelessWidget {
       ),
       body: ScrollConfiguration(
         behavior: const MaterialScrollBehavior(),
-        child: ListView(
-          primary: true,
-          children: [
-            AppBar(
-              toolbarHeight: 60,
-              leading: const BackButton(),
-              title: Text(
-                'Circular SimTech',
-                style: AppTextStyles.h4(context.layout),
+        child: isTooSmall
+            ? const ColoredBox(
+                color: AppColors.lightGreen,
+                child: SizedBox.expand(),
+              )
+            : ListView(
+                primary: true,
+                children: [
+                  AppBar(
+                    title: Text(
+                      'Circular SimTech',
+                      style: AppTextStyles.h4(context.layout),
+                    ),
+                    leading: kIsWeb ? null : const BackButton(),
+                    titleSpacing: AppSpacings.big(context.layout),
+                    automaticallyImplyLeading: false,
+                    actions: context.breakpoint > LayoutBreakpoint.sm
+                        ? [
+                            TextButton(
+                              onPressed: () => context.go('/consumer'),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  'Reciclar',
+                                  style: AppTextStyles.bodyM(context.layout),
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () => context.go('/packager'),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  'Melhorar embalagem',
+                                  style: AppTextStyles.bodyM(context.layout),
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () => context.go('/recycler'),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  'Otimizar linha',
+                                  style: AppTextStyles.bodyM(context.layout),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: AppSpacings.big(context.layout)),
+                          ]
+                        : [
+                            Builder(
+                              builder: (context) {
+                                return IconButton(
+                                  onPressed: Scaffold.of(context).openDrawer,
+                                  icon: const Icon(Icons.menu_rounded),
+                                );
+                              },
+                            ),
+                            SizedBox(
+                              width: AppSpacings.big(context.layout) - 8,
+                            ),
+                          ],
+                  ),
+                  ClipRect(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: MediaQuery.of(context).size.height -
+                            MediaQuery.of(context).padding.top -
+                            MediaQuery.of(context).padding.bottom -
+                            60,
+                      ),
+                      child: Padding(
+                        padding: padding ??
+                            AppSpacings.screenPadding(context.layout),
+                        child: body,
+                      ),
+                    ),
+                  ),
+                  const Footer(),
+                ],
               ),
-              actions: context.breakpoint > LayoutBreakpoint.sm
-                  ? [
-                      TextButton(
-                        onPressed: () => context.go('/consumer'),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            'Reciclar',
-                            style: AppTextStyles.bodyM(context.layout),
-                          ),
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () => context.go('/packager'),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            'Melhorar embalagem',
-                            style: AppTextStyles.bodyM(context.layout),
-                          ),
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () => context.go('/recycler'),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            'Otimizar linha',
-                            style: AppTextStyles.bodyM(context.layout),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 30),
-                    ]
-                  : [
-                      Builder(
-                        builder: (context) {
-                          return IconButton(
-                            onPressed: Scaffold.of(context).openDrawer,
-                            icon: const Icon(Icons.menu_rounded),
-                          );
-                        },
-                      ),
-                      const SizedBox(width: 30),
-                    ],
-            ),
-            ClipRect(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  minHeight: MediaQuery.of(context).size.height -
-                      MediaQuery.of(context).padding.top -
-                      MediaQuery.of(context).padding.bottom -
-                      60,
-                ),
-                child: Padding(
-                  padding: padding,
-                  child: body,
-                ),
-              ),
-            ),
-            const Footer()
-          ],
-        ),
       ),
     );
   }

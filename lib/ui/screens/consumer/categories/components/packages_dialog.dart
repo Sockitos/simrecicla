@@ -18,15 +18,13 @@ class PackagesDialog extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = context.layout.value<double>(xs: 146, sm: 170, md: 190);
     return AppDialog(
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 880),
         child: ListView(
           shrinkWrap: true,
-          padding: EdgeInsets.symmetric(
-            horizontal: AppSpacings.big(context.layout),
-            vertical: 30,
-          ),
+          padding: AppSpacings.dialogPadding(context.layout),
           children: [
             Text(
               category.category,
@@ -42,35 +40,43 @@ class PackagesDialog extends HookWidget {
               children: [
                 for (final package in category.packages)
                   SizedBox(
-                    width: 190,
-                    height: 190,
+                    width: size,
+                    height: size,
                     child: Material(
                       color: AppColors.grey3,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(34),
                       ),
                       child: InkWell(
-                        onTap: () => context.push(
+                        onTap: () => context.go(
                           '/consumer/bin_selection?package=${package.id}',
                         ),
                         borderRadius: BorderRadius.circular(34),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 15,
+                          padding: EdgeInsets.all(
+                            context.layout.value(
+                              xs: 12,
+                              sm: 15,
+                              md: 20,
+                            ),
                           ),
                           child: Column(
                             children: [
                               const SizedBox(height: 5),
                               Icon(
                                 package.icon,
-                                size: 90,
+                                size: context.layout.value(
+                                  xs: 60,
+                                  sm: 80,
+                                  md: 90,
+                                ),
                               ),
                               Expanded(
                                 child: Center(
                                   child: Text(
                                     package.name,
                                     textAlign: TextAlign.center,
+                                    maxLines: 3,
                                     style: AppTextStyles.bodyS(
                                       context.layout,
                                     ).copyWith(fontWeight: FontWeight.bold),

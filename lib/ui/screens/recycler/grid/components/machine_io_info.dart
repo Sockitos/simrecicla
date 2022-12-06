@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
+import 'package:simtech/constants/spacings.dart';
 import 'package:simtech/constants/text_styles.dart';
 import 'package:simtech/models/recycler/machine.dart';
 import 'package:simtech/models/recycler/material_sample.dart';
@@ -54,10 +55,15 @@ class MachineIOInfo extends HookWidget {
     final max = weights.max();
     final sum = weights.sum();
     return AppDialog(
-      child: SizedBox(
-        width: 650,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: context.layout.value(
+            xs: 520,
+            md: 650,
+          ),
+        ),
         child: Padding(
-          padding: const EdgeInsets.all(30),
+          padding: AppSpacings.dialogPadding(context.layout),
           child: DefaultTextStyle(
             style: AppTextStyles.bodyM(context.layout),
             child: Column(
@@ -66,9 +72,11 @@ class MachineIOInfo extends HookWidget {
               children: [
                 Row(
                   children: [
-                    Text(
-                      machine.name,
-                      style: AppTextStyles.h5(context.layout),
+                    Flexible(
+                      child: Text(
+                        machine.name,
+                        style: AppTextStyles.h5(context.layout),
+                      ),
                     ),
                     const SizedBox(width: 15),
                     DecoratedBox(
@@ -83,83 +91,123 @@ class MachineIOInfo extends HookWidget {
                         ),
                       ),
                     ),
+                    const SizedBox(width: 50),
                   ],
                 ),
                 const SizedBox(height: 30),
+                if (context.layout.breakpoint < LayoutBreakpoint.sm) ...[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        state.value = const IOInfoModel.input();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: state.value.showInput
+                            ? AppColors.grey3
+                            : AppColors.grey1,
+                        foregroundColor: AppColors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        fixedSize: const Size.fromHeight(48),
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        textStyle: state.value.showInput
+                            ? AppTextStyles.smallButton(context.layout)
+                                .copyWith(fontWeight: FontWeight.bold)
+                            : AppTextStyles.smallButton(context.layout),
+                      ),
+                      child: const Text('Input'),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                ],
                 if (machine.outputs.isNotEmpty) ...[
                   Row(
                     children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          state.value = const IOInfoModel.input();
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: state.value.showInput
-                              ? AppColors.grey3
-                              : AppColors.grey1,
-                          foregroundColor: AppColors.black,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                          fixedSize: const Size.fromHeight(48),
-                          padding: const EdgeInsets.symmetric(horizontal: 30),
-                          textStyle: state.value.showInput
-                              ? AppTextStyles.smallButton(context.layout)
-                                  .copyWith(fontWeight: FontWeight.bold)
-                              : AppTextStyles.smallButton(context.layout),
-                        ),
-                        child: const Text('Input'),
-                      ),
-                      const SizedBox(width: 15),
-                      const SizedBox(
-                        height: 40,
-                        child: VerticalDivider(
-                          color: AppColors.grey4,
-                          thickness: 1,
-                        ),
-                      ),
-                      for (final output in machine.outputs) ...[
-                        const SizedBox(width: 15),
+                      if (context.layout.breakpoint > LayoutBreakpoint.xs) ...[
                         ElevatedButton(
                           onPressed: () {
-                            state.value =
-                                IOInfoModel.output(outputId: output.id);
+                            state.value = const IOInfoModel.input();
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                state.value.selectedOutput == output.id
-                                    ? AppColors.grey3
-                                    : AppColors.grey1,
+                            backgroundColor: state.value.showInput
+                                ? AppColors.grey3
+                                : AppColors.grey1,
                             foregroundColor: AppColors.black,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(14),
                             ),
                             fixedSize: const Size.fromHeight(48),
                             padding: const EdgeInsets.symmetric(horizontal: 30),
-                            textStyle: state.value.selectedOutput == output.id
+                            textStyle: state.value.showInput
+                                ? AppTextStyles.smallButton(context.layout)
+                                    .copyWith(fontWeight: FontWeight.bold)
+                                : AppTextStyles.smallButton(context.layout),
+                          ),
+                          child: const Text('Input'),
+                        ),
+                        const SizedBox(width: 10),
+                        const SizedBox(
+                          height: 40,
+                          child: VerticalDivider(
+                            color: AppColors.grey4,
+                            thickness: 1,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                      ],
+                      for (var i = 0; i < machine.outputs.length; i++) ...[
+                        ElevatedButton(
+                          onPressed: () {
+                            state.value = IOInfoModel.output(
+                              outputId: machine.outputs[i].id,
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: state.value.selectedOutput ==
+                                    machine.outputs[i].id
+                                ? AppColors.grey3
+                                : AppColors.grey1,
+                            foregroundColor: AppColors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            fixedSize: const Size.fromHeight(48),
+                            padding: const EdgeInsets.symmetric(horizontal: 30),
+                            textStyle: state.value.selectedOutput ==
+                                    machine.outputs[i].id
                                 ? AppTextStyles.smallButton(context.layout)
                                     .copyWith(fontWeight: FontWeight.bold)
                                 : AppTextStyles.smallButton(context.layout),
                           ),
                           child: Row(
                             children: [
-                              const Text('Output'),
-                              const SizedBox(width: 8),
+                              if (context.layout.breakpoint >
+                                  LayoutBreakpoint.sm) ...[
+                                const Text('Output'),
+                                const SizedBox(width: 8),
+                              ],
                               OutputIndicator(
-                                output: output,
+                                output: machine.outputs[i],
                                 width: 16,
                                 height: 16,
                               ),
                             ],
                           ),
                         ),
+                        if (i < machine.outputs.length - 1)
+                          const SizedBox(width: 15),
                       ]
                     ],
                   ),
                   const SizedBox(height: 25),
                 ],
                 DefaultTextStyle.merge(
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                   child: Row(
                     children: [
                       const Expanded(

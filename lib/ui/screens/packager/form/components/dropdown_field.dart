@@ -61,13 +61,14 @@ class DropdownField<T> extends AppFormField {
         icon: value != null
             ? const Icon(Icons.check_rounded)
             : const Icon(Icons.chevron_right_rounded),
-        iconSize: 48,
+        iconSize: context.layout.value(xs: 30, sm: 48),
         iconEnabledColor: AppColors.lightGreen,
         iconDisabledColor: AppColors.grey5,
         borderRadius: BorderRadius.circular(34),
         isExpanded: true,
         elevation: 0,
         menuMaxHeight: 500,
+        itemHeight: null,
         items: options.map((o) {
           final text = optionToString == null ? '$o' : optionToString!(o);
           final isNaoSei = text == 'Não sei';
