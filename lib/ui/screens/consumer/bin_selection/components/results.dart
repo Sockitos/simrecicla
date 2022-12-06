@@ -499,6 +499,7 @@ class VerticalResults extends HookWidget {
                         final isCorrect =
                             whereComponents[component] == component.where;
                         return [
+                          const SizedBox(height: 10),
                           Text(
                             component.name,
                             style: AppTextStyles.h2(context.layout),

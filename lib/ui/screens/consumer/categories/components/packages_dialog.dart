@@ -91,7 +91,7 @@ class PackagesDialog extends HookWidget {
                   ),
               ],
             ),
-            const SizedBox(height: 50),
+            SizedBox(height: AppSpacings.big(context.layout)),
           ],
         ),
       ),
