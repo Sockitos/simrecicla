@@ -55,7 +55,7 @@ class PackagesDialog extends HookWidget {
                         child: Padding(
                           padding: EdgeInsets.all(
                             context.layout.value(
-                              xs: 12,
+                              xs: 13,
                               sm: 15,
                               md: 20,
                             ),
