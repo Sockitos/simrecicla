@@ -50,13 +50,13 @@ class GridScreen extends ConsumerWidget {
                 MediaQuery.of(context).padding.bottom -
                 60,
             context.layout.value(
-              xs: 650,
+              xs: 680,
               sm: 800,
               md: 1000,
             ),
           ),
           minHeight: context.layout.value(
-            xs: 650,
+            xs: 680,
             sm: 800,
             md: 1000,
           ),
@@ -103,86 +103,96 @@ class GridScreen extends ConsumerWidget {
                 ),
               ),
             Expanded(
-              child: HookBuilder(
-                builder: (context) {
-                  final showList = useState(false);
-                  return Stack(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+              child: Navigator(
+                key: const ValueKey('recycler_grid'),
+                onGenerateRoute: (_) =>
+                    MaterialPageRoute<void>(builder: (context) {
+                  return HookBuilder(
+                    builder: (context) {
+                      final showList = useState(false);
+                      return Stack(
                         children: [
-                          const MachineGrid(),
-                          const SizedBox(height: 50),
-                          Consumer(
-                            builder: (context, ref, _) {
-                              final isValidated = ref.watch(
-                                stateProvider
-                                    .select((s) => s.graph.isValidated),
-                              );
-                              return ElevatedButton(
-                                onPressed: isValidated
-                                    ? () {
-                                        final state = ref.read(stateProvider);
-                                        showDialog<void>(
-                                          barrierColor: const Color(0x00ffffff),
-                                          useRootNavigator: false,
-                                          context: context,
-                                          builder: (context) => Results(
-                                            products: state.graph.products,
-                                            feed: state.feedSample
-                                                .mulAll(state.feedWeight),
-                                            product:
-                                                state.graph.calculateProduct(),
-                                          ),
-                                        );
-                                      }
-                                    : null,
-                                child: const Text('Ver Resultados'),
-                              );
-                            },
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const MachineGrid(),
+                              const SizedBox(height: 50),
+                              Consumer(
+                                builder: (context, ref, _) {
+                                  final isValidated = ref.watch(
+                                    stateProvider
+                                        .select((s) => s.graph.isValidated),
+                                  );
+                                  return ElevatedButton(
+                                    onPressed: isValidated
+                                        ? () {
+                                            final state =
+                                                ref.read(stateProvider);
+                                            showDialog<void>(
+                                              barrierColor:
+                                                  const Color(0x00ffffff),
+                                              useRootNavigator: false,
+                                              context: context,
+                                              builder: (context) => Results(
+                                                products: state.graph.products,
+                                                feed: state.feedSample
+                                                    .mulAll(state.feedWeight),
+                                                product: state.graph
+                                                    .calculateProduct(),
+                                              ),
+                                            );
+                                          }
+                                        : null,
+                                    child: const Text('Ver Resultados'),
+                                  );
+                                },
+                              ),
+                            ],
                           ),
+                          if (context.breakpoint <= LayoutBreakpoint.md) ...[
+                            Positioned(
+                              top: 20,
+                              child: Padding(
+                                padding: AppSpacings.screenPadding(
+                                        context.layout) -
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                                child: IconButton(
+                                  onPressed: () => showList.value = true,
+                                  icon: const Icon(
+                                    Icons.menu_open_outlined,
+                                    color: AppColors.lightGreen,
+                                    size: 24,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            AnimatedAlign(
+                              duration: const Duration(milliseconds: 200),
+                              alignment: Alignment.centerRight,
+                              widthFactor: showList.value ? 1 : 0,
+                              child: ConstrainedBox(
+                                constraints: const BoxConstraints(
+                                  minWidth: 600,
+                                  maxWidth: 600,
+                                ),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  child: MachineList(
+                                    machines: machines,
+                                    onShowOptions: () => showList.value = false,
+                                    centerOptionsInGrid: true,
+                                    onClose: () => showList.value = false,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]
                         ],
-                      ),
-                      if (context.breakpoint <= LayoutBreakpoint.md) ...[
-                        Positioned(
-                          top: 20,
-                          child: Padding(
-                            padding: AppSpacings.screenPadding(context.layout) -
-                                const EdgeInsets.symmetric(horizontal: 8),
-                            child: IconButton(
-                              onPressed: () => showList.value = true,
-                              icon: const Icon(
-                                Icons.menu_open_outlined,
-                                color: AppColors.lightGreen,
-                                size: 24,
-                              ),
-                            ),
-                          ),
-                        ),
-                        AnimatedAlign(
-                          duration: const Duration(milliseconds: 200),
-                          alignment: Alignment.centerRight,
-                          widthFactor: showList.value ? 1 : 0,
-                          child: ConstrainedBox(
-                            constraints: const BoxConstraints(
-                              minWidth: 600,
-                              maxWidth: 600,
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: MachineList(
-                                machines: machines,
-                                onShowOptions: () => showList.value = false,
-                                centerOptionsInGrid: true,
-                                onClose: () => showList.value = false,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ]
-                    ],
+                      );
+                    },
                   );
-                },
+                }),
               ),
             ),
           ],

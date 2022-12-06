@@ -95,6 +95,7 @@ class FormScreen extends ConsumerWidget {
                     ),
                 ],
               ),
+              SizedBox(height: AppSpacings.big(context.layout)),
             ],
           ),
         ),

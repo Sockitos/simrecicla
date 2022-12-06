@@ -94,7 +94,7 @@ class MachineIOInfo extends HookWidget {
                     const SizedBox(width: 50),
                   ],
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 25),
                 if (context.layout.breakpoint < LayoutBreakpoint.sm) ...[
                   Align(
                     alignment: Alignment.centerLeft,

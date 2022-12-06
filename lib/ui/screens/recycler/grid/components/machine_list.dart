@@ -31,6 +31,7 @@ class MachineList extends HookWidget {
     return ScrollConfiguration(
       behavior: ScrollConfiguration.of(context).copyWith(
         scrollbars: false,
+        overscroll: false,
       ),
       child: AppScrollbar(
         controller: scrollController,
@@ -55,7 +56,10 @@ class MachineList extends HookWidget {
                 children: [
                   RichText(
                     text: TextSpan(
-                      style: AppTextStyles.bodyL(context.layout),
+                      style: context.layout.value(
+                        xs: AppTextStyles.bodyM(context.layout),
+                        lg: AppTextStyles.bodyL(context.layout),
+                      ),
                       children: [
                         const TextSpan(
                           text:

@@ -38,12 +38,8 @@ class RatingDescription extends StatelessWidget {
               child: Text(
                 rating.description,
                 style: context.layout.value(
-                  xs: AppTextStyles.bodyM(
-                    context.layout,
-                  ),
-                  lg: AppTextStyles.bodyL(
-                    context.layout,
-                  ),
+                  xs: AppTextStyles.bodyM(context.layout),
+                  lg: AppTextStyles.bodyL(context.layout),
                 ),
               ),
             ),

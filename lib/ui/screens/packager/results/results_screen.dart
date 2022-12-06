@@ -71,6 +71,10 @@ class ResultsScreen extends StatelessWidget {
                     minHeight: 600,
                     maxHeight: 700,
                   ),
+                  sm: const BoxConstraints(
+                    minHeight: 700,
+                    maxHeight: 850,
+                  ),
                   md: const BoxConstraints(
                     minHeight: 750,
                     maxHeight: 900,
@@ -139,7 +143,6 @@ class ResultsScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 40),
                     ],
-                    const SizedBox(height: 30),
                   ],
                 ),
               )

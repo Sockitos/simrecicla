@@ -49,6 +49,7 @@ class MachineGrid extends ConsumerWidget {
                           top: machineSize(context.layout).height,
                         ),
                         child: GridView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
                           padding: EdgeInsets.zero,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
@@ -78,6 +79,7 @@ class MachineGrid extends ConsumerWidget {
                         ),
                       ),
                       GridView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
                         clipBehavior: Clip.none,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: state.grid.xSize,
@@ -145,7 +147,10 @@ class MachineGrid extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Spacer(),
-                        const SizedBox(width: 50, height: 50),
+                        SizedBox(
+                          width: machineSize(context.layout).width,
+                          height: machineSize(context.layout).height,
+                        ),
                         Expanded(
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,

@@ -1421,7 +1421,7 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_padaria_com_janela___pacote,
-              name: 'Saco para padaria e pastelaria',
+              name: 'Saco',
               papel: 0.007,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
@@ -1509,7 +1509,7 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.saco_compras_plastico,
-              name: 'Saco de asas\npara as compras',
+              name: 'Saco de asas',
               pead: 0.024,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
@@ -1528,7 +1528,7 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.saco_compras_papel,
-              name: 'Saco de asas\npara as compras',
+              name: 'Saco de asas',
               papel: 0.059,
               where: Where.recolhaPapelCartao,
               reciclavel: true,

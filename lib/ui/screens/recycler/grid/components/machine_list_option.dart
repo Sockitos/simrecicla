@@ -220,7 +220,10 @@ class MachineListOption extends HookWidget {
                                 width: 400,
                               ),
                               child: DefaultTextStyle(
-                                style: AppTextStyles.bodyL(context.layout),
+                                style: context.layout.value(
+                                  xs: AppTextStyles.bodyM(context.layout),
+                                  lg: AppTextStyles.bodyL(context.layout),
+                                ),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 20,

@@ -20,7 +20,7 @@ class DraggableComponents extends StatelessWidget {
     switch (components.length) {
       case 1:
         child = Center(
-          child: DraggableComponentWithProps(
+          child: _DraggableComponent(
             component: components[0],
             isDisabled: isDisabled(components[0]),
           ),
@@ -30,12 +30,12 @@ class DraggableComponents extends StatelessWidget {
         child = Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DraggableComponentWithProps(
+            _DraggableComponent(
               component: components[0],
               isDisabled: isDisabled(components[0]),
             ),
             const Spacer(),
-            DraggableComponentWithProps(
+            _DraggableComponent(
               component: components[1],
               isDisabled: isDisabled(components[1]),
             ),
@@ -47,19 +47,19 @@ class DraggableComponents extends StatelessWidget {
           children: [
             Column(
               children: [
-                DraggableComponentWithProps(
+                _DraggableComponent(
                   component: components[0],
                   isDisabled: isDisabled(components[0]),
                 ),
                 const Spacer(),
-                DraggableComponentWithProps(
+                _DraggableComponent(
                   component: components[1],
                   isDisabled: isDisabled(components[1]),
                 ),
               ],
             ),
             const Spacer(),
-            DraggableComponentWithProps(
+            _DraggableComponent(
               component: components[2],
               isDisabled: isDisabled(components[2]),
             ),
@@ -76,9 +76,8 @@ class DraggableComponents extends StatelessWidget {
   }
 }
 
-class DraggableComponentWithProps extends StatelessWidget {
-  const DraggableComponentWithProps({
-    super.key,
+class _DraggableComponent extends StatelessWidget {
+  const _DraggableComponent({
     required this.component,
     this.isDisabled = false,
   });
@@ -90,29 +89,26 @@ class DraggableComponentWithProps extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = context.layout.value<double>(xs: 100, sm: 160, lg: 260);
     final iconSize = context.layout.value<double>(
-      xs: 30,
-      sm: 55,
+      xs: 60,
+      sm: 90,
+      md: 55,
       lg: 145,
     );
     return SizedBox(
       height: size,
       width: size,
       child: DecoratedBox(
-        decoration: const BoxDecoration(
-          color: AppColors.grey3,
-          shape: BoxShape.circle,
+        decoration: context.layout.value(
+          xs: const BoxDecoration(),
+          md: const BoxDecoration(
+            color: AppColors.grey3,
+            shape: BoxShape.circle,
+          ),
         ),
         child: Padding(
           padding: context.layout.value(
-            xs: const EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 10,
-            ),
-            sm: const EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 25,
-            ),
-            lg: const EdgeInsets.symmetric(
+            xs: EdgeInsets.zero,
+            md: const EdgeInsets.symmetric(
               horizontal: 30,
               vertical: 25,
             ),
@@ -150,6 +146,56 @@ class DraggableComponentWithProps extends StatelessWidget {
   }
 }
 
+class DraggableComponentWithName extends StatelessWidget {
+  const DraggableComponentWithName({
+    super.key,
+    required this.component,
+    this.isDisabled = false,
+  });
+
+  final Component component;
+  final bool isDisabled;
+
+  @override
+  Widget build(BuildContext context) {
+    final width = context.layout.value<double>(xs: 100, sm: 130);
+    final iconSize = context.layout.value<double>(
+      xs: 60,
+      sm: 90,
+      md: 55,
+      lg: 145,
+    );
+    return SizedBox(
+      width: width,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (isDisabled)
+            Icon(
+              component.icon,
+              color: AppColors.black.withOpacity(0.1),
+              size: iconSize,
+            )
+          else
+            DraggableComponent(component: component),
+          const SizedBox(height: 5),
+          Text(
+            component.name,
+            style: context.layout.value(
+              xs: AppTextStyles.bodyS(context.layout),
+              sm: AppTextStyles.bodyM(context.layout),
+              lg: AppTextStyles.bodyL(context.layout),
+            ),
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class DraggableComponent extends StatelessWidget {
   const DraggableComponent({
     super.key,
@@ -163,13 +209,15 @@ class DraggableComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = context.layout.value<double>(
-      xs: 30,
-      sm: 55,
+      xs: 60,
+      sm: 90,
+      md: 55,
       lg: 145,
     );
     final draggingSize = context.layout.value<double>(
-      xs: 30,
-      sm: 45,
+      xs: 45,
+      sm: 70,
+      md: 45,
       lg: 90,
     );
     final inBinSize = context.layout.value<double>(

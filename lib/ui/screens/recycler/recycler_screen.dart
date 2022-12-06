@@ -116,13 +116,13 @@ class _RecyclerIntro extends StatelessWidget {
                       color: AppColors.darkGreen,
                       direction: AxisDirection.down,
                     ),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 30),
                     Text(
                       'Quero criar uma linha de triagem',
                       style: AppTextStyles.h2(context.layout),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 30),
                     ElevatedButton(
                       onPressed: () => context.go('/recycler/grid?type=pc'),
                       style: ElevatedButton.styleFrom(

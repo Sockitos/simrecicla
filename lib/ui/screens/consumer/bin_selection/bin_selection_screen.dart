@@ -38,7 +38,7 @@ class BinSelectionScreen extends ConsumerWidget {
               children: [
                 SizedBox(height: AppSpacings.big(context.layout)),
                 Text(
-                  state.package.name.replaceAll(RegExp(r'\n'), ' '),
+                  package.name.replaceAll(RegExp(r'\n'), ' '),
                   textAlign: TextAlign.left,
                   style: AppTextStyles.h2(context.layout)
                       .withColor(AppColors.lightGreen),
@@ -155,19 +155,21 @@ class BinSelectionScreen extends ConsumerWidget {
                     Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        package.name,
+                        package.name.replaceAll(RegExp(r'\n'), ' '),
                         textAlign: TextAlign.left,
                         style: AppTextStyles.h2(context.layout)
                             .withColor(AppColors.lightGreen),
                       ),
                     ),
-                    if (state.showResults)
+                    SizedBox(height: AppSpacings.small(context.layout)),
+                    if (state.showResults) ...[
                       VerticalResults(
                         whereComponents: state.whereComponents,
                         package: package,
                         onClose: ref.read(stateProvider.notifier).hideResults,
-                      )
-                    else ...[
+                      ),
+                      SizedBox(height: AppSpacings.big(context.layout)),
+                    ] else ...[
                       ConstrainedBox(
                         constraints: context.layout.value(
                           xs: BoxConstraints(
@@ -192,7 +194,7 @@ class BinSelectionScreen extends ConsumerWidget {
                               MediaQuery.of(context).padding.top -
                               MediaQuery.of(context).padding.bottom -
                               60 -
-                              context.layout.value(xs: 290, sm: 390),
+                              context.layout.value(xs: 305, sm: 420),
                           child: BinsTargets(
                             whereComponents: state.whereComponents,
                             onAcceptComponent:
@@ -230,15 +232,18 @@ class BinSelectionScreen extends ConsumerWidget {
                           padding: EdgeInsets.symmetric(
                             horizontal: AppSpacings.big(context.layout),
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              for (final c in package.components)
-                                DraggableComponentWithProps(
-                                  component: c,
-                                  isDisabled: state.whereComponents[c] != null,
-                                )
-                            ],
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                for (final c in package.components)
+                                  DraggableComponentWithName(
+                                    component: c,
+                                    isDisabled:
+                                        state.whereComponents[c] != null,
+                                  )
+                              ],
+                            ),
                           ),
                         ),
                       ),

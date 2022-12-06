@@ -104,91 +104,95 @@ class AppScreen extends StatelessWidget {
       ),
       body: ScrollConfiguration(
         behavior: const MaterialScrollBehavior(),
-        child: isTooSmall
-            ? const ColoredBox(
+        child: Stack(
+          children: [
+            ListView(
+              primary: true,
+              children: [
+                AppBar(
+                  title: Text(
+                    'Circular SimTech',
+                    style: AppTextStyles.h4(context.layout),
+                  ),
+                  leading: kIsWeb ? null : const BackButton(),
+                  titleSpacing: AppSpacings.big(context.layout),
+                  automaticallyImplyLeading: false,
+                  actions: context.breakpoint > LayoutBreakpoint.sm
+                      ? [
+                          TextButton(
+                            onPressed: () => context.go('/consumer'),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Text(
+                                'Reciclar',
+                                style: AppTextStyles.bodyM(context.layout),
+                              ),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () => context.go('/packager'),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Text(
+                                'Melhorar embalagem',
+                                style: AppTextStyles.bodyM(context.layout),
+                              ),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () => context.go('/recycler'),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Text(
+                                'Otimizar linha',
+                                style: AppTextStyles.bodyM(context.layout),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: AppSpacings.big(context.layout)),
+                        ]
+                      : [
+                          Builder(
+                            builder: (context) {
+                              return IconButton(
+                                onPressed: Scaffold.of(context).openDrawer,
+                                icon: const Icon(Icons.menu_rounded),
+                              );
+                            },
+                          ),
+                          SizedBox(
+                            width: AppSpacings.big(context.layout) - 8,
+                          ),
+                        ],
+                ),
+                ClipRect(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: MediaQuery.of(context).size.height -
+                          MediaQuery.of(context).padding.top -
+                          MediaQuery.of(context).padding.bottom -
+                          60,
+                    ),
+                    child: Padding(
+                      padding:
+                          padding ?? AppSpacings.screenPadding(context.layout),
+                      child: body,
+                    ),
+                  ),
+                ),
+                const Footer(),
+              ],
+            ),
+            if (isTooSmall)
+              const ColoredBox(
                 color: AppColors.lightGreen,
                 child: SizedBox.expand(),
               )
-            : ListView(
-                primary: true,
-                children: [
-                  AppBar(
-                    title: Text(
-                      'Circular SimTech',
-                      style: AppTextStyles.h4(context.layout),
-                    ),
-                    leading: kIsWeb ? null : const BackButton(),
-                    titleSpacing: AppSpacings.big(context.layout),
-                    automaticallyImplyLeading: false,
-                    actions: context.breakpoint > LayoutBreakpoint.sm
-                        ? [
-                            TextButton(
-                              onPressed: () => context.go('/consumer'),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 10),
-                                child: Text(
-                                  'Reciclar',
-                                  style: AppTextStyles.bodyM(context.layout),
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () => context.go('/packager'),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 10),
-                                child: Text(
-                                  'Melhorar embalagem',
-                                  style: AppTextStyles.bodyM(context.layout),
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () => context.go('/recycler'),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 10),
-                                child: Text(
-                                  'Otimizar linha',
-                                  style: AppTextStyles.bodyM(context.layout),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: AppSpacings.big(context.layout)),
-                          ]
-                        : [
-                            Builder(
-                              builder: (context) {
-                                return IconButton(
-                                  onPressed: Scaffold.of(context).openDrawer,
-                                  icon: const Icon(Icons.menu_rounded),
-                                );
-                              },
-                            ),
-                            SizedBox(
-                              width: AppSpacings.big(context.layout) - 8,
-                            ),
-                          ],
-                  ),
-                  ClipRect(
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        minHeight: MediaQuery.of(context).size.height -
-                            MediaQuery.of(context).padding.top -
-                            MediaQuery.of(context).padding.bottom -
-                            60,
-                      ),
-                      child: Padding(
-                        padding: padding ??
-                            AppSpacings.screenPadding(context.layout),
-                        child: body,
-                      ),
-                    ),
-                  ),
-                  const Footer(),
-                ],
-              ),
+          ],
+        ),
       ),
     );
   }

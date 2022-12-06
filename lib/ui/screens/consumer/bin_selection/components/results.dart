@@ -198,8 +198,9 @@ class Results extends HookWidget {
                                     height: 180,
                                     child: _ImpactChart(
                                       label: '€ VAB / Embalagem',
-                                      user: 0.33,
-                                      alternative: 0.34,
+                                      user: results.userImpacts.economical,
+                                      alternative:
+                                          results.alternativeImpacts.economical,
                                       isCorrect: results.isCorrect,
                                       correctDirection: AxisDirection.up,
                                       incorrectDirection: AxisDirection.down,
@@ -357,7 +358,7 @@ class VerticalResults extends HookWidget {
               children: [
                 Padding(
                   padding: AppSpacings.dialogPadding(context.layout) +
-                      const EdgeInsets.only(top: 30),
+                      const EdgeInsets.only(top: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: mode.value.when(
@@ -376,8 +377,8 @@ class VerticalResults extends HookWidget {
                               Row(
                                 children: [
                                   SizedBox(
-                                    height: 54,
-                                    width: 54,
+                                    height: 48,
+                                    width: 48,
                                     child: DecoratedBox(
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
@@ -388,7 +389,7 @@ class VerticalResults extends HookWidget {
                                       ),
                                       child: const Icon(
                                         Icons.spa_outlined,
-                                        size: 34,
+                                        size: 28,
                                         color: AppColors.lightGreen,
                                       ),
                                     ),
@@ -397,9 +398,7 @@ class VerticalResults extends HookWidget {
                                   Text(
                                     'Impactes Ambientais',
                                     style: AppTextStyles.h4(context.layout)
-                                        .withColor(
-                                      AppColors.lightGreen,
-                                    ),
+                                        .withColor(AppColors.lightGreen),
                                   ),
                                 ],
                               ),
@@ -437,8 +436,8 @@ class VerticalResults extends HookWidget {
                               Row(
                                 children: [
                                   SizedBox(
-                                    height: 54,
-                                    width: 54,
+                                    height: 48,
+                                    width: 48,
                                     child: DecoratedBox(
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
@@ -449,7 +448,7 @@ class VerticalResults extends HookWidget {
                                       ),
                                       child: const Icon(
                                         Icons.account_balance_wallet_outlined,
-                                        size: 34,
+                                        size: 28,
                                         color: AppColors.lightGreen,
                                       ),
                                     ),
@@ -458,9 +457,7 @@ class VerticalResults extends HookWidget {
                                   Text(
                                     'Impactes Económicos',
                                     style: AppTextStyles.h4(context.layout)
-                                        .withColor(
-                                      AppColors.lightGreen,
-                                    ),
+                                        .withColor(AppColors.lightGreen),
                                   ),
                                 ],
                               ),
@@ -481,8 +478,9 @@ class VerticalResults extends HookWidget {
                             height: 180,
                             child: _ImpactChart(
                               label: '€ VAB / Embalagem',
-                              user: 0.33,
-                              alternative: 0.34,
+                              user: results.userImpacts.economical,
+                              alternative:
+                                  results.alternativeImpacts.economical,
                               isCorrect: results.isCorrect,
                               correctDirection: AxisDirection.up,
                               incorrectDirection: AxisDirection.down,
