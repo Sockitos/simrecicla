@@ -43,11 +43,12 @@ class FormScreenModel with _$FormScreenModel {
     return recommendations;
   }
 
+  List<Question> get requiredQuestions =>
+      PackagerData.questions.where(isQuestionRequired).toList();
+
   bool get isSubmittable {
     if (material == null) return false;
     if (weight == null) return false;
-    const questions = PackagerData.questions;
-    final requiredQuestions = questions.where(isQuestionRequired).toList();
     for (final q in requiredQuestions) {
       if (!answers.containsKey(q.id)) return false;
     }
@@ -78,11 +79,16 @@ class FormScreenNotifier extends StateNotifier<FormScreenModel> {
         recycledPercentage: recycledPercentage,
       );
 
-  void setAnswer(Answer answer, {required int questionId}) =>
-      state = state.copyWith(
-        answers: {
-          ...state.answers,
-          questionId: answer,
-        },
-      );
+  void setAnswer(Answer answer, {required int questionId}) {
+    final newState = state.copyWith(
+      answers: {
+        ...state.answers,
+        questionId: answer,
+      },
+    );
+    final answers = {...newState.answers};
+    final requiredQuestionsIds = newState.requiredQuestions.map((q) => q.id);
+    answers.removeWhere((key, value) => !requiredQuestionsIds.contains(key));
+    state = newState.copyWith(answers: {...answers});
+  }
 }
