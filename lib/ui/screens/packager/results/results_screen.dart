@@ -195,7 +195,7 @@ class ResultsScreen extends StatelessWidget {
                                 ),
                               ),
                               RatingBar(rating: rating),
-                              const SizedBox(width: 10),
+                              const SizedBox(width: 20),
                             ],
                           ),
                         ),

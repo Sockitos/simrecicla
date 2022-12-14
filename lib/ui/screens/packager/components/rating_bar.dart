@@ -56,7 +56,7 @@ class _VerticalRatingBar extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'Totalmente reciclável',
+          'Reciclável',
           style: AppTextStyles.bodyL(context.layout),
         ),
         const SizedBox(height: 30),
