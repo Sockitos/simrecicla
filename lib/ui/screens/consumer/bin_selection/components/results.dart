@@ -46,261 +46,266 @@ class Results extends HookWidget {
         Padding(
           padding: const EdgeInsets.only(left: 55),
           child: AppCard(
-            child: Stack(
-              children: [
-                Padding(
-                  padding: AppSpacings.dialogPadding(context.layout) +
-                      const EdgeInsets.only(left: 40),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: mode.value.when(
-                      packageResults: () {
-                        final results =
-                            ConsumerService.getResults(whereComponents);
-                        return [
-                          const SizedBox(height: 10),
-                          Text(
-                            'Embalagem completa',
-                            style: AppTextStyles.h2(context.layout),
-                          ),
-                          const SizedBox(height: 30),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                flex: 5,
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        SizedBox(
-                                          height: 54,
-                                          width: 54,
-                                          child: DecoratedBox(
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              border: Border.all(
-                                                width: 4,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 450),
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: AppSpacings.dialogPadding(context.layout) +
+                        const EdgeInsets.only(left: 40),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: mode.value.when(
+                        packageResults: () {
+                          final results =
+                              ConsumerService.getResults(whereComponents);
+                          return [
+                            const SizedBox(height: 10),
+                            Text(
+                              'Embalagem completa',
+                              style: AppTextStyles.h2(context.layout),
+                            ),
+                            const SizedBox(height: 30),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  flex: 5,
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 54,
+                                            width: 54,
+                                            child: DecoratedBox(
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                  width: 4,
+                                                  color: AppColors.lightGreen,
+                                                ),
+                                              ),
+                                              child: const Icon(
+                                                Icons.spa_outlined,
+                                                size: 34,
                                                 color: AppColors.lightGreen,
                                               ),
                                             ),
-                                            child: const Icon(
-                                              Icons.spa_outlined,
-                                              size: 34,
-                                              color: AppColors.lightGreen,
+                                          ),
+                                          const SizedBox(width: 15),
+                                          Text(
+                                            'Impactes Ambientais',
+                                            style:
+                                                AppTextStyles.h4(context.layout)
+                                                    .withColor(
+                                              AppColors.lightGreen,
                                             ),
                                           ),
-                                        ),
-                                        const SizedBox(width: 15),
-                                        Text(
-                                          'Impactes Ambientais',
-                                          style:
-                                              AppTextStyles.h4(context.layout)
-                                                  .withColor(
-                                            AppColors.lightGreen,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 15),
-                                    Text(
-                                      results.isCorrect
-                                          ? results.userImpacts.environmental
-                                                  .isNegative
-                                              ? 'A deposição da embalagem no contentor adequado representa benefícios ambientais face à não reciclagem destes materiais.'
-                                              : 'Ao colocar a embalagem no contentor adequado contribui para a redução dos impactes ambientais associados à gestão destes resíduos.'
-                                          : 'Os destinos selecionados apresentam impactes ambientais superiores à adequada deposição da embalagem no contentor correto.',
-                                      style: AppTextStyles.bodyL(
-                                        context.layout,
+                                        ],
                                       ),
-                                    ),
-                                  ],
+                                      const SizedBox(height: 15),
+                                      Text(
+                                        results.isCorrect
+                                            ? results.userImpacts.environmental
+                                                    .isNegative
+                                                ? 'A deposição da embalagem no contentor adequado representa benefícios ambientais face à não reciclagem destes materiais.'
+                                                : 'Ao colocar a embalagem no contentor adequado contribui para a redução dos impactes ambientais associados à gestão destes resíduos.'
+                                            : 'Os destinos selecionados apresentam impactes ambientais superiores à adequada deposição da embalagem no contentor correto.',
+                                        style: AppTextStyles.bodyL(
+                                          context.layout,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(width: 30),
-                              Expanded(
-                                flex: 4,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 10),
-                                  child: SizedBox(
-                                    height: 180,
-                                    child: _ImpactChart(
-                                      label: 'g CO2eq / Embalagem',
-                                      user: results.userImpacts.environmental,
-                                      alternative: results
-                                          .alternativeImpacts.environmental,
-                                      isCorrect: results.isCorrect,
-                                      correctDirection: AxisDirection.down,
-                                      incorrectDirection: AxisDirection.up,
+                                const SizedBox(width: 30),
+                                Expanded(
+                                  flex: 4,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 10),
+                                    child: SizedBox(
+                                      height: 180,
+                                      child: _ImpactChart(
+                                        label: 'g CO2eq / Embalagem',
+                                        user: results.userImpacts.environmental,
+                                        alternative: results
+                                            .alternativeImpacts.environmental,
+                                        isCorrect: results.isCorrect,
+                                        correctDirection: AxisDirection.down,
+                                        incorrectDirection: AxisDirection.up,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 35),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                flex: 5,
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        SizedBox(
-                                          height: 54,
-                                          width: 54,
-                                          child: DecoratedBox(
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              border: Border.all(
-                                                width: 4,
+                              ],
+                            ),
+                            const SizedBox(height: 35),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  flex: 5,
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 54,
+                                            width: 54,
+                                            child: DecoratedBox(
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                  width: 4,
+                                                  color: AppColors.lightGreen,
+                                                ),
+                                              ),
+                                              child: const Icon(
+                                                Icons
+                                                    .account_balance_wallet_outlined,
+                                                size: 34,
                                                 color: AppColors.lightGreen,
                                               ),
                                             ),
-                                            child: const Icon(
-                                              Icons
-                                                  .account_balance_wallet_outlined,
-                                              size: 34,
-                                              color: AppColors.lightGreen,
+                                          ),
+                                          const SizedBox(width: 15),
+                                          Text(
+                                            'Impactes Económicos',
+                                            style:
+                                                AppTextStyles.h4(context.layout)
+                                                    .withColor(
+                                              AppColors.lightGreen,
                                             ),
                                           ),
-                                        ),
-                                        const SizedBox(width: 15),
-                                        Text(
-                                          'Impactes Económicos',
-                                          style:
-                                              AppTextStyles.h4(context.layout)
-                                                  .withColor(
-                                            AppColors.lightGreen,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 15),
-                                    Text(
-                                      results.isCorrect
-                                          ? 'A deposição da embalagem nos contentores adequados representa um contributo para a riqueza em Portugal superior face à não reciclagem destes materiais.'
-                                          : 'Os destinos selecionados apresentam um contributo para a riqueza em Portugal inferior à colocação nos contentores adequados.',
-                                      style: AppTextStyles.bodyL(
-                                        context.layout,
+                                        ],
                                       ),
-                                    ),
-                                  ],
+                                      const SizedBox(height: 15),
+                                      Text(
+                                        results.isCorrect
+                                            ? 'A deposição da embalagem nos contentores adequados representa um contributo para a riqueza em Portugal superior face à não reciclagem destes materiais.'
+                                            : 'Os destinos selecionados apresentam um contributo para a riqueza em Portugal inferior à colocação nos contentores adequados.',
+                                        style: AppTextStyles.bodyL(
+                                          context.layout,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(width: 30),
-                              Expanded(
-                                flex: 4,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 10),
-                                  child: SizedBox(
-                                    height: 180,
-                                    child: _ImpactChart(
-                                      label: '€ VAB / Embalagem',
-                                      user: results.userImpacts.economical,
-                                      alternative:
-                                          results.alternativeImpacts.economical,
-                                      isCorrect: results.isCorrect,
-                                      correctDirection: AxisDirection.up,
-                                      incorrectDirection: AxisDirection.down,
+                                const SizedBox(width: 30),
+                                Expanded(
+                                  flex: 4,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 10),
+                                    child: SizedBox(
+                                      height: 180,
+                                      child: _ImpactChart(
+                                        label: '€ VAB / Embalagem',
+                                        user: results.userImpacts.economical,
+                                        alternative: results
+                                            .alternativeImpacts.economical,
+                                        isCorrect: results.isCorrect,
+                                        correctDirection: AxisDirection.up,
+                                        incorrectDirection: AxisDirection.down,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 30),
-                          Text(
-                            'Clique em cada componente para saber mais.',
-                            style: AppTextStyles.bodyS(context.layout),
-                          ),
-                        ];
-                      },
-                      componentResults: (componentId) {
-                        final component = whereComponents.keys
-                            .firstWhere((c) => c.name == componentId);
-                        final isCorrect =
-                            whereComponents[component] == component.where;
-                        return [
-                          Text(
-                            component.name,
-                            style: AppTextStyles.h2(context.layout),
-                          ),
-                          const SizedBox(height: 30),
-                          Text(
-                            isCorrect ? component.ifTrue : component.ifFalse,
-                            style: AppTextStyles.bodyL(context.layout),
-                          ),
-                          const SizedBox(height: 60),
-                          Text(
-                            'Recomendações',
-                            style: AppTextStyles.h3(context.layout)
-                                .withColor(AppColors.lightGreen),
-                          ),
-                          const SizedBox(height: 30),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              for (var i = 0;
-                                  i < component.recommendations.length;
-                                  i++) ...[
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(
-                                      height: 54,
-                                      width: 54,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            width: 4,
-                                            color: AppColors.lightGreen,
+                              ],
+                            ),
+                            const SizedBox(height: 30),
+                            Text(
+                              'Clique em cada componente para saber mais.',
+                              style: AppTextStyles.bodyS(context.layout),
+                            ),
+                          ];
+                        },
+                        componentResults: (componentId) {
+                          final component = whereComponents.keys
+                              .firstWhere((c) => c.name == componentId);
+                          final isCorrect =
+                              whereComponents[component] == component.where;
+                          return [
+                            Text(
+                              component.name,
+                              style: AppTextStyles.h2(context.layout),
+                            ),
+                            const SizedBox(height: 30),
+                            Text(
+                              isCorrect ? component.ifTrue : component.ifFalse,
+                              style: AppTextStyles.bodyL(context.layout),
+                            ),
+                            const SizedBox(height: 60),
+                            Text(
+                              'Recomendações',
+                              style: AppTextStyles.h3(context.layout)
+                                  .withColor(AppColors.lightGreen),
+                            ),
+                            const SizedBox(height: 30),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                for (var i = 0;
+                                    i < component.recommendations.length;
+                                    i++) ...[
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        height: 54,
+                                        width: 54,
+                                        child: DecoratedBox(
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                              width: 4,
+                                              color: AppColors.lightGreen,
+                                            ),
                                           ),
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            '${i + 1}',
-                                            style: AppTextStyles.h3(
-                                              context.layout,
-                                            )
-                                                .withColor(AppColors.lightGreen)
-                                                .copyWith(height: 1.1),
+                                          child: Center(
+                                            child: Text(
+                                              '${i + 1}',
+                                              style: AppTextStyles.h3(
+                                                context.layout,
+                                              )
+                                                  .withColor(
+                                                    AppColors.lightGreen,
+                                                  )
+                                                  .copyWith(height: 1.1),
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    const SizedBox(width: 20),
-                                    Text(
-                                      component.recommendations[i],
-                                      style: AppTextStyles.bodyL(
-                                        context.layout,
+                                      const SizedBox(width: 20),
+                                      Text(
+                                        component.recommendations[i],
+                                        style: AppTextStyles.bodyL(
+                                          context.layout,
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 20),
-                              ]
-                            ],
-                          ),
-                        ];
-                      },
+                                    ],
+                                  ),
+                                  const SizedBox(height: 20),
+                                ]
+                              ],
+                            ),
+                          ];
+                        },
+                      ),
                     ),
                   ),
-                ),
-                Positioned(
-                  right: 15,
-                  top: 15,
-                  child: IconButton(
-                    onPressed: onClose,
-                    iconSize: 44,
-                    color: AppColors.lightGreen,
-                    icon: const Icon(Icons.close_outlined),
+                  Positioned(
+                    right: 15,
+                    top: 15,
+                    child: IconButton(
+                      onPressed: onClose,
+                      iconSize: 44,
+                      color: AppColors.lightGreen,
+                      icon: const Icon(Icons.close_outlined),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -686,7 +691,7 @@ class _ImpactChart extends StatelessWidget {
                             maxValue: maxValue,
                             color: isCorrect
                                 ? AppColors.lightGreen
-                                : AppColors.grey5,
+                                : AppColors.grey4,
                           ),
                         ),
                         const Spacer(flex: 2),
@@ -697,7 +702,7 @@ class _ImpactChart extends StatelessWidget {
                             minValue: minValue,
                             maxValue: maxValue,
                             color: isCorrect
-                                ? AppColors.grey5
+                                ? AppColors.grey4
                                 : AppColors.lightGreen,
                           ),
                         ),
