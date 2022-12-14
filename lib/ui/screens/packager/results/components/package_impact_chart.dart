@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
@@ -521,8 +522,10 @@ class _ChartBar extends StatelessWidget {
             ColoredBox(
               color: color,
               child: Center(
-                child: Text(
+                child: AutoSizeText(
                   label,
+                  overflowReplacement: const SizedBox(),
+                  minFontSize: 15,
                   style: AppTextStyles.bodyL(context.layout)
                       .withColor(AppColors.white)
                       .copyWith(
