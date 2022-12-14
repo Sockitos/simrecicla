@@ -686,7 +686,7 @@ class _ImpactChart extends StatelessWidget {
                             maxValue: maxValue,
                             color: isCorrect
                                 ? AppColors.lightGreen
-                                : AppColors.grey4,
+                                : AppColors.grey5,
                           ),
                         ),
                         const Spacer(flex: 2),
@@ -697,7 +697,7 @@ class _ImpactChart extends StatelessWidget {
                             minValue: minValue,
                             maxValue: maxValue,
                             color: isCorrect
-                                ? AppColors.grey4
+                                ? AppColors.grey5
                                 : AppColors.lightGreen,
                           ),
                         ),
