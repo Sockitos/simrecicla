@@ -54,12 +54,21 @@ class RecyclerService {
       }
     }
 
-    final calculationOrder = graph.topologicalOrdering!;
+    final calculationOrder = graph.topologicalOrdering;
+    if (calculationOrder == null) isValid = false;
+
+    if (!isValid) {
+      return MachineGraph(
+        graph: graph,
+        isValidated: isValid,
+      );
+    }
+
     final inputs = <String, MaterialSample>{};
     final outputs = <MachineOutputId, MaterialSample>{
       const MachineOutputId('feed0', 'feed'): feedSample,
     };
-    for (final machineId in calculationOrder) {
+    for (final machineId in calculationOrder!) {
       if (machineId == 'feed0') continue;
       final machine = machines.firstWhere((m) => m.id0 == machineId);
       MaterialSample? machineInputTotal;
