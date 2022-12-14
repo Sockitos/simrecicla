@@ -235,6 +235,7 @@ class BinSelectionScreen extends ConsumerWidget {
                           child: Center(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 for (final c in package.components)
                                   DraggableComponentWithName(
