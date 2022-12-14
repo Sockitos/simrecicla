@@ -24,7 +24,7 @@ class Instructions extends StatelessWidget {
               ),
           children: [
             Text(
-              'Instructions',
+              'Instruções',
               textAlign: TextAlign.center,
               style: AppTextStyles.h2(context.layout),
             ),
