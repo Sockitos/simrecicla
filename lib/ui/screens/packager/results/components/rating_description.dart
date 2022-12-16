@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:layout/layout.dart';
 import 'package:simtech/constants/colors.dart';
 import 'package:simtech/constants/text_styles.dart';
+import 'package:simtech/gen/fonts.gen.dart';
 import 'package:simtech/models/packager/enums.dart';
 
 class RatingDescription extends StatelessWidget {
@@ -54,13 +54,12 @@ class RatingDescription extends StatelessWidget {
             radius: context.layout.value(xs: 40, lg: 50),
             child: Text(
               rating.name.toUpperCase(),
-              style: GoogleFonts.dosis(
-                textStyle: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: context.layout.value(xs: 45, lg: 60),
-                  color: AppColors.white,
-                  height: 1.1,
-                ),
+              style: TextStyle(
+                fontFamily: FontFamily.dosis,
+                fontWeight: FontWeight.w600,
+                fontSize: context.layout.value(xs: 45, lg: 60),
+                color: AppColors.white,
+                height: 1.1,
               ),
             ),
           ),

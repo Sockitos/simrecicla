@@ -177,7 +177,7 @@ class ResultsScreen extends StatelessWidget {
                           height: 780,
                           child: Row(
                             children: [
-                              const SizedBox(width: 20),
+                              const SizedBox(width: 15),
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment:
@@ -194,8 +194,9 @@ class ResultsScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              RatingBar(rating: rating),
                               const SizedBox(width: 20),
+                              RatingBar(rating: rating),
+                              const SizedBox(width: 15),
                             ],
                           ),
                         ),
