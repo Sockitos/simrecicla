@@ -23,26 +23,26 @@ class DropdownField<T> extends AppFormField {
   final String Function(T)? optionToString;
 
   @override
-  Widget? buildBottom(BuildContext context) => value != null
-      ? Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const SizedBox(height: 2),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Text(
-                // ignore: null_check_on_nullable_type_parameter
-                optionToString == null ? '$value' : optionToString!(value!),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.bodyM(context.layout)
-                    .withColor(AppColors.grey5),
-              ),
-            ),
-          ],
-        )
-      : null;
+  Widget? buildBottom(BuildContext context) {
+    if (value == null) return null;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const SizedBox(height: 2),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Text(
+            // ignore: null_check_on_nullable_type_parameter
+            optionToString == null ? '$value' : optionToString!(value!),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: AppTextStyles.bodyM(context.layout),
+          ),
+        ),
+      ],
+    );
+  }
 
   @override
   Widget buildChild(BuildContext context) {
