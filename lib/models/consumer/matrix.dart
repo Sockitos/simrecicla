@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:simtech/models/consumer/line.dart';
+import 'package:simrecicla/models/consumer/line.dart';
 
 part 'matrix.freezed.dart';
 

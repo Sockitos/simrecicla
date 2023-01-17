@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:simtech/models/consumer/component.dart';
-import 'package:simtech/models/consumer/package.dart';
-import 'package:simtech/ui/screens/consumer/bin_selection/bin_selection_screen.dart';
+import 'package:simrecicla/models/consumer/component.dart';
+import 'package:simrecicla/models/consumer/package.dart';
+import 'package:simrecicla/ui/screens/consumer/bin_selection/bin_selection_screen.dart';
 
 part 'bin_selection_screen_model.freezed.dart';
 

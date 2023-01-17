@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:simtech/models/packager/enums.dart';
+import 'package:simrecicla/models/packager/enums.dart';
 
 part 'answer.freezed.dart';
 

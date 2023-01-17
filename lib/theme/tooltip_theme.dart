@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
 
 final tooltipTheme = TooltipThemeData(
   textStyle: AppTextStyles.tooltip(),

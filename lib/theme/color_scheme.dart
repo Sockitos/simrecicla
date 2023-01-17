@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simtech/constants/colors.dart';
+import 'package:simrecicla/constants/colors.dart';
 
 const colorScheme = ColorScheme(
   primary: AppColors.lightGreen,

@@ -10,9 +10,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/ui/widgets/app_scrollbar.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/ui/widgets/app_scrollbar.dart';
 
 const Duration _kAppDropdownMenuDuration = Duration(milliseconds: 300);
 const double _kMenuItemHeight = kMinInteractiveDimension;

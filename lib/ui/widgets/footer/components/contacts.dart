@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
 
 class Contacts extends StatelessWidget {
   const Contacts({

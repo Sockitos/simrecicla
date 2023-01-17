@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/models/recycler/machine_port.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/models/recycler/machine_port.dart';
 
 class OutputIndicator extends StatelessWidget {
   const OutputIndicator({

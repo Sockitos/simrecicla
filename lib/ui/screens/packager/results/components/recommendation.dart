@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/ui/widgets/arrow.dart';
-import 'package:simtech/ui/widgets/linkify.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/ui/widgets/arrow.dart';
+import 'package:simrecicla/ui/widgets/linkify.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class Recommendation extends StatelessWidget {

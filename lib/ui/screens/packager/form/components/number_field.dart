@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/ui/screens/packager/form/components/app_form_field.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/ui/screens/packager/form/components/app_form_field.dart';
 
 bool useNodeHasFocus(FocusNode focusNode) {
   final hasFocus = useState(focusNode.hasFocus);

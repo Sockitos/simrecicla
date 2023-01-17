@@ -1,8 +1,8 @@
-import 'package:simtech/models/consumer/component.dart';
-import 'package:simtech/models/consumer/line.dart';
-import 'package:simtech/models/consumer/matrix.dart';
-import 'package:simtech/models/consumer/selection_impacts.dart';
-import 'package:simtech/models/consumer/selection_results.dart';
+import 'package:simrecicla/models/consumer/component.dart';
+import 'package:simrecicla/models/consumer/line.dart';
+import 'package:simrecicla/models/consumer/matrix.dart';
+import 'package:simrecicla/models/consumer/selection_impacts.dart';
+import 'package:simrecicla/models/consumer/selection_results.dart';
 
 class ConsumerService {
   const ConsumerService._();

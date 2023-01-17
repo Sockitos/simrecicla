@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:simtech/models/consumer/selection_impacts.dart';
+import 'package:simrecicla/models/consumer/selection_impacts.dart';
 
 part 'selection_results.freezed.dart';
 

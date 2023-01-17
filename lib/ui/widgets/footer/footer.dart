@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/ui/widgets/footer/components/contacts.dart';
-import 'package:simtech/ui/widgets/footer/components/copyright.dart';
-import 'package:simtech/ui/widgets/footer/components/social_buttons.dart';
-import 'package:simtech/ui/widgets/footer/components/sponsors.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/ui/widgets/footer/components/contacts.dart';
+import 'package:simrecicla/ui/widgets/footer/components/copyright.dart';
+import 'package:simrecicla/ui/widgets/footer/components/social_buttons.dart';
+import 'package:simrecicla/ui/widgets/footer/components/sponsors.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});

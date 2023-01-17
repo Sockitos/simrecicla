@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/ui/screens/packager/form/components/app_form_field.dart';
-import 'package:simtech/utils/hooks.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/ui/screens/packager/form/components/app_form_field.dart';
+import 'package:simrecicla/utils/hooks.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class QuestionsPageView extends HookWidget {

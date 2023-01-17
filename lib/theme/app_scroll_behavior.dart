@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/ui/widgets/app_scrollbar.dart';
+import 'package:simrecicla/ui/widgets/app_scrollbar.dart';
 
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override

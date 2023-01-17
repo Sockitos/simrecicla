@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/ui/screens/packager/form/components/app_form_field.dart';
-import 'package:simtech/ui/widgets/app_dropdown.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/ui/screens/packager/form/components/app_form_field.dart';
+import 'package:simrecicla/ui/widgets/app_dropdown.dart';
 
 class DropdownField<T> extends AppFormField {
   const DropdownField({

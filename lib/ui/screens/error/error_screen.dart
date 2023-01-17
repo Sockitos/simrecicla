@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:simtech/ui/widgets/app_screen.dart';
+import 'package:simrecicla/ui/widgets/app_screen.dart';
 
 class ErrorScreen extends StatelessWidget {
   const ErrorScreen({super.key});

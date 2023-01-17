@@ -1,7 +1,7 @@
 import 'package:directed_graph/directed_graph.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:simtech/models/recycler/machine_port.dart';
-import 'package:simtech/models/recycler/material_sample.dart';
+import 'package:simrecicla/models/recycler/machine_port.dart';
+import 'package:simrecicla/models/recycler/material_sample.dart';
 
 part 'machine_graph.freezed.dart';
 

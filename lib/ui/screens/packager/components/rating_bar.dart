@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/packager/enums.dart';
-import 'package:simtech/ui/widgets/arrow.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/models/packager/enums.dart';
+import 'package:simrecicla/ui/widgets/arrow.dart';
 
 class RatingBar extends StatelessWidget {
   const RatingBar({

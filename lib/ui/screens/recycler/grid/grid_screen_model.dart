@@ -3,17 +3,17 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:simtech/constants/machines_icons.dart';
-import 'package:simtech/data/recycler_data.dart';
-import 'package:simtech/models/recycler/grid.dart';
-import 'package:simtech/models/recycler/machine.dart';
-import 'package:simtech/models/recycler/machine_graph.dart';
-import 'package:simtech/models/recycler/machine_port.dart';
-import 'package:simtech/models/recycler/material_sample.dart';
-import 'package:simtech/models/recycler/rotatable_icon_data.dart';
-import 'package:simtech/services/recycler_service.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/draggable_machine.dart';
-import 'package:simtech/ui/screens/recycler/grid/grid_screen.dart';
+import 'package:simrecicla/constants/machines_icons.dart';
+import 'package:simrecicla/data/recycler_data.dart';
+import 'package:simrecicla/models/recycler/grid.dart';
+import 'package:simrecicla/models/recycler/machine.dart';
+import 'package:simrecicla/models/recycler/machine_graph.dart';
+import 'package:simrecicla/models/recycler/machine_port.dart';
+import 'package:simrecicla/models/recycler/material_sample.dart';
+import 'package:simrecicla/models/recycler/rotatable_icon_data.dart';
+import 'package:simrecicla/services/recycler_service.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/draggable_machine.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/grid_screen.dart';
 
 part 'grid_screen_model.freezed.dart';
 

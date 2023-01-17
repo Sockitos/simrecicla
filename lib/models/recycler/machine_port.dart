@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:simtech/models/recycler/material_sample.dart';
+import 'package:simrecicla/models/recycler/material_sample.dart';
 
 part 'machine_port.freezed.dart';
 

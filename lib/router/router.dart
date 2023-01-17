@@ -2,19 +2,19 @@ import 'package:collection/collection.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:simtech/data/consumer_data.dart';
-import 'package:simtech/services/packager_service.dart';
-import 'package:simtech/ui/screens/consumer/bin_selection/bin_selection_screen.dart';
-import 'package:simtech/ui/screens/consumer/categories/categories_screen.dart';
-import 'package:simtech/ui/screens/consumer/consumer_screen.dart';
-import 'package:simtech/ui/screens/error/error_screen.dart';
-import 'package:simtech/ui/screens/landing/landing_screen.dart';
-import 'package:simtech/ui/screens/packager/form/form_screen.dart';
-import 'package:simtech/ui/screens/packager/form/form_screen_model.dart';
-import 'package:simtech/ui/screens/packager/packager_screen.dart';
-import 'package:simtech/ui/screens/packager/results/results_screen.dart';
-import 'package:simtech/ui/screens/recycler/grid/grid_screen.dart';
-import 'package:simtech/ui/screens/recycler/recycler_screen.dart';
+import 'package:simrecicla/data/consumer_data.dart';
+import 'package:simrecicla/services/packager_service.dart';
+import 'package:simrecicla/ui/screens/consumer/bin_selection/bin_selection_screen.dart';
+import 'package:simrecicla/ui/screens/consumer/categories/categories_screen.dart';
+import 'package:simrecicla/ui/screens/consumer/consumer_screen.dart';
+import 'package:simrecicla/ui/screens/error/error_screen.dart';
+import 'package:simrecicla/ui/screens/landing/landing_screen.dart';
+import 'package:simrecicla/ui/screens/packager/form/form_screen.dart';
+import 'package:simrecicla/ui/screens/packager/form/form_screen_model.dart';
+import 'package:simrecicla/ui/screens/packager/packager_screen.dart';
+import 'package:simrecicla/ui/screens/packager/results/results_screen.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/grid_screen.dart';
+import 'package:simrecicla/ui/screens/recycler/recycler_screen.dart';
 
 CustomTransitionPage pageBuilder<T>({
   required BuildContext context,

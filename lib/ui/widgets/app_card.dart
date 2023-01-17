@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simtech/constants/colors.dart';
+import 'package:simrecicla/constants/colors.dart';
 
 class AppCard extends StatelessWidget {
   const AppCard({

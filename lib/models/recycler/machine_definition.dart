@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:simtech/models/recycler/machine.dart';
-import 'package:simtech/models/recycler/machine_port.dart';
-import 'package:simtech/models/recycler/rotatable_icon_data.dart';
+import 'package:simrecicla/models/recycler/machine.dart';
+import 'package:simrecicla/models/recycler/machine_port.dart';
+import 'package:simrecicla/models/recycler/rotatable_icon_data.dart';
 
 part 'machine_definition.freezed.dart';
 

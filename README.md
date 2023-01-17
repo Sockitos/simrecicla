@@ -1,4 +1,4 @@
-# simtech
+# SimRecicla
 
 A new Flutter project.
 

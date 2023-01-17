@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/gen/fonts.gen.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/gen/fonts.gen.dart';
 
 extension TextStyleX on TextStyle {
   TextStyle withColor(Color color) => copyWith(color: color);

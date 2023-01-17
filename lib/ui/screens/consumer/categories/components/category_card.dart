@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/consumer/category.dart';
-import 'package:simtech/ui/screens/consumer/categories/components/packages_dialog.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/models/consumer/category.dart';
+import 'package:simrecicla/ui/screens/consumer/categories/components/packages_dialog.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({

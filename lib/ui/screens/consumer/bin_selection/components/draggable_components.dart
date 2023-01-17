@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/consumer/component.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/models/consumer/component.dart';
 
 class DraggableComponents extends StatelessWidget {
   const DraggableComponents({

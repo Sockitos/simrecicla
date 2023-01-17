@@ -4,20 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/data/packager_data.dart';
-import 'package:simtech/models/packager/answer.dart';
-import 'package:simtech/models/packager/enums.dart';
-import 'package:simtech/models/packager/question.dart';
-import 'package:simtech/ui/screens/packager/components/rating_bar.dart';
-import 'package:simtech/ui/screens/packager/form/components/dropdown_field.dart';
-import 'package:simtech/ui/screens/packager/form/components/number_field.dart';
-import 'package:simtech/ui/screens/packager/form/components/percentage_field.dart';
-import 'package:simtech/ui/screens/packager/form/components/questions_page_view.dart';
-import 'package:simtech/ui/screens/packager/form/form_screen_model.dart';
-import 'package:simtech/ui/widgets/app_screen.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/data/packager_data.dart';
+import 'package:simrecicla/models/packager/answer.dart';
+import 'package:simrecicla/models/packager/enums.dart';
+import 'package:simrecicla/models/packager/question.dart';
+import 'package:simrecicla/ui/screens/packager/components/rating_bar.dart';
+import 'package:simrecicla/ui/screens/packager/form/components/dropdown_field.dart';
+import 'package:simrecicla/ui/screens/packager/form/components/number_field.dart';
+import 'package:simrecicla/ui/screens/packager/form/components/percentage_field.dart';
+import 'package:simrecicla/ui/screens/packager/form/components/questions_page_view.dart';
+import 'package:simrecicla/ui/screens/packager/form/form_screen_model.dart';
+import 'package:simrecicla/ui/widgets/app_screen.dart';
 
 final questionsProvider = Provider<List<Question>>(
   (ref) => PackagerData.questions,

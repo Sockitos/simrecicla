@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:simtech/models/recycler/machine_port.dart';
-import 'package:simtech/models/recycler/rotatable_icon_data.dart';
+import 'package:simrecicla/models/recycler/machine_port.dart';
+import 'package:simrecicla/models/recycler/rotatable_icon_data.dart';
 
 part 'machine.freezed.dart';
 

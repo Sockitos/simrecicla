@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/machines_icons.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/recycler/machine.dart';
-import 'package:simtech/models/recycler/material_sample.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/draggable_machine.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/feed_options.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/machine_io_info.dart';
-import 'package:simtech/ui/screens/recycler/grid/grid_screen_model.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/machines_icons.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/models/recycler/machine.dart';
+import 'package:simrecicla/models/recycler/material_sample.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/draggable_machine.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/feed_options.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/machine_io_info.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/grid_screen_model.dart';
 
 class MachineGrid extends ConsumerWidget {
   const MachineGrid({super.key});

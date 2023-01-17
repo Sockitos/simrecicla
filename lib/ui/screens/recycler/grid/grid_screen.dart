@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/data/recycler_data.dart';
-import 'package:simtech/models/recycler/machine_definition.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/machine_grid.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/machine_list.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/results.dart';
-import 'package:simtech/ui/screens/recycler/grid/grid_screen_model.dart';
-import 'package:simtech/ui/widgets/app_screen.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/data/recycler_data.dart';
+import 'package:simrecicla/models/recycler/machine_definition.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/machine_grid.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/machine_list.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/results.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/grid_screen_model.dart';
+import 'package:simrecicla/ui/widgets/app_screen.dart';
 
 final typeProvider = Provider<GridType>((ref) => throw UnimplementedError());
 

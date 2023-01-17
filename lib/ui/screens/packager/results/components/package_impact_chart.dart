@@ -3,13 +3,13 @@ import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/packager/package_impact.dart';
-import 'package:simtech/ui/widgets/arrow.dart';
-import 'package:simtech/ui/widgets/line.dart';
-import 'package:simtech/ui/widgets/text_arrows.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/models/packager/package_impact.dart';
+import 'package:simrecicla/ui/widgets/arrow.dart';
+import 'package:simrecicla/ui/widgets/line.dart';
+import 'package:simrecicla/ui/widgets/text_arrows.dart';
 import 'package:tuple/tuple.dart';
 
 class PackageImpactChart extends StatelessWidget {

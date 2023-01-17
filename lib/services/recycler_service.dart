@@ -1,9 +1,9 @@
 import 'package:collection/collection.dart';
 import 'package:directed_graph/directed_graph.dart';
-import 'package:simtech/models/recycler/machine.dart';
-import 'package:simtech/models/recycler/machine_graph.dart';
-import 'package:simtech/models/recycler/machine_port.dart';
-import 'package:simtech/models/recycler/material_sample.dart';
+import 'package:simrecicla/models/recycler/machine.dart';
+import 'package:simrecicla/models/recycler/machine_graph.dart';
+import 'package:simrecicla/models/recycler/machine_port.dart';
+import 'package:simrecicla/models/recycler/material_sample.dart';
 
 class RecyclerService {
   const RecyclerService._();

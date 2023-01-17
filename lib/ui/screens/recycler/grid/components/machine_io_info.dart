@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/recycler/machine.dart';
-import 'package:simtech/models/recycler/material_sample.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/output_indicator.dart';
-import 'package:simtech/ui/widgets/app_dialog.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/models/recycler/machine.dart';
+import 'package:simrecicla/models/recycler/material_sample.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/output_indicator.dart';
+import 'package:simrecicla/ui/widgets/app_dialog.dart';
 
 part 'machine_io_info.freezed.dart';
 

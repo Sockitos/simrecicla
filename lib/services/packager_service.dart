@@ -1,6 +1,6 @@
-import 'package:simtech/models/packager/answer.dart';
-import 'package:simtech/models/packager/enums.dart';
-import 'package:simtech/models/packager/package_impact.dart';
+import 'package:simrecicla/models/packager/answer.dart';
+import 'package:simrecicla/models/packager/enums.dart';
+import 'package:simrecicla/models/packager/package_impact.dart';
 
 class PackagerService {
   const PackagerService._();

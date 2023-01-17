@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/consumer/category.dart';
-import 'package:simtech/ui/widgets/app_dialog.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/models/consumer/category.dart';
+import 'package:simrecicla/ui/widgets/app_dialog.dart';
 
 class PackagesDialog extends HookWidget {
   const PackagesDialog({

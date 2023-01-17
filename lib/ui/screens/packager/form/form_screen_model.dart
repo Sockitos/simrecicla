@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:simtech/data/packager_data.dart';
-import 'package:simtech/models/packager/answer.dart';
-import 'package:simtech/models/packager/enums.dart';
-import 'package:simtech/models/packager/question.dart';
-import 'package:simtech/services/packager_service.dart';
+import 'package:simrecicla/data/packager_data.dart';
+import 'package:simrecicla/models/packager/answer.dart';
+import 'package:simrecicla/models/packager/enums.dart';
+import 'package:simrecicla/models/packager/question.dart';
+import 'package:simrecicla/services/packager_service.dart';
 import 'package:tuple/tuple.dart';
 
 part 'form_screen_model.freezed.dart';

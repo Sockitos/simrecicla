@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/gen/assets.gen.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/gen/assets.gen.dart';
 
 class Sponsors {
   static const tratolixo = _Tratolixo();

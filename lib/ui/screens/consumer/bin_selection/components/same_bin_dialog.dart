@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/gen/assets.gen.dart';
-import 'package:simtech/ui/widgets/app_dialog.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/gen/assets.gen.dart';
+import 'package:simrecicla/ui/widgets/app_dialog.dart';
 
 class SameBinDialog extends StatelessWidget {
   const SameBinDialog({super.key});

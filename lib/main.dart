@@ -3,10 +3,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/gen/assets.gen.dart';
-import 'package:simtech/router/router.dart';
-import 'package:simtech/theme/app_scroll_behavior.dart';
-import 'package:simtech/theme/theme.dart';
+import 'package:simrecicla/gen/assets.gen.dart';
+import 'package:simrecicla/router/router.dart';
+import 'package:simrecicla/theme/app_scroll_behavior.dart';
+import 'package:simrecicla/theme/theme.dart';
 import 'package:universal_html/html.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -38,17 +38,17 @@ Future<void> main() async {
     Assets.svgs.wrong.precache(),
     Assets.svgs.sameBin.precache(),
   ]);
-  runApp(const ProviderScope(child: SimtechApp()));
+  runApp(const ProviderScope(child: SimReciclaApp()));
 }
 
-class SimtechApp extends ConsumerStatefulWidget {
-  const SimtechApp({super.key});
+class SimReciclaApp extends ConsumerStatefulWidget {
+  const SimReciclaApp({super.key});
 
   @override
-  ConsumerState<SimtechApp> createState() => _SimtechAppState();
+  ConsumerState<SimReciclaApp> createState() => _SimReciclaAppState();
 }
 
-class _SimtechAppState extends ConsumerState<SimtechApp> {
+class _SimReciclaAppState extends ConsumerState<SimReciclaApp> {
   @override
   void initState() {
     precacheImage(

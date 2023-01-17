@@ -1,8 +1,8 @@
-import 'package:simtech/constants/machines_icons.dart';
-import 'package:simtech/models/recycler/machine_definition.dart';
-import 'package:simtech/models/recycler/machine_port.dart';
-import 'package:simtech/models/recycler/material_sample.dart';
-import 'package:simtech/models/recycler/rotatable_icon_data.dart';
+import 'package:simrecicla/constants/machines_icons.dart';
+import 'package:simrecicla/models/recycler/machine_definition.dart';
+import 'package:simrecicla/models/recycler/machine_port.dart';
+import 'package:simrecicla/models/recycler/material_sample.dart';
+import 'package:simrecicla/models/recycler/rotatable_icon_data.dart';
 
 class RecyclerData {
   const RecyclerData._();

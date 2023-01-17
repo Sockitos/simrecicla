@@ -6,7 +6,7 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:simtech/constants/colors.dart';
+import 'package:simrecicla/constants/colors.dart';
 
 const double _kScrollbarMargin = 0;
 const double _kScrollbarMinLength = 48;

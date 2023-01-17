@@ -1,5 +1,5 @@
 import 'package:flutter/painting.dart';
-import 'package:simtech/constants/colors.dart';
+import 'package:simrecicla/constants/colors.dart';
 
 enum PMaterial {
   vidro('Vidro'),

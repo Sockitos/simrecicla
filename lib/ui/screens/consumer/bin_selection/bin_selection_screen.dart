@@ -4,17 +4,17 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/gen/assets.gen.dart';
-import 'package:simtech/models/consumer/package.dart';
-import 'package:simtech/ui/screens/consumer/bin_selection/bin_selection_screen_model.dart';
-import 'package:simtech/ui/screens/consumer/bin_selection/components/bins_targets.dart';
-import 'package:simtech/ui/screens/consumer/bin_selection/components/draggable_components.dart';
-import 'package:simtech/ui/screens/consumer/bin_selection/components/results.dart';
-import 'package:simtech/ui/screens/consumer/bin_selection/components/same_bin_dialog.dart';
-import 'package:simtech/ui/widgets/app_screen.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/gen/assets.gen.dart';
+import 'package:simrecicla/models/consumer/package.dart';
+import 'package:simrecicla/ui/screens/consumer/bin_selection/bin_selection_screen_model.dart';
+import 'package:simrecicla/ui/screens/consumer/bin_selection/components/bins_targets.dart';
+import 'package:simrecicla/ui/screens/consumer/bin_selection/components/draggable_components.dart';
+import 'package:simrecicla/ui/screens/consumer/bin_selection/components/results.dart';
+import 'package:simrecicla/ui/screens/consumer/bin_selection/components/same_bin_dialog.dart';
+import 'package:simrecicla/ui/widgets/app_screen.dart';
 
 final packageProvider = Provider<Package>((ref) => throw UnimplementedError());
 

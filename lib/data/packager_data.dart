@@ -1,5 +1,5 @@
-import 'package:simtech/models/packager/answer.dart';
-import 'package:simtech/models/packager/question.dart';
+import 'package:simrecicla/models/packager/answer.dart';
+import 'package:simrecicla/models/packager/question.dart';
 
 class PackagerData {
   const PackagerData._();

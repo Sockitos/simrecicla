@@ -1,7 +1,7 @@
-import 'package:simtech/constants/packages_icons.dart';
-import 'package:simtech/models/consumer/category.dart';
-import 'package:simtech/models/consumer/component.dart';
-import 'package:simtech/models/consumer/package.dart';
+import 'package:simrecicla/constants/packages_icons.dart';
+import 'package:simrecicla/models/consumer/category.dart';
+import 'package:simrecicla/models/consumer/component.dart';
+import 'package:simrecicla/models/consumer/package.dart';
 
 class ConsumerData {
   const ConsumerData._();

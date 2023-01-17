@@ -3,14 +3,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/machines_icons.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/recycler/machine_definition.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/draggable_machine.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/machine_grid.dart';
-import 'package:simtech/ui/screens/recycler/grid/components/output_indicator.dart';
-import 'package:simtech/ui/widgets/popup_info.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/machines_icons.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/models/recycler/machine_definition.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/draggable_machine.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/machine_grid.dart';
+import 'package:simrecicla/ui/screens/recycler/grid/components/output_indicator.dart';
+import 'package:simrecicla/ui/widgets/popup_info.dart';
 
 class MachineListOption extends HookWidget {
   const MachineListOption({

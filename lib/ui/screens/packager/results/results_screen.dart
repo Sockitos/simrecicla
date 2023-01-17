@@ -2,17 +2,17 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:simtech/constants/colors.dart';
-import 'package:simtech/constants/spacings.dart';
-import 'package:simtech/constants/text_styles.dart';
-import 'package:simtech/models/packager/enums.dart';
-import 'package:simtech/models/packager/package_impact.dart';
-import 'package:simtech/ui/screens/packager/components/rating_bar.dart';
-import 'package:simtech/ui/screens/packager/results/components/package_impact_chart.dart';
-import 'package:simtech/ui/screens/packager/results/components/rating_description.dart';
-import 'package:simtech/ui/screens/packager/results/components/recommendation.dart';
-import 'package:simtech/ui/widgets/app_screen.dart';
-import 'package:simtech/ui/widgets/arrow.dart';
+import 'package:simrecicla/constants/colors.dart';
+import 'package:simrecicla/constants/spacings.dart';
+import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/models/packager/enums.dart';
+import 'package:simrecicla/models/packager/package_impact.dart';
+import 'package:simrecicla/ui/screens/packager/components/rating_bar.dart';
+import 'package:simrecicla/ui/screens/packager/results/components/package_impact_chart.dart';
+import 'package:simrecicla/ui/screens/packager/results/components/rating_description.dart';
+import 'package:simrecicla/ui/screens/packager/results/components/recommendation.dart';
+import 'package:simrecicla/ui/widgets/app_screen.dart';
+import 'package:simrecicla/ui/widgets/arrow.dart';
 import 'package:tuple/tuple.dart';
 
 class ResultsScreen extends StatelessWidget {
