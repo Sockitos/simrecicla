@@ -60,12 +60,16 @@ class LandingScreen extends StatelessWidget {
           Column(
             children: [
               SizedBox(height: AppSpacings.big(context.layout)),
-              Text(
-                'Circular SimTech',
-                textAlign: TextAlign.center,
-                style: AppTextStyles.h1(context.layout),
+              Assets.svgs.logo.svg(
+                height: context.layout.value(xs: 36, sm: 48, lg: 64, xl: 72),
               ),
-              const SizedBox(height: 20),
+              SizedBox(
+                height: context.layout.value(
+                  xs: 15,
+                  sm: 20,
+                  lg: 30,
+                ),
+              ),
               Assets.svgs.waves.svg(
                 color: AppColors.darkGreen,
               ),
@@ -73,7 +77,7 @@ class LandingScreen extends StatelessWidget {
               SizedBox(
                 width: 859,
                 child: Text(
-                  'O projeto Circular SimTech surge do desafio de promover a economia circular, a descarbonização da gestão de resíduos e o uso eficiente dos recursos, através do desenvolvimento e da disponibilização de simuladores precisos, baseados na caracterização detalhada dos processos e tecnologias de produção, processamento e reciclagem de resíduos de embalagens.\nExperimenta os três simuladores!',
+                  'O projeto SimRecicla surge do desafio de promover a economia circular, a descarbonização da gestão de resíduos e o uso eficiente dos recursos, através do desenvolvimento e da disponibilização de simuladores precisos, baseados na caracterização detalhada dos processos e tecnologias de produção, processamento e reciclagem de resíduos de embalagens.\nExperimenta os três simuladores!',
                   textAlign: TextAlign.center,
                   style: AppTextStyles.bodyL(context.layout),
                 ),

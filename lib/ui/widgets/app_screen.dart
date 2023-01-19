@@ -5,6 +5,7 @@ import 'package:layout/layout.dart';
 import 'package:simrecicla/constants/colors.dart';
 import 'package:simrecicla/constants/spacings.dart';
 import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/gen/assets.gen.dart';
 import 'package:simrecicla/ui/widgets/footer/footer.dart';
 
 class AppScreen extends StatelessWidget {
@@ -34,10 +35,7 @@ class AppScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   children: [
-                    Text(
-                      'Circular SimTech',
-                      style: AppTextStyles.h4(context.layout),
-                    ),
+                    Assets.svgs.logo.svg(height: 24),
                     const Spacer(),
                     const CloseButton(),
                   ],
@@ -110,10 +108,7 @@ class AppScreen extends StatelessWidget {
               primary: true,
               children: [
                 AppBar(
-                  title: Text(
-                    'Circular SimTech',
-                    style: AppTextStyles.h4(context.layout),
-                  ),
+                  title: Assets.svgs.logo.svg(height: 24),
                   leading: kIsWeb ? null : const BackButton(),
                   titleSpacing: AppSpacings.big(context.layout),
                   automaticallyImplyLeading: false,

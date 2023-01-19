@@ -11,16 +11,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
-class $AssetsFontsGen {
-  const $AssetsFontsGen();
-
-  /// File path: assets/fonts/MachinesIcons.ttf
-  String get machinesIcons => 'assets/fonts/MachinesIcons.ttf';
-
-  /// File path: assets/fonts/PackagesIcons.ttf
-  String get packagesIcons => 'assets/fonts/PackagesIcons.ttf';
-}
-
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -74,6 +64,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/linkedin.svg
   SvgGenImage get linkedin => const SvgGenImage('assets/svgs/linkedin.svg');
 
+  /// File path: assets/svgs/logo.svg
+  SvgGenImage get logo => const SvgGenImage('assets/svgs/logo.svg');
+
   /// File path: assets/svgs/packager_option.svg
   SvgGenImage get packagerOption =>
       const SvgGenImage('assets/svgs/packager_option.svg');
@@ -114,7 +107,6 @@ class $AssetsSvgsGen {
 class Assets {
   Assets._();
 
-  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
 }
