@@ -108,7 +108,7 @@ class LandingScreen extends StatelessWidget {
                         svg: Assets.svgs.recyclerOption.path,
                         description: 'Quero optimizar uma linha de triagem',
                         tooltip:
-                            'Permite otimizar os resultados uma linha de triagem de embalagens, de acordo com a sequenciação de diferentes operações e equipamentos',
+                            'Calcula a recuperação de materiais numa linha de triagem de embalagens, de acordo com a sequenciação de diferentes operações e equipamentos',
                         onPressed: () => context.go('/recycler'),
                       ),
                       const SizedBox(height: 30),
@@ -160,7 +160,7 @@ class LandingScreen extends StatelessWidget {
                         svg: Assets.svgs.recyclerOption.path,
                         description: 'Quero optimizar uma linha de triagem',
                         tooltip:
-                            'Permite calcular o impacte das práticas de separação e encaminhamento dos resíduos de embalagens',
+                            'Calcula a recuperação de materiais numa linha de triagem de embalagens, de acordo com a sequenciação de diferentes operações e equipamentos',
                         onPressed: () => context.go('/recycler'),
                       ),
                     ),
