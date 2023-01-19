@@ -29,7 +29,7 @@ class Contacts extends StatelessWidget {
           ),
           Spacer(),
           Text(
-            'residuos@tratolixo.pt',
+            'hello@simrecicla.pt',
             style: TextStyle(decoration: TextDecoration.underline),
           ),
           Text('21 445 95 00'),
