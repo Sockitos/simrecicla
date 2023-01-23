@@ -64,10 +64,6 @@ class _SimReciclaAppState extends ConsumerState<SimReciclaApp> {
       AssetImage(Assets.images.recyclerIntro.path),
       context,
     );
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final loader = document.getElementById('loading');
-      loader?.remove();
-    });
     super.initState();
   }
 
