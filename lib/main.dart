@@ -24,6 +24,7 @@ Future<void> main() async {
   setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
   await Future.wait<void>([
+    Assets.svgs.logo.precache(),
     Assets.svgs.waves.precache(),
     Assets.svgs.circles.precache(),
     Assets.svgs.bigArrow.precache(),
