@@ -70,6 +70,7 @@ class _SimReciclaAppState extends ConsumerState<SimReciclaApp> {
   Widget build(BuildContext context) {
     return Layout(
       child: MaterialApp.router(
+        title: 'SimRecicla',
         debugShowCheckedModeBanner: false,
         routerConfig: ref.watch(routerProvider),
         theme: theme,
