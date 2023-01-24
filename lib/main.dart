@@ -7,7 +7,6 @@ import 'package:simrecicla/gen/assets.gen.dart';
 import 'package:simrecicla/router/router.dart';
 import 'package:simrecicla/theme/app_scroll_behavior.dart';
 import 'package:simrecicla/theme/theme.dart';
-import 'package:universal_html/html.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 extension SvgGenImageX on SvgGenImage {
