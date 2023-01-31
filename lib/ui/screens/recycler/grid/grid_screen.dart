@@ -75,6 +75,7 @@ class GridScreen extends ConsumerWidget {
                       context.layout.value(xs: 0.4, xl: 0.4),
                   child: Stack(
                     alignment: Alignment.centerLeft,
+                    fit: StackFit.expand,
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(right: 70),
