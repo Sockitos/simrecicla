@@ -70,13 +70,13 @@ class Linkify extends StatelessWidget {
     return Text.rich(
       buildTextSpan(
         elements,
-        style: Theme.of(context).textTheme.bodyText2?.merge(style),
+        style: Theme.of(context).textTheme.bodyMedium?.merge(style),
         onOpen: onOpen,
         formatter: formatter,
         useMouseRegion: true,
         linkStyle: Theme.of(context)
             .textTheme
-            .bodyText2
+            .bodyMedium
             ?.merge(style)
             .withColor(AppColors.lightGreen)
             .copyWith(decoration: TextDecoration.underline)

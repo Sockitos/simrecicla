@@ -25,7 +25,7 @@ class AppScrollbar extends RawScrollbar {
     this.hoverThickness,
     super.thickness,
     super.radius,
-    this.padding = EdgeInsets.zero,
+    super.padding = EdgeInsets.zero,
     ScrollNotificationPredicate? notificationPredicate,
     super.interactive,
     super.scrollbarOrientation,
@@ -39,7 +39,6 @@ class AppScrollbar extends RawScrollbar {
 
   final bool? showTrackOnHover;
   final double? hoverThickness;
-  final EdgeInsets padding;
 
   @override
   AppScrollbarState createState() => AppScrollbarState();
@@ -106,7 +105,7 @@ class AppScrollbarState extends RawScrollbarState<AppScrollbar> {
       ..crossAxisMargin = _scrollbarTheme.crossAxisMargin ?? _kScrollbarMargin
       ..mainAxisMargin = _scrollbarTheme.mainAxisMargin ?? 0.0
       ..minLength = _scrollbarTheme.minThumbLength ?? _kScrollbarMinLength
-      ..padding = widget.padding
+      ..padding = widget.padding ?? EdgeInsets.zero
       ..scrollbarOrientation = widget.scrollbarOrientation
       ..ignorePointer = !enableGestures;
   }

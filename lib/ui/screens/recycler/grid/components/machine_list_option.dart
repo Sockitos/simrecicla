@@ -164,7 +164,7 @@ class MachineListOption extends HookWidget {
       e.remove();
     }
     openOptions.clear();
-    Overlay.of(context)?.insert(entry);
+    Overlay.of(context).insert(entry);
     openOptions.add(entry);
   }
 

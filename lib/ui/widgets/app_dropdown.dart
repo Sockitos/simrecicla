@@ -1008,7 +1008,7 @@ class _AppDropdownButtonState<T> extends State<AppDropdownButton<T>>
   }
 
   TextStyle? get _textStyle =>
-      widget.style ?? Theme.of(context).textTheme.subtitle1;
+      widget.style ?? Theme.of(context).textTheme.titleMedium;
 
   void _handleTap() {
     final textDirection = Directionality.maybeOf(context);
@@ -1080,7 +1080,7 @@ class _AppDropdownButtonState<T> extends State<AppDropdownButton<T>>
   // would be clipped.
   double get _denseButtonHeight {
     final fontSize = _textStyle!.fontSize ??
-        Theme.of(context).textTheme.subtitle1!.fontSize!;
+        Theme.of(context).textTheme.titleMedium!.fontSize!;
     return math.max(fontSize, math.max(widget.iconSize, _kDenseButtonHeight));
   }
 
