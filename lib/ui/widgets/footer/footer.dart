@@ -4,7 +4,6 @@ import 'package:simrecicla/constants/colors.dart';
 import 'package:simrecicla/constants/spacings.dart';
 import 'package:simrecicla/ui/widgets/footer/components/contacts.dart';
 import 'package:simrecicla/ui/widgets/footer/components/copyright.dart';
-import 'package:simrecicla/ui/widgets/footer/components/social_buttons.dart';
 import 'package:simrecicla/ui/widgets/footer/components/sponsors.dart';
 
 class Footer extends StatelessWidget {
@@ -56,21 +55,15 @@ class _LgFooter extends StatelessWidget {
           const SizedBox(width: 60),
           Expanded(
             child: Row(
-              children: [
-                const Spacer(),
-                const SizedBox(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: const [
+                Spacer(),
+                SizedBox(
                   width: 360,
                   child: Contacts(),
                 ),
-                const Spacer(flex: 2),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: const [
-                    SocialButtons(),
-                    Spacer(),
-                    Copyright(),
-                  ],
-                )
+                Spacer(flex: 2),
+                Copyright(),
               ],
             ),
           ),
@@ -102,21 +95,14 @@ class _MdFooter extends StatelessWidget {
         SizedBox(
           height: 140,
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: const [
+              SizedBox(
                 width: 360,
                 child: Contacts(),
               ),
-              const Spacer(flex: 2),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  SocialButtons(),
-                  Spacer(),
-                  Copyright(),
-                ],
-              )
+              Spacer(flex: 2),
+              Copyright(),
             ],
           ),
         ),
@@ -151,18 +137,10 @@ class _SmFooter extends StatelessWidget {
         SizedBox(
           height: 140,
           child: Row(
-            children: [
-              const Expanded(child: Contacts()),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: const [
-                    SocialButtons(),
-                    Spacer(),
-                    Copyright(),
-                  ],
-                ),
-              )
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: const [
+              Expanded(child: Contacts()),
+              Expanded(child: Copyright())
             ],
           ),
         ),
@@ -192,8 +170,6 @@ class _XsFooter extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        SizedBox(height: 40),
-        SocialButtons(),
         SizedBox(height: 40),
         Copyright(),
       ],
