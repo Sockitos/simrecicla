@@ -16,9 +16,7 @@ class _Tratolixo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Assets.svgs.tratolixo.svg(
-      color: AppColors.white,
-    );
+    return Assets.svgs.tratolixo.svg();
   }
 }
 
@@ -27,9 +25,7 @@ class _Drivers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Assets.svgs.drivers.svg(
-      color: AppColors.white,
-    );
+    return Assets.svgs.drivers.svg();
   }
 }
 
@@ -38,9 +34,7 @@ class _Ist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Assets.svgs.ist.svg(
-      color: AppColors.white,
-    );
+    return Assets.svgs.ist.svg();
   }
 }
 
@@ -60,10 +54,7 @@ class _SociedadePontoverde extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.bold),
             textAlign: TextAlign.start,
           ),
-          Assets.svgs.sociedadePontoverde.svg(
-            color: AppColors.white,
-            height: 50,
-          ),
+          Assets.svgs.sociedadePontoverde.svg(height: 50),
         ],
       ),
     );

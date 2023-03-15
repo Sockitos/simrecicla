@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
+import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
@@ -25,6 +25,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/recycler_intro.png
   AssetGenImage get recyclerIntro =>
       const AssetGenImage('assets/images/recycler_intro.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [consumerIntro, packagerIntro, recyclerIntro];
 }
 
 class $AssetsSvgsGen {
@@ -102,6 +106,33 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/youtube.svg
   SvgGenImage get youtube => const SvgGenImage('assets/svgs/youtube.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        bigArrow,
+        blueBin,
+        circles,
+        consumerOption,
+        drivers,
+        facebook,
+        greenBin,
+        greyBin,
+        instagram,
+        ist,
+        linkedin,
+        logo,
+        packagerOption,
+        recycler,
+        recyclerOption,
+        right,
+        sameBin,
+        sociedadePontoverde,
+        tratolixo,
+        waves,
+        wrong,
+        yellowBin,
+        youtube
+      ];
 }
 
 class Assets {
@@ -169,6 +200,8 @@ class AssetGenImage {
     );
   }
 
+  ImageProvider provider() => AssetImage(_assetName);
+
   String get path => _assetName;
 
   String get keyName => _assetName;
@@ -190,13 +223,14 @@ class SvgGenImage {
     AlignmentGeometry alignment = Alignment.center,
     bool allowDrawingOutsideViewBox = false,
     WidgetBuilder? placeholderBuilder,
-    Color? color,
-    BlendMode colorBlendMode = BlendMode.srcIn,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    Clip clipBehavior = Clip.hardEdge,
-    bool cacheColorFilter = false,
-    SvgTheme? theme,
+    SvgTheme theme = const SvgTheme(),
+    ColorFilter? colorFilter,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated Clip clipBehavior = Clip.hardEdge,
+    @deprecated bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(
       _assetName,
@@ -210,15 +244,18 @@ class SvgGenImage {
       alignment: alignment,
       allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
       placeholderBuilder: placeholderBuilder,
-      color: color,
-      colorBlendMode: colorBlendMode,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
+      theme: theme,
+      colorFilter: colorFilter,
+      color: color,
+      colorBlendMode: colorBlendMode,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
-      theme: theme,
     );
   }
 
   String get path => _assetName;
+
+  String get keyName => _assetName;
 }

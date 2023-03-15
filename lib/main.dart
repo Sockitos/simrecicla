@@ -10,13 +10,11 @@ import 'package:simrecicla/theme/theme.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 extension SvgGenImageX on SvgGenImage {
-  Future<void> precache() => precachePicture(
-        ExactAssetPicture(
-          SvgPicture.svgStringDecoderBuilder,
-          path,
-        ),
-        null,
-      );
+  Future<void> precache() async {
+    final loader = SvgAssetLoader(path);
+    await svg.cache
+        .putIfAbsent(loader.cacheKey(null), () => loader.loadBytes(null));
+  }
 }
 
 Future<void> main() async {

@@ -16,7 +16,7 @@ import 'package:simrecicla/ui/screens/packager/results/results_screen.dart';
 import 'package:simrecicla/ui/screens/recycler/grid/grid_screen.dart';
 import 'package:simrecicla/ui/screens/recycler/recycler_screen.dart';
 
-CustomTransitionPage pageBuilder<T>({
+CustomTransitionPage<T> pageBuilder<T>({
   required BuildContext context,
   required GoRouterState state,
   required Widget child,

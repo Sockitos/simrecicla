@@ -6,15 +6,15 @@ import 'package:simrecicla/constants/text_styles.dart';
 
 export 'package:linkify/linkify.dart'
     show
+        EmailElement,
+        EmailLinkifier,
+        LinkableElement,
+        Linkifier,
         LinkifyElement,
         LinkifyOptions,
-        LinkableElement,
         TextElement,
-        Linkifier,
         UrlElement,
-        UrlLinkifier,
-        EmailElement,
-        EmailLinkifier;
+        UrlLinkifier;
 
 typedef LinkCallback = void Function(LinkableElement link);
 typedef ElementFormatter = String Function(LinkifyElement element);

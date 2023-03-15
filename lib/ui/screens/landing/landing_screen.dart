@@ -46,9 +46,7 @@ class LandingScreen extends StatelessWidget {
                         Positioned(
                           top: 250,
                           right: -40,
-                          child: Assets.svgs.circles.svg(
-                            color: AppColors.white,
-                          ),
+                          child: Assets.svgs.circles.svg(),
                         ),
                       ],
                     ),
@@ -70,9 +68,7 @@ class LandingScreen extends StatelessWidget {
                   lg: 30,
                 ),
               ),
-              Assets.svgs.waves.svg(
-                color: AppColors.darkGreen,
-              ),
+              Assets.svgs.waves.svg(),
               SizedBox(height: AppSpacings.small(context.layout)),
               SizedBox(
                 width: 859,

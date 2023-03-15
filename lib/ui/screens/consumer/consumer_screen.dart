@@ -27,6 +27,7 @@ class ConsumerScreen extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         const Spacer(),
                         Expanded(
@@ -41,7 +42,7 @@ class ConsumerScreen extends StatelessWidget {
                       left: -40,
                       right: -60,
                       child: Assets.images.consumerIntro.image(
-                        fit: BoxFit.fitWidth,
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ],
