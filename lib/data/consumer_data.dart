@@ -919,7 +919,7 @@ class ConsumerData {
               ifTrue:
                   'Muito bem! Este material de embalagem não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
               ifFalse:
-                  'O destino selecionado não está correto. Este material é de cartão plastificado, está sujo e com gordurapelo que deve ser mantido separado do cartão reciclável. Este material deve ser colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).',
+                  'O destino selecionado não está correto. Este material é de cartão plastificado, está sujo e com gordura pelo que deve ser mantido separado do cartão reciclável. Este material deve ser colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).',
               recomendacoes: 'Separar a tampa de cartão',
             )
           ],
