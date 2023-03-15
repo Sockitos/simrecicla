@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simrecicla/constants/colors.dart';
 import 'package:simrecicla/gen/assets.gen.dart';
-import 'package:simrecicla/utils/get_web_renderer/get_web_renderer.dart';
 
 class BirdIconButton extends StatelessWidget {
   const BirdIconButton({
@@ -137,9 +136,7 @@ class BirdBorder extends OutlinedBorder {
         ..close();
     }
 
-    return isCanvasKit
-        ? Path.combine(PathOperation.union, circlePath, trianglePath)
-        : circlePath;
+    return Path.combine(PathOperation.union, circlePath, trianglePath);
   }
 
   @override
@@ -179,9 +176,7 @@ class BirdBorder extends OutlinedBorder {
         )
         ..close();
     }
-    return isCanvasKit
-        ? Path.combine(PathOperation.union, circlePath, trianglePath)
-        : circlePath;
+    return Path.combine(PathOperation.union, circlePath, trianglePath);
   }
 
   @override
