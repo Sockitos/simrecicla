@@ -11,7 +11,7 @@ class Copyright extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      '© 2021 Sociedade Ponto Verde / Tratolixo',
+      '© 2023 Sociedade Ponto Verde / Tratolixo',
       textAlign: TextAlign.end,
       style: AppTextStyles.bodyS(context.layout)
           .withColor(AppColors.white.withOpacity(0.5)),
