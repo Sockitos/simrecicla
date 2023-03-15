@@ -23,7 +23,7 @@ enum Rating {
   a(
     AppColors.ratingA,
     1,
-    'As características de conceção da sua embalagem permitem que seja totalmente reciclável. Caso aplicável, consulte a lista de recomendações apresentada para as características que ainda podem ser melhoradas.',
+    'As características de conceção da sua embalagem permitem que seja reciclável. Caso aplicável, consulte a lista de recomendações apresentada para as características que ainda podem ser melhoradas.',
   ),
   b(
     AppColors.ratingB,

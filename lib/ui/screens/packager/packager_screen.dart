@@ -77,7 +77,7 @@ class _PackagerIntro extends StatelessWidget {
           ),
           SizedBox(height: AppSpacings.small(context.layout)),
           Text(
-            'Venha descobrir como melhorar a reciclabilidade das suas embalagens através de um conjunto de questões que avaliam parâmetros de design e conceção, e de recomendações para as opções de conceção que possam ser menos favoráveis para a reciclabilidade. Este simulador determina também o impacte ou benefício ambiental das suas embalagens, tendo em conta o resultado de reciclabilidade (A-totalmente reciclável a F-não reciclável), a possibilidade de recuperação dos materiais para reciclagem e o teor de material reciclado utilizado na embalagem.',
+            'Venha descobrir como melhorar a reciclabilidade das suas embalagens através de um conjunto de questões que avaliam parâmetros de design e conceção, e de recomendações para as opções de conceção que possam ser menos favoráveis para a reciclabilidade. Este simulador determina também o impacte ou benefício ambiental das suas embalagens, tendo em conta o resultado de reciclabilidade (A-reciclável a F-não reciclável), a possibilidade de recuperação dos materiais para reciclagem e o teor de material reciclado utilizado na embalagem.',
             style: AppTextStyles.bodyL(context.layout),
             textAlign: textAlign,
           ),
