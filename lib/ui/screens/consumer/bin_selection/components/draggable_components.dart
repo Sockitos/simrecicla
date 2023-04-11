@@ -109,7 +109,7 @@ class _DraggableComponent extends StatelessWidget {
           padding: context.layout.value(
             xs: EdgeInsets.zero,
             md: const EdgeInsets.symmetric(
-              horizontal: 30,
+              horizontal: 15,
               vertical: 25,
             ),
           ),

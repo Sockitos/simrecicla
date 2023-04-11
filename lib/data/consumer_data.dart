@@ -18,12 +18,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.garrafa_de_iogurte_l_quido__grande_,
-              name: 'Corpo da garrafa',
+              name: 'Garrafa\n(plástico)',
               pead: 0.027,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes:
@@ -31,25 +31,25 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.tampa_garrafa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               pead: 0.003,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!.',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             ),
             Component(
               icon: PackagesIcons.manga,
-              name: 'Manga de plástico',
+              name: 'Manga\n(plástico)',
               plasticosMistos: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Caso apresente picotado, este componente deve ser destacado e colocado isoladamente no contentor amarelo!',
               recomendacoes: 'Destacar manga se apresentar picotado',
@@ -63,12 +63,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.garrafao_de_agua,
-              name: 'Corpo do garrafão',
+              name: 'Garrafão\n(plástico)',
               pet: 0.083,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes:
@@ -76,27 +76,27 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.tampa_garrafa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               pead: 0.002,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             ),
             Component(
               icon: PackagesIcons.rotulo,
-              name: 'Rótulo',
+              name: 'Rótulo\n(papel)',
               papel: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
               ifFalse:
-                  'O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo!',
+                  'O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo! Se for colocado isoladamente no contentor azul, poderá perder-se no processo de triagem.',
               recomendacoes: 'Manter o rótulo na embalagem',
             )
           ],
@@ -108,12 +108,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.garrafa_de_agua,
-              name: 'Corpo da garrafa',
+              name: 'Garrafa\n(plástico)',
               pet: 0.027,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes:
@@ -121,27 +121,27 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.tampa_garrafa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               pead: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             ),
             Component(
               icon: PackagesIcons.rotulo,
-              name: 'Rótulo',
+              name: 'Rótulo\n(papel)',
               papel: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
               ifFalse:
-                  'O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo!',
+                  'O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo! Se for colocado isoladamente no contentor azul, poderá perder-se no processo de triagem.',
               recomendacoes: 'Manter o rótulo na embalagem',
             )
           ],
@@ -153,12 +153,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.garrafa_de_oleo,
-              name: 'Corpo da garrafa',
+              name: 'Garrafa\n(plástico)',
               pet: 0.026,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes:
@@ -166,27 +166,27 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.tampa_garrafa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               pead: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             ),
             Component(
               icon: PackagesIcons.rotulo,
-              name: 'Rótulo',
+              name: 'Rótulo\n(papel)',
               papel: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
               ifFalse:
-                  'O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo!',
+                  'O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo! Se for colocado isoladamente no contentor azul, poderá perder-se no processo de triagem.',
               recomendacoes: 'Manter o rótulo na embalagem',
             )
           ],
@@ -194,30 +194,30 @@ class ConsumerData {
         Package(
           id: 4,
           icon: PackagesIcons.garrafa_de_azeite___completa,
-          name: 'Garrafa de azeite\n(vidro)',
+          name: 'Garrafa de azeite',
           components: [
             Component(
               icon: PackagesIcons.garrafa_de_azeite,
-              name: 'Corpo da garrafa',
+              name: 'Garrafa\n(vidro)',
               vidro: 0.432,
               where: Where.recolhaVidro,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!',
               recomendacoes: 'Esvaziar; Manter a tampa na embalagem',
             ),
             Component(
               icon: PackagesIcons.tampa_garrafa,
-              name: 'Tampa',
+              name: 'Tampa\n(metal)',
               metaisNaoFerrosos: 0.005,
               where: Where.recolhaVidro,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Apesar de este componente ser de metal, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Apesar de este componente ser de metal, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
               ifFalse:
-                  'O destino selecionado não está correto. Apesar de este componente ser de metal, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde!',
+                  'O destino selecionado não está correto. Apesar de este componente ser de metal, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde! Se for colocado isoladamente no contentor amarelo, poderá perder-se no processo de triagem.',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             )
@@ -230,39 +230,39 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.garrafa_de_cerveja___garrafa,
-              name: 'Corpo da garrafa',
+              name: 'Garrafa\n(vidro)',
               vidro: 0.14,
               where: Where.recolhaVidro,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!',
               recomendacoes: 'Esvaziar; Manter a tampa na embalagem',
             ),
             Component(
               icon: PackagesIcons.garrafa_de_cerveja___carica,
-              name: 'Carica',
+              name: 'Carica\n(metal)',
               metaisFerrosos: 0.002,
               where: Where.recolhaVidro,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Apesar de este componente ser de metal, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Apesar de este componente ser de metal, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
               ifFalse:
-                  'O destino selecionado não está correto. Apesar de este componente ser de metal, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde!',
+                  'O destino selecionado não está correto. Apesar de este componente ser de metal, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde! Se for colocado isoladamente no contentor amarelo, poderá perder-se no processo de triagem.',
               recomendacoes:
                   'Manter a carica na embalagem porque tem dimensão inferior a 50mm',
             ),
             Component(
               icon: PackagesIcons.rotulo,
-              name: 'Rótulo',
+              name: 'Rótulo\n(papel)',
               papel: 0.001,
               where: Where.recolhaVidro,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Apesar de este componente ser de papel, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
               ifFalse:
-                  'O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor amarelo!',
+                  'O destino selecionado não está correto. Apesar de este componente ser de papel, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde! Se for colocado isoladamente no contentor azul, poderá perder-se no processo de triagem.',
               recomendacoes: 'Manter o rótulo na embalagem',
             )
           ],
@@ -280,24 +280,24 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.boiao_de_doce_vidro,
-              name: 'Boião',
+              name: 'Boião\n(vidro)',
               vidro: 0.195,
               where: Where.recolhaVidro,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!',
               recomendacoes: 'Esvaziar a embalagem',
             ),
             Component(
               icon: PackagesIcons.tampa_boiao___frasco,
-              name: 'Tampa',
+              name: 'Tampa\n(metal)',
               metaisFerrosos: 0.01,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de metal e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de metal e deve ser separado da embalagem e colocado no contentor amarelo!',
               recomendacoes:
@@ -312,24 +312,24 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.boiao_de_doce_plastico,
-              name: 'Boião',
+              name: 'Boião\n(plástico)',
               pet: 0.34,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar a embalagem',
             ),
             Component(
               icon: PackagesIcons.tampa_boiao___frasco,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.01,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo!',
               recomendacoes:
@@ -337,12 +337,12 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.pelicula_de_selagem,
-              name: 'Película de selagem',
+              name: 'Película\n(metal)',
               metaisNaoFerrosos: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de metal e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de metal e deve ser separado da embalagem e colocado isoladamente no contentor amarelo!',
               recomendacoes:
@@ -353,28 +353,28 @@ class ConsumerData {
         Package(
           id: 8,
           icon: PackagesIcons.boiao_de_creme_hidratante___completa,
-          name: 'Boião de creme hidratante (vidro)',
+          name: 'Boião de creme hidratante',
           components: [
             Component(
               icon: PackagesIcons.boiao_de_creme_hidratante,
-              name: 'Boião',
+              name: 'Boião\n(vidro)',
               vidro: 0.028,
               where: Where.recolhaVidro,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!',
               recomendacoes: 'Esvaziar a embalagem',
             ),
             Component(
               icon: PackagesIcons.tampa_boiao___frasco,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.004,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser separado da embalagem e colocado no contentor amarelo!',
               recomendacoes:
@@ -395,26 +395,26 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.copo_iogurte_solido,
-              name: 'Copo',
+              name: 'Copo\n(plástico)',
               plasticosMistos: 0.004,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar; Espalmar',
             ),
             Component(
               icon: PackagesIcons.pelicula_de_selagem,
-              name: 'Película de selagem',
+              name: 'Película\n(plástico)',
               plasticosMistos: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componentes com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes: 'Manter a película de selagem na embalagem',
             )
           ],
@@ -426,24 +426,24 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.balde_iogurte_solido,
-              name: 'Balde',
+              name: 'Balde\n(plástico)',
               plasticosMistos: 0.033,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar a embalagem',
             ),
             Component(
               icon: PackagesIcons.tampa_boiao___frasco,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.007,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo!',
               recomendacoes:
@@ -454,16 +454,16 @@ class ConsumerData {
         Package(
           id: 11,
           icon: PackagesIcons.copo_de_gelado,
-          name: 'Copo de gelado\n(cartão)',
+          name: 'Copo de gelado',
           components: [
             Component(
               icon: PackagesIcons.copo_de_gelado,
-              name: 'Copo',
+              name: 'Copo\n(cartão)',
               cartao: 0.007,
               where: Where.recolhaIndiferenciada,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Esta embalagem não é reciclável e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem não é reciclável e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de cartão mas está suja e com gordura, pelo que deve ser mantida separada do cartão reciclável. Esta embalagem deve ser colocada no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).',
               recomendacoes:
@@ -471,24 +471,24 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.tampa_boiao___frasco,
-              name: 'Tampa',
+              name: 'Tampa\n(cartão)',
               cartao: 0.004,
               where: Where.recolhaIndiferenciada,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Este componente não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente não é reciclável e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de cartão mas está sujo e com gordura, pelo que deve ser mantido separado do cartão reciclável. Este material deve ser colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).',
               recomendacoes: 'Manter a tampa na embalagem',
             ),
             Component(
               icon: PackagesIcons.pelicula_de_selagem,
-              name: 'Película de selagem',
+              name: 'Película\n(plástico)',
               plasticosMistos: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser separado da embalagem e colocado no contentor amarelo!',
               recomendacoes: 'Separar a película de plástico',
@@ -508,14 +508,14 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_de_leite_sem_tampa,
-              name: 'Pacote',
+              name: 'Pacote\n(ECAL)',
               ecal: 0.027,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de ECAL e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta é uma Embalagem de Cartão para Alimentos Líquidos (ECAL) e foi colocada no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Esta embalagem é de ECAL e deve ser colocada no contentor amarelo! Este encaminhamento assegura a sua triagem e a recuperação dos diferentes materiais que a constituem (plástico, alumínio e cartão).',
+                  'O destino selecionado não está correto. Esta é uma Embalagem de Cartão para Alimentos Líquidos (ECAL) e deve ser colocada no contentor amarelo (contém também plástico e alumínio)!',
               recomendacoes: 'Esvaziar; Espalmar',
             )
           ],
@@ -527,27 +527,27 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_de_leite_com_tampa,
-              name: 'Pacote',
+              name: 'Pacote\n(ECAL)',
               ecal: 0.035,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de ECAL e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta é uma Embalagem de Cartão para Alimentos Líquidos (ECAL) e foi colocada no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Esta embalagem é de ECAL e deve ser colocada no contentor amarelo! Este encaminhamento assegura a sua triagem e a recuperação dos diferentes materiais que a constituem (plástico, alumínio e cartão).',
+                  'O destino selecionado não está correto. Esta é uma Embalagem de Cartão para Alimentos Líquidos (ECAL) e deve ser colocada no contentor amarelo (contém também plástico e alumínio)!',
               recomendacoes:
                   'Esvaziar; Espalmar; Manter a tampa na embalagem espalmada',
             ),
             Component(
               icon: PackagesIcons.tampa_garrafa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               pead: 0.002,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             )
@@ -560,12 +560,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_flexivel_para_sumo,
-              name: 'Pacote',
+              name: 'Pacote\n(plástico)',
               plasticosMistos: 0.005,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes:
@@ -573,14 +573,14 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.tampa_garrafa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             )
@@ -599,24 +599,24 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.caixa_de_sobremesa_refrigerada___caixa,
-              name: 'Caixa',
+              name: 'Caixa\n(plástico)',
               pet: 0.009,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar a embalagem',
             ),
             Component(
               icon: PackagesIcons.caixa_de_sobremesa_refrigerada___tampa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               pet: 0.004,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo!',
               recomendacoes:
@@ -631,12 +631,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.caixa_de_ovos__cartao_,
-              name: 'Caixa',
+              name: 'Caixa\n(cartão)',
               cartao: 0.03,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -650,12 +650,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.caixa_de_ovos__plastico_,
-              name: 'Caixa',
+              name: 'Caixa\n(plástico)',
               pet: 0.057,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
@@ -669,24 +669,24 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.caixa_de_manteiga___caixa,
-              name: 'Caixa',
+              name: 'Caixa\n(plástico)',
               plasticosMistos: 0.01,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.caixa_de_manteiga___tampa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.007,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo!',
               recomendacoes:
@@ -694,14 +694,14 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.caixa_de_manteiga___pelicula,
-              name: 'Película de selagem',
+              name: 'Película\n(plástico)',
               plasticosMistos: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes: 'Manter a película de selagem na embalagem',
             )
           ],
@@ -713,38 +713,38 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.caixa_de_bolo_fresco___caixa,
-              name: 'Caixa',
+              name: 'Caixa\n(cartão)',
               cartao: 0.133,
               where: Where.recolhaIndiferenciada,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Esta embalagem não é reciclável e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem não é reciclável e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de cartão mas está suja e com gordura, pelo que deve ser mantida separada do cartão reciclável. Esta embalagem deve ser colocada no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).',
               recomendacoes: 'Esvaziar; Espalmar',
             ),
             Component(
               icon: PackagesIcons.caixa_de_bolo_fresco___pelicula_interior,
-              name: 'Película interior',
+              name: 'Película\n(papel)',
               papel: 0.001,
               where: Where.recolhaIndiferenciada,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Este material de embalagem não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este material de embalagem não é reciclável e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este material é de papel mas está sujo e com gordura, pelo que deve ser mantido separado do papel reciclável. Este material deve ser ser colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).',
               recomendacoes: 'Manter a película na embalagem',
             ),
             Component(
               icon: PackagesIcons.caixa_de_bolo_fresco___janela,
-              name: 'Janela de plástico',
+              name: 'Janela\n(plástico)',
               plasticosMistos: 0.0006,
               where: Where.recolhaIndiferenciada,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser de difícil separação, deve ser mantido na embalagem e encaminhado conjuntamente!',
               ifFalse:
-                  'O destino selecionado não está correto. Apesar de este componente ser de plástico, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).',
+                  'O destino selecionado não está correto. Apesar de este componente ser de plástico, é de difícil separação, pelo que deve ser mantido na embalagem e colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).',
               recomendacoes: 'Manter na embalagem',
             )
           ],
@@ -756,12 +756,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.caixa_de_detergente_em_po,
-              name: 'Caixa',
+              name: 'Caixa\n(cartão)',
               cartao: 0.231,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -775,12 +775,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.caixa_de_sapatos,
-              name: 'Caixa',
+              name: 'Caixa\n(cartão)',
               cartao: 0.225,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -795,12 +795,12 @@ class ConsumerData {
             Component(
               icon: PackagesIcons
                   .caixa_de_folha_de_aluminio_ou_de_pelicula___caixa,
-              name: 'Caixa',
+              name: 'Caixa\n(cartão)',
               cartao: 0.028,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -808,12 +808,12 @@ class ConsumerData {
             Component(
               icon: PackagesIcons
                   .caixa_de_folha_de_aluminio_ou_de_pelicula___rolo,
-              name: 'Rolo',
+              name: 'Rolo\n(cartão)',
               cartao: 0.032,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de cartão e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de cartão e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de cartão e deve ser separado da embalagem e colocado isoladamente no contentor azul!',
               recomendacoes:
@@ -834,24 +834,24 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.cuvete_de_legumes___cuvete,
-              name: 'Cuvete',
+              name: 'Cuvete\n(plástico)',
               eps: 0.005,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar a embalagem',
             ),
             Component(
               icon: PackagesIcons.filme_de_selagem,
-              name: 'Filme de selagem',
+              name: 'Filme\n(plástico)',
               pebd: 0.003,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este material é de plástico e deve ser separado da embalagem e colocado isoladamente no contentor amarelo!',
               recomendacoes:
@@ -866,24 +866,24 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.cuvete_de_legumes___cuvete,
-              name: 'Cuvete',
+              name: 'Cuvete\n(plástico)',
               plasticosMistos: 0.024,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar a embalagem',
             ),
             Component(
               icon: PackagesIcons.filme_de_selagem,
-              name: 'Filme de selagem',
+              name: 'Filme\n(plástico)',
               pebd: 0.002,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este material é de plástico e deve ser separado da embalagem e colocado isoladamente no contentor amarelo!',
               recomendacoes:
@@ -899,12 +899,12 @@ class ConsumerData {
             Component(
               icon: PackagesIcons
                   .tabuleiro_met_lico_de_pronto_a_comer___tabuleiro,
-              name: 'Tabuleiro',
+              name: 'Tabuleiro\n(metal)',
               metaisNaoFerrosos: 0.015,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de metal e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -912,12 +912,12 @@ class ConsumerData {
             Component(
               icon: PackagesIcons
                   .tabuleiro_met_lico_de_pronto_a_comer___tampa_cartao,
-              name: 'Tampa de cartão',
+              name: 'Tampa\n(cartão)',
               cartao: 0.003,
               where: Where.recolhaIndiferenciada,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Este material de embalagem não é reciclável e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este material de embalagem não é reciclável e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este material é de cartão plastificado, está sujo e com gordura pelo que deve ser mantido separado do cartão reciclável. Este material deve ser colocado no contentor dos indiferenciados (contentor cinzento para o lixo doméstico comum).',
               recomendacoes: 'Separar a tampa de cartão',
@@ -931,26 +931,26 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.tubo_de_creme_hidratante___tubo,
-              name: 'Tubo',
+              name: 'Tubo\n(plástico)',
               pebd: 0.013,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.tampa_garrafa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.005,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             )
@@ -965,30 +965,30 @@ class ConsumerData {
         Package(
           id: 27,
           icon: PackagesIcons.frasco_de_molho_de_tempero___completo,
-          name: 'Frasco de molho de tempero (plástico)',
+          name: 'Frasco de molho de tempero',
           components: [
             Component(
               icon: PackagesIcons.frasco_de_molho_de_tempero___frasco,
-              name: 'Frasco',
+              name: 'Frasco\n(plástico)',
               pet: 0.017,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.tampa_boiao___frasco,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.009,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             )
@@ -997,30 +997,30 @@ class ConsumerData {
         Package(
           id: 28,
           icon: PackagesIcons.frasco_de_desodorizante_roll_on___completo,
-          name: 'Frasco de desodorizante roll-on (vidro)',
+          name: 'Frasco de desodorizante roll-on',
           components: [
             Component(
               icon: PackagesIcons.frasco_de_desodorizante_roll_on___frasco,
-              name: 'Frasco',
+              name: 'Frasco\n(vidro)',
               vidro: 0.099,
               where: Where.recolhaVidro,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.frasco_de_desodorizante_roll_on___tampa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.006,
               where: Where.recolhaVidro,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
               ifFalse:
-                  'O destino selecionado não está correto. Apesar de este componente ser de plástico, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde!',
+                  'O destino selecionado não está correto. Apesar de este componente ser de plástico, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde! Se for colocado isoladamente no contentor amarelo, poderá perder-se no processo de triagem.',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             )
@@ -1029,28 +1029,28 @@ class ConsumerData {
         Package(
           id: 29,
           icon: PackagesIcons.frasco_de_cafe___completo,
-          name: 'Frasco de café ou outras misturas solúveis (vidro)',
+          name: 'Frasco de café ou outras misturas solúveis',
           components: [
             Component(
               icon: PackagesIcons.frasco_de_cafe___frasco,
-              name: 'Frasco',
+              name: 'Frasco\n(vidro)',
               vidro: 0.239,
               where: Where.recolhaVidro,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.frasco_de_cafe___tampa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.014,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser separado da embalagem e colocado no contentor amarelo!',
               recomendacoes:
@@ -1058,12 +1058,12 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.pelicula_de_selagem,
-              name: 'Película de selagem',
+              name: 'Película\n(metal)',
               metaisNaoFerrosos: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de metal e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de metal e deve ser separado da embalagem e colocado no contentor amarelo!',
               recomendacoes:
@@ -1078,26 +1078,26 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.frasco_de_champo_ou_amaciador___frasco,
-              name: 'Frasco',
+              name: 'Frasco\n(plástico)',
               pead: 0.037,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.frasco_de_champo_ou_amaciador___tampa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               pead: 0.004,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes: 'Manter a tampa na embalagem',
             )
           ],
@@ -1111,12 +1111,12 @@ class ConsumerData {
             Component(
               icon: PackagesIcons
                   .frasco_de_produto_de_limpeza_com_dispensador___frasco,
-              name: 'Frasco',
+              name: 'Frasco\n(plástico)',
               pead: 0.046,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
@@ -1124,12 +1124,12 @@ class ConsumerData {
             Component(
               icon: PackagesIcons
                   .frasco_de_produto_de_limpeza_com_dispensador___tampa,
-              name: 'Tampa com dispensador',
+              name: 'Dispensador\n(plástico)',
               plasticosMistos: 0.025,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser separado da embalagem e colocado isoladamente no contentor amarelo!',
               recomendacoes:
@@ -1144,26 +1144,26 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.frasco_sal___frasco,
-              name: 'Frasco',
+              name: 'Frasco\n(plástico)',
               plasticosMistos: 0.019,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.frasco_sal___tampa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.006,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de plástico e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             )
@@ -1176,26 +1176,26 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.frasco_de_perfume___frasco,
-              name: 'Frasco',
+              name: 'Frasco\n(vidro)',
               vidro: 0.142,
               where: Where.recolhaVidro,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de vidro e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de vidro e deve ser colocada no contentor verde!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.tampa_garrafa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.007,
               where: Where.recolhaVidro,
               reciclavel: false,
               ifTrue:
-                  'Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Apesar de este componente ser de plástico, foi colocado no contentor correto! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
               ifFalse:
-                  'O destino selecionado não está correto. Apesar de este componente ser de plástico, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde!',
+                  'O destino selecionado não está correto. Apesar de este componente ser de plástico, como apresenta dimensões reduzidas, deve ser mantido na embalagem e colocado no contentor verde! Se for colocado isoladamente no contentor amarelo, poderá perder-se no processo de triagem.',
               recomendacoes:
                   'Manter a tampa na embalagem porque tem dimensão inferior a 50mm',
             )
@@ -1214,26 +1214,26 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.lata_conserva___lata,
-              name: 'Lata',
+              name: 'Lata\n(metal)',
               metaisFerrosos: 0.023,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de metal e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.lata_conserva___tampa,
-              name: 'Tampa metálica\n(com anilha)',
+              name: 'Tampa c/ anilha\n(metal)',
               metaisFerrosos: 0.007,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de metal e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de metal e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de metal e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes: 'Manter as anilhas na embalagem',
             )
           ],
@@ -1245,26 +1245,26 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.lata_de_refrigerante___lata,
-              name: 'Lata',
+              name: 'Lata\n(metal)',
               metaisNaoFerrosos: 0.01,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de metal e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar; Espalmar',
             ),
             Component(
               icon: PackagesIcons.lata_de_refrigerante___anilha,
-              name: 'Anilha',
+              name: 'Anilha\n(metal)',
               metaisNaoFerrosos: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de metal e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de metal e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de metal e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes: 'Manter as anilhas na embalagem',
             )
           ],
@@ -1276,24 +1276,24 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.lata_de_espuma_barbear___lata,
-              name: 'Lata',
+              name: 'Lata\n(metal)',
               metaisNaoFerrosos: 0.051,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de metal e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.lata_de_espuma_barbear___tampa,
-              name: 'Tampa',
+              name: 'Tampa\n(plástico)',
               plasticosMistos: 0.005,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser separado da embalagem e colocado isoladamente no contentor amarelo!',
               recomendacoes:
@@ -1308,26 +1308,26 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.lata_de_ra_ao_para_animal___lata,
-              name: 'Lata',
+              name: 'Lata\n(metal)',
               metaisFerrosos: 0.042,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de metal e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de metal e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.lata_de_ra_ao_para_animal___tampa,
-              name: 'Tampa metálica\n(com anilha)',
+              name: 'Tampa c/ anilha\n(metal)',
               metaisFerrosos: 0.007,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de metal e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de metal e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de metal e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente!',
+                  'O destino selecionado não está correto. Este componente é de metal e deve ser colocado no contentor amarelo! Por ser um componente com dimensões reduzidas, deve ser mantido na embalagem e encaminhado conjuntamente para evitar que se perca durante o processo de triagem!',
               recomendacoes: 'Manter as anilhas na embalagem',
             )
           ],
@@ -1345,12 +1345,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_flex_vel_de_a_ucar___papel,
-              name: 'Pacote flexível',
+              name: 'Pacote\n(papel)',
               papel: 0.008,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de papel e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de papel e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de papel e deve ser colocada no contentor azul!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -1364,12 +1364,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_flex_vel_de_a_ucar___plastico,
-              name: 'Pacote flexível',
+              name: 'Pacote\n(plástico)',
               pebd: 0.006,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -1379,16 +1379,16 @@ class ConsumerData {
         Package(
           id: 40,
           icon: PackagesIcons.pacote_flex_vel_manteiga,
-          name: 'Pacote de margarina\ne semelhantes\n(plástico metalizado)',
+          name: 'Pacote de margarina\ne semelhantes',
           components: [
             Component(
               icon: PackagesIcons.pacote_flex_vel_manteiga,
-              name: 'Pacote flexível',
+              name: 'Pacote\n(plástico)',
               plasticosMistos: 0.002,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -1402,12 +1402,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_flexivel_pao___pacote,
-              name: 'Pacote flexível',
+              name: 'Pacote\n(plástico)',
               plasticosMistos: 0.005,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -1421,24 +1421,24 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_padaria_com_janela___pacote,
-              name: 'Saco',
+              name: 'Saco\n(papel)',
               papel: 0.007,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de papel e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de papel e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de papel e deve ser colocada no contentor azul!',
               recomendacoes: 'Esvaziar; Espalmar',
             ),
             Component(
               icon: PackagesIcons.pacote_padaria_com_janela___janela,
-              name: 'Janela de plástico',
+              name: 'Janela\n(plástico)',
               plasticosMistos: 0.0006,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser separado da embalagem e colocado no contentor amarelo!',
               recomendacoes: 'Separar a janela de plástico',
@@ -1452,12 +1452,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_flexivel_esparguete,
-              name: 'Pacote flexível',
+              name: 'Pacote\n(plástico)',
               plasticosMistos: 0.006,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -1471,12 +1471,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_flexivel_papel_higienico___plastico,
-              name: 'Pacote flexível',
+              name: 'Pacote\n(plástico)',
               pebd: 0.026,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -1490,12 +1490,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.pacote_flexivel_papel_higienico___papel,
-              name: 'Pacote flexível',
+              name: 'Pacote\n(papel)',
               papel: 0.01,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de papel e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de papel e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de papel e deve ser colocada no contentor azul!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -1509,12 +1509,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.saco_compras_plastico,
-              name: 'Saco de asas',
+              name: 'Saco\n(plástico)',
               pead: 0.024,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -1528,12 +1528,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.saco_compras_papel,
-              name: 'Saco de asas',
+              name: 'Saco\n(papel)',
               papel: 0.059,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de papel e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de papel e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de papel e deve ser colocada no contentor azul!',
               recomendacoes: 'Esvaziar; Espalmar',
@@ -1549,28 +1549,28 @@ class ConsumerData {
         Package(
           id: 48,
           icon: PackagesIcons.caixa_de_pasta_de_dentes___completo,
-          name: 'Caixa de pasta de dentes',
+          name: 'Pasta de dentes',
           components: [
             Component(
               icon: PackagesIcons.caixa_de_pasta_de_dentes___caixa,
-              name: 'Caixa',
+              name: 'Caixa\n(cartão)',
               cartao: 0.01,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!',
               recomendacoes: 'Separar os materiais de embalagem; Espalmar',
             ),
             Component(
               icon: PackagesIcons.caixa_de_pasta_de_dentes___tubo,
-              name: 'Tubo da pasta de dentes',
+              name: 'Tubo\n(plástico)',
               plasticosMistos: 0.01,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes:
@@ -1585,12 +1585,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.caixa_de_peixe_congelado___caixa,
-              name: 'Caixa',
+              name: 'Caixa\n(cartão)',
               cartao: 0.041,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!',
               recomendacoes:
@@ -1598,12 +1598,12 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.caixa_de_peixe_congelado___involucro_plastico,
-              name: 'Invólucros de plástico',
+              name: 'Invólucros\n(plástico)',
               pebd: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este material de embalagem é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este material é de plástico e deve ser separado da embalagem e colocado no contentor amarelo!',
               recomendacoes:
@@ -1618,12 +1618,12 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.caixa_de_cereais___caixa,
-              name: 'Caixa',
+              name: 'Caixa\n(cartão)',
               cartao: 0.065,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de cartão e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de cartão e deve ser colocada no contentor azul!',
               recomendacoes:
@@ -1631,12 +1631,12 @@ class ConsumerData {
             ),
             Component(
               icon: PackagesIcons.caixa_de_cereais___bolsa_plastico,
-              name: 'Bolsa de plástico',
+              name: 'Bolsa\n(plástico)',
               plasticosMistos: 0.011,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Separar os materiais de embalagem; Esvaziar',
@@ -1650,39 +1650,39 @@ class ConsumerData {
           components: [
             Component(
               icon: PackagesIcons.cuvete_de_pronto_a_comer___cuvete,
-              name: 'Cuvete',
+              name: 'Cuvete\n(plástico)',
               plasticosMistos: 0.024,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Esta embalagem é de plástico e foi colocada no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Esta embalagem é de plástico e deve ser colocada no contentor amarelo!',
               recomendacoes: 'Esvaziar',
             ),
             Component(
               icon: PackagesIcons.cuvete_de_pronto_a_comer___pelicula,
-              name: 'Película de selagem',
+              name: 'Película\n(plástico)',
               plasticosMistos: 0.001,
               where: Where.recolhaPlasticoMetal,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de plástico e foi colocado no contentor correto!',
               ifFalse:
                   'O destino selecionado não está correto. Este componente é de plástico e deve ser mantido na embalagem e colocado no contentor amarelo!',
               recomendacoes: 'Manter a película de selagem na embalagem',
             ),
             Component(
               icon: PackagesIcons.cuvete_de_pronto_a_comer___rotulo,
-              name: 'Rótulo',
+              name: 'Rótulo\n(cartão)',
               cartao: 0.007,
               where: Where.recolhaPapelCartao,
               reciclavel: true,
               ifTrue:
-                  'Muito bem! Este componente é de papel e foi colocado no contentor correto! Vê aqui mais dicas sobre boas práticas de deposição de resíduos.',
+                  'Muito bem! Este componente é de cartão e foi colocado no contentor correto!',
               ifFalse:
-                  'O destino selecionado não está correto. Este componente é de papel e, sempre que possível, deve ser separado da embalagem e colocado no contentor azul!',
-              recomendacoes: 'Separar o rótulo de papel',
+                  'O destino selecionado não está correto. Este componente é de cartão e, sempre que possível, deve ser separado da embalagem e colocado no contentor azul!',
+              recomendacoes: 'Separar o rótulo de cartão',
             )
           ],
         )
