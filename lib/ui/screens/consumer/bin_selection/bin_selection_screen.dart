@@ -214,7 +214,7 @@ class BinSelectionScreen extends ConsumerWidget {
                       ),
                       SizedBox(height: AppSpacings.big(context.layout)),
                       SizedBox(
-                        height: context.layout.value(xs: 140, sm: 200),
+                        height: context.layout.value(xs: 160, sm: 220),
                       ),
                     ],
                   ],
@@ -225,7 +225,7 @@ class BinSelectionScreen extends ConsumerWidget {
                     right: -AppSpacings.big(context.layout),
                     bottom: 0,
                     child: SizedBox(
-                      height: context.layout.value(xs: 140, sm: 200),
+                      height: context.layout.value(xs: 168, sm: 220),
                       child: Ink(
                         color: AppColors.grey4,
                         child: Padding(
@@ -233,16 +233,31 @@ class BinSelectionScreen extends ConsumerWidget {
                             horizontal: AppSpacings.big(context.layout),
                           ),
                           child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            child: Column(
                               children: [
-                                for (final c in package.components)
-                                  DraggableComponentWithName(
-                                    component: c,
-                                    isDisabled:
-                                        state.whereComponents[c] != null,
-                                  )
+                                const SizedBox(height: 10),
+                                const Spacer(),
+                                Text(
+                                  'Arrasta cada componente para o respetivo contentor',
+                                  style: AppTextStyles.bodyS(context.layout),
+                                  textAlign: TextAlign.center,
+                                ),
+                                const Spacer(),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    for (final c in package.components)
+                                      DraggableComponentWithName(
+                                        component: c,
+                                        isDisabled:
+                                            state.whereComponents[c] != null,
+                                      )
+                                  ],
+                                ),
+                                const Spacer(),
+                                const SizedBox(height: 10),
                               ],
                             ),
                           ),
