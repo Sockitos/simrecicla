@@ -108,7 +108,13 @@ class AppScreen extends StatelessWidget {
               primary: true,
               children: [
                 AppBar(
-                  title: Assets.svgs.logo.svg(height: 24),
+                  title: FocusableActionDetector(
+                    mouseCursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      child: Assets.svgs.logo.svg(height: 24),
+                      onTap: () => context.go('/'),
+                    ),
+                  ),
                   leading: kIsWeb ? null : const BackButton(),
                   titleSpacing: AppSpacings.big(context.layout),
                   automaticallyImplyLeading: false,
