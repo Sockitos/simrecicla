@@ -158,7 +158,7 @@ class DraggableComponentWithName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = context.layout.value<double>(xs: 100, sm: 130);
+    final width = context.layout.value<double>(xs: 110, sm: 130);
     final iconSize = context.layout.value<double>(
       xs: 60,
       sm: 90,
