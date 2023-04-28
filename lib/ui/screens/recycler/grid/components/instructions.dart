@@ -3,6 +3,7 @@ import 'package:layout/layout.dart';
 import 'package:simrecicla/constants/colors.dart';
 import 'package:simrecicla/constants/spacings.dart';
 import 'package:simrecicla/constants/text_styles.dart';
+import 'package:simrecicla/gen/assets.gen.dart';
 import 'package:simrecicla/ui/widgets/app_dialog.dart';
 
 class Instructions extends StatelessWidget {
@@ -29,7 +30,7 @@ class Instructions extends StatelessWidget {
               style: AppTextStyles.h2(context.layout),
             ),
             SizedBox(height: AppSpacings.small(context.layout)),
-            if (context.layout.breakpoint > LayoutBreakpoint.xs)
+            if (context.layout.breakpoint > LayoutBreakpoint.sm)
               IntrinsicHeight(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,13 +38,14 @@ class Instructions extends StatelessWidget {
                     Expanded(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           _Instruction(
                             index: 1,
                             text:
                                 'O circuito de reciclagem será criado em forma de grelha - cada quadrado representa uma máquina.',
+                            illustration: Assets.svgs.instructions1.svg(),
                           ),
-                          Divider(
+                          const Divider(
                             color: AppColors.grey4,
                             height: 4,
                             thickness: 2,
@@ -52,8 +54,9 @@ class Instructions extends StatelessWidget {
                             index: 2,
                             text:
                                 'Para acrescentar a máquina ao seu circuito, arraste para a grelha o icon quadrado referente à máquina que pretende adicionar.',
+                            illustration: Assets.svgs.instructions2.svg(),
                           ),
-                          Divider(
+                          const Divider(
                             color: AppColors.grey4,
                             height: 4,
                             thickness: 2,
@@ -62,8 +65,9 @@ class Instructions extends StatelessWidget {
                             index: 3,
                             text:
                                 'Escolha a orientação da máquina que lhe convém para o seu circuito.',
+                            illustration: Assets.svgs.instructions3.svg(),
                           ),
-                          Divider(
+                          const Divider(
                             color: AppColors.grey4,
                             height: 4,
                             thickness: 2,
@@ -72,6 +76,7 @@ class Instructions extends StatelessWidget {
                             index: 4,
                             text:
                                 'O quadrado vazio para dentro representa um input e os quadrados para fora representam outputs. Pode ver a legenda de cada máquina clicando no +.',
+                            illustration: Assets.svgs.instructions4.svg(),
                           ),
                         ],
                       ),
@@ -83,13 +88,14 @@ class Instructions extends StatelessWidget {
                     ),
                     Expanded(
                       child: Column(
-                        children: const [
+                        children: [
                           _Instruction(
                             index: 5,
                             text:
                                 'Um circuito só é válido quando todas as saídas estiverem fechadas com “produtos finais”.',
+                            illustration: Assets.svgs.instructions5.svg(),
                           ),
-                          Divider(
+                          const Divider(
                             color: AppColors.grey4,
                             height: 4,
                             thickness: 2,
@@ -98,8 +104,9 @@ class Instructions extends StatelessWidget {
                             index: 6,
                             text:
                                 'Clique nas “Opções de Entrada” para costumizar os materiais a entrar no circuito.',
+                            illustration: Assets.svgs.instructions6.svg(),
                           ),
-                          Divider(
+                          const Divider(
                             color: AppColors.grey4,
                             height: 4,
                             thickness: 2,
@@ -108,8 +115,9 @@ class Instructions extends StatelessWidget {
                             index: 7,
                             text:
                                 'Depois do circuito estar válido (icons passam a verde), pode clicar em cada máquina para ver detalhadamente os materiais a entrar e sair.',
+                            illustration: Assets.svgs.instructions7.svg(),
                           ),
-                          Divider(
+                          const Divider(
                             color: AppColors.grey4,
                             height: 4,
                             thickness: 2,
@@ -118,8 +126,9 @@ class Instructions extends StatelessWidget {
                             index: 8,
                             text:
                                 'Se pretender eliminar uma máquina que já esteja colocado na grelha, basta arrastá-la para o “caixote do lixo”.',
+                            illustration: Assets.svgs.instructions8.svg(),
                           ),
-                          Divider(
+                          const Divider(
                             color: AppColors.grey4,
                             height: 4,
                             thickness: 2,
@@ -128,6 +137,7 @@ class Instructions extends StatelessWidget {
                             index: 9,
                             text:
                                 'Clicar em “Ver resultados” para ver a composição de cada produto final e eficiência global da linha.',
+                            illustration: Assets.svgs.instructions9.svg(),
                           ),
                         ],
                       ),
@@ -135,13 +145,14 @@ class Instructions extends StatelessWidget {
                   ],
                 ),
               )
-            else ...const [
+            else ...[
               _Instruction(
                 index: 1,
                 text:
                     'O circuito de reciclagem será criado em forma de grelha - cada quadrado representa uma máquina.',
+                illustration: Assets.svgs.instructions1.svg(),
               ),
-              Divider(
+              const Divider(
                 color: AppColors.grey4,
                 height: 8,
                 thickness: 2,
@@ -150,8 +161,9 @@ class Instructions extends StatelessWidget {
                 index: 2,
                 text:
                     'Para acrescentar a máquina ao seu circuito, arraste para a grelha o icon quadrado referente à máquina que pretende adicionar.',
+                illustration: Assets.svgs.instructions2.svg(),
               ),
-              Divider(
+              const Divider(
                 color: AppColors.grey4,
                 height: 8,
                 thickness: 2,
@@ -160,8 +172,9 @@ class Instructions extends StatelessWidget {
                 index: 3,
                 text:
                     'Escolha a orientação da máquina que lhe convém para o seu circuito.',
+                illustration: Assets.svgs.instructions3.svg(),
               ),
-              Divider(
+              const Divider(
                 color: AppColors.grey4,
                 height: 8,
                 thickness: 2,
@@ -170,8 +183,9 @@ class Instructions extends StatelessWidget {
                 index: 4,
                 text:
                     'O quadrado vazio para dentro representa um input e os quadrados para fora representam outputs. Pode ver a legenda de cada máquina clicando no +.',
+                illustration: Assets.svgs.instructions4.svg(),
               ),
-              Divider(
+              const Divider(
                 color: AppColors.grey4,
                 height: 8,
                 thickness: 2,
@@ -180,8 +194,9 @@ class Instructions extends StatelessWidget {
                 index: 5,
                 text:
                     'Um circuito só é válido quando todas as saídas estiverem fechadas com “produtos finais”.',
+                illustration: Assets.svgs.instructions5.svg(),
               ),
-              Divider(
+              const Divider(
                 color: AppColors.grey4,
                 height: 8,
                 thickness: 2,
@@ -190,8 +205,9 @@ class Instructions extends StatelessWidget {
                 index: 6,
                 text:
                     'Clique nas “Opções de Entrada” para costumizar os materiais a entrar no circuito.',
+                illustration: Assets.svgs.instructions6.svg(),
               ),
-              Divider(
+              const Divider(
                 color: AppColors.grey4,
                 height: 8,
                 thickness: 2,
@@ -200,8 +216,9 @@ class Instructions extends StatelessWidget {
                 index: 7,
                 text:
                     'Depois do circuito estar válido (icons passam a verde), pode clicar em cada máquina para ver detalhadamente os materiais a entrar e sair.',
+                illustration: Assets.svgs.instructions7.svg(),
               ),
-              Divider(
+              const Divider(
                 color: AppColors.grey4,
                 height: 8,
                 thickness: 2,
@@ -210,8 +227,9 @@ class Instructions extends StatelessWidget {
                 index: 8,
                 text:
                     'Se pretender eliminar uma máquina que já esteja colocado na grelha, basta arrastá-la para o “caixote do lixo”.',
+                illustration: Assets.svgs.instructions8.svg(),
               ),
-              Divider(
+              const Divider(
                 color: AppColors.grey4,
                 height: 8,
                 thickness: 2,
@@ -220,6 +238,7 @@ class Instructions extends StatelessWidget {
                 index: 9,
                 text:
                     'Clicar em “Ver resultados” para ver a composição de cada produto final e eficiência global da linha.',
+                illustration: Assets.svgs.instructions9.svg(),
               ),
             ],
           ],
@@ -233,9 +252,11 @@ class _Instruction extends StatelessWidget {
   const _Instruction({
     required this.index,
     required this.text,
+    required this.illustration,
   });
   final int index;
   final String text;
+  final Widget illustration;
 
   @override
   Widget build(BuildContext context) {
@@ -261,6 +282,10 @@ class _Instruction extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 10),
+          SizedBox(
+            width: 100,
+            child: illustration,
+          ),
         ],
       ),
     );

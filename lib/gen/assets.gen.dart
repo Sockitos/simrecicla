@@ -62,6 +62,42 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/instagram.svg
   SvgGenImage get instagram => const SvgGenImage('assets/svgs/instagram.svg');
 
+  /// File path: assets/svgs/instructions_1.svg
+  SvgGenImage get instructions1 =>
+      const SvgGenImage('assets/svgs/instructions_1.svg');
+
+  /// File path: assets/svgs/instructions_2.svg
+  SvgGenImage get instructions2 =>
+      const SvgGenImage('assets/svgs/instructions_2.svg');
+
+  /// File path: assets/svgs/instructions_3.svg
+  SvgGenImage get instructions3 =>
+      const SvgGenImage('assets/svgs/instructions_3.svg');
+
+  /// File path: assets/svgs/instructions_4.svg
+  SvgGenImage get instructions4 =>
+      const SvgGenImage('assets/svgs/instructions_4.svg');
+
+  /// File path: assets/svgs/instructions_5.svg
+  SvgGenImage get instructions5 =>
+      const SvgGenImage('assets/svgs/instructions_5.svg');
+
+  /// File path: assets/svgs/instructions_6.svg
+  SvgGenImage get instructions6 =>
+      const SvgGenImage('assets/svgs/instructions_6.svg');
+
+  /// File path: assets/svgs/instructions_7.svg
+  SvgGenImage get instructions7 =>
+      const SvgGenImage('assets/svgs/instructions_7.svg');
+
+  /// File path: assets/svgs/instructions_8.svg
+  SvgGenImage get instructions8 =>
+      const SvgGenImage('assets/svgs/instructions_8.svg');
+
+  /// File path: assets/svgs/instructions_9.svg
+  SvgGenImage get instructions9 =>
+      const SvgGenImage('assets/svgs/instructions_9.svg');
+
   /// File path: assets/svgs/ist.svg
   SvgGenImage get ist => const SvgGenImage('assets/svgs/ist.svg');
 
@@ -118,6 +154,15 @@ class $AssetsSvgsGen {
         greenBin,
         greyBin,
         instagram,
+        instructions1,
+        instructions2,
+        instructions3,
+        instructions4,
+        instructions5,
+        instructions6,
+        instructions7,
+        instructions8,
+        instructions9,
         ist,
         linkedin,
         logo,
