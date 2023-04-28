@@ -35,6 +35,15 @@ Future<void> main() async {
     Assets.svgs.right.precache(),
     Assets.svgs.wrong.precache(),
     Assets.svgs.sameBin.precache(),
+    Assets.svgs.instructions1.precache(),
+    Assets.svgs.instructions2.precache(),
+    Assets.svgs.instructions3.precache(),
+    Assets.svgs.instructions4.precache(),
+    Assets.svgs.instructions5.precache(),
+    Assets.svgs.instructions6.precache(),
+    Assets.svgs.instructions7.precache(),
+    Assets.svgs.instructions8.precache(),
+    Assets.svgs.instructions9.precache(),
   ]);
   runApp(const ProviderScope(child: SimReciclaApp()));
 }
