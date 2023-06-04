@@ -60,7 +60,8 @@ final routerProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: 'bin_selection',
                 pageBuilder: (context, state) {
-                  final packageId = int.parse(state.queryParams['package']!);
+                  final packageId =
+                      int.parse(state.queryParameters['package']!);
                   const categories = ConsumerData.categories;
                   final packages = [for (final c in categories) ...c.packages];
                   final package = packages.firstWhere((c) => c.id == packageId);
@@ -74,7 +75,7 @@ final routerProvider = Provider<GoRouter>((ref) {
                   );
                 },
                 redirect: (context, state) {
-                  final rawPackageId = state.queryParams['package'];
+                  final rawPackageId = state.queryParameters['package'];
                   if (rawPackageId == null) return '/consumer/categories';
                   final packageId = int.tryParse(rawPackageId);
                   if (packageId == null) return '/consumer/categories';
@@ -145,7 +146,7 @@ final routerProvider = Provider<GoRouter>((ref) {
                 path: 'grid',
                 pageBuilder: (context, state) {
                   final type = GridType.values.firstWhere(
-                    (t) => t.name == state.queryParams['type'],
+                    (t) => t.name == state.queryParameters['type'],
                   );
                   return pageBuilder<void>(
                     context: context,
@@ -157,9 +158,9 @@ final routerProvider = Provider<GoRouter>((ref) {
                   );
                 },
                 redirect: (context, state) {
-                  if (state.queryParams.containsKey('type')) {
+                  if (state.queryParameters.containsKey('type')) {
                     final type = GridType.values.firstWhereOrNull(
-                      (t) => t.name == state.queryParams['type'],
+                      (t) => t.name == state.queryParameters['type'],
                     );
                     return type == null ? '/recycler' : null;
                   } else {
