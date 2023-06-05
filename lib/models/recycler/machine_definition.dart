@@ -20,7 +20,7 @@ class MachineDefinition with _$MachineDefinition {
   }) = _MachineDefinition;
   const MachineDefinition._();
 
-  IconData get icon => icons.first;
+  IconData get icon => icons.first.icon;
 
   List<Machine> getMachineVersions() {
     final machines = <Machine>[];

@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-class RotatableIconData extends IconData {
-  RotatableIconData({required this.icons}) : super(icons.first.codePoint);
+class RotatableIconData {
+  const RotatableIconData({required this.icons});
 
   final List<IconData> icons;
 
@@ -13,19 +13,7 @@ class RotatableIconData extends IconData {
     );
   }
 
-  IconData get _icon => icons.first;
-
-  @override
-  int get codePoint => _icon.codePoint;
-
-  @override
-  String? get fontFamily => _icon.fontFamily;
-
-  @override
-  String? get fontPackage => _icon.fontPackage;
-
-  @override
-  bool get matchTextDirection => _icon.matchTextDirection;
+  IconData get icon => icons.first;
 }
 
 extension IconDataX on IconData {

@@ -29,7 +29,7 @@ class GridScreenModel with _$GridScreenModel {
     required GridType type,
     required Grid<Machine> grid,
     @Default(<MachineOutputId, MachineInputId?>{})
-        Map<MachineOutputId, MachineInputId?> connections,
+    Map<MachineOutputId, MachineInputId?> connections,
     @Default(true) bool useDefaultFeed,
     required double feedWeight,
     required MaterialSample feedSample,

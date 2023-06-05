@@ -87,7 +87,7 @@ class MachineIOInfo extends HookWidget {
                         height: 40,
                         width: 40,
                         child: Center(
-                          child: Icon(machine.icon),
+                          child: Icon(machine.icon.icon),
                         ),
                       ),
                     ),

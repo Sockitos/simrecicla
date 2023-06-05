@@ -109,7 +109,7 @@ class DraggableMachine extends StatelessWidget {
                       accentColor: accentColor,
                     ),
                     child: Icon(
-                      machine.icon,
+                      machine.icon.icon,
                       size: min(
                             (draggingSize ?? size).height,
                             (draggingSize ?? size).width,
@@ -140,7 +140,7 @@ class DraggableMachine extends StatelessWidget {
                         accentColor: accentColor,
                       ),
                       child: Icon(
-                        machine.icon,
+                        machine.icon.icon,
                         size:
                             min(size.height, size.width) - portSize.height - 4,
                         color: accentColor,
@@ -190,7 +190,7 @@ class DraggableMachine extends StatelessWidget {
                             ),
                           )
                         : Icon(
-                            machine.icon,
+                            machine.icon.icon,
                             size: min(size.height, size.width) -
                                 portSize.height -
                                 4,

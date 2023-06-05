@@ -31,12 +31,12 @@ class RecyclerData {
       outputs: [],
       inputs: const [MachineInput(id: 'final')],
     ),
-    MachineDefinition(
+    const MachineDefinition(
       id: 'P',
       name: 'Passadeira',
       icons: [
         RotatableIconData(
-          icons: const [
+          icons: [
             MachinesIcons.passadeira_down_1,
             MachinesIcons.passadeira_down_2,
             MachinesIcons.passadeira_down_3,
@@ -44,7 +44,7 @@ class RecyclerData {
           ],
         ),
         RotatableIconData(
-          icons: const [
+          icons: [
             MachinesIcons.passadeira_left_1,
             MachinesIcons.passadeira_left_2,
             MachinesIcons.passadeira_left_3,
@@ -52,7 +52,7 @@ class RecyclerData {
           ],
         ),
         RotatableIconData(
-          icons: const [
+          icons: [
             MachinesIcons.passadeira_right_1,
             MachinesIcons.passadeira_right_2,
             MachinesIcons.passadeira_right_3,
@@ -62,7 +62,7 @@ class RecyclerData {
       ],
       description:
           'Transporte do fluxo de materiais através de uma tela transportadora. Deve ser adicionada as vezes necessárias para criar a linha com dimensão desejada.',
-      outputs: const [
+      outputs: [
         MachineOutput(
           id: 'out',
           description: '',
@@ -80,14 +80,14 @@ class RecyclerData {
           ),
         ),
       ],
-      inputs: [const MachineInput(id: 'in')],
+      inputs: [MachineInput(id: 'in')],
     ),
-    MachineDefinition(
+    const MachineDefinition(
       id: 'JC',
       name: 'Junção de Caudais',
       icons: [
         RotatableIconData(
-          icons: const [
+          icons: [
             MachinesIcons.juncao_caudais_1,
             MachinesIcons.juncao_caudais_2,
             MachinesIcons.juncao_caudais_3,
@@ -98,7 +98,7 @@ class RecyclerData {
       description:
           'Junção de caudais de materiais provenientes de diferentes saídas.',
       outputs: [
-        const MachineOutput(
+        MachineOutput(
           id: 'JC',
           description: '',
           type: MachineOutputType.one,
@@ -116,9 +116,9 @@ class RecyclerData {
         ),
       ],
       inputs: [
-        const MachineInput(id: 'feed1'),
-        const MachineInput(id: 'feed2'),
-        const MachineInput(id: 'feed3'),
+        MachineInput(id: 'feed1'),
+        MachineInput(id: 'feed2'),
+        MachineInput(id: 'feed3'),
       ],
     ),
     MachineDefinition(
@@ -227,7 +227,6 @@ class RecyclerData {
             ecal: 0.0160,
             filmePlastico: 0.0023,
             pet: 0.0017,
-            petOleo: 0,
             pead: 0.0002,
             plasticosMistos: 0.0087,
             metaisFerrosos: 0.0169,
@@ -285,7 +284,6 @@ class RecyclerData {
             ecal: 0.5564,
             filmePlastico: 0.0012,
             pet: 0.0009,
-            petOleo: 0,
             pead: 0.0010,
             plasticosMistos: 0.0014,
             metaisFerrosos: 0.0031,
@@ -331,7 +329,6 @@ class RecyclerData {
             pead: 0.3273,
             plasticosMistos: 0.0019,
             metaisFerrosos: 0.0006,
-            metaisNaoFerrosos: 0,
             naoRecuperaveis: 0.0010,
           ),
         ),
@@ -398,14 +395,6 @@ class RecyclerData {
           description: 'Fluxo de materiais Finos',
           type: MachineOutputType.two,
           materialConversion: MaterialSample.pm(
-            ecal: 0,
-            filmePlastico: 0,
-            pet: 0,
-            petOleo: 0,
-            pead: 0,
-            plasticosMistos: 0,
-            metaisFerrosos: 0,
-            metaisNaoFerrosos: 0,
             naoRecuperaveis: 0.0325,
           ),
         ),
@@ -439,15 +428,7 @@ class RecyclerData {
           description: 'Fluxo de materiais Alvo (PET Óleo)',
           type: MachineOutputType.one,
           materialConversion: MaterialSample.pm(
-            ecal: 0,
-            filmePlastico: 0,
-            pet: 0,
             petOleo: 0.9495,
-            pead: 0,
-            plasticosMistos: 0,
-            metaisFerrosos: 0,
-            metaisNaoFerrosos: 0,
-            naoRecuperaveis: 0,
           ),
         ),
         const MachineOutput(
@@ -484,11 +465,7 @@ class RecyclerData {
             ecal: 0.0003,
             filmePlastico: 0.0037,
             pet: 0.0004,
-            petOleo: 0,
-            pead: 0,
-            plasticosMistos: 0,
             metaisFerrosos: 0.0031,
-            metaisNaoFerrosos: 0,
             naoRecuperaveis: 0.1115,
           ),
         ),
@@ -498,15 +475,8 @@ class RecyclerData {
               'Fluxo de materiais Alvo 2 (Grades de Plástico e Bidons)',
           type: MachineOutputType.two,
           materialConversion: MaterialSample.pm(
-            ecal: 0,
-            filmePlastico: 0,
-            pet: 0,
-            petOleo: 0,
             pead: 0.0452,
             plasticosMistos: 0.0146,
-            metaisFerrosos: 0,
-            metaisNaoFerrosos: 0,
-            naoRecuperaveis: 0,
           ),
         ),
         const MachineOutput(
@@ -559,7 +529,6 @@ class RecyclerData {
             ecal: 0.0031,
             filmePlastico: 0.2108,
             pet: 0.0027,
-            petOleo: 0,
             pead: 0.0063,
             plasticosMistos: 0.0091,
             metaisFerrosos: 0.0066,
@@ -605,12 +574,12 @@ class RecyclerData {
       outputs: [],
       inputs: const [MachineInput(id: 'final')],
     ),
-    MachineDefinition(
+    const MachineDefinition(
       id: 'P',
       name: 'Passadeira',
       icons: [
         RotatableIconData(
-          icons: const [
+          icons: [
             MachinesIcons.passadeira_down_1,
             MachinesIcons.passadeira_down_2,
             MachinesIcons.passadeira_down_3,
@@ -618,7 +587,7 @@ class RecyclerData {
           ],
         ),
         RotatableIconData(
-          icons: const [
+          icons: [
             MachinesIcons.passadeira_left_1,
             MachinesIcons.passadeira_left_2,
             MachinesIcons.passadeira_left_3,
@@ -626,7 +595,7 @@ class RecyclerData {
           ],
         ),
         RotatableIconData(
-          icons: const [
+          icons: [
             MachinesIcons.passadeira_right_1,
             MachinesIcons.passadeira_right_2,
             MachinesIcons.passadeira_right_3,
@@ -636,7 +605,7 @@ class RecyclerData {
       ],
       description:
           'Transporte do fluxo de materiais através de uma tela transportadora. Deve ser adicionada as vezes necessárias para criar a linha com dimensão desejada.',
-      outputs: const [
+      outputs: [
         MachineOutput(
           id: 'out',
           description: '',
@@ -649,14 +618,14 @@ class RecyclerData {
           ),
         ),
       ],
-      inputs: [const MachineInput(id: 'in')],
+      inputs: [MachineInput(id: 'in')],
     ),
-    MachineDefinition(
+    const MachineDefinition(
       id: 'JC',
       name: 'Junção de Caudais',
       icons: [
         RotatableIconData(
-          icons: const [
+          icons: [
             MachinesIcons.juncao_caudais_1,
             MachinesIcons.juncao_caudais_2,
             MachinesIcons.juncao_caudais_3,
@@ -667,7 +636,7 @@ class RecyclerData {
       description:
           'Junção de caudais de materiais provenientes de diferentes saídas.',
       outputs: [
-        const MachineOutput(
+        MachineOutput(
           id: 'JC',
           description: '',
           type: MachineOutputType.one,
@@ -680,9 +649,9 @@ class RecyclerData {
         ),
       ],
       inputs: [
-        const MachineInput(id: 'feed1'),
-        const MachineInput(id: 'feed2'),
-        const MachineInput(id: 'feed3'),
+        MachineInput(id: 'feed1'),
+        MachineInput(id: 'feed2'),
+        MachineInput(id: 'feed3'),
       ],
     ),
     MachineDefinition(
@@ -740,9 +709,6 @@ class RecyclerData {
           description: 'Fluxo de materiais Finos',
           type: MachineOutputType.two,
           materialConversion: MaterialSample.pc(
-            papel: 0,
-            cartao: 0,
-            jornaisRevistas: 0,
             naoRecuperaveis: 0.0405,
           ),
         ),
@@ -753,7 +719,6 @@ class RecyclerData {
           materialConversion: MaterialSample.pc(
             papel: 0.0411,
             cartao: 0.0464,
-            jornaisRevistas: 0,
             naoRecuperaveis: 0.2039,
           ),
         ),
@@ -772,9 +737,6 @@ class RecyclerData {
           description: 'Fluxo de materiais Alvo (Contaminantes)',
           type: MachineOutputType.one,
           materialConversion: MaterialSample.pc(
-            papel: 0,
-            cartao: 0,
-            jornaisRevistas: 0,
             naoRecuperaveis: 0.5912,
           ),
         ),
@@ -804,9 +766,6 @@ class RecyclerData {
           description: 'Fluxo de materiais Alvo 1 (Contaminantes)',
           type: MachineOutputType.one,
           materialConversion: MaterialSample.pc(
-            papel: 0,
-            cartao: 0,
-            jornaisRevistas: 0,
             naoRecuperaveis: 0.5128,
           ),
         ),

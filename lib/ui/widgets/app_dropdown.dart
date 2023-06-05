@@ -1117,7 +1117,7 @@ class _AppDropdownButtonState<T> extends State<AppDropdownButton<T>>
     if (result == null) {
       // If there's no MediaQuery, then use the window aspect to determine
       // orientation.
-      final size = WidgetsBinding.instance.window.physicalSize;
+      final size = View.of(context).physicalSize;
       result = size.width > size.height
           ? Orientation.landscape
           : Orientation.portrait;
