@@ -52,15 +52,12 @@ class _OutputIndicatorMachine extends CustomPainter {
           rect,
           paint..style = PaintingStyle.fill,
         );
-        break;
       case MachineOutputType.two:
         canvas.drawRect(rect, paint);
         canvas.drawLine(rect.bottomLeft, rect.topRight, paint);
-        break;
       case MachineOutputType.three:
         canvas.drawRect(rect, paint);
         canvas.drawLine(rect.topCenter, rect.bottomCenter, paint);
-        break;
     }
   }
 

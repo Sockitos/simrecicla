@@ -137,9 +137,9 @@ class PackageImpactChart extends StatelessWidget {
                                     heightFactor:
                                         impact.impacteTotal / maxValue,
                                     alignment: Alignment.bottomCenter,
-                                    child: Stack(
+                                    child: const Stack(
                                       clipBehavior: Clip.none,
-                                      children: const [
+                                      children: [
                                         Positioned.fill(
                                           right: -50,
                                           child: Align(

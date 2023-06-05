@@ -57,7 +57,7 @@ class SimReciclaApp extends ConsumerStatefulWidget {
 
 class _SimReciclaAppState extends ConsumerState<SimReciclaApp> {
   @override
-  void initState() {
+  void didChangeDependencies() {
     precacheImage(
       AssetImage(Assets.images.consumerIntro.path),
       context,
@@ -70,7 +70,7 @@ class _SimReciclaAppState extends ConsumerState<SimReciclaApp> {
       AssetImage(Assets.images.recyclerIntro.path),
       context,
     );
-    super.initState();
+    super.didChangeDependencies();
   }
 
   @override

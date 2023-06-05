@@ -16,9 +16,9 @@ class Contacts extends StatelessWidget {
     return DefaultTextStyle(
       style: AppTextStyles.bodyS(context.layout).withColor(AppColors.white),
       textAlign: textAlign,
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Text(
             'Contactos',
             style: TextStyle(fontWeight: FontWeight.bold),

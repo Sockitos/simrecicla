@@ -33,7 +33,7 @@ class _LgFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       height: 140,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -41,7 +41,7 @@ class _LgFooter extends StatelessWidget {
           Expanded(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Expanded(child: Sponsors.tratolixo),
                 SizedBox(width: 40),
                 Expanded(child: Sponsors.drivers),
@@ -52,11 +52,11 @@ class _LgFooter extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: 60),
+          SizedBox(width: 60),
           Expanded(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: const [
+              children: [
                 Spacer(),
                 SizedBox(
                   width: 360,
@@ -78,10 +78,10 @@ class _MdFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Row(
-          children: const [
+          children: [
             Expanded(child: Sponsors.tratolixo),
             SizedBox(width: 40),
             Expanded(child: Sponsors.drivers),
@@ -91,12 +91,12 @@ class _MdFooter extends StatelessWidget {
             Expanded(child: Sponsors.sociedadePontoverde),
           ],
         ),
-        const SizedBox(height: 60),
+        SizedBox(height: 60),
         SizedBox(
           height: 140,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: const [
+            children: [
               SizedBox(
                 width: 360,
                 child: Contacts(),
@@ -116,29 +116,29 @@ class _SmFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Row(
-          children: const [
+          children: [
             Expanded(child: Sponsors.drivers),
             SizedBox(width: 40),
             Expanded(child: Sponsors.tratolixo),
           ],
         ),
-        const SizedBox(height: 40),
+        SizedBox(height: 40),
         Row(
-          children: const [
+          children: [
             Expanded(child: Sponsors.ist),
             SizedBox(width: 40),
             Expanded(child: Sponsors.sociedadePontoverde),
           ],
         ),
-        const SizedBox(height: 60),
+        SizedBox(height: 60),
         SizedBox(
           height: 140,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: const [
+            children: [
               Expanded(child: Contacts()),
               Expanded(child: Copyright())
             ],
@@ -154,8 +154,8 @@ class _XsFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
+    return const Column(
+      children: [
         Sponsors.tratolixo,
         SizedBox(height: 40),
         Sponsors.drivers,

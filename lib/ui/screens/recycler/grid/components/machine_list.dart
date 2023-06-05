@@ -10,6 +10,7 @@ import 'package:simrecicla/ui/screens/recycler/grid/components/instructions.dart
 import 'package:simrecicla/ui/screens/recycler/grid/components/machine_list_option.dart';
 import 'package:simrecicla/ui/widgets/app_card.dart';
 import 'package:simrecicla/ui/widgets/app_scrollbar.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class MachineList extends HookWidget {
   const MachineList({
@@ -78,6 +79,19 @@ class MachineList extends HookWidget {
                                 builder: (_) => const Instructions(),
                               );
                             },
+                        ),
+                        const TextSpan(
+                          text: ' e o ',
+                        ),
+                        TextSpan(
+                          text: 'manual',
+                          style: const TextStyle(
+                            decoration: TextDecoration.underline,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () => launchUrlString(
+                                  'https://simrecicla.pt/manual_triagem.pdf',
+                                ),
                         ),
                         const TextSpan(text: '.'),
                       ],

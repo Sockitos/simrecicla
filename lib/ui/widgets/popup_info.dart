@@ -96,10 +96,8 @@ class _PopupInfoRouteLayout extends SingleChildLayoutDelegate {
       switch (textDirection) {
         case TextDirection.rtl:
           x = size.width - position.right - childSize.width;
-          break;
         case TextDirection.ltr:
           x = position.left;
-          break;
       }
     }
     final wantedPosition = Offset(x, y);

@@ -53,11 +53,9 @@ class DraggableMachine extends StatelessWidget {
       switch (state) {
         case MachineState.disconnected:
           color = AppColors.grey6;
-          break;
         case MachineState.connected:
         case MachineState.validated:
           color = AppColors.black;
-          break;
       }
     }
 
@@ -68,13 +66,10 @@ class DraggableMachine extends StatelessWidget {
       switch (state) {
         case MachineState.disconnected:
           accentColor = AppColors.grey6;
-          break;
         case MachineState.connected:
           accentColor = AppColors.black;
-          break;
         case MachineState.validated:
           accentColor = AppColors.lightGreen;
-          break;
       }
     }
 
@@ -259,37 +254,28 @@ class _MachinePainter extends CustomPainter {
             rect,
             outputPaint..style = PaintingStyle.fill,
           );
-          break;
         case MachineOutputType.two:
           canvas.drawRect(rect, outputPaint);
           switch (direction) {
             case AxisDirection.up:
               canvas.drawLine(rect.bottomLeft, rect.topRight, outputPaint);
-              break;
             case AxisDirection.right:
               canvas.drawLine(rect.topLeft, rect.bottomRight, outputPaint);
-              break;
             case AxisDirection.down:
               canvas.drawLine(rect.bottomRight, rect.topLeft, outputPaint);
-              break;
             case AxisDirection.left:
               canvas.drawLine(rect.topRight, rect.bottomLeft, outputPaint);
-              break;
           }
-          break;
         case MachineOutputType.three:
           canvas.drawRect(rect, outputPaint);
           switch (direction) {
             case AxisDirection.up:
             case AxisDirection.down:
               canvas.drawLine(rect.topCenter, rect.bottomCenter, outputPaint);
-              break;
             case AxisDirection.right:
             case AxisDirection.left:
               canvas.drawLine(rect.centerLeft, rect.centerRight, outputPaint);
-              break;
           }
-          break;
       }
     }
 

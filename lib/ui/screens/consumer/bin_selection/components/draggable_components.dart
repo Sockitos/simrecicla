@@ -25,7 +25,6 @@ class DraggableComponents extends StatelessWidget {
             isDisabled: isDisabled(components[0]),
           ),
         );
-        break;
       case 2:
         child = Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +40,6 @@ class DraggableComponents extends StatelessWidget {
             ),
           ],
         );
-        break;
       case 3:
         child = Row(
           children: [
@@ -65,7 +63,6 @@ class DraggableComponents extends StatelessWidget {
             ),
           ],
         );
-        break;
       default:
         return const SizedBox();
     }

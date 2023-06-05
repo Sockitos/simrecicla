@@ -228,8 +228,8 @@ class Results extends HookWidget {
                         fontWeight: FontWeight.bold,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Expanded(
                             flex: 2,
                             child: Text(
@@ -302,8 +302,8 @@ class Results extends HookWidget {
                         fontWeight: FontWeight.bold,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Expanded(
                             flex: 2,
                             child: Text('Materiais'),

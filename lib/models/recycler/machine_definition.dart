@@ -39,7 +39,6 @@ class MachineDefinition with _$MachineDefinition {
             ports: {AxisDirection.up: ports[0]},
           ),
         );
-        break;
       case 2:
         machines.add(
           machine.copyWith(
@@ -67,7 +66,6 @@ class MachineDefinition with _$MachineDefinition {
             icon: icons[min(2, icons.length - 1)],
           ),
         );
-        break;
       case 3:
         machines.add(
           machine.copyWith(
@@ -128,7 +126,6 @@ class MachineDefinition with _$MachineDefinition {
             icon: icons[min(5, icons.length - 1)],
           ),
         );
-        break;
       case 4:
         if (inputs.length == 3) {
           machines.add(
@@ -209,7 +206,6 @@ class MachineDefinition with _$MachineDefinition {
             ),
           );
         }
-        break;
       default:
         throw Exception();
     }

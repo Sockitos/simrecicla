@@ -15,6 +15,7 @@ import 'package:simrecicla/ui/screens/consumer/bin_selection/components/bird_ico
 import 'package:simrecicla/ui/widgets/app_card.dart';
 import 'package:simrecicla/ui/widgets/arrow.dart';
 import 'package:tuple/tuple.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 part 'results.freezed.dart';
 
@@ -102,6 +103,19 @@ class Results extends HookWidget {
                                               AppColors.lightGreen,
                                             ),
                                           ),
+                                          const SizedBox(width: 2),
+                                          IconButton(
+                                            onPressed: () => launchUrlString(
+                                              'https://simrecicla.pt/explicacao_indicadores.pdf',
+                                            ),
+                                            color: AppColors.lightGreen,
+                                            icon: const Icon(
+                                              Icons.help_outline_outlined,
+                                            ),
+                                            splashRadius: 24,
+                                            constraints: const BoxConstraints(),
+                                            padding: const EdgeInsets.all(2),
+                                          ),
                                         ],
                                       ),
                                       const SizedBox(height: 15),
@@ -177,6 +191,19 @@ class Results extends HookWidget {
                                                     .withColor(
                                               AppColors.lightGreen,
                                             ),
+                                          ),
+                                          const SizedBox(width: 2),
+                                          IconButton(
+                                            onPressed: () => launchUrlString(
+                                              'https://simrecicla.pt/explicacao_indicadores.pdf',
+                                            ),
+                                            color: AppColors.lightGreen,
+                                            icon: const Icon(
+                                              Icons.help_outline_outlined,
+                                            ),
+                                            splashRadius: 24,
+                                            constraints: const BoxConstraints(),
+                                            padding: const EdgeInsets.all(2),
                                           ),
                                         ],
                                       ),
